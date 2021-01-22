@@ -13,3 +13,8 @@ include:
   - ISSUE_TEMPLATE.md
   - PULL_REQUEST_TEMPLATE.md
   
+title: Martinrl.github.io
+description: Head of Development, Software Developer, Father, Husband, Cyclist.
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-minimal
