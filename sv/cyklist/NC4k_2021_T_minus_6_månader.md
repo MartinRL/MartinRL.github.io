@@ -37,7 +37,7 @@ Väl medveten om de riktigt långa loppens existens, men väldigt osäker på b�
 
 ## Nu har tiden kommit för längre
 
-Efter allsköns stora utmaningar under långa lopp (mekaniskt men inte minst kroppsligt med trasiga knän, magras, diskbråck, ...) kändes det efter senaste RAD att allt "satt". Brukar annars säga till Malin efter målgång att min gräns nog går vid 200 mil trots allt. Bestämde mig så i maj ifjor (RAD går alltid av stapeln Kristi himmelsfärd) att 2021 skulle bli året för mitt första deltagande i *riktigt långt lopp*™. Efter noggranna överväganden under lång tid bestämde jag mig för att placera fingret på avtryckaren i samma sekund anmälan öppnade för North Cape 4000 (NC4K). Påminnelse i kalendern månader i förväg, frenetiskt F5-tryckande tills... Ja, plats bokad och betald 1 december 2020!
+Efter allsköns stora utmaningar under långa lopp (mekaniskt men inte minst kroppsligt med trasiga knän, magras, sadelsår, diskbråck, ...) kändes det efter senaste RAD att allt "satt". Brukar annars säga till Malin efter målgång att min gräns nog går vid 200 mil trots allt. Bestämde mig så i maj ifjor (RAD går alltid av stapeln Kristi himmelsfärd) att 2021 skulle bli året för mitt första deltagande i *riktigt långt lopp*™. Efter noggranna överväganden under lång tid bestämde jag mig för att placera fingret på avtryckaren i samma sekund anmälan öppnade för North Cape 4000 (NC4K). Påminnelse i kalendern månader i förväg, frenetiskt F5-tryckande tills... Ja, plats bokad och betald 1 december 2020!
 
 400 deltagare helt utan support. 400 mil från Gardasjön till Nordkapp. I år går rutten genom öst och jag är nästan lika taggad på att se och uppleva Baltikum och Finland som att göra bra ifrån mig. ([Erik har naturligtvis cyklat även NC4K](https://theradavist.com/2018/07/swot-and-the-north-cape-4000-erik-nohlin/) ;-))
 
@@ -45,7 +45,7 @@ Efter allsköns stora utmaningar under långa lopp (mekaniskt men inte minst kro
 
 ... är anledningen till att jag skriver detta. Då NC4k innebär betydligt större uppoffringar än vad mina nära och kära är vana vid och det inte är lätt att som utomstående förstå vad det innebär att elitsatsa som 48-årig löntagande trebarnsfar.
 
-Den absolut vanligaste frågan jag får med anledning av mitt idrottande är hur jag hinner. Många av er vet att jag alltid svarat att man ska ha världens bästa fru. Och det är sant och det har jag <3 Det längre svaret jag nu vill ge är att även ska ha världens bästa familj i stort (barn, mor, svärföräldrar) och inte minst världens bästa vänner som accepterar att man har satt upp långsiktiga mål och inte med kort varsel kan dyka upp på skojigheter. Vad värre är med tidskrävande träning och lopp av denna karaktär (själva loppet vinns nog runt tio dygn, varför två veckor måste räknas med plus logistik) är de vid planeringstillfället okända stora begivenheter man går miste om och känslan av svek av nära och kära. Det kan vara fester för att fira jämna födelsedagar, dop och bröllop.
+Den absolut vanligaste frågan jag får med anledning av mitt idrottande är hur jag hinner. Många av er vet att jag alltid svarat att man ska ha världens bästa fru. Och det är sant och det har jag <3 Det längre svaret jag nu vill ge är att även ska ha världens bästa familj i stort (barn, mor, syskon, svärföräldrar) och inte minst världens bästa vänner som accepterar att man har satt upp långsiktiga mål och inte med kort varsel kan dyka upp på skojigheter. Vad värre är med tidskrävande träning och lopp av denna karaktär (själva loppet vinns nog runt tio dygn, varför två veckor måste räknas med plus logistik) är de vid planeringstillfället okända stora begivenheter man går miste om och känslan av svek av nära och kära. Det kan vara fester för att fira jämna födelsedagar, dop och bröllop.
 
 Det bästa analogi jag funnit är att dessa lopp är mitt firande och min manifestation av tusentals timmars träning under, hundratusentals kronor, ändlösa timmar i cykelverkstaden och ännu fler i filmer, böcker och artiklar om kost, nutrition, träning, loppstrategi, etc. Mitt (eld)dop.
 
@@ -53,15 +53,25 @@ Jag ber med andra ord om er förståelse för att jag nu går in lite djupare ä
 
 ## Inte bara offer!
 
-familjen coaching
+I ljuset av alla avkall kan det ju låta som om man är fulltidsmasochist, men inget kunde vara längre från sanningen. Att jag började med cykelsport har medfött att hela familjen har blivit "cykelfamilj" och vi cyklar massor av MTB, grus och inte minst landsväg tillsammans. Jag är coach åt resten som har sina träningsscheman och utmaningar med ungarnas sommarutmaningar som grädden på moset.
 
-____________
-TODO
-_____________
+![RAD 2020 📸 Atmos](../../images/Sommarutmaning_Axel_2020.jpeg)*Skåne Runt 600 km - förstföddes sommarutmaning 2020 📸 Undertecknad*
 
-världens bästa fru - men glömt världens bästa familj (mor, svärf. bror syst. mfl) samt inte världens bästa vänner 
+Vi lär oss massor tillsammans om kropp, hälsa, träning, kost och inte minst hur det påverkar ens kognitiva förmågor och skolresultat. Har inte A/B-testat trots enäggstvillingar ;-), men teorierna verkar stämma :-)
+
+Ens fåfänga tycker dessutom om att Garmin tycker att man har en tjugoårings kropp ;-)
+
+![RAD 2020 📸 Atmos](../../images/Garmin_VO2max_20210121.jpg)*Senaste V̇O<sub>2</sub> max-uppdatering från Garmin*
+
 
 omvänd perio. bra status . bild på VO2m
 
-varför? för att de finns. manifestation
+## Varför dessa hemska lopp och inte nöja sig med träningen?
 
+När George Mallory fick frågan om varför bestiga Mount Everest svarade han ju som bekant "för att det är där". Det är delvis en förklaring också för mig med ganska svår FOMO. 
+
+Det aningen mer nyanserade svaret är att jag behöver den typen av lopp och deadlines för att kunna motivera mig, älskar både cykling, tävling och äventyr som de ju kombinerar och inte minst en stor nyfikenhet på mina fysiska och psykiska begränsningar.
+
+Extrem hetta, hård kyla, svår sömnbrist, energi- och vätskebrist, hallucinationer och alla sorters åkommor låter ju onekligen som tortyr men utan att ha utförd djupare analys finner man ju mindre behagliga riter i många religioner och sammanhang.
+
+Sist men sannerligen inte minst sker denna typ av cykling ibland i grupp och ett otroligt kamratskap kan uppstå när man delar upplevelsen och hjälper varandra.
