@@ -65,7 +65,7 @@ Ens fåfänga tycker dessutom om att Garmin tycker att man har en tjugoårings k
 
 ## Varför dessa hemska lopp och inte nöja sig med träningen?
 
-När George Mallory fick frågan om varför bestiga Mount Everest svarade han ju som bekant "för att det är där". Det är delvis en förklaring också för mig med ganska svår FOMO. 
+När George Mallory fick frågan varför bestiga Mount Everest svarade han ju som bekant "för att det är där". Det är delvis en förklaring också för mig med ganska svår FOMO. 
 
 Det aningen mer nyanserade svaret är att jag behöver den typen av lopp och deadlines för att kunna motivera mig, älskar både cykling, tävling och äventyr som de ju kombinerar och inte minst en stor nyfikenhet på mina fysiska och psykiska begränsningar.
 
