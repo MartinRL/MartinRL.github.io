@@ -1,3 +1,0 @@
-# POC
-
-... for pokker! 
