@@ -69,6 +69,6 @@ När George Mallory fick frågan varför bestiga Mount Everest svarade han ju so
 
 Det aningen mer nyanserade svaret är att jag behöver den typen av lopp och deadlines för att kunna motivera mig, älskar både cykling, tävling och äventyr som de ju kombinerar och inte minst en stor nyfikenhet på mina fysiska och psykiska begränsningar.
 
-Extrem hetta, hård kyla, svår sömnbrist, energi- och vätskebrist, hallucinationer och alla sorters åkommor låter ju onekligen som tortyr men utan att ha utförd djupare analys finner man ju mindre behagliga riter i många religioner och sammanhang.
+Extrem hetta, hård kyla, svår sömnbrist, energi- och vätskebrist, hallucinationer och alla sorters åkommor låter ju onekligen som tortyr men utan att ha utfört djupare analys finner man ju mindre behagliga riter i många religioner och sammanhang.
 
 Sist men sannerligen inte minst sker denna typ av cykling ibland i grupp och ett otroligt kamratskap kan uppstå när man delar upplevelsen och hjälper varandra.
