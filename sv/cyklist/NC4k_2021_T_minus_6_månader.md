@@ -1,5 +1,7 @@
-# hej nc4k!
+# North Cape 4000 - T minus 6 månader
 
 test
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![RAD 2020 📸 Atmos](../../images\AtmosPhoto_RAD_2020-1.jpg)*RAD 2020 📸 Atmos*
+
+test
