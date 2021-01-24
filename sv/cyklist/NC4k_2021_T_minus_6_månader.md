@@ -35,6 +35,25 @@ Väl medveten om de riktigt långa loppens existens, men väldigt osäker på b�
 
 ![RAD 2020 📸 Atmos](../../images/Erik_och_jag_Katterjokk_2016.jpg)*Erik & jag i Katterjokk 2016 under ryttar- och cykelkontroll 📸 Okänd*
 
+## Nu har tiden kommit för längre
+
+Efter allsköns stora utmaningar under långa lopp (mekaniskt men inte minst kroppsligt med trasiga knän, magras, diskbråck, ...) kändes det efter senaste RAD att allt "satt". Brukar annars säga till Malin efter målgång att min gräns nog går vid 200 mil trots allt. Bestämde mig så i maj ifjor (RAD går alltid av stapeln Kristi himmelsfärd) att 2021 skulle bli året för mitt första deltagande i *riktigt långt lopp*™. Efter noggranna överväganden under lång tid bestämde jag mig för att placera fingret på avtryckaren i samma sekund anmälan öppnade för North Cape 4000 (NC4K). Påminnelse i kalendern månader i förväg, frenetiskt F5-tryckande tills... Ja, plats bokad och betald 1 december 2020!
+
+400 deltagare helt utan support. 400 mil från Gardasjön till Nordkapp. I år går rutten genom öst och jag är nästan lika taggad på att se och uppleva Baltikum och Finland som att göra bra ifrån mig. ([Erik har naturligtvis cyklat även NC4K](https://theradavist.com/2018/07/swot-and-the-north-cape-4000-erik-nohlin/) ;-))
+
+## Uppoffringar
+
+... är anledningen till att jag skriver detta. Då NC4k innebär betydligt större uppoffringar än vad mina nära och kära är vana vid och det inte är lätt att som utomstående förstå vad det innebär att elitsatsa som 48-årig löntagande trebarnsfar.
+
+Den absolut vanligaste frågan jag får med anledning av mitt idrottande är hur jag hinner. Många av er vet att jag alltid svarat att man ska ha världens bästa fru. Och det är sant och det har jag <3 Det längre svaret jag nu vill ge är att även ska ha världens bästa familj i stort (barn, mor, svärföräldrar) och inte minst världens bästa vänner som accepterar att man har satt upp långsiktiga mål och inte med kort varsel kan dyka upp på skojigheter. Vad värre är med tidskrävande träning och lopp av denna karaktär (själva loppet vinns nog runt tio dygn, varför två veckor måste räknas med plus logistik) är de vid planeringstillfället okända stora begivenheter man går miste om och känslan av svek av nära och kära. Det kan vara fester för att fira jämna födelsedagar, dop och bröllop.
+
+Det bästa analogi jag funnit är att dessa lopp är mitt firande och min manifestation av tusentals timmars träning under, hundratusentals kronor, ändlösa timmar i cykelverkstaden och ännu fler i filmer, böcker och artiklar om kost, nutrition, träning, loppstrategi, etc. Mitt (eld)dop.
+
+Jag ber med andra ord om er förståelse för att jag nu går in lite djupare än vanligt i min cykelbubbla som dessutom är hermetiskt stängt från 22 juli och cirka tre veckor framåt.
+
+## Inte bara offer!
+
+familjen coaching
 
 ____________
 TODO
@@ -43,4 +62,6 @@ _____________
 världens bästa fru - men glömt världens bästa familj (mor, svärf. bror syst. mfl) samt inte världens bästa vänner 
 
 omvänd perio. bra status . bild på VO2m
+
+varför? för att de finns. manifestation
 
