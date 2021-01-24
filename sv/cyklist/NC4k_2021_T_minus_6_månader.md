@@ -33,7 +33,7 @@ Väl medveten om de riktigt långa loppens existens, men väldigt osäker på b�
 
 Ända sedan Sveritempot och de inspirationsfilmer jag såg tillsammans med Malin för att förbereda mig mentalt, inte minst Erik Nohlins [Melons, Trucks, Angry Dogs](https://ertzui.de/TCR), har jag dock drömt om de riktigt långa loppen med lika galet många höjdmeter som kilometer. Erik och Specialized gjorde förresten en film även om LoSS 2016 - [Length of Sweden](https://vimeo.com/ondemand/lengthofsweden/194797540).
 
-![RAD 2020 📸 Atmos](../../images/Erik_och_jag_Katterjokk_2016.jpg)*Erik & jag i Katterjokk 2016 under ryttar- och cykelkontroll 📸 Okänd*
+![RAD 2020 📸 Atmos](../../images/Erik_och_jag_Katterjokk_2016.jpg)*Erik & jag i Katterjokk 2016 under ryttar- och cykelkontroll 📸 Undertecknad*
 
 ## Nu har tiden kommit för längre
 
