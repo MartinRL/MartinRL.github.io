@@ -9,7 +9,7 @@ Härmed tillkännager jag mitt deltagande i årets North Cape 4000 för den bred
 
 ## Det började på en fyrtioårsfest i Lomma för drygt åtta år sedan
 
-Jag hade börjat uppskatta först pendlingen med min Strida (fällscykel) till jobbet i Nordhavnen i Köpenhamn efter ha slutat bilpendla och små utflykter med min Montague (fällbar MTB). Att cykla "på riktigt" fanns inte ens nästan på radarn och jag hade tänkt unna mig en dyr, fin citycykel (Spot ACME)i fyrtioårspresent till mig själv.
+Jag hade börjat uppskatta först pendlingen med min Strida (fällscykel) till jobbet i Nordhavnen i Köpenhamn efter ha slutat bilpendla och små utflykter med min Montague (fällbar MTB). Att cykla "på riktigt" fanns inte ens nästan på radarn och jag hade tänkt unna mig en dyr, fin citycykel (Spot ACME) i fyrtioårspresent till mig själv.
 
 Under sedvanlig ölandssommarvistelse frågar min frus morbror, tillika cykelentusiast och med många års idrottande i kroppen, varför jag inte köper "en riktig" cykel. Det grubblade jag på en dag eller två och hade sedan beställt en Canyon Ultimate CF med elvadelad Campa Chorus-grupp (något vare sig jänkarna eller japsen hade då).  
 
@@ -47,7 +47,7 @@ Efter allsköns stora utmaningar under långa lopp (mekaniskt men inte minst kro
 
 Den absolut vanligaste frågan jag får med anledning av mitt idrottande är hur jag hinner. Många av er vet att jag alltid svarat att man ska ha världens bästa fru. Och det är sant och det har jag <3 Det längre svaret jag nu vill ge är att även ska ha världens bästa familj i stort (barn, mor, syskon, svärföräldrar) och inte minst världens bästa vänner som accepterar att man har satt upp långsiktiga mål och inte med kort varsel kan dyka upp på skojigheter. Vad värre är med tidskrävande träning och lopp av denna karaktär (själva loppet vinns nog runt tio dygn, varför två veckor måste räknas med plus logistik) är de vid planeringstillfället okända stora begivenheter man går miste om och känslan av svek av nära och kära. Det kan vara fester för att fira jämna födelsedagar, dop och bröllop.
 
-Det bästa analogi jag funnit är att dessa lopp är mitt firande och min manifestation av tusentals timmars träning under, hundratusentals kronor, ändlösa timmar i cykelverkstaden och ännu fler i filmer, böcker och artiklar om kost, nutrition, träning, loppstrategi, etc. Mitt (eld)dop.
+Den bästa analogi jag funnit är att dessa lopp är mitt firande och min manifestation av tusentals timmars träning under, hundratusentals kronor, ändlösa timmar i cykelverkstaden och ännu fler i filmer, böcker och artiklar om kost, nutrition, träning, loppstrategi, etc. Mitt (eld)dop.
 
 Jag ber med andra ord om er förståelse för att jag nu går in lite djupare än vanligt i min cykelbubbla som dessutom är hermetiskt stängt från 22 juli och cirka tre veckor framåt.
 
@@ -62,9 +62,6 @@ Vi lär oss massor tillsammans om kropp, hälsa, träning, kost och inte minst h
 Ens fåfänga tycker dessutom om att Garmin tycker att man har en tjugoårings kropp ;-)
 
 ![RAD 2020 📸 Atmos](../../images/Garmin_VO2max_20210121.jpg)*Senaste V̇O<sub>2</sub> max-uppdatering från Garmin*
-
-
-omvänd perio. bra status . bild på VO2m
 
 ## Varför dessa hemska lopp och inte nöja sig med träningen?
 
