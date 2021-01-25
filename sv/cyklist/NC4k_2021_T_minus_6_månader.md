@@ -23,7 +23,7 @@ Lyckligtvis finns CK Milslukaren för likasinnade, d.v.s. oss som uppskattar dis
 
 ## Sverigetempot - första långloppet
 
-Väl medveten om de riktigt långa loppens existens, men väldigt osäker på både fysiska som psykiska förmåga under dylika anmälde jag mig november 2015 till Length of Sweden/Sverigetempot (LoSS) 2016 (2015 km s.k. brevet, då världens längsta dylika). Var försiktig i överkant och långt i förväg bestämt mig för den mentala modellen "sju vätternrundor på sju dagar (utan depåer)" med bokade hotellnätter längs rutten.
+Väl medveten om de riktigt långa loppens existens, men väldigt osäker på både fysiska som psykiska förmåga under dylika anmälde jag mig november 2015 till Length of Sweden/Sverigetempot (LoSS) 2016 (2.015 km s.k. brevet, då världens längsta dylika). Var försiktig i överkant och långt i förväg bestämt mig för den mentala modellen "sju vätternrundor på sju dagar (utan depåer)" med bokade hotellnätter längs rutten.
 
 ## Hårdare, snabbare! (... men inte längre)
 
