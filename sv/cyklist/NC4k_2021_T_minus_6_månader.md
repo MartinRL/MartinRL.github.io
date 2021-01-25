@@ -27,7 +27,7 @@ Väl medveten om de riktigt långa loppens existens, men väldigt osäker på b�
 
 ## Hårdare, snabbare! (... men inte längre)
 
-Ökad träningsvolym med bättre struktur. Kontinuerligt byte av cyklar och utrusting för att slipa resultaten. Subgrupper på Vätternrundan med 6:58 som bästa resultat. Superrandonneur varje år. Härliga 160-mils brevet-lopp i Italien samt tre 160 långa RAD (Race Around Denmark) med 81 timmar som bästa tid och silver som bästa placering. PBP på under 60 timmar med diskbråck. Sveriges genom tidernas snabbaste 200 km- samt 600 km-brevet-lopp är också inskriberat i ett dammigt, digitalt franskt arkiv.
+Ökad träningsvolym med bättre struktur. Kontinuerligt byte av cyklar och utrusting för att slipa resultaten. Subgrupper på Vätternrundan med 6:58 som bästa resultat. Superrandonneur varje år. Härliga 1.600 km-brevet-lopp i Italien samt tre 1.600 km långa RAD (Race Around Denmark) med 81 timmar som bästa tid och silver som bästa placering. PBP på under 60 timmar med diskbråck. Sveriges genom tidernas snabbaste 200 km- samt 600 km-brevet-lopp är också inskriberat i ett dammigt, digitalt franskt arkiv.
 
 ![Sveriges snabbaste 200 km-brevet i vardande 📸 Oscar](../../images/200k_550_2021.jpeg)*Sveriges snabbaste 200 km-brevet i vardande 📸 Oscar*
 
@@ -73,4 +73,4 @@ Extrem hetta, hård kyla, svår sömnbrist, energi- och vätskebrist, hallucinat
 
 Sist men sannerligen inte minst sker denna typ av cykling ibland i grupp och ett otroligt kamratskap kan uppstå när man delar upplevelsen och hjälper varandra.
 
-![Kamratskapande under fjolårets 1200 km-brevet Falkenberg-Södertälje-Falkenberg 📸 Oscar](../../images/Falkenberg-Södertälje-Falkenberg_2020.jpg)*Kamratskapande under fjolårets 1200 km-brevet Falkenberg-Södertälje-Falkenberg 📸 Oscar*
+![Kamratskapande under fjolårets 1.200 km-brevet Falkenberg-Södertälje-Falkenberg 📸 Oscar](../../images/Falkenberg-Södertälje-Falkenberg_2020.jpg)*Kamratskapande under fjolårets 1.200 km-brevet Falkenberg-Södertälje-Falkenberg 📸 Oscar*
