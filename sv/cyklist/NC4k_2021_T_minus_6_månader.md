@@ -25,6 +25,8 @@ Lyckligtvis finns CK Milslukaren för likasinnade, d.v.s. oss som uppskattar dis
 
 Väl medveten om de riktigt långa loppens existens, men väldigt osäker på både fysiska som psykiska förmåga under dylika anmälde jag mig november 2015 till Length of Sweden/Sverigetempot (LoSS) 2016 (2.015 km s.k. brevet, då världens längsta dylika). Var försiktig i överkant och långt i förväg bestämt mig för den mentala modellen "sju vätternrundor på sju dagar (utan depåer)" med bokade hotellnätter längs rutten.
 
+![Några mil från Östersund under Sverigetempot 2016 📸 Oscar](../../images/sverigetempot_2016.jpg)*Några mil från Östersund under Sverigetempot 2016 📸 Oscar*
+
 ## Hårdare, snabbare! (... men inte längre)
 
 Ökad träningsvolym med bättre struktur. Kontinuerligt byte av cyklar och utrusting för att slipa resultaten. Subgrupper på Vätternrundan med 6:58 som bästa resultat. Superrandonneur varje år. Härliga 1.600 km-brevet-lopp i Italien samt tre 1.600 km långa RAD (Race Around Denmark) med 81 timmar som bästa tid och silver som bästa placering. PBP på under 60 timmar med diskbråck. Sveriges genom tidernas snabbaste 200 km- samt 600 km-brevet-lopp är också inskriberat i ett dammigt, digitalt franskt arkiv.
