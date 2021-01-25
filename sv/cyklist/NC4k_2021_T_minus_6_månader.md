@@ -72,3 +72,5 @@ Det aningen mer nyanserade svaret är att jag behöver den typen av lopp och dea
 Extrem hetta, hård kyla, svår sömnbrist, energi- och vätskebrist, hallucinationer och alla sorters åkommor låter ju onekligen som tortyr men utan att ha utfört djupare analys finner man ju mindre behagliga riter i många religioner och sammanhang.
 
 Sist men sannerligen inte minst sker denna typ av cykling ibland i grupp och ett otroligt kamratskap kan uppstå när man delar upplevelsen och hjälper varandra.
+
+![Kamratskapande under fjolårets 1200 km-brevet Falkenberg-Södertälje-Falkenberg 📸 Oscar](../../images/Falkenberg-Södertälje-Falkenberg_2020.jpg)*Kamratskapande under fjolårets 1200 km-brevet Falkenberg-Södertälje-Falkenberg 📸 Oscar*
