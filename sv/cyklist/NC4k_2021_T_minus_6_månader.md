@@ -29,11 +29,11 @@ Väl medveten om de riktigt långa loppens existens, men väldigt osäker på b�
 
 Ökad träningsvolym med bättre struktur. Kontinuerligt byte av cyklar och utrusting för att slipa resultaten. Subgrupper på Vätternrundan med 6:58 som bästa resultat. Härliga 160-mils brevet-lopp i Italien samt tre 160 långa RAD (Race Around Denmark) med 81 timmar som bästa tid och silver som bästa placering. Sveriges genom tidernas snabbaste 200 km- samt 600 km-brevet-lopp är också inskriberat i ett dammigt, digitalt franskt arkiv.
 
-![RAD 2020 📸 Atmos](../../images/200k_550_2021.jpeg)*Sveriges snabbaste 20-mila-brevet i vardande 📸 Oscar*
+![Sveriges snabbaste 200 km-brevet i vardande 📸 Oscar](../../images/200k_550_2021.jpeg)*Sveriges snabbaste 200 km-brevet i vardande 📸 Oscar*
 
 Ända sedan Sveritempot och de inspirationsfilmer jag såg tillsammans med Malin för att förbereda mig mentalt, inte minst Erik Nohlins [Melons, Trucks, Angry Dogs](https://ertzui.de/TCR), har jag dock drömt om de riktigt långa loppen med lika galet många höjdmeter som kilometer. Erik och Specialized gjorde förresten en film även om LoSS 2016 - [Length of Sweden](https://vimeo.com/ondemand/lengthofsweden/194797540).
 
-![RAD 2020 📸 Atmos](../../images/Erik_och_jag_Katterjokk_2016.jpg)*Erik & jag i Katterjokk 2016 under ryttar- och cykelkontroll 📸 Undertecknad*
+![Erik & jag i Katterjokk 2016 under ryttar- och cykelkontroll 📸 Undertecknad](../../images/Erik_och_jag_Katterjokk_2016.jpg)*Erik & jag i Katterjokk 2016 under ryttar- och cykelkontroll 📸 Undertecknad*
 
 ## Nu har tiden kommit för längre
 
@@ -55,13 +55,13 @@ Jag ber med andra ord om er förståelse för att jag nu går in lite djupare ä
 
 I ljuset av alla avkall kan det ju låta som om man är fulltidsmasochist, men inget kunde vara längre från sanningen. Att jag började med cykelsport har medfött att hela familjen har blivit "cykelfamilj" och vi cyklar massor av MTB, grus och inte minst landsväg tillsammans. Jag är coach åt resten som har sina träningsscheman och utmaningar med ungarnas sommarutmaningar som grädden på moset.
 
-![RAD 2020 📸 Atmos](../../images/Sommarutmaning_Axel_2020.jpeg)*Skåne Runt 600 km - förstföddes sommarutmaning 2020 📸 Undertecknad*
+![Skåne Runt 600 km - förstföddes sommarutmaning 2020 📸 Undertecknad](../../images/Sommarutmaning_Axel_2020.jpeg)*Skåne Runt 600 km - förstföddes sommarutmaning 2020 📸 Undertecknad*
 
 Vi lär oss massor tillsammans om kropp, hälsa, träning, kost och inte minst hur det påverkar ens kognitiva förmågor och skolresultat. Har inte A/B-testat trots enäggstvillingar ;-), men teorierna verkar stämma :-)
 
 Ens fåfänga tycker dessutom om att Garmin tycker att man har en tjugoårings kropp ;-)
 
-![RAD 2020 📸 Atmos](../../images/Garmin_VO2max_20210121.jpg)*Senaste V̇O<sub>2</sub> max-uppdatering från Garmin*
+![V̇O2 max-uppdatering från Garmin](../../images/Garmin_VO2max_20210121.jpg)*Senaste V̇O<sub>2</sub> max-uppdatering från Garmin*
 
 ## Varför dessa hemska lopp och inte nöja sig med träningen?
 
