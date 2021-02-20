@@ -19,6 +19,13 @@ Men nu hade jag ju ingenting att busa med vis sidan om de asfalterade allfartsv�
 
 Det har förekommit en del Rose i hushållet genom åren och då precis lanserade  Backroad GRX 1x Di2 skulle kunna landa i farstun för 40 papp. I-landsproblemet var bara runt ett halvårs leveranstid. Av en slump hör frugans kusin av sig då han tröttnat på att bli avhängt i skogen trots kvick BMC-MTB. Naturligtvis av kvicka gruscyklister. Vi bollar idéer fram och tillbaka och budgeten trissas upp till en nivå där min drömgrussmiskare skulle kunna bli aktuell - 3T Exploro. Han slår till på en mycket vacker blå med mekanisk GRX 1x till bra pris.
 
-Av en slump får jag i Google-flödet upp en rasande tjusig ram till salu 
+Av en slump får jag i Google-flödet upp en rasande tjusig 3T Exploro Team-ram till salu kraftigt nedsatt hos JEDI Sports som jag sommaren 2019 köpte en Cervélo S3 Disc Di2 hos och genom åren haft en bra relation med.
 
-![3T Exploro Team-ramen som den var byggt hos JEDI Sports 📸 JEDI Sports](../../images/Jedi_3T_Exploro_eye_catcher_instagram.jpg)*3T Exploro Team-ramen som den var byggt hos JEDI Sports 📸 JEDI Sports*
+![3T Exploro Team-ramen som den var byggt hos JEDI Sports 📸 JEDI Sports](../../images/Jedi_3T_Exploro_eye_catcher_instagram.jpg)*3T Exploro Team-ramen som den var byggd hos JEDI Sports 📸 JEDI Sports*
+
+Väl medveten om _over-engineering_-kritiken Vroomen ofta får motta, men mitt civilingenjörshjärta bultar alltid extra hårt för uppfinningsrika ingenjörer som går sina egna vägar och står upp för sina skapelser. Kommer till insikt att om jag använder mina billiga DT Swiss-hjul som bara skräpar så landar ett bygge runt 40 papp precis som Rose:n. [Att Vroomen till skillnad från mig inte gillar att äta banan](https://blog.3t.bike/2019/09/11421/gravel-tech-shimano-grx/) och därmed inte fixat fäste för Di2-batteri avhåller inte mig från att bygga cykeln 3T och Vroomen IMHO borde erbjuda färdig. 
+
+Vi snackar maj 2020 och föga anar jag då att 3T och Vroomen någon vecka senare ska släppa RaceMax, men det ändrar inget i sak då 40 lakan för en ram ändå är långt mer än jag har tänkt mig för en kul buscykel jag inte ska tävla med. Har lovat min bättre hälft ett lusthus innan cykelprojektet påbörjas, så med sen höst/tidig vinter i kikarn p.g.a. det och maxad cykelsäsong (trots kinesiskt virus) läggs ramen i ide.
+
+![Ramen just uppkliven ur sitt ide 📸 Martin](../../images/3T_Exploro_Team_frame.jpg)*Ramen just uppkliven ur sitt ide 📸 Martin*
+
