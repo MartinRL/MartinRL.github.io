@@ -29,10 +29,31 @@ Vi snackar maj 2020 och föga anar jag då att 3T och Vroomen någon vecka senar
 
 Efter ytterligare försening då jag fattade tycke för en trevlig Vitus-räser som införskaffades × 2 till då trettonåriga nästfödde söner och som inte inte endast grävde stort hål i cykelbudgeten, men även skulle uppgraderas lite ;-)
 
+## Projektet kör äntligen igång
+
 Två veckors julledighet planerad, men när jag ska börja köpa alla delar i oktober, november upptäcker jag att pandemin påverkar lagerstatus och ledtider tämligen menligt. Särskilt enskilda GRX-komponenter är svåra att få tag i. Beställer för glatta livet allt jag överhuvudtaget kan och samlar i en plastback och håller tummarna för att allt ska gå upp i en högre enhet till slut (som man säger på danska).
 
 ![Ramen just uppkliven ur sitt ide 📸 Undertecknad](../../images/3T_Exploro_Team_frame.jpg)*Ramen just uppkliven ur sitt ide 📸 Undertecknad*
 
 ![Operationsbordet förbereds 📸 Undertecknad](../../images/3T_Exploro_workbench.jpg)*Operationsbordet förbereds 📸 Undertecknad*
+
+### Hjul
+
+Hinner få hjulen innan alla delar anländer och monterar däck, skivor och kassett.
+
+![Bakhjul med kassett 📸 Undertecknad](../../images/3T_Exploro_RW.jpg)*Bakhjul med kassett 📸 Undertecknad*
+
+![Framhjul med skiva 📸 Undertecknad](../../images/3T_Exploro_FW.jpg)*Framhjul med skiva 📸 Undertecknad*
+
+Hjulvalet föll på Light Bicycle AR36 650b Disc. Lätta, breda och med mycket goda möjligheter att speca efter önskemål och budget. Mina som följer:
+
+* Sapim CX ekrar, 24 fram och 28 bak för tuffa aerotag 
+* DT SWISS 350 fram och bak med 54T bak för blixtsnabbt ingrepp
+* Mässingnipplar
+* Utan ekerhål (för att slippa tejpa för slanglöst)
+
+Valde att annorstädes köpa Peaty's Chris King-ventiler och när däcken, Pirelli Cinturato Gravel M 650b 50mm, dök upp monterades och fylldes de med en rejäl skvätt Orange Seal Endurance Tubeless Sealant och har nästan inte tappat luft sedan dess.
+
+
 
 
