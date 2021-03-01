@@ -29,13 +29,10 @@ Vi snackar maj 2020 och föga anar jag då att 3T och Vroomen någon vecka senar
 
 Efter ytterligare försening då jag fattade tycke för en trevlig Vitus-räser som införskaffades × 2 till då trettonåriga nästfödde söner och som inte inte endast grävde stort hål i cykelbudgeten, men även skulle uppgraderas lite ;-)
 
-Två veckors julledighet planerad, men när jag ska börja köpa alla delar i oktober, november upptäcker jag att pandemin påverkar lagerstatus och ledtider tämligen menligt. Särskilt enskilda GRX-komponenter är svåra att få tag i. Beställer för glatta livet allt jag överhuvudtaget kan och samlar i en plastback och håller tummarna för att allt ska gå upp i en högre enhet (som man säger på danska).
+Två veckors julledighet planerad, men när jag ska börja köpa alla delar i oktober, november upptäcker jag att pandemin påverkar lagerstatus och ledtider tämligen menligt. Särskilt enskilda GRX-komponenter är svåra att få tag i. Beställer för glatta livet allt jag överhuvudtaget kan och samlar i en plastback och håller tummarna för att allt ska gå upp i en högre enhet till slut (som man säger på danska).
 
 ![Ramen just uppkliven ur sitt ide 📸 Undertecknad](../../images/3T_Exploro_Team_frame.jpg)*Ramen just uppkliven ur sitt ide 📸 Undertecknad*
 
-
-
-
-
+![Operationsbordet förbereds 📸 Undertecknad](../../images/3T_Exploro_workbench.jpg)*Operationsbordet förbereds 📸 Undertecknad*
 
 
