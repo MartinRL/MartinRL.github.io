@@ -25,7 +25,17 @@ Av en slump får jag i Google-flödet upp en rasande tjusig 3T Exploro Team-ram 
 
 Väl medveten om _over-engineering_-kritiken Vroomen ofta får motta, men mitt civilingenjörshjärta bultar alltid extra hårt för uppfinningsrika ingenjörer som går sina egna vägar och står upp för sina skapelser. Kommer till insikt att om jag använder mina billiga DT Swiss-hjul som bara skräpar så landar ett bygge runt 40 papp precis som Rose:n. [Att Vroomen till skillnad från mig inte gillar att äta banan](https://blog.3t.bike/2019/09/11421/gravel-tech-shimano-grx/) och därmed inte fixat fäste för Di2-batteri avhåller inte mig från att bygga cykeln 3T och Vroomen IMHO borde erbjuda färdig. 
 
-Vi snackar maj 2020 och föga anar jag då att 3T och Vroomen någon vecka senare ska släppa RaceMax, men det ändrar inget i sak då 40 lakan för en ram ändå är långt mer än jag har tänkt mig för en kul buscykel jag inte ska tävla med. Har lovat min bättre hälft ett lusthus innan cykelprojektet påbörjas, så med sen höst/tidig vinter i kikarn p.g.a. det och maxad cykelsäsong (trots kinesiskt virus) läggs ramen i ide.
+Vi snackar maj 2020 och föga anar jag då att 3T och Vroomen någon vecka senare ska släppa RaceMax, men det ändrar inget i sak då 40 lakan för en ram ändå är långt mer än jag har tänkt mig för en kul grusbuscykel jag inte ska tävla med. Har lovat min bättre hälft att både köpa och ett lusthus innan cykelprojektet påbörjas, så med sen höst/tidig vinter i kikarn p.g.a. det och maxad cykelsäsong (trots kinesiskt virus) läggs ramen i ide.
 
-![Ramen just uppkliven ur sitt ide 📸 Martin](../../images/3T_Exploro_Team_frame.jpg)*Ramen just uppkliven ur sitt ide 📸 Martin*
+Efter ytterligare försening då jag fattade tycke för en trevlig Vitus-räser som införskaffades × 2 till då trettonåriga nästfödde söner och som inte inte endast grävde stort hål i cykelbudgeten, men även skulle uppgraderas lite ;-)
+
+Två veckors julledighet planerad, men när jag ska börja köpa alla delar i oktober, november upptäcker jag att pandemin påverkar lagerstatus och ledtider tämligen menligt. Särskilt enskilda GRX-komponenter är svåra att få tag i. Beställer för glatta livet allt jag överhuvudtaget kan och samlar i en plastback och håller tummarna för att allt ska gå upp i en högre enhet (som man säger på danska).
+
+![Ramen just uppkliven ur sitt ide 📸 Undertecknad](../../images/3T_Exploro_Team_frame.jpg)*Ramen just uppkliven ur sitt ide 📸 Undertecknad*
+
+
+
+
+
+
 
