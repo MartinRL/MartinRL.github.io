@@ -47,13 +47,9 @@ Hinner få hjulen innan alla delar anländer och monterar däck, skivor och kass
 
 Hjulvalet föll på Light Bicycle AR36 650b Disc. Lätta, breda och med mycket goda möjligheter att speca efter önskemål och budget. Mina som följer:
 
-* Sapim CX ekrar, 24 fram och 28 bak för tuffa aerotag 
+* Sapim CX-ekrar, 24 fram och 28 bak för tuffa aerotag 
 * DT SWISS 350 fram och bak med 54T bak för blixtsnabbt ingrepp
 * Mässingnipplar
 * Utan ekerhål (för att slippa tejpa för slanglöst)
 
 Valde att annorstädes köpa Peaty's Chris King-ventiler och när däcken, Pirelli Cinturato Gravel M 650b 50mm, dök upp monterades och fylldes de med en rejäl skvätt Orange Seal Endurance Tubeless Sealant och har nästan inte tappat luft sedan dess.
-
-
-
-
