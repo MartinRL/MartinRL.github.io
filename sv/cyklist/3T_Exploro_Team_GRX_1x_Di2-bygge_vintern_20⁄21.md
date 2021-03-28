@@ -125,6 +125,6 @@ Och jag som redan offrat 30 mm-axel för att komma billigt undan med 24 mm-GRX o
 
 ![Med dubbdäck i den skånska halkan 📸 Undertecknad](../../images/3T_Exploro_studded_tyres.jpg)*Med dubbdäck i den skånska halkan 📸 Undertecknad*
 
-![Nöjd vintergruscyklist :) 📸 Undertecknad](../../images/3T_Exploro_winter_riding_made_fun.jpeg)*Nöjd vintergruscyklist :) 📸 Undertecknad*
+![Nöjd vintergruscyklist :) 📸 Malin](../../images/3T_Exploro_winter_riding_made_fun.jpeg)*Nöjd vintergruscyklist :) 📸 Malin*
 
 
