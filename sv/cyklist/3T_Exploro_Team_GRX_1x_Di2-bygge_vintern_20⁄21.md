@@ -101,6 +101,30 @@ Precis som på alla andra cyklar lindades även denna med förträffliga Supacaz
 
 ![Shimano PD-ES600 SPD-pedaler 📸 Undertecknad](../../images/Shimano_PD-ES600_3T_Exploro.jpg)*Shimano PD-ES600 SPD-pedaler 📸 Undertecknad*
 
-Hade inte stökig, teknisk terräng i åtanke vid bygget, så pedalvalet föll på Shimano PD-ES600 som jag tidigare testat under en hyggeveckända med min bättre hälft då jag önskade cykla i mina Shimano SD-500 p.g.a. värmebölja (lånade förstföddes som har dylika på sin LVG). 
+Hade inte stökig, teknisk terräng i åtanke vid bygget, så pedalvalet föll på Shimano PD-ES600 som jag tidigare testat under en "hygge"-veckända med min bättre hälft då jag önskade cykla i mina Shimano SD-500 p.g.a. värmebölja (lånade förstföddes som har dylika på sin LVG). 
 
-Gillade idén om en nätt, låg LVG-liknande pedal för långa distanspass på grus. Det blir dock lerigt och stökigt ibland, varför jag nu överväger jag deras XTR PD-M9100 och i så fall med -3 mm-axeln för tajtare Q-faktor
+Gillade idén om en nätt, låg LVG-liknande pedal för långa distanspass på grus. Det blir dock lerigt och stökigt ibland, varför jag nu överväger jag deras XTR PD-M9100 och i så fall med -3 mm-axeln för tajtare Q-faktor.
+
+![Wolftooth 44t-klinga 📸 Undertecknad](../../images/Wolftooth_GRX_44t_3T_Exploro.jpg)*Wolftooth 44t-klinga 📸 Undertecknad*
+
+Är väldigt svag för icke-runda klingor, ovala som asymmetriska. Köpte ett billigt GRX 600-vevparti för att kunna använda en 4iiii 105-effektmätare jag hade liggandes. Med få ovala klingor till GRX blev det en Wolftooth som funkar utmärkt.
+
+## I-landsproblem!
+
+Hade inte läst på ordentligt och därmed helt bommat att vevarmseffektmätare som 4iiii och Stages inte kan monteras på denna typ av grusram då den är optimerad för breda däck med bibehållen Q-faktor som vi känner den från LVG.
+
+Och jag som redan offrat 30 mm-axel för att komma billigt undan med 24 mm-GRX och den effektmätare jag redan hade. Nåväl, det kommer att bli en 46t absoluteBlack-klinga jag har över samt ultracykelns Quarq DFour-effektmätarparti då den ändå ska över på aB:s subkompakta 48/32-klingor och därmed DZero och DUB.
+
+## Epilog
+
+Älskar cykeln! För mig helt "onödig" då den inte fyller några som helst tränings- eller tävlingssyften. Men oj vad kul att köra vinterdistans i skogen istället för på asfalt som omväxling. Det även om ryktet om det bilfria gruscyklandet ibland grusas av hundar, hästar och forgängare som menar att de äger marken de går på. 
+
+![Färdigbyggd :D 📸 Undertecknad](../../images/3T_Exploro_finished_build.jpg)*Färdigbyggd :D 📸 Undertecknad*
+
+![Nu är hon min ögonfångare! 📸 Undertecknad](../../images/3T_Exploro_eye_catcher.jpeg)*Nu är hon min ögonfångare! 📸 Undertecknad*
+
+![Med dubbdäck i den skånska halkan 📸 Undertecknad](../../images/3T_Exploro_studded_tyres.jpg)*Med dubbdäck i den skånska halkan 📸 Undertecknad*
+
+![Nöjd vintergruscyklist :) 📸 Undertecknad](../../images/3T_Exploro_winter_riding_made_fun.jpeg)*Nöjd vintergruscyklist :) 📸 Undertecknad*
+
+
