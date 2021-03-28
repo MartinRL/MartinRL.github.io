@@ -11,7 +11,7 @@ Efter ett par vintrar hade jag tröttnat på den tiodelade Shimano 105-gruppens 
 
 ![ABLOC Winter Challenge AKA Vintervättern 2019 med självaste Richard Larsén 📸 ABLOC](../../images/ABLOC_WC_2019.jpg)*ABLOC Winter Challenge AKA Vintervättern 2019 med självaste Richard Larsén 📸 ABLOC*
 
-Inflite:ns framväxel pillades bort och en oval och N/W absoluteBLACK-klinga monterades och cykeln skulle nu tjäna som lyxpendlare. Lite väl lyxig då den blev stulen inom ett par veckor :'( Rose:ns framväxel gick samma öde till mötes då jag hade fel angående dens motståndskaft mot slask och salt och när GRX-bakväxeln dök upp med sitt omfång och _clutch_ blev det en dylik. Tappade faktiskt kedjan med N/W aB-klinga under Century CX i Mönsterås 2019 och fick på GRX-bakväxeln dagen innan Vintervättern samma år. 
+Inflite:ns framväxel pillades bort och en oval och N/W absoluteBLACK-klinga monterades och cykeln skulle nu tjäna som lyxpendlare. Lite väl lyxig då den blev stulen inom ett par veckor :'( Rose:ns framväxel gick samma öde till mötes då jag hade fel angående dens motståndskaft mot slask och salt och när GRX-bakväxeln dök upp med sitt omfång och _clutch_ blev det en dylik. Tappade faktiskt kedjan med N/W aB-klinga under Century CX i Mönsterås 2019 och monterade GRX-bakväxeln dagen innan Vintervättern samma år. 
 
 Nu tjänar Rose:n som förstföddes lyxpendlare då mitt löfte till honom om han valde att gå på tekniskt gymnasium i Vellinge var att han skulle få den. Tur att jag inte plockat bort skärmarna sedan den långa, iskalla turen från fotot ovan. 
 
