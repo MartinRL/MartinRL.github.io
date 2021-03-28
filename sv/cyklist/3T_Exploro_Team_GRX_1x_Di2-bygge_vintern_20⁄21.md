@@ -103,7 +103,7 @@ Precis som på alla andra cyklar lindades även denna med förträffliga Supacaz
 
 Hade inte stökig, teknisk terräng i åtanke vid bygget, så pedalvalet föll på Shimano PD-ES600 som jag tidigare testat under en "hygge"-veckända med min bättre hälft då jag önskade cykla i mina Shimano SD-500 p.g.a. värmebölja (lånade förstföddes som har dylika på sin LVG). 
 
-Gillade idén om en nätt, låg LVG-liknande pedal för långa distanspass på grus. Det blir dock lerigt och stökigt ibland, varför jag nu överväger jag deras XTR PD-M9100 och i så fall med -3 mm-axeln för tajtare Q-faktor.
+Gillade idén om en nätt, låg LVG-liknande pedal för långa distanspass på grus. Det blir dock lerigt och stökigt ibland, varför jag nu överväger deras XTR PD-M9100 och i så fall med -3 mm-axeln för tajtare Q-faktor.
 
 ![Wolftooth 44t-klinga 📸 Undertecknad](../../images/Wolftooth_GRX_44t_3T_Exploro.jpg)*Wolftooth 44t-klinga 📸 Undertecknad*
 
