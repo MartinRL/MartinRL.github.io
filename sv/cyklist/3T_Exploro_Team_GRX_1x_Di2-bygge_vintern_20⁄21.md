@@ -117,7 +117,7 @@ Och jag som redan offrat 30 mm-axel för att komma billigt undan med 24 mm-GRX o
 
 ## Epilog
 
-Älskar cykeln! För mig helt "onödig" då den inte fyller några som helst tränings- eller tävlingssyften. Men oj vad kul att köra vinterdistans i skogen istället för på asfalt som omväxling. Det även om ryktet om det bilfria gruscyklandet ibland grusas av hundar, hästar och fotgängare som menar att de äger marken de går på. 
+Älskar cykeln! För mig helt "onödig" då den inte fyller några som helst tränings- eller tävlingssyften. Men oj vad kul att köra vinterdistans i skogen istället för på asfalt som omväxling. Det även om ryktet om det bilfria gruscyklandet ibland grusas av hundar, hästar och fotgängare som menar att de äger marken de går på (eller ännu värre, försöker bita dig). 
 
 ![Färdigbyggd :D 📸 Undertecknad](../../images/3T_Exploro_finished_build.jpg)*Färdigbyggd :D 📸 Undertecknad*
 
