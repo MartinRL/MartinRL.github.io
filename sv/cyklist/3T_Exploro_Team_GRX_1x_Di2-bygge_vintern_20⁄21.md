@@ -15,7 +15,7 @@ Inflite:ns framväxel pillades bort och en oval och N/W absoluteBLACK-klinga mon
 
 Nu tjänar Rose:n som förstföddes lyxpendlare då mitt löfte till honom om han valde att gå på tekniskt gymnasium i Vellinge var att han skulle få den. Tur att jag inte plockat bort skärmarna sedan den långa, iskalla turen från fotot ovan. 
 
-Men nu hade jag ju ingenting att busa med vis sidan om de asfalterade allfartsvägarna...
+Men nu hade jag ju ingenting att busa med vid sidan om de asfalterade allfartsvägarna...
 
 Det har förekommit en del Rose i hushållet genom åren och då precis lanserade  Backroad GRX 1x Di2 skulle kunna landa i farstun för 40 papp. I-landsproblemet var bara runt ett halvårs leveranstid. Av en slump hör frugans kusin av sig då han tröttnat på att bli avhängt i skogen trots kvick BMC-MTB. Naturligtvis av kvicka gruscyklister. Vi bollar idéer fram och tillbaka och budgeten trissas upp till en nivå där min drömgrussmiskare skulle kunna bli aktuell - 3T Exploro. Han slår till på en mycket vacker blå med mekanisk GRX 1x till bra pris.
 
