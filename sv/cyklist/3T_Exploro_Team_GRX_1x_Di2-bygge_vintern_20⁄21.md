@@ -63,5 +63,18 @@ Dutubarna hade dock förberett lite i cykelköket, nämnligen knipsat av änden 
 Nu tog dock två betydligt större problem vid med ramen för lika många bromsslangar!
 
 #### Frambromsen
+![Framgaffel 📸 Undertecknad](../../images/3T_Exploro_fork.jpg)*Framgaffel 📸 Undertecknad*
+
+Precis efter ingångshålet för bromsslangen är det en skarp krök. La alldeles för mycket tid på att försöka få förbi den styva Shimano-slangen innan Dremmel plockades fram. Några bråkdels millimeter större diameter och voilá!
 
 #### Bakbromsen
+
+Här fastnade jag ännu längre. Hade läst följande *"Route the hose through the down tube and under the bottom bracket area. It's super difficult to get it through"* på [3T Exploro Build Up @ instructables.com](https://www.instructables.com/3T-Exploro-Build-Up/) och sett följande foto:
+
+![Bromsslangdragning 📸 jeyellis](../../images/3T-BB-brake_line.jpg)*Bromsslangdragning 📸 jeyellis*
+
+Många timmar, svordomar och kolfiberspetor i fingrarna senare gav jag upp och drog den **över** istället. Tog en minut...
+
+(Och japp, det heter speta och inte spåga, sticka eller någonting annat. Punkt.)
+
+
