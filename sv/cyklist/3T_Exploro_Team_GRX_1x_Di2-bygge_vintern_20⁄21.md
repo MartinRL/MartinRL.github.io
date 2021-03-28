@@ -53,3 +53,15 @@ Hjulvalet föll på Light Bicycle AR36 650b Disc. Lätta, breda och med mycket g
 * Utan ekerhål (för att slippa tejpa för slanglöst)
 
 Valde att annorstädes köpa Peaty's Chris King-ventiler och när däcken, Pirelli Cinturato Gravel M 650b 50mm, dök upp monterades och fylldes de med en rejäl skvätt Orange Seal Endurance Tubeless Sealant och har nästan inte tappat luft sedan dess.
+
+### Bromsar
+
+Hade endast byggt en cykel tidigare och den hade visserligen Di2 men mekaniska fälgbromsar, så Park-Tools IR-1.2 vållade huvudbry och en pinsam fråga på Happyride. Det såg ju så himla lätt ut på YouTube! 😉 
+
+Dutubarna hade dock förberett lite i cykelköket, nämnligen knipsat av änden med ändstiftet så att IR-1.2 lätt kunde skruvas in i plasten. [Nya oliver och ändstift för slang SM‑BH90](https://bikeshop.se/shimano/y8ja98020/shimano-oliv-plus-%C3%A4ndstift-f%C3%B6r-bh90-slang-f%C3%B6r-hydraulisk-bromsslang-bh90) beställdes för säkerhets skull utöver det extra ändstift som följde med.
+
+Nu tog dock två betydligt större problem vid med ramen för lika många bromsslangar!
+
+#### Frambromsen
+
+#### Bakbromsen
