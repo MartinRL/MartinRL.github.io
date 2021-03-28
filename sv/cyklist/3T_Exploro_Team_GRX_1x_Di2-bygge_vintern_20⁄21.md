@@ -77,4 +77,30 @@ Många timmar, svordomar och kolfiberspetor i fingrarna senare gav jag upp och d
 
 (Och japp, det heter speta och inte spåga, sticka eller någonting annat. Punkt.)
 
+### Di2 - äntligen något enkelt
 
+![Batteri m.m. 📸 Undertecknad](../../images/3T_exploro_di2_battery_etc.jpg)*Batteri m.m. 📸 Undertecknad*
+
+Med Park-Tools IR-1.2 var Di2-installationen busenkel. Enda smolket i bägaren är att Vroomen och 3T inte har försett ramen med ett batterifäste. Jag lindade in batteriet i styrlinda och band ett fast ett snöre för att kunna fiska upp det i händelse av problem.
+
+![Ritchey VentureMax carbon 📸 Undertecknad](../../images/3T_exploro_Ritchey_VentureMax_carbon.jpg)*Ritchey VentureMax carbon 📸 Undertecknad*
+
+Även styret var lätt att installera hydraulik och elektronik i, med ett litet undantag då Ritchey har försett VentureMax med en upphöjning i bockarna.
+
+### Övrigt
+
+![Specialized Power Arc Pro Elaston-sadel 📸 Undertecknad](../../images/Specialized_Power_Arc_Pro_Elaston.jpg)*Specialized Power Arc Pro Elaston-sadel 📸 Undertecknad*
+
+![3T kolfiberflaskhållare 📸 Undertecknad](../../images/3T_carbon_bottle_holder_Exploro.jpg)*3T kolfiberflaskhållare 📸 Undertecknad*
+
+![Zipp Service Course SL styrpinne och datorföste 📸 Undertecknad](../../images/Zipp_Garmin_mount_3T_Exploro.jpg)*Zipp Service Course SL styrpinne och datorföste 📸 Undertecknad*
+
+![Supacaz Super Sticky Kush-styrlinda 📸 Undertecknad](../../images/Supacaz_Super_Sticky_Kush_3T_Exploro.jpg)*Supacaz Super Sticky Kush-styrlinda 📸 Undertecknad*
+
+Precis som på alla andra cyklar lindades även denna med förträffliga Supacaz Super Sticky Kush-styrlinda, men här med extra linda där man ibland vill "kram" lite extra hårt.
+
+![Shimano PD-ES600 SPD-pedaler 📸 Undertecknad](../../images/Shimano_PD-ES600_3T_Exploro.jpg)*Shimano PD-ES600 SPD-pedaler 📸 Undertecknad*
+
+Hade inte stökig, teknisk terräng i åtanke vid bygget, så pedalvalet föll på Shimano PD-ES600 som jag tidigare testat under en hyggeveckända med min bättre hälft då jag önskade cykla i mina Shimano SD-500 p.g.a. värmebölja (lånade förstföddes som har dylika på sin LVG). 
+
+Gillade idén om en nätt, låg LVG-liknande pedal för långa distanspass på grus. Det blir dock lerigt och stökigt ibland, varför jag nu överväger jag deras XTR PD-M9100 och i så fall med -3 mm-axeln för tajtare Q-faktor
