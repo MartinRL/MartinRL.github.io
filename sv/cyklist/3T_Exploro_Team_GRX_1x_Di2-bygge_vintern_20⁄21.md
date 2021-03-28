@@ -97,7 +97,7 @@ Med Park-Tools IR-1.2 var Di2-installationen busenkel. Enda smolket i bägaren �
 
 ![Supacaz Super Sticky Kush-styrlinda 📸 Undertecknad](../../images/Supacaz_Super_Sticky_Kush_3T_Exploro.jpg)*Supacaz Super Sticky Kush-styrlinda 📸 Undertecknad*
 
-Precis som på alla andra cyklar lindades även denna med förträffliga Supacaz Super Sticky Kush-styrlinda, men här med extra linda där man ibland vill "kram" lite extra hårt.
+Precis som på alla andra cyklar lindades även denna med förträffliga Supacaz Super Sticky Kush-styrlinda, men här med extra linda där man ibland vill "krama" lite extra hårt.
 
 ![Shimano PD-ES600 SPD-pedaler 📸 Undertecknad](../../images/Shimano_PD-ES600_3T_Exploro.jpg)*Shimano PD-ES600 SPD-pedaler 📸 Undertecknad*
 
