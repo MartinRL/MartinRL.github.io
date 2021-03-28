@@ -7,7 +7,7 @@ Kom sent till cykelfesten för drygt åtta år sedan som 40-åring. Redan efter 
 
 ![Jungfrufärd i Nybro julen 2013 📸 Malin](../../images/inflite_maiden_voyage.jpg)*Jungfrufärd i Nybro julen 2013 📸 Malin*
 
-Efter ett par vintrar hade jag tröttnat på den tiodelade Shimano 105-gruppens framväxel som konstant var ihopbeckad och skulle sparkas på under färd i händelse av att behövde komma ned på lillklingan. Hade något år tidigare fått smak på Di2 och tänkte att motorn fram skulle klara skånska vintrar och beställde en Rose Team DX Cross Di2 (som trots sitt namn egentligen är vad man idag skulle kalla _gravel/adventure bike_ med gott om fästen för väskor och skärmar).
+Efter ett par vintrar hade jag tröttnat på den tiodelade Shimano 105-gruppens framväxel som konstant var ihopbeckad och skulle sparkas på under färd i händelse av att behöva komma ned på lillklingan. Hade något år tidigare fått smak på Di2 och tänkte att motorn fram skulle klara skånska vintrar och beställde en Rose Team DX Cross Di2 (som trots sitt namn egentligen är vad man idag skulle kalla _gravel/adventure bike_ med gott om fästen för väskor och skärmar).
 
 ![ABLOC Winter Challenge AKA Vintervättern 2019 med självaste Richard Larsén 📸 ABLOC](../../images/ABLOC_WC_2019.jpg)*ABLOC Winter Challenge AKA Vintervättern 2019 med självaste Richard Larsén 📸 ABLOC*
 
