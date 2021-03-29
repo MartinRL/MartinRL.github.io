@@ -145,4 +145,6 @@ Och jag som redan offrat 30 mm-axel för att komma billigt undan med 24 mm-GRX o
 
 ![Nöjd vintergruscyklist :) 📸 Malin](../../images/3T_Exploro_winter_riding_made_fun.jpeg)*Nöjd vintergruscyklist :) 📸 Malin*
 
+... och det här var ju så skoj att det ånyo lagts beställningar över hela det världsomspännande internet på delar till ännu en 3T-ram som bidar sin tid i en kartong i *bryggers*. Linjecykeln fyller ju fem år inom kort och en avlösare kunde vara kul...
+
 
