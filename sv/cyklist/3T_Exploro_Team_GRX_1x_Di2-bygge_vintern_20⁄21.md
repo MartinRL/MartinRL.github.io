@@ -113,6 +113,20 @@ Gillade idén om en nätt, låg LVG-liknande pedal för långa distanspass på g
 
 Är väldigt svag för icke-runda klingor, ovala som asymmetriska. Köpte ett billigt GRX 600-vevparti för att kunna använda en 4iiii 105-effektmätare jag hade liggandes. Med få ovala klingor till GRX blev det en Wolftooth som funkar utmärkt.
 
+![Token Ninja Thread Fit 7 in 1 bottom bracket
+ 📸 Undertecknad](../../images/3T_Exploro_Token_Ninja_7_in_1.jpg)*Token Ninja Thread Fit 7 in 1 bottom bracket
+ 📸 Undertecknad*
+
+ Var svårt att få tag i gängat vevlager, men hittade ett Token Ninja 7-in-1 vilket i backspegeln får anses vara tur då jag ju ska byta från 24 mm till 30 mm-axel (Shimano --> Quarq/SRAM).
+
+
+### Ovärderliga nya verktyg
+
+![Shimano TL-BH62 📸 Shimano](../../images/Shimano_TL-BH62.jpeg)*Shimano TL-BH62 📸 Shimano*
+
+Förutom tidigare nämnda Park-Tool IR-1.2 köptes även Shimano TL-BH62 i samband med bygget för att perfekt kunna kapa bromsslangarna. Kanonverktyg!
+
+
 ## I-landsproblem!
 
 Hade inte läst på ordentligt och därmed helt bommat att vevarmseffektmätare som 4iiii och Stages inte kan monteras på denna typ av grusram då den är optimerad för breda däck med bibehållen Q-faktor som vi känner den från LVG.
