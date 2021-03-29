@@ -83,13 +83,17 @@ Många timmar, svordomar och kolfiberspetor i fingrarna senare gav jag upp och d
 
 Med Park-Tools IR-1.2 var Di2-installationen busenkel. Enda smolket i bägaren är att Vroomen och 3T inte har försett ramen med ett batterifäste. Jag lindade in batteriet i styrlinda och band ett fast ett snöre för att kunna fiska upp det i händelse av problem.
 
-![Ritchey VentureMax carbon 📸 Undertecknad](../../images/3T_exploro_Ritchey_VentureMax_carbon.jpg)*Ritchey VentureMax carbon 📸 Undertecknad*
+![Kabeldragning i styret 📸 Undertecknad](../../images/3T_exploro_Ritchey_VentureMax_carbon.jpg)*Kabeldragning i styret 📸 Undertecknad*
 
 Även styret var lätt att installera hydraulik och elektronik i, med ett litet undantag då Ritchey har försett VentureMax med en upphöjning i bockarna.
 
-### Övrigt
+### Övriga komponenter
 
 ![Specialized Power Arc Pro Elaston-sadel 📸 Undertecknad](../../images/Specialized_Power_Arc_Pro_Elaston.jpg)*Specialized Power Arc Pro Elaston-sadel 📸 Undertecknad*
+
+![Ritchey WCS VentureMax carbon-styre 📸 Undertecknad](../../images/3T_exploro_Ritchey_WCS_VentureMax_carbon.jpg)*Ritchey WCS VentureMax carbon-styre 📸 Undertecknad*
+
+Är inte bredaxlad, så 400 mm bredd och rejält med *flair* passar denna ryttare som handen i handsken. Smal och aero uppe och bred och trygg när det blir stökigt.
 
 ![3T kolfiberflaskhållare 📸 Undertecknad](../../images/3T_carbon_bottle_holder_Exploro.jpg)*3T kolfiberflaskhållare 📸 Undertecknad*
 
