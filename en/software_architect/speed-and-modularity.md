@@ -1,4 +1,4 @@
-# Modularity and Speed Make Building Something Great Possible
+# Speed and Modularity Make Building Something Great Possible
 
 ![RAD 2020 📸 Atmos](../../images/make-megaprojects-more-modular.jpg)*Tesla Gigafactory in the Making 📸 Alexander Ladanivskyy*
 
