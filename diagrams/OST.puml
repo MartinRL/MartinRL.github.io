@@ -1,0 +1,12 @@
+@startwbs
+* Outcome
+** Opportunity
+***< Solution
+**** Experiment
+**** Experiment
+***> Solution
+** Opportunity
+***< Solution
+***> Solution
+** Opportunity
+@endwbs
