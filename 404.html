@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martin Rosén-Lidholm</title>
+    <title>Martin Rosén-Lidholm's CV and cases</title>
     <script>
         // Define the URL mappings
         const urlMappings = {
             "CV": "https://docs.google.com/document/d/1aMPfAbIwvOe1JB_0YW8we94KDikcVR3rJvGNFix0ink/",
-            "cv": "https://docs.google.com/document/d/1aMPfAbIwvOe1JB_0YW8we94KDikcVR3rJvGNFix0ink/",
             "Cases": "https://docs.google.com/document/d/1lpMne2WbCi9sMMLVIqhhIzSqb2RiPtOJPh5kDrW0j-g/",
             "cases": "https://docs.google.com/document/d/1lpMne2WbCi9sMMLVIqhhIzSqb2RiPtOJPh5kDrW0j-g/"
         };
@@ -21,8 +20,8 @@
             // Redirect to the full URL
             window.location.href = urlMappings[path];
         } else {
-            // If not found, display an error
-            document.write("URL not found 😓");
+            // If not found, redirect to the CV
+            window.location.href = "https://docs.google.com/document/d/1aMPfAbIwvOe1JB_0YW8we94KDikcVR3rJvGNFix0ink/";
         }
     </script>
 </head>
