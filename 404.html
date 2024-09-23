@@ -7,16 +7,15 @@
     <script>
         // Define the URL mappings
         const urlMappings = {
-            "CV": "https://docs.google.com/document/d/1aMPfAbIwvOe1JB_0YW8we94KDikcVR3rJvGNFix0ink/",
-            "Cases": "https://docs.google.com/document/d/1lpMne2WbCi9sMMLVIqhhIzSqb2RiPtOJPh5kDrW0j-g/",
+            "cv": "https://docs.google.com/document/d/1aMPfAbIwvOe1JB_0YW8we94KDikcVR3rJvGNFix0ink/",
             "cases": "https://docs.google.com/document/d/1lpMne2WbCi9sMMLVIqhhIzSqb2RiPtOJPh5kDrW0j-g/",
-            "RAP23": "https://www.strava.com/activities/9549150940",
+            "rap23": "https://www.strava.com/activities/9549150940"
         };
 
-        // Get the current URL path
-        const path = window.location.pathname.substring(1);
+        // Get the current URL path and convert it to lowercase
+        const path = window.location.pathname.substring(1).toLowerCase();
 
-        // Check if the path matches any key in the mapping
+        // Check if the lowercase path matches any key in the mapping
         if (urlMappings[path]) {
             // Redirect to the full URL
             window.location.href = urlMappings[path];
