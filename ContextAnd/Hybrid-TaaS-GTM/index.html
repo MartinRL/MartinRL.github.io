@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Engineering Teams - Human Creativity + AI Efficiency | Delegate</title>
+    <meta name="description" content="Get a complete engineering team combining senior human engineers with AI specialists. 2-3x faster delivery at 50% the cost. Start your free trial today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --ai-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --human-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --dark: #0f172a;
+            --dark-secondary: #1e293b;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text-primary);
+            border: 2px solid var(--gray-300);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-50);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .team-member-mini {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .team-member-mini:hover {
+            transform: scale(1.05);
+        }
+
+        .member-avatar {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            filter: brightness(0.9);
+        }
+
+        .member-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        .member-name {
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .member-role {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.75rem;
+        }
+
+        .ai-indicator {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--ai-gradient);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* Team Showcase */
+        .team-showcase {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .team-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--gray-100);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .team-members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .ai-member .member-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member-mini[data-type="ai"] .member-avatar {
+            position: relative;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .member-details h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .member-details .role {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .member-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .human-badge {
+            background: var(--human-gradient);
+            color: white;
+        }
+
+        .ai-badge {
+            background: var(--ai-gradient);
+            color: white;
+        }
+
+        .member-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            padding: 0.25rem 0.75rem;
+            background: var(--gray-100);
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .member-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .comparison-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .comparison-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .traditional {
+            border-top: 4px solid var(--gray-300);
+        }
+
+        .hybrid {
+            border-top: 4px solid transparent;
+            background-image: linear-gradient(white, white), var(--primary-gradient);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .metric-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--gray-300);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-content li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid transparent;
+            background-image: linear-gradient(white, white), var(--primary-gradient);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gray-200);
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-50);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--primary-gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--text-primary);
+        }
+
+        .btn-white:hover {
+            background: var(--gray-100);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .comparison-grid,
+            .metric-cards,
+            .pricing-cards,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Counter Animation */
+        .counter {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">HybridTeams</div>
+            <div class="nav-links">
+                <a href="#team">Our Team</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#demo" class="btn btn-primary">Book Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Your Complete Engineering Team: Human Creativity + AI Efficiency</h1>
+                    <p class="subtitle">Get a full-stack engineering team that never sleeps. Our hybrid teams deliver 2-3x faster at 50% the cost.</p>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number counter" data-target="4">0</div>
+                            <div class="stat-label">x Faster Delivery</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number"><span class="counter" data-target="50">0</span>%</div>
+                            <div class="stat-label">Cost Reduction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Development</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#demo" class="btn btn-primary">Book a Team Demo</a>
+                        <a href="#pricing" class="btn btn-secondary">Start Free Trial</a>
+                    </div>
+                </div>
+
+                <div class="team-grid">
+                    <!-- Human Team Members -->
+                    <div class="team-member-mini" data-type="human">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Sarah Chen" class="member-avatar">
+                        <div class="member-overlay">
+                            <div class="member-name">Sarah Chen</div>
+                            <div class="member-role">Engineering Manager</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-mini" data-type="ai">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop" alt="Alex Backend" class="member-avatar">
+                        <div class="member-overlay">
+                            <div class="member-name">Alex Backend</div>
+                            <div class="member-role">AI Backend Engineer</div>
+                        </div>
+                        <span class="ai-indicator">AI</span>
+                    </div>
+
+                    <div class="team-member-mini" data-type="human">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="Marcus Rodriguez" class="member-avatar">
+                        <div class="member-overlay">
+                            <div class="member-name">Marcus Rodriguez</div>
+                            <div class="member-role">Senior Full-Stack</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-mini" data-type="human">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop" alt="Priya Patel" class="member-avatar">
+                        <div class="member-overlay">
+                            <div class="member-name">Priya Patel</div>
+                            <div class="member-role">Senior Backend</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-mini" data-type="ai">
+                        <img src="manus_ai_male_engineer.png" alt="Taylor Frontend" class="member-avatar">
+                        <div class="member-overlay">
+                            <div class="member-name">Taylor Frontend</div>
+                            <div class="member-role">AI Frontend Engineer</div>
+                        </div>
+                        <span class="ai-indicator">AI</span>
+                    </div>
+
+                    <div class="team-member-mini" data-type="human">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" alt="Lisa Thompson" class="member-avatar">
+                        <div class="member-overlay">
+                            <div class="member-name">Lisa Thompson</div>
+                            <div class="member-role">Senior Frontend</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-mini" data-type="ai">
+                        <img src="data_like_engineer_Manus.webp" alt="Quinn QA" class="member-avatar">
+                        <div class="member-overlay">
+                            <div class="member-name">Quinn QA</div>
+                            <div class="member-role">AI QA Engineer</div>
+                        </div>
+                        <span class="ai-indicator">AI</span>
+                    </div>
+
+                    <div class="team-member-mini" data-type="human">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=400&fit=crop" alt="David Kim" class="member-avatar">
+                        <div class="member-overlay">
+                            <div class="member-name">David Kim</div>
+                            <div class="member-role">Senior Quality</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-mini" data-type="human">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Ben Cohen" class="member-avatar">
+                        <div class="member-overlay">
+                            <div class="member-name">Ben Cohen</div>
+                            <div class="member-role">Customer Success</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Showcase Section -->
+    <section id="team" class="team-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Your Hybrid Team</h2>
+                <p>Senior human engineers leading specialized AI teammates</p>
+            </div>
+
+            <div class="team-tabs">
+                <button class="tab-btn active" data-tab="all">All Members</button>
+                <button class="tab-btn" data-tab="human">Human Engineers</button>
+                <button class="tab-btn" data-tab="ai">AI Engineers</button>
+            </div>
+
+            <div class="team-members-grid">
+                <!-- Human Team Lead -->
+                <div class="member-card human-member" data-category="human">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=600&fit=crop" alt="Sarah Chen" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Sarah Chen</h3>
+                                <p class="role">Engineering Manager</p>
+                            </div>
+                            <span class="member-badge human-badge">Human</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">Team Leadership</span>
+                            <span class="skill-tag">Architecture</span>
+                            <span class="skill-tag">Strategy</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">25 years</div>
+                                <div class="stat-label">Experience</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Ex-VP</div>
+                                <div class="stat-label">Engineering</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Backend Engineer -->
+                <div class="member-card ai-member" data-category="ai">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=600&fit=crop" alt="Alex Backend" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Alex Backend</h3>
+                                <p class="role">AI Backend Specialist</p>
+                            </div>
+                            <span class="member-badge ai-badge">AI - Claude Opus</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">APIs</span>
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">Databases</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">500+</div>
+                                <div class="stat-label">APIs/week</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">24/7</div>
+                                <div class="stat-label">Available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Human Backend Engineer -->
+                <div class="member-card human-member" data-category="human">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop" alt="Marcus Rodriguez" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Marcus Rodriguez</h3>
+                                <p class="role">Senior Full-Stack Engineer</p>
+                            </div>
+                            <span class="member-badge human-badge">Human</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">System Design</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">React</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">20 years</div>
+                                <div class="stat-label">Experience</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Enterprise</div>
+                                <div class="stat-label">Focus</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Frontend Engineer -->
+                <div class="member-card ai-member" data-category="ai">
+                    <img src="manus_ai_male_engineer.png" alt="Taylor Frontend" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Taylor Frontend</h3>
+                                <p class="role">AI Frontend Specialist</p>
+                            </div>
+                            <span class="member-badge ai-badge">AI - Claude Sonnet</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">React/Vue</span>
+                            <span class="skill-tag">UI/UX</span>
+                            <span class="skill-tag">Responsive</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">200+</div>
+                                <div class="stat-label">Components/week</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Pixel</div>
+                                <div class="stat-label">Perfect</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Human Frontend Engineer -->
+                <div class="member-card human-member" data-category="human">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=600&fit=crop" alt="Lisa Thompson" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Lisa Thompson</h3>
+                                <p class="role">Senior Frontend Engineer</p>
+                            </div>
+                            <span class="member-badge human-badge">Human</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">UI Architecture</span>
+                            <span class="skill-tag">Accessibility</span>
+                            <span class="skill-tag">Performance</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">15 years</div>
+                                <div class="stat-label">Experience</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">UX Expert</div>
+                                <div class="stat-label">Speciality</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Human Quality Engineer -->
+                <div class="member-card human-member" data-category="human">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=600&h=600&fit=crop" alt="David Kim" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>David Kim</h3>
+                                <p class="role">Senior Quality Engineer</p>
+                            </div>
+                            <span class="member-badge human-badge">Human</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">Test Automation</span>
+                            <span class="skill-tag">QA Strategy</span>
+                            <span class="skill-tag">Framework Design</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">18 years</div>
+                                <div class="stat-label">Experience</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Test Architect</div>
+                                <div class="stat-label">Speciality</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Human Customer Success Manager -->
+                <div class="member-card human-member" data-category="human">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop" alt="Ben Cohen" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Ben Cohen</h3>
+                                <p class="role">Customer Success Manager</p>
+                            </div>
+                            <span class="member-badge human-badge">Human</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">Stakeholder Management</span>
+                            <span class="skill-tag">Executive Coaching</span>
+                            <span class="skill-tag">Delivery Sessions</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">20 years</div>
+                                <div class="stat-label">Experience</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Ex-Coach</div>
+                                <div class="stat-label">Background</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI QA Engineer -->
+                <div class="member-card ai-member" data-category="ai">
+                    <img src="data_like_engineer_Manus.webp" alt="Quinn QA" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Quinn QA</h3>
+                                <p class="role">AI Quality Assurance</p>
+                            </div>
+                            <span class="member-badge ai-badge">AI - Gemini</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">Testing</span>
+                            <span class="skill-tag">Automation</span>
+                            <span class="skill-tag">Bug Detection</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">1000+</div>
+                                <div class="stat-label">Tests/week</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Zero</div>
+                                <div class="stat-label">Bug Tolerance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Database Engineer -->
+                <div class="member-card ai-member" data-category="ai">
+                    <img src="freepik_Morgan.jpg" alt="Morgan Database" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Morgan Database</h3>
+                                <p class="role">AI Database Specialist</p>
+                            </div>
+                            <span class="member-badge ai-badge">AI - GPT-5</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">Data Modeling</span>
+                            <span class="skill-tag">Query Optimization</span>
+                            <span class="skill-tag">Performance</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">100+</div>
+                                <div class="stat-label">Optimizations/week</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Detail</div>
+                                <div class="stat-label">Oriented</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI DevOps Engineer -->
+                <div class="member-card ai-member" data-category="ai">
+                    <img src="male_hat_Gemini.png" alt="Devin DevOps" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Devin DevOps</h3>
+                                <p class="role">AI DevOps Specialist</p>
+                            </div>
+                            <span class="member-badge ai-badge">AI - GPT-5</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Infrastructure</span>
+                            <span class="skill-tag">Monitoring</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">24/7</div>
+                                <div class="stat-label">Monitoring</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Auto</div>
+                                <div class="stat-label">Deployment</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Security Engineer -->
+                <div class="member-card ai-member" data-category="ai">
+                    <img src="Sam_ChatGPT.png" alt="Sam Security" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Sam Security</h3>
+                                <p class="role">AI Security Specialist</p>
+                            </div>
+                            <span class="member-badge ai-badge">AI - Claude</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">Security Audits</span>
+                            <span class="skill-tag">Vulnerability Scanning</span>
+                            <span class="skill-tag">Compliance</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">Continuous</div>
+                                <div class="stat-label">Monitoring</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Paranoid</div>
+                                <div class="stat-label">Mode</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Documentation Engineer -->
+                <div class="member-card ai-member" data-category="ai">
+                    <img src="Dana_Gemini_Generated.png" alt="Dana Docs" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Dana Docs</h3>
+                                <p class="role">AI Documentation Specialist</p>
+                            </div>
+                            <span class="member-badge ai-badge">AI - GPT-4</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">Technical Documentation</span>
+                            <span class="skill-tag">API Specs</span>
+                            <span class="skill-tag">Real-time Updates</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">Real-time</div>
+                                <div class="stat-label">Documentation</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Clear</div>
+                                <div class="stat-label">Communicator</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Code Review Engineer -->
+                <div class="member-card ai-member" data-category="ai">
+                    <img src="female_ai_engineer_manus.webp" alt="Riley Review" class="member-image">
+                    <div class="member-info">
+                        <div class="member-header">
+                            <div class="member-details">
+                                <h3>Riley Review</h3>
+                                <p class="role">AI Code Review Specialist</p>
+                            </div>
+                            <span class="member-badge ai-badge">AI - Claude</span>
+                        </div>
+                        <div class="member-skills">
+                            <span class="skill-tag">Code Reviews</span>
+                            <span class="skill-tag">Best Practices</span>
+                            <span class="skill-tag">Standards Enforcement</span>
+                        </div>
+                        <div class="member-stats">
+                            <div class="stat">
+                                <div class="stat-value">500+</div>
+                                <div class="stat-label">PR Reviews/week</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Constructive</div>
+                                <div class="stat-label">Feedback</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-prop">
+        <div class="container">
+            <div class="section-header">
+                <h2>Traditional vs. Hybrid Teams</h2>
+                <p>Experience the power of human-AI collaboration</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card traditional">
+                    <h3>Traditional Teams</h3>
+                    <div class="comparison-item">
+                        <span class="icon">⏰</span>
+                        <span>8-hour workdays</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="icon">💰</span>
+                        <span>$50,000/month average</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="icon">📈</span>
+                        <span>Linear scaling costs</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="icon">🐛</span>
+                        <span>Manual testing & reviews</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="icon">📚</span>
+                        <span>Documentation often outdated</span>
+                    </div>
+                </div>
+
+                <div class="comparison-card hybrid">
+                    <h3>Our Hybrid Teams</h3>
+                    <div class="comparison-item">
+                        <span class="icon">🚀</span>
+                        <span>24/7 development cycles</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="icon">💎</span>
+                        <span>$28,000/month starting</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="icon">📊</span>
+                        <span>Exponential output scaling</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="icon">✨</span>
+                        <span>Continuous automated QA</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="icon">📝</span>
+                        <span>Real-time documentation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-cards">
+                <div class="metric-card">
+                    <div class="metric-number counter" data-target="67">0</div>
+                    <div class="metric-label">% Fewer Bugs</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number counter" data-target="300">0</div>
+                    <div class="metric-label">% More Features</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number counter" data-target="44">0</div>
+                    <div class="metric-label">% Cost Savings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>From team assembly to cruise control in just 4 weeks</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Week 1: Team Assembly</h3>
+                        <ul>
+                            <li>Match human engineers to your tech stack</li>
+                            <li>Configure AI engineers for your codebase</li>
+                            <li>Set up communication channels</li>
+                            <li>Define sprint zero goals</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-marker">1</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Week 2-4: Acceleration</h3>
+                        <ul>
+                            <li>Human engineers lead architecture</li>
+                            <li>AI engineers handle implementation</li>
+                            <li>Daily standups with hybrid team</li>
+                            <li>Continuous delivery begins</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-marker">2</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Month 2+: Cruise Control</h3>
+                        <ul>
+                            <li>2-4x velocity vs traditional teams</li>
+                            <li>24/7 development cycles</li>
+                            <li>Human oversight on critical decisions</li>
+                            <li>AI handles routine tasks</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-marker">3</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple & Transparent Pricing</h2>
+                <p>Choose the plan that fits your needs. Scale anytime.</p>
+            </div>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter Team</h3>
+                        <div class="pricing-price">
+                            $28,000
+                            <span>/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 2 Human Engineers (Full-time)</li>
+                        <li>✓ 1 Engineering Manager (15% time)</li>
+                        <li>✓ 1 Customer Success Manager (15% time)</li>
+                        <li>✓ 5,000 Work Units/month for AI</li>
+                        <li>✓ 24/7 AI development</li>
+                        <li>✓ Weekly strategy sessions</li>
+                    </ul>
+                    <button class="btn btn-secondary" style="width: 100%;">Start Free Trial</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <div class="pricing-header">
+                        <h3>Scale Team</h3>
+                        <div class="pricing-price">
+                            $42,000
+                            <span>/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 3 Human Engineers (Full-time)</li>
+                        <li>✓ 1 Engineering Manager (20% time)</li>
+                        <li>✓ 1 Customer Success Manager (12% time)</li>
+                        <li>✓ 15,000 Work Units/month for AI</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ Custom AI configurations</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;">Start Free Trial</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise Team</h3>
+                        <div class="pricing-price">
+                            Custom
+                            <span>pricing</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 5+ Human Engineers</li>
+                        <li>✓ Dedicated Engineering Manager</li>
+                        <li>✓ Dedicated Customer Success</li>
+                        <li>✓ Unlimited Work Units for AI</li>
+                        <li>✓ Custom SLAs</li>
+                        <li>✓ On-premise options available</li>
+                    </ul>
+                    <button class="btn btn-secondary" style="width: 100%;">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real results from real companies</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-content">
+                        "We ship 4x more features with the same budget. The AI engineers work around the clock while our human engineers sleep."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>CTO, TelcoTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-content">
+                        "Our bug count dropped 67% with Quinn QA on the team. It's like having a tireless QA army working 24/7."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>CIO, EnergyGrid Corp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-content">
+                        "Documentation is finally up-to-date thanks to Dana. It updates in real-time as the code changes."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+                        <div class="author-info">
+                            <h4>David Kim</h4>
+                            <p>PM, ToyWorld Inc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about hybrid teams</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do AI engineers really work?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our AI engineers are specialized AI models trained on millions of coding patterns. They write, test, and review code just like human engineers, but faster and continuously. Each AI engineer is powered by leading models like Claude Opus, GPT-5, or Gemini, configured specifically for their role.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What's a Work Unit exactly?
+                    </button>
+                    <div class="faq-answer">
+                        <p>One Work Unit equals roughly one discrete task - an API endpoint, a UI component, a bug fix, or a test suite. It's output-based, not time-based. Think of it as "digital hours" - a measure of productive output. 1 human hour typically produces about 10 Work Units worth of output.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can AI engineers join our Slack/meetings?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! They integrate with your tools and can provide updates, answer questions, and participate in discussions. While human engineers facilitate complex strategic discussions, AI engineers can contribute technical insights and progress updates in real-time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What about code quality and security?
+                    </button>
+                    <div class="faq-answer">
+                        <p>All AI-generated code is reviewed by senior human engineers before deployment. Plus, Quinn QA runs comprehensive tests on everything, and Sam Security performs continuous security audits. We maintain enterprise-grade code quality standards with both automated and human oversight.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How quickly can we scale up or down?
+                    </button>
+                    <div class="faq-answer">
+                        <p>AI engineers can be scaled instantly - add or remove them within minutes. Human engineers typically require 2 weeks notice for changes. Work Units can be adjusted monthly, and unused units roll over to the next month, giving you maximum flexibility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="cta-section">
+        <div class="container">
+            <h2>Ready to 10x Your Engineering Velocity?</h2>
+            <p>See your hybrid team in action with a personalized demo</p>
+            <div class="cta-buttons">
+                <button class="btn btn-white btn-primary">Book Your Team Demo</button>
+                <button class="btn btn-secondary" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">Start Free Trial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo" style="color: white;">HybridTeams</div>
+            <div class="footer-links">
+                <a href="#team">Team</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                // Start animation when element is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                observer.observe(counter);
+            });
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Team Tabs
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const memberCards = document.querySelectorAll('.member-card');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tab = button.getAttribute('data-tab');
+
+                // Update active tab
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter team members
+                memberCards.forEach(card => {
+                    if (tab === 'all') {
+                        card.style.display = 'block';
+                    } else if (tab === 'human' && card.classList.contains('human-member')) {
+                        card.style.display = 'block';
+                    } else if (tab === 'ai' && card.classList.contains('ai-member')) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize animations
+        animateCounters();
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Add fade-in animation to sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            scrollObserver.observe(section);
+        });
+
+        // Demo form handler
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+            if (button.textContent.includes('Demo') || button.textContent.includes('Trial')) {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('Demo booking form would open here. In production, this would open a Calendly widget or similar booking tool.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
