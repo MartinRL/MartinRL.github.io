@@ -514,11 +514,13 @@ section.split-slide h2 {
 
 section.split-slide h3 {
   color: var(--color-white);
-  opacity: 0.9;
-  font-size: 18pt;
-  font-weight: 400;
+  opacity: 0.95;
+  font-size: 20pt;
+  font-weight: 300;
+  font-style: italic;
   margin-top: -5px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  letter-spacing: 0.5px;
 }
 
 section.split-slide p,
