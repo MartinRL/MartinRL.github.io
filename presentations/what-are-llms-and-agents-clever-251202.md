@@ -466,18 +466,16 @@ section.split-slide {
   display: grid;
   grid-template-columns: 2fr 1fr;
   padding: 0 !important;
-  height: 100vh;
+  height: 100%;
   margin: 0;
-  overflow: hidden;
 }
 
 section.split-slide .left-panel {
   padding: 60px 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
+  justify-content: flex-start;
+  min-height: 100%;
 }
 
 section.split-slide .right-panel {
@@ -486,8 +484,7 @@ section.split-slide .right-panel {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  height: 100vh;
-  margin: 0;
+  min-height: 100%;
 }
 
 section.split-slide .right-panel img {
@@ -500,6 +497,7 @@ section.split-slide .right-panel img {
 section.split-slide h2 {
   color: var(--color-white);
   font-size: 36pt;
+  margin-top: 0;
   margin-bottom: 10px;
 }
 
