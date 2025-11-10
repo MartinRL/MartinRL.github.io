@@ -22,14 +22,16 @@ Clever, 2 December 2025
 
 ---
 
+<!-- _class: concepts-overview -->
+
 ## Understanding LLMs
 
-- <span style="color: #5500FF; font-weight: 600;">**Tokens**</span> - How text becomes numbers
-- <span style="color: #00B6FF; font-weight: 600;">**Transformer**</span> - The architecture that powers them
-- <span style="color: #1E8C7F; font-weight: 600;">**Parameters**</span> - 70B+ learned weights = knowledge
-- <span style="color: #FF922D; font-weight: 600;">**Probabilistic**</span> - Predicts probabilities, not facts
-- <span style="color: #043F9C; font-weight: 600;">**Context Window**</span> - Working memory limit (4K-1M tokens)
-- <span style="color: #3D424B; font-weight: 600;">**Temperature**</span> - Randomness control (0=deterministic, 2=creative)
+- <span class="concept-tokens">**Tokens**</span> - How text becomes numbers
+- <span class="concept-transformer">**Transformer**</span> - The architecture that powers them
+- <span class="concept-parameters">**Parameters**</span> - 70B+ learned weights = knowledge
+- <span class="concept-probabilistic">**Probabilistic**</span> - Predicts probabilities, not facts
+- <span class="concept-context">**Context Window**</span> - Working memory limit (4K-1M tokens)
+- <span class="concept-temperature">**Temperature**</span> - Randomness control (0=deterministic, 2=creative)
 
 ---
 
@@ -565,5 +567,36 @@ section.split-slide ul li::before {
 
 .grey-bg {
   background-color: var(--color-dark-grey);
+}
+
+/* Concept colors for overview slide */
+section.concepts-overview .concept-tokens {
+  color: var(--color-primary-purple);
+  font-weight: 600;
+}
+
+section.concepts-overview .concept-transformer {
+  color: var(--color-sky-blue);
+  font-weight: 600;
+}
+
+section.concepts-overview .concept-parameters {
+  color: var(--color-green);
+  font-weight: 600;
+}
+
+section.concepts-overview .concept-probabilistic {
+  color: var(--color-orange);
+  font-weight: 600;
+}
+
+section.concepts-overview .concept-context {
+  color: var(--color-dark-blue);
+  font-weight: 600;
+}
+
+section.concepts-overview .concept-temperature {
+  color: var(--color-dark-grey);
+  font-weight: 600;
 }
 </style>
