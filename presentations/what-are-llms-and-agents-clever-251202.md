@@ -476,6 +476,8 @@ section.split-slide .left-panel {
   flex-direction: column;
   justify-content: flex-start;
   min-height: 100%;
+  margin-top: -50px;
+  padding-top: 110px;
 }
 
 section.split-slide .right-panel {
@@ -485,6 +487,8 @@ section.split-slide .right-panel {
   justify-content: center;
   padding: 40px;
   min-height: 100%;
+  margin-top: -50px;
+  padding-top: 90px;
 }
 
 section.split-slide .right-panel img {
@@ -506,6 +510,7 @@ section.split-slide h3 {
   opacity: 0.9;
   font-size: 18pt;
   font-weight: 400;
+  margin-top: -5px;
   margin-bottom: 30px;
 }
 
