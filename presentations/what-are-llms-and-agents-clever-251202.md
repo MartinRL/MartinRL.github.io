@@ -472,12 +472,13 @@ section.split-slide {
 
 section.split-slide .left-panel {
   padding: 60px 50px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 100%;
+  min-height: calc(100% + 100px);
   margin-top: -50px;
-  padding-top: 110px;
+  margin-bottom: -50px;
 }
 
 section.split-slide .right-panel {
@@ -486,9 +487,9 @@ section.split-slide .right-panel {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  min-height: 100%;
+  min-height: calc(100% + 100px);
   margin-top: -50px;
-  padding-top: 90px;
+  margin-bottom: -50px;
 }
 
 section.split-slide .right-panel img {
