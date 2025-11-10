@@ -24,12 +24,12 @@ Clever, 2 December 2025
 
 ## Understanding LLMs
 
-- **Tokens** - How text becomes numbers
-- **Transformer** - The architecture that powers them
-- **Parameters** - 70B+ learned weights = knowledge
-- **Probabilistic** - Predicts probabilities, not facts
-- **Context Window** - Working memory limit (4K-1M tokens)
-- **Temperature** - Randomness control (0=deterministic, 2=creative)
+- <span style="color: #5500FF; font-weight: 600;">**Tokens**</span> - How text becomes numbers
+- <span style="color: #00B6FF; font-weight: 600;">**Transformer**</span> - The architecture that powers them
+- <span style="color: #1E8C7F; font-weight: 600;">**Parameters**</span> - 70B+ learned weights = knowledge
+- <span style="color: #FF922D; font-weight: 600;">**Probabilistic**</span> - Predicts probabilities, not facts
+- <span style="color: #043F9C; font-weight: 600;">**Context Window**</span> - Working memory limit (4K-1M tokens)
+- <span style="color: #3D424B; font-weight: 600;">**Temperature**</span> - Randomness control (0=deterministic, 2=creative)
 
 ---
 
