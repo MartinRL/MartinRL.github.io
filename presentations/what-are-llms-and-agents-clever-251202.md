@@ -4,6 +4,34 @@ theme: context
 paginate: true
 ---
 
+<!-- _class: title -->
+
+# LLMs & Agents
+
+What are they, and why can they code?
+
+Clever, 2 December 2025
+
+---
+
+## Purpose: From Magic to Math
+
+> Any sufficiently advanced technology is indistinguishable from magic.
+>
+> — Arthur C. Clarke
+
+---
+
+## LLM - WIP
+
+- Probabalistics
+- Model
+- Parameters
+- Weight
+- Temperature
+
+---
+
 <!-- _class: bg-purple -->
 
 ## Recommended Reading 📚
@@ -13,6 +41,7 @@ paginate: true
 - Vibe Coding
 
 ---
+
 
 <!-- Styles at the end for easier content editing -->
 
