@@ -2,7 +2,6 @@
 marp: true
 theme: context
 paginate: true
-footer: 'Footer text'
 ---
 
 <!--
