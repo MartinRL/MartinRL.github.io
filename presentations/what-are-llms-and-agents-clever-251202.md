@@ -4,6 +4,18 @@ theme: context
 paginate: true
 ---
 
+<!-- _class: bg-purple -->
+
+## Recommended Reading 📚
+
+- ChatGPT
+- Not Artificial, Not I...
+- Vibe Coding
+
+---
+
+<!-- Styles at the end for easier content editing -->
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
 
@@ -279,13 +291,3 @@ header {
   font-size: 9pt;
 }
 </style>
-
----
-
-<!-- _class: bg-purple -->
-
-## Recommended Reading 📚
-
-- ChatGPT
-- Not Artificial, Not I...
-- Vibe Coding

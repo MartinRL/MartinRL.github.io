@@ -7,6 +7,174 @@ paginate: true
 <!--
 Context& Marp Template
 Based on Context& PowerPoint template
+Styles are at the end for easier content editing
+-->
+
+---
+
+<!-- _class: title -->
+
+# Presentation Title
+
+Your subtitle or tagline here
+
+12 August 2025
+
+---
+
+## Agenda
+
+- First topic
+- Second topic
+- Third topic
+- Fourth topic
+
+---
+
+## Standard Content Slide
+
+This is a regular content slide with body text.
+
+- Bullet point one
+- Bullet point two
+- Bullet point three
+
+You can use **bold text** and *italic text* for emphasis.
+
+---
+
+<!-- _class: two-columns -->
+
+## Two Column Layout
+
+### Left Column
+
+- Point one
+- Point two
+- Point three
+
+### Right Column
+
+- Point A
+- Point B
+- Point C
+
+---
+
+## Highlight Example
+
+Regular text content here.
+
+<div class="highlight">
+
+**Key Takeaway**: This is an important message highlighted for emphasis.
+
+</div>
+
+More regular content continues here.
+
+---
+
+## Code Example
+
+Here's how you can display code:
+
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet('World'));
+```
+
+---
+
+## Table Example
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Feature A | Description of feature A | ✅ Complete |
+| Feature B | Description of feature B | 🔄 In Progress |
+| Feature C | Description of feature C | 📋 Planned |
+
+---
+
+<!-- _class: section-divider -->
+
+# Section Break
+
+---
+
+<!-- _class: bg-purple -->
+
+## Dark Slide with Purple Background
+
+- This slide has a purple background
+- All text is white for contrast
+- Great for emphasizing key points
+
+---
+
+<!-- _class: bg-light -->
+
+## Light Background Variant
+
+This slide uses the very light grey background for subtle variation.
+
+- Still maintains readability
+- Softer visual appearance
+- Good for transitional slides
+
+---
+
+## Colored Text
+
+You can use colored text for emphasis:
+
+- <span class="purple">Purple</span> for primary branding
+- <span class="blue">Blue</span> for links and highlights
+- <span class="green">Green</span> for success or positive
+- <span class="orange">Orange</span> for warnings or attention
+
+---
+
+## Blockquote Example
+
+> "This is a quoted text that stands out from the regular content. Perfect for testimonials, key insights, or important references."
+>
+> — Author Name
+
+---
+
+## Thank You
+
+**Contact Information**
+
+- Email: contact@contextand.com
+- Website: contextand.com
+
+---
+
+<!--
+Usage Notes:
+
+1. To use this template, save it as a .md file
+2. Run: marp your-presentation.md -o output.html
+3. Or use Marp for VS Code extension
+
+Slide Classes:
+- title: Title/cover slide
+- section-divider: Full-screen section break
+- two-columns: Two column layout
+- bg-purple: Purple background
+- bg-light: Light grey background
+- bg-dark: Dark grey background
+
+Color Classes:
+- .purple, .blue, .green, .orange, .grey
+
+Special Elements:
+- Use <div class="highlight"> for callout boxes
 -->
 
 <style>
@@ -284,170 +452,3 @@ header {
   font-size: 9pt;
 }
 </style>
-
----
-
-<!-- _class: title -->
-
-# Presentation Title
-
-Your subtitle or tagline here
-
-12 August 2025
-
----
-
-## Agenda
-
-- First topic
-- Second topic
-- Third topic
-- Fourth topic
-
----
-
-## Standard Content Slide
-
-This is a regular content slide with body text.
-
-- Bullet point one
-- Bullet point two
-- Bullet point three
-
-You can use **bold text** and *italic text* for emphasis.
-
----
-
-<!-- _class: two-columns -->
-
-## Two Column Layout
-
-### Left Column
-
-- Point one
-- Point two
-- Point three
-
-### Right Column
-
-- Point A
-- Point B
-- Point C
-
----
-
-## Highlight Example
-
-Regular text content here.
-
-<div class="highlight">
-
-**Key Takeaway**: This is an important message highlighted for emphasis.
-
-</div>
-
-More regular content continues here.
-
----
-
-## Code Example
-
-Here's how you can display code:
-
-```javascript
-function greet(name) {
-  return `Hello, ${name}!`;
-}
-
-console.log(greet('World'));
-```
-
----
-
-## Table Example
-
-| Feature | Description | Status |
-|---------|-------------|--------|
-| Feature A | Description of feature A | ✅ Complete |
-| Feature B | Description of feature B | 🔄 In Progress |
-| Feature C | Description of feature C | 📋 Planned |
-
----
-
-<!-- _class: section-divider -->
-
-# Section Break
-
----
-
-<!-- _class: bg-purple -->
-
-## Dark Slide with Purple Background
-
-- This slide has a purple background
-- All text is white for contrast
-- Great for emphasizing key points
-
----
-
-<!-- _class: bg-light -->
-
-## Light Background Variant
-
-This slide uses the very light grey background for subtle variation.
-
-- Still maintains readability
-- Softer visual appearance
-- Good for transitional slides
-
----
-
-## Colored Text
-
-You can use colored text for emphasis:
-
-- <span class="purple">Purple</span> for primary branding
-- <span class="blue">Blue</span> for links and highlights
-- <span class="green">Green</span> for success or positive
-- <span class="orange">Orange</span> for warnings or attention
-
----
-
-## Blockquote Example
-
-> "This is a quoted text that stands out from the regular content. Perfect for testimonials, key insights, or important references."
->
-> — Author Name
-
----
-
-## Thank You
-
-**Contact Information**
-
-- Email: contact@contextand.com
-- Website: contextand.com
-
----
-
-<!--
-Usage Notes:
-
-1. To use this template, save it as a .md file
-2. Run: marp your-presentation.md -o output.html
-3. Or use Marp for VS Code extension
-
-Slide Classes:
-- title: Title/cover slide
-- section-divider: Full-screen section break
-- two-columns: Two column layout
-- bg-purple: Purple background
-- bg-light: Light grey background
-- bg-dark: Dark grey background
-
-Color Classes:
-- .purple, .blue, .green, .orange, .grey
-
-Special Elements:
-- Use <div class="highlight"> for callout boxes
--->
