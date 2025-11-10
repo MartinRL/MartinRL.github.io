@@ -465,8 +465,10 @@ header {
 section.split-slide {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  padding: 0;
-  height: 100%;
+  padding: 0 !important;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
 }
 
 section.split-slide .left-panel {
@@ -474,6 +476,8 @@ section.split-slide .left-panel {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
 section.split-slide .right-panel {
@@ -482,6 +486,8 @@ section.split-slide .right-panel {
   align-items: center;
   justify-content: center;
   padding: 40px;
+  height: 100vh;
+  margin: 0;
 }
 
 section.split-slide .right-panel img {
