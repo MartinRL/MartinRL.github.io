@@ -463,33 +463,36 @@ header {
 
 /* Split Slide Layout */
 section.split-slide {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
   padding: 0 !important;
   height: 100%;
   margin: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 section.split-slide .left-panel {
-  padding: 60px 50px;
-  padding-top: 100px;
+  position: absolute;
+  left: -10px;
+  top: -100px;
+  width: calc(66.67% + 10px);
+  height: calc(100% + 200px);
+  padding: 180px 50px 60px 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: calc(100% + 100px);
-  margin-top: -50px;
-  margin-bottom: -50px;
 }
 
 section.split-slide .right-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 33.33%;
+  height: 100%;
   background-color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
-  min-height: calc(100% + 100px);
-  margin-top: -50px;
-  margin-bottom: -50px;
 }
 
 section.split-slide .right-panel img {
