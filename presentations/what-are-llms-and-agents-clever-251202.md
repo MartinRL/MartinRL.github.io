@@ -22,13 +22,14 @@ Clever, 2 December 2025
 
 ---
 
-## LLM - WIP
+## Understanding LLMs
 
-- Probabalistics
-- Model
-- Parameters
-- Weight
-- Temperature
+- **Tokens** - How text becomes numbers
+- **Transformer** - The architecture that powers them
+- **Parameters** - 70B+ learned weights = knowledge
+- **Probabilistic** - Predicts probabilities, not facts
+- **Context Window** - Working memory limit (4K-1M tokens)
+- **Temperature** - Randomness control (0=deterministic, 2=creative)
 
 ---
 
