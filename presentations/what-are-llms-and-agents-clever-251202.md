@@ -472,14 +472,16 @@ section.split-slide {
 
 section.split-slide .left-panel {
   position: absolute;
-  left: -10px;
+  left: 0;
   top: -100px;
-  width: calc(66.67% + 10px);
+  width: 66.67%;
   height: calc(100% + 200px);
-  padding: 180px 50px 60px 60px;
+  padding: 180px 80px 60px 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
 section.split-slide .right-panel {
@@ -493,6 +495,7 @@ section.split-slide .right-panel {
   align-items: center;
   justify-content: center;
   padding: 40px;
+  box-sizing: border-box;
 }
 
 section.split-slide .right-panel img {
@@ -521,8 +524,9 @@ section.split-slide h3 {
 section.split-slide p,
 section.split-slide li {
   color: var(--color-white);
-  font-size: 16pt;
+  font-size: 15pt;
   line-height: 1.6;
+  word-wrap: break-word;
 }
 
 section.split-slide ul {
