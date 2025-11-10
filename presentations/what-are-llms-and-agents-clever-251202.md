@@ -33,6 +33,146 @@ Clever, 2 December 2025
 
 ---
 
+<!-- _class: split-slide -->
+
+<div class="left-panel purple-bg">
+
+## Tokens
+### Breaking Words Into Numbers
+
+Text gets chopped into chunks called tokens - sometimes whole words, sometimes parts. "Strawberry" might become ["Straw", "berry"].
+
+The machine can't read words. It needs numbers. Each token gets a unique ID number from a fixed vocabulary of ~100,000 pieces.
+
+This is why LLMs struggle counting letters - they don't see letters, they see token chunks.
+
+</div>
+
+<div class="right-panel">
+
+![Tokenization visualization](Files/tokens-visualization.svg)
+
+</div>
+
+---
+
+<!-- _class: split-slide -->
+
+<div class="left-panel blue-bg">
+
+## Transformer
+### The Attention Machine
+
+Instead of reading words left-to-right like humans, transformers look at ALL words simultaneously through "attention mechanisms."
+
+Each word asks: "Which other words should I pay attention to?" The word "bank" looks at nearby words to decide if it means money or river.
+
+This parallel processing is why transformers are fast - and why they transformed AI in 2017.
+
+</div>
+
+<div class="right-panel">
+
+![Transformer architecture diagram](Files/transformer-architecture.svg)
+
+</div>
+
+---
+
+<!-- _class: split-slide -->
+
+<div class="left-panel green-bg">
+
+## Parameters
+### 70 Billion Knobs to Tune
+
+Parameters are like volume knobs - each one adjusts how strongly one neuron connects to another. GPT-4 has over a trillion of them.
+
+These aren't programmed - they're learned by showing the model billions of text examples. Like a student who memorized every book ever written, then learned the patterns.
+
+More parameters = more nuanced understanding, but also more compute needed.
+
+</div>
+
+<div class="right-panel">
+
+![Neural network parameters visualization](Files/parameters-network.svg)
+
+</div>
+
+---
+
+<!-- _class: split-slide -->
+
+<div class="left-panel orange-bg">
+
+## Probabilistic
+### It's All Statistics
+
+LLMs don't "know" facts - they predict what word probably comes next based on patterns they've seen. Like autocomplete on steroids.
+
+When asked "The capital of France is...", it's not retrieving a fact. It's calculating that "Paris" has the highest probability based on millions of similar sentences.
+
+This is why they can sound confident while being completely wrong - high probability doesn't mean true.
+
+</div>
+
+<div class="right-panel">
+
+![Probability distribution graph](Files/probability-distribution.svg)
+
+</div>
+
+---
+
+<!-- _class: split-slide -->
+
+<div class="left-panel dark-blue-bg">
+
+## Context Window
+### The AI's Working Memory
+
+Context window is how much text the model can "remember" during a conversation - measured in tokens. Like RAM for conversations.
+
+Early models: 4K tokens (~3,000 words)
+Current models: 128K-1M tokens (~100,000-750,000 words)
+
+Once full, it forgets the beginning. No long-term memory - each conversation starts fresh.
+
+</div>
+
+<div class="right-panel">
+
+![Context window memory visualization](Files/context-window.svg)
+
+</div>
+
+---
+
+<!-- _class: split-slide -->
+
+<div class="left-panel grey-bg">
+
+## Temperature
+### The Creativity Dial
+
+Temperature controls randomness in word selection:
+- **0**: Always picks the most likely word (boring but consistent)
+- **0.7**: Balanced creativity (default for most uses)
+- **2.0**: Wild randomness (creative but often nonsensical)
+
+Low temp for code and facts. High temp for brainstorming and fiction. It's literally how "heated" the probability distribution gets.
+
+</div>
+
+<div class="right-panel">
+
+![Temperature effect on text generation](Files/temperature-effects.svg)
+
+</div>
+
+---
+
 <!-- _class: bg-purple -->
 
 ## Recommended Reading 📚
@@ -319,5 +459,92 @@ header {
   right: 80px;
   color: var(--color-dark-grey);
   font-size: 9pt;
+}
+
+/* Split Slide Layout */
+section.split-slide {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 0;
+  height: 100%;
+}
+
+section.split-slide .left-panel {
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.split-slide .right-panel {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+section.split-slide .right-panel img {
+  max-width: 100%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+section.split-slide h2 {
+  color: var(--color-white);
+  font-size: 36pt;
+  margin-bottom: 10px;
+}
+
+section.split-slide h3 {
+  color: var(--color-white);
+  opacity: 0.9;
+  font-size: 18pt;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+section.split-slide p,
+section.split-slide li {
+  color: var(--color-white);
+  font-size: 16pt;
+  line-height: 1.6;
+}
+
+section.split-slide ul {
+  margin-left: 0;
+  list-style: none;
+}
+
+section.split-slide ul li::before {
+  content: "→ ";
+  color: var(--color-white);
+  opacity: 0.7;
+}
+
+/* Background colors for panels */
+.purple-bg {
+  background-color: var(--color-primary-purple);
+}
+
+.blue-bg {
+  background-color: var(--color-sky-blue);
+}
+
+.dark-blue-bg {
+  background-color: var(--color-dark-blue);
+}
+
+.green-bg {
+  background-color: var(--color-green);
+}
+
+.orange-bg {
+  background-color: var(--color-orange);
+}
+
+.grey-bg {
+  background-color: var(--color-dark-grey);
 }
 </style>

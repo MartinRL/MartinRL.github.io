@@ -1,0 +1,13 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="white"/>
+  <rect x="50" y="50" width="500" height="300" fill="#FF922D" rx="10"/>
+  <text x="300" y="180" font-family="Arial, sans-serif" font-size="36" fill="white" text-anchor="middle" font-weight="bold">
+    Probability
+  </text>
+  <text x="300" y="230" font-family="Arial, sans-serif" font-size="28" fill="white" text-anchor="middle">
+    Distribution
+  </text>
+  <text x="300" y="280" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle" opacity="0.8">
+    Paris: 95% | Lyon: 2% | ...
+  </text>
+</svg>
