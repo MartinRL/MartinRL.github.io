@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: context
-paginate: true
+paginate: false
 ---
 
 <!-- _class: title -->
