@@ -22,7 +22,21 @@ Clever, 2 December 2025
 
 ---
 
-## Understanding LLMs
+## State of AI: December 2025
+
+### The Numbers That Matter
+
+- **2 billion** - People using AI daily
+- **90%** - Code written with AI assistance (Anthropic CEO)
+- **10x** - Productivity gains for early adopters
+- **$7 trillion** - Investment in AI infrastructure
+
+*You're not being replaced by AI.*
+*You're being replaced by someone who understands AI.*
+
+---
+
+## Understanding LLMs: The Six Keys
 
 <style scoped>
 li:nth-child(1) strong { color: #5500FF; }
@@ -31,153 +45,425 @@ li:nth-child(3) strong { color: #1E8C7F; }
 li:nth-child(4) strong { color: #FF922D; }
 li:nth-child(5) strong { color: #043F9C; }
 li:nth-child(6) strong { color: #3D424B; }
+li { margin-bottom: 12px; }
 </style>
 
-- **Tokens** - How text becomes numbers
-- **Transformer** - The architecture that powers them
-- **Parameters** - 70B+ learned weights = knowledge
-- **Probabilistic** - Predicts probabilities, not facts
-- **Context Window** - Working memory limit (4K-1M tokens)
-- **Temperature** - Randomness control (0=deterministic, 2=creative)
+- **Tokens** → Why "strawberry" has 3 R's to an LLM
+- **Transformer** → Why it can understand context, not just words
+- **Parameters** → Why bigger isn't always better
+- **Probabilistic** → Why it's confident when wrong
+- **Context Window** → Why it forgets your first question
+- **Temperature** → Why same prompt, different answer
 
 ---
 
-<!-- _class: split-slide -->
+## Tokens: The Puzzle
 
-<div class="left-panel purple-bg">
-
-## Tokens
-### Breaking Words Into Numbers
-
-Text gets chopped into chunks called tokens - sometimes whole words, sometimes parts. "Strawberry" might become ["Straw", "berry"].
-
-The machine can't read words. It needs numbers. Each token gets a unique ID number from a fixed vocabulary of ~100,000 pieces.
-
-This is why LLMs struggle counting letters - they don't see letters, they see token chunks.
-
+<div style="font-size: 36pt; text-align: center; margin-top: 80px;">
+"strawberry"
 </div>
 
-<div class="right-panel">
+<div style="font-size: 24pt; text-align: center; margin-top: 40px; color: #666;">
+How many R's?
+</div>
 
-![Tokenization visualization](Files/tokens-visualization.svg)
-
+<div style="font-size: 48pt; text-align: center; margin-top: 40px; color: #5500FF;">
+LLM says: 2
 </div>
 
 ---
 
-<!-- _class: split-slide -->
+## Tokens: What's Really Happening
 
-<div class="left-panel blue-bg">
+```
+Human sees:     s-t-r-a-w-b-e-r-r-y
 
-## Transformer
-### The Attention Machine
+LLM sees:       [31552] [19685]
+                "straw"  "berry"
+```
 
-Instead of reading words left-to-right like humans, transformers look at ALL words simultaneously through "attention mechanisms."
+<div style="margin-top: 40px; font-size: 20pt;">
 
-Each word asks: "Which other words should I pay attention to?" The word "bank" looks at nearby words to decide if it means money or river.
-
-This parallel processing is why transformers are fast - and why they transformed AI in 2017.
-
-</div>
-
-<div class="right-panel">
-
-![Transformer architecture diagram](Files/transformer-architecture.svg)
+The LLM never sees individual letters.
+It sees **chunks**.
 
 </div>
 
 ---
 
-<!-- _class: split-slide -->
+## Tokens: The Numbers Game
 
-<div class="left-panel green-bg">
+<style scoped>
+.token-box {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid #5500FF;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 18pt;
+}
+.arrow {
+  color: #5500FF;
+  font-size: 24pt;
+  margin: 0 20px;
+}
+</style>
 
-## Parameters
-### 70 Billion Knobs to Tune
+<div style="text-align: center; margin-top: 60px;">
 
-Parameters are like volume knobs - each one adjusts how strongly one neuron connects to another. GPT-4 has over a trillion of them.
-
-These aren't programmed - they're learned by showing the model billions of text examples. Like a student who memorized every book ever written, then learned the patterns.
-
-More parameters = more nuanced understanding, but also more compute needed.
-
-</div>
-
-<div class="right-panel">
-
-![Neural network parameters visualization](Files/parameters-network.svg)
-
-</div>
-
----
-
-<!-- _class: split-slide -->
-
-<div class="left-panel orange-bg">
-
-## Probabilistic
-### It's All Statistics
-
-LLMs don't "know" facts - they predict what word probably comes next based on patterns they've seen. Like autocomplete on steroids.
-
-When asked "The capital of France is...", it's not retrieving a fact. It's calculating that "Paris" has the highest probability based on millions of similar sentences.
-
-This is why they can sound confident while being completely wrong - high probability doesn't mean true.
+<div class="token-box">Hello world</div>
+<span class="arrow">→</span>
+<div class="token-box">[15496]</div>
+<div class="token-box">[1917]</div>
 
 </div>
 
-<div class="right-panel">
+<div style="text-align: center; margin-top: 40px;">
 
-![Probability distribution graph](Files/probability-distribution.svg)
+<div class="token-box">ChatGPT</div>
+<span class="arrow">→</span>
+<div class="token-box">[9787]</div>
+<div class="token-box">[38, 2898]</div>
 
+</div>
+
+<div style="margin-top: 60px; text-align: center; font-size: 18pt; color: #666;">
+~100,000 tokens in vocabulary = ~100,000 puzzle pieces
 </div>
 
 ---
 
-<!-- _class: split-slide -->
+## Transformer: The Context Problem
 
-<div class="left-panel dark-blue-bg">
+<div style="font-size: 28pt; margin-top: 80px; text-align: center;">
 
-## Context Window
-### The AI's Working Memory
-
-Context window is how much text the model can "remember" during a conversation - measured in tokens. Like RAM for conversations.
-
-Early models: 4K tokens (~3,000 words)
-Current models: 128K-1M tokens (~100,000-750,000 words)
-
-Once full, it forgets the beginning. No long-term memory - each conversation starts fresh.
+"I went to the **bank**..."
 
 </div>
 
-<div class="right-panel">
+<div style="display: flex; justify-content: center; gap: 100px; margin-top: 60px;">
+  <div style="text-align: center;">
+    <div style="font-size: 24pt;">🏦</div>
+    <div style="margin-top: 10px;">...to get money?</div>
+  </div>
+  <div style="text-align: center;">
+    <div style="font-size: 24pt;">🏞️</div>
+    <div style="margin-top: 10px;">...of the river?</div>
+  </div>
+</div>
 
-![Context window memory visualization](Files/context-window.svg)
-
+<div style="text-align: center; margin-top: 60px; font-size: 20pt; color: #666;">
+How does AI know which one?
 </div>
 
 ---
 
-<!-- _class: split-slide -->
+## Transformer: Attention Is All You Need
 
-<div class="left-panel grey-bg">
+<style scoped>
+.attention-word {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 6px;
+  font-size: 20pt;
+}
+.high-attention {
+  background: #00B6FF;
+  color: white;
+  font-weight: bold;
+}
+.low-attention {
+  background: #E0F4FF;
+  color: #666;
+}
+</style>
 
-## Temperature
-### The Creativity Dial
+<div style="text-align: center; margin-top: 60px;">
 
-Temperature controls randomness in word selection:
-- **0**: Always picks the most likely word (boring but consistent)
-- **0.7**: Balanced creativity (default for most uses)
-- **2.0**: Wild randomness (creative but often nonsensical)
-
-Low temp for code and facts. High temp for brainstorming and fiction. It's literally how "heated" the probability distribution gets.
+<div class="attention-word low-attention">I</div>
+<div class="attention-word low-attention">went</div>
+<div class="attention-word low-attention">to</div>
+<div class="attention-word low-attention">the</div>
+<div class="attention-word high-attention">bank</div>
+<div class="attention-word low-attention">to</div>
+<div class="attention-word high-attention">deposit</div>
+<div class="attention-word high-attention">money</div>
 
 </div>
 
-<div class="right-panel">
+<div style="margin-top: 60px; text-align: center; font-size: 18pt;">
+Every word "looks at" every other word<br>
+<strong style="color: #00B6FF;">Attention scores</strong> determine meaning
+</div>
 
-![Temperature effect on text generation](Files/temperature-effects.svg)
+---
 
+## Transformer: Parallel Power
+
+<div style="display: flex; gap: 40px; margin-top: 60px;">
+
+<div style="flex: 1; text-align: center;">
+<h3>Old Way (RNN)</h3>
+<div style="font-size: 20pt; margin-top: 30px;">
+The → cat → sat → on → the → mat
+</div>
+<div style="margin-top: 20px; color: #666;">
+Sequential: 6 steps
+</div>
+</div>
+
+<div style="flex: 1; text-align: center;">
+<h3 style="color: #00B6FF;">Transformer Way</h3>
+<div style="font-size: 20pt; margin-top: 30px;">
+[The, cat, sat, on, the, mat]
+</div>
+<div style="margin-top: 20px; color: #00B6FF;">
+Parallel: 1 step
+</div>
+</div>
+
+</div>
+
+<div style="text-align: center; margin-top: 60px; font-size: 18pt; color: #666;">
+2017: "Attention Is All You Need" paper<br>
+Changed everything.
+</div>
+
+---
+
+## Parameters: The Scale
+
+<div style="text-align: center; margin-top: 80px;">
+
+<div style="font-size: 48pt; color: #1E8C7F; font-weight: bold;">
+1,800,000,000,000
+</div>
+
+<div style="font-size: 20pt; margin-top: 20px; color: #666;">
+GPT-4's parameters (reported)
+</div>
+
+</div>
+
+<div style="text-align: center; margin-top: 60px; font-size: 18pt;">
+If each parameter was a grain of sand,<br>
+you'd have **10 dump trucks** full.
+</div>
+
+---
+
+## Parameters: What They Store
+
+<style scoped>
+.param-example {
+  background: #F0FFF8;
+  border-left: 4px solid #1E8C7F;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 18pt;
+}
+</style>
+
+<div class="param-example">
+<strong>Grammar:</strong> Subject-verb-object patterns
+</div>
+
+<div class="param-example">
+<strong>Facts:</strong> Paris is the capital of France
+</div>
+
+<div class="param-example">
+<strong>Style:</strong> How to write like Shakespeare
+</div>
+
+<div class="param-example">
+<strong>Logic:</strong> If A > B and B > C, then A > C
+</div>
+
+<div style="text-align: center; margin-top: 40px; font-size: 18pt; color: #666;">
+Not programmed. **Learned** from trillions of words.
+</div>
+
+---
+
+## Probabilistic: Not a Database
+
+<div style="text-align: center; margin-top: 60px;">
+
+<div style="font-size: 24pt; margin: 40px 0;">
+"The capital of France is..."
+</div>
+
+<div style="display: flex; justify-content: center; gap: 40px;">
+  <div style="padding: 20px; background: #FFF5E6; border-radius: 10px;">
+    <div style="font-size: 32pt; color: #FF922D;">95%</div>
+    <div>Paris</div>
+  </div>
+  <div style="padding: 20px; background: #FFF5E6; border-radius: 10px;">
+    <div style="font-size: 24pt; color: #FFB366;">3%</div>
+    <div>Lyon</div>
+  </div>
+  <div style="padding: 20px; background: #FFF5E6; border-radius: 10px;">
+    <div style="font-size: 20pt; color: #FFD4A3;">2%</div>
+    <div>...</div>
+  </div>
+</div>
+
+</div>
+
+<div style="text-align: center; margin-top: 60px; font-size: 18pt; color: #666;">
+It's not **remembering**. It's **predicting**.
+</div>
+
+---
+
+## Probabilistic: Confident When Wrong
+
+<div style="margin-top: 60px; font-size: 20pt;">
+
+**You:** "What year did Google buy Twitter?"
+
+**LLM:** "Google acquired Twitter in 2016 for $44 billion."
+
+</div>
+
+<div style="margin-top: 40px; padding: 20px; background: #FFF0E6; border-left: 4px solid #FF922D;">
+<strong>Reality:</strong> Google never bought Twitter.<br>
+But "Google acquired" + "Twitter" + "billion" appear together often enough that the model connects them.
+</div>
+
+<div style="text-align: center; margin-top: 40px; font-size: 18pt; color: #666;">
+High confidence ≠ High accuracy
+</div>
+
+---
+
+## Context Window: The Goldfish Memory
+
+<style scoped>
+.memory-box {
+  background: #E6F3FF;
+  border: 2px solid #043F9C;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+}
+.forgotten {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+</style>
+
+<div class="memory-box">
+<div style="font-size: 20pt; color: #043F9C; margin-bottom: 20px;">128K Token Window</div>
+<div class="forgotten">Message 1: "My name is Alice"</div>
+<div class="forgotten">Message 2: "I work at Microsoft"</div>
+<div>Message 98: "What's my name?"</div>
+<div>Message 99: "You mentioned earlier..."</div>
+<div>Message 100: Current conversation</div>
+</div>
+
+<div style="text-align: center; margin-top: 40px; font-size: 18pt;">
+Once full, oldest messages disappear.<br>
+**No long-term memory.**
+</div>
+
+---
+
+## Context Window: The Numbers
+
+<style scoped>
+.size-comparison {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+.size-box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+</style>
+
+<div class="size-comparison">
+  <div class="size-box" style="background: #CCE0F5;">
+    <div style="font-size: 24pt; color: #043F9C;">GPT-3.5</div>
+    <div style="font-size: 36pt; font-weight: bold;">4K</div>
+    <div>~3 pages</div>
+  </div>
+  <div class="size-box" style="background: #99C1EA;">
+    <div style="font-size: 24pt; color: #043F9C;">GPT-4</div>
+    <div style="font-size: 36pt; font-weight: bold;">128K</div>
+    <div>~100 pages</div>
+  </div>
+  <div class="size-box" style="background: #66A3E0;">
+    <div style="font-size: 24pt; color: #043F9C;">Claude 3</div>
+    <div style="font-size: 36pt; font-weight: bold;">1M</div>
+    <div>~750 pages</div>
+  </div>
+</div>
+
+<div style="text-align: center; margin-top: 60px; font-size: 18pt;">
+Bigger window = More expensive & slower
+</div>
+
+---
+
+## Temperature: Same Prompt, Different Answer
+
+<style scoped>
+.temp-example {
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 8px;
+}
+</style>
+
+<div style="font-size: 20pt; text-align: center; margin: 40px 0;">
+**Prompt:** "Write a sentence about cats"
+</div>
+
+<div class="temp-example" style="background: #F5F5F5; border-left: 4px solid #3D424B;">
+<strong>Temp = 0:</strong><br>
+"Cats are domestic animals that are popular pets."<br>
+"Cats are domestic animals that are popular pets."<br>
+<em style="color: #666;">→ Same every time</em>
+</div>
+
+<div class="temp-example" style="background: #F5F5F5; border-left: 4px solid #666;">
+<strong>Temp = 0.7:</strong><br>
+"Cats love to nap in sunny spots."<br>
+"Many cats enjoy playing with toy mice."<br>
+<em style="color: #666;">→ Varied but sensible</em>
+</div>
+
+<div class="temp-example" style="background: #F5F5F5; border-left: 4px solid #999;">
+<strong>Temp = 2.0:</strong><br>
+"Cats purple democracy whiskers moonlight!"<br>
+<em style="color: #666;">→ Creative chaos</em>
+</div>
+
+---
+
+## The Takeaway: From Magic to Math
+
+### 🎯 **Now You Know Why:**
+
+- LLMs can't count letters in "strawberry" → **Tokens**
+- They understand context not just words → **Transformers**
+- Bigger models cost exponentially more → **Parameters**
+- They're confident when wrong → **Probabilistic**
+- They forget your first question → **Context Window**
+- Same prompt, different answers → **Temperature**
+
+<div style="margin-top: 60px; padding: 30px; background: #F0F5FF; border-left: 4px solid #5500FF;">
+<strong style="font-size: 24pt;">The Magic:</strong> It seems to understand you<br>
+<strong style="font-size: 24pt;">The Math:</strong> It's predicting the next token
 </div>
 
 ---
@@ -186,9 +472,9 @@ Low temp for code and facts. High temp for brainstorming and fiction. It's liter
 
 ## Recommended Reading 📚
 
-- ChatGPT
-- Not Artificial, Not I...
-- Vibe Coding
+- **What Is ChatGPT Doing?** - Stephen Wolfram
+- **Not Artificial, Not Intelligent** - Django Beatty
+- **Vibe Coding** - Gene Kim & Steven Spear
 
 ---
 
