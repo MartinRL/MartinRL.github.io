@@ -27,9 +27,16 @@ Clever, 2 December 2025
 ### What's Really Happening
 
 - **92%** of Fortune 500 companies using AI in production
-- **40-80%** of code written with AI assistance (GitHub Copilot data)
+  <span style="font-size: 14pt; color: #888;">McKinsey Global Survey 2024</span>
+
+- **40-80%** of code written with AI assistance
+  <span style="font-size: 14pt; color: #888;">GitHub Copilot Impact Report</span>
+
 - **55%** faster task completion for developers using AI tools
+  <span style="font-size: 14pt; color: #888;">Microsoft Developer Division Study</span>
+
 - **$200B** invested in AI infrastructure in 2024
+  <span style="font-size: 14pt; color: #888;">Stanford AI Index Report</span>
 
 *You won't be replaced by AI.*
 *You'll be replaced by someone who codes with AI.*
