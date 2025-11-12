@@ -24,15 +24,15 @@ Clever, 2 December 2025
 
 ## State of AI: December 2025
 
-### The Numbers That Matter
+### What's Really Happening
 
-- **2 billion** - People using AI daily
-- **90%** - Code written with AI assistance (Anthropic CEO)
-- **10x** - Productivity gains for early adopters
-- **$7 trillion** - Investment in AI infrastructure
+- **92%** of Fortune 500 companies using AI in production
+- **40-80%** of code written with AI assistance (GitHub Copilot data)
+- **55%** faster task completion for developers using AI tools
+- **$200B** invested in AI infrastructure in 2024
 
-*You're not being replaced by AI.*
-*You're being replaced by someone who understands AI.*
+*You won't be replaced by AI.*
+*You'll be replaced by someone who codes with AI.*
 
 ---
 
