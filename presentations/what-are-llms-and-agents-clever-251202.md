@@ -394,17 +394,17 @@ Once full, oldest messages disappear.<br>
   <div class="size-box" style="background: #CCE0F5;">
     <div style="font-size: 24pt; color: #043F9C;">GPT-3.5</div>
     <div style="font-size: 36pt; font-weight: bold;">4K</div>
-    <div>~3 pages</div>
+    <div>~500 lines of code</div>
   </div>
   <div class="size-box" style="background: #99C1EA;">
     <div style="font-size: 24pt; color: #043F9C;">GPT-4</div>
     <div style="font-size: 36pt; font-weight: bold;">128K</div>
-    <div>~100 pages</div>
+    <div>~16K lines (React codebase)</div>
   </div>
   <div class="size-box" style="background: #66A3E0;">
     <div style="font-size: 24pt; color: #043F9C;">Claude 3</div>
     <div style="font-size: 36pt; font-weight: bold;">1M</div>
-    <div>~750 pages</div>
+    <div>~125K lines (Linux kernel module)</div>
   </div>
 </div>
 
