@@ -118,6 +118,12 @@ and even **invent new words** by combining parts.
   font-size: 24pt;
   margin: 0 20px;
 }
+.text-gray {
+  color: #aaa;
+}
+.text-black {
+  color: #000;
+}
 </style>
 
 <div style="text-align: center; margin-top: 60px;">
@@ -142,10 +148,12 @@ and even **invent new words** by combining parts.
 </div>
 
 <div style="margin-top: 60px; text-align: center; font-size: 18pt; color: #666;">
-~100,000 tokens in vocabulary = ~100,000 entries in a compression dictionary<br>
-<span style="font-size: 16pt;">Like Huffman coding for common text chunks instead of individual characters.<br>
-Frequent code patterns get single tokens: `function`, `async`, `=>`, `    ` (4 spaces)<br>
-That's why LLMs can write code—syntax appeared billions of times in training data.</span>
+<br>
+~200,000 tokens in vocabulary = ~200,000 entries in a compression dictionary<br>
+<span class="text-gray" style="font-size: 16pt;">Like Huffman coding for common text chunks instead of individual characters.</span><br>
+<br>
+<span class="text-black" style="font-size: 16pt;">Frequent code patterns get single tokens: `function`, `async`, `const`, `=>`, `()`, `{}`</span><br>
+<span class="text-gray" style="font-size: 16pt;">That's why LLMs can write code—syntax appeared billions of times in training data.</span>
 </div>
 
 ---
