@@ -126,20 +126,26 @@ and even **invent new words** by combining parts.
 <span class="arrow">→</span>
 <div class="token-box">[15496]</div>
 <div class="token-box">[1917]</div>
+<span style="margin-left: 20px; color: #666;">"Hello" + " world"</span>
 
 </div>
 
 <div style="text-align: center; margin-top: 40px;">
 
-<div class="token-box">ChatGPT</div>
+<div class="token-box">unforgettable</div>
 <span class="arrow">→</span>
-<div class="token-box">[9787]</div>
-<div class="token-box">[38, 2898]</div>
+<div class="token-box">[359]</div>
+<div class="token-box">[41119]</div>
+<div class="token-box">[2048]</div>
+<span style="margin-left: 20px; color: #666;">"un" + "forget" + "table"</span>
 
 </div>
 
 <div style="margin-top: 60px; text-align: center; font-size: 18pt; color: #666;">
-~100,000 tokens in vocabulary = ~100,000 puzzle pieces
+~100,000 tokens in vocabulary = ~100,000 entries in a compression dictionary<br>
+<span style="font-size: 16pt;">Like Huffman coding for common text chunks instead of individual characters.<br>
+Frequent code patterns get single tokens: `function`, `async`, `=>`, `    ` (4 spaces)<br>
+That's why LLMs can write code—syntax appeared billions of times in training data.</span>
 </div>
 
 ---
