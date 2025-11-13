@@ -128,3 +128,4 @@ This directory is part of a larger GitHub Pages site:
 - For new presentations, create a new subdirectory following the naming pattern
 - Images should be optimized before committing (presentations can become large)
 - Test presentations in both presenter and standard view modes
+- after each change to a marp presentation, regenerate the html version of the presentation, but DO NOT open the browser with. rather, assume that I have it open in the browser (with the pertinent slide # in addition).

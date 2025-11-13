@@ -51,7 +51,7 @@ li { margin-bottom: 12px; }
 </div>
 
 <div style="font-size: 24pt; text-align: center; margin-top: 40px; color: #666;">
-How many R's?
+How many 'r's?
 </div>
 
 <div style="font-size: 48pt; text-align: center; margin-top: 40px; color: #5500FF;">
@@ -72,8 +72,31 @@ LLM sees:       [31552] [19685]
 <div style="margin-top: 40px; font-size: 20pt;">
 
 The LLM never sees individual letters.
-It sees **chunks**.
+It sees **convenient linguistic units**.
 
+That's why it can't count the 'r's in strawberry—it literally never processes 's-t-r-a-w-b-e-r-r-y', only [31552][19685], where the letter boundaries are lost inside the tokens.
+
+</div>
+
+---
+
+## Tokens: Not Just Words
+
+<div style="margin-top: 60px; font-size: 20pt; line-height: 1.8;">
+
+**Whole words:** `"hello"` → [15339]
+
+**Word parts:** `"understanding"` → [8154, 2259]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"under"` + `"standing"`
+
+**Prefixes/Suffixes:** `"preprocessing"` → [1762, 29986]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"pre"` + `"processing"`
+
+</div>
+
+<div style="margin-top: 50px; text-align: center; font-size: 18pt; color: #666;">
+This is why LLMs can handle rare words, compound words,<br>
+and even **invent new words** by combining parts.
 </div>
 
 ---
