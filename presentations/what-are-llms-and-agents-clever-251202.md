@@ -168,16 +168,17 @@ and even **invent new words** by combining parts.
 
 <div style="display: flex; justify-content: center; gap: 100px; margin-top: 60px;">
   <div style="text-align: center;">
-    <div style="font-size: 24pt;">🏦</div>
-    <div style="margin-top: 10px;">...to get money?</div>
+    <div>...to get money? 🏦</div>
   </div>
   <div style="text-align: center;">
-    <div style="font-size: 24pt;">🏞️</div>
-    <div style="margin-top: 10px;">...of the river?</div>
+    <div>...of the river? 🏞️</div>
   </div>
 </div>
 
-<div style="text-align: center; margin-top: 60px; font-size: 20pt; color: #666;">
+<br>
+<br>
+
+<div style="text-align: center; font-size: 20pt; color: #666;">
 How does AI know which one?
 </div>
 
