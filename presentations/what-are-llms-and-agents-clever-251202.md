@@ -218,6 +218,7 @@ How does AI know which one?
 </div>
 
 <div style="margin-top: 60px; text-align: center; font-size: 18pt;">
+<br>
 Every word "looks at" every other word<br>
 <strong style="color: #00B6FF;">Attention scores</strong> determine meaning
 </div>
