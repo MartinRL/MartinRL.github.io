@@ -152,7 +152,7 @@ and even **invent new words** by combining parts.
 ~200,000 tokens in vocabulary = ~200,000 entries in a compression dictionary<br>
 <span class="text-gray" style="font-size: 16pt;">Like Huffman coding for common text chunks instead of individual characters.</span><br>
 <br>
-<span class="text-black" style="font-size: 16pt;">Frequent code patterns get single tokens: `function`, `async`, `const`, `=>`, `()`, `{}`</span><br>
+<span class="text-black" style="font-size: 16pt;">Frequent code patterns get single tokens: `void`, `async`, `const`, `=>`, `()`, `{}`</span><br>
 <span class="text-gray" style="font-size: 16pt;">That's why LLMs can write code—syntax appeared billions of times in training data.</span>
 </div>
 
@@ -228,54 +228,150 @@ Every word "looks at" every other word<br>
 
 ## Transformer: Parallel Power
 
-<div style="display: flex; gap: 40px; margin-top: 60px;">
+<style scoped>
+.comparison-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+.main-content {
+  flex: 2;
+}
+.comparison-box {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.info-box {
+  flex: 1;
+  background-color: #f9f9f9;
+  border-left: 2px solid #d8d8d8;
+  padding: 18px 22px;
+  border-radius: 4px;
+  font-size: 13pt;
+  line-height: 1.5;
+  color: #666;
+}
+.info-box strong {
+  color: #555;
+}
+.info-box em {
+  color: #777;
+}
+</style>
 
-<div style="flex: 1; text-align: center;">
+<div class="comparison-container">
+
+<div class="main-content">
+
+<div class="comparison-box">
 <h3>Old Way (RNN)</h3>
-<div style="font-size: 20pt; margin-top: 30px;">
-The → cat → sat → on → the → mat
-</div>
-<div style="margin-top: 20px; color: #666;">
-Sequential: 6 steps
-</div>
+
+**The → cat → sat → on → the → mat**
+
+<span style="color: #666;">Sequential: 6 steps</span>
 </div>
 
-<div style="flex: 1; text-align: center;">
+<div class="comparison-box">
 <h3 style="color: #00B6FF;">Transformer Way</h3>
-<div style="font-size: 20pt; margin-top: 30px;">
-[The, cat, sat, on, the, mat]
-</div>
-<div style="margin-top: 20px; color: #00B6FF;">
-Parallel: 1 step
-</div>
+
+**[The, cat, sat, on, the, mat]**
+
+<span style="color: #00B6FF;">Parallel: 1 step</span>
 </div>
 
 </div>
 
-<div style="text-align: center; margin-top: 60px; font-size: 18pt; color: #666;">
-2017: "Attention Is All You Need" paper<br>
-Changed everything.
+<div class="info-box">
+
+The 2017 paper "Attention Is All You Need" proved that sequential processing isn't necessary for language understanding. It's like discovering you don't need to read a book page-by-page—you can understand the entire book by seeing all relationships between all words simultaneously.
+
+<strong>Without this parallel processing, GPT-4 would take 50 years to train instead of 3 months.</strong>
+
+This parallel processing breakthrough is why we have LLMs today. Without it, modern AI would be economically impossible.
+
+</div>
+
 </div>
 
 ---
 
 ## Parameters: The Scale
 
-<div style="text-align: center; margin-top: 80px;">
+<style scoped>
+.params-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+}
+.cloud-models {
+  flex: 1;
+  text-align: center;
+}
+.local-models {
+  flex: 1;
+  text-align: center;
+  background: #F5FFF5;
+  border: 2px solid #1E8C7F;
+  border-radius: 8px;
+  padding: 20px;
+}
+.model-name {
+  font-size: 16pt;
+  color: #666;
+  margin: 8px 0;
+}
+.param-count {
+  font-size: 24pt;
+  color: #1E8C7F;
+  font-weight: bold;
+}
+</style>
 
-<div style="font-size: 48pt; color: #1E8C7F; font-weight: bold;">
-1,800,000,000,000
+<div class="params-container">
+
+<div class="cloud-models">
+<h3 style="color: #1E8C7F;">Cloud Models (2025)</h3>
+
+<div class="param-count">2,000,000,000,000</div>
+<div class="model-name">GPT-5 (estimated)</div>
+
+<div class="param-count">1,800,000,000,000</div>
+<div class="model-name">GPT-4</div>
+
+<div class="param-count">~1,000,000,000,000</div>
+<div class="model-name">Claude Opus 4.1</div>
+
+<div class="param-count">~500,000,000,000</div>
+<div class="model-name">Claude Sonnet 4.5</div>
 </div>
 
-<div style="font-size: 20pt; margin-top: 20px; color: #666;">
-GPT-4's parameters (reported)
+<div class="local-models">
+<h3 style="color: #1E8C7F;">Office Models ($15-50K)</h3>
+
+<div class="param-count">70,000,000,000</div>
+<div class="model-name">Llama 3.3 (Dual RTX 4090)</div>
+
+<div class="param-count">32,000,000,000</div>
+<div class="model-name">Qwen Coder (Single RTX 4090)</div>
+
+<div class="param-count">14,000,000,000</div>
+<div class="model-name">Phi-4 (Consumer GPU)</div>
+
+<div class="param-count">7,000,000,000</div>
+<div class="model-name">Mistral (8GB VRAM)</div>
+
+<div style="margin-top: 20px; font-size: 14pt; color: #666;">
+💡 **With 4-bit quantization:**<br>
+Can run 70B on $15K setup<br>
+Can run 405B on $50K setup
+</div>
 </div>
 
 </div>
 
-<div style="text-align: center; margin-top: 60px; font-size: 18pt;">
-If each parameter was a grain of sand,<br>
-you'd have **10 dump trucks** full.
+<div style="text-align: center; margin-top: 40px; font-size: 16pt; color: #666;">
+**Scale comparison:** If GPT-5's 2T parameters were Empire State Building,<br>
+Office 70B would be a 5-story building — but still very capable!
 </div>
 
 ---
@@ -534,27 +630,43 @@ h2, h3 {
   color: #666;
   font-size: 12pt;
 }
-.progress-bar {
+.progress-container {
   background: #F0F5FF;
   border-radius: 20px;
-  height: 30px;
+  height: 35px;
   margin-top: 15px;
-  position: relative;
   overflow: hidden;
+  display: flex;
 }
-.progress-bar::before {
-  content: "✅ 70% Understood    🔬 20% Discovering    ❓ 10%";
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.progress-understood {
+  background: #5500FF;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
   font-size: 11pt;
   font-weight: 600;
-  background: linear-gradient(to right, #5500FF 0%, #5500FF 70%, #00B6FF 70%, #00B6FF 90%, #E0E0E0 90%);
+}
+.progress-discovering {
+  background: #FF922D;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  mix-blend-mode: normal;
+  font-size: 11pt;
+  font-weight: 600;
+}
+.progress-mysterious {
+  background: #CCCCCC;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 11pt;
+  font-weight: 600;
 }
 .truth-box {
   padding: 25px;
@@ -593,7 +705,11 @@ h2, h3 {
 <span class="subtitle">High-dimensional geometry</span>
 </div>
 
-<div class="progress-bar"></div>
+<div class="progress-container">
+  <div class="progress-understood">✅ 70%</div>
+  <div class="progress-discovering">🔬 20%</div>
+  <div class="progress-mysterious">❓ 10%</div>
+</div>
 
 </div>
 
