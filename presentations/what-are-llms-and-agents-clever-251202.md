@@ -494,6 +494,119 @@ Bigger window = More expensive & slower
 
 ---
 
+## Still a Bit of Magic?
+
+<style scoped>
+section {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 30px;
+}
+h2, h3 {
+  grid-column: 1 / -1;
+}
+.left {
+  grid-column: 1;
+}
+.right {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+}
+.mystery-box {
+  background: rgba(85, 0, 255, 0.05);
+  border-left: 3px solid #5500FF;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-size: 13pt;
+  line-height: 1.4;
+}
+.mystery-box strong {
+  color: #5500FF;
+  font-size: 14pt;
+}
+.mystery-box em {
+  color: #FF922D;
+  font-style: italic;
+}
+.subtitle {
+  color: #666;
+  font-size: 12pt;
+}
+.progress-bar {
+  background: #F0F5FF;
+  border-radius: 20px;
+  height: 30px;
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.progress-bar::before {
+  content: "✅ 70% Understood    🔬 20% Discovering    ❓ 10%";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11pt;
+  font-weight: 600;
+  background: linear-gradient(to right, #5500FF 0%, #5500FF 70%, #00B6FF 70%, #00B6FF 90%, #E0E0E0 90%);
+  color: white;
+  mix-blend-mode: normal;
+}
+.truth-box {
+  padding: 25px;
+  background: #F9F9FF;
+  border: 2px solid #5500FF;
+  border-radius: 8px;
+  font-size: 15pt;
+  line-height: 1.6;
+}
+.truth-box strong {
+  color: #5500FF;
+  font-size: 16pt;
+}
+</style>
+
+<div class="left">
+
+<div class="mystery-box">
+<strong>🔍 Emergence at Scale</strong><br>
+• At ~100B params: reasoning <em>suddenly</em><br>
+• At ~1T params: deception emerges<br>
+<span class="subtitle">Can't predict what's next</span>
+</div>
+
+<div class="mystery-box">
+<strong>🧠 In-Context Learning</strong><br>
+• Shows 3 examples → Learns task<br>
+• Zero parameter updates<br>
+<span class="subtitle">Multiple theories, no consensus</span>
+</div>
+
+<div class="mystery-box">
+<strong>🌌 Superposition</strong><br>
+• One neuron = multiple concepts<br>
+• More concepts than neurons<br>
+<span class="subtitle">High-dimensional geometry</span>
+</div>
+
+<div class="progress-bar"></div>
+
+</div>
+
+<div class="right">
+<div class="truth-box">
+<strong>The Revised Truth:</strong><br><br>
+It's mathematics—just mathematics so intricate we're still reverse-engineering it.<br><br>
+Like discovering calculus to explain planetary motion, we're finding the equations that explain LLMs.
+</div>
+</div>
+
+---
+
 <!-- _class: bg-purple -->
 
 ## Recommended Reading 📚
