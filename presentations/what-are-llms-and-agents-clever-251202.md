@@ -301,77 +301,83 @@ This parallel processing breakthrough is why we have LLMs today. Without it, mod
 .params-container {
   display: flex;
   gap: 40px;
-  margin-top: 50px;
+  margin-top: 40px;
 }
-.cloud-models {
+.cloud-models, .local-models {
   flex: 1;
   text-align: center;
 }
 .local-models {
-  flex: 1;
-  text-align: center;
   background: #F5FFF5;
   border: 2px solid #1E8C7F;
   border-radius: 8px;
-  padding: 20px;
+  padding: 15px 20px;
 }
-.model-name {
-  font-size: 16pt;
-  color: #666;
-  margin: 8px 0;
+h3 {
+  color: #1E8C7F;
+  font-size: 20pt;
+  margin: 0 0 15px 0;
 }
 .param-count {
-  font-size: 24pt;
+  font-size: 32pt;
   color: #1E8C7F;
   font-weight: bold;
+  margin: 6px 0 2px 0;
+  letter-spacing: -0.5px;
+}
+.model-name {
+  font-size: 13pt;
+  color: #888;
+  margin: 0 0 18px 0;
+}
+.quantization-tip {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #D0E8E5;
+  font-size: 13pt;
+  color: #666;
 }
 </style>
 
 <div class="params-container">
 
 <div class="cloud-models">
-<h3 style="color: #1E8C7F;">Cloud Models (2025)</h3>
+<h3>Cloud Models (2025)</h3>
 
-<div class="param-count">2,000,000,000,000</div>
+<div class="param-count">2T</div>
 <div class="model-name">GPT-5 (estimated)</div>
 
-<div class="param-count">1,800,000,000,000</div>
+<div class="param-count">1.8T</div>
 <div class="model-name">GPT-4</div>
 
-<div class="param-count">~1,000,000,000,000</div>
+<div class="param-count">~1T</div>
 <div class="model-name">Claude Opus 4.1</div>
 
-<div class="param-count">~500,000,000,000</div>
+<div class="param-count">~500B</div>
 <div class="model-name">Claude Sonnet 4.5</div>
 </div>
 
 <div class="local-models">
-<h3 style="color: #1E8C7F;">Office Models ($15-50K)</h3>
+<h3>Office Models ($15-50K)</h3>
 
-<div class="param-count">70,000,000,000</div>
+<div class="param-count">70B</div>
 <div class="model-name">Llama 3.3 (Dual RTX 4090)</div>
 
-<div class="param-count">32,000,000,000</div>
+<div class="param-count">32B</div>
 <div class="model-name">Qwen Coder (Single RTX 4090)</div>
 
-<div class="param-count">14,000,000,000</div>
+<div class="param-count">14B</div>
 <div class="model-name">Phi-4 (Consumer GPU)</div>
 
-<div class="param-count">7,000,000,000</div>
-<div class="model-name">Mistral (8GB VRAM)</div>
-
-<div style="margin-top: 20px; font-size: 14pt; color: #666;">
-💡 **With 4-bit quantization:**<br>
-Can run 70B on $15K setup<br>
-Can run 405B on $50K setup
+<div class="quantization-tip">
+💡 <strong>4-bit:</strong> 70B on $15K • 400B on $50K
 </div>
 </div>
 
 </div>
 
-<div style="text-align: center; margin-top: 40px; font-size: 16pt; color: #666;">
-**Scale comparison:** If GPT-5's 2T parameters were Empire State Building,<br>
-Office 70B would be a 5-story building — but still very capable!
+<div style="text-align: center; margin-top: 45px; font-size: 10pt; color: #aaa;">
+<strong>Scale:</strong> GPT-5's 2T = Empire State Building, Office 70B = 5-story building (but still very capable!)
 </div>
 
 ---

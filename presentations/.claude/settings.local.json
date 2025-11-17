@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "*",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git add:*)",
+      "Bash(git reset:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(bash -c '\n# Stage all changes first\ngit add -A\n\n# Check if there are changes to commit\nif git diff --cached --quiet; then\n    echo \"\"No changes to commit\"\"\n    exit 0\nfi\n\necho \"\"Changes detected!\"\"\ngit diff --cached --name-only\n')"
     ],
     "deny": [],
     "ask": []
