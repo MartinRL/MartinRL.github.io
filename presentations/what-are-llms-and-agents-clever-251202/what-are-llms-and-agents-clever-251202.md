@@ -24,7 +24,7 @@ Clever, 2 December 2025
 
 ---
 
-## Understanding LLMs: The Six Keys
+## Understanding LLMs: Six Core Concepts
 
 <style scoped>
 li:nth-child(1) strong { color: #5500FF; }
@@ -36,12 +36,12 @@ li:nth-child(6) strong { color: #3D424B; }
 li { margin-bottom: 12px; }
 </style>
 
-- **Tokens** → Why "strawberry" has 3 R's to an LLM
-- **Transformer** → Why it can understand context, not just words
-- **Parameters** → Why bigger isn't always better
-- **Probabilistic** → Why it's confident when wrong
-- **Context Window** → Why it forgets your first question
-- **Temperature** → Why same prompt, different answer
+- **Tokens** → How LLMs process text (BPE compression dictionary)
+- **Transformers** → Why parallel attention enables modern AI
+- **Parameters** → What models store and why scale matters
+- **Training** → How raw models become helpful assistants (Pre-training → SFT → RLHF)
+- **Hallucinations** → Why LLMs confidently generate false information
+- **Agents** → How LLMs become action-taking systems with tools
 
 ---
 
@@ -208,6 +208,16 @@ How does AI know which one?
   background: #E0F4FF;
   color: #666;
 }
+.cyan-text {
+  color: #00B6FF !important;
+  font-weight: bold;
+}
+.gray-text {
+  color: #666 !important;
+}
+.light-gray-text {
+  color: #888 !important;
+}
 </style>
 
 <div style="text-align: center; margin-top: 60px;">
@@ -223,10 +233,45 @@ How does AI know which one?
 
 </div>
 
-<div style="margin-top: 60px; text-align: center; font-size: 18pt;">
-<br>
-Every word "looks at" every other word<br>
-<strong style="color: #00B6FF;">Attention scores</strong> determine meaning
+<div style="margin-top: 35px;">
+</br>
+<div style="text-align: center; font-size: 14pt; margin-bottom: 20px;" class="gray-text">
+How the model decides what "bank" means:
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 15px;">
+
+<div style="padding: 18px 22px; background: #E0F4FF; border-radius: 8px;">
+<div style="font-size: 15pt; margin-bottom: 10px;"><strong class="cyan-text">Step 1: Ask Everyone</strong></div>
+<div style="font-size: 13pt; line-height: 1.5;" class="gray-text">
+<strong class="cyan-text">Bank</strong> asks all other words:<br>
+<em class="light-gray-text">"How relevant are you to my meaning?"</em>
+</div>
+</div>
+
+<div style="padding: 18px 22px; background: #E0F4FF; border-radius: 8px;">
+<div style="font-size: 15pt; margin-bottom: 10px;"><strong class="cyan-text">Step 2: Weighted Votes</strong></div>
+<div style="font-size: 13pt; line-height: 1.6;" class="gray-text">
+• <strong class="cyan-text">deposit</strong> → <strong class="cyan-text">90%</strong> vote<br>
+• <strong class="cyan-text">money</strong> → <strong class="cyan-text">85%</strong> vote<br>
+• <span class="light-gray-text">"the"</span> → <span class="light-gray-text">2%</span> vote
+</div>
+</div>
+
+</div>
+
+<div style="margin-top: 25px; padding: 18px 22px; background: #E0F4FF; border-left: 4px solid #00B6FF; border-radius: 8px;">
+</br>
+<div style="font-size: 13pt; line-height: 1.6;" class="gray-text">
+<strong class="cyan-text">Result: Bank</strong> combines information from all words, but weights <strong class="cyan-text">deposit</strong> and <strong class="cyan-text">money</strong> heavily → understands it's a <strong>financial institution</strong>, not a riverbank
+</div>
+</div>
+
+</div>
+
+<div style="text-align: center; margin-top: 30px; font-size: 12pt; line-height: 1.6;" class="light-gray-text">
+Every word does this simultaneously for every other word<br>
+<strong class="cyan-text">Attention scores</strong> = how much each word "votes" on meaning
 </div>
 
 ---
