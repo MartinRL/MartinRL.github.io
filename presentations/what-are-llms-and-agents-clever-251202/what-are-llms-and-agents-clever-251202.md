@@ -917,9 +917,69 @@ The evidence is compelling: AI coding assistants significantly boost developer p
 
 ## Recommended Reading 📚
 
-- **What Is ChatGPT Doing?** - Stephen Wolfram
-- **Not Artificial, Not Intelligent** - Django Beatty
-- **Vibe Coding** - Gene Kim & Steve Yegge
+<style scoped>
+.books-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 50px;
+  padding: 0 40px;
+}
+
+.book {
+  flex: 0 1 280px;
+  text-align: center;
+}
+
+.book img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book img:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.book-title {
+  margin-top: 16px;
+  font-size: 16pt;
+  font-weight: 600;
+  color: white;
+  line-height: 1.3;
+}
+
+.book-author {
+  margin-top: 6px;
+  font-size: 13pt;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+}
+</style>
+
+<div class="books-container">
+  <div class="book">
+    <img src="Files/What Is ChatGPT Doing - Stephen Wolfram" alt="What Is ChatGPT Doing book cover">
+    <div class="book-title">What Is ChatGPT Doing?</div>
+    <div class="book-author">Stephen Wolfram</div>
+  </div>
+
+  <div class="book">
+    <img src="Files/Not Artificial, Not Intelligent - Django Beatty.jpg" alt="Not Artificial, Not Intelligent book cover">
+    <div class="book-title">Not Artificial,<br>Not Intelligent</div>
+    <div class="book-author">Django Beatty</div>
+  </div>
+
+  <div class="book">
+    <img src="Files/Vibe Coding - Gene Kim, Steve Yegge.jpg" alt="Vibe Coding book cover">
+    <div class="book-title">Vibe Coding</div>
+    <div class="book-author">Gene Kim & Steve Yegge</div>
+  </div>
+</div>
 
 ---
 
