@@ -768,6 +768,16 @@ It's not **remembering**. It's **predicting**.
 
 ## Probabilistic: Confident When Wrong
 
+<style scoped>
+.warning-text {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18pt;
+  color: #DC2626;
+  font-weight: 600;
+}
+</style>
+
 <div style="margin-top: 60px; font-size: 20pt;">
 
 **You:** "What year did Google buy Twitter?"
@@ -781,7 +791,7 @@ It's not **remembering**. It's **predicting**.
 But "Google acquired" + "Twitter" + "billion" appear together often enough that the model connects them.
 </div>
 </br>
-<div style="text-align: center; margin-top: 40px; font-size: 18pt; color: #666;">
+<div class="warning-text">
 High confidence ≠ High accuracy
 </div>
 
