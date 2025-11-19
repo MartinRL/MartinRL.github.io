@@ -79,6 +79,10 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 
 </div>
 
+<div style="margin-top: 30px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666;">
+💡 <strong style="color: #5500FF;">Byte Pair Encoding (BPE)</strong> - The algorithm that creates these tokens. It identifies frequently-occurring character sequences in training data and merges them into single tokens, creating an efficient compression dictionary.
+</div>
+
 ---
 
 ## Tokens: Not Just Words
@@ -417,6 +421,214 @@ Not programmed. **Learned** from trillions of words.
 
 ---
 
+## How LLMs Learn: The Three Stages
+
+<style scoped>
+.stages-container {
+  margin-top: 40px;
+}
+
+.stage {
+  background: #F9F9FF;
+  border-left: 4px solid #5500FF;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+
+.stage h3 {
+  color: #5500FF;
+  font-size: 22pt;
+  margin: 0 0 10px 0;
+}
+
+.stage .details {
+  font-size: 16pt;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.stage .result {
+  margin-top: 12px;
+  padding: 10px;
+  background: rgba(85, 0, 255, 0.1);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.why-matters {
+  background: #FFF5E6;
+  border-left: 4px solid #FF922D;
+  padding: 20px;
+  margin: 30px 0;
+  font-size: 17pt;
+}
+</style>
+
+<div class="stages-container">
+
+<div class="stage">
+<h3>1️⃣ Pre-training</h3>
+<div class="details">
+• Learn language patterns from trillions of tokens<br>
+• Duration: Months | Cost: $50M - $100M+<br>
+• Training data: Web pages, books, code repositories
+</div>
+<div class="result">
+**Result:** Can predict text, but not helpful yet
+</div>
+</div>
+
+<div class="stage">
+<h3>2️⃣ Supervised Fine-Tuning (SFT)</h3>
+<div class="details">
+• Train on human-written instruction-response pairs<br>
+• Duration: Weeks | Cost: ~$1M<br>
+• Examples: "Write a poem about cats" → [human-written poem]
+</div>
+<div class="result">
+**Result:** Learns to follow instructions and answer questions
+</div>
+</div>
+
+<div class="stage">
+<h3>3️⃣ Reinforcement Learning from Human Feedback (RLHF)</h3>
+<div class="details">
+• Humans rank multiple responses: which is better?<br>
+• Duration: Weeks | Cost: ~$1M<br>
+• Model learns preferences, safety, helpfulness
+</div>
+<div class="result">
+**Result:** Learns to be helpful, harmless, and honest
+</div>
+</div>
+
+<div class="why-matters">
+<strong>Why it matters:</strong> Raw GPT-4 would complete "Write a poem about..." with random internet text. SFT+RLHF make it actually write you a poem.
+</div>
+
+</div>
+
+---
+
+## From Raw Model to Helpful Assistant
+
+<style scoped>
+.evolution-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  align-items: stretch;
+}
+
+.evolution-stage {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stage-pretraining {
+  background: #FFE5E5;
+  border: 2px solid #FF6B6B;
+}
+
+.stage-sft {
+  background: #FFF5E6;
+  border: 2px solid #FF922D;
+}
+
+.stage-rlhf {
+  background: #E6F7F0;
+  border: 2px solid #1E8C7F;
+}
+
+.evolution-stage h4 {
+  font-size: 18pt;
+  margin: 0 0 15px 0;
+}
+
+.evolution-stage .prompt {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-size: 14pt;
+  font-weight: 600;
+}
+
+.evolution-stage .response {
+  padding: 12px;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-size: 13pt;
+  line-height: 1.5;
+  min-height: 120px;
+}
+
+.arrow {
+  font-size: 48pt;
+  color: #5500FF;
+  align-self: center;
+  margin: 0 -10px;
+}
+</style>
+
+<div class="evolution-container">
+
+<div class="evolution-stage stage-pretraining">
+<h4>Pre-training Only</h4>
+<div class="prompt">"Write a poem about cats"</div>
+<div class="response">
+Write a poem about cats and dogs. Write a poem about cats in Spanish. Cat poem generator. Best cat poems 2023...
+</div>
+<div style="font-size: 12pt; color: #666; margin-top: 10px;">
+Just predicts next likely token
+</div>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="evolution-stage stage-sft">
+<h4>+ Supervised Fine-Tuning</h4>
+<div class="prompt">"Write a poem about cats"</div>
+<div class="response">
+Whiskers twitching in the night<br>
+Paws so soft and eyes so bright<br>
+Silent hunters, graceful, free<br>
+Cats embody mystery
+</div>
+<div style="font-size: 12pt; color: #666; margin-top: 10px;">
+Follows instructions properly
+</div>
+</div>
+
+<div class="arrow">→</div>
+
+<div class="evolution-stage stage-rlhf">
+<h4>+ RLHF</h4>
+<div class="prompt">"Write a poem about cats"</div>
+<div class="response">
+I'd be happy to write a poem about cats!<br><br>
+Whiskers twitching in the night<br>
+Eyes gleaming with delight<br>
+Graceful hunters, soft and free<br>
+Perfect companions, you and me
+</div>
+<div style="font-size: 12pt; color: #666; margin-top: 10px;">
+Helpful, engaging, natural
+</div>
+</div>
+
+</div>
+
+<div style="text-align: center; margin-top: 40px; font-size: 18pt; color: #666;">
+This is why ChatGPT feels like talking to someone, not just autocomplete
+</div>
+
+---
+
 ## Probabilistic: Not a Database
 
 <style scoped>
@@ -517,6 +729,80 @@ But "Google acquired" + "Twitter" + "billion" appear together often enough that 
 
 <div style="text-align: center; margin-top: 40px; font-size: 18pt; color: #666;">
 High confidence ≠ High accuracy
+</div>
+
+---
+
+## Probabilistic: Hallucinations
+
+<style scoped>
+.hallucination-container {
+  margin-top: 40px;
+}
+
+.definition-box {
+  background: #FFF0F0;
+  border-left: 4px solid #FF922D;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 18pt;
+}
+
+.causes-box {
+  background: #F5F5F5;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+.causes-box h4 {
+  color: #FF922D;
+  font-size: 20pt;
+  margin: 0 0 15px 0;
+}
+
+.causes-box ul {
+  font-size: 16pt;
+  line-height: 1.6;
+}
+
+.mitigation-box {
+  background: #E6F7F0;
+  border-left: 4px solid #1E8C7F;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 16pt;
+}
+
+.mitigation-box strong {
+  color: #1E8C7F;
+}
+</style>
+
+<div class="hallucination-container">
+
+<div class="definition-box">
+<strong>Hallucination:</strong> When an LLM generates plausible-sounding but factually incorrect information with high confidence.
+</div>
+
+<div class="causes-box">
+<h4>🔍 Why It Happens</h4>
+<ul>
+<li>No access to truth or facts during generation</li>
+<li>Only pattern matching based on training data</li>
+<li>"Google acquired" + "Twitter" + "$44 billion" = familiar pattern</li>
+<li>Model completes patterns that seem statistically likely</li>
+</ul>
+</div>
+
+<div class="mitigation-box">
+<strong>What Helps Reduce Hallucinations:</strong><br>
+• RAG (Retrieval Augmented Generation) - ground answers in real data<br>
+• Human verification for critical information<br>
+• Lower temperature = less creative = fewer hallucinations<br>
+• Prompt engineering: "Only answer if certain, otherwise say 'I don't know'"
+</div>
+
 </div>
 
 ---
@@ -782,6 +1068,130 @@ Like discovering calculus to explain planetary motion, we're finding the equatio
 
 ---
 
+## Agents: LLMs with Tools
+
+<style scoped>
+.agent-container {
+  margin-top: 40px;
+}
+
+.definition {
+  background: #F0F5FF;
+  border-left: 4px solid #5500FF;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 18pt;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.comparison-box {
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid;
+}
+
+.llm-box {
+  background: #FFF5E6;
+  border-color: #FF922D;
+}
+
+.agent-box {
+  background: #E6F7F0;
+  border-color: #1E8C7F;
+}
+
+.comparison-box h4 {
+  margin: 0 0 15px 0;
+  font-size: 20pt;
+}
+
+.comparison-box ul {
+  font-size: 15pt;
+  line-height: 1.7;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.agent-example {
+  background: #F9F9FF;
+  border: 2px solid #5500FF;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 16pt;
+}
+
+.agent-example .step {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.agent-example .step strong {
+  color: #5500FF;
+}
+</style>
+
+<div class="agent-container">
+
+<div class="definition">
+<strong>Agent:</strong> An LLM that can use tools and take actions in a loop until it completes a task.
+</div>
+
+<div class="comparison-grid">
+
+<div class="comparison-box llm-box">
+<h4>🤖 LLM Alone</h4>
+<ul>
+<li>Can only generate text</li>
+<li>No access to real-time data</li>
+<li>Can't perform actions</li>
+<li>One-shot response</li>
+</ul>
+</div>
+
+<div class="comparison-box agent-box">
+<h4>🛠️ LLM + Agent</h4>
+<ul>
+<li>Can use tools (search, API, code)</li>
+<li>Access to current information</li>
+<li>Can execute actions</li>
+<li>Multi-step reasoning loop</li>
+</ul>
+</div>
+
+</div>
+
+<div class="agent-example">
+<strong>Example: "Check if my website is down"</strong>
+
+<div class="step">
+<strong>1. Think:</strong> "I need to make an HTTP request to check the website status"
+</div>
+<div class="step">
+<strong>2. Act:</strong> Use HTTP tool → GET https://example.com
+</div>
+<div class="step">
+<strong>3. Observe:</strong> Received 200 OK, page loaded successfully
+</div>
+<div class="step">
+<strong>4. Respond:</strong> "Your website is up and running. It responded with a 200 OK status."
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 30px; font-size: 18pt; color: #666;">
+<strong>Popular Agent Frameworks:</strong> LangChain, AutoGPT, Claude Code, OpenAI Assistants
+</div>
+
+</div>
+
+---
+
 ## From Math to Reality: LLMs Excel at Coding
 
 <style scoped>
@@ -834,24 +1244,6 @@ section {
   font-style: italic;
   margin-top: 6px;
 }
-.stat-box .caveat {
-  font-size: 10pt;
-  color: #FF922D;
-  font-style: italic;
-  margin-top: 8px;
-  padding: 5px 8px;
-  background: #FFF8F0;
-  border-radius: 4px;
-}
-.slide-sources {
-  font-size: 8pt;
-  color: #888;
-  margin-top: 12px;
-  padding-top: 8px;
-  border-top: 1px solid #E0E0E0;
-  line-height: 1.4;
-  text-align: center;
-}
 .closing-statement {
   text-align: center;
   font-size: 18pt;
@@ -874,41 +1266,30 @@ In 2025, AI doesn't just help with code—it's transforming software engineering
 <h4>🚀 SWE-bench Breakthrough</h4>
 <div class="detail">2023: <strong>4.4%</strong> of GitHub issues solved</div>
 <div class="detail">2025: <strong>78.8%</strong> solved autonomously</div>
-<div class="highlight">16x improvement in one year</div>
 </div>
 
 <div class="stat-box">
 <h4>💼 Enterprise Adoption</h4>
 <div class="detail">Google & Microsoft: <strong>30%</strong> AI code</div>
 <div class="detail">Meta: Targeting <strong>50%</strong> in 2026</div>
-<div class="highlight">256 billion lines in 2024</div>
 </div>
 
 <div class="stat-box">
 <h4>⚡ Developer Speed</h4>
-<div class="detail"><strong>55%</strong> faster on routine coding tasks¹</div>
-<div class="detail"><strong>126%</strong> higher output (enterprise study)²</div>
-<div class="highlight">Example: 2:41 → 1:11 min per task³</div>
-<div class="caveat">
-📊 Results vary by task type, tool, and developer experience
-</div>
+<div class="detail">GitHub Copilot: <strong>55%</strong> faster coding</div>
+<div class="detail">McKinsey: <strong>126%</strong> higher output</div>
 </div>
 
 <div class="stat-box">
 <h4>💰 Business Impact</h4>
 <div class="detail">Booking.com: <strong>30%</strong> higher throughput</div>
 <div class="detail">IBM: <strong>$4.5B</strong> savings by 2025</div>
-<div class="highlight">39% more code merges</div>
 </div>
 
-</div>
-
-<div class="slide-sources">
-¹ GitHub Copilot Research (2023, n=95) · ² McKinsey Digital Survey (2024, n=2000+) · ³ Harvard Business School experiment (2023)
 </div>
 
 <div class="closing-statement">
-The evidence is compelling: AI coding assistants significantly boost developer productivity across multiple independent studies
+And this is the worst it'll be — continuous improvement through advancing LLMs, agents, tooling, and agentic engineering practices will only continue.
 </div>
 
 ---
