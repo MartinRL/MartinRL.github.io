@@ -934,7 +934,8 @@ The evidence is compelling: AI coding assistants significantly boost developer p
 
 .book img {
   width: 100%;
-  height: auto;
+  height: 420px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -951,6 +952,7 @@ The evidence is compelling: AI coding assistants significantly boost developer p
   font-weight: 600;
   color: white;
   line-height: 1.3;
+  white-space: nowrap;
 }
 
 .book-author {
@@ -970,7 +972,7 @@ The evidence is compelling: AI coding assistants significantly boost developer p
 
   <div class="book">
     <img src="Files/Not Artificial, Not Intelligent - Django Beatty.jpg" alt="Not Artificial, Not Intelligent book cover">
-    <div class="book-title">Not Artificial,<br>Not Intelligent</div>
+    <div class="book-title">Not Artificial, Not Intelligent</div>
     <div class="book-author">Django Beatty</div>
   </div>
 
