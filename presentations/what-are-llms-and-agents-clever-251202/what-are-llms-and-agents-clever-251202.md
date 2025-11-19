@@ -470,43 +470,56 @@ Not programmed. **Learned** from trillions of words.
 
 <style scoped>
 .stages-container {
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .stage {
   background: #F9F9FF;
   border-left: 4px solid #5500FF;
-  padding: 20px;
-  margin: 20px 0;
+  padding: 12px 15px;
+  margin: 8px 0;
   border-radius: 6px;
 }
 
 .stage h3 {
   color: #5500FF;
-  font-size: 22pt;
-  margin: 0 0 10px 0;
+  font-size: 19pt;
+  margin: 0 0 5px 0;
 }
 
 .stage .details {
-  font-size: 16pt;
-  line-height: 1.6;
-  margin: 8px 0;
+  font-size: 13pt;
+  line-height: 1.4;
+  margin: 4px 0;
 }
 
 .stage .result {
-  margin-top: 12px;
-  padding: 10px;
-  background: rgba(85, 0, 255, 0.1);
+  margin-top: 6px;
+  padding: 7px 10px;
   border-radius: 4px;
   font-weight: 600;
+  font-size: 14pt;
+}
+
+.result-pretraining {
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.result-sft {
+  background: rgba(255, 146, 45, 0.1);
+}
+
+.result-rlhf {
+  background: rgba(30, 140, 127, 0.1);
 }
 
 .why-matters {
   background: #FFF5E6;
   border-left: 4px solid #FF922D;
-  padding: 20px;
-  margin: 30px 0;
-  font-size: 17pt;
+  padding: 12px 15px;
+  margin: 15px 0 0 0;
+  font-size: 14pt;
+  line-height: 1.4;
 }
 </style>
 
@@ -519,8 +532,8 @@ Not programmed. **Learned** from trillions of words.
 • Duration: Months | Cost: $50M - $100M+<br>
 • Training data: Web pages, books, code repositories
 </div>
-<div class="result">
-**Result:** Can predict text, but not helpful yet
+<div class="result result-pretraining">
+Result: Can predict text, but not helpful yet
 </div>
 </div>
 
@@ -531,8 +544,8 @@ Not programmed. **Learned** from trillions of words.
 • Duration: Weeks | Cost: ~$1M<br>
 • Examples: "Write a poem about cats" → [human-written poem]
 </div>
-<div class="result">
-**Result:** Learns to follow instructions and answer questions
+<div class="result result-sft">
+Result: Learns to follow instructions and answer questions
 </div>
 </div>
 
@@ -543,13 +556,9 @@ Not programmed. **Learned** from trillions of words.
 • Duration: Weeks | Cost: ~$1M<br>
 • Model learns preferences, safety, helpfulness
 </div>
-<div class="result">
-**Result:** Learns to be helpful, harmless, and honest
+<div class="result result-rlhf">
+Result: Learns to be helpful, harmless, and honest
 </div>
-</div>
-
-<div class="why-matters">
-<strong>Why it matters:</strong> Raw GPT-4 would complete "Write a poem about..." with random internet text. SFT+RLHF make it actually write you a poem.
 </div>
 
 </div>
@@ -563,13 +572,13 @@ Not programmed. **Learned** from trillions of words.
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 50px;
+  margin-top: 30px;
   align-items: stretch;
 }
 
 .evolution-stage {
   flex: 1;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   text-align: center;
 }
@@ -590,30 +599,30 @@ Not programmed. **Learned** from trillions of words.
 }
 
 .evolution-stage h4 {
-  font-size: 18pt;
-  margin: 0 0 15px 0;
+  font-size: 16pt;
+  margin: 0 0 10px 0;
 }
 
 .evolution-stage .prompt {
   background: white;
-  padding: 12px;
+  padding: 10px;
   border-radius: 6px;
-  margin: 10px 0;
-  font-size: 14pt;
+  margin: 8px 0;
+  font-size: 13pt;
   font-weight: 600;
 }
 
 .evolution-stage .response {
-  padding: 12px;
+  padding: 10px;
   border-radius: 6px;
-  margin: 10px 0;
-  font-size: 13pt;
-  line-height: 1.5;
-  min-height: 120px;
+  margin: 8px 0;
+  font-size: 12pt;
+  line-height: 1.4;
+  min-height: 95px;
 }
 
 .arrow {
-  font-size: 48pt;
+  font-size: 40pt;
   color: #5500FF;
   align-self: center;
   margin: 0 -10px;
@@ -628,7 +637,7 @@ Not programmed. **Learned** from trillions of words.
 <div class="response">
 Write a poem about cats and dogs. Write a poem about cats in Spanish. Cat poem generator. Best cat poems 2023...
 </div>
-<div style="font-size: 12pt; color: #666; margin-top: 10px;">
+<div style="font-size: 11pt; color: #666; margin-top: 6px;">
 Just predicts next likely token
 </div>
 </div>
@@ -644,7 +653,7 @@ Paws so soft and eyes so bright<br>
 Silent hunters, graceful, free<br>
 Cats embody mystery
 </div>
-<div style="font-size: 12pt; color: #666; margin-top: 10px;">
+<div style="font-size: 11pt; color: #666; margin-top: 6px;">
 Follows instructions properly
 </div>
 </div>
@@ -661,14 +670,14 @@ Eyes gleaming with delight<br>
 Graceful hunters, soft and free<br>
 Perfect companions, you and me
 </div>
-<div style="font-size: 12pt; color: #666; margin-top: 10px;">
+<div style="font-size: 11pt; color: #666; margin-top: 6px;">
 Helpful, engaging, natural
 </div>
 </div>
 
 </div>
-
-<div style="text-align: center; margin-top: 40px; font-size: 18pt; color: #666;">
+</br>
+<div style="text-align: center; margin-top: 20px; font-size: 16pt; color: #666;">
 This is why ChatGPT feels like talking to someone, not just autocomplete
 </div>
 
@@ -771,7 +780,7 @@ It's not **remembering**. It's **predicting**.
 <strong>Reality:</strong> Google never bought Twitter.<br>
 But "Google acquired" + "Twitter" + "billion" appear together often enough that the model connects them.
 </div>
-
+</br>
 <div style="text-align: center; margin-top: 40px; font-size: 18pt; color: #666;">
 High confidence ≠ High accuracy
 </div>
