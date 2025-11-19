@@ -21,6 +21,7 @@ Clever, 2 December 2025
 > — Arthur C. Clarke
 
 
+
 ---
 
 ## Understanding LLMs: The Six Keys
@@ -418,30 +419,82 @@ Not programmed. **Learned** from trillions of words.
 
 ## Probabilistic: Not a Database
 
-<div style="text-align: center; margin-top: 60px;">
+<style scoped>
+.probability-container {
+  text-align: center;
+  margin-top: 60px;
+}
 
-<div style="font-size: 24pt; margin: 40px 0;">
+.prompt {
+  font-size: 24pt;
+  margin: 40px 0;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.option {
+  padding: 20px;
+  background: #FFF5E6;
+  border-radius: 10px;
+}
+
+.option .percentage {
+  font-weight: bold;
+}
+
+.option:nth-child(1) .percentage {
+  font-size: 32pt;
+  color: #DC2626;
+}
+
+.option:nth-child(2) .percentage {
+  font-size: 24pt;
+  color: #F97316;
+  font-weight: 600;
+}
+
+.option:nth-child(3) .percentage {
+  font-size: 20pt;
+  color: #FCD34D;
+  font-weight: 500;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 18pt;
+  color: #666;
+}
+</style>
+
+<div class="probability-container">
+
+<div class="prompt">
 "The capital of France is..."
 </div>
 
-<div style="display: flex; justify-content: center; gap: 40px;">
-  <div style="padding: 20px; background: #FFF5E6; border-radius: 10px;">
-    <div style="font-size: 32pt; color: #FF922D;">95%</div>
+<div class="options">
+  <div class="option">
+    <div class="percentage">95%</div>
     <div>Paris</div>
   </div>
-  <div style="padding: 20px; background: #FFF5E6; border-radius: 10px;">
-    <div style="font-size: 24pt; color: #FFB366;">3%</div>
+  <div class="option">
+    <div class="percentage">3%</div>
     <div>Lyon</div>
   </div>
-  <div style="padding: 20px; background: #FFF5E6; border-radius: 10px;">
-    <div style="font-size: 20pt; color: #FFD4A3;">2%</div>
+  <div class="option">
+    <div class="percentage">2%</div>
     <div>...</div>
   </div>
 </div>
 
 </div>
 
-<div style="text-align: center; margin-top: 60px; font-size: 18pt; color: #666;">
+<div class="footer-text">
 It's not **remembering**. It's **predicting**.
 </div>
 
@@ -729,13 +782,171 @@ Like discovering calculus to explain planetary motion, we're finding the equatio
 
 ---
 
+## From Math to Reality: LLMs Excel at Coding
+
+<style scoped>
+section {
+  font-size: 15pt;
+}
+.intro-statement {
+  text-align: center;
+  font-size: 20pt;
+  color: #5500FF;
+  font-weight: 500;
+  margin: 20px 0 40px 0;
+  padding: 20px;
+  background: #F0F5FF;
+  border-radius: 8px;
+}
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+.stat-box {
+  background: #F9F9FF;
+  border-left: 4px solid #5500FF;
+  padding: 18px;
+  border-radius: 6px;
+}
+.stat-box h4 {
+  color: #5500FF;
+  font-size: 16pt;
+  margin: 0 0 10px 0;
+}
+.stat-box .big-number {
+  font-size: 32pt;
+  font-weight: bold;
+  color: #5500FF;
+  line-height: 1;
+  margin: 8px 0;
+}
+.stat-box .detail {
+  font-size: 12.5pt;
+  color: #666;
+  margin: 3px 0;
+}
+.stat-box .highlight {
+  font-size: 13pt;
+  color: #000;
+  font-weight: 500;
+  font-style: italic;
+  margin-top: 6px;
+}
+.stat-box .caveat {
+  font-size: 10pt;
+  color: #FF922D;
+  font-style: italic;
+  margin-top: 8px;
+  padding: 5px 8px;
+  background: #FFF8F0;
+  border-radius: 4px;
+}
+.slide-sources {
+  font-size: 8pt;
+  color: #888;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #E0E0E0;
+  line-height: 1.4;
+  text-align: center;
+}
+.closing-statement {
+  text-align: center;
+  font-size: 18pt;
+  font-weight: 600;
+  margin-top: 25px;
+  padding: 15px;
+  background: linear-gradient(135deg, #5500FF 0%, #00B6FF 100%);
+  color: white;
+  border-radius: 8px;
+}
+</style>
+
+<div class="intro-statement">
+In 2025, AI doesn't just help with code—it's transforming software engineering
+</div>
+
+<div class="stat-grid">
+
+<div class="stat-box">
+<h4>🚀 SWE-bench Breakthrough</h4>
+<div class="detail">2023: <strong>4.4%</strong> of GitHub issues solved</div>
+<div class="detail">2025: <strong>78.8%</strong> solved autonomously</div>
+<div class="highlight">16x improvement in one year</div>
+</div>
+
+<div class="stat-box">
+<h4>💼 Enterprise Adoption</h4>
+<div class="detail">Google & Microsoft: <strong>30%</strong> AI code</div>
+<div class="detail">Meta: Targeting <strong>50%</strong> in 2026</div>
+<div class="highlight">256 billion lines in 2024</div>
+</div>
+
+<div class="stat-box">
+<h4>⚡ Developer Speed</h4>
+<div class="detail"><strong>55%</strong> faster on routine coding tasks¹</div>
+<div class="detail"><strong>126%</strong> higher output (enterprise study)²</div>
+<div class="highlight">Example: 2:41 → 1:11 min per task³</div>
+<div class="caveat">
+📊 Results vary by task type, tool, and developer experience
+</div>
+</div>
+
+<div class="stat-box">
+<h4>💰 Business Impact</h4>
+<div class="detail">Booking.com: <strong>30%</strong> higher throughput</div>
+<div class="detail">IBM: <strong>$4.5B</strong> savings by 2025</div>
+<div class="highlight">39% more code merges</div>
+</div>
+
+</div>
+
+<div class="slide-sources">
+¹ GitHub Copilot Research (2023, n=95) · ² McKinsey Digital Survey (2024, n=2000+) · ³ Harvard Business School experiment (2023)
+</div>
+
+<div class="closing-statement">
+The evidence is compelling: AI coding assistants significantly boost developer productivity across multiple independent studies
+</div>
+
+---
+
 <!-- _class: bg-purple -->
 
 ## Recommended Reading 📚
 
 - **What Is ChatGPT Doing?** - Stephen Wolfram
 - **Not Artificial, Not Intelligent** - Django Beatty
-- **Vibe Coding** - Gene Kim & Steven Spear
+- **Vibe Coding** - Gene Kim & Steve Yegge
+
+---
+
+![bg](Files/cc-this-pres.png)
+
+<style scoped>
+.text-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-size: 20pt;
+  color: #333;
+  font-weight: 500;
+  max-width: 80%;
+  z-index: 10;
+}
+</style>
+
+<div class="text-overlay">
+... and yes, Claude Code was highly involved in the making of this presentation 🤖 😉
+</div>
 
 ---
 
