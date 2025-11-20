@@ -681,12 +681,8 @@ Helpful, engaging, natural
 
 </div>
 </br>
-<div style="text-align: center; margin-top: 20px; font-size: 16pt; color: var(--color-text-secondary);">
-This is why ChatGPT feels like talking to someone, not just autocomplete
-</div>
-
 <div style="margin-top: 25px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
-💡 <strong style="color: #5500FF;">Why ChatGPT Feels Human</strong> - Pre-training learns language patterns. SFT learns to follow instructions. RLHF learns conversation style. This three-stage pipeline transforms autocomplete into dialogue.
+💡 <strong style="color: #5500FF;">Why ChatGPT Feels Human</strong> - This three-stage pipeline transforms autocomplete into dialogue. Pre-training learns language patterns. SFT learns to follow instructions. RLHF learns conversation style. This is why it feels like talking to someone, not just completing text.
 </div>
 
 ---
