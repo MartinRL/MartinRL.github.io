@@ -45,7 +45,7 @@ li { margin-bottom: 12px; }
 
 ---
 
-## Tokens: The Puzzle
+## Tokens: The 🍓 Puzzle
 
 <div style="font-size: 36pt; text-align: center; margin-top: 80px;">
 "strawberry"
@@ -54,7 +54,7 @@ li { margin-bottom: 12px; }
 <div style="font-size: 24pt; text-align: center; margin-top: 40px; color: #666;">
 How many 'r's?
 </div>
-
+</br>
 <div style="font-size: 48pt; text-align: center; margin-top: 40px; color: #5500FF;">
 LLM says: 2
 </div>
