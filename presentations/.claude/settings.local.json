@@ -10,7 +10,8 @@
       "WebFetch(domain:marpit.marp.app)",
       "Bash(tree:*)",
       "Bash(NUL)",
-      "WebFetch(domain:www.swebench.com)"
+      "WebFetch(domain:www.swebench.com)",
+      "Bash(marp:*)"
     ],
     "deny": [],
     "ask": []

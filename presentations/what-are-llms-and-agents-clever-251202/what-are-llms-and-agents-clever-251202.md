@@ -27,12 +27,12 @@ Clever, 2 December 2025
 ## Understanding LLMs: Six Core Concepts
 
 <style scoped>
-li:nth-child(1) strong { color: #5500FF; }
-li:nth-child(2) strong { color: #00B6FF; }
-li:nth-child(3) strong { color: #1E8C7F; }
-li:nth-child(4) strong { color: #FF922D; }
-li:nth-child(5) strong { color: #043F9C; }
-li:nth-child(6) strong { color: #3D424B; }
+li:nth-child(1) strong { color: var(--color-primary-purple); }
+li:nth-child(2) strong { color: var(--color-sky-blue); }
+li:nth-child(3) strong { color: var(--color-green); }
+li:nth-child(4) strong { color: var(--color-orange); }
+li:nth-child(5) strong { color: var(--color-dark-blue); }
+li:nth-child(6) strong { color: var(--color-dark-grey); }
 li { margin-bottom: 12px; }
 </style>
 
@@ -51,11 +51,11 @@ li { margin-bottom: 12px; }
 "strawberry"
 </div>
 
-<div style="font-size: 24pt; text-align: center; margin-top: 40px; color: #666;">
+<div style="font-size: 24pt; text-align: center; margin-top: 40px; color: var(--color-text-secondary);">
 How many 'r's?
 </div>
 </br>
-<div style="font-size: 48pt; text-align: center; margin-top: 40px; color: #5500FF;">
+<div style="font-size: 48pt; text-align: center; margin-top: 40px; color: var(--color-primary-purple);">
 LLM says: 2
 </div>
 
@@ -73,14 +73,14 @@ LLM sees:       [31552] [19685]
 <div style="margin-top: 40px; font-size: 20pt;">
 
 The LLM never sees individual letters.
-It sees **convenient linguistic units**.
+It sees <strong style="color: var(--color-primary-purple);">convenient linguistic units</strong>.
 
 That's why it can't count the 'r's in strawberry—it literally never processes 's-t-r-a-w-b-e-r-r-y', only [31552][19685], where the letter boundaries are lost inside the tokens.
 
 </div>
 
-<div style="margin-top: 30px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666;">
-💡 <strong style="color: #5500FF;">Byte Pair Encoding (BPE)</strong> - The algorithm that creates these tokens. It identifies frequently-occurring character sequences in training data and merges them into single tokens, creating an efficient compression dictionary.
+<div style="margin-top: 30px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary);">
+💡 <strong style="color: var(--color-primary-purple);">Byte Pair Encoding (BPE)</strong> - The algorithm that creates these tokens. It identifies frequently-occurring character sequences in training data and merges them into single tokens, creating an efficient compression dictionary.
 </div>
 
 ---
@@ -99,7 +99,7 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 
 </div>
 
-<div style="margin-top: 50px; text-align: center; font-size: 18pt; color: #666;">
+<div style="margin-top: 50px; text-align: center; font-size: 18pt; color: var(--color-text-secondary);">
 This is why LLMs can handle rare words, compound words,<br>
 and even **invent new words** by combining parts.
 </div>
@@ -113,21 +113,21 @@ and even **invent new words** by combining parts.
   display: inline-block;
   padding: 10px 20px;
   margin: 10px;
-  border: 2px solid #5500FF;
+  border: 2px solid var(--color-primary-purple);
   border-radius: 8px;
   font-family: monospace;
   font-size: 18pt;
 }
 .arrow {
-  color: #5500FF;
+  color: var(--color-primary-purple);
   font-size: 24pt;
   margin: 0 20px;
 }
 .text-gray {
-  color: #aaa;
+  color: var(--color-text-light);
 }
 .text-black {
-  color: #000;
+  color: var(--color-black);
 }
 </style>
 
@@ -137,7 +137,7 @@ and even **invent new words** by combining parts.
 <span class="arrow">→</span>
 <div class="token-box">[15496]</div>
 <div class="token-box">[1917]</div>
-<span style="margin-left: 20px; color: #666;">"Hello" + " world"</span>
+<span style="margin-left: 20px; color: var(--color-text-secondary);">"Hello" + " world"</span>
 
 </div>
 
@@ -148,17 +148,21 @@ and even **invent new words** by combining parts.
 <div class="token-box">[359]</div>
 <div class="token-box">[41119]</div>
 <div class="token-box">[2048]</div>
-<span style="margin-left: 20px; color: #666;">"un" + "forget" + "table"</span>
+<span style="margin-left: 20px; color: var(--color-text-secondary);">"un" + "forget" + "table"</span>
 
 </div>
 
-<div style="margin-top: 60px; text-align: center; font-size: 18pt; color: #666;">
+<div style="margin-top: 60px; text-align: center; font-size: 18pt; color: var(--color-text-secondary);">
 <br>
 ~200,000 tokens in vocabulary = ~200,000 entries in a compression dictionary<br>
 <span class="text-gray" style="font-size: 16pt;">Like Huffman coding for common text chunks instead of individual characters.</span><br>
 <br>
 <span class="text-black" style="font-size: 16pt;">Frequent code patterns get single tokens: `void`, `async`, `const`, `=>`, `()`, `{}`</span><br>
 <span class="text-gray" style="font-size: 16pt;">That's why LLMs can write code—syntax appeared billions of times in training data.</span>
+
+<div style="margin-top: 25px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666;">
+💡 <strong style="color: #5500FF;">Why LLMs Excel at Code</strong> - Programming syntax gets compressed into single tokens (`async`, `=>`, `{}`). Code's repetitive structure means these patterns appeared billions of times, making code easier to "predict" than natural language.
+</div>
 </div>
 
 ---
@@ -183,7 +187,7 @@ and even **invent new words** by combining parts.
 <br>
 <br>
 
-<div style="text-align: center; font-size: 20pt; color: #666;">
+<div style="text-align: center; font-size: 20pt; color: var(--color-text-secondary);">
 How does AI know which one?
 </div>
 
@@ -200,23 +204,23 @@ How does AI know which one?
   font-size: 20pt;
 }
 .high-attention {
-  background: #00B6FF;
+  background: var(--color-sky-blue);
   color: white;
   font-weight: bold;
 }
 .low-attention {
-  background: #E0F4FF;
-  color: #666;
+  background: var(--color-bg-blue-tint);
+  color: var(--color-text-secondary);
 }
 .cyan-text {
-  color: #00B6FF !important;
+  color: var(--color-sky-blue) !important;
   font-weight: bold;
 }
 .gray-text {
-  color: #666 !important;
+  color: var(--color-text-secondary) !important;
 }
 .light-gray-text {
-  color: #888 !important;
+  color: var(--color-text-muted) !important;
 }
 </style>
 
@@ -241,7 +245,7 @@ How the model decides what "bank" means:
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 15px;">
 
-<div style="padding: 18px 22px; background: #E0F4FF; border-radius: 8px;">
+<div style="padding: 18px 22px; background: var(--color-bg-blue-tint); border-radius: 8px;">
 <div style="font-size: 15pt; margin-bottom: 10px;"><strong class="cyan-text">Step 1: Ask Everyone</strong></div>
 <div style="font-size: 13pt; line-height: 1.5;" class="gray-text">
 <strong class="cyan-text">Bank</strong> asks all other words:<br>
@@ -249,7 +253,7 @@ How the model decides what "bank" means:
 </div>
 </div>
 
-<div style="padding: 18px 22px; background: #E0F4FF; border-radius: 8px;">
+<div style="padding: 18px 22px; background: var(--color-bg-blue-tint); border-radius: 8px;">
 <div style="font-size: 15pt; margin-bottom: 10px;"><strong class="cyan-text">Step 2: Weighted Votes</strong></div>
 <div style="font-size: 13pt; line-height: 1.6;" class="gray-text">
 • <strong class="cyan-text">deposit</strong> → <strong class="cyan-text">90%</strong> vote<br>
@@ -260,7 +264,7 @@ How the model decides what "bank" means:
 
 </div>
 
-<div style="margin-top: 25px; padding: 18px 22px; background: #E0F4FF; border-left: 4px solid #00B6FF; border-radius: 8px;">
+<div style="margin-top: 25px; padding: 18px 22px; background: var(--color-bg-blue-tint); border-left: 4px solid var(--color-sky-blue); border-radius: 8px;">
 </br>
 <div style="font-size: 13pt; line-height: 1.6;" class="gray-text">
 <strong class="cyan-text">Result: Bank</strong> combines information from all words, but weights <strong class="cyan-text">deposit</strong> and <strong class="cyan-text">money</strong> heavily → understands it's a <strong>financial institution</strong>, not a riverbank
@@ -293,19 +297,19 @@ Every word does this simultaneously for every other word<br>
 }
 .info-box {
   flex: 1;
-  background-color: #f9f9f9;
-  border-left: 2px solid #d8d8d8;
+  background-color: var(--color-gray-50);
+  border-left: 2px solid var(--color-gray-200);
   padding: 18px 22px;
   border-radius: 4px;
   font-size: 13pt;
   line-height: 1.5;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 .info-box strong {
-  color: #555;
+  color: var(--color-text-dark);
 }
 .info-box em {
-  color: #777;
+  color: var(--color-gray-700);
 }
 </style>
 
@@ -318,15 +322,15 @@ Every word does this simultaneously for every other word<br>
 
 **The → cat → sat → on → the → mat**
 
-<span style="color: #666;">Sequential: 6 steps</span>
+<span style="color: var(--color-text-secondary);">Sequential: 6 steps</span>
 </div>
 
 <div class="comparison-box">
-<h3 style="color: #00B6FF;">Transformer Way</h3>
+<h3 style="color: var(--color-sky-blue);">Transformer Way</h3>
 
 **[The, cat, sat, on, the, mat]**
 
-<span style="color: #00B6FF;">Parallel: 1 step</span>
+<span style="color: var(--color-sky-blue);">Parallel: 1 step</span>
 </div>
 
 </div>
@@ -338,6 +342,8 @@ The 2017 paper "Attention Is All You Need" proved that sequential processing isn
 <strong>Without this parallel processing, GPT-4 would take 50 years to train instead of 3 months.</strong>
 
 This parallel processing breakthrough is why we have LLMs today. Without it, modern AI would be economically impossible.
+
+💡 <strong>The Economics of Parallelism</strong> - Without transformer parallelism, GPT-4 would take 50 years to train instead of 3 months. This breakthrough is the ONLY reason modern AI exists—sequential training would be economically impossible.
 
 </div>
 
@@ -358,34 +364,34 @@ This parallel processing breakthrough is why we have LLMs today. Without it, mod
   text-align: center;
 }
 .local-models {
-  background: #F5FFF5;
-  border: 2px solid #1E8C7F;
+  background: var(--color-bg-green-light);
+  border: 2px solid var(--color-stage-rlhf);
   border-radius: 8px;
   padding: 15px 20px;
 }
 h3 {
-  color: #1E8C7F;
+  color: var(--color-green);
   font-size: 20pt;
   margin: 0 0 15px 0;
 }
 .param-count {
   font-size: 32pt;
-  color: #1E8C7F;
+  color: var(--color-green);
   font-weight: bold;
   margin: 6px 0 2px 0;
   letter-spacing: -0.5px;
 }
 .model-name {
   font-size: 13pt;
-  color: #888;
+  color: var(--color-text-muted);
   margin: 0 0 18px 0;
 }
 .quantization-tip {
   margin-top: 15px;
   padding-top: 12px;
-  border-top: 1px solid #D0E8E5;
+  border-top: 1px solid var(--color-border-cyan);
   font-size: 13pt;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 </style>
 
@@ -426,7 +432,7 @@ h3 {
 
 </div>
 
-<div style="text-align: center; margin-top: 45px; font-size: 10pt; color: #aaa;">
+<div style="text-align: center; margin-top: 45px; font-size: 10pt; color: var(--color-text-light);">
 <strong>Scale:</strong> GPT-5's 2T = Empire State Building, Office 70B = 5-story building (but still very capable!)
 </div>
 
@@ -436,8 +442,8 @@ h3 {
 
 <style scoped>
 .param-example {
-  background: #F0FFF8;
-  border-left: 4px solid #1E8C7F;
+  background: var(--color-bg-green-lighter);
+  border-left: 4px solid var(--color-green);
   padding: 20px;
   margin: 20px 0;
   font-size: 18pt;
@@ -460,7 +466,7 @@ h3 {
 <strong>Logic:</strong> If A > B and B > C, then A > C
 </div>
 
-<div style="text-align: center; margin-top: 40px; font-size: 18pt; color: #666;">
+<div style="text-align: center; margin-top: 40px; font-size: 18pt; color: var(--color-text-secondary);">
 Not programmed. **Learned** from trillions of words.
 </div>
 
@@ -474,15 +480,15 @@ Not programmed. **Learned** from trillions of words.
 }
 
 .stage {
-  background: #F9F9FF;
-  border-left: 4px solid #5500FF;
+  background: var(--color-bg-purple-tint);
+  border-left: 4px solid var(--color-primary-purple);
   padding: 12px 15px;
   margin: 8px 0;
   border-radius: 6px;
 }
 
 .stage h3 {
-  color: #5500FF;
+  color: var(--color-primary-purple);
   font-size: 19pt;
   margin: 0 0 5px 0;
 }
@@ -514,8 +520,8 @@ Not programmed. **Learned** from trillions of words.
 }
 
 .why-matters {
-  background: #FFF5E6;
-  border-left: 4px solid #FF922D;
+  background: var(--color-bg-orange-tint);
+  border-left: 4px solid var(--color-orange);
   padding: 12px 15px;
   margin: 15px 0 0 0;
   font-size: 14pt;
@@ -584,18 +590,18 @@ Result: Learns to be helpful, harmless, and honest
 }
 
 .stage-pretraining {
-  background: #FFE5E5;
-  border: 2px solid #FF6B6B;
+  background: var(--color-bg-red-tint);
+  border: 2px solid var(--color-stage-pretraining);
 }
 
 .stage-sft {
-  background: #FFF5E6;
-  border: 2px solid #FF922D;
+  background: var(--color-bg-orange-tint);
+  border: 2px solid var(--color-stage-sft);
 }
 
 .stage-rlhf {
-  background: #E6F7F0;
-  border: 2px solid #1E8C7F;
+  background: var(--color-bg-green-tint);
+  border: 2px solid var(--color-stage-rlhf);
 }
 
 .evolution-stage h4 {
@@ -623,7 +629,7 @@ Result: Learns to be helpful, harmless, and honest
 
 .arrow {
   font-size: 40pt;
-  color: #5500FF;
+  color: var(--color-primary-purple);
   align-self: center;
   margin: 0 -10px;
 }
@@ -637,7 +643,7 @@ Result: Learns to be helpful, harmless, and honest
 <div class="response">
 Write a poem about cats and dogs. Write a poem about cats in Spanish. Cat poem generator. Best cat poems 2023...
 </div>
-<div style="font-size: 11pt; color: #666; margin-top: 6px;">
+<div style="font-size: 11pt; color: var(--color-text-secondary); margin-top: 6px;">
 Just predicts next likely token
 </div>
 </div>
@@ -653,7 +659,7 @@ Paws so soft and eyes so bright<br>
 Silent hunters, graceful, free<br>
 Cats embody mystery
 </div>
-<div style="font-size: 11pt; color: #666; margin-top: 6px;">
+<div style="font-size: 11pt; color: var(--color-text-secondary); margin-top: 6px;">
 Follows instructions properly
 </div>
 </div>
@@ -670,14 +676,14 @@ Eyes gleaming with delight<br>
 Graceful hunters, soft and free<br>
 Perfect companions, you and me
 </div>
-<div style="font-size: 11pt; color: #666; margin-top: 6px;">
+<div style="font-size: 11pt; color: var(--color-text-secondary); margin-top: 6px;">
 Helpful, engaging, natural
 </div>
 </div>
 
 </div>
 </br>
-<div style="text-align: center; margin-top: 20px; font-size: 16pt; color: #666;">
+<div style="text-align: center; margin-top: 20px; font-size: 16pt; color: var(--color-text-secondary);">
 This is why ChatGPT feels like talking to someone, not just autocomplete
 </div>
 
@@ -704,7 +710,7 @@ This is why ChatGPT feels like talking to someone, not just autocomplete
 
 .option {
   padding: 20px;
-  background: #FFF5E6;
+  background: var(--color-bg-orange-tint);
   border-radius: 10px;
 }
 
@@ -714,18 +720,18 @@ This is why ChatGPT feels like talking to someone, not just autocomplete
 
 .option:nth-child(1) .percentage {
   font-size: 32pt;
-  color: #DC2626;
+  color: var(--color-warning);
 }
 
 .option:nth-child(2) .percentage {
   font-size: 24pt;
-  color: #F97316;
+  color: var(--color-confidence-medium);
   font-weight: 600;
 }
 
 .option:nth-child(3) .percentage {
   font-size: 20pt;
-  color: #FCD34D;
+  color: var(--color-confidence-low);
   font-weight: 500;
 }
 
@@ -733,7 +739,7 @@ This is why ChatGPT feels like talking to someone, not just autocomplete
   text-align: center;
   margin-top: 60px;
   font-size: 18pt;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 </style>
 
@@ -764,6 +770,10 @@ This is why ChatGPT feels like talking to someone, not just autocomplete
 It's not **remembering**. It's **predicting**.
 </div>
 
+<div style="margin-top: 25px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #FF922D; border-radius: 4px; font-size: 15pt; color: #666; max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: #FF922D;">No Database, Only Patterns</strong> - LLMs don't look up facts—they predict statistically likely continuations. There's no "Paris is capital of France" entry. The model learned that "capital of France is" is overwhelmingly followed by "Paris" in training data.
+</div>
+
 ---
 
 ## Probabilistic: Confident When Wrong
@@ -773,7 +783,7 @@ It's not **remembering**. It's **predicting**.
   text-align: center;
   margin-top: 40px;
   font-size: 18pt;
-  color: #DC2626;
+  color: var(--color-warning);
   font-weight: 600;
 }
 </style>
@@ -786,7 +796,7 @@ It's not **remembering**. It's **predicting**.
 
 </div>
 
-<div style="margin-top: 40px; padding: 20px; background: #FFF0E6; border-left: 4px solid #FF922D;">
+<div style="margin-top: 40px; padding: 20px; background: var(--color-bg-orange-light); border-left: 4px solid var(--color-orange);">
 <strong>Reality:</strong> Google never bought Twitter.<br>
 But "Google acquired" + "Twitter" + "billion" appear together often enough that the model connects them.
 </div>
@@ -795,7 +805,7 @@ But "Google acquired" + "Twitter" + "billion" appear together often enough that 
 High confidence ≠ High accuracy
 </div>
 
-<div style="margin-top: 30px; text-align: center; font-size: 16pt; color: #666; font-style: italic;">
+<div style="margin-top: 30px; text-align: center; font-size: 16pt; color: var(--color-text-secondary); font-style: italic;">
 This phenomenon is called a "hallucination"
 </div>
 
@@ -809,22 +819,22 @@ This phenomenon is called a "hallucination"
 }
 
 .definition-box {
-  background: #FFF0F0;
-  border-left: 4px solid #FF922D;
+  background: var(--color-bg-red-light);
+  border-left: 4px solid var(--color-orange);
   padding: 20px;
   margin: 20px 0;
   font-size: 18pt;
 }
 
 .causes-box {
-  background: #F5F5F5;
+  background: var(--color-gray-100);
   border-radius: 8px;
   padding: 20px;
   margin: 30px 0;
 }
 
 .causes-box h4 {
-  color: #FF922D;
+  color: var(--color-orange);
   font-size: 20pt;
   margin: 0 0 15px 0;
 }
@@ -835,15 +845,15 @@ This phenomenon is called a "hallucination"
 }
 
 .mitigation-box {
-  background: #E6F7F0;
-  border-left: 4px solid #1E8C7F;
+  background: var(--color-bg-green-tint);
+  border-left: 4px solid var(--color-green);
   padding: 20px;
   margin: 20px 0;
   font-size: 16pt;
 }
 
 .mitigation-box strong {
-  color: #1E8C7F;
+  color: var(--color-green);
 }
 </style>
 
@@ -870,7 +880,7 @@ This phenomenon is called a "hallucination"
 • <strong>Prompt engineering:</strong> "Only answer if certain, otherwise say 'I don't know'"
 </div>
 
-<div style="margin-top: 25px; text-align: center; font-size: 15pt; color: #DC2626; font-weight: 600;">
+<div style="margin-top: 25px; text-align: center; font-size: 15pt; color: var(--color-warning); font-weight: 600;">
 Remember: High confidence ≠ High accuracy
 </div>
 
@@ -882,8 +892,8 @@ Remember: High confidence ≠ High accuracy
 
 <style scoped>
 .memory-box {
-  background: #E6F3FF;
-  border: 2px solid #043F9C;
+  background: var(--color-bg-blue-light);
+  border: 2px solid var(--color-dark-blue);
   border-radius: 8px;
   padding: 20px;
   margin: 20px auto;
@@ -897,7 +907,7 @@ Remember: High confidence ≠ High accuracy
 </style>
 
 <div class="memory-box">
-<div style="font-size: 20pt; color: #043F9C; margin-bottom: 20px;">128K Token Window</div>
+<div style="font-size: 20pt; color: var(--color-dark-blue); margin-bottom: 20px;">128K Token Window</div>
 <div class="forgotten">Message 1: "My name is Alice"</div>
 <div class="forgotten">Message 2: "I work at Microsoft"</div>
 <div>Message 98: "What's my name?"</div>
@@ -929,18 +939,18 @@ Once full, oldest messages disappear.<br>
 </style>
 
 <div class="size-comparison">
-  <div class="size-box" style="background: #CCE0F5;">
-    <div style="font-size: 24pt; color: #043F9C;">GPT-3.5</div>
+  <div class="size-box" style="background: var(--color-blue-gradient-1);">
+    <div style="font-size: 24pt; color: var(--color-dark-blue);">GPT-3.5</div>
     <div style="font-size: 36pt; font-weight: bold;">4K</div>
     <div>~500 lines of code</div>
   </div>
-  <div class="size-box" style="background: #99C1EA;">
-    <div style="font-size: 24pt; color: #043F9C;">GPT-4</div>
+  <div class="size-box" style="background: var(--color-blue-gradient-2);">
+    <div style="font-size: 24pt; color: var(--color-dark-blue);">GPT-4</div>
     <div style="font-size: 36pt; font-weight: bold;">128K</div>
     <div>~16K lines (React codebase)</div>
   </div>
-  <div class="size-box" style="background: #66A3E0;">
-    <div style="font-size: 24pt; color: #043F9C;">Claude 3</div>
+  <div class="size-box" style="background: var(--color-blue-gradient-3);">
+    <div style="font-size: 24pt; color: var(--color-dark-blue);">Claude 3</div>
     <div style="font-size: 36pt; font-weight: bold;">1M</div>
     <div>~125K lines (Linux kernel module)</div>
   </div>
@@ -966,24 +976,24 @@ Bigger window = More expensive & slower
 **Prompt:** "Write a sentence about cats"
 </div>
 
-<div class="temp-example" style="background: #F5F5F5; border-left: 4px solid #3D424B;">
+<div class="temp-example" style="background: var(--color-gray-100); border-left: 4px solid var(--color-dark-grey);">
 <strong>Temp = 0:</strong><br>
 "Cats are domestic animals that are popular pets."<br>
 "Cats are domestic animals that are popular pets."<br>
-<em style="color: #666;">→ Same every time</em>
+<em style="color: var(--color-text-secondary);">→ Same every time</em>
 </div>
 
-<div class="temp-example" style="background: #F5F5F5; border-left: 4px solid #666;">
+<div class="temp-example" style="background: var(--color-gray-100); border-left: 4px solid var(--color-gray-800);">
 <strong>Temp = 0.7:</strong><br>
 "Cats love to nap in sunny spots."<br>
 "Many cats enjoy playing with toy mice."<br>
-<em style="color: #666;">→ Varied but sensible</em>
+<em style="color: var(--color-text-secondary);">→ Varied but sensible</em>
 </div>
 
-<div class="temp-example" style="background: #F5F5F5; border-left: 4px solid #999;">
+<div class="temp-example" style="background: var(--color-gray-100); border-left: 4px solid var(--color-gray-500);">
 <strong>Temp = 2.0:</strong><br>
 "Cats purple democracy whiskers moonlight!"<br>
-<em style="color: #666;">→ Creative chaos</em>
+<em style="color: var(--color-text-secondary);">→ Creative chaos</em>
 </div>
 
 ---
@@ -999,7 +1009,7 @@ Bigger window = More expensive & slower
 - They forget your first question → **Context Window**
 - Same prompt, different answers → **Temperature**
 
-<div style="margin-top: 60px; padding: 30px; background: #F0F5FF; border-left: 4px solid #5500FF;">
+<div style="margin-top: 60px; padding: 30px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple);">
 <strong style="font-size: 24pt;">The Magic:</strong> It seems to understand you<br>
 <strong style="font-size: 24pt;">The Math:</strong> It's predicting the next token
 </div>
@@ -1027,7 +1037,7 @@ h2, h3 {
 }
 .mystery-box {
   background: rgba(85, 0, 255, 0.05);
-  border-left: 3px solid #5500FF;
+  border-left: 3px solid var(--color-primary-purple);
   padding: 12px 16px;
   margin: 10px 0;
   border-radius: 6px;
@@ -1035,19 +1045,19 @@ h2, h3 {
   line-height: 1.4;
 }
 .mystery-box strong {
-  color: #5500FF;
+  color: var(--color-primary-purple);
   font-size: 14pt;
 }
 .mystery-box em {
-  color: #FF922D;
+  color: var(--color-orange);
   font-style: italic;
 }
 .subtitle {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 12pt;
 }
 .progress-container {
-  background: #F0F5FF;
+  background: var(--color-bg-purple-tint);
   border-radius: 20px;
   height: 35px;
   margin-top: 15px;
@@ -1055,7 +1065,7 @@ h2, h3 {
   display: flex;
 }
 .progress-understood {
-  background: #5500FF;
+  background: var(--color-primary-purple);
   width: 70%;
   display: flex;
   align-items: center;
@@ -1065,7 +1075,7 @@ h2, h3 {
   font-weight: 600;
 }
 .progress-discovering {
-  background: #FF922D;
+  background: var(--color-orange);
   width: 20%;
   display: flex;
   align-items: center;
@@ -1075,25 +1085,25 @@ h2, h3 {
   font-weight: 600;
 }
 .progress-mysterious {
-  background: #CCCCCC;
+  background: var(--color-gray-200);
   width: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #333;
+  color: var(--color-text-dark);
   font-size: 11pt;
   font-weight: 600;
 }
 .truth-box {
   padding: 25px;
-  background: #F9F9FF;
-  border: 2px solid #5500FF;
+  background: var(--color-bg-purple-tint);
+  border: 2px solid var(--color-primary-purple);
   border-radius: 8px;
   font-size: 15pt;
   line-height: 1.6;
 }
 .truth-box strong {
-  color: #5500FF;
+  color: var(--color-primary-purple);
   font-size: 16pt;
 }
 </style>
@@ -1147,8 +1157,8 @@ Like discovering calculus to explain planetary motion, we're finding the equatio
 }
 
 .definition {
-  background: #F0F5FF;
-  border-left: 4px solid #5500FF;
+  background: var(--color-bg-purple-tint);
+  border-left: 4px solid var(--color-primary-purple);
   padding: 20px;
   margin: 20px 0;
   font-size: 18pt;
@@ -1168,13 +1178,13 @@ Like discovering calculus to explain planetary motion, we're finding the equatio
 }
 
 .llm-box {
-  background: #FFF5E6;
-  border-color: #FF922D;
+  background: var(--color-bg-orange-tint);
+  border-color: var(--color-orange);
 }
 
 .agent-box {
-  background: #E6F7F0;
-  border-color: #1E8C7F;
+  background: var(--color-bg-green-tint);
+  border-color: var(--color-green);
 }
 
 .comparison-box h4 {
@@ -1190,8 +1200,8 @@ Like discovering calculus to explain planetary motion, we're finding the equatio
 }
 
 .agent-example {
-  background: #F9F9FF;
-  border: 2px solid #5500FF;
+  background: var(--color-bg-purple-tint);
+  border: 2px solid var(--color-primary-purple);
   border-radius: 8px;
   padding: 20px;
   margin: 20px 0;
@@ -1204,7 +1214,7 @@ Like discovering calculus to explain planetary motion, we're finding the equatio
 }
 
 .agent-example .step strong {
-  color: #5500FF;
+  color: var(--color-primary-purple);
 }
 </style>
 
@@ -1255,7 +1265,7 @@ Like discovering calculus to explain planetary motion, we're finding the equatio
 </div>
 </div>
 
-<div style="text-align: center; margin-top: 30px; font-size: 18pt; color: #666;">
+<div style="text-align: center; margin-top: 30px; font-size: 18pt; color: var(--color-text-secondary);">
 <strong>Popular Agent Frameworks:</strong> LangChain, AutoGPT, Claude Code, OpenAI Assistants
 </div>
 
@@ -1272,11 +1282,11 @@ section {
 .intro-statement {
   text-align: center;
   font-size: 20pt;
-  color: #5500FF;
+  color: var(--color-primary-purple);
   font-weight: 500;
   margin: 20px 0 40px 0;
   padding: 20px;
-  background: #F0F5FF;
+  background: var(--color-bg-purple-tint);
   border-radius: 8px;
 }
 .stat-grid {
@@ -1286,31 +1296,31 @@ section {
   margin: 20px 0;
 }
 .stat-box {
-  background: #F9F9FF;
-  border-left: 4px solid #5500FF;
+  background: var(--color-bg-purple-tint);
+  border-left: 4px solid var(--color-primary-purple);
   padding: 18px;
   border-radius: 6px;
 }
 .stat-box h4 {
-  color: #5500FF;
+  color: var(--color-primary-purple);
   font-size: 16pt;
   margin: 0 0 10px 0;
 }
 .stat-box .big-number {
   font-size: 32pt;
   font-weight: bold;
-  color: #5500FF;
+  color: var(--color-primary-purple);
   line-height: 1;
   margin: 8px 0;
 }
 .stat-box .detail {
   font-size: 12.5pt;
-  color: #666;
+  color: var(--color-text-secondary);
   margin: 3px 0;
 }
 .stat-box .highlight {
   font-size: 13pt;
-  color: #000;
+  color: var(--color-black);
   font-weight: 500;
   font-style: italic;
   margin-top: 6px;
@@ -1321,7 +1331,7 @@ section {
   font-weight: 600;
   margin-top: 25px;
   padding: 15px;
-  background: linear-gradient(135deg, #5500FF 0%, #00B6FF 100%);
+  background: linear-gradient(135deg, var(--color-primary-purple) 0%, var(--color-sky-blue) 100%);
   color: white;
   border-radius: 8px;
 }
@@ -1451,7 +1461,7 @@ And this is the worst it'll be — continuous improvement through advancing LLMs
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
   font-size: 20pt;
-  color: #333;
+  color: var(--color-text-dark);
   font-weight: 500;
   max-width: 80%;
   z-index: 10;
@@ -1482,6 +1492,54 @@ And this is the worst it'll be — continuous improvement through advancing LLMs
   --color-orange: #FF922D;
   --color-white: #FFFFFF;
   --color-black: #000000;
+
+  /* Semantic text colors */
+  --color-text-secondary: #666;
+  --color-text-muted: #888;
+  --color-text-light: #aaa;
+  --color-text-dark: #555;
+
+  /* Stage-specific colors */
+  --color-stage-pretraining: #FF6B6B;
+  --color-stage-sft: #FF922D;
+  --color-stage-rlhf: #1E8C7F;
+
+  /* Confidence/warning colors */
+  --color-warning: #DC2626;
+  --color-confidence-high: #DC2626;
+  --color-confidence-medium: #F97316;
+  --color-confidence-low: #FCD34D;
+
+  /* Background tints */
+  --color-bg-purple-tint: #F0F5FF;
+  --color-bg-blue-tint: #E0F4FF;
+  --color-bg-blue-light: #E6F3FF;
+  --color-bg-orange-tint: #FFF5E6;
+  --color-bg-orange-light: #FFF0E6;
+  --color-bg-green-tint: #E6F7F0;
+  --color-bg-green-light: #F5FFF5;
+  --color-bg-green-lighter: #F0FFF8;
+  --color-bg-red-tint: #FFE5E5;
+  --color-bg-red-light: #FFF0F0;
+
+  /* Gray scale */
+  --color-gray-50: #f9f9f9;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #d8d8d8;
+  --color-gray-400: #aaa;
+  --color-gray-500: #999;
+  --color-gray-600: #888;
+  --color-gray-700: #777;
+  --color-gray-800: #666;
+  --color-gray-900: #555;
+
+  /* Blue gradients for context window */
+  --color-blue-gradient-1: #CCE0F5;
+  --color-blue-gradient-2: #99C1EA;
+  --color-blue-gradient-3: #66A3E0;
+
+  /* Border colors */
+  --color-border-cyan: #D0E8E5;
 }
 
 /* Base Section Styling */
@@ -1846,6 +1904,99 @@ section.split-slide ul li::before {
 
 .grey-bg {
   background-color: var(--color-dark-grey);
+}
+
+/* Utility: Text colors */
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-purple {
+  color: var(--color-primary-purple);
+}
+
+.text-blue {
+  color: var(--color-sky-blue);
+}
+
+.text-green {
+  color: var(--color-green);
+}
+
+.text-orange {
+  color: var(--color-orange);
+}
+
+/* Utility: Info boxes with consistent styling */
+.info-box-purple {
+  background: var(--color-bg-purple-tint);
+  border-left: 3px solid var(--color-primary-purple);
+  border-radius: 4px;
+  padding: 15px 20px;
+}
+
+.info-box-blue {
+  background: var(--color-bg-blue-tint);
+  border-left: 3px solid var(--color-sky-blue);
+  border-radius: 4px;
+  padding: 15px 20px;
+}
+
+.info-box-green {
+  background: var(--color-bg-green-tint);
+  border-left: 3px solid var(--color-green);
+  border-radius: 4px;
+  padding: 15px 20px;
+}
+
+.info-box-orange {
+  background: var(--color-bg-orange-tint);
+  border-left: 3px solid var(--color-orange);
+  border-radius: 4px;
+  padding: 15px 20px;
+}
+
+/* Utility: Stage-specific styling */
+.stage-pretraining {
+  background: var(--color-bg-red-tint);
+  border: 2px solid var(--color-stage-pretraining);
+  border-radius: 8px;
+}
+
+.stage-sft {
+  background: var(--color-bg-orange-tint);
+  border: 2px solid var(--color-stage-sft);
+  border-radius: 8px;
+}
+
+.stage-rlhf {
+  background: var(--color-bg-green-tint);
+  border: 2px solid var(--color-stage-rlhf);
+  border-radius: 8px;
+}
+
+/* Utility: Confidence levels */
+.confidence-high {
+  color: var(--color-confidence-high);
+  font-weight: 600;
+}
+
+.confidence-medium {
+  color: var(--color-confidence-medium);
+  font-weight: 600;
+}
+
+.confidence-low {
+  color: var(--color-confidence-low);
+  font-weight: 600;
 }
 
 </style>
