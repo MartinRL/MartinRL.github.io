@@ -833,9 +833,9 @@ But "Google acquired" + "Twitter" + "billion" appear together often enough that 
 <div class="warning-text">
 High confidence ≠ High accuracy
 </div>
-
-<div style="margin-top: 30px; text-align: center; font-size: 16pt; color: var(--color-text-secondary); font-style: italic;">
-This phenomenon is called a "hallucination"
+</br></br>
+<div style="margin-top: 30px; padding: 15px 20px; background: var(--color-bg-red-tint); border-left: 4px solid var(--color-warning); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: var(--color-warning);">Hallucinations</strong> - When LLMs generate false information with high confidence, this is called a "hallucination." It's not a bug—it's the fundamental nature of pattern-based prediction.
 </div>
 
 ---
