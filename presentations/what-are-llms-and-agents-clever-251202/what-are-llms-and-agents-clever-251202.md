@@ -421,14 +421,14 @@ h3 {
 <div class="model-name">Phi-4 (Consumer GPU)</div>
 
 <div class="quantization-tip">
-💡 <strong>4-bit:</strong> 70B on $15K • 400B on $50K
+<strong>4-bit:</strong> 70B on $15K • 400B on $50K
 </div>
 </div>
 
 </div>
 
 <div style="text-align: center; margin-top: 45px; font-size: 10pt; color: var(--color-text-light);">
-<strong>Scale:</strong> GPT-5's 2T = Empire State Building, Office 70B = 5-story building (but still very capable!)
+<strong>💡 Scale:</strong> GPT-5's 2T = Empire State Building, Office 70B = 5-story building (but still very capable!)
 </div>
 
 ---
