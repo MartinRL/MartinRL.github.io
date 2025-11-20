@@ -795,9 +795,13 @@ But "Google acquired" + "Twitter" + "billion" appear together often enough that 
 High confidence ≠ High accuracy
 </div>
 
+<div style="margin-top: 30px; text-align: center; font-size: 16pt; color: #666; font-style: italic;">
+This phenomenon is called a "hallucination"
+</div>
+
 ---
 
-## Probabilistic: Hallucinations
+## Probabilistic: Understanding Hallucinations
 
 <style scoped>
 .hallucination-container {
@@ -852,19 +856,22 @@ High confidence ≠ High accuracy
 <div class="causes-box">
 <h4>🔍 Why It Happens</h4>
 <ul>
-<li>No access to truth or facts during generation</li>
-<li>Only pattern matching based on training data</li>
-<li>"Google acquired" + "Twitter" + "$44 billion" = familiar pattern</li>
-<li>Model completes patterns that seem statistically likely</li>
+<li><strong>No truth database:</strong> No access to facts during generation, can't fact-check</li>
+<li><strong>Pure pattern matching:</strong> Completes patterns that seem statistically likely from training</li>
+<li><strong>Training ≠ memorization:</strong> Learns relationships, not a searchable database of facts</li>
 </ul>
 </div>
 
 <div class="mitigation-box">
-<strong>What Helps Reduce Hallucinations:</strong><br>
-• RAG (Retrieval Augmented Generation) - ground answers in real data<br>
-• Human verification for critical information<br>
-• Lower temperature = less creative = fewer hallucinations<br>
-• Prompt engineering: "Only answer if certain, otherwise say 'I don't know'"
+<strong>⚡ What Helps Reduce Hallucinations:</strong><br>
+• <strong>RAG</strong> (Retrieval Augmented Generation) - ground answers in real data<br>
+• <strong>Human verification</strong> for critical information<br>
+• <strong>Lower temperature</strong> = less creative = fewer hallucinations<br>
+• <strong>Prompt engineering:</strong> "Only answer if certain, otherwise say 'I don't know'"
+</div>
+
+<div style="margin-top: 25px; text-align: center; font-size: 15pt; color: #DC2626; font-weight: 600;">
+Remember: High confidence ≠ High accuracy
 </div>
 
 </div>
