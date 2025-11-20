@@ -955,11 +955,13 @@ When LLMs generate false information with confidence, we call this a <strong sty
 
 <div class="memory-box">
 <div style="font-size: 20pt; color: var(--color-dark-blue); margin-bottom: 20px;">128K Token Window</div>
-<div class="forgotten">Message 1: "My name is Alice"</div>
-<div class="forgotten">Message 2: "I work at Microsoft"</div>
-<div>Message 98: "What's my name?"</div>
-<div>Message 99: "You mentioned earlier..."</div>
-<div>Message 100: Current conversation</div>
+<div class="forgotten"><strong>👩 (msg 1):</strong> "My account email is alice@company.com"</div>
+<div class="forgotten"><strong>🤖 (msg 2):</strong> "Thanks Alice! How can I help?"</div>
+<div class="forgotten"><strong>👩 (msg 3):</strong> "I'm locked out of the dashboard"</div>
+<div style="margin: 10px 0;">⋮ <em style="font-size: 14pt;">(many messages discussing troubleshooting)</em> ⋮</div>
+<div><strong>🤖 (msg 97):</strong> "Issue resolved! Anything else?"</div>
+<div><strong>👩 (msg 98):</strong> "Yes, send the summary to my email"</div>
+<div style="color: var(--color-error-red);"><strong>🤖 (msg 99):</strong> "I don't have your email address. Could you provide it?"</div>
 </div>
 
 <div style="text-align: center; margin-top: 40px; font-size: 18pt;">

@@ -11,7 +11,12 @@
       "Bash(tree:*)",
       "Bash(NUL)",
       "WebFetch(domain:www.swebench.com)",
-      "Bash(marp:*)"
+      "Bash(marp:*)",
+      "Bash(if git diff --cached --quiet)",
+      "Bash(then echo \"No changes to commit\")",
+      "Bash(exit 0)",
+      "Bash(fi)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
