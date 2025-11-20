@@ -8,7 +8,7 @@ paginate: false
 
 # LLMs & Agents
 
-What are they, and why can they code?
+What are they, and why can they `code`?
 
 Clever, 2 December 2025
 
