@@ -965,13 +965,85 @@ When LLMs generate false information with confidence, we call this a <strong sty
 </div>
 
 <div style="text-align: center; margin-top: 40px; font-size: 18pt;">
-Once full, oldest messages disappear.<br>
-<em style="color: var(--color-primary-purple); font-style: normal; font-weight: 600;">No long-term memory.</em>
+Once full, oldest messages disappear. <em style="color: var(--color-primary-purple); font-style: normal; font-weight: 600;">No long-term memory.</em>
 </div>
-
+</br>
 <div style="margin-top: 25px; padding: 15px 20px; background: var(--color-bg-orange-tint); border-left: 3px solid var(--color-orange); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
 💡 <strong style="color: #FF922D;">The Goldfish Problem</strong> - Every conversation is like meeting someone for the first time. The model can't learn from past chats or remember you between sessions. This isn't a bug—it's the fundamental architecture. RAG and vector databases are workarounds, not solutions.
 </div>
+
+<!--
+## Q&A: But ChatGPT and Claude Have "Memory" Features?
+
+### Short Answer
+Memory features are **application-level workarounds**, not model capabilities. It's like giving a goldfish a waterproof notepad—the goldfish still has a goldfish brain, but now has notes to reference.
+
+### Technical Implementation
+
+**ChatGPT Memory (launched Sept 2024):**
+- Uses RAG (Retrieval Augmented Generation) with vector database
+- Stores user preferences/facts as embeddings on OpenAI servers
+- Retrieves relevant memories via semantic search at conversation start
+- Injects them into system prompt as "Model Set Context"
+- Limit: ~1,200-1,400 words of saved memories
+- Privacy: 30-day retention after deletion; opt-out available for training
+
+**Claude Memory:**
+1. **CLAUDE.md files** (local filesystem)
+   - Plain markdown files you control
+   - Claude recursively reads them from working directory
+   - No vector database needed—just text files
+
+2. **Claude Memory feature** (Anthropic servers, Oct 2024+)
+   - Project-scoped memory
+   - Users can view/edit what's remembered
+   - 30-day retention (no training) or 5-year (with training)
+
+3. **MCP Servers** (Model Context Protocol, Nov 2024)
+   - Third-party extensions: SQLite with FTS5, memory.json, cloud sync
+   - Enables semantic search and autonomous consolidation
+
+### Why This Doesn't Contradict "Goldfish Memory"
+
+**The model itself remains stateless:**
+- LLMs are stateless functions—no retention between calls
+- Each inference rereads everything from scratch
+- After responding, model forgets immediately
+
+**Memory features are prompt injection:**
+1. Application stores facts externally (DB/files)
+2. At conversation start, retrieves relevant notes
+3. Pastes them into prompt before user's message
+4. Model reads injected text like any other input
+5. **Model isn't "remembering"—it's reading notes**
+
+### The Analogy
+Like a person with severe amnesia carrying a notebook:
+- **Context window** = Last few minutes of working memory
+- **Memory feature** = Notebook with important facts
+- Every conversation, they read the notebook to "remember" you
+- But they're not actually remembering—they're reading notes
+
+### Key Limitations
+- All retrieved memories must fit within context window
+- RAG retrieval may miss relevant information
+- Long contexts degrade performance ("lost in the middle")
+- Expensive: Each injected memory increases token cost
+- Security: Vulnerable to prompt injection attacks
+- No true understanding or consolidation like human memory
+
+### Storage & Privacy Summary
+
+| Feature | ChatGPT | Claude (CLAUDE.md) | Claude Memory |
+|---------|---------|-------------------|---------------|
+| Storage | OpenAI servers | Local filesystem | Anthropic servers |
+| Retention | Indefinite (30 days after deletion) | User-controlled | 30 days / 5 years |
+| Training Use | Yes (opt-out) for Free/Plus; No for Enterprise | Never | Opt-in (default: ON) |
+| User Control | Can delete memories | Full control (it's your file) | Can delete/edit |
+
+### Bottom Line
+Memory features are clever engineering—not AI breakthroughs. The goldfish still has goldfish memory. We just gave it really good note-taking software.
+-->
 
 ---
 
