@@ -158,8 +158,8 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 <br>
 <span class="text-black" style="font-size: 16pt;">Frequent code patterns get single tokens: `void`, `async`, `const`, `=>`, `()`, `{}`</span><br>
 <span class="text-gray" style="font-size: 16pt;">That's why LLMs can write code—syntax appeared billions of times in training data.</span>
-</br>
-<div style="margin-top: 25px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666;">
+
+<div style="margin-top: 50px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666;">
 💡 <strong style="color: #5500FF;">Why LLMs Excel at Code</strong> - Programming syntax gets compressed into single tokens (`async`, `=>`, `{}`). Code's repetitive structure means these patterns appeared billions of times, making code easier to "predict" than natural language.
 </div>
 </div>
@@ -187,7 +187,7 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 <br>
 
 <div style="text-align: center; font-size: 20pt; color: var(--color-text-secondary);">
-How does AI know which one?
+How does AI know which bank?
 </div>
 
 ---
