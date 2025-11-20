@@ -1053,36 +1053,107 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 .size-comparison {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 60px;
+  align-items: center;
+  gap: 25px;
+  margin-top: 40px;
+  max-height: 380px;
 }
+
 .size-box {
   text-align: center;
-  padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 2px solid var(--color-dark-blue);
+  box-shadow: 0 2px 8px rgba(4, 63, 156, 0.1);
+}
+
+.model-name {
+  font-size: 20pt;
+  color: var(--color-dark-blue);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.context-size {
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  margin: 8px 0;
+}
+
+.description {
+  font-size: 13pt;
+  color: var(--color-text-secondary);
+  margin: 8px 0;
+  line-height: 1.3;
+}
+
+.indicators {
+  font-size: 12pt;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(4, 63, 156, 0.2);
+  color: var(--color-text-muted);
+}
+
+/* Progressive sizing without transform */
+.size-box:nth-child(1) {
+  min-height: 180px;
+  padding: 20px 25px;
+  background: rgba(4, 63, 156, 0.05);
+}
+
+.size-box:nth-child(1) .context-size {
+  font-size: 30pt;
+}
+
+.size-box:nth-child(2) {
+  min-height: 210px;
+  padding: 25px 35px;
+  background: rgba(4, 63, 156, 0.1);
+  border-width: 3px;
+}
+
+.size-box:nth-child(2) .context-size {
+  font-size: 34pt;
+}
+
+.size-box:nth-child(3) {
+  min-height: 240px;
+  padding: 30px 45px;
+  background: rgba(4, 63, 156, 0.15);
+  border-width: 4px;
+  box-shadow: 0 4px 16px rgba(4, 63, 156, 0.2);
+}
+
+.size-box:nth-child(3) .context-size {
+  font-size: 38pt;
 }
 </style>
 
 <div class="size-comparison">
-  <div class="size-box" style="background: var(--color-blue-gradient-1);">
-    <div style="font-size: 24pt; color: var(--color-dark-blue);">GPT-3.5</div>
-    <div style="font-size: 36pt; font-weight: bold;">4K</div>
-    <div>~500 lines of code</div>
+  <div class="size-box">
+    <div class="model-name">🪟 GPT-3.5</div>
+    <div class="context-size">4K</div>
+    <div class="description">~500 lines of code</div>
+    <div class="indicators">Cost: $ · Speed: Fast</div>
   </div>
-  <div class="size-box" style="background: var(--color-blue-gradient-2);">
-    <div style="font-size: 24pt; color: var(--color-dark-blue);">GPT-4</div>
-    <div style="font-size: 36pt; font-weight: bold;">128K</div>
-    <div>~16K lines (React codebase)</div>
+
+  <div class="size-box">
+    <div class="model-name">🪟🪟 GPT-4</div>
+    <div class="context-size">128K</div>
+    <div class="description">~16K lines (React codebase)</div>
+    <div class="indicators">Cost: $$ · Speed: Medium</div>
   </div>
-  <div class="size-box" style="background: var(--color-blue-gradient-3);">
-    <div style="font-size: 24pt; color: var(--color-dark-blue);">Claude 3</div>
-    <div style="font-size: 36pt; font-weight: bold;">1M</div>
-    <div>~125K lines (Linux kernel module)</div>
+
+  <div class="size-box">
+    <div class="model-name">🪟🪟🪟 Claude 3</div>
+    <div class="context-size">1M</div>
+    <div class="description">~125K lines (Linux kernel)</div>
+    <div class="indicators">Cost: $$$ · Speed: Slower</div>
   </div>
 </div>
 
-<div style="text-align: center; margin-top: 60px; font-size: 18pt;">
-Bigger window = More expensive & slower
+<div style="margin-top: 30px; padding: 15px 25px; background: var(--color-bg-blue-light); border-left: 4px solid var(--color-dark-blue); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: var(--color-dark-blue);">Context Trade-off</strong> - Larger windows = higher cost & slower response. Most tasks need < 4K.
 </div>
 
 ---
@@ -1090,35 +1161,184 @@ Bigger window = More expensive & slower
 ## Temperature: Same Prompt, Different Answer
 
 <style scoped>
+.temp-container {
+  margin-top: 30px;
+}
+
+.prompt-section {
+  text-align: center;
+  font-size: 20pt;
+  margin: 30px auto 40px auto;
+  padding: 18px 30px;
+  background: var(--color-bg-purple-tint);
+  border-radius: 10px;
+  max-width: 75%;
+  border: 2px solid var(--color-primary-purple);
+}
+
 .temp-example {
-  margin: 30px 0;
-  padding: 20px;
-  border-radius: 8px;
+  margin: 25px auto;
+  border-radius: 12px;
+  border: 2px solid;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  text-align: center;
+}
+
+.temp-header {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.temp-value {
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.temp-label {
+  font-size: 16pt;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.temp-output {
+  font-size: 15pt;
+  line-height: 1.7;
+  margin: 15px 0;
+}
+
+.temp-note {
+  font-style: italic;
+  font-size: 13pt;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Progressive sizing without transform */
+.temp-zero {
+  min-height: 180px;
+  padding: 20px 30px;
+  background: var(--color-primary-purple);
+  border-color: var(--color-primary-purple);
+  color: var(--color-white);
+}
+
+.temp-zero .temp-value {
+  font-size: 32pt;
+}
+
+.temp-zero .temp-note {
+  border-top-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.temp-medium {
+  min-height: 210px;
+  padding: 25px 40px;
+  background: rgba(85, 0, 255, 0.15);
+  border-color: var(--color-primary-purple);
+  border-width: 3px;
+  color: var(--color-black);
+}
+
+.temp-medium .temp-value {
+  font-size: 36pt;
+}
+
+.temp-medium .temp-header {
+  color: var(--color-primary-purple);
+}
+
+.temp-medium .temp-note {
+  border-top-color: var(--color-primary-purple);
+  color: var(--color-primary-purple);
+}
+
+.temp-high {
+  min-height: 240px;
+  padding: 30px 50px;
+  background: var(--color-bg-orange-tint);
+  border-color: var(--color-warning);
+  border-width: 4px;
+  box-shadow: 0 4px 16px rgba(255, 107, 107, 0.2);
+  color: var(--color-text-dark);
+}
+
+.temp-high .temp-value {
+  font-size: 40pt;
+}
+
+.temp-high .temp-header {
+  color: var(--color-warning);
+}
+
+.temp-high .temp-note {
+  border-top-color: var(--color-warning);
+  color: var(--color-warning);
+  font-weight: 600;
 }
 </style>
 
-<div style="font-size: 20pt; text-align: center; margin: 40px 0;">
+<div class="temp-container">
+
+<div class="prompt-section">
 <span style="color: var(--color-text-muted); font-weight: 600;">Prompt:</span> "Write a sentence about cats"
 </div>
 
-<div class="temp-example" style="background: var(--color-gray-100); border-left: 4px solid var(--color-dark-grey);">
-<strong>Temp = 0:</strong><br>
+<div class="temp-example temp-zero">
+<div class="temp-header">
+<div class="temp-value">0</div>
+<div class="temp-label">Deterministic</div>
+</div>
+<div class="temp-output">
 "Cats are domestic animals that are popular pets."<br>
-"Cats are domestic animals that are popular pets."<br>
-<em style="color: var(--color-text-secondary);">→ Same every time</em>
+"Cats are domestic animals that are popular pets."
+</div>
+<div class="temp-note">
+<span>🔒</span>
+<span>Identical output every time</span>
+</div>
 </div>
 
-<div class="temp-example" style="background: var(--color-gray-100); border-left: 4px solid var(--color-gray-800);">
-<strong>Temp = 0.7:</strong><br>
+<div class="temp-example temp-medium">
+<div class="temp-header">
+<div class="temp-value">0.7</div>
+<div class="temp-label">Balanced</div>
+</div>
+<div class="temp-output">
 "Cats love to nap in sunny spots."<br>
-"Many cats enjoy playing with toy mice."<br>
-<em style="color: var(--color-text-secondary);">→ Varied but sensible</em>
+"Many cats enjoy playing with toy mice."
+</div>
+<div class="temp-note">
+<span>✨</span>
+<span>Varied but coherent responses</span>
+</div>
 </div>
 
-<div class="temp-example" style="background: var(--color-gray-100); border-left: 4px solid var(--color-gray-500);">
-<strong>Temp = 2.0:</strong><br>
-"Cats purple democracy whiskers moonlight!"<br>
-<em style="color: var(--color-text-secondary);">→ Creative chaos</em>
+<div class="temp-example temp-high">
+<div class="temp-header">
+<div class="temp-value">2.0</div>
+<div class="temp-label">Chaotic</div>
+</div>
+<div class="temp-output">
+"Cats purple democracy whiskers moonlight!"
+</div>
+<div class="temp-note">
+<span>⚠️</span>
+<span>Nonsensical randomness</span>
+</div>
+</div>
+
+</div>
+
+<div style="margin-top: 45px; padding: 20px 30px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 16pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: var(--color-primary-purple);">Production Recommendation</strong> - Use 0 for factual Q&A, 0.7-1.0 for creative tasks, avoid >1.5. Temperature controls the randomness of token selection.
 </div>
 
 ---
