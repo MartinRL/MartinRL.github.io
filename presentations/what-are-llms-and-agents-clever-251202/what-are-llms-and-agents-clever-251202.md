@@ -687,6 +687,10 @@ Helpful, engaging, natural
 This is why ChatGPT feels like talking to someone, not just autocomplete
 </div>
 
+<div style="margin-top: 25px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666; max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: #5500FF;">Why ChatGPT Feels Human</strong> - Pre-training learns language patterns. SFT learns to follow instructions. RLHF learns conversation style. This three-stage pipeline transforms autocomplete into dialogue.
+</div>
+
 ---
 
 ## Probabilistic: Not a Database
@@ -870,6 +874,10 @@ This phenomenon is called a "hallucination"
 <li><strong>Pure pattern matching:</strong> Completes patterns that seem statistically likely from training</li>
 <li><strong>Training ≠ memorization:</strong> Learns relationships, not a searchable database of facts</li>
 </ul>
+
+<div style="margin-top: 20px; padding: 15px 20px; background: #FFF5E6; border-left: 3px solid #FF922D; border-radius: 4px; font-size: 15pt; color: #666;">
+💡 <strong style="color: #FF922D;">Why Hallucinations Are Inevitable</strong> - LLMs have zero access to truth during generation. They can't fact-check themselves because they're completing patterns, not querying databases. "Google + acquired + Twitter + billion" appear together often enough to seem correct.
+</div>
 </div>
 
 <div class="mitigation-box">
@@ -918,6 +926,10 @@ Remember: High confidence ≠ High accuracy
 <div style="text-align: center; margin-top: 40px; font-size: 18pt;">
 Once full, oldest messages disappear.<br>
 **No long-term memory.**
+</div>
+
+<div style="margin-top: 25px; padding: 15px 20px; background: #FFF5E6; border-left: 3px solid #FF922D; border-radius: 4px; font-size: 15pt; color: #666; max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: #FF922D;">The Goldfish Problem</strong> - Every conversation is like meeting someone for the first time. The model can't learn from past chats or remember you between sessions. This isn't a bug—it's the fundamental architecture. RAG and vector databases are workarounds, not solutions.
 </div>
 
 ---
