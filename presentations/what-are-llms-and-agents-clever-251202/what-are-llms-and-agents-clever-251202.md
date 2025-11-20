@@ -421,7 +421,10 @@ h3 {
 <div class="model-name">Phi-4 (Consumer GPU)</div>
 
 <div class="quantization-tip">
-<strong>4-bit:</strong> 70B on $15K • 400B on $50K
+<strong>🔧 Quantization = Model Compression:</strong> Reduce memory by 75% • ~2-5% quality trade-off<br/>
+<div style="margin-top: 8px; font-size: 0.85em; color: var(--color-text-secondary);">
+<strong>Enables:</strong> On-prem deployment • Privacy-first AI
+</div>
 </div>
 </div>
 
