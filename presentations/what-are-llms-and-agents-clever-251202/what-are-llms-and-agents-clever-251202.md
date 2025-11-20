@@ -78,7 +78,7 @@ It sees <strong style="color: var(--color-primary-purple);">convenient linguisti
 That's why it can't count the 'r's in strawberry—it literally never processes 's-t-r-a-w-b-e-r-r-y', only [31552][19685], where the letter boundaries are lost inside the tokens.
 
 </div>
-
+</br>
 <div style="margin-top: 30px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary);">
 💡 <strong style="color: var(--color-primary-purple);">Byte Pair Encoding (BPE)</strong> - The algorithm that creates these tokens. It identifies frequently-occurring character sequences in training data and merges them into single tokens, creating an efficient compression dictionary.
 </div>
@@ -98,10 +98,9 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"pre"` + `"processing"`
 
 </div>
-
-<div style="margin-top: 50px; text-align: center; font-size: 18pt; color: var(--color-text-secondary);">
-This is why LLMs can handle rare words, compound words,<br>
-and even **invent new words** by combining parts.
+</br>
+<div style="margin-top: 40px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666; max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: #5500FF;">Compositional Understanding</strong> - This is why LLMs can handle rare words, compound words, and even **invent new words** by combining parts. Each token carries meaning that can be assembled like LEGO blocks.
 </div>
 
 ---
