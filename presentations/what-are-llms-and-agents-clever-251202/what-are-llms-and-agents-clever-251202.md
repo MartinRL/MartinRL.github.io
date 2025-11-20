@@ -805,13 +805,13 @@ It's not <em style="color: var(--color-primary-purple); font-style: normal; font
 
 ---
 
-## Probabilistic: Confident When Wrong
+## Probabilistic: The Hallucination Problem
 
 <style scoped>
 .warning-text {
   text-align: center;
   margin-top: 40px;
-  font-size: 18pt;
+  font-size: 20pt;
   color: var(--color-warning);
   font-weight: 600;
 }
@@ -825,98 +825,112 @@ It's not <em style="color: var(--color-primary-purple); font-style: normal; font
 
 </div>
 
-<div style="margin-top: 40px; padding: 20px; background: var(--color-bg-orange-light); border-left: 4px solid var(--color-orange);">
+<div style="margin-top: 40px; padding: 20px; background: var(--color-bg-orange-light); border-left: 4px solid var(--color-orange); font-size: 18pt;">
 <strong>Reality:</strong> Google never bought Twitter.<br>
-But "Google acquired" + "Twitter" + "billion" appear together often enough that the model connects them.
+The LLM sounds completely confident—and completely wrong.
 </div>
-</br>
+
 <div class="warning-text">
-High confidence ≠ High accuracy
+⚠️ High confidence ≠ High accuracy
 </div>
 </br></br>
-<div style="margin-top: 30px; padding: 15px 20px; background: var(--color-bg-red-tint); border-left: 4px solid var(--color-warning); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
-💡 <strong style="color: var(--color-warning);">Hallucinations</strong> - When LLMs generate false information with high confidence, this is called a "hallucination." It's not a bug—it's the fundamental nature of pattern-based prediction.
+<div style="text-align: center; margin-top: 50px; font-size: 18pt; color: var(--color-text-secondary); line-height: 1.6;">
+When LLMs generate false information with confidence, we call this a <strong style="color: var(--color-warning);">"hallucination"</strong>
 </div>
 
 ---
 
-## Probabilistic: Understanding Hallucinations
+## Hallucinations: Why They Happen & What Helps
 
 <style scoped>
-.hallucination-container {
-  margin-top: 40px;
+.two-column {
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+  justify-content: center;
 }
 
-.definition-box {
-  background: var(--color-bg-red-light);
-  border-left: 4px solid var(--color-orange);
-  padding: 20px;
-  margin: 20px 0;
-  font-size: 18pt;
+.column {
+  flex: 1;
+  max-width: 450px;
 }
 
-.causes-box {
-  background: var(--color-gray-100);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 30px 0;
+.column-header {
+  font-size: 22pt;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid;
 }
 
-.causes-box h4 {
-  color: var(--color-orange);
-  font-size: 20pt;
-  margin: 0 0 15px 0;
+.why-header {
+  color: var(--color-warning);
+  border-color: var(--color-warning);
 }
 
-.causes-box ul {
-  font-size: 16pt;
-  line-height: 1.6;
-}
-
-.mitigation-box {
-  background: var(--color-bg-green-tint);
-  border-left: 4px solid var(--color-green);
-  padding: 20px;
-  margin: 20px 0;
-  font-size: 16pt;
-}
-
-.mitigation-box strong {
+.what-header {
   color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.column ul {
+  font-size: 16pt;
+  line-height: 1.7;
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.column ul li strong {
+  font-weight: 600;
+}
+
+.why-column ul li:before {
+  content: "•";
+  color: var(--color-warning);
+  font-weight: bold;
+  font-size: 20pt;
+  margin-right: 10px;
+}
+
+.what-column ul li:before {
+  content: "✓";
+  color: var(--color-green);
+  font-weight: bold;
+  font-size: 16pt;
+  margin-right: 10px;
 }
 </style>
 
-<div class="hallucination-container">
+<div class="two-column">
 
-<div class="definition-box">
-<strong>Hallucination:</strong> When an LLM generates plausible-sounding but factually incorrect information with high confidence.
-</div>
-
-<div class="causes-box">
-<h4>🔍 Why It Happens</h4>
+<div class="column why-column">
+<div class="column-header why-header">🔍 Why It Happens</div>
 <ul>
-<li><strong>No truth database:</strong> No access to facts during generation, can't fact-check</li>
-<li><strong>Pure pattern matching:</strong> Completes patterns that seem statistically likely from training</li>
-<li><strong>Training ≠ memorization:</strong> Learns relationships, not a searchable database of facts</li>
+<li><strong>No truth database</strong><br>Can't fact-check during generation</li>
+<li><strong>Pure pattern matching</strong><br>"Google" + "acquired" + "Twitter" seem plausible together</li>
+<li><strong>Training ≠ memorization</strong><br>Learned relationships, not searchable facts</li>
 </ul>
-
-<div style="margin-top: 20px; padding: 15px 20px; background: var(--color-bg-orange-tint); border-left: 3px solid var(--color-orange); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary);">
-💡 <strong style="color: #FF922D;">Why Hallucinations Are Inevitable</strong> - LLMs have zero access to truth during generation. They can't fact-check themselves because they're completing patterns, not querying databases. "Google + acquired + Twitter + billion" appear together often enough to seem correct.
-</div>
 </div>
 
-<div class="mitigation-box">
-<strong>⚡ What Helps Reduce Hallucinations:</strong><br>
-• <strong>RAG</strong> (Retrieval Augmented Generation) - ground answers in real data<br>
-• <strong>Human verification</strong> for critical information<br>
-• <strong>Lower temperature</strong> = less creative = fewer hallucinations<br>
-• <strong>Prompt engineering:</strong> "Only answer if certain, otherwise say 'I don't know'"
+<div class="column what-column">
+<div class="column-header what-header">⚡ What Helps</div>
+<ul>
+<li><strong>RAG</strong><br>Ground answers in real data</li>
+<li><strong>Human verification</strong><br>Check critical information</li>
+<li><strong>Lower temperature</strong><br>Less creative = fewer hallucinations</li>
+<li><strong>Prompt engineering</strong><br>"Say 'I don't know' if uncertain"</li>
+</ul>
 </div>
 
-<div style="margin-top: 25px; text-align: center; font-size: 15pt; color: var(--color-warning); font-weight: 600;">
-Remember: High confidence ≠ High accuracy
 </div>
 
+<div style="margin-top: 50px; padding: 20px 30px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 16pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto; text-align: center;">
+💡 Hallucinations aren't bugs—they're the fundamental nature of pattern-based prediction. The same creativity that enables useful responses also enables convincing fiction.
 </div>
 
 ---
