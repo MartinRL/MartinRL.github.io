@@ -99,8 +99,8 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 
 </div>
 </br>
-<div style="margin-top: 40px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666; max-width: 90%; margin-left: auto; margin-right: auto;">
-💡 <strong style="color: #5500FF;">Compositional Understanding</strong> - This is why LLMs can handle rare words, compound words, and even **invent new words** by combining parts. Each token carries meaning that can be assembled like LEGO blocks.
+<div style="margin-top: 40px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: var(--color-primary-purple);">Compositional Understanding</strong> - This is why LLMs can handle rare words, compound words, and even <strong style="color: var(--color-primary-purple);">invent new words</strong> by combining parts. Each token carries meaning that can be assembled like LEGO blocks.
 </div>
 
 ---
@@ -159,7 +159,7 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 <span class="text-black" style="font-size: 16pt;">Frequent code patterns get single tokens: `void`, `async`, `const`, `=>`, `()`, `{}`</span><br>
 <span class="text-gray" style="font-size: 16pt;">That's why LLMs can write code—syntax appeared billions of times in training data.</span>
 
-<div style="margin-top: 50px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666;">
+<div style="margin-top: 50px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary);">
 💡 <strong style="color: #5500FF;">Why LLMs Excel at Code</strong> - Programming syntax gets compressed into single tokens (`async`, `=>`, `{}`). Code's repetitive structure means these patterns appeared billions of times, making code easier to "predict" than natural language.
 </div>
 </div>
@@ -170,7 +170,7 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 
 <div style="font-size: 28pt; margin-top: 80px; text-align: center;">
 
-"I went to the **bank** to deposit money"
+"I went to the <strong style="color: var(--color-primary-purple);">bank</strong> to deposit money"
 
 </div>
 
@@ -319,7 +319,7 @@ Every word does this simultaneously for every other word<br>
 <div class="comparison-box">
 <h3>Old Way (RNN)</h3>
 
-**The → cat → sat → on → the → mat**
+<strong>The → cat → sat → on → the → mat</strong>
 
 <span style="color: var(--color-text-secondary);">Sequential: 6 steps</span>
 </div>
@@ -327,7 +327,7 @@ Every word does this simultaneously for every other word<br>
 <div class="comparison-box">
 <h3 style="color: var(--color-sky-blue);">Transformer Way</h3>
 
-**[The, cat, sat, on, the, mat]**
+<strong>[The, cat, sat, on, the, mat]</strong>
 
 <span style="color: var(--color-sky-blue);">Parallel: 1 step</span>
 </div>
@@ -337,10 +337,6 @@ Every word does this simultaneously for every other word<br>
 <div class="info-box">
 
 The 2017 paper "Attention Is All You Need" proved that sequential processing isn't necessary for language understanding. It's like discovering you don't need to read a book page-by-page—you can understand the entire book by seeing all relationships between all words simultaneously.
-
-<strong>Without this parallel processing, GPT-4 would take 50 years to train instead of 3 months.</strong>
-
-This parallel processing breakthrough is why we have LLMs today. Without it, modern AI would be economically impossible.
 
 💡 <strong>The Economics of Parallelism</strong> - Without transformer parallelism, GPT-4 would take 50 years to train instead of 3 months. This breakthrough is the ONLY reason modern AI exists—sequential training would be economically impossible.
 
@@ -686,7 +682,7 @@ Helpful, engaging, natural
 This is why ChatGPT feels like talking to someone, not just autocomplete
 </div>
 
-<div style="margin-top: 25px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #5500FF; border-radius: 4px; font-size: 15pt; color: #666; max-width: 90%; margin-left: auto; margin-right: auto;">
+<div style="margin-top: 25px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
 💡 <strong style="color: #5500FF;">Why ChatGPT Feels Human</strong> - Pre-training learns language patterns. SFT learns to follow instructions. RLHF learns conversation style. This three-stage pipeline transforms autocomplete into dialogue.
 </div>
 
@@ -770,10 +766,10 @@ This is why ChatGPT feels like talking to someone, not just autocomplete
 </div>
 
 <div class="footer-text">
-It's not **remembering**. It's **predicting**.
+It's not <em style="color: var(--color-primary-purple); font-style: normal; font-weight: 600;">remembering</em>. It's <em style="color: var(--color-primary-purple); font-style: normal; font-weight: 600;">predicting</em>.
 </div>
 
-<div style="margin-top: 25px; padding: 15px 20px; background: #F0F5FF; border-left: 3px solid #FF922D; border-radius: 4px; font-size: 15pt; color: #666; max-width: 90%; margin-left: auto; margin-right: auto;">
+<div style="margin-top: 25px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-orange); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
 💡 <strong style="color: #FF922D;">No Database, Only Patterns</strong> - LLMs don't look up facts—they predict statistically likely continuations. There's no "Paris is capital of France" entry. The model learned that "capital of France is" is overwhelmingly followed by "Paris" in training data.
 </div>
 
@@ -793,9 +789,9 @@ It's not **remembering**. It's **predicting**.
 
 <div style="margin-top: 60px; font-size: 20pt;">
 
-**You:** "What year did Google buy Twitter?"
+<span style="color: var(--color-text-muted); font-weight: 600;">You:</span> "What year did Google buy Twitter?"
 
-**LLM:** "Google acquired Twitter in 2016 for $44 billion."
+<span style="color: var(--color-text-muted); font-weight: 600;">LLM:</span> "Google acquired Twitter in 2016 for $44 billion."
 
 </div>
 
@@ -874,7 +870,7 @@ This phenomenon is called a "hallucination"
 <li><strong>Training ≠ memorization:</strong> Learns relationships, not a searchable database of facts</li>
 </ul>
 
-<div style="margin-top: 20px; padding: 15px 20px; background: #FFF5E6; border-left: 3px solid #FF922D; border-radius: 4px; font-size: 15pt; color: #666;">
+<div style="margin-top: 20px; padding: 15px 20px; background: var(--color-bg-orange-tint); border-left: 3px solid var(--color-orange); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary);">
 💡 <strong style="color: #FF922D;">Why Hallucinations Are Inevitable</strong> - LLMs have zero access to truth during generation. They can't fact-check themselves because they're completing patterns, not querying databases. "Google + acquired + Twitter + billion" appear together often enough to seem correct.
 </div>
 </div>
@@ -924,10 +920,10 @@ Remember: High confidence ≠ High accuracy
 
 <div style="text-align: center; margin-top: 40px; font-size: 18pt;">
 Once full, oldest messages disappear.<br>
-**No long-term memory.**
+<em style="color: var(--color-primary-purple); font-style: normal; font-weight: 600;">No long-term memory.</em>
 </div>
 
-<div style="margin-top: 25px; padding: 15px 20px; background: #FFF5E6; border-left: 3px solid #FF922D; border-radius: 4px; font-size: 15pt; color: #666; max-width: 90%; margin-left: auto; margin-right: auto;">
+<div style="margin-top: 25px; padding: 15px 20px; background: var(--color-bg-orange-tint); border-left: 3px solid var(--color-orange); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
 💡 <strong style="color: #FF922D;">The Goldfish Problem</strong> - Every conversation is like meeting someone for the first time. The model can't learn from past chats or remember you between sessions. This isn't a bug—it's the fundamental architecture. RAG and vector databases are workarounds, not solutions.
 </div>
 
@@ -984,7 +980,7 @@ Bigger window = More expensive & slower
 </style>
 
 <div style="font-size: 20pt; text-align: center; margin: 40px 0;">
-**Prompt:** "Write a sentence about cats"
+<span style="color: var(--color-text-muted); font-weight: 600;">Prompt:</span> "Write a sentence about cats"
 </div>
 
 <div class="temp-example" style="background: var(--color-gray-100); border-left: 4px solid var(--color-dark-grey);">
