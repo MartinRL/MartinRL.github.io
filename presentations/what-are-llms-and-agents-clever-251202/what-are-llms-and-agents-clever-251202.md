@@ -698,39 +698,59 @@ Helpful, engaging, natural
 .prompt {
   font-size: 24pt;
   margin: 40px 0;
+  color: var(--color-text-secondary);
 }
 
 .options {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  align-items: center;
+  gap: 20px;
 }
 
 .option {
-  padding: 20px;
-  background: var(--color-bg-orange-tint);
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 2px solid var(--color-primary-purple);
+  box-shadow: 0 2px 8px rgba(85, 0, 255, 0.15);
+  transition: transform 0.2s;
 }
 
 .option .percentage {
-  font-weight: bold;
+  font-size: 28pt;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
-.option:nth-child(1) .percentage {
-  font-size: 32pt;
-  color: var(--color-warning);
+/* High probability: strong visual presence */
+.option:nth-child(1) {
+  padding: 30px 40px;
+  min-width: 150px;
+  background: var(--color-primary-purple);
+  color: var(--color-white);
+}
+
+/* Medium probability: lighter purple */
+.option:nth-child(2) {
+  padding: 20px 30px;
+  min-width: 120px;
+  background: rgba(85, 0, 255, 0.15);
+  color: var(--color-black);
 }
 
 .option:nth-child(2) .percentage {
-  font-size: 24pt;
-  color: var(--color-confidence-medium);
-  font-weight: 600;
+  color: var(--color-primary-purple);
+}
+
+/* Low probability: faint purple */
+.option:nth-child(3) {
+  padding: 15px 20px;
+  min-width: 100px;
+  background: rgba(85, 0, 255, 0.05);
+  color: var(--color-text-secondary);
 }
 
 .option:nth-child(3) .percentage {
-  font-size: 20pt;
-  color: var(--color-confidence-low);
-  font-weight: 500;
+  color: var(--color-text-muted);
 }
 
 .footer-text {
@@ -738,6 +758,17 @@ Helpful, engaging, natural
   margin-top: 60px;
   font-size: 18pt;
   color: var(--color-text-secondary);
+}
+
+.footer-text em:first-of-type {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.footer-text em:last-of-type {
+  color: var(--color-primary-purple);
+  font-weight: 600;
 }
 </style>
 
@@ -767,9 +798,9 @@ Helpful, engaging, natural
 <div class="footer-text">
 It's not <em style="color: var(--color-primary-purple); font-style: normal; font-weight: 600;">remembering</em>. It's <em style="color: var(--color-primary-purple); font-style: normal; font-weight: 600;">predicting</em>.
 </div>
-
+</br>
 <div style="margin-top: 25px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-orange); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
-💡 <strong style="color: #FF922D;">No Database, Only Patterns</strong> - LLMs don't look up facts—they predict statistically likely continuations. There's no "Paris is capital of France" entry. The model learned that "capital of France is" is overwhelmingly followed by "Paris" in training data.
+💡 <strong style="color: var(--color-orange);">No Database, Only Patterns</strong> - LLMs predict statistically likely continuations, not look up facts. The model learned "capital of France is" → "Paris" from training patterns.
 </div>
 
 ---
