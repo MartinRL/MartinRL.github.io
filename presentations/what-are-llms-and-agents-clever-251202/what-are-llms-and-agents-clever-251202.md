@@ -1134,24 +1134,24 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
     <div class="model-name">🪟 GPT-3.5</div>
     <div class="context-size">4K</div>
     <div class="description">~500 lines of code</div>
-    <div class="indicators">Cost: $ · Speed: Fast</div>
+    <div class="indicators">💲 Cost: · ⚡⚡⚡ Speed: Fast</div>
   </div>
 
   <div class="size-box">
     <div class="model-name">🪟🪟 GPT-4</div>
     <div class="context-size">128K</div>
     <div class="description">~16K lines (React codebase)</div>
-    <div class="indicators">Cost: $$ · Speed: Medium</div>
+    <div class="indicators">💲💲 Cost: · ⚡⚡ Speed: Medium</div>
   </div>
 
   <div class="size-box">
     <div class="model-name">🪟🪟🪟 Claude 3</div>
     <div class="context-size">1M</div>
     <div class="description">~125K lines (Linux kernel)</div>
-    <div class="indicators">Cost: $$$ · Speed: Slower</div>
+    <div class="indicators">💲💲💲 Cost: · ⚡ Speed: Slower</div>
   </div>
 </div>
-
+</br></br>
 <div style="margin-top: 30px; padding: 15px 25px; background: var(--color-bg-blue-light); border-left: 4px solid var(--color-dark-blue); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
 💡 <strong style="color: var(--color-dark-blue);">Context Trade-off</strong> - Larger windows = higher cost & slower response. Most tasks need < 4K.
 </div>
@@ -1197,9 +1197,9 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 }
 
 .temp-label {
-  font-size: 16pt;
-  opacity: 0.8;
-  font-weight: 500;
+  font-size: 18pt;
+  opacity: 0.85;
+  font-weight: 600;
 }
 
 .temp-output {
@@ -1230,7 +1230,7 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 }
 
 .temp-zero .temp-value {
-  font-size: 32pt;
+  font-size: 24pt;
 }
 
 .temp-zero .temp-note {
@@ -1248,7 +1248,7 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 }
 
 .temp-medium .temp-value {
-  font-size: 36pt;
+  font-size: 28pt;
 }
 
 .temp-medium .temp-header {
