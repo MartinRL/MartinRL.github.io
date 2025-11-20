@@ -36,12 +36,12 @@ li:nth-child(6) strong { color: var(--color-dark-grey); }
 li { margin-bottom: 12px; }
 </style>
 
-- **Tokens** → How LLMs process text (BPE compression dictionary)
-- **Transformers** → Why parallel attention enables modern AI
-- **Parameters** → What models store and why scale matters
-- **Training** → How raw models become helpful assistants (Pre-training → SFT → RLHF)
-- **Hallucinations** → Why LLMs confidently generate false information
-- **Agents** → How LLMs become action-taking systems with tools
+- <strong>Tokens</strong> → How LLMs process text (BPE compression dictionary)
+- <strong>Transformers</strong> → Why parallel attention enables modern AI
+- <strong>Parameters</strong> → What models store and why scale matters
+- <strong>Training</strong> → How raw models become helpful assistants (Pre-training → SFT → RLHF)
+- <strong>Hallucinations</strong> → Why LLMs confidently generate false information
+- <strong>Agents</strong> → How LLMs become action-taking systems with tools
 
 ---
 
@@ -89,12 +89,12 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 
 <div style="margin-top: 60px; font-size: 20pt; line-height: 1.8;">
 
-**Whole words:** `"hello"` → [15339]
+<span style="color: var(--color-primary-purple); font-weight: 600;">Whole words:</span> `"hello"` → [15339]
 
-**Word parts:** `"understanding"` → [8154, 2259]
+<span style="color: var(--color-primary-purple); font-weight: 600;">Word parts:</span> `"understanding"` → [8154, 2259]
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"under"` + `"standing"`
 
-**Prefixes/Suffixes:** `"preprocessing"` → [1762, 29986]
+<span style="color: var(--color-primary-purple); font-weight: 600;">Prefixes/Suffixes:</span> `"preprocessing"` → [1762, 29986]
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"pre"` + `"processing"`
 
 </div>
@@ -170,16 +170,16 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 
 <div style="font-size: 28pt; margin-top: 80px; text-align: center;">
 
-"I went to the **bank**..."
+"I went to the **bank** to deposit money"
 
 </div>
 
 <div style="display: flex; justify-content: center; gap: 100px; margin-top: 60px;">
   <div style="text-align: center;">
-    <div>...to get money? 🏦</div>
+    <div>Financial institution? 🏦</div>
   </div>
   <div style="text-align: center;">
-    <div>...of the river? 🏞️</div>
+    <div>River's edge? 🏞️</div>
   </div>
 </div>
 
@@ -466,7 +466,7 @@ h3 {
 </div>
 
 <div style="text-align: center; margin-top: 40px; font-size: 18pt; color: var(--color-text-secondary);">
-Not programmed. **Learned** from trillions of words.
+Not programmed. <em style="color: var(--color-primary-purple); font-style: normal; font-weight: 600;">Learned</em> from trillions of words.
 </div>
 
 ---
@@ -1011,14 +1011,14 @@ Bigger window = More expensive & slower
 
 ## The Takeaway: From Magic to Math
 
-### 🎯 **Now You Know Why:**
+### 🎯 <span style="color: var(--color-primary-purple);">Now You Know Why:</span>
 
-- LLMs can't count letters in "strawberry" → **Tokens**
-- They understand context not just words → **Transformers**
-- Bigger models cost exponentially more → **Parameters**
-- They're confident when wrong → **Probabilistic**
-- They forget your first question → **Context Window**
-- Same prompt, different answers → **Temperature**
+- LLMs can't count letters in "strawberry" → <strong style="color: var(--color-primary-purple);">Tokens</strong>
+- They understand context not just words → <strong style="color: var(--color-sky-blue);">Transformers</strong>
+- Bigger models cost exponentially more → <strong style="color: var(--color-green);">Parameters</strong>
+- They're confident when wrong → <strong style="color: var(--color-dark-blue);">Probabilistic</strong>
+- They forget your first question → <strong style="color: var(--color-dark-blue);">Context Window</strong>
+- Same prompt, different answers → <strong style="color: var(--color-orange);">Temperature</strong>
 
 <div style="margin-top: 60px; padding: 30px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple);">
 <strong style="font-size: 24pt;">The Magic:</strong> It seems to understand you<br>
