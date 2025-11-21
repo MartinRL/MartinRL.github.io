@@ -1134,26 +1134,26 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
     <div class="model-name">🪟 GPT-3.5</div>
     <div class="context-size">4K</div>
     <div class="description">~500 lines of code</div>
-    <div class="indicators">💲 Cost: · ⚡⚡⚡ Speed: Fast</div>
+    <div class="indicators">💲 Low · ⚡⚡⚡ Fast</div>
   </div>
 
   <div class="size-box">
     <div class="model-name">🪟🪟 GPT-4</div>
     <div class="context-size">128K</div>
     <div class="description">~16K lines (React codebase)</div>
-    <div class="indicators">💲💲 Cost: · ⚡⚡ Speed: Medium</div>
+    <div class="indicators">💲💲 Medium · ⚡⚡ Medium</div>
   </div>
 
   <div class="size-box">
     <div class="model-name">🪟🪟🪟 Claude 3</div>
     <div class="context-size">1M</div>
     <div class="description">~125K lines (Linux kernel)</div>
-    <div class="indicators">💲💲💲 Cost: · ⚡ Speed: Slower</div>
+    <div class="indicators">💲💲💲 High · ⚡ Slow</div>
   </div>
 </div>
 </br></br>
 <div style="margin-top: 30px; padding: 15px 25px; background: var(--color-bg-blue-light); border-left: 4px solid var(--color-dark-blue); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
-💡 <strong style="color: var(--color-dark-blue);">Context Trade-off</strong> - Larger windows = higher cost & slower response. Most tasks need < 4K.
+💡 <strong style="color: var(--color-dark-blue);">Context Trade-off</strong> - Larger windows = higher cost 💲 & slower response ⚡. Most tasks need < 4K.
 </div>
 
 ---
@@ -1162,93 +1162,110 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 
 <style scoped>
 .temp-container {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .prompt-section {
   text-align: center;
-  font-size: 20pt;
-  margin: 30px auto 40px auto;
-  padding: 18px 30px;
+  font-size: 18pt;
+  margin: 0 auto 30px auto;
+  padding: 15px 25px;
   background: var(--color-bg-purple-tint);
   border-radius: 10px;
-  max-width: 75%;
   border: 2px solid var(--color-primary-purple);
 }
 
+.temp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
 .temp-example {
-  margin: 25px auto;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 2px solid;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 80%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   text-align: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px;
 }
 
 .temp-header {
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .temp-value {
   font-weight: 700;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .temp-label {
-  font-size: 18pt;
+  font-size: 15pt;
   opacity: 0.85;
   font-weight: 600;
 }
 
 .temp-output {
-  font-size: 15pt;
-  line-height: 1.7;
-  margin: 15px 0;
+  font-size: 13.5pt;
+  line-height: 1.6;
+  margin: 12px 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .temp-note {
   font-style: italic;
-  font-size: 13pt;
-  margin-top: 15px;
-  padding-top: 15px;
+  font-size: 11.5pt;
+  margin-top: auto;
+  padding-top: 12px;
   border-top: 1px solid;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
 }
 
-/* Progressive sizing without transform */
+/* Temperature 0: Subtle outline, white background */
 .temp-zero {
-  min-height: 180px;
-  padding: 20px 30px;
-  background: var(--color-primary-purple);
+  background: var(--color-white);
   border-color: var(--color-primary-purple);
-  color: var(--color-white);
+  border-width: 2px;
+  color: var(--color-black);
 }
 
 .temp-zero .temp-value {
-  font-size: 24pt;
+  font-size: 28pt;
+  color: var(--color-primary-purple);
+}
+
+.temp-zero .temp-header {
+  color: var(--color-primary-purple);
 }
 
 .temp-zero .temp-note {
-  border-top-color: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.9);
+  border-top-color: rgba(85, 0, 255, 0.2);
+  color: var(--color-primary-purple);
 }
 
+/* Temperature 0.7: Medium purple fill - the sweet spot */
 .temp-medium {
-  min-height: 210px;
-  padding: 25px 40px;
-  background: rgba(85, 0, 255, 0.15);
+  background: rgba(85, 0, 255, 0.12);
   border-color: var(--color-primary-purple);
   border-width: 3px;
   color: var(--color-black);
 }
 
 .temp-medium .temp-value {
-  font-size: 28pt;
+  font-size: 32pt;
+  color: var(--color-primary-purple);
 }
 
 .temp-medium .temp-header {
@@ -1258,20 +1275,21 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 .temp-medium .temp-note {
   border-top-color: var(--color-primary-purple);
   color: var(--color-primary-purple);
+  font-weight: 500;
 }
 
+/* Temperature 2.0: Bold orange/red warning */
 .temp-high {
-  min-height: 240px;
-  padding: 30px 50px;
   background: var(--color-bg-orange-tint);
   border-color: var(--color-warning);
   border-width: 4px;
-  box-shadow: 0 4px 16px rgba(255, 107, 107, 0.2);
+  box-shadow: 0 3px 12px rgba(220, 38, 38, 0.15);
   color: var(--color-text-dark);
 }
 
 .temp-high .temp-value {
-  font-size: 40pt;
+  font-size: 36pt;
+  color: var(--color-warning);
 }
 
 .temp-high .temp-header {
@@ -1291,18 +1309,20 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 <span style="color: var(--color-text-muted); font-weight: 600;">Prompt:</span> "Write a sentence about cats"
 </div>
 
+<div class="temp-grid">
+
 <div class="temp-example temp-zero">
 <div class="temp-header">
 <div class="temp-value">0</div>
 <div class="temp-label">Deterministic</div>
 </div>
 <div class="temp-output">
-"Cats are domestic animals that are popular pets."<br>
+"Cats are domestic animals that are popular pets."<br><br>
 "Cats are domestic animals that are popular pets."
 </div>
 <div class="temp-note">
 <span>🔒</span>
-<span>Identical output every time</span>
+<span>Identical every time</span>
 </div>
 </div>
 
@@ -1312,12 +1332,12 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 <div class="temp-label">Balanced</div>
 </div>
 <div class="temp-output">
-"Cats love to nap in sunny spots."<br>
+"Cats love to nap in sunny spots."<br><br>
 "Many cats enjoy playing with toy mice."
 </div>
 <div class="temp-note">
 <span>✨</span>
-<span>Varied but coherent responses</span>
+<span>Varied but coherent</span>
 </div>
 </div>
 
@@ -1337,7 +1357,9 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 
 </div>
 
-<div style="margin-top: 45px; padding: 20px 30px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 16pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
+</div>
+
+<div style="margin-top: 35px; padding: 18px 28px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 92%; margin-left: auto; margin-right: auto;">
 💡 <strong style="color: var(--color-primary-purple);">Production Recommendation</strong> - Use 0 for factual Q&A, 0.7-1.0 for creative tasks, avoid >1.5. Temperature controls the randomness of token selection.
 </div>
 
