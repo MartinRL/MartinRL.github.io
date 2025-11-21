@@ -1642,7 +1642,7 @@ h2 {
 <div class="agent-container">
 
 <div class="definition">
-<strong>Agent:</strong> An LLM that can use tools and take actions in a loop until it completes a task.
+<strong>Agent:</strong> An LLM that can use tools and take actions autonomously in a loop until it completes a task.
 </div>
 
 <div class="comparison-grid">
@@ -1650,42 +1650,42 @@ h2 {
 <div class="comparison-box llm-box">
 <h4>🤖 LLM Alone</h4>
 <ul>
-<li>Only generates text</li>
-<li>No real-time data</li>
-<li>One-shot response</li>
+<li>Suggests code snippets</li>
+<li>No file system access</li>
+<li>Can't run or test code</li>
 </ul>
 </div>
 
 <div class="comparison-box agent-box">
-<h4>🛠️ LLM + Agent</h4>
+<h4>🛠️ LLM + Coding Agent</h4>
 <ul>
-<li>Uses tools & APIs</li>
-<li>Current information</li>
-<li>Multi-step reasoning</li>
+<li>Edits multiple files</li>
+<li>Runs tests & debugs</li>
+<li>Completes full tasks</li>
 </ul>
 </div>
 
 </div>
 
 <div class="agent-example">
-<strong>Example: "Check if my website is down"</strong>
+<strong>Example: "Fix the TypeScript error in UserProfile.tsx"</strong>
 
 <div class="step">
-<strong>1. Think:</strong> "I need to make an HTTP request to check the website status"
+<strong>1. Think:</strong> "Need to read the file and understand the type error"
 </div>
 <div class="step">
-<strong>2. Act:</strong> Use HTTP tool → GET https://example.com
+<strong>2. Act:</strong> Read file, analyze error, edit component to fix prop interface
 </div>
 <div class="step">
-<strong>3. Observe:</strong> Received 200 OK, page loaded successfully
+<strong>3. Observe:</strong> Run TypeScript compiler → No errors found
 </div>
 <div class="step">
-<strong>4. Respond:</strong> "Your website is up and running. It responded with a 200 OK status."
+<strong>4. Respond:</strong> "Fixed the type mismatch by updating the User interface"
 </div>
 </div>
 
 <div class="frameworks">
-<strong>Frameworks:</strong> LangChain • AutoGPT • Claude Code • OpenAI Assistants
+<strong>Coding Agents:</strong> Claude Code • GitHub Copilot • Cursor • Windsurf • Devin
 </div>
 
 </div>
