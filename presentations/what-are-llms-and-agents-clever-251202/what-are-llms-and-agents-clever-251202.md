@@ -1386,132 +1386,179 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 ## Still a Bit of Magic?
 
 <style scoped>
-section {
+h2 {
+  margin-bottom: 35px;
+}
+.magic-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 25px;
 }
-h2, h3 {
-  grid-column: 1 / -1;
-}
-.left {
-  grid-column: 1;
-}
-.right {
-  grid-column: 2;
+.magic-card {
+  border-radius: 10px;
+  padding: 22px 18px;
+  text-align: center;
+  min-height: 360px;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.mystery-box {
-  background: rgba(85, 0, 255, 0.05);
-  border-left: 3px solid var(--color-primary-purple);
-  padding: 12px 16px;
-  margin: 10px 0;
-  border-radius: 6px;
-  font-size: 13pt;
-  line-height: 1.4;
+.card-understood {
+  background: rgba(85, 0, 255, 0.15);
+  border: 3px solid var(--color-primary-purple);
 }
-.mystery-box strong {
-  color: var(--color-primary-purple);
-  font-size: 14pt;
+.card-discovering {
+  background: rgba(255, 146, 45, 0.12);
+  border: 3px solid var(--color-orange);
 }
-.mystery-box em {
-  color: var(--color-orange);
-  font-style: italic;
+.card-mysterious {
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px solid var(--color-gray-400);
 }
-.subtitle {
-  color: var(--color-text-secondary);
-  font-size: 12pt;
+.card-title {
+  font-size: 17pt;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
-.progress-container {
-  background: var(--color-bg-purple-tint);
-  border-radius: 20px;
-  height: 35px;
-  margin-top: 15px;
+.card-understood .card-title { color: var(--color-primary-purple); }
+.card-discovering .card-title { color: var(--color-orange); }
+.card-mysterious .card-title { color: var(--color-gray-600); }
+.card-percentage {
+  font-size: 44pt;
+  font-weight: 700;
+  line-height: 1;
+  margin: 10px 0 6px 0;
+}
+.card-understood .card-percentage { color: var(--color-primary-purple); }
+.card-discovering .card-percentage { color: var(--color-orange); }
+.card-mysterious .card-percentage { color: var(--color-gray-600); }
+.card-label {
+  font-size: 11pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+.card-understood .card-label { color: var(--color-primary-purple); }
+.card-discovering .card-label { color: var(--color-orange); }
+.card-mysterious .card-label { color: var(--color-gray-600); }
+.mini-progress {
+  height: 7px;
+  width: 75px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  margin: 8px 0 18px 0;
   overflow: hidden;
-  display: flex;
 }
-.progress-understood {
-  background: var(--color-primary-purple);
+.mini-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+.card-understood .mini-progress-fill {
   width: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 11pt;
-  font-weight: 600;
+  background: var(--color-primary-purple);
 }
-.progress-discovering {
-  background: var(--color-orange);
+.card-discovering .mini-progress-fill {
   width: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 11pt;
-  font-weight: 600;
+  background: var(--color-orange);
 }
-.progress-mysterious {
-  background: var(--color-gray-200);
+.card-mysterious .mini-progress-fill {
   width: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-dark);
-  font-size: 11pt;
-  font-weight: 600;
+  background: var(--color-gray-500);
 }
-.truth-box {
-  padding: 25px;
+.card-content {
+  font-size: 12pt;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: auto;
+}
+.card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.card-content li {
+  margin: 6px 0;
+}
+.card-content li:before {
+  content: "•";
+  margin-right: 6px;
+  font-weight: 700;
+}
+.card-understood .card-content li:before { color: var(--color-primary-purple); }
+.card-discovering .card-content li:before { color: var(--color-orange); }
+.card-mysterious .card-content li:before { color: var(--color-gray-600); }
+.insight-footer {
   background: var(--color-bg-purple-tint);
-  border: 2px solid var(--color-primary-purple);
-  border-radius: 8px;
-  font-size: 15pt;
-  line-height: 1.6;
+  border-left: 4px solid var(--color-primary-purple);
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 12pt;
+  line-height: 1.5;
+  text-align: center;
 }
-.truth-box strong {
+.insight-footer strong {
   color: var(--color-primary-purple);
-  font-size: 16pt;
 }
 </style>
 
-<div class="left">
+<div class="magic-grid">
 
-<div class="mystery-box">
-<strong>🔍 Emergence at Scale</strong><br>
-• At ~100B params: reasoning <em>suddenly</em><br>
-• At ~1T params: deception emerges<br>
-<span class="subtitle">Can't predict what's next</span>
+<div class="magic-card card-understood">
+  <div class="card-title">🔍 Emergence<br>at Scale</div>
+  <div class="card-percentage">70%</div>
+  <div class="card-label">Well-Understood</div>
+  <div class="mini-progress">
+    <div class="mini-progress-fill"></div>
+  </div>
+  <div class="card-content">
+    <ul>
+      <li>Reasoning emerges ~100B params</li>
+      <li>Deception appears ~1T params</li>
+      <li>Can't predict what's next</li>
+    </ul>
+  </div>
 </div>
 
-<div class="mystery-box">
-<strong>🧠 In-Context Learning</strong><br>
-• Shows 3 examples → Learns task<br>
-• Zero parameter updates<br>
-<span class="subtitle">Multiple theories, no consensus</span>
+<div class="magic-card card-discovering">
+  <div class="card-title">🧠 In-Context<br>Learning</div>
+  <div class="card-percentage">20%</div>
+  <div class="card-label">Active Research</div>
+  <div class="mini-progress">
+    <div class="mini-progress-fill"></div>
+  </div>
+  <div class="card-content">
+    <ul>
+      <li>3 examples → learns task</li>
+      <li>Zero parameter updates</li>
+      <li>Multiple theories, no consensus</li>
+    </ul>
+  </div>
 </div>
 
-<div class="mystery-box">
-<strong>🌌 Superposition</strong><br>
-• One neuron = multiple concepts<br>
-• More concepts than neurons<br>
-<span class="subtitle">High-dimensional geometry</span>
+<div class="magic-card card-mysterious">
+  <div class="card-title">🌌 Superposition</div>
+  <div class="card-percentage">10%</div>
+  <div class="card-label">Still Mysterious</div>
+  <div class="mini-progress">
+    <div class="mini-progress-fill"></div>
+  </div>
+  <div class="card-content">
+    <ul>
+      <li>One neuron = multiple concepts</li>
+      <li>More concepts than neurons</li>
+      <li>High-dimensional geometry</li>
+    </ul>
+  </div>
 </div>
 
-<div class="progress-container">
-  <div class="progress-understood">✅ 70%</div>
-  <div class="progress-discovering">🔬 20%</div>
-  <div class="progress-mysterious">❓ 10%</div>
 </div>
 
-</div>
-
-<div class="right">
-<div class="truth-box">
-<strong>The Revised Truth:</strong><br><br>
-It's mathematics—just mathematics so intricate we're still reverse-engineering it.<br><br>
-Like discovering calculus to explain planetary motion, we're finding the equations that explain LLMs.
-</div>
+<div class="insight-footer">
+💡 <strong>The Truth:</strong> It's mathematics—just mathematics so intricate we're still reverse-engineering it. Like discovering calculus to explain planetary motion, we're finding the equations that explain LLMs.
 </div>
 
 ---
