@@ -1567,26 +1567,26 @@ h2 {
 
 <style scoped>
 .agent-container {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .definition {
   background: var(--color-bg-purple-tint);
   border-left: 4px solid var(--color-primary-purple);
   padding: 20px;
-  margin: 20px 0;
+  margin: 15px 0 20px 0;
   font-size: 18pt;
 }
 
 .comparison-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin: 30px 0;
+  gap: 20px;
+  margin: 15px 0;
 }
 
 .comparison-box {
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   border: 2px solid;
 }
@@ -1602,33 +1602,40 @@ h2 {
 }
 
 .comparison-box h4 {
-  margin: 0 0 15px 0;
-  font-size: 20pt;
+  margin: 0 0 10px 0;
+  font-size: 18pt;
 }
 
 .comparison-box ul {
-  font-size: 15pt;
-  line-height: 1.7;
+  font-size: 14pt;
+  line-height: 1.5;
   margin: 0;
-  padding-left: 20px;
+  padding-left: 18px;
 }
 
 .agent-example {
   background: var(--color-bg-purple-tint);
   border: 2px solid var(--color-primary-purple);
   border-radius: 8px;
-  padding: 20px;
-  margin: 20px 0;
-  font-size: 16pt;
+  padding: 12px;
+  margin: 15px 0;
+  font-size: 14pt;
 }
 
 .agent-example .step {
-  margin: 10px 0;
-  padding-left: 20px;
+  margin: 5px 0;
+  padding-left: 15px;
 }
 
 .agent-example .step strong {
   color: var(--color-primary-purple);
+}
+
+.frameworks {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 13pt;
+  color: var(--color-text-secondary);
 }
 </style>
 
@@ -1643,9 +1650,8 @@ h2 {
 <div class="comparison-box llm-box">
 <h4>🤖 LLM Alone</h4>
 <ul>
-<li>Can only generate text</li>
-<li>No access to real-time data</li>
-<li>Can't perform actions</li>
+<li>Only generates text</li>
+<li>No real-time data</li>
 <li>One-shot response</li>
 </ul>
 </div>
@@ -1653,10 +1659,9 @@ h2 {
 <div class="comparison-box agent-box">
 <h4>🛠️ LLM + Agent</h4>
 <ul>
-<li>Can use tools (search, API, code)</li>
-<li>Access to current information</li>
-<li>Can execute actions</li>
-<li>Multi-step reasoning loop</li>
+<li>Uses tools & APIs</li>
+<li>Current information</li>
+<li>Multi-step reasoning</li>
 </ul>
 </div>
 
@@ -1679,8 +1684,8 @@ h2 {
 </div>
 </div>
 
-<div style="text-align: center; margin-top: 30px; font-size: 18pt; color: var(--color-text-secondary);">
-<strong>Popular Agent Frameworks:</strong> LangChain, AutoGPT, Claude Code, OpenAI Assistants
+<div class="frameworks">
+<strong>Frameworks:</strong> LangChain • AutoGPT • Claude Code • OpenAI Assistants
 </div>
 
 </div>
