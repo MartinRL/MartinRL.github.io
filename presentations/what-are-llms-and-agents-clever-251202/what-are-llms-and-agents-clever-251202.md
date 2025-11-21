@@ -158,10 +158,10 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 <br>
 <span class="text-black" style="font-size: 16pt;">Frequent code patterns get single tokens: `void`, `async`, `const`, `=>`, `()`, `{}`</span><br>
 <span class="text-gray" style="font-size: 16pt;">That's why LLMs can write code—syntax appeared billions of times in training data.</span>
-
-<div style="margin-top: 50px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary);">
-💡 <strong style="color: #5500FF;">Why LLMs Excel at Code</strong> - Programming syntax gets compressed into single tokens (`async`, `=>`, `{}`). Code's repetitive structure means these patterns appeared billions of times, making code easier to "predict" than natural language.
 </div>
+
+<div style="margin-top: 50px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: #5500FF;">Why LLMs Excel at Code</strong> - Programming syntax gets compressed into single tokens (`async`, `=>`, `{}`). Code's repetitive structure means these patterns appeared billions of times, making code easier to "predict" than natural language.
 </div>
 
 ---
