@@ -80,7 +80,7 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 </div>
 </br>
 <div style="margin-top: 30px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary);">
-💡 <strong style="color: var(--color-primary-purple);">Byte Pair Encoding (BPE)</strong> - The algorithm that creates these tokens. It identifies frequently-occurring character sequences in training data and merges them into single tokens, creating an efficient compression dictionary.
+💡 <strong style="color: var(--color-primary-purple);">Byte Pair Encoding (BPE)</strong> - Think Huffman coding, but for subwords instead of characters. Like Huffman assigns short codes to frequent letters, BPE creates tokens for frequent character sequences.
 </div>
 
 ---
@@ -154,12 +154,12 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 <div style="margin-top: 60px; text-align: center; font-size: 18pt; color: var(--color-text-secondary);">
 <br>
 ~200,000 tokens in vocabulary = ~200,000 entries in a compression dictionary<br>
-<span class="text-gray" style="font-size: 16pt;">Like Huffman coding for common text chunks instead of individual characters.</span><br>
+<span class="text-gray" style="font-size: 16pt;">Traditional compression (Huffman): 'e' → short code. Modern NLP (BPE): 'the' → single token.<br>Both compress frequency, but BPE captures meaning.</span><br>
 <br>
 <span class="text-black" style="font-size: 16pt;">Frequent code patterns get single tokens: `void`, `async`, `const`, `=>`, `()`, `{}`</span><br>
 <span class="text-gray" style="font-size: 16pt;">That's why LLMs can write code—syntax appeared billions of times in training data.</span>
 </div>
-
+</br>
 <div style="margin-top: 50px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
 💡 <strong style="color: #5500FF;">Why LLMs Excel at Code</strong> - Programming syntax gets compressed into single tokens (`async`, `=>`, `{}`). Code's repetitive structure means these patterns appeared billions of times, making code easier to "predict" than natural language.
 </div>
@@ -464,8 +464,8 @@ h3 {
 <strong>Logic:</strong> If A > B and B > C, then A > C
 </div>
 
-<div style="text-align: center; margin-top: 40px; font-size: 18pt; color: var(--color-text-secondary);">
-Not programmed. <em style="color: var(--color-primary-purple); font-style: normal; font-weight: 600;">Learned</em> from trillions of words.
+<div style="margin-top: 40px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: var(--color-primary-purple);">Discovered, Not Designed</strong> - Traditional programs are like recipes we write step-by-step. LLMs are like chefs who learned by tasting millions of dishes—they never saw the recipe, but absorbed the essence of cooking. No if-statements, no loops, just 1.8 trillion learned patterns from reading the internet.
 </div>
 
 ---
@@ -1893,6 +1893,10 @@ And this is the worst it'll be — continuous improvement through advancing LLMs
 
 ---
 
+![bg](Files/nano-banana-llm-questions-bg.png)
+
+
+---
 
 <!-- Styles at the end for easier content editing -->
 
