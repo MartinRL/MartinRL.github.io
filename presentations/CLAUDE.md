@@ -75,6 +75,34 @@ Workflow for editing presentations:
 
 **Note**: Source `.md` files are committed to the repository alongside their generated `index.html` artifacts.
 
+### Styling Text in Marp Lists
+
+**IMPORTANT**: Inline styles don't render properly in Marp list items. Use scoped CSS selectors instead.
+
+**❌ DON'T** (Inline styles - won't render colors):
+```markdown
+- LLMs can't count letters → <strong style="color: var(--color-primary-purple);">Tokens</strong>
+- They understand context → <strong style="color: var(--color-sky-blue);">Transformers</strong>
+- Bigger models cost more → <strong style="color: var(--color-green);">Parameters</strong>
+```
+
+**✅ DO** (Scoped styles - renders correctly):
+```markdown
+<style scoped>
+li:nth-child(1) strong { color: var(--color-primary-purple); }
+li:nth-child(2) strong { color: var(--color-sky-blue); }
+li:nth-child(3) strong { color: var(--color-green); }
+</style>
+
+- LLMs can't count letters → <strong>Tokens</strong>
+- They understand context → <strong>Transformers</strong>
+- Bigger models cost more → <strong>Parameters</strong>
+```
+
+**Why**: Marp's HTML processing doesn't properly handle inline `style` attributes within list items. The `<style scoped>` block with nth-child selectors ensures colors render correctly in the final presentation.
+
+**Pro tip**: Number your nth-child selectors carefully - they correspond to the order of `<li>` elements in your list.
+
 ### Git Workflow
 
 Standard git commands apply:
