@@ -6,6 +6,8 @@ paginate: false
 
 <!-- _class: title -->
 
+![bg](../ressorces/Context&-PPT-template.svg)
+
 # LLMs & Agents
 
 What are they, and why can they `code`?
@@ -36,12 +38,50 @@ li:nth-child(6) strong { color: var(--color-dark-grey); }
 li { margin-bottom: 12px; }
 </style>
 
-- <strong>Tokens</strong> → How LLMs process text (BPE compression dictionary)
+- <strong>Tokens</strong> → How LLMs process text
 - <strong>Transformers</strong> → Why parallel attention enables modern AI
-- <strong>Parameters</strong> → What models store and why scale matters
-- <strong>Training</strong> → How raw models become helpful assistants (Pre-training → SFT → RLHF)
+- <strong>Neural Networks</strong> → How weighted connections create "intelligence"
+- <strong>Training</strong> → How raw models become helpful assistants
 - <strong>Hallucinations</strong> → Why LLMs confidently generate false information
-- <strong>Agents</strong> → How LLMs become action-taking systems with tools
+- <strong>Agents</strong> → How LLMs solve complex tasks with tools
+
+---
+
+## The Foundation: It's All Neural Networks
+
+<div style="margin-top: 60px; font-size: 18pt; line-height: 1.8;">
+
+Before we dive into specifics, know this: **LLMs are neural networks** - mathematical structures inspired by brains.
+
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; font-size: 15pt;">
+
+<div style="padding: 20px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
+<strong style="color: var(--color-green); font-size: 16pt;">Neurons</strong><br>
+Simple units that receive inputs, multiply by weights, output values
+</div>
+
+<div style="padding: 20px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
+<strong style="color: var(--color-green); font-size: 16pt;">Layers</strong><br>
+Stacked neurons (transformers have ~100 layers)
+</div>
+
+<div style="padding: 20px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
+<strong style="color: var(--color-green); font-size: 16pt;">Weights</strong><br>
+The millions/billions/trillions of numbers that define the model
+</div>
+
+<div style="padding: 20px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
+<strong style="color: var(--color-green); font-size: 16pt;">Learning</strong><br>
+Adjusting these weights until the network predicts correctly
+</div>
+
+</div>
+
+<div style="margin-top: 50px; padding: 20px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 16pt; text-align: center;">
+Everything that follows happens within this neural network structure.
+</div>
 
 ---
 
@@ -346,7 +386,7 @@ The 2017 paper "Attention Is All You Need" proved that sequential processing isn
 
 ---
 
-## Parameters: The Scale
+## Neural Networks: The Scale
 
 <style scoped>
 .params-container {
@@ -436,7 +476,7 @@ h3 {
 
 ---
 
-## Parameters: What They Store
+## Neural Networks: What They Learn
 
 <style scoped>
 .param-example {
@@ -1158,6 +1198,157 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 
 ---
 
+<!--
+## Q&A: How Do Context Windows Actually Work?
+
+### Technical Deep Dive
+
+#### What is a Context Window Exactly?
+
+From an **attention mechanism perspective**, the context window is the maximum number of tokens that can participate in the self-attention computation at once.
+
+- Each token can "attend to" (look at and be influenced by) every other token in the context
+- The attention mechanism computes relationships between all token pairs using Query, Key, and Value matrices
+- This creates an **attention matrix** of size N×N where N is the number of tokens
+
+**Example**: If you have 1,000 tokens in your context, each token needs to calculate its relationship with all 999 other tokens plus itself.
+
+#### Why There's a Hard Limit
+
+The hard limit exists due to **computational complexity**:
+
+1. **Memory Requirements**: The attention matrix requires O(N²) memory
+   - 4K context = 16M attention scores to store
+   - 128K context = 16.4B attention scores
+   - 1M context = 1T attention scores (!)
+
+2. **Computational Cost**: Computing attention requires O(N²) operations
+   - Each doubling of context length quadruples the computation
+   - Going from 4K to 128K tokens (32x increase) requires 1,024x more compute
+
+3. **Hardware Constraints**: GPUs have limited VRAM
+   - A single A100 GPU has 40-80GB of memory
+   - Must fit model weights, activations, AND attention matrices
+
+#### What Happens When Context Gets Full
+
+**FIFO (First In, First Out) Mechanism**:
+- Oldest tokens are dropped from the beginning
+- New tokens added at the end
+- Like a conveyor belt with fixed length
+
+**Example**:
+```
+Initial: [A B C D E F G H] (window size = 8)
+Add "I J": [C D E F G H I J] (A and B dropped)
+```
+
+**The Goldfish Memory Problem**:
+- **No Gradual Forgetting**: Unlike human memory, there's no "fading"
+- **Binary State**: Tokens are either fully in context or completely forgotten
+- **Lost Context**: Important setup information disappears
+- **Broken References**: "As I mentioned earlier..." points to nothing
+
+#### Context Compacting Strategies
+
+**1. Summarization Approach**:
+- When context approaches limit, system identifies "old" conversation segments
+- Runs summarization model on those segments
+- Replaces original messages with compressed summaries
+- Preserves recent messages in full detail
+
+**2. Importance Scoring**:
+- Systems assign importance scores to different parts of context
+- Factors: recency, semantic relevance, user emphasis, entity mentions
+- Lower-scoring sections get compressed or dropped first
+
+**3. Sliding Window Attention**:
+- Each token only attends to W nearby tokens (not all N)
+- Reduces complexity to O(N×W) instead of O(N²)
+- Used by models like Mistral
+
+**4. Attention Sinks**:
+- Keeps first few tokens always (they become "sinks" for attention)
+- Maintains stability while allowing middle truncation
+- First tokens disproportionately important for stability
+
+**5. StreamingLLM**:
+- Combines attention sinks with rolling buffer
+- Keeps first 4 tokens + last K tokens
+- Allows "infinite" context streaming with bounded memory
+
+#### Practical Implications
+
+**Why Larger Context = Slower and More Expensive**:
+
+The Quadratic Attention Problem:
+- 4K tokens: 16M computations
+- 32K tokens: 1B computations (64x more)
+- 128K tokens: 16B computations (1,024x more)
+- 1M tokens: 1T computations (65,536x more!)
+
+**Cost Breakdown**:
+1. **Inference Time**: Linear to quadratic increase with context
+2. **Memory Usage**: Quadratic growth requires more expensive GPUs
+3. **Energy Consumption**: More computation = more power
+4. **Pricing**: Providers charge more for longer contexts
+
+**How Different Models Handle This**:
+
+- **GPT-4**: Multiple context tiers (8K, 32K, 128K), different pricing, standard full attention
+- **Claude**: Large base context (200K), prompt caching to reuse computed attention
+- **Gemini**: Extreme contexts (up to 2M tokens), mixture of techniques including selective attention
+- **Open Source (Llama, Mistral)**: Grouped-query attention (GQA), sliding window + rope positioning
+
+#### Modern Solutions
+
+**RAG (Retrieval-Augmented Generation)**:
+- Store information in external database
+- Retrieve only relevant chunks for each query
+- Inject into prompt dynamically
+- Effectively "unlimited" context with bounded window
+
+**Benefits**:
+- Constant memory usage
+- Fast retrieval (milliseconds)
+- Can update knowledge without retraining
+- Cost-effective for large knowledge bases
+
+**Prompt Caching**:
+1. Common prompt prefixes are cached after first computation
+2. Subsequent requests reuse cached attention computations
+3. Only compute attention for new tokens
+4. Result: 50-90% cost reduction for repeated prompts
+
+**Memory Features (Structured Systems)**:
+1. **Short-term Memory**: Current conversation (in context)
+2. **Long-term Memory**: Stored externally, retrieved as needed
+3. **Working Memory**: Currently relevant facts injected into prompts
+
+**Memory Injection Flow**:
+```
+User Input → Retrieve Relevant Memories →
+Construct Prompt with Memories → Generate Response →
+Extract New Memories → Store for Future
+```
+
+#### Key Takeaways
+
+1. **Context windows are fundamentally limited** by the O(N²) attention mechanism
+2. **When full, models forget completely** - no gradual degradation
+3. **Compacting trades quality for capacity** - no free lunch
+4. **Larger contexts exponentially more expensive** - both computationally and financially
+5. **Modern solutions combine approaches** - RAG, caching, and memory systems work together
+
+The future likely involves:
+- Better attention mechanisms (sub-quadratic complexity)
+- Smarter compacting (learning what to keep)
+- Hybrid architectures (combining different memory types)
+- Dynamic context sizing based on need
+
+This is why current LLMs still struggle with very long conversations or documents - we're fighting fundamental mathematical constraints of the attention mechanism that makes them work in the first place.
+-->
+
 ## Temperature: Same Prompt, Different Answer
 
 <style scoped>
@@ -1367,14 +1558,23 @@ Memory features are clever engineering—not AI breakthroughs. The goldfish stil
 
 ## The Takeaway: From Magic to Math
 
+<style scoped>
+li:nth-child(1) strong { color: var(--color-primary-purple); }
+li:nth-child(2) strong { color: var(--color-sky-blue); }
+li:nth-child(3) strong { color: var(--color-green); }
+li:nth-child(4) strong { color: var(--color-dark-blue); }
+li:nth-child(5) strong { color: var(--color-dark-blue); }
+li:nth-child(6) strong { color: var(--color-orange); }
+</style>
+
 ### 🎯 <span style="color: var(--color-primary-purple);">Now You Know Why:</span>
 
-- LLMs can't count letters in "strawberry" → <strong style="color: var(--color-primary-purple);">Tokens</strong>
-- They understand context not just words → <strong style="color: var(--color-sky-blue);">Transformers</strong>
-- Bigger models cost exponentially more → <strong style="color: var(--color-green);">Parameters</strong>
-- They're confident when wrong → <strong style="color: var(--color-dark-blue);">Probabilistic</strong>
-- They forget your first question → <strong style="color: var(--color-dark-blue);">Context Window</strong>
-- Same prompt, different answers → <strong style="color: var(--color-orange);">Temperature</strong>
+- LLMs can't count letters in "strawberry" → <strong>Tokens</strong>
+- They understand context not just words → <strong>Transformers</strong>
+- Bigger models cost exponentially more → <strong>Neural Networks</strong>
+- They're confident when wrong → <strong>Probabilistic</strong>
+- They forget your first question → <strong>Context Window</strong>
+- Same prompt, different answers → <strong>Temperature</strong>
 
 <div style="margin-top: 60px; padding: 30px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple);">
 <strong style="font-size: 24pt;">The Magic:</strong> It seems to understand you<br>
