@@ -48,36 +48,75 @@ li { margin-bottom: 12px; }
 - <strong>Agents</strong> → How LLMs solve complex tasks with tools
 
 ---
-![bg](../ressorces/Context&-PPT-template-wo-logo.svg)
 ## Neural Networks: Building Blocks
 
-<div style="display: flex; gap: 40px; margin-top: 40px;">
+<style scoped>
+.building-blocks-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+.text-content {
+  flex: 1;
+}
+.image-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-box {
+  padding: 25px;
+  background: var(--color-bg-green-light);
+  border-left: 4px solid var(--color-green);
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.text-box:last-child {
+  margin-bottom: 0;
+}
+.text-box strong {
+  color: var(--color-green);
+  font-size: 18pt;
+}
+.text-box div {
+  font-size: 15pt;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+.image-content img {
+  max-width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+}
+</style>
 
-<div style="flex: 1;">
-<div style="padding: 25px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px; margin-bottom: 20px;">
-<strong style="color: var(--color-green); font-size: 18pt;">Neurons</strong><br>
-<div style="font-size: 15pt; line-height: 1.6; margin-top: 10px;">
+<div class="building-blocks-container">
+
+<div class="text-content">
+<div class="text-box">
+<strong>Neurons</strong><br>
+<div>
 Simple units that receive inputs, multiply by weights, and output a value. Like a tiny decision-maker that learns which inputs matter.
 </div>
 </div>
 
-<div style="padding: 25px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
-<strong style="color: var(--color-green); font-size: 18pt;">Layers</strong><br>
-<div style="font-size: 15pt; line-height: 1.6; margin-top: 10px;">
+<div class="text-box">
+<strong>Layers</strong><br>
+<div>
 Stacked neurons that progressively extract meaning. Early layers see patterns, deep layers see concepts. LLMs have ~100 layers.
 </div>
 </div>
 </div>
 
-<div style="flex: 1; display: flex; align-items: center; justify-content: center;">
-<img src="Files/image.png" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+<div class="image-content">
+<img src="Files/image.png" />
 </div>
 
 </div>
-
+<br>
 <div style="margin-top: 50px; padding: 20px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 16pt; text-align: center;">
-💡 <strong style="color: var(--color-green);">Neurons that fire together, wire together.</strong><br>
-<span style="color: var(--color-primary-purple); margin-top: 8px; display: inline-block;">Tokens that appear together, weight together.</span>
+💡 <strong style="color: var(--color-green);">Neurons that fire together, wire together.</strong><span style="color: var(--color-primary-purple); margin-top: 8px; display: inline-block;"> Tokens that appear together, weight together.</span>
 </div>
 
 ---
