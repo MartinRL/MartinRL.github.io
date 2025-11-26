@@ -31,12 +31,12 @@ Clever, 2 December 2025
 ## Understanding LLMs: Six Core Concepts
 
 <style scoped>
-li:nth-child(1) strong { color: var(--color-primary-purple); }  /* Tokens - purple */
-li:nth-child(2) strong { color: var(--color-sky-blue); }        /* Transformers - sky blue */
-li:nth-child(3) strong { color: var(--color-green); }           /* Neural Networks - green */
-li:nth-child(4) strong { color: var(--color-orange); }          /* Training - orange */
-li:nth-child(5) strong { color: var(--color-dark-blue); }       /* Hallucinations - dark blue */
-li:nth-child(6) strong { color: var(--color-dark-grey); }       /* Agents - dark grey */
+li:nth-child(1) strong { color: var(--color-primary-purple); }
+li:nth-child(2) strong { color: var(--color-sky-blue); }
+li:nth-child(3) strong { color: var(--color-green); }
+li:nth-child(4) strong { color: var(--color-orange); }
+li:nth-child(5) strong { color: var(--color-dark-blue); }
+li:nth-child(6) strong { color: var(--color-dark-grey); }
 li { margin-bottom: 12px; }
 </style>
 
@@ -122,7 +122,7 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 </div>
 </br>
 <div style="margin-top: 30px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary);">
-💡 <strong style="color: var(--color-primary-purple);">Byte Pair Encoding (BPE)</strong> - Think Huffman coding, but for subwords instead of characters. Like Huffman assigns short codes to frequent letters, BPE creates tokens for frequent character sequences.
+💡 <strong style="color: var(--color-primary-purple);">Byte Pair Encoding (BPE)</strong> - Think Huffman coding, but for subwords instead of characters.
 </div>
 
 ---
@@ -209,7 +209,7 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 ---
 
 ## Transformer: The Context Problem
-
+![bg](../ressorces/Context&-PPT-template-wo-logo.svg)
 <div style="font-size: 28pt; margin-top: 80px; text-align: center;">
 
 "I went to the <strong style="color: var(--color-primary-purple);">bank</strong> to deposit money"
@@ -388,7 +388,7 @@ The 2017 paper "Attention Is All You Need" proved that sequential processing isn
 
 ---
 
-## Neural Networks: The Scale
+## Neural Network: Parameters — The Scale
 
 <style scoped>
 .params-container {
@@ -1559,14 +1559,14 @@ This is why current LLMs still struggle with very long conversations or document
 ---
 
 ## The Takeaway: From Magic to Math
-
+![bg](../ressorces/Context&-PPT-template-wo-logo.svg)
 <style scoped>
-li:nth-child(1) strong { color: var(--color-primary-purple); }  /* Tokens - purple */
-li:nth-child(2) strong { color: var(--color-sky-blue); }        /* Transformers - sky blue */
-li:nth-child(3) strong { color: var(--color-green); }           /* Neural Networks - green */
-li:nth-child(4) strong { color: var(--color-dark-blue); }       /* Probabilistic - dark blue */
-li:nth-child(5) strong { color: var(--color-orange); }          /* Context Window - orange */
-li:nth-child(6) strong { color: var(--color-dark-grey); }       /* Temperature - dark grey */
+li:nth-child(1) strong { color: var(--color-primary-purple); }
+li:nth-child(2) strong { color: var(--color-sky-blue); }
+li:nth-child(3) strong { color: var(--color-green); }
+li:nth-child(4) strong { color: var(--color-orange); }
+li:nth-child(5) strong { color: var(--color-dark-blue); }
+li:nth-child(6) strong { color: var(--color-dark-grey); }
 </style>
 
 ### 🎯 <span style="color: var(--color-primary-purple);">Now You Know Why:</span>
