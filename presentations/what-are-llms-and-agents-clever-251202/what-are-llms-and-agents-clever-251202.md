@@ -51,26 +51,32 @@ li { margin-bottom: 12px; }
 ![bg](../ressorces/Context&-PPT-template-wo-logo.svg)
 ## Neural Networks: Building Blocks
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px;">
+<div style="display: flex; gap: 40px; margin-top: 40px;">
 
-<div style="padding: 25px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
+<div style="flex: 1;">
+<div style="padding: 25px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px; margin-bottom: 20px;">
 <strong style="color: var(--color-green); font-size: 18pt;">Neurons</strong><br>
 <div style="font-size: 15pt; line-height: 1.6; margin-top: 10px;">
 Simple units that receive inputs, multiply by weights, and output a value. Like a tiny decision-maker that learns which inputs matter.
 </div>
 </div>
-<br>
+
 <div style="padding: 25px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
 <strong style="color: var(--color-green); font-size: 18pt;">Layers</strong><br>
 <div style="font-size: 15pt; line-height: 1.6; margin-top: 10px;">
 Stacked neurons that progressively extract meaning. Early layers see patterns, deep layers see concepts. LLMs have ~100 layers.
 </div>
 </div>
+</div>
+
+<div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+<img src="Files/image.png" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+</div>
 
 </div>
-<br><br>
-<div style="margin-top: 70px; padding: 20px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 16pt; text-align: center;">
-💡 <strong style="color: var(--color-green);">Neurons that fire together, wire together.</strong>
+
+<div style="margin-top: 50px; padding: 20px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 16pt; text-align: center;">
+💡 <strong style="color: var(--color-green);">Neurons that fire together, wire together.</strong><br>
 <span style="color: var(--color-primary-purple); margin-top: 8px; display: inline-block;">Tokens that appear together, weight together.</span>
 </div>
 
