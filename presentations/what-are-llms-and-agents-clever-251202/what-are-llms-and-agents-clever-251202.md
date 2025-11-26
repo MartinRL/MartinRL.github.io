@@ -598,9 +598,9 @@ Result: Learns to follow instructions and answer questions
 <div class="stage">
 <h3>3️⃣ Reinforcement Learning from Human Feedback (RLHF)</h3>
 <div class="details">
-• Humans rank multiple responses: which is better?<br>
+• Humans rank responses → Train reward model<br>
 • Duration: Weeks | Cost: ~$1M<br>
-• Model learns preferences, safety, helpfulness
+• Reward model guides optimization for safety/helpfulness
 </div>
 <div class="result result-rlhf">
 Result: Learns to be helpful, harmless, and honest
