@@ -15,6 +15,7 @@ What are they, and why can they `code`?
 Clever, 2 December 2025
 
 ---
+![bg](../ressorces/Context&-PPT-template-wo-logo.svg)
 
 ## Purpose: From Magic to Math
 
@@ -25,6 +26,7 @@ Clever, 2 December 2025
 
 
 ---
+![bg](../ressorces/Context&-PPT-template-wo-logo.svg)
 
 ## Understanding LLMs: Six Core Concepts
 
@@ -46,7 +48,7 @@ li { margin-bottom: 12px; }
 - <strong>Agents</strong> → How LLMs solve complex tasks with tools
 
 ---
-
+![bg](../ressorces/Context&-PPT-template-wo-logo.svg)
 ## The Foundation: It's All Neural Networks
 
 <div style="margin-top: 60px; font-size: 18pt; line-height: 1.8;">
@@ -84,7 +86,7 @@ Everything that follows happens within this neural network structure.
 </div>
 
 ---
-
+![bg](../ressorces/Context&-PPT-template-wo-logo.svg)
 ## Tokens: The 🍓 Puzzle
 
 <div style="font-size: 36pt; text-align: center; margin-top: 80px;">
@@ -1563,8 +1565,8 @@ li:nth-child(1) strong { color: var(--color-primary-purple); }
 li:nth-child(2) strong { color: var(--color-sky-blue); }
 li:nth-child(3) strong { color: var(--color-green); }
 li:nth-child(4) strong { color: var(--color-dark-blue); }
-li:nth-child(5) strong { color: var(--color-dark-blue); }
-li:nth-child(6) strong { color: var(--color-orange); }
+li:nth-child(5) strong { color: var(--color-orange); }
+li:nth-child(6) strong { color: var(--color-dark-grey); }
 </style>
 
 ### 🎯 <span style="color: var(--color-primary-purple);">Now You Know Why:</span>
