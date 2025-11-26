@@ -31,12 +31,12 @@ Clever, 2 December 2025
 ## Understanding LLMs: Six Core Concepts
 
 <style scoped>
-li:nth-child(1) strong { color: #5500FF; }  /* Tokens - purple */
-li:nth-child(2) strong { color: #00B4D8; }  /* Transformers - sky blue */
-li:nth-child(3) strong { color: #1E8C7F; }  /* Neural Networks - green */
-li:nth-child(4) strong { color: #FF922D; }  /* Training - orange */
-li:nth-child(5) strong { color: #043F9C; }  /* Hallucinations - dark blue */
-li:nth-child(6) strong { color: #6B7280; }  /* Agents - dark grey */
+li:nth-child(1) strong { color: var(--color-primary-purple); }  /* Tokens - purple */
+li:nth-child(2) strong { color: var(--color-sky-blue); }        /* Transformers - sky blue */
+li:nth-child(3) strong { color: var(--color-green); }           /* Neural Networks - green */
+li:nth-child(4) strong { color: var(--color-orange); }          /* Training - orange */
+li:nth-child(5) strong { color: var(--color-dark-blue); }       /* Hallucinations - dark blue */
+li:nth-child(6) strong { color: var(--color-dark-grey); }       /* Agents - dark grey */
 li { margin-bottom: 12px; }
 </style>
 
@@ -1561,12 +1561,12 @@ This is why current LLMs still struggle with very long conversations or document
 ## The Takeaway: From Magic to Math
 
 <style scoped>
-li:nth-child(1) strong { color: #5500FF; }  /* Tokens - purple */
-li:nth-child(2) strong { color: #00B4D8; }  /* Transformers - sky blue */
-li:nth-child(3) strong { color: #1E8C7F; }  /* Neural Networks - green */
-li:nth-child(4) strong { color: #043F9C; }  /* Probabilistic - dark blue */
-li:nth-child(5) strong { color: #FF922D; }  /* Context Window - orange */
-li:nth-child(6) strong { color: #6B7280; }  /* Temperature - dark grey */
+li:nth-child(1) strong { color: var(--color-primary-purple); }  /* Tokens - purple */
+li:nth-child(2) strong { color: var(--color-sky-blue); }        /* Transformers - sky blue */
+li:nth-child(3) strong { color: var(--color-green); }           /* Neural Networks - green */
+li:nth-child(4) strong { color: var(--color-dark-blue); }       /* Probabilistic - dark blue */
+li:nth-child(5) strong { color: var(--color-orange); }          /* Context Window - orange */
+li:nth-child(6) strong { color: var(--color-dark-grey); }       /* Temperature - dark grey */
 </style>
 
 ### 🎯 <span style="color: var(--color-primary-purple);">Now You Know Why:</span>
