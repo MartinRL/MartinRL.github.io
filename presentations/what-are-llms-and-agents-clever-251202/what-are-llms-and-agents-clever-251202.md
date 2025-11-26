@@ -31,58 +31,171 @@ Clever, 2 December 2025
 ## Understanding LLMs: Six Core Concepts
 
 <style scoped>
-li:nth-child(1) strong { color: var(--color-primary-purple); }
-li:nth-child(2) strong { color: var(--color-sky-blue); }
-li:nth-child(3) strong { color: var(--color-green); }
+li:nth-child(1) strong { color: var(--color-green); }
+li:nth-child(2) strong { color: var(--color-primary-purple); }
+li:nth-child(3) strong { color: var(--color-sky-blue); }
 li:nth-child(4) strong { color: var(--color-orange); }
 li:nth-child(5) strong { color: var(--color-dark-blue); }
 li:nth-child(6) strong { color: var(--color-dark-grey); }
 li { margin-bottom: 12px; }
 </style>
 
+- <strong>Neural Networks</strong> → How weighted connections create "intelligence"
 - <strong>Tokens</strong> → How LLMs process text
 - <strong>Transformers</strong> → Why parallel attention enables modern AI
-- <strong>Neural Networks</strong> → How weighted connections create "intelligence"
 - <strong>Training</strong> → How raw models become helpful assistants
 - <strong>Hallucinations</strong> → Why LLMs confidently generate false information
 - <strong>Agents</strong> → How LLMs solve complex tasks with tools
 
 ---
 ![bg](../ressorces/Context&-PPT-template-wo-logo.svg)
-## The Foundation: It's All Neural Networks
+## Neural Networks: Building Blocks
 
-<div style="margin-top: 60px; font-size: 18pt; line-height: 1.8;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px;">
 
-Before we dive into specifics, know this: **LLMs are neural networks** - mathematical structures inspired by brains.
-
+<div style="padding: 25px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
+<strong style="color: var(--color-green); font-size: 18pt;">Neurons</strong><br>
+<div style="font-size: 15pt; line-height: 1.6; margin-top: 10px;">
+Simple units that receive inputs, multiply by weights, and output a value. Like a tiny decision-maker that learns which inputs matter.
 </div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; font-size: 15pt;">
-
-<div style="padding: 20px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
-<strong style="color: var(--color-green); font-size: 16pt;">Neurons</strong><br>
-Simple units that receive inputs, multiply by weights, output values
 </div>
-
-<div style="padding: 20px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
-<strong style="color: var(--color-green); font-size: 16pt;">Layers</strong><br>
-Stacked neurons (transformers have ~100 layers)
+<br>
+<div style="padding: 25px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
+<strong style="color: var(--color-green); font-size: 18pt;">Layers</strong><br>
+<div style="font-size: 15pt; line-height: 1.6; margin-top: 10px;">
+Stacked neurons that progressively extract meaning. Early layers see patterns, deep layers see concepts. LLMs have ~100 layers.
 </div>
-
-<div style="padding: 20px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
-<strong style="color: var(--color-green); font-size: 16pt;">Weights</strong><br>
-The millions/billions/trillions of numbers that define the model
-</div>
-
-<div style="padding: 20px; background: var(--color-bg-green-light); border-left: 4px solid var(--color-green); border-radius: 6px;">
-<strong style="color: var(--color-green); font-size: 16pt;">Learning</strong><br>
-Adjusting these weights until the network predicts correctly
 </div>
 
 </div>
+<br><br>
+<div style="margin-top: 70px; padding: 20px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 16pt; text-align: center;">
+💡 <strong style="color: var(--color-green);">Neurons that fire together, wire together.</strong>
+<span style="color: var(--color-primary-purple); margin-top: 8px; display: inline-block;">Tokens that appear together, weight together.</span>
+</div>
 
-<div style="margin-top: 50px; padding: 20px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 16pt; text-align: center;">
-Everything that follows happens within this neural network structure.
+---
+
+## Neural Network: Parameters — The Scale
+
+<style scoped>
+.params-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+.cloud-models, .local-models {
+  flex: 1;
+  text-align: center;
+}
+.local-models {
+  background: var(--color-bg-green-light);
+  border: 2px solid var(--color-stage-rlhf);
+  border-radius: 8px;
+  padding: 15px 20px;
+}
+h3 {
+  color: var(--color-green);
+  font-size: 20pt;
+  margin: 0 0 15px 0;
+}
+.param-count {
+  font-size: 32pt;
+  color: var(--color-green);
+  font-weight: bold;
+  margin: 6px 0 2px 0;
+  letter-spacing: -0.5px;
+}
+.model-name {
+  font-size: 13pt;
+  color: var(--color-text-muted);
+  margin: 0 0 18px 0;
+}
+.quantization-tip {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-cyan);
+  font-size: 13pt;
+  color: var(--color-text-secondary);
+}
+</style>
+
+<div class="params-container">
+
+<div class="cloud-models">
+<h3>Cloud Models (2025)</h3>
+
+<div class="param-count">2T</div>
+<div class="model-name">GPT-5 (estimated)</div>
+
+<div class="param-count">1.8T</div>
+<div class="model-name">GPT-4</div>
+
+<div class="param-count">~1T</div>
+<div class="model-name">Claude Opus 4.1</div>
+
+<div class="param-count">~500B</div>
+<div class="model-name">Claude Sonnet 4.5</div>
+</div>
+
+<div class="local-models">
+<h3>Office Models ($15-50K)</h3>
+
+<div class="param-count">70B</div>
+<div class="model-name">Llama 3.3 (Dual RTX 4090)</div>
+
+<div class="param-count">32B</div>
+<div class="model-name">Qwen Coder (Single RTX 4090)</div>
+
+<div class="param-count">14B</div>
+<div class="model-name">Phi-4 (Consumer GPU)</div>
+
+<div class="quantization-tip">
+<strong>🔧 Quantization = Model Compression:</strong> Reduce memory by 75% • ~2-5% quality trade-off<br/>
+<div style="margin-top: 8px; font-size: 0.85em; color: var(--color-text-secondary);">
+<strong>Enables:</strong> On-prem deployment • Privacy-first AI
+</div>
+</div>
+</div>
+
+</div>
+
+<div style="text-align: center; margin-top: 45px; font-size: 10pt; color: var(--color-text-light);">
+<strong>💡 Scale:</strong> GPT-5's 2T = Empire State Building, Office 70B = 5-story building (but still very capable!)
+</div>
+
+---
+
+## Neural Networks: What They Learn
+
+<style scoped>
+.param-example {
+  background: var(--color-bg-green-lighter);
+  border-left: 4px solid var(--color-green);
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 18pt;
+}
+</style>
+
+<div class="param-example">
+<strong>Grammar:</strong> Subject-verb-object patterns
+</div>
+
+<div class="param-example">
+<strong>Facts:</strong> Paris is the capital of France
+</div>
+
+<div class="param-example">
+<strong>Style:</strong> How to write like Shakespeare
+</div>
+
+<div class="param-example">
+<strong>Logic:</strong> If A > B and B > C, then A > C
+</div>
+
+<div style="margin-top: 40px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
+💡 <strong style="color: var(--color-primary-purple);">Discovered, Not Designed</strong> - Traditional programs are like recipes we write step-by-step. LLMs are like chefs who learned by tasting millions of dishes—they never saw the recipe, but absorbed the essence of cooking. No if-statements, no loops, just 1.8 trillion learned patterns from reading the internet.
 </div>
 
 ---
@@ -384,130 +497,6 @@ The 2017 paper "Attention Is All You Need" proved that sequential processing isn
 
 </div>
 
-</div>
-
----
-
-## Neural Network: Parameters — The Scale
-
-<style scoped>
-.params-container {
-  display: flex;
-  gap: 40px;
-  margin-top: 40px;
-}
-.cloud-models, .local-models {
-  flex: 1;
-  text-align: center;
-}
-.local-models {
-  background: var(--color-bg-green-light);
-  border: 2px solid var(--color-stage-rlhf);
-  border-radius: 8px;
-  padding: 15px 20px;
-}
-h3 {
-  color: var(--color-green);
-  font-size: 20pt;
-  margin: 0 0 15px 0;
-}
-.param-count {
-  font-size: 32pt;
-  color: var(--color-green);
-  font-weight: bold;
-  margin: 6px 0 2px 0;
-  letter-spacing: -0.5px;
-}
-.model-name {
-  font-size: 13pt;
-  color: var(--color-text-muted);
-  margin: 0 0 18px 0;
-}
-.quantization-tip {
-  margin-top: 15px;
-  padding-top: 12px;
-  border-top: 1px solid var(--color-border-cyan);
-  font-size: 13pt;
-  color: var(--color-text-secondary);
-}
-</style>
-
-<div class="params-container">
-
-<div class="cloud-models">
-<h3>Cloud Models (2025)</h3>
-
-<div class="param-count">2T</div>
-<div class="model-name">GPT-5 (estimated)</div>
-
-<div class="param-count">1.8T</div>
-<div class="model-name">GPT-4</div>
-
-<div class="param-count">~1T</div>
-<div class="model-name">Claude Opus 4.1</div>
-
-<div class="param-count">~500B</div>
-<div class="model-name">Claude Sonnet 4.5</div>
-</div>
-
-<div class="local-models">
-<h3>Office Models ($15-50K)</h3>
-
-<div class="param-count">70B</div>
-<div class="model-name">Llama 3.3 (Dual RTX 4090)</div>
-
-<div class="param-count">32B</div>
-<div class="model-name">Qwen Coder (Single RTX 4090)</div>
-
-<div class="param-count">14B</div>
-<div class="model-name">Phi-4 (Consumer GPU)</div>
-
-<div class="quantization-tip">
-<strong>🔧 Quantization = Model Compression:</strong> Reduce memory by 75% • ~2-5% quality trade-off<br/>
-<div style="margin-top: 8px; font-size: 0.85em; color: var(--color-text-secondary);">
-<strong>Enables:</strong> On-prem deployment • Privacy-first AI
-</div>
-</div>
-</div>
-
-</div>
-
-<div style="text-align: center; margin-top: 45px; font-size: 10pt; color: var(--color-text-light);">
-<strong>💡 Scale:</strong> GPT-5's 2T = Empire State Building, Office 70B = 5-story building (but still very capable!)
-</div>
-
----
-
-## Neural Networks: What They Learn
-
-<style scoped>
-.param-example {
-  background: var(--color-bg-green-lighter);
-  border-left: 4px solid var(--color-green);
-  padding: 20px;
-  margin: 20px 0;
-  font-size: 18pt;
-}
-</style>
-
-<div class="param-example">
-<strong>Grammar:</strong> Subject-verb-object patterns
-</div>
-
-<div class="param-example">
-<strong>Facts:</strong> Paris is the capital of France
-</div>
-
-<div class="param-example">
-<strong>Style:</strong> How to write like Shakespeare
-</div>
-
-<div class="param-example">
-<strong>Logic:</strong> If A > B and B > C, then A > C
-</div>
-
-<div style="margin-top: 40px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 90%; margin-left: auto; margin-right: auto;">
-💡 <strong style="color: var(--color-primary-purple);">Discovered, Not Designed</strong> - Traditional programs are like recipes we write step-by-step. LLMs are like chefs who learned by tasting millions of dishes—they never saw the recipe, but absorbed the essence of cooking. No if-statements, no loops, just 1.8 trillion learned patterns from reading the internet.
 </div>
 
 ---
