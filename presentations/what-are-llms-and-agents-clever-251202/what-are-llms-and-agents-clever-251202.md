@@ -1551,9 +1551,9 @@ This is why current LLMs still struggle with very long conversations or document
 </div>
 
 </div>
-
+</br>
 <div style="margin-top: 35px; padding: 18px 28px; background: var(--color-bg-purple-tint); border-left: 4px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary); max-width: 92%; margin-left: auto; margin-right: auto;">
-💡 <strong style="color: var(--color-primary-purple);">SWE Guide</strong> - Debug/Tests: 0.1 | Code Gen: 0.2 | Docs: 0.4 | Refactor: 0.6 | ⚠️ temp=0 ≠ deterministic (API/GPU variance)
+💡 <strong style="color: var(--color-primary-purple);">SWE Guide</strong> - Debug/Tests: 0.1 | Code Gen: 0.2 | Docs: 0.4 | Refactor: 0.6
 </div>
 
 ---
