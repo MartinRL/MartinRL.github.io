@@ -1,2 +1,8 @@
 # Temporary PowerPoint files
 ~$*.pptx
+
+# Obsidian editor config
+.obsidian/
+
+# Windows NUL device artifacts
+nul
