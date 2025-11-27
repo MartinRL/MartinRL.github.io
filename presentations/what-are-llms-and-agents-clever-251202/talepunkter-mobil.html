@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Talepunkter - LLMs & Agents</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Work Sans', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            touch-action: pan-y;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .header {
+            flex-shrink: 0;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #5500FF;
+        }
+
+        .slide-number {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #5500FF;
+            line-height: 1.3;
+        }
+
+        .timing {
+            font-size: 11px;
+            color: #FF922D;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 60px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            color: #00B6FF;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .section-content {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .section-content strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .bullet {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .bullet:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #5500FF;
+            font-weight: bold;
+        }
+
+        .kernebudskab {
+            background: rgba(85, 0, 255, 0.15);
+            border-left: 3px solid #5500FF;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .publikum {
+            background: rgba(255, 146, 45, 0.15);
+            border-left: 3px solid #FF922D;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .publikum-title {
+            color: #FF922D;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .overgang {
+            background: rgba(0, 182, 255, 0.15);
+            border-left: 3px solid #00B6FF;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-top: 15px;
+            font-style: italic;
+            color: #ddd;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            border-top: 1px solid #333;
+        }
+
+        .nav-button {
+            background: #5500FF;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .nav-button:active {
+            background: #4400CC;
+        }
+
+        .nav-button:disabled {
+            background: #333;
+            color: #666;
+        }
+
+        .progress {
+            flex: 1;
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        .progress-text {
+            font-size: 13px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 3px;
+            background: #333;
+            border-radius: 2px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #5500FF, #00B6FF);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .kapitel-badge {
+            display: inline-block;
+            background: rgba(30, 140, 127, 0.2);
+            color: #1E8C7F;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-top: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .swipe-hint {
+            position: fixed;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            padding: 8px 15px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            opacity: 1;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .swipe-hint.hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Slides will be inserted here by JavaScript -->
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn" onclick="prevSlide()">←</button>
+        <div class="progress">
+            <div class="progress-text" id="progressText">1 / 28</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+        <button class="nav-button" id="nextBtn" onclick="nextSlide()">→</button>
+    </div>
+
+    <div class="swipe-hint" id="swipeHint">
+        Swipe eller brug pilene ← →
+    </div>
+
+    <script>
+        const slides = [
+            {
+                number: "Slide 1",
+                title: "Title - LLMs & Agents",
+                timing: "0:30",
+                kapitel: "Intro",
+                kernebudskab: "Velkommen og setup forventninger",
+                talepunkter: [
+                    "Velkommen alle - glad for at være her hos Clever",
+                    "I dag skal vi demystificere AI - fjerne magien og vise matematikken",
+                    "Det bliver teknisk, men håndgribeligt",
+                    "Målet: I skal forstå HVORDAN det virker, ikke bare HVAD det kan"
+                ],
+                overgang: "Lad os starte med hvorfor vi er her..."
+            },
+            {
+                number: "Slide 2",
+                title: "Purpose - From Magic to Math",
+                timing: "1:00",
+                kapitel: "Intro",
+                kernebudskab: "AI ligner magi, men det ER matematik - som vi kan forstå",
+                talepunkter: [
+                    "Arthur C. Clarke citat - kender I det?",
+                    "Sådan føles AI lige nu: magisk, uforståeligt, måske lidt skræmmende",
+                    "Men: El var også 'magi' indtil vi forstod fysikken",
+                    "Computere var 'tænkende maskiner' indtil vi forstod algoritmer",
+                    "I dag gør vi det samme med AI - vi fjerner tågen"
+                ],
+                overgang: "For at gøre det konkret, har jeg destilleret det ned til 6 nøglebegreber..."
+            },
+            {
+                number: "Slide 3",
+                title: "Six Core Concepts",
+                timing: "1:30",
+                kapitel: "Intro",
+                kernebudskab: "Her er roadmappet - disse 6 koncepter forklarer alt",
+                talepunkter: [
+                    "6 farver = 6 koncepter I skal kende",
+                    "Tokens - hvorfor kan ChatGPT ikke tælle bogstaver?",
+                    "Transformers - hemmeligheden bag moderne AI",
+                    "Neural Networks - selve 'hjernen'",
+                    "Training - hvordan lærer de?",
+                    "Hallucinations - hvorfor lyver de?",
+                    "Agents - hvordan løser de opgaver?",
+                    "Hold øje med farverne - de kommer tilbage"
+                ],
+                overgang: "Men først: Fundamentet..."
+            },
+            {
+                number: "Slide 4",
+                title: "Foundation - Neural Networks",
+                timing: "2:00",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "Alt er neurale netværk - det er det eneste du behøver at huske",
+                talepunkter: [
+                    "VIGTIG: Før vi dykker ned - én ting at huske",
+                    "LLMs ER neurale netværk",
+                    "Fire byggeklodser: Neuroner, Layers, Weights, Learning",
+                    "Det er det! Alt andet - tokens, transformers, hallucinations - sker INDEN FOR denne struktur",
+                    "Det er ikke magi, det er matrix-multiplikation"
+                ],
+                overgang: "Okay, nu hvor vi ved at det hele er matematik... Lad os se på den første overraskelse..."
+            },
+            {
+                number: "Slide 5",
+                title: "Tokens - The Strawberry Puzzle",
+                timing: "~8 min total for tokens",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "LLMs ser ikke bogstaver - de ser 'chunks'",
+                publikum: "Hvor mange r'er er der i ordet 'strawberry'? Ræk hånden op! [Vent på svar] De fleste siger 3... Lad os spørge en LLM... Den siger 2. Hvorfor?",
+                talepunkter: [
+                    "Dette er IKKE fordi LLMs er dumme",
+                    "Det er fundamentalt i hvordan de virker",
+                    "De ser aldrig s-t-r-a-w-b-e-r-r-y",
+                    "De ser [31552][19685] - 'straw' + 'berry'",
+                    "Grænsen mellem bogstaver forsvinder inde i tokens"
+                ],
+                overgang: "Men hvad ER tokens egentlig?"
+            },
+            {
+                number: "Slide 6",
+                title: "Tokens - What's Really Happening",
+                timing: "",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "Tokens = komprimerede tekst-chunks, ligesom ZIP men med mening",
+                talepunkter: [
+                    "Se det som komprimering - men smartere end ZIP",
+                    "Mennesker ser: s-t-r-a-w-b-e-r-r-y (10 tegn)",
+                    "LLM ser: to tokens [31552] [19685]",
+                    "Byte Pair Encoding (BPE) - som Huffman coding for subwords",
+                    "Derfor kan de 'læse' hurtigt - de ser chunks, ikke bogstaver"
+                ],
+                overgang: "Okay, så det er ikke bare hele ord..."
+            },
+            {
+                number: "Slide 7",
+                title: "Tokens - Not Just Words",
+                timing: "",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "Tokens kan være ord, del-ord, præfikser - hvad end der er effektivt",
+                talepunkter: [
+                    "'hello' = ét token [15339]",
+                    "'understanding' = to tokens: 'under' + 'standing'",
+                    "Det smarte: Kompositionel forståelse",
+                    "Lige som LEGO - små brikker, uendeligt mange kombinationer",
+                    "Derfor kan de håndtere nye ord de aldrig har set"
+                ],
+                overgang: "Men vent - hvorfor er det vigtigt? Se på tallene..."
+            },
+            {
+                number: "Slide 8",
+                title: "Tokens - The Numbers Game",
+                timing: "Check: ~8 min inde",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "Kodningssprog er 'lettere' for LLMs fordi syntaks er ultra-almindelig",
+                talepunkter: [
+                    "~200.000 tokens i vocabulary",
+                    "Men se: async, const, =>, {} - alle får hver deres token",
+                    "Hvorfor? De optrådte MILLARDER af gange i træningsdata",
+                    "Kode er mere repetitivt end naturligt sprog",
+                    "Derfor: LLMs er bedre til kode end til at skrive poesi"
+                ],
+                overgang: "Okay, nu ved vi HVAD de ser... Men hvordan forstår de KONTEKST?"
+            },
+            {
+                number: "Slide 9",
+                title: "Transformer - The Context Problem",
+                timing: "~12 min total",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "Ord er tvetydige - kontekst er alt",
+                publikum: "Ræk hånden op: Hvor mange tror 'bank' betyder finansiel institution? Hvor mange tror flodbred? [Vent] Præcis - samme ord, to betydninger. Hvordan VED AI'en forskellen?",
+                talepunkter: [
+                    "'Bank' kan betyde to ting",
+                    "Mennesker bruger kontekst: 'deposit money' → økonomi",
+                    "Det er her Transformer-arkitekturen kommer ind"
+                ],
+                overgang: "Svaret hedder: Attention..."
+            },
+            {
+                number: "Slide 10",
+                title: "Transformer - Attention Is All You Need",
+                timing: "",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "Attention = hvert ord 'stemmer' på hvad andre ord betyder",
+                talepunkter: [
+                    "Se sætningen - tre ord lyser blåt: bank, deposit, money",
+                    "Step 1: 'Bank' spørger alle andre ord: 'Hvor relevant er I for min betydning?'",
+                    "Step 2: Hvert ord 'stemmer' - deposit 90%, money 85%, 'the' 2%",
+                    "'Bank' kombinerer informationen - weighted average",
+                    "Resultatet: Den forstår det er en finansiel institution",
+                    "Attention = weighted voting på tværs af alle ord"
+                ],
+                overgang: "Men vent - hvorfor er det REVOLUTIONERENDE?"
+            },
+            {
+                number: "Slide 11",
+                title: "Transformer - Parallel Power",
+                timing: "",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "Transformers behandler alle ord samtidig = derfor er moderne AI mulig",
+                talepunkter: [
+                    "RNN (gammel): 'The' → 'cat' → 'sat' → 6 steps",
+                    "Transformer: [The, cat, sat, on, the, mat] → 1 step",
+                    "GPT-4 tog 3 måneder med parallelisme",
+                    "Med gammel metode? 50 år!",
+                    "Dette er GRUNDEN til at AI-revolutionen skete nu"
+                ],
+                overgang: "Godt, så nu ved vi hvordan de 'læser'... Men hvor store ER de?"
+            },
+            {
+                number: "Slide 12",
+                title: "Neural Networks - Parameters (Scale)",
+                timing: "",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "Parametres = vægttallene. Flere = klogere (men dyrere)",
+                talepunkter: [
+                    "Cloud: GPT-5 = 2T, GPT-4 = 1.8T, Claude = ~1T",
+                    "Office Models: 70B på to RTX 4090 GPUer (~30k kr)",
+                    "Quantization = komprimering - reducer 75%, mist 2-5% kvalitet",
+                    "Scale: GPT-5 = Empire State, Office 70B = 5-etagers",
+                    "On-prem AI er muligt nu"
+                ],
+                overgang: "Men hvad lærer de egentlig?"
+            },
+            {
+                number: "Slide 13",
+                title: "Neural Networks - What They Learn",
+                timing: "Check: ~17 min inde",
+                kapitel: "Kapitel 1: Grundlag",
+                kernebudskab: "Parametres gemmer alt: grammatik, fakta, stil, logik",
+                talepunkter: [
+                    "Grammar: Subject-verb-object patterns",
+                    "Facts: 'Paris er hovedstad i Frankrig'",
+                    "Style: Hvordan Shakespeare skriver",
+                    "Logic: Hvis A > B og B > C, så A > C",
+                    "VIGTIGT: De er ikke designet, de er opdaget",
+                    "Ingen if-statements - kun 1.8T mønstre fra internettet"
+                ],
+                overgang: "Så hvordan lærer de alle disse mønstre? Det tager tre faser..."
+            },
+            {
+                number: "Slide 14",
+                title: "How LLMs Learn - Three Stages",
+                timing: "~21 min",
+                kapitel: "Kapitel 2: Træning",
+                kernebudskab: "Fra rå model til hjælpsom: Pre-training → SFT → RLHF",
+                talepunkter: [
+                    "Pre-training: Læs hele internettet (måneder, $50-100M)",
+                    "SFT: Lær at følge instruktioner (uger, ~$1M)",
+                    "RLHF: Lær at være hjælpsom (uger, ~$1M)",
+                    "Det koster hundrede millioner at lave en frontier model",
+                    "Men når den er trænet, er inference billigt"
+                ],
+                overgang: "Lad mig vise jer konkret hvad der sker..."
+            },
+            {
+                number: "Slide 15",
+                title: "From Raw Model to Helpful Assistant",
+                timing: "",
+                kapitel: "Kapitel 2: Træning",
+                kernebudskab: "Se forskellen - samme prompt, forskellige svar",
+                talepunkter: [
+                    "Pre-training only: 'Cats and dogs. Cat poem generator...'",
+                    "Efter SFT: Nu følger den instruktioner! Der er et digt",
+                    "Efter RLHF: 'I'd be happy to!' - engagerende, naturligt",
+                    "Derfor føles ChatGPT som en samtale, ikke autocomplete",
+                    "Tre-trins: Mønstre → Instruktioner → Samtalestil"
+                ],
+                overgang: "Men vent... Hvis det bare er mønstre, hvordan gemmer det fakta?"
+            },
+            {
+                number: "Slide 16",
+                title: "Probabilistic - Not a Database",
+                timing: "",
+                kapitel: "Kapitel 2: Træning",
+                kernebudskab: "LLMs forudsiger sandsynlige fortsættelser - de slår IKKE op",
+                talepunkter: [
+                    "'The capital of France is...'",
+                    "95% Paris, 3% Lyon, 2% andet",
+                    "Det er IKKE erindring - det er forudsigelse",
+                    "Ingen database, ingen lookup, ingen garanti",
+                    "Bare statistisk sandsynlig fortsættelse"
+                ],
+                overgang: "Og det er præcis derfor vi får..."
+            },
+            {
+                number: "Slide 17",
+                title: "Probabilistic - Hallucination Problem",
+                timing: "Check: ~25 min",
+                kapitel: "Kapitel 2: Træning",
+                kernebudskab: "Høj confidence ≠ høj accuracy. Det er derfor de lyver overbevisende",
+                publikum: "Hvornår købte Google Twitter? [Vent på gæt] ChatGPT siger: 2016 for $44 milliarder. Sandt eller falsk?",
+                talepunkter: [
+                    "Google købte ALDRIG Twitter",
+                    "Men LLM'en siger det med fuld selvtillid",
+                    "'Google' + 'acquired' + 'Twitter' lyder plausibelt",
+                    "Den GENERERER ikke sandhed - den genererer plausibilitet",
+                    "High confidence ≠ high accuracy"
+                ],
+                overgang: "Så hvad gør vi ved det?"
+            },
+            {
+                number: "Slide 18",
+                title: "Hallucinations - Why & What Helps",
+                timing: "",
+                kapitel: "Kapitel 2: Træning",
+                kernebudskab: "Hallucinations er ikke bugs - de er features. Men vi kan mitigere",
+                talepunkter: [
+                    "Hvorfor: No truth database, pure pattern matching",
+                    "Hvad hjælper: RAG, human verification, lower temperature",
+                    "Prompt engineering: 'Sig 'jeg ved det ikke' hvis usikker'",
+                    "Kreativitet og hallucinations er samme feature",
+                    "Samme evne der skriver gode digte skriver løgne"
+                ],
+                overgang: "Vi har snakket om hvad de kan... Lad os snakke om hvad de IKKE kan..."
+            },
+            {
+                number: "Slide 19",
+                title: "Context Window - Goldfish Memory",
+                timing: "~28 min",
+                kapitel: "Kapitel 3: Begrænsninger",
+                kernebudskab: "LLMs har ingen langstidshukommelse - kun sliding window",
+                talepunkter: [
+                    "Context window = guldfisk-hukommelse",
+                    "Eksempel: 'Min email er alice@...' [mange beskeder] 'Send til min email' → 'Jeg har ikke din email'",
+                    "Første beskeder blev skubbet ud",
+                    "Som en transportbånd - når fuld, ryger ældste beskeder ud",
+                    "Binær: Enten i kontekst eller helt væk"
+                ],
+                overgang: "Men hvor stor er window'en?"
+            },
+            {
+                number: "Slide 20",
+                title: "Context Window - The Numbers",
+                timing: "",
+                kapitel: "Kapitel 3: Begrænsninger",
+                kernebudskab: "Større kontekst = dyrere og langsommere",
+                talepunkter: [
+                    "GPT-3.5: 4K = ~500 linjer. Billig, hurtig",
+                    "GPT-4: 128K = ~16K linjer (React codebase). Medium",
+                    "Claude 3: 1M = ~125K linjer (Linux kernel!). Dyrt, langsomt",
+                    "Attention er O(N²) - kvadratisk",
+                    "2x længere = 4x mere regnekraft = 4x dyrere",
+                    "De fleste behøver < 4K"
+                ],
+                overgang: "Lad os se på en anden kontrol..."
+            },
+            {
+                number: "Slide 21",
+                title: "Temperature - Same Prompt, Different Answer",
+                timing: "",
+                kapitel: "Kapitel 3: Begrænsninger",
+                kernebudskab: "Temperature styrer randomness - 0 = deterministisk, 2.0 = kaos",
+                publikum: "Hvis I bad ChatGPT skrive en sætning om katte to gange, ville I få samme svar? [Vent] Det afhænger af temperature...",
+                talepunkter: [
+                    "Temp 0: Identisk - 'Cats are domestic animals...'",
+                    "Temp 0.7: Varieret - 'Cats love to nap' vs 'Many cats enjoy playing'",
+                    "Temp 2.0: Kaos - 'Cats purple democracy whiskers!'",
+                    "Lav = mest sandsynlige token, Høj = underdog får chance",
+                    "Produktion: 0 for fakta, 0.7-1.0 for kreativt, aldrig > 1.5"
+                ],
+                overgang: "Så lad os samle op..."
+            },
+            {
+                number: "Slide 22",
+                title: "Takeaway - From Magic to Math",
+                timing: "Check: ~33 min",
+                kapitel: "Kapitel 3: Begrænsninger",
+                kernebudskab: "6 koncepter forklarer 'magien'",
+                talepunkter: [
+                    "Tokens: Derfor kan de ikke tælle bogstaver",
+                    "Transformers: Derfor forstår de kontekst",
+                    "Neural Networks: Derfor koster større modeller mere",
+                    "Probabilistic: Derfor er de overbevisende når de tager fejl",
+                    "Context Window: Derfor glemmer de første besked",
+                    "Temperature: Derfor forskellige svar til samme prompt",
+                    "'The Magic': Det føles som forståelse",
+                    "'The Math': Det er next-token prediction"
+                ],
+                overgang: "Og faktisk... Det ER stadig lidt magisk..."
+            },
+            {
+                number: "Slide 23",
+                title: "Still a Bit of Magic?",
+                timing: "",
+                kapitel: "Kapitel 3: Begrænsninger",
+                kernebudskab: "Vi forstår 70%, forsker i 20%, 10% er mystisk",
+                talepunkter: [
+                    "70% Well-Understood: Emergence ved ~100B params",
+                    "20% Active Research: In-Context Learning - hvordan?",
+                    "10% Still Mysterious: Superposition - ét neuron = multiple koncepter",
+                    "Det ER matematik - bare så intrikat vi stadig lærer",
+                    "Som at opdage calculus for planetbevægelser"
+                ],
+                overgang: "Okay, nok teori - lad os snakke om hvordan I bruger det..."
+            },
+            {
+                number: "Slide 24",
+                title: "Agents - LLMs with Tools",
+                timing: "~38 min",
+                kapitel: "Kapitel 4: Praksis",
+                kernebudskab: "Agent = LLM + værktøjer + autonomi i loop",
+                talepunkter: [
+                    "LLM alene: Foreslår snippets, ingen fil-adgang",
+                    "Agent: Redigerer filer, kører tests, debugger",
+                    "Eksempel: 'Fix TypeScript error' → Think, Act, Observe, Respond",
+                    "Det er en loop - agent bliver ved til opgaven er løst",
+                    "Coding Agents: Claude Code, Copilot, Cursor, Windsurf, Devin"
+                ],
+                overgang: "Men virker det? Lad os se på tal..."
+            },
+            {
+                number: "Slide 25",
+                title: "From Math to Reality - LLMs Excel at Coding",
+                timing: "Check: ~43 min",
+                kapitel: "Kapitel 4: Praksis",
+                kernebudskab: "Dette er 2025. AI kode er allerede mainstream",
+                talepunkter: [
+                    "SWE-bench: 2023 = 4.4%, 2025 = 78.8% - 18x på 2 år!",
+                    "Enterprise: Google/Microsoft 30% AI-kode, Meta target 50% i 2026",
+                    "Developer Speed: Copilot 55% hurtigere, McKinsey 126% output",
+                    "Business: Booking.com 30% throughput, IBM $4.5B savings",
+                    "'This is the worst it'll be' - det bliver bedre hver måned",
+                    "Det er som at stå i 2007 og se første iPhone"
+                ],
+                overgang: "Hvis I vil lære mere..."
+            },
+            {
+                number: "Slide 26",
+                title: "Recommended Reading",
+                timing: "",
+                kapitel: "Kapitel 4: Praksis",
+                kernebudskab: "Tre bøger hvis I vil dykke dybere",
+                talepunkter: [
+                    "'What Is ChatGPT Doing?' - Stephen Wolfram (matematisk dybt)",
+                    "'Not Artificial, Not Intelligent' - Django Beatty (afmystificerer)",
+                    "'Vibe Coding' - Gene Kim & Steve Yegge (praktisk)",
+                    "Alle fra 2024-2025, up-to-date",
+                    "Findes på Amazon"
+                ],
+                overgang: "Og apropos AI der kan kode..."
+            },
+            {
+                number: "Slide 27",
+                title: "Meta - Claude Code",
+                timing: "",
+                kapitel: "Kapitel 4: Praksis",
+                kernebudskab: "Denne præsentation blev lavet MED Claude Code",
+                talepunkter: [
+                    "Fun fact: Jeg brugte Claude Code til denne præsentation",
+                    "Ikke bare tekst - Claude: Designede slides, skrev Marp, debuggede CSS",
+                    "Vi itererede sammen - jeg sagde hvad, Claude implementerede",
+                    "Timer i stedet for dage",
+                    "Præcis den workflow jeg snakkede om: Human + Agent",
+                    "Prøv selv: claude.ai/code"
+                ],
+                overgang: "Okay, det var det! Tid til spørgsmål..."
+            },
+            {
+                number: "Slide 28",
+                title: "Q&A",
+                timing: "~50 min total",
+                kapitel: "Kapitel 4: Praksis",
+                kernebudskab: "Åben til spørgsmål",
+                talepunkter: [
+                    "Fra 'magi til matematik'",
+                    "Vi har dækket: Tokens, Transformers, Neural Networks, Training, Hallucinations, Context, Temperature, Agents",
+                    "Hvad vil I vide mere om?",
+                    "Spørgsmål? Pushback?"
+                ],
+                overgang: ""
+            }
+        ];
+
+        let currentSlide = 0;
+        let startX = 0;
+        let isDragging = false;
+
+        function renderSlides() {
+            const container = document.getElementById('container');
+            slides.forEach((slide, index) => {
+                const slideEl = document.createElement('div');
+                slideEl.className = 'slide';
+                slideEl.id = `slide-${index}`;
+
+                let html = `
+                    <div class="header">
+                        <div class="slide-number">${slide.number}</div>
+                        <div class="slide-title">${slide.title}</div>
+                        ${slide.timing ? `<div class="timing">⏱️ ${slide.timing}</div>` : ''}
+                        <div class="kapitel-badge">${slide.kapitel}</div>
+                    </div>
+                    <div class="content">
+                        <div class="kernebudskab">
+                            💡 <strong>Kernebudskab:</strong> ${slide.kernebudskab}
+                        </div>
+                `;
+
+                if (slide.publikum) {
+                    html += `
+                        <div class="publikum">
+                            <div class="publikum-title">🎤 Publikumsspørgsmål</div>
+                            "${slide.publikum}"
+                        </div>
+                    `;
+                }
+
+                html += `
+                    <div class="section">
+                        <div class="section-title">Talepunkter</div>
+                        <div class="section-content">
+                `;
+
+                slide.talepunkter.forEach(punkt => {
+                    html += `<div class="bullet">${punkt}</div>`;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+
+                if (slide.overgang) {
+                    html += `
+                        <div class="overgang">
+                            <strong>↗ Overgang:</strong> "${slide.overgang}"
+                        </div>
+                    `;
+                }
+
+                html += `</div>`;
+                slideEl.innerHTML = html;
+                container.appendChild(slideEl);
+            });
+        }
+
+        function showSlide(index) {
+            // Hide all slides
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+
+            // Show current slide
+            const slide = document.getElementById(`slide-${index}`);
+            if (slide) {
+                slide.classList.add('active');
+                slide.scrollTop = 0; // Reset scroll
+            }
+
+            // Update navigation
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === slides.length - 1;
+            document.getElementById('progressText').textContent = `${index + 1} / ${slides.length}`;
+
+            const progress = ((index + 1) / slides.length) * 100;
+            document.getElementById('progressFill').style.width = `${progress}%`;
+
+            // Hide swipe hint after first interaction
+            if (index > 0) {
+                document.getElementById('swipeHint').classList.add('hidden');
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Touch events for swiping
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            // Swipe threshold: 50px
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide(); // Swipe left = next
+                } else {
+                    prevSlide(); // Swipe right = prev
+                }
+            }
+
+            isDragging = false;
+        }, { passive: true });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        renderSlides();
+        showSlide(0);
+
+        // Hide swipe hint after 3 seconds
+        setTimeout(() => {
+            document.getElementById('swipeHint').classList.add('hidden');
+        }, 3000);
+    </script>
+</body>
+</html>
