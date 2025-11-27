@@ -1793,9 +1793,7 @@ h2 {
 
 </div>
 
-<div class="insight-footer">
-💡 <strong>The Truth:</strong> It's mathematics—just mathematics so intricate we're still reverse-engineering it. Like discovering calculus to explain planetary motion, we're finding the equations that explain LLMs.
-</div>
+<strong>💡5 The Truth:</strong> It's mathematics—just mathematics so intricate we're still reverse-engineering it. Like discovering calculus to explain planetary motion, we're finding the equations that explain LLMs.
 
 ---
 
