@@ -114,3 +114,53 @@ Frågan var felaktigt formulerad. *Memento*-analogin illustrerar *context window
 - **Hybrid**: Ofta båda! *Fine-tune* för stil, *RAG* för fakta
 
 ---
+
+### Fråga 6 (Nivå 1) - 2025-11-28 16:55
+**Fråga:** Vad är en *agent* i AI-sammanhang? Hur skiljer sig en agent från en vanlig LLM?
+
+**Svar:** en llm tar input och ger output. en agent är en llm med verktyg i en loop. är du enig i att en agent kan jämföras med en rekursiv funktion med exit-kriterium som första koll? vidare har en rekursiv det problem att stacken kan fyllas upp, liksom ett kontekstfönster (båda kan undvikas med trix som en tillståndsparameter till funktionen och compacting av kontextföstret)
+
+**Bedömning:** ✅ Korrekt (utmärkt analogi + djupförståelse!)
+- ✅ LLM = input → output (stateless funktion)
+- ✅ Agent = LLM + verktyg i loop (*Think-Act-Observe*)
+- ✅ **Briljant analogi**: Agent ≈ rekursiv funktion med exit-kriterium
+- ✅ Identifierade gemensamma begränsningar:
+  - Rekursion: Stack overflow-risk
+  - Agent: *Context window* overflow-risk
+- ✅ Lösningar parallellt:
+  - Rekursion: Tillståndsparameter (tail recursion, accumulator)
+  - Agent: *Context compacting* / *summarization*
+
+**Fördjupning - Rekursionsanalogin:**
+```python
+# Rekursiv funktion
+def solve(state, depth=0):
+    if is_goal(state):  # Exit-kriterium
+        return state
+    action = decide_action(state)
+    new_state = execute(action)
+    return solve(new_state, depth+1)
+
+# Agent-loop (samma struktur!)
+def agent_loop(task, context=[]):
+    if is_complete(task):  # Exit-kriterium
+        return result
+    action = llm.think(task, context)  # Think
+    observation = tools.execute(action)  # Act
+    context.append(observation)  # Observe
+    return agent_loop(task, context)  # Loop
+```
+
+**Exit-kriterier för agenter:**
+- Uppgiften klar
+- Max iterationer nådd (säkerhetsnät)
+- *Context window* full
+- Fel uppstår
+
+**Minnesregel:**
+- **LLM**: Enkel funktion - kalla, få svar
+- **Agent**: Rekursiv loop - tänk, agera, observera, repeat
+
+**Kommentar:** Exceptionell förståelse genom att koppla AI-koncept till datastrukturer och algoritmik!
+
+---

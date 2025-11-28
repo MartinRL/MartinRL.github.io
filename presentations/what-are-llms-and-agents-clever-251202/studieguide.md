@@ -810,6 +810,41 @@ En *Agent* = En *LLM* som kan använda *tools* och ta *actions autonomously* i e
 ***Agent loop*:**
 Denna *cycle* upprepas tills *task* är *complete*. *Agenten* är autonom - den beslutar själv när den är färdig.
 
+**Analogi för utvecklare:**
+*Agent loop* ≈ rekursiv funktion med *exit*-kriterium:
+
+```csharp
+// Rekursiv funktion
+Result Solve(State state, int depth = 0)
+{
+    if (IsGoal(state))  // Exit-kriterium
+        return state.Result;
+
+    var action = DecideAction(state);
+    var newState = Execute(action);
+    return Solve(newState, depth + 1);
+}
+
+// Agent-loop (samma struktur!)
+Result AgentLoop(Task task, List<string> context = null)
+{
+    context ??= new();
+
+    if (IsComplete(task))  // Exit-kriterium
+        return task.Result;
+
+    var action = llm.Think(task, context);     // Think
+    var observation = tools.Execute(action);    // Act
+    context.Add(observation);                   // Observe
+    return AgentLoop(task, context);            // Loop
+}
+```
+
+**Gemensamma begränsningar:**
+- *Stack overflow* (rekursion) ≈ *Context window overflow* (agent)
+- **Lösning rekursion**: *Tail recursion*, *accumulator*
+- **Lösning agent**: *Context compacting*, *summarization*
+
 ***Coding Agents* (2025):**
 - *Claude Code*
 - *GitHub Copilot*
