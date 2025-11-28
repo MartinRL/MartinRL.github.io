@@ -626,6 +626,26 @@ Varje scen börjar han från noll och läser sina *notes* för att "minnas". *LL
  **Analogi för utvecklare:**
  *HTTP* är *stateless* - varje *request* börjar från noll. Webbappar löste detta med *cookies*/*sessions*. *LLMs* fungerar likadant: *memory features* = *cookies* för AI.
 
+### Fördjupning - När använder man vilket?
+
+***Fine-tuning* (tatueringar):**
+- **När:** Du behöver ändra modellens *beteende* eller *stil* permanent
+- **Exempel:**
+  - Träna modell att skriva i specifik ton (formell, lekfull)
+  - Lära modell domänspecifik jargong (medicinska termer, juridiskt språk)
+  - Anpassa till företags kommunikationsstil
+- **Nackdel:** Dyrt, tidskrävande, svårt att uppdatera
+
+***RAG* (polaroids):**
+- **När:** Du behöver ge modellen fakta som ändras ofta
+- **Exempel:**
+  - Företagsdokumentation (uppdateras ofta)
+  - Kunddata (olika per session)
+  - Senaste nyheter
+  - Användarspecifik kontext ("Du gillar kaffe")
+- **Fördel:** Uppdatera fakta utan omträning, billigt, flexibelt
+- **Nackdel:** Begränsat av *context window*-storlek
+
 ***Key limitations*:**
 - Alla *retrieved memories* måste *fit* inom *context window*
 - *RAG retrieval* kan missa relevant information
