@@ -607,11 +607,14 @@ Detta är varför större *context* är exponentiellt dyrare.
 5. **Modellen *"minns"* inte - den läser *notes***
 
 **Analogi:**
-Som en person med *severe amnesi* som bär en anteckningsbok:
-- *Context window* = senaste minuterna *working memory*
-- *Memory feature* = anteckningsbok med viktiga fakta
-- Varje *conversation*, de läser *notebook* för att *"remember"* dig
-- Men de minns inte faktiskt - de läser *notes*
+Som Leonard i *Memento* - kan inte skapa nya minnen. 
+- Hans tatueringar = *fine-tuning* (permanent). 
+- Hans polaroids med anteckningar = *RAG*/*prompt injection* (per session). 
+
+Varje scen börjar han från noll och läser sina *notes* för att "minnas". *LLMs* fungerar likadant.
+
+ **Analogi för utvecklare:**
+ *HTTP* är *stateless* - varje *request* börjar från noll. Webbappar löste detta med *cookies*/*sessions*. *LLMs* fungerar likadant: *memory features* = *cookies* för AI.
 
 ***Key limitations*:**
 - Alla *retrieved memories* måste *fit* inom *context window*
