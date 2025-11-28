@@ -83,3 +83,34 @@ Frågan var felaktigt formulerad. *Memento*-analogin illustrerar *context window
 - **Bättre analogi**: Expert improvisatör som läst tusentals manus. Fråga om en film hen aldrig sett → skapar trovärdigt svar från liknande mönster. Låter rätt, men är påhittat.
 
 ---
+
+### Fråga 5 (Nivå 2) - 2025-11-28 16:48
+**Fråga:** Vad är skillnaden mellan *RAG* (*Retrieval-Augmented Generation*) och *fine-tuning*? När skulle du använda det ena över det andra?
+
+**Svar:** fine-tuning sker som en del av processen att skapa en färdig LLM och är där för evigt (tatuering) medan RAG är ekstern information/dokumentation som används för berika kontexten efter behov (titta på ett foto)
+
+**Bedömning:** ✅ Korrekt (kärnkonceptet + analogi!)
+- ✅ *Fine-tuning* är permanent (*"där för evigt"*) = tatueringar
+- ✅ *RAG* är extern information som injiceras vid behov = polaroids
+- ✅ *Fine-tuning* modifierar *weights* under träning
+- ✅ *RAG* berikar kontext dynamiskt per session
+
+**Fördjupning - När använder man vilket?**
+
+**Fine-tuning (tatueringar):**
+- **När**: Ändra modellens *beteende* eller *stil* permanent
+- **Exempel**: Träna specifik ton, domänjargong, företagsstil
+- **Nackdel**: Dyrt, tidskrävande, svårt att uppdatera
+
+**RAG (polaroids):**
+- **När**: Ge modellen *fakta* som ändras ofta
+- **Exempel**: Dokumentation, kunddata, senaste nyheter, användarkontext
+- **Fördel**: Uppdatera utan omträning, billigt, flexibelt
+- **Nackdel**: Begränsat av *context window*
+
+**Minnesregel:**
+- *Fine-tuning* = ändra modellens DNA (permanent)
+- *RAG* = ge modellen en faktabok att titta i (tillfällig)
+- **Hybrid**: Ofta båda! *Fine-tune* för stil, *RAG* för fakta
+
+---
