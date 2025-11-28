@@ -143,6 +143,16 @@ Det är därför omöjligt för *LLM:en* att räkna 'r' - den processar inte "st
 
 *LLMs* kan inte läsa text direkt. De behöver numriska representationer.
 
+### *Tokenization* som Förprocessering
+
+Arkitekturen i tre steg:
+
+```
+INPUT TEXT → [TOKENIZER] → TOKEN IDs → [LLM] → OUTPUT TOKEN IDs → [TOKENIZER] → OUTPUT TEXT
+```
+
+*Tokenizern* är ett separat steg - den konverterar text till *token IDs* innan *LLM* processar dem, och konverterar tillbaka efter.
+
 ***Byte Pair Encoding* (*BPE*):**
 - En komprimeringsalgoritm liknande *Huffman coding*
 - Men istället för att komprimera enskilda tecken, komprimerar den *subwords* (orddelar)
