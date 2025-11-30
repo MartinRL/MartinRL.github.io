@@ -194,3 +194,79 @@ def agent_loop(task, context=[]):
 **Kommentar:** Detta korrigerar missförståndet från fråga 2 där determinism felaktigt kopplades till träningssteg (*SFT*). Nu korrekt förståelse: **Determinism styrs av *temperature*, inte träningssteg.**
 
 ---
+
+### Fråga 8 (Nivå 2) - 2025-11-30
+**Fråga:** Vad är skillnaden mellan *neurons*, *layers*, *weights* och *parameters*? Hur hänger de ihop?
+
+**Svar:** "en neuron tar input och ger output. jag är inte säker på hur och behöver din hjälp för att bättre förstå det. layers är som nyanser och varje token prediction går igenom samtliga lager, runt 100 stycken för en frontier model. kan tillföra nyanser som smak och humör. jag är osäker på skillnaden mellan weights och parameters. hjälp mig bättre förstå den! hjälp mig även förstå exakt hur en modell/llm tränas för att skapa dessa!"
+
+**Bedömning:** ⚠️ Delvis korrekt
+- ✅ Neuron: Rätt att den tar input och ger output
+- ✅ Layers: Rätt att ~100 lager för frontier models, rätt intuition om "nyanser"
+- ❌ Saknas: Hur neurons faktiskt fungerar (weights, summering, activation)
+- ❌ Osäker på weights vs parameters
+
+**Fördjupning given:**
+
+**1. Hur en neuron fungerar:**
+```
+Inputs × Weights → Summering + bias → Activation function → Output
+```
+Analogi: Domare som viktar olika prestationer och ger totalpoäng.
+
+**2. Weights = Parameters:**
+- De är samma sak!
+- *Weight* = enskild siffra som multipliceras med input
+- *Parameter* = samlingsnamn för alla justerbara värden (weights + biases)
+- 1.8T parameters = 1.8T justerbara siffror som ÄR modellens "kunskap"
+
+**3. Hur weights tränas:**
+1. *Forward pass*: Skicka in text, få prediction
+2. Beräkna fel mot faktiskt nästa token
+3. *Backpropagation*: Räkna ut varje weights bidrag till felet
+4. Uppdatera weights med *gradient descent*
+5. Repeat miljarder gånger
+
+Formel: `ny_weight = gammal_weight - (learning_rate × gradient)`
+
+Analogi: Mixer med 1.8T rattar - smaka, justera, repeat.
+
+---
+
+### Uppföljning Fråga 2 (Nivå 2) - 2025-11-30
+**Fråga:** Förklara nu korrekt: Vad gör varje träningssteg (*pre-training*, *SFT*, *RLHF*) med modellen - och vad styr determinism?
+
+**Svar:** "pre-training: som att läsa all fakta i en lärobok (men i detta fall hela internet, samtliga läropböcker, etc). SFT (supervised fine-tuning): mänskliga 'lablers' går igenom otaliga exempel på fråga och rimligt svar/assistans. som exemplena i en lärobok. RLHF (re-enforced learning with human feedback): kräver kanske 1 miljard exempel, så en reward-modell skapas som regel. som att iterara på problem i en lärobok (dock stor skillnad på RLHF för problem med känd lösning som schack eller go och exempelvis humor och hur bra ett skämt är)"
+
+**Bedömning första del:** ✅ Korrekt
+- ✅ Pre-training: Rätt - läsa all fakta (hela internet, böcker, kod)
+- ✅ SFT: Rätt - mänskliga exempel på fråga→svar-par
+- ✅ RLHF: Rätt - reward model pga skala, bra insikt om skillnad mellan objektiva (schack/go) och subjektiva (humor) domäner
+- ❌ Missade att besvara: Vad styr determinism?
+
+**Följdfråga:** Vad styr determinism - träningssteg eller något annat?
+
+**Svar:** "temperatur"
+
+**Bedömning följdfråga:** ✅ Korrekt!
+
+**Kommentar:** Missförståndet från fråga 2 är nu helt korrigerat. Användaren förstår att:
+- Träningsstegen (pre-training → SFT → RLHF) påverkar modellens *beteende* och *kvalitet*
+- **Temperature** styr *determinism* (0 = deterministisk, >0 = stokastisk)
+
+---
+
+### Uppföljning Fråga 8 (Nivå 2) - 2025-11-30
+**Fråga:** Förklara med egna ord: 1) Vad händer inuti en neuron? 2) Vad är skillnaden mellan *weight* och *parameter*?
+
+**Svar:** "1. den tar input och alla sina vikter och ger utifrån dem output. som att en domare bedömer en prestation. 2. en vikt är en parameter. en bias är också en parameter. i ett OO-språk hade parameter varit superklass till de nedärvda klasserna vikt och bias."
+
+**Bedömning:** ✅ Korrekt!
+- ✅ Neuron: Input + weights → output, domaranalogin fungerar
+- ⚠️ Kunde nämnt de 3 explicita stegen (summering → bias → activation), men kärnförståelsen finns
+- ✅ **Weights vs Parameters**: Perfekt! Weight är en parameter, bias är också en parameter
+- ✅ **OO-analogin utmärkt**: `Parameter` som basklass, `Weight` och `Bias` som subklasser
+
+**Kommentar:** Gapet från fråga 8 är nu stängt. Användaren förstår relationen mellan weight/bias/parameter.
+
+---

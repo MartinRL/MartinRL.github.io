@@ -118,6 +118,60 @@ De har aldrig sett receptet, men har absorberat essensen. Inga *if-statements*, 
 
 **Detta är varför *LLMs* är *"discovered, not designed"*.**
 
+### Fördjupning: Hur en *Neuron* Fungerar
+
+```
+Inputs:      x₁, x₂, x₃  (t.ex. värden från tidigare tokens)
+Weights:     w₁, w₂, w₃  (hur viktigt är varje input?)
+             ↓
+Summering:   sum = (x₁ × w₁) + (x₂ × w₂) + (x₃ × w₃) + bias
+             ↓
+Activation:  output = f(sum)  ← t.ex. ReLU: max(0, sum)
+```
+
+**Analogi:**
+Tänk på *neuronen* som en domare i en tävling:
+- Varje *input* är en deltagares prestation
+- Varje *weight* är hur mycket den domaren bryr sig om just den prestationen
+- Summan blir totalpoängen
+- *Activation* avgör om deltagaren går vidare eller inte
+
+### Fördjupning: *Weights* = *Parameters*
+
+**De är samma sak!**
+
+- ***Weight*** = en enskild siffra som multipliceras med en *input*
+- ***Parameter*** = samlingsnamn för alla justerbara värden (*weights* + *biases*)
+
+När vi säger "*GPT-4* har 1.8 *trillion parameters*" menar vi:
+- 1.8 *trillion weights/biases* som kan justeras
+- Varje koppling mellan *neurons* har en *weight*
+- Dessa siffror ÄR modellens "kunskap"
+
+### Fördjupning: Hur *Weights* Tränas
+
+**Steg-för-steg:**
+
+1. ***Forward pass***: Skicka in text, få *prediction*
+2. **Beräkna fel**: Jämför *prediction* med faktiskt nästa *token*
+3. ***Backpropagation***: Räkna ut hur mycket varje *weight* bidrog till felet
+4. **Uppdatera *weights***: Justera varje *weight* lite grann för att minska felet
+5. ***Repeat***: Miljarder gånger med olika text
+
+**Analogi:**
+Som att ställa in 1.8 *trillion* rattar på en mixer:
+- Smaka resultatet (*prediction*)
+- Om för salt (fel), skruva ner saltrattten lite
+- *Backpropagation* räknar ut VILKA rattar som påverkade smaken
+- *Gradient descent* bestämmer HUR MYCKET varje ratt ska justeras
+
+**Matematiskt (förenklat):**
+```
+ny_weight = gammal_weight - (learning_rate × gradient)
+```
+- ***gradient*** = "hur mycket påverkade denna *weight* felet?"
+- ***learning_rate*** = "hur stora steg tar vi?" (t.ex. 0.001)
+
 ---
 
 ## Del 2: *Tokens*
