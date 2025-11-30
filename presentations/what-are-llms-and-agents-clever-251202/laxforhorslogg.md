@@ -270,3 +270,49 @@ Analogi: Mixer med 1.8T rattar - smaka, justera, repeat.
 **Kommentar:** Gapet från fråga 8 är nu stängt. Användaren förstår relationen mellan weight/bias/parameter.
 
 ---
+
+### Fråga 9 (Nivå 3) - 2025-11-30
+**Fråga:** Förklara varför en LLM kan skriva en *ny* dikt om kärlek trots att den aldrig sett just den dikten i träningsdata. Hur hänger detta ihop med *weights*, *patterns* och *probabilistic prediction*?
+
+**Svar:** "en LLM förutsäger nästa token (och nästa och nästa...) pga träningsdata, vikter och biaser 'förstår' den koncept som dikt. generativ AI är just det; skapande."
+
+**Bedömning:** ✅ Korrekt!
+- ✅ Förutsäger nästa token iterativt
+- ✅ Weights och biases från träningsdata
+- ✅ "Förstår" koncept som dikt (mönster, inte memorering)
+- ✅ Generativ = skapande
+
+**Fördjupning given:**
+- **Patterns, inte fakta**: Weights har lärt sig *strukturen* av dikter (rim, rytm, metaforer) - inte specifika dikter
+- **Komposition**: Kombinerar inlärda mönster på nya sätt vid varje token-prediction
+- **Probabilistisk kreativitet**: Temperature > 0 tillåter variation → unika kombinationer
+- **Analogi**: Jazzmusiker som improviserar - spelar inte lagrade låtar, kombinerar inlärda mönster i realtid
+
+---
+
+### Fråga 10 (Nivå 3) - 2025-11-30
+**Fråga:** Du nämnde tidigare att en agent är som en rekursiv funktion. Förklara nu: Vad händer om agenten *aldrig* når sitt exit-kriterium? Vilka två begränsningar skyddar mot detta, och hur är de analoga till rekursionsproblem?
+
+**Svar:** "det vet jag inte. förklara det för mig!"
+
+**Bedömning:** ❌ Visste ej
+
+**Fördjupning given:**
+
+**Två skyddsmekanismer:**
+
+| Skydd | Agent | Rekursion |
+|-------|-------|-----------|
+| **1. Max iterationer** | "Stoppa efter N loopar" | `if (depth > MAX_DEPTH) return;` |
+| **2. Context window full** | Minnet tar slut → kan inte fortsätta | Stack overflow |
+
+**Analogin:**
+- Stack overflow (rekursion) ≈ Context window overflow (agent)
+- Max depth parameter ≈ Max iterations parameter
+- Base case ≈ Task complete
+
+**Praktiskt exempel:**
+- ❌ Dålig prompt: "Förbättra koden tills den är perfekt" (inget tydligt exit-kriterium)
+- ✅ Bra prompt: "Fixa TypeScript-felet i UserProfile.tsx" (verifierbart exit-kriterium)
+
+---
