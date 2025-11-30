@@ -707,6 +707,52 @@ När modellen predicerar nästa *token*, får den en *probability distribution*:
 - Även *low-probability tokens* får hög chans
 - Resulterar i *incoherent output*
 
+### Fördjupning: *Probability Distribution* och *Temperature*
+
+En *probability distribution* är en fördelning av sannolikheter över alla möjliga *tokens*. Den **summerar alltid till 100%** (eller 1.0) - det är en matematisk lag.
+
+**Exempel med 4 möjliga *tokens*:**
+
+Säg att *LLM*:en ska välja nästa *token* och har fyra kandidater: `"the"`, `"a"`, `"one"`, `"banana"`
+
+**Före *temperature* (råa *logits* från nätverket):**
+```
+"the"    → 85%
+"a"      → 10%
+"one"    → 4%
+"banana" → 1%
+─────────────────
+Summa:     100%  ← Alltid!
+```
+
+***Temperature* = 0 (*argmax*):**
+```
+"the"    → 100%   ← Vinnaren tar allt
+"a"      → 0%
+"one"    → 0%
+"banana" → 0%
+─────────────────
+Summa:     100%   ← Fortfarande!
+```
+
+***Temperature* = 2.0 (utplattad):**
+```
+"the"    → 40%    ← Fortfarande högst, men...
+"a"      → 30%    ← ...nu har andra en chans
+"one"    → 20%
+"banana" → 10%
+─────────────────
+Summa:     100%   ← Alltid 100%!
+```
+
+**Kärnan:**
+- ❌ "Distribution minskar" → Fel, den är alltid 100%
+- ✅ "Distribution blir *skarpare/spetsigare*" → Rätt (temp↓)
+- ✅ "Distribution blir *plattare/jämnare*" → Rätt (temp↑)
+
+**Analogi:**
+Tänk på en hög med sand. Du kan forma den till en spetsig pyramid (låg *temp*) eller platta ut den (hög *temp*) - men det är alltid *samma mängd sand*.
+
 ### *SWE Guide* - När Använder Man Vilken *Temperature*?
 
 **Presentationens guide:**
