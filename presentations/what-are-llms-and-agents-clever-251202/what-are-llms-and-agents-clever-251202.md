@@ -763,6 +763,12 @@ Helpful, engaging, natural
 
 ---
 
+<!-- _class: invert -->
+
+![bg contain](Files/karpathy-textbook-(680×483).jpg)
+
+---
+
 ## Probabilistic: Not a Database
 
 <style scoped>
