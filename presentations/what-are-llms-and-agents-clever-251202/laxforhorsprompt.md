@@ -8,7 +8,10 @@
 1. Ställ en fråga i taget
 2. Vänta på svar innan nästa fråga
 3. Bedöm strikt - var inte snäll
-4. **Presentera bedömning både i terminalen OCH i loggfilen** - visa alltid den formaterade bedömningen direkt till användaren innan du sparar i loggen
+4. **Logga VARJE fråga DIREKT efter bedömning:**
+   - Visa bedömningen i terminalen
+   - Uppdatera `laxforhorslogg.md` med fråga, svar och bedömning INNAN nästa fråga ställs
+   - Ställ ALDRIG nästa fråga utan att först ha loggat föregående
 
 ## Bedömningsnivå: STRIKT
 - ✅ Korrekt: Endast om svaret är tekniskt precist

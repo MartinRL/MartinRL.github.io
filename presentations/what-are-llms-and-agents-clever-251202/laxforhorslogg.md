@@ -164,3 +164,33 @@ def agent_loop(task, context=[]):
 **Kommentar:** Exceptionell förståelse genom att koppla AI-koncept till datastrukturer och algoritmik!
 
 ---
+
+### Fråga 7 (Nivå 2) - 2025-11-30
+**Fråga:** Förklara vad *temperature* gör tekniskt. Om du ställer in temperature=0, temperature=0.7 och temperature=2.0 - vad händer med *probability distribution* över nästa token i varje fall?
+
+**Första svar:** "*probability distribution* minskar ju lägre tempen sätts. sätt den exempelvis till lägre för att skapa programkod än romanskrivande"
+
+**Bedömning första svar:** ⚠️ Delvis korrekt
+- ✅ Rätt intuition: Lägre temperature → mer förutsägbar output
+- ✅ Rätt tillämpning: Kod kräver lägre temp än kreativt skrivande
+- ❌ **Tekniskt oprecist**: "Probability distribution minskar" är inte korrekt formulering. Distributionen finns alltid och summerar till 100% - det är *formen* som ändras.
+
+**Fördjupning given:**
+- *Probability distribution* summerar **alltid** till 100%
+- temp=0: Kollapsar till *argmax* - högsta sannolikheten får 100%, övriga 0%
+- temp=0.7: Skärper distributionen - topptokens får högre relativ sannolikhet
+- temp=2.0: Plattar ut distributionen - alla tokens får mer lika sannolikhet
+- **Analogi**: Sandhög - kan formas till pyramid (låg temp) eller plattas ut (hög temp), men samma mängd sand
+
+**Uppföljningsfråga:** Varför ger temp=0 *deterministisk* output medan temp>0 ger *non-deterministic*?
+
+**Uppföljningssvar:** "summan av sannolikhetsdistributionen är alltid 100%, men vid temp. 0 sätts värdet till 100% till den mest sannolika token, således får övriga 0% och samma resultat ges varje gång."
+
+**Bedömning uppföljning:** ✅ Korrekt!
+- ✅ Summan är alltid 100% - förstått
+- ✅ temp=0 → *argmax* → högsta sannolikhet får 100%, övriga 0%
+- ✅ Därför: samma input → samma output = **deterministisk**
+
+**Kommentar:** Detta korrigerar missförståndet från fråga 2 där determinism felaktigt kopplades till träningssteg (*SFT*). Nu korrekt förståelse: **Determinism styrs av *temperature*, inte träningssteg.**
+
+---
