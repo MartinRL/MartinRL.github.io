@@ -8,6 +8,8 @@ Skabe 1-2 korte, mundrette danske afsnit per slide som ankre til fri tale. Tonen
 
 I dag skal vi se på, hvad der egentlig sker under motorhjelmen på ChatGPT, Claude og de andre. Ikke fordi vi skal bygge vores egen LLM — det kræver 100 millioner dollars og et par måneder — men fordi det gør os til bedre brugere. Og fordi det faktisk er ret fedt at forstå, hvordan magi bliver til matematik.
 
+Føler dog lidt dum, idet jeg dermed ødelægger lidt af magien, nu når der kommer to tryllemænd efter mig og viser magiske tricks 😜
+
 ---
 ## Slide 2: Purpose — From Magic to Math
 
