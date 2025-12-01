@@ -280,7 +280,7 @@ That's why it can't count the 'r's in strawberry—it literally never processes 
 </div>
 </br>
 <div style="margin-top: 30px; padding: 15px 20px; background: var(--color-bg-purple-tint); border-left: 3px solid var(--color-primary-purple); border-radius: 4px; font-size: 15pt; color: var(--color-text-secondary);">
-💡 <strong style="color: var(--color-primary-purple);">Byte Pair Encoding (BPE)</strong> - Think Huffman coding, but for subwords instead of characters.
+💡 <strong style="color: var(--color-primary-purple);">The tokenizer runs BEFORE the LLM</strong> - The model never sees raw text, only numeric token IDs.
 </div>
 
 ---
