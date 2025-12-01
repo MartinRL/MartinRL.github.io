@@ -315,4 +315,119 @@ Analogi: Mixer med 1.8T rattar - smaka, justera, repeat.
 - ❌ Dålig prompt: "Förbättra koden tills den är perfekt" (inget tydligt exit-kriterium)
 - ✅ Bra prompt: "Fixa TypeScript-felet i UserProfile.tsx" (verifierbart exit-kriterium)
 
+**Uppföljningsfråga:** Vilka två skyddsmekanismer hindrar en agent från att loopa för evigt, och vad är deras motsvarighet i rekursion?
+
+**Svar:** "antal varv i loopen samt hålla koll på kontextfönstrets storlek. en rekursiv funktion vet dock inte när stack overflow inträffar, så trix som tail recursion och ackumulatorer används. sällan max antal loopar."
+
+**Bedömning uppföljning:** ✅ Korrekt!
+- ✅ Max iterationer: Antal varv i loopen
+- ✅ Context window: Hålla koll på kontextfönstrets storlek
+- ✅ Bra insikt: Stack overflow sker "osynligt" i rekursion - programmet kraschar utan förvarning
+- ✅ Tail recursion/ackumulatorer: Korrekta tekniker för att undvika stack overflow
+
+**Förfining given:**
+- Agenter har fördelen att de kan *planera* för begränsningen ("jag har 10 iterationer kvar")
+- Rekursion kraschar utan förvarning vid stack overflow
+- Agent kan returnera partiellt resultat gracefully
+
+---
+
+### Fråga 11 (Nivå 3) - 2025-11-30
+**Fråga:** Förklara sambandet mellan *attention* (O(N²)), *context window* och *cost*. Varför kostar det 4x mer att dubbla context window - och varför är detta ett fundamentalt problem för LLM-arkitekturen?
+
+**Svar:** "för varje ny token i context window ska övriga tokens tillfrågas. därför växer context window exponentiellt med antal tokens."
+
+**Bedömning:** ⚠️ Delvis korrekt
+- ✅ Rätt: Varje ny token måste "tillfråga" alla andra tokens
+- ❌ **Terminologi**: Det växer *kvadratiskt* (O(N²)), inte *exponentiellt*
+
+**Fördjupning given:**
+- Kvadratisk O(N²): N × N, ex. 100 → 400 (4x) vid dubbling
+- Exponentiell O(2^N): 2^N, ex. 1024 → 1,048,576 (1024x) vid dubbling
+- Exponentiell hade gjort LLMs omöjliga att använda
+
+**Uppföljningsfråga 1:** Om context window går från 4K → 8K tokens, hur många gånger mer beräkningar krävs?
+
+**Svar:** "16"
+
+**Bedömning:** ❌ Fel
+- Rätt svar: 4x (eftersom (2N)² = 4N², inte 16)
+- Förväxlade troligen 4² = 16 med förhållandet mellan N:en
+
+**Uppföljningsfråga 2:** Om context window går från 4K → 12K (3x större), hur många gånger mer beräkningar krävs?
+
+**Svar:** "9"
+
+**Bedömning:** ✅ Korrekt!
+- 3x större → 3² = 9x mer beräkningar
+
+**Minnesregel given:** "Dubbla context = fyra gånger kostnaden" (Nx context = N²x kostnad)
+
+---
+
+### Fråga 12 (Nivå 3) - 2025-11-30
+**Fråga:** Förklara med en sammanhängande berättelse: Vad händer steg-för-steg när du skriver "Skriv en dikt om kaffe" till en LLM-agent som Claude Code, från det att du trycker Enter tills du ser svaret?
+
+**Svar:** "utifrån det neurala nätverkets uppfattning om vad en dikt är, vad kaffe är, etc. kommer en token (output) att produceras med 'Skriv en dikt om kaffe' som token input. denna token blir så sista token i nästa mängd token-input, som LLM:en så skapar en ny token av. utifrån temperatur väljs en token från de möjliga. detta fortsätte tills en samlad bedömning av huruvida context window innehåller en komplett dikt, dvs exit criteria uppfyllt."
+
+**Bedömning:** ✅ Korrekt (kärnflödet)!
+- ✅ Neurala nätverkets "uppfattning" (patterns/weights) om dikt och kaffe
+- ✅ Token-för-token generation (autoregressive)
+- ✅ Varje ny token blir input till nästa prediction
+- ✅ Temperature styr val från probability distribution
+- ✅ Exit criteria för att avsluta
+
+**Förfining given - komplett flöde:**
+1. **Input**: Användarens text
+2. **Tokenization**: Text → token IDs (före LLM)
+3. **LLM Processing**: Tokens genom ~100 layers, attention, weights
+4. **Token Generation Loop**: Probability → temperature → nästa token → repeat
+5. **Agent Loop**: Think-Act-Observe, exit criteria
+6. **Detokenization**: Token IDs → text (efter LLM)
+7. **Output**: Svar visas
+
+**Bonus som saknades:**
+- Tokenization/detokenization-stegen
+- Agent kunde valt verktyg istället för ren textgeneration
+
+---
+
+### Fråga 13 (Nivå 3) - 2025-11-30
+**Fråga:** Varför kan inte en LLM "bara lägga till" långtidsminne genom att spara alla konversationer och ladda in dem vid nästa session? Vad är de tekniska begränsningarna?
+
+**Svar:** "context window-storlek begränsar"
+
+**Bedömning:** ✅ Korrekt (men kortfattat)
+- ✅ Context window är huvudbegränsningen
+
+**Fördjupning given - fler begränsningar:**
+1. **Context window**: Hard limit på hur mycket som kan laddas
+2. **O(N²) kostnad**: 10x mer historik = 100x dyrare
+3. **"Lost in the middle"**: LLMs tappar precision i mitten av långa contexts
+4. **Ingen selektiv retrieval**: Allt måste in i context, kan inte välja
+5. **Stateless arkitektur**: Modellen sparar inget mellan anrop
+
+**Lösning**: RAG - spara externt, hämta relevant info, injicera i context
+
+**Analogi**: Kan inte memorera hela Wikipedia, men kan ha den öppen och slå upp vid behov
+
+---
+
+### Fråga 14 (Nivå 3) - 2025-11-30
+**Fråga:** Du ska bygga en kundtjänst-chatbot som behöver: 1) Komma ihåg kundens namn och orderhistorik, 2) Svara i en specifik företagston (formell, professionell), 3) Ha tillgång till aktuell produktinformation som ändras veckovis. Vilken teknik använder du för varje krav: *fine-tuning* eller *RAG*?
+
+**Svar:**
+1. RAG (ändrar sig i realtid och därför inte "cementeras")
+2. Fine-tuning (persistent över lång tid)
+3. RAG (löpande uppdateringar)
+
+**Bedömning:** ✅ Korrekt!
+- ✅ Kunddata: RAG - ändras per session/kund
+- ✅ Företagston: Fine-tuning - persistent beteende
+- ✅ Produktinfo: RAG - uppdateras veckovis
+
+**Tumregel bekräftad:**
+- Fine-tuning = ändra *hur* modellen beter sig (stil, ton, format)
+- RAG = ge modellen *fakta* som ändras (data, dokument, kontext)
+
 ---
