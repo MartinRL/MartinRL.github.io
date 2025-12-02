@@ -1625,7 +1625,7 @@ li:nth-child(6) strong { color: var(--color-dark-grey); }
 
 ---
 
-## Still a Bit of Magic?
+## Still a Bit of Magic? 🧙
 
 <style scoped>
 h2 {
