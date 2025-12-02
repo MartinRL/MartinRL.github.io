@@ -6,19 +6,19 @@ Skabe 1-2 korte, mundrette danske afsnit per slide som ankre til fri tale. Tonen
 ---
 ## Slide 1: Titel — LLMs & Agents
 
-I dag skal vi se på, hvad der egentlig sker under motorhjelmen på ChatGPT, Claude og de andre. Ikke fordi vi skal bygge vores egen LLM — det kræver 100 millioner dollars og et par måneder — men fordi det gør os til bedre brugere. Og fordi det faktisk er ret fedt at forstå, hvordan magi bliver til matematik.
+I dag skal vi se på, hvad der egentlig sker under motorhjelmen på ChatGPT, Sonnet, Gemini og de andre. Ikke fordi vi skal bygge vores egen LLM — det kræver 100 millioner dollars og et par måneder — men fordi det gør os til bedre brugere. Og fordi det faktisk er ret fedt at forstå, hvordan magi bliver til matematik.
 
-Føler dog lidt dum, idet jeg dermed ødelægger lidt af magien, nu når der kommer to tryllemænd efter mig og viser magiske tricks 😜
+Føler mig dog lidt dum, idet jeg dermed ødelægger lidt af magien, nu når der kommer to tryllemænd efter mig og viser magiske tricks 😜
 
 ---
 ## Slide 2: Purpose — From Magic to Math
 
-Arthur C. Clarke sagde det perfekt: Avanceret teknologi er umulig at skelne fra magi. Og det er præcis sådan det føles, når Copilot eller Claude skriver kode for os. Men i dag trækker vi gardinet til side. Vi går fra 'det virker bare magisk' til 'ah, *det* er derfor den gør sådan'.
+Arthur C. Clarke sagde det perfekt: Avanceret teknologi er umulig at skelne fra magi. Og det er præcis sådan det føles, når Github Copilot eller Claude Code skriver kode for os. Men i dag trækker vi gardinet til side. Vi går fra 'det virker bare magisk' til 'ah, *det* er derfor den gør sådan'.
 
 ---
 ## Slide 3: Six Core Concepts
 
-Seks koncepter. Det er alt hvad I behøver for at forstå, hvordan de her ting virker. Og når vi er færdige, vil I vide præcis hvorfor en LLM ikke altid kan kan tælle eller beregne de simpleste ting, samtidig med at den kan mange ting på PhD-niveau, hvorfor den nogle gange lyver helt overbevisende, og hvorfor den glemmer hvad I sagde for 10 minutter siden. Lad os dykke ned.
+Seks koncepter. Det er alt hvad I behøver for at forstå, hvordan de her ting virker. Og når vi er færdige, vil I vide præcis hvorfor en LLM ikke altid kan kan tælle eller beregne de simpleste ting, samtidig med at den kan mange ting på PhD-niveau, skrive kode og vinde spil som Go, hvorfor den nogle gange lyver helt overbevisende, og hvorfor den glemmer hvad I sagde for 10 minutter siden. Lad os dykke ned.
 
 ---
 ## Slide 4: Neural Networks — Building Blocks
@@ -77,7 +77,7 @@ Uden transformerparallelisme ville det tage 50 år at træne GPT-4 i stedet for 
 
 Tre trin: 
  1. Først *pre-training* — læs internettet, lær mønstre. Det tager måneder og koster 50-100 millioner dollars.
- 2. Så *supervised fine-tuning* — vis modellen eksempler på gode svar. Udførs af menneskelige *labelers* eller *annotators*.
+ 2. Så *supervised fine-tuning* — vis modellen eksempler på gode svar. Udføres af menneskelige *labelers* eller *annotators*.
  3. Til sidst *Reinforcement Learning from Human Feedback* — lad mennesker rangere svar og træn en belønningsmodel. Det er det der gør forskellen mellem 'autocomplete på steroider' og 'faktisk hjælpsom assistent'.
 
 ---
