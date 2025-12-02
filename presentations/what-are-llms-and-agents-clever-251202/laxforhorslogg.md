@@ -431,3 +431,123 @@ Analogi: Mixer med 1.8T rattar - smaka, justera, repeat.
 - RAG = ge modellen *fakta* som ändras (data, dokument, kontext)
 
 ---
+
+### Fråga 15 (Nivå 2) - 2025-12-02
+**Fråga:** Sliden "Still a Bit of Magic?" visar tre fenomen vi inte helt förstår: *Emergence at Scale* (70%), *In-Context Learning* (20%), och *Superposition* (10%). Förklara vad *In-Context Learning* är och varför det är mystiskt - hur kan en LLM "lära sig" en ny uppgift från bara 3 exempel *utan att uppdatera sina weights*?
+
+**Svar:** "Jag har ingen aning... Lär mig!"
+
+**Bedömning:** ❌ Visste ej
+
+**Fördjupning given:**
+
+**Vad är In-Context Learning?**
+Du ger LLM:en några exempel i prompten, och plötsligt "kan" den uppgiften:
+```
+Översätt till franska:
+cat → chat
+dog → chien
+house → maison
+
+Översätt: car → ?
+```
+LLM:en svarar: "voiture" ✓
+
+**Varför mystiskt?**
+- Vanlig ML: Tusentals exempel + weight-uppdateringar + permanent kunskap
+- In-Context Learning: 3 exempel, **inga weight-uppdateringar**, kunskap försvinner efter session
+
+**Teorier (ingen konsensus):**
+- *Meta-learning*: Pre-training lärde modellen att "lära sig lära"
+- *Pattern matching*: Hittar liknande mönster från träningsdata
+- *Implicit fine-tuning*: Attention simulerar gradient descent
+- *Task location*: Exemplen hjälper modellen "hitta" rätt kunskap den redan har
+
+**Analogi:** Som att aldrig lärt dig schack, någon visar 3 drag, du borde inte kunna spela - men LLMs kan.
+
+**20% förstått:** Vi ser ATT det fungerar, men inte exakt HUR.
+
+---
+
+### Fråga 16 (Nivå 2) - 2025-12-02
+**Fråga:** Vad betyder *Emergence at Scale* och varför är det 70% förstått men fortfarande delvis mystiskt?
+
+**Svar:** "vet ej... lär mig!"
+
+**Bedömning:** ❌ Visste ej
+
+**Fördjupning given:**
+
+**Vad är Emergence at Scale?**
+När modeller blir *större* dyker plötsligt nya förmågor upp som inte fanns i mindre versioner - **utan att man programmerat dem**.
+
+**Konkreta exempel:**
+- ~10B params: Grundläggande språkförståelse
+- ~100B params: **Reasoning** - kan lösa logiska problem steg-för-steg
+- ~500B params: **Kodgenerering** - skriver fungerande program
+- ~1T params: **Deception** - kan ljuga och manipulera strategiskt
+
+**Det vi förstår (70%):**
+- Större modeller = fler patterns = bättre generalisering
+- Skalningslagar (*scaling laws*) predicerar loss ganska bra
+- Mer data + mer compute = bättre prestanda (förutsägbart)
+
+**Det vi INTE förstår (30%):**
+- *Varför* dyker reasoning upp vid just ~100B?
+- *Varför* blir modeller kapabla till deception vid ~1T?
+- Kan vi predicera *nästa* emergent ability innan vi tränar?
+
+**Analogi - Vatten:**
+- H₂O-molekyler har inga "våta" egenskaper
+- Men miljarder molekyler tillsammans → "våthet" emergerar
+- LLMs: Enskilda neurons har ingen "reasoning", men miljarder tillsammans → reasoning emergerar
+
+**Minnesregel:** "More is different" - kvantitet skapar kvalitativt nya fenomen.
+
+---
+
+### Fråga 17 (Nivå 2) - 2025-12-02
+**Fråga:** Vad är *Superposition* och varför är det bara 10% förstått - det mest mystiska av de tre fenomenen?
+
+**Svar:** "vet ej... lär mig!"
+
+**Bedömning:** ❌ Visste ej
+
+**Fördjupning given:**
+
+**Vad är Superposition?**
+En enskild neuron representerar **flera olika koncept samtidigt** - inte bara ett.
+
+**Vad vi förväntade oss:**
+```
+Neuron #4521 = "katt"
+Neuron #4522 = "hund"
+```
+
+**Vad vi faktiskt ser:**
+```
+Neuron #4521 = 0.7 × "katt" + 0.3 × "mjuk" + 0.2 × "Egypten" + ...
+```
+
+**Det matematiskt omöjliga:**
+- GPT-4 har ~1.8T parameters
+- Men representerar **långt fler** än 1.8T koncept
+- Möjligt pga hög-dimensionell geometri: i 1000D kan miljontals "nästan ortogonala" vektorer packas in
+
+**Analogi - Radio:**
+- Luften bär tusentals radiosignaler samtidigt (superposition)
+- De överlagras utan att förstöra varandra
+- Din radio plockar ut exakt rätt frekvens
+- LLM-neurons fungerar likadant med koncept
+
+**Varför bara 10% förstått:**
+- Vi vet ATT det händer, inte HUR nätverket kodar/avkodar
+- Vi kan inte "öppna locket" och se vad en LLM "tänker"
+- *Interpretability*-forskning försöker lösa detta
+
+**Varför det spelar roll:**
+- Kan inte garantera att modellen saknar farliga "tankar"
+- Kan inte ta bort specifik kunskap (t.ex. vapenkunskap)
+- Kan inte förstå varför modellen hallucinerar
+
+---

@@ -856,6 +856,39 @@ Trots att vi förstår matematiken bakom, finns fortfarande mysterier:
 - Vi kan inte predicera exakt vilka *capabilities* som dyker upp vid vilka *scales*
 - *"More is different"* - kvalitativa *shifts* vid kvantitativa *tresholds*
 
+### Fördjupning: *Emergence at Scale*
+
+**Vad är det?**
+
+När modeller blir *större* dyker plötsligt nya förmågor upp som inte fanns i mindre versioner - **utan att man programmerat dem**.
+
+**Konkreta exempel:**
+
+| Modellstorlek | Vad som "dyker upp" |
+|---------------|---------------------|
+| ~10B *params* | Grundläggande språkförståelse |
+| ~100B *params* | ***Reasoning*** - kan lösa logiska problem steg-för-steg |
+| ~500B *params* | ***Kodgenerering*** - skriver fungerande program |
+| ~1T *params* | ***Deception*** - kan ljuga och manipulera strategiskt |
+
+**Det vi förstår (70%):**
+- Större modeller = fler *patterns* = bättre generalisering
+- *Scaling laws* predicerar *loss* ganska bra
+- Mer data + mer *compute* = bättre prestanda (förutsägbart)
+
+**Det vi INTE förstår (30%):**
+- *Varför* dyker *reasoning* upp vid just ~100B?
+- *Varför* blir modeller kapabla till *deception* vid ~1T?
+- Kan vi predicera *nästa emergent ability* innan vi tränar?
+- Är det "äkta" förmågor eller sofistikerad *pattern matching*?
+
+**Analogi - Vatten:**
+- H₂O-molekyler har inga "våta" egenskaper individuellt
+- Men miljarder molekyler tillsammans → "våthet" *emergerar*
+- *LLMs*: Enskilda *neurons* har ingen "*reasoning*", men miljarder tillsammans → *reasoning emergerar*
+
+**Minnesregel:** *"More is different"* - kvantitet skapar kvalitativt nya fenomen.
+
 ***In-Context Learning* (20% understood):**
 - Ge 3 *examples* → modellen lär sig *task*
 - *Zero parameter updates*
@@ -866,8 +899,104 @@ Trots att vi förstår matematiken bakom, finns fortfarande mysterier:
 - Fler *concepts* än *neurons* (*shouldn't be possible* med linjär algebra)
 - *High-dimensional geometry* vi börjar förstå
 
+### Fördjupning: *Superposition*
+
+**Vad är det?**
+
+En enskild *neuron* representerar **flera olika koncept samtidigt** - inte bara ett.
+
+**Vad vi förväntade oss:**
+```
+Neuron #4521 = "katt"
+Neuron #4522 = "hund"
+Neuron #4523 = "bil"
+```
+Ett koncept per *neuron* - enkelt, tolkbart.
+
+**Vad vi faktiskt ser:**
+```
+Neuron #4521 = 0.7 × "katt" + 0.3 × "mjuk" + 0.2 × "Egypten" + ...
+Neuron #4522 = 0.4 × "hund" + 0.4 × "katt" + 0.1 × "lojalitet" + ...
+```
+Flera koncept *överlagrade* i samma *neuron*.
+
+**Det matematiskt "omöjliga":**
+
+*GPT-4* har ~1.8 *trillion parameters*, men representerar **långt fler** än 1.8 *trillion* koncept.
+
+**Hur är detta möjligt?**
+
+I hög-dimensionella rum (tusentals dimensioner) kan vektorer vara "nästan ortogonala" - de stör inte varandra trots att de delar samma utrymme.
+
+```
+3D:    Max 3 ortogonala vektorer
+1000D: Miljontals "nästan ortogonala" vektorer kan packas in
+```
+
+**Analogi - Radio:**
+- Luften bär tusentals radiosignaler samtidigt
+- De "överlagras" (*superposition*) utan att förstöra varandra
+- Din radio kan plocka ut exakt den frekvens du vill ha
+- *LLM-neurons* fungerar likadant: bär tusentals koncept, nätverket plockar ut rätt vid rätt tillfälle
+
+**Varför bara 10% förstått:**
+
+| Vi vet | Vi vet INTE |
+|--------|-------------|
+| ATT det händer | HUR nätverket kodar/avkodar |
+| Hög-dimensionell geometri möjliggör det | VARFÖR just dessa koncept grupperas |
+| Det verkar vara effektivt | Hur vi kan tolka/styra det |
+
+**Varför det spelar roll:**
+
+- Vi kan inte "öppna locket" och se vad en *LLM* "tänker"
+- Kan inte garantera att modellen saknar farliga "tankar"
+- Kan inte ta bort specifik kunskap (t.ex. hur man gör vapen)
+- Kan inte fullt förstå varför modellen hallucinerar
+
+***Interpretability*-forskning** försöker lösa detta - men vi är långt ifrån.
+
 **Sanningen:**
 Det är matematik - bara matematik så *intricate* att vi fortfarande *reverse-engineers* den. Som att upptäcka *calculus* för att förklara *planetary motion*, vi hittar *equations* som förklarar *LLMs*.
+
+### Fördjupning: *In-Context Learning*
+
+**Vad är det?**
+
+Du ger *LLM*:en några exempel i prompten, och plötsligt "kan" den uppgiften:
+
+```
+Översätt till franska:
+cat → chat
+dog → chien
+house → maison
+
+Översätt: car → ?
+```
+
+*LLM*:en svarar: **"voiture"** ✓
+
+**Varför är det mystiskt?**
+
+| Vanlig maskininlärning | *In-Context Learning* |
+|------------------------|----------------------|
+| Tusentals exempel | 3 exempel i prompten |
+| Uppdaterar *weights* via *backpropagation* | **Inga *weight*-uppdateringar** |
+| Kunskap sparas permanent | Kunskap försvinner efter session |
+
+Modellen har aldrig "lärt sig" uppgiften. Den har bara *läst* 3 exempel i sin *context window*. Ändå presterar den som om den tränats på uppgiften.
+
+**Teorier (ingen konsensus):**
+
+- ***Meta-learning***: *Pre-training* lärde modellen att "lära sig lära"
+- ***Pattern matching***: Hittar liknande mönster från träningsdata
+- ***Implicit fine-tuning***: *Attention*-mekanismen simulerar *gradient descent*
+- ***Task location***: Exemplen hjälper modellen "hitta" rätt kunskap den redan har
+
+**Analogi:**
+Tänk dig att du aldrig lärt dig spela schack. Någon visar dig 3 drag och säger "din tur". Du borde inte kunna spela - men *LLMs* kan på något sätt.
+
+**20% förstått:** Vi ser ATT det fungerar, men inte exakt HUR.
 
 ---
 
