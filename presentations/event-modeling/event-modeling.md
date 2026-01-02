@@ -25,6 +25,9 @@ paginate: false
 - Five elements
 - Four patterns
 - Two tests
+
+👆🏻 … that can model ANY information system!
+
 - A workshop format
 
 ---
@@ -35,6 +38,14 @@ paginate: false
 - 🟩 **Read Models** (green sticky notes) - Queries for stored data
 - 🪟 **Screens/Wireframes** (yellow sticky notes) - UI mockups
 - ⚙️ **Automation** (gear symbol) - Background processes
+
+---
+# The Four Patterns of Event Modeling
+
+- **State Change** - The only way to trigger change in a system
+- **State View** - Query information from stored events
+- **Automation** - Background processes triggered automatically
+- **Translation** - Communication with external systems
 
 ---
 # What is Event Modeling NOT?
