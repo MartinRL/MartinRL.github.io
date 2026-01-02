@@ -22,12 +22,11 @@ paginate: false
 
 ---
 # Why Event Modeling?
+![bg fit](Files/flat-cost-curve-event-modeling.png)
 
-![bg](Files/flat-cost-curve-event-modeling.png)
+<br><br><br><br><br><br><br><br><br>
 
-## Keeping the Velocity
-
-
+## Keeping the Veocity as Features are Added
 
 ---
 # What is Event Modeling?
@@ -69,13 +68,13 @@ There are three dimensions of time; future (command), present (read model), past
 ---
 # The Workshop Format of Event Modeling
 
-1. 🧠 **Brain Storm** — Identify all state-changing events (🟧 orange stickies)
-2. 📖 **The Plot** — Arrange events on a timeline (left → right)
-3. 🖼️ **Story Board** — Persona swimlanes at top with wireframes
-4. 🟦 **Commands** — Link user actions to state changes
-5. 🟩 **Read Models** — Show how events inform user decisions
-6. ⚙️ **Automations** — Add processors/systems at bottom
-7. 📝 **Specifications** — Write GWT/GT per slice
+1. 🧠 **Brain Storm**: Envision the system; identify all state-changing events
+2. 📖 **The Plot**: Arrange events chronologically on a timeline
+3. 🖼️ **Story Board**: Add wireframes; trace every field's origin and destination
+4. 🟦 **Identify Inputs**: Attach commands showing user intent to change state
+5. 🟩 **Identify Outputs**: Add views showing how event data flows back to UI
+6. 🏢 **Conway's Law**: Organize into swimlanes by team/domain ownership
+7. 📝 **Elaborate Scenarios**: Write GWT/GT specifications per slice
 
 ---
 # What is Event Modeling NOT?
