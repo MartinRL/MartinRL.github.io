@@ -20,6 +20,8 @@ paginate: false
 
 **🎯 Key Takeaway:** Without solving the language and shared understanding problem first, no amount of new tools or technology will fix information system value creation.
 
+<!-- "the translation tax" cf. https://bmsdd.com/ -->
+
 ---
 # Why Event Modeling?
 ![bg fit](Files/flat-cost-curve-event-modeling.png)
@@ -171,6 +173,8 @@ When we extend the system, we typically do not modify existing code if possible.
 
 ---
 # The BMSDD Process from Spec. to Impl.
+
+<!-- https://bmsdd.com/#about -->
 
 ---
 # Functional Core, Imperative Shell
