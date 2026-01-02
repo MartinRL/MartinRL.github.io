@@ -33,19 +33,29 @@ paginate: false
 ---
 # The Five Elements of Event Modeling
 
-- 🟦 **Commands** (blue sticky notes) - Instructions to the system
-- 🟧 **Events** (orange sticky notes) - What happened in the system
-- 🟩 **Read Models** (green sticky notes) - Queries for stored data
-- 🪟 **Screens/Wireframes** (yellow sticky notes) - UI mockups
-- ⚙️ **Automation** (gear symbol) - Background processes
+- 🟦 **Command** (blue sticky notes) - instructions to update the state of the system
+- 🟧 **Event** (orange sticky notes) - fact about a state change in the system
+- 🟩 **Read Model** (green sticky notes) - query/projection of stored facts (i.e. events)
+- 🪟 **Screen** (yellow sticky notes) - GUI
+- ⚙️ **Processor** (gear symbol) - unattended automation or translation
+
+There are three dimensions of time; future (command), present (read model), past (event).
 
 ---
 # The Four Patterns of Event Modeling
 
-- **State Change** - The only way to trigger change in a system
-- **State View** - Query information from stored events
-- **Automation** - Background processes triggered automatically
-- **Translation** - Communication with external systems
+- 🟧 **State Change** - commands being accepted yielding events
+- 🪟 **State View** - query information from stored events
+- ⚙️ **Automation** - processe triggered automatically, e.g. by event or schedule
+- ⚙️ **Translation** - ingesting and translating external events
+
+---
+# The Two Tests of Event Modeling
+
+- 📝 **Given/When/Then (GWT)** - Business rules for State Changes
+- 📋 **Given/Then (GT)** - Projection rules for State Views
+<br>
+✅ **Information Completeness Check** - all data has a command source, is persisted, otherwise it can't be viewed
 
 ---
 # What is Event Modeling NOT?
@@ -60,13 +70,12 @@ paginate: false
 - A Tool or Framework
   - … but tools and frameworks exist
 
----
-# How?
 
 ---
-# AI? S
+# AI? 🤖
 
-🤖 ❤️  🟦 🟧 🟩 🪟 ⚙️ 
+> Event Models are candy for the AI.
+— Martin Dilger
 
 ---
 # Learning

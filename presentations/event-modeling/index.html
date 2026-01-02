@@ -34,23 +34,32 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" lang="en-US">
 <h1 id="the-five-elements-of-event-modeling">The Five Elements of Event Modeling</h1>
 <ul>
-<li><img class="emoji" draggable="false" alt="🟦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e6.svg" data-marp-twemoji=""/> <strong>Commands</strong> (blue sticky notes) - Instructions to the system</li>
-<li><img class="emoji" draggable="false" alt="🟧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e7.svg" data-marp-twemoji=""/> <strong>Events</strong> (orange sticky notes) - What happened in the system</li>
-<li><img class="emoji" draggable="false" alt="🟩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e9.svg" data-marp-twemoji=""/> <strong>Read Models</strong> (green sticky notes) - Queries for stored data</li>
-<li><img class="emoji" draggable="false" alt="🪟" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1fa9f.svg" data-marp-twemoji=""/> <strong>Screens/Wireframes</strong> (yellow sticky notes) - UI mockups</li>
-<li><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/> <strong>Automation</strong> (gear symbol) - Background processes</li>
+<li><img class="emoji" draggable="false" alt="🟦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e6.svg" data-marp-twemoji=""/> <strong>Command</strong> (blue sticky notes) - instructions to update the state of the system</li>
+<li><img class="emoji" draggable="false" alt="🟧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e7.svg" data-marp-twemoji=""/> <strong>Event</strong> (orange sticky notes) - fact about a state change in the system</li>
+<li><img class="emoji" draggable="false" alt="🟩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e9.svg" data-marp-twemoji=""/> <strong>Read Model</strong> (green sticky notes) - query/projection of stored facts (i.e. events)</li>
+<li><img class="emoji" draggable="false" alt="🪟" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1fa9f.svg" data-marp-twemoji=""/> <strong>Screen</strong> (yellow sticky notes) - GUI</li>
+<li><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/> <strong>Processor</strong> (gear symbol) - unattended automation or translation</li>
 </ul>
+<p>There are three dimensions of time; future (command), present (read model), past (event).</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" lang="en-US">
 <h1 id="the-four-patterns-of-event-modeling">The Four Patterns of Event Modeling</h1>
 <ul>
-<li><strong>State Change</strong> - The only way to trigger change in a system</li>
-<li><strong>State View</strong> - Query information from stored events</li>
-<li><strong>Automation</strong> - Background processes triggered automatically</li>
-<li><strong>Translation</strong> - Communication with external systems</li>
+<li><img class="emoji" draggable="false" alt="🟧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e7.svg" data-marp-twemoji=""/> <strong>State Change</strong> - The only way to trigger change in a system</li>
+<li><img class="emoji" draggable="false" alt="🪟" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1fa9f.svg" data-marp-twemoji=""/> <strong>State View</strong> - Query information from stored events</li>
+<li><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/> <strong>Automation</strong> - background processes triggered automatically</li>
+<li><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/> <strong>Translation</strong> - ingesting and translating external events</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" lang="en-US">
+<h1 id="the-two-tests-of-event-modeling">The Two Tests of Event Modeling</h1>
+<ul>
+<li><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" data-marp-twemoji=""/> <strong>Given/When/Then (GWT)</strong> - Business rules for State Changes</li>
+<li><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4cb.svg" data-marp-twemoji=""/> <strong>Given/Then (GT)</strong> - Projection rules for State Views</li>
+</ul>
+<p><strong>Information Completeness Check</strong> - Verify all data has a source</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" lang="en-US">
 <h1 id="what-is-event-modeling-not">What is Event Modeling NOT?</h1>
 <ul>
 <li>An Architecure
@@ -80,12 +89,12 @@
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" lang="en-US">
-<h1 id="how">How?</h1>
-</section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" lang="en-US">
-<h1 id="ai-s">AI? S</h1>
-<p><img class="emoji" draggable="false" alt="🤖" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f916.svg" data-marp-twemoji=""/> <img class="emoji" draggable="false" alt="❤️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2764.svg" data-marp-twemoji=""/>  <img class="emoji" draggable="false" alt="🟦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e6.svg" data-marp-twemoji=""/> <img class="emoji" draggable="false" alt="🟧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e7.svg" data-marp-twemoji=""/> <img class="emoji" draggable="false" alt="🟩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e9.svg" data-marp-twemoji=""/> <img class="emoji" draggable="false" alt="🪟" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1fa9f.svg" data-marp-twemoji=""/> <img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/></p>
+<h1 id="ai-%F0%9F%A4%96">AI? <img class="emoji" draggable="false" alt="🤖" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f916.svg" data-marp-twemoji=""/></h1>
+<blockquote>
+<p>Event Models are candy for the AI.<br />
+— Martin Dilger</p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" lang="en-US">
 <h1 id="learning">Learning</h1>
