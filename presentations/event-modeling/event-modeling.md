@@ -127,7 +127,7 @@ p { font-size: 0.6em; }
  - https://bmsdd.com/ -->
 
 ---
-# Learning 📚
+# Learning 📚 📺 🎧
 
 - [Event Modeling: What is it? (the OG) by Adam Dymitruk](https://eventmodeling.org/posts/what-is-event-modeling/)
 - [What is Event Modeling? (with example) by Yves Goeleven](https://www.goeleven.com/blog/event-modeling/)
