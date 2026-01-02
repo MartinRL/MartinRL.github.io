@@ -27,6 +27,8 @@ paginate: false
 # What is Event Modeling NOT?
 - Event Sourcing
   - … but the two goes hand in hand, and the community is ES heavy
+- Event Streaming
+  - … is rather records, than business events, carrying information from A to B
 - Functional Programming
   - … but the community is moving away from DDD «Aggregate» to «Decider»
 - A Tool or Framework
@@ -36,7 +38,7 @@ paginate: false
 # How?
 
 ---
-# AI? 
+# AI? S
 
 🤖 ❤️  🟦 🟧 🟩 🪟 ⚙️ 
 
@@ -70,6 +72,9 @@ paginate: false
 
 ---
 # Event Modeling Traditional Systems
+
+---
+# The BMSDD Process from Spec. to Impl.
 
 ---
 # Functional Core, Imperative Shell
