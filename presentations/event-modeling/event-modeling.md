@@ -22,9 +22,15 @@ paginate: false
 
 ---
 # What is Event Modeling?
+- Five elements
+- Four patterns
+- Two tests
+- A workshop format
 
 ---
 # What is Event Modeling NOT?
+- An Architecure
+  - … the the community is heavily biased towards VSA (Vertical Slice Architecture)
 - Event Sourcing
   - … but the two goes hand in hand, and the community is ES heavy
 - Event Streaming
@@ -66,6 +72,18 @@ paginate: false
 
 ---
 # Extras
+
+---
+# VSA (Vertical Slice Architecture)
+
+The term “Vertical Slice Architecture” was mainly coined by Jimmy Bogard in a series of articles around 2019. The main statement is: 
+> Minimize coupling between slices, and maximize coupling within a slice.
+
+The leading Principle here is the well-known “Open-Closed-Principle” (OCP) first defined by Bertrand Meyer in 1988. The Open-Closed-Principle basically states, that 
+> Any part of the system should be open for extension, but closed for modification. 
+When we extend the system, we typically do not modify existing code if possible.
+
+<!-- todo: jimmy's og img as bg -->
 
 ---
 # «Decider»
