@@ -1,0 +1,2707 @@
+MARTIN DILGER
+
+Understanding Eventsourcing
+Planning and Implementing scalable Systems with
+Eventmodeling and Eventsourcing
+
+Copyright © 2024 by Martin Dilger
+All rights reserved. No part of this publication may be
+reproduced, stored or transmitted in any form or by any
+means, electronic, mechanical, photocopying, recording,
+scanning, or otherwise without written permission from the
+publisher. It is illegal to copy this book, post it to a website, or
+distribute it by any other means without permission.
+First edition
+This book was professionally typeset on Reedsy.
+Find out more at reedsy.com
+
+Contents
+Foreword by Adam Dymitruk
+
+vi
+
+Foreword by Gabriel N. Schenker
+
+xii
+
+The companion course to the book
+
+xv
+
+Want to work with me?
+
+xvi
+
+Why I care
+
+xviii
+
+I
+
+Foundations
+1 Why you should care
+
+3
+
+2 Event Sourcing - what is it?
+
+9
+
+3 Planning Systems using Event Modeling
+
+41
+
+4 CQRS, Concurrency, (eventual) Consistency
+
+71
+
+5 Internal versus external data
+
+88
+
+6 The Anatomy of an event-sourced Application
+
+99
+
+7 Event Streaming , Event Sourcing and
+Stream Design
+8 Domain Driven Design
+
+113
+128
+
+9 Handling transactions in distributed systems using Sagas
+10 Vertical Slicing
+
+144
+157
+
+II
+
+Modeling the System
+
+11
+
+Brainstorming
+
+175
+
+12 Modeling Use Cases with Wireframes
+
+184
+
+13 “Given / When / Then” Scenarios
+
+204
+
+14 Use Case: Clear Cart
+
+216
+
+15 Use Case: Submit Cart
+
+226
+
+16 Use Case: Inventory Changed
+
+242
+
+17 Use Case: Price Changed
+
+256
+
+18 Structuring an Event Model
+
+269
+
+III
+
+From zero to running software
+
+19 Technology Stack
+
+279
+
+20 Brief introduction to Axon
+
+288
+
+21
+
+302
+
+Implementing the first slice - “Add Item”
+
+22 Implementing state view slices using
+Live-Projections
+23 Implementing Remove-Item and Clear-Cart
+
+327
+341
+
+24 Example Integration with Apache Kafka
+and Translations
+
+354
+
+25 Implementing a database projection for inventories
+
+367
+
+26 Implementing Automations
+
+384
+
+27 Submitting the Cart
+
+421
+
+28 Handling breaking changes
+
+444
+
+IV
+
+Implementation Patterns
+
+29 What this part is about
+
+463
+
+30 Pattern: Database Projected Read Model
+
+465
+
+31
+
+472
+
+Pattern: Live Model
+
+32 Pattern: The (partially) synchronous Projection
+
+476
+
+33 Pattern: The Logic Read Model
+
+481
+
+34 Pattern: Snapshots
+
+485
+
+35 Pattern: “Processor-TODO-List” - Pattern
+
+490
+
+36 Pattern: The Reservation Pattern
+
+505
+
+37 Pattern: Lookup Tables
+
+512
+
+V
+
+The missing chapters
+
+38 Why the missing chapter?
+
+521
+
+39 Handling Metadata
+
+523
+
+40 Handling Security
+
+534
+
+41
+
+Handling sensitive Data with GDPR
+
+551
+
+42 Handling the UI
+
+565
+
+43 Handling the organization
+
+590
+
+44 Dynamic Consistency Boundary
+
+602
+
+Where to go from here?
+
+618
+
+The “Reference Stack” Implementations
+
+622
+
+Want to work with me?
+
+624
+
+Foreword by Adam Dymitruk
+
+When I first sat down in front of a computer in the early 1980s, I
+was captivated by the endless possibilities technology could
+offer. Like many of my peers, I was driven by a passion to
+harness computing power to create more reliable systems and
+enhance usability for both end-users and technologists. Over
+the years, I witnessed the emergence of methodologies like
+Rapid Application Development, UML, Extreme Programming
+and Agile. Each promised a breakthrough - a better way of
+working. Yet, each eventually reached its own plateau, a local
+maximum in efficiency and effectiveness.
+Then came Event Sourcing, and it was a revelation. Event
+Sourcing wasn’t just another methodology; it was a paradigm
+shift, a proper way to use systems thinking. It introduced
+a level of clarity to system design through full traceability,
+accountability and predictability. It treated information with the
+same rigor accountants apply to financial data. For me, it was a
+game changer. Implementing systems with Event Sourcing felt
+not only revolutionary but also responsible. With just two core
+patterns, it was remarkably simple - and remains so to this day.
+After deploying my first production system using Event Sourcing, I realized I could never look at information systems the
+same way again. It was like taking the red pill in “The Matrix”
+vi
+
+- suddenly, the limitations and inefficiencies of traditional
+software development were starkly apparent. The industry
+seemed stuck in practices that had reached the asymptote of
+diminishing returns.
+This epiphany led me to develop Event Modeling. At Adaptech
+Group, the company I founded to champion Event Sourcing,
+we needed a way to communicate and design systems built
+this way.
+
+Traditional methods of capturing requirements,
+
+scoping and designing were too slow, error-prone and costly.
+Event Modeling emerged as a simple yet powerful notation
+and guidance to bridge the gap between requirements, design
+and implementation. Remarkably, it proved effective even for
+traditional systems not yet ready to adopt Event Sourcing.
+I shared these ideas in a short article, and to my surprise, it
+resonated widely - it went viral. This overwhelming response
+affirmed that we were onto something significant.
+Over nearly a decade of applying Event Modeling and Event
+Sourcing at scale, we’ve witnessed incredible results:
+Rapid Issue Resolution: We can consistently fix problems
+without introducing regressions, within just four hours.
+Elimination of Merge Conflicts: We’ve moved beyond the nightmares of concurrent development causing version control struggles.
+Empowered Teams: Our team members feel autonomous and
+valued, leading to the lowest turnover rates I’ve ever seen.
+vii
+
+Risk Mitigation: By aligning units of work with units of pay, we
+offer clients true control over budgets and timelines through
+fixed costs and guaranteed bug fixes.
+Objective Decision-Making: Contributions are assessed on
+merit, reducing subjectivity and fostering a fair working environment with collaboration and transparency.
+Simplified Schema Evolution: Changes are integrated proactively, eliminating the headaches of data migration.
+Efficient Testing: With clearly defined events, testing becomes
+straightforward and extremely performant.
+Flexible Team Dynamics: Our processes scale smoothly, allowing team sizes to vary without friction.
+I could fill pages with more benefits, but the essence is clear:
+simplicity and clarity lead to profound efficiency and effectiveness.
+It’s with great pleasure that I introduce this comprehensive
+guide by Martin Dilger, a professional who not only understands
+the nuances of Event Modeling and Event Sourcing but also
+brings a fresh, insightful perspective. Martin is the first person
+to capture these two concepts in a book, and his dedication
+mirrors my own.
+So, who is Martin Dilger, and why should his perspective matter
+to you?
+
+viii
+
+I first met Martin in October 2023 in Munich during a presentation on Event Modeling. Despite challenging weather, he drove
+hundreds of kilometers to attend. We connected immediately
+over our shared passion. Later, we met again at a conference in
+Austria focused on collaborative techniques in the tech industry.
+Martin’s expertise was evident as he guided others through
+the concepts with clarity and enthusiasm. It felt like finding
+a kindred spirit - someone equally committed to advancing our
+industry.
+Like many of us, Martin has a relentless drive to improve the
+software industry. His deep understanding of Event Sourcing
+and Event Modeling, combined with his ability to implement and
+refine tools for collaboration, sets him apart. Martin doesn’t just
+theorize; he delivers practical solutions swiftly and effectively.
+At the time of this writing, he has extended the most popular
+digital collaborative whiteboard to support Event Modeling! And
+before that, he has single-handedly lead organizations to adopt
+modern version control systems and many more highlights. His
+leadership in adopting new approaches and technologies has
+been transformative for those he guides.
+In this book, Martin provides you with the specific tools to:
+Use Event Modeling as the Single Source of Truth: Learn how
+a simple diagram can unify your team’s understanding and
+communication of the entire system.
+Harness the Flow of Information: Trace data from its origin
+through its transformations, ensuring your system fulfills its
+purpose with clarity.
+ix
+
+Apply Specification by Example: Utilize example data predictably placed on a storyboard to illustrate concepts effectively.
+Represent Behavior as Data: Understand and author system
+behaviors clearly by treating them as data.
+Drive Multiple Models: Learn how to build purpose-built abstractions instead of trying to make one-fits-all compromises.
+Simplify Integration: Use straightforward “to-do lists” to
+illustrate integrations without delving into unnecessary implementation details.
+Deconstruct Systems into Subsystems: Break down complexity
+into manageable components.
+Automate Testing Efficiently: Implement testing seamlessly
+with events that execute instantaneously, without extra frameworks.
+Proactively Evolve Your System: Integrate event schemas
+changes as they occur, avoiding big-bang schema migrations
+and minimizing disruptions.
+By reading this book, you won’t just learn new techniques you’ll transform the way you approach software development.
+You’ll gain clear, actionable steps to solve problems, communicate with unprecedented clarity, and estimate projects
+more accurately. In essence, you’ll be equipped to dismantle
+complexity and foster collaboration like never before.
+
+x
+
+Looking Ahead
+Event Modeling and Event Sourcing are continually evolving, but
+their core principles remain rooted in simplicity. As improvements emerge, they serve to refine and enhance without adding
+unnecessary complexity. This book lays the foundation for you
+to adapt to future advancements while reaping the benefits
+today.
+Closing Remarks
+I invite you to embark on this journey with Martin as your
+guide. His insights and practical approach make this book
+not just a technical manual but a gateway to more effective,
+transparent and responsible system design and implementation.
+Whether you’re new to these concepts or seeking to deepen your
+understanding, this book is an invaluable resource.
+May this exploration inspire you as it has inspired me. Together,
+let’s redefine what’s possible in software development.
+Sincerely,
+Adam Dymitruk
+Event Modeling Creator and Event Sourcing Expert
+
+xi
+
+Foreword by Gabriel N. Schenker
+
+In the landscape of modern software development, we often
+treat the creation of business applications as an art form rather
+than an engineering discipline. This approach, while romanticized, has led to countless projects exceeding budgets, missing
+deadlines, and delivering systems that resist change. Martin
+Dilger’s “Understanding Event Sourcing” arrives as a breath
+of fresh air, presenting a systematic and practical approach to
+software development that challenges this status quo.
+At its core, business software development is about automating
+well-understood processes that humans have been performing
+manually. It’s not rocket science - it’s about asking the right
+questions and modeling the answers effectively. This is where
+Dilger’s book shines. He introduces Event Modeling (EM)
+as a powerful methodology that brings technical and nontechnical stakeholders together, speaking a common language
+and working toward shared understanding.
+What particularly impresses me about this book is its elegant
+simplicity. Dilger demonstrates that even the most complex
+business processes can be modeled using just four fundamental
+patterns: state change, state view, translation, and automation.
+Like building with LEGO blocks, these basic patterns combine
+to create sophisticated systems. This simplification doesn’t just
+xii
+
+aid understanding - it transforms the traditionally challenging
+tasks of planning and estimation into straightforward exercises.
+The book bridges theory and practice masterfully. While many
+resources on Event Modeling exist in blogs and videos, Dilger
+provides what has been missing: a comprehensive, step-bystep guide from initial concept through complete implementation. His practical examples using Java, SpringBoot, and the
+Axon framework serve as clear illustrations of the principles,
+readily translatable to other technology stacks.
+Perhaps most importantly, Dilger addresses the crucial aspect
+of testing, showing how business rules can be specified using
+familiar Gherkin syntax and implemented naturally within an
+event-sourced system. This approach ensures that testing remains accessible to all stakeholders while maintaining technical
+rigor.
+For too long, we’ve accepted declining velocity and increasing
+complexity as inevitable facts of software development. This
+book challenges that assumption, showing how Event Modeling
+and Event Sourcing can maintain consistent development speed
+while managing complexity effectively.
+
+Whether you’re a
+
+seasoned architect or a developer looking to improve your
+approach to building business applications, “Understanding
+Event Sourcing” provides the practical guidance needed to
+transform how you think about and build software systems.
+This is not just another technical book - it’s a roadmap to more
+predictable, maintainable, and successful software projects.
+Martin Dilger has created an invaluable resource that I believe
+xiii
+
+will influence how we approach software development for years
+to come.
+Gabriel N. Schenker
+Head of Platform Engineering, iptiQ
+
+xiv
+
+The companion course to the book
+
+To put the concepts from this book into practice with handson exercises and expert guidance, be sure to check out the
+companion course:
+https://www.eventsourcingcourse.com
+This course follows the structure of the book closely, with each
+chapter paired with a corresponding lesson. You can read a
+chapter and then switch to the course to see me demonstrate the
+concepts in action. Afterward, you’ll have the chance to apply
+what you’ve learned through practical exercises.
+Exclusive Offer for you:
+Use the promo code EVENTSOURCINGBOOK at checkout.
+Enjoy a special discount on the course!
+
+xv
+
+Want to work with me?
+
+I help teams & companies to adopt an event-driven Mindset, which is especially important for modernization- and AIProjects.
+Planning Systems with Event Modeling solves many problems
+like:
+• Unclear Roadmaps
+• Unclear Priorities
+• Unclear Requirements
+
+If you think about adopting Event Modeling & Event Sourcing,
+let´s have a quick chat and find out, if I can possibly help.
+Topics that might be interesting:
+• Event Modeling Tooling in Miro1 ( enable your Team to
+model 80% faster )
+• Event Modeling & Event Sourcing Workshops2
+( find out how big your project really is in just a few days )
+1
+
+https://nebulit.de/eventmodeling-tooling
+
+2
+
+https://nebulit.de/forecast
+
+xvi
+
+• Event Modeling Online Course3 - Self-paced Learning for
+Teams
+
+You can schedule a quick Call, so we can have a chat here:
+https://tinyurl.com/nebulit
+Or contact me directly using: martin@nebulit.de
+Looking forward to hear from you.
+
+3
+
+https://www.eventsourcingcourse.com/
+
+xvii
+
+Why I care
+
+Initially this chapter wasn´t planned. But many people asked,
+why I actually cared. Why do I make this effort. What drives me.
+I began developing software around 2005, so I’m nearing my
+20th anniversary in this business. It’s kind of incredible, as I
+don’t feel like it’s been 20 years at all. But one thing has not
+changed: Software Development seemed hard back then, and it
+seems hard today.
+However, I have also seen different projects. Projects that did
+well. That worked, were carefully planned and successful. I
+think overall we can do better, if we learn to ignore all the
+distractions that divert us from what we should truly be focusing
+on - delivering value.
+I once had a client say, “Software developers are like pizza
+deliveries: they’re always late, often deliver only half of what
+they promised, and it’s never as good as it looks on the shiny
+prospect.”
+In essence, he’s right. In my opinion, software development
+hasn’t changed much in the last 20 years - maybe not even in
+the last 40 years. Agile, microservices, cloud, and AI haven’t
+fundamentally altered that fact. Software development is still
+xviii
+
+like the pizza nobody wants in the end. But you have to eat it
+because you ordered it.
+However, in 2021, I learned about Event Modeling as something
+that was about to change everything for me. I finally could talk
+to my customers in a language they understood. I could discuss
+the problems that truly bother them without confusing them
+with technical terms and details they neither understood nor
+cared about.
+We could suddenly focus entirely on one thing: the real problem
+to solve.
+We found that the root of many issues wasn’t premature optimization, as many developers think. It was the lack of a
+common language - the lack of a structured way to communicate
+successfully.
+This is not a new thing. The Book “Domain Driven Design”
+by Eric Evans talks about this common language between IT
+and Business at length. He famously named it the “Ubiquitous
+Language”. We will discuss this in more detail in chapter 8.
+Alberto Brandolini, the inventor of Eventstorming4 famously
+said, “It’s the developers’ understanding, not your business
+knowledge that becomes software.”5
+But what if the developer simply gets it wrong? What if the lack
+4
+
+https://www.eventstorming.com/
+
+5
+
+https://x.com/ziobrando/status/1347126001340358656
+
+xix
+
+of a common language, the absence of clarity in terminology
+used, and the lack of time to properly discuss the problems to
+solve result in constant misunderstandings between business
+and development? What if this is the problem we’ve been trying
+to tackle for 20 years with one technical solution after another?
+Event Modeling seemed magical to me back then. Every time
+I used it, it worked, even with people I had never met before.
+Suddenly, everyone understood. Suddenly, we could talk to each
+other. I began using it whenever I could. At first, I was unsure
+if I was doing it correctly, but more and more, I felt confident
+because it was actually simple - almost too easy.
+Finally, there was clear communication. We could confidently
+discuss the business and the problems we aimed to solve next.
+More importantly, we could talk about the cost of delivering
+valuable solutions that would address these problems once and
+for all. We gained a lot of trust in the systems we planned and
+got rid of that lingering uncertainty - the nagging feeling that
+something important was being overlooked.
+I’ve seen really bad things: huge amounts of money burned
+for nothing, waste of time, labor, and knowledge. Meetings
+with endless discussions but no outcomes. Requirements that
+nobody truly understood but were used to estimate and plan
+for months and years ahead - for a product that in the end took
+much longer than initially planned.
+For me I decided from then on, that I wanted to pursue a different
+way. I decided that our industry can do better. And I realized,
+that we don’t have to change everything to get there. It´s just
+xx
+
+some minor tweaks. In January 2024, I said in a webinar 6 ,
+Software Development will fundamentally change within the
+next 2 years. And I think we are on the way as an industry.
+This book is about everything I learned in the last 15 years. It is
+about what I discovered in 2021. Tiny changes in the process,
+focus on the real problems, communication in a language that
+is understood by everyone makes all the difference you need.
+Internally, we have a name for it. We call it “accelerate”.
+Teams working with these ideas should feel “accelerated” pretty
+quickly. The longer you work with this approach, the faster you
+iterate. Software development can be a well-oiled machine,
+constantly going from planning to development and back. Embracing change as part of the game, without slowing down. You
+will find a description of this development process and how I
+typically work in the Appendix about “Accelerate”.
+I´m standing on the shoulder of giants. None of the ideas
+presented in this book are my very own. I just combine what
+some people way smarter than me came up with like Adam
+Dymitruk, Greg Young, Jimmy Bogard, Eric Evans and Vaughn
+Vernon.
+This is what drives me and I can´t wait. I want to see what will
+change when we start to do things this way.
+Martin, July 2024
+
+6
+
+https://nebulit.de/bessere-software-2024
+
+xxi
+
+PS: One more thing maybe.. I put my heart into this book and
+with the help of many, many people managed to write it in 3
+months. I hope it´s a great book, but it´s certainly not perfect.
+Not yet.
+If you find issues, help me to make it better. Open issues here
+on github:
+https://github.com/dilgerma/eventsourcing-book/issues
+Let´s make this the best book it can be.
+
+xxii
+
+I
+Foundations
+
+1
+
+Why you should care
+
+What is Event Sourcing and why should you care as a developer,
+team manager, or company? Event Sourcing is far from a new
+technology; it emerged around 2006 in the software industry.
+So it’s about 15 years at the time of writing this book since it hit
+the software development mainstream (and much older if you
+trace it back to its ancient origins).
+So why would you care?
+Event Sourcing as an implementation pattern is rather simple.
+Instead of storing your data in tables and relations, you store
+the facts that actually happened in the system in the order they
+happened.
+This means the data in your system is like a simple story of what
+happened recently.
+First, the customer was created, then the customer moved to a
+3
+
+UNDERSTANDING EVENTSOURCING
+
+new address. Then the customer made a big purchase. Because
+of that, the customer got promoted to premium status, and so
+on.
+If you add up all these facts (in Event Sourcing we call the facts
+“events”), you get a customer with a new address in premium
+status.
+Although you get the same customer with the traditional CRUDbased approach, where a system stores data in a normalized
+relational schema, what you lose is the history of how the
+customer became a premium customer over time.
+
+Fig 1.1 - Historical Data (top) / flattened data (bottom)
+
+So in the end, you have the same result. Why would it matter in
+the first place?
+It starts to matter when your company wants to work with the
+data. What if it was important to know if the customer became
+
+4
+
+WHY YOU SHOULD CARE
+
+premium before or after a certain point in time?
+What if you wanted to know how much money people spend on
+new furniture within two weeks after the customer has moved
+to a new address?
+What if you needed to know when the customer’s address was
+changed and how often?
+By using Event Sourcing, we are adding the dimension of time
+to our system. The system records the facts that happen along a
+timeline. This dimension gets lost when data is flattened to a
+relational database schema.
+Of course, you can consult your data warehouse (if you have one)
+to get back some of the data. In simple terms, a data warehouse
+is a big database to capture all relevant data changes over time.
+But what would happen if all this data would be freely available
+and could be used for whatever ideas your business unit comes
+up with in the future?
+What if you could feed an AI model with the data you collected in
+the last 10 years? And what if this model would help you explore
+new markets based on hard facts rather than blank theories?
+The only way for your company to truly learn and benefit
+from the past is keep detailed records. This all requires some
+new thinking and a different approach. And it requires the
+information to be accessible in a flexible format.
+Using Event Sourcing makes it easier to reason about your
+5
+
+UNDERSTANDING EVENTSOURCING
+
+system without quickly falling into the trap of thinking in purely
+technical terms. It’s much easier to understand a system if it’s
+modeled the way it really works.
+Instead of saying, “We need to set this blocked flag on the
+customer” (which no business person would ever understand),
+it’s much more natural to create a new event named “Customer
+Blocked.” This event indicates that a customer was blocked at a
+certain point in time and for a specific reason.
+But unfortunately, this way of thinking is rarely taught in
+schools or universities, and that’s why many developers struggle with this simple concept even after years in the software
+industry.
+“Not losing information” is the foundation of Event Sourcing.
+We keep information readily available at all times because you
+never know what it might be useful for in a few years.
+Learning Event Sourcing is similar to learning a new language.
+You often need to search for how things are done using this
+approach. However, if you try googling or asking ChatGPT,
+you’ll quickly realize that finding information about these
+concepts isn’t as straightforward as you would expect. Although
+the information is out there, it’s scattered across many different
+sources. Plus, there are significantly fewer books on Event
+Sourcing compared to those covering traditional information
+systems.
+So now, again the question: why would you care?
+
+6
+
+WHY YOU SHOULD CARE
+
+Because information is the new gold. Data helps you make
+informed business decisions. And keeping data available comes
+basically as a by-product when working with Event Sourcing.
+In this book, we will dive deeper into Event Sourcing and
+everything around it, mainly focusing on the implementation
+side of it. That is what we lack most - clear guidance of how to
+actually do it using real world examples.
+Of course, we will discuss the theories around it and what it
+means to work like that. But compared to other books and
+information available, we will try to dive much deeper into the
+real implementation of it to really understand what it means to
+build an event-sourced system.
+But not only that.
+We’ll also delve deeper into the planning phase of event-sourced
+systems, using collaborative modeling techniques you might
+or might not be familiar with. Our main focus will be on Event
+Modeling, a technique developed and refined by Adam Dymitruk
+over the past decade7 . Event Modeling helps us plan and discuss
+information systems in a clear language. While it’s not limited
+to event-sourced systems, you’ll find that it’s a particularly
+good fit for them.
+So what will you learn in this book?
+You will learn pretty quickly what took me 15 years to learn.
+7
+
+https://eventmodeling.org/
+
+7
+
+UNDERSTANDING EVENTSOURCING
+
+It’s entirely possible to build plannable, scalable, and wellstructured information systems consistently, not just once,
+with the right approach and a solid plan. In this book, I’ll
+share how I create these plans. Some of the content reflects
+my own perspectives, and you may disagree with certain points that’s understandable. This book is not abstract; it dives deeply
+into the details of Event Modeling, Event Sourcing, and the
+implementation aspects behind them. I recognize that some
+readers might find this challenging, and I apologize if that’s the
+case.
+We’ll dive into Event Sourcing patterns, where you’ll learn some
+techniques that aren’t secret but aren’t widely shared either,
+which can help you implement an event-sourced system in a
+scalable way.
+I’ll share how, after 15 years of developing information systems,
+I’ve structured my architectures and systems in a modular way.
+This may not be the ‘best’ or ‘perfect’ approach, but it’s the one
+that has worked well for me.
+I’ll keep things as brief and focused as possible, leaving out
+anything that isn’t crucial to your success.
+Believe me, implementing event-sourced systems is simpler
+than you might expect - as long as you have a clear roadmap
+and someone to guide you. I wish I’d had a resource like this
+when I started, so my goal is to help you along your journey and
+get you started today.
+
+8
+
+2
+
+Event Sourcing - what is it?
+
+A real world Event Sourcing Example
+
+One of the most interesting things about Event Sourcing is its
+natural alignment with human thinking. I was reminded of this
+recently when my kids started a street sale of their old toys. They
+constructed a sales stand and lined up all their old toys. Pricing
+was simple: small toys cost 1 €, big toys cost 2 €.
+
+9
+
+UNDERSTANDING EVENTSOURCING
+
+Fig 2.1 - different types of products
+
+They cut out price tags from paper and put them on each toy.
+My son used red- and my daughter yellow paper.
+Sales went pretty well.
+Whenever a sale was made, they erased the current number of
+sales on their “sales report” and wrote down the new number.
+Soon they realized that when all the toys were sold, they only
+needed to count the red and yellow price tags to know how much
+money each child made that day. What they didn’t realize is
+that they just naturally discovered Event Sourcing - something
+many senior developers struggle to understand nowadays.
+How were two children with paper price tags able to naturally
+use Event Sourcing?
+
+10
+
+EVENT SOURCING - WHAT IS IT?
+
+Every sale is an event. Something that has happened. Let´s name
+it “Small Toy Sold” and “Big Toy Sold”. We store Events using
+the price tags, which are put into a box. The box is used to store
+our events. It is our Event Store. The more sales, the more price
+tags and events in the box.
+The color code of the event represents different event types.
+At the end of the day, we can use all the events in our Event Store
+to build different reports. Even two kids with a sales stand need
+some reporting at the end of the day.
+First, let’s sort the events by color and then simply sum the
+price for each event to get the profit per color. That’s how
+much money each child made. Amazing, isn’t it? We project
+the information in the events to one simple number per color
+code.
+
+Fig 2.2 - Profit Calculation Projection
+
+The events in the Event Store are the source of truth. We can
+build any order-related projection out of these events.
+
+11
+
+UNDERSTANDING EVENTSOURCING
+
+I asked how many toys were sold. The kids just counted all the
+price tags in the box, regardless of color. We again project all
+events to one single number - the number of sales.
+
+Fig 2.3 - Order Report Projection
+
+Want to know when there were the most customers? Imagine
+the kids noted down the hour of the day on the price tag when the
+sale was made (they didn’t do this because it was not relevant
+to their business, they thought). But if this information was
+recorded, you could go over all the events and make a tally per
+hour. They would have known exactly which hours were the
+most profitable. This is where they should focus on selling next
+time and ignore the hours where nothing was sold.
+Want to know which types of toys were requested the most?
+Imagine again that they noted down the category of toys sold,
+like “Lego,” “Schleich,” or “Book.” They could then go over
+all the events and make a tally per category. There we have our
+order report calculated directly from the sales made.
+Why is this so amazing?
+
+12
+
+EVENT SOURCING - WHAT IS IT?
+
+Event Sourcing is all about this. It’s all about recording information and building different kinds of projections out of the
+raw data in the Event Store. It doesn’t really matter how your
+projections look like. From a technical point of view, anything
+is possible. The really important aspect is that we keep the
+information and give ourselves the possibility to work with it.
+
+Event Sourcing Building Blocks
+
+Believe it or not, most software systems are simple in nature.
+They receive data. They process data. They store data. They
+pass data along to the next system. Of course, that´s an oversimplication, but in general, it is true for most systems.
+Whenever I talk about Software-Systems, I use the term
+“information-system” interchangeably. Because the job of
+most Software Systems is to transform raw data to structured,
+business-relevant information.
+I was taught in university, that handling data means writing it
+to a database, and if you need the data again, query it with SQL.
+This approach looks simple in the beginning and is known as
+CRUD: Create, Read, Update, and Delete.
+However, this isn’t how most businesses fundamentally work.
+By designing information systems this way, we limit ourselves
+to a mental model that constantly requires translation to the real
+world. Wouldn’t it make more sense to model software more
+closely to how the business actually works?
+13
+
+UNDERSTANDING EVENTSOURCING
+
+The real world happens in business meetings, about the business
+by the people running the business. Business people do not
+talk about storing an order in a SQL database. They talk about
+customers making a purchase. In business discussions, you
+will rarely hear the term “database” or “SQL” at all, unless the
+business happens to sell database-systems.
+When planning information systems, developers (including me)
+tend to jump much too fast into technology discussions instead
+of focusing on the real problems to solve. The reason is simple,
+Technology is what we fundamentally understand. For us this
+is a safe place with less question marks where we know what to
+do.
+When we start to think and reason about a system with Events
+and Facts, it forces everybody to look at the system from a
+different perspective. We no longer think about data, columns
+and rows but behavior.
+What is it, that the system actually does? In Figure 2.4 you see a
+summary of all the “Facts” that could happen in an online-shop.
+
+14
+
+EVENT SOURCING - WHAT IS IT?
+
+Figure 2.4 - Facts of a System
+
+Event Sourcing is about not only using Events in discussions,
+but also in the implementation of our system. We more or less
+directly translate the Events to Code. You will see in the next
+chapter how this works in practice, when we talk about Event
+Modeling. But before that, let’s dive into some of the typical
+components you will find in an event-sourced system and why
+there is so much (unnecessary?) fear around it.
+
+What are events?
+As mentioned earlier, events are simple facts and not technical
+by any means. Whenever something happens in the system, we
+record this as an Event. So simply said, Events are records of
+the past, therefore we write them in the past tense. Instead of
+“Customer is placing an order”, we say “Order was placed” or
+in short “Order placed”. If an Order was placed, there is no way
+to change this fact. Even deleting the order from your database
+will not change the fact, that order has been placed earlier.
+Since we can´t change what happened in the system, we consider
+15
+
+UNDERSTANDING EVENTSOURCING
+
+Events immutable. You can´t change an Event that happened.
+Don’t even try to find a way to change them. This requires a
+minor mindset shift at first, but you´ll see during this book that
+keeping Events immutable actually makes it much simpler to
+maintain the system.
+Looking back at our previously gathered events for the ecommerce-system, we could find the following Events:
+• “Order Created”
+• “Order Submitted”
+• “Order Confirmed”
+But now that we have all these Events in our system, how do
+we actually use them? When using a traditional system with
+a relational database, we can simply query any kind of data by
+using some simple SQL Queries.
+In Event Sourcing, by design there is no state, no tables and no
+documents we can simply query, it’s all Events. But how are
+these Events organized?
+
+What are Event Streams?
+Storing events alone is not enough to structure information. In
+the context of event sourcing, an event stream represents the
+chronological sequence of all state-changing events that have
+occurred for a particular business entity or process. Each event
+reflects a discrete action or change, captured as an immutable
+record that contributes to the entity’s history.
+
+16
+
+EVENT SOURCING - WHAT IS IT?
+
+Much like how a database table structures data in a relational
+database, event streams organize these recorded events in a
+meaningful way. Business entities in traditional databases
+are identified by their primary key, business entities in Event
+Sourcing are typically identified by their Stream-Id.
+In a database, we store only the latest state of an entity, with each
+update overwriting any previous data. Event streams, on the
+other hand, capture every event, preserving the entire history of
+changes. This makes event streams a powerful mechanism for
+reconstructing an entity’s state by replaying its event history,
+while also providing an auditable and flexible approach to
+managing data over time.
+For example, consider the previously mentioned shopping
+process in an e-commerce application. Each user action - such
+as adding an item to the cart, removing an item, or submitting
+an order - generates an event that is appended to the shopping
+event stream. Let’s imagine a customer starts a new session:
+• Event 1: Product A was added to the cart
+• Event 2: Product B was added to the cart
+• Event 3: Product A was removed from the cart
+By replaying these events, the system can accurately reconstruct
+the current state of the cart, which in this case holds only
+product B. This not only allows the system to present the correct
+state of the cart to the user, but also provides a complete
+audit trail of the customer’s activity. Every state transition is
+preserved, which can be crucial for improving the customer
+experience, debugging issues, or even performing forensic
+17
+
+UNDERSTANDING EVENTSOURCING
+
+analysis in case of errors.
+In essence, an event stream in event sourcing acts as the
+backbone for rebuilding the state of an entity based entirely
+on past events, enabling a clear understanding of how any
+particular state was reached.
+
+What are Projections?
+
+Projections allow us to use the events stored in event-streams
+to build specific views of our information for different use cases.
+A projection takes all events from one or more event streams
+and builds a specific view.
+There can be many different views for our order history:
+• A tabular view for the order history of the customer, displayed in a UI
+• An aggregated view for reporting “cancelled orders in July”
+• A report “orders per hour”, constantly updated in real-time
+for marketing to see when most customers are active
+
+18
+
+EVENT SOURCING - WHAT IS IT?
+
+Fig 2.5 - Order Projections
+
+These are all based on the same data but represent it in a different
+format.
+One of the strengths of Event Sourcing is that since we do not
+delete any data but keep it as long as we need it, we can build
+the projections today we didn’t know we needed yesterday. And
+the same for tomorrow.
+Event Sourcing gives us the freedom and flexibility to work
+with our data. Technically, a projection can be a database table
+filled from events; it could also be a CSV file sent via batch to an
+external partner to detect fraud. A projection can be an Excel
+sheet for accounting showing the latest orders or like shown in
+Fig. 2.5 a generated PDF.
+Don´t worry, we´ll get into the details of how projections work
+in the next few chapters where I´ll provide some practical use
+cases, that hopefully make it much clearer.
+
+19
+
+UNDERSTANDING EVENTSOURCING
+
+What is the Event Store?
+Very often, you’ll hear the term Event Store when talking about
+Event Sourcing. This is simply the component that stores events,
+like a special-purpose database. There are powerful Event Stores
+like the Axon Server8 or EventstoreDB9 that are tailor-made for
+Event Sourcing, but an Event Store can also be just a simple
+relational database. Sometimes even plain files will do the job.
+Event Stores only support a limited set of operations, but these
+operations are highly optimized.
+
+Appending Events
+Event-Streams are append only. This simplifies datahandling,
+as the data basically only grows in one direction and everything
+that was written is read-only by default. In Event Sourcing we
+can rely on the fact that events don´t change.
+
+Reading Events
+Event Stores provide efficient access to the event-sequences
+stored in streams. This could be reading all events or partial
+events for a given Event-Stream. An example could be all events
+for a given Customer-Id, but it could also be only the events for
+this customer in the last week.
+Typically Event Stores do not offer an API to alter events.
+8
+
+https://www.axoniq.io/download/axon-server-releases/
+
+9
+
+https://www.eventstore.com/eventstoredb
+
+20
+
+EVENT SOURCING - WHAT IS IT?
+
+The relational schema used to build an event-sourced application using a database is quite simple and provided here as an
+example.
+
+Fig 2.6 - Events Schema
+The id-column is typically a database sequence that is increased
+with every event. This is necessary as the order of events is
+important and needs to be maintained.
+The stream_id column identifies a sequence- or a stream of
+events. An example could be “stream_customer_47” for all
+events related to the customer with id “47”.
+The payload column can be used to serialize an event to a suitable
+representation like JSON, XML or even plain-text.
+The metadata column holds meta-information about the event,
+like who created it, when was it created, which system created
+it and so on. This could also be in JSON Format.
+Oftentimes you´ll also see a type column which indicates the type
+of event for deserialization.
+When our application evolves, it´s sometimes necessary to add
+new versions of an Event. To be able to correctly deserialize
+these events, we maintain their version in the version-column.
+
+21
+
+UNDERSTANDING EVENTSOURCING
+
+We´ll learn much more about versioning in chapter 28.
+No matter how you structure it, in the end it is just a handful
+of tables to store events and their metadata. You don’t need to
+think about the perfect model of your application and design
+the table schema for any eventualities right at the beginning.
+We simply store events in an “events” table and build the
+projections as we go and need them.
+You don’t even have to use a database as previously mentioned.
+Adam Dymitruk recently built an event-sourced Open Space
+Management System using a file-based Event Store. Every event
+is just a file. Crazy, isn’t it? You can follow the stream on
+Twitch.10
+Of course, you wouldn’t want to do this in a real-world application (Adam might disagree), at least not a commercial one, but
+the essence is simple. Using a commercial Event Store like Axon
+Server has some benefits. It allows you to scale and gives you
+features like multi-tenancy, cryptography support and location
+transparency. But to get started, the best approach is to keep it
+simple and just start. You can always adjust and migrate the data
+later. I often see eventsourced systems getting stuck in analysis
+paralysis, analyzing tools and frameworks to get started. It’s
+much better to just start and improve along the way. In Germany
+we say “probieren geht über studieren” which translates to
+“don´t just read about it, do it.”
+
+10
+
+You can follow the stream on Twitch here: https://www.twitch.tv/eventmo
+deling
+
+22
+
+EVENT SOURCING - WHAT IS IT?
+
+What Event Sourcing is Not
+Event Sourcing is not a panacea. As with anything in the IT
+industry, there is no silver bullet. Everything involves tradeoffs, and Event Sourcing is no exception.
+But first, let me clarify one thing. I often read that if you use
+Event Sourcing everywhere, you are doing it wrong. I disagree,
+fundamentally so.
+Why?
+I can only speak from my personal experience; it’s an approachable way to develop flexible software. I often get asked what
+kind of software I would develop using Event Sourcing. For me,
+this is the wrong question. It implies that Event Sourcing is only
+suitable for special kinds of systems, that it’s a special weapon
+you only use in certain circumstances. In all other cases, you fall
+back to the default, which is most often a simple CRUD System.
+If you ask me, it should be the other way around. Event Sourcing
+should be the default way in which information is processed,
+and only if you have very good reasons you should deviate from
+this path.
+Also, I often hear the misconception that Event Sourcing is only
+valid for systems that require an audit trail, like banking or
+insurance. Sorry, but again, I disagree. Every system design
+profits from properly handling and storing information, no
+23
+
+UNDERSTANDING EVENTSOURCING
+
+matter which industry or sector.
+Event Sourcing is just a certain way to handle data. Nothing
+more, nothing less. It’s not a special kind of architecture pattern.
+It’s a simple way to implement the persistence in your system.
+
+Common Misconceptions
+Miconception #1: Event Sourcing is Complex
+
+Why is it considered complex? Or let’s ask it the other way
+around, why is using CRUD considered the simple way?
+Because we are primed to think in state. We learned to think in
+state in university and in most books we´ve read. And because
+we have been learning to think in state for decades now, the
+tooling for this is pretty good. It’s super simple to bootstrap a
+CRUD application, get some state, normalize it, and flush it to
+the database. Just use Spring, Spring Data, and you are just a
+few annotations away from persisting your customer into the
+customer table.
+It’s not so easy to get started with Event Sourcing (unless you
+use something like Axon, which gives you a similar experience
+to get started, but more on that later).
+Let’s be honest, you do not need a CS degree to build a simple
+working CRUD application. Anyone can learn this within one or
+two hours. So is this misconception actually not a misconception
+at all? Is CRUD the simpler way?
+24
+
+EVENT SOURCING - WHAT IS IT?
+
+Most beginner tutorials online show you exactly this. Build a
+simple entity, persist it into a simple database. If the tutorial is
+any good, you will at least implement some kind of relationship
+between a handful of entities and define a table schema using
+foreign keys to enable referential integrity.
+You basically start with an assumption of how the data should
+look like based on your current requirements. A best guess.
+And I agree. Using CRUD for this kind of application is absolutely
+fine. But what if the application grows? As most applications
+and software systems inevitably do? What if we define additional
+entities?
+And what if the relationships between these entities grow as
+well? We’ll add foreign key constraints, we’ll add relationships,
+and we’ll add field after field to these entities to implement new
+features.
+Let’s look at this in a concrete scenario.
+Assume you have to implement a part of a bigger CRM system
+that allows creating different kinds of persons who are managed
+in the system.
+Persons have very different attributes. You have a natural
+person with names, surnames, and one address. But also legal
+entities, which do not have surnames and can have any number
+of addresses.
+
+25
+
+UNDERSTANDING EVENTSOURCING
+
+Fig 2.7 - Different Entity Types
+
+And what if the person type “legal entity” wasn´t known when
+you started to design your schema in the first place?
+Very likely you have something like a Person class with some
+attributes that make up a person. And now, if this additional
+requirement comes into the system, you’ll need to figure out
+how to match a legal person to the person-structure. In the end,
+they are both persons somehow, right?
+Is it the same schema? Having seen enough projects, most
+of the time it will be the same table. You will add additional
+attributes, and you’ll make other attributes nullable to squeeze
+“legal person” into the person table. Not by any bad intention
+but just because it looks like the easy path.
+This tiny change, that looks like a good idea in the beginning
+has profound side effects later. The data in the database no
+longer matches the data in the Person class. For a person in
+
+26
+
+EVENT SOURCING - WHAT IS IT?
+
+code, the surname is required; in the database, it’s nullable as
+legal persons don´t have surnames
+And what if additional person types come up?
+
+Fig 2.8 - Table Schema
+
+• Authorities
+• Government agencies
+• Nonprofit organizations
+We have to make decisions on how to structure entities, how
+to define the correct boundaries, and how to define the table
+schema so queries can be done efficiently. There are many
+questions to answer, and unfortunately, we have to make a lot
+of critical decisions when we know the least about the system
+we are building.
+And we will get some of them wrong. That’s inevitable. If you
+live under the illusion that you just need to spend enough time
+crafting your perfect data model to prevent this, you are wrong.
+Sorry.
+Always hope for the best, but assume the worst. And the worst
+is, we’ll get it wrong.
+
+27
+
+UNDERSTANDING EVENTSOURCING
+
+So how do you address this? This is the fundamental dilemma of
+using CRUD-based systems. We’re so accustomed to thinking in
+terms of things - nouns and static state - rather than behavior.
+When you model an e-commerce system, it seems natural
+to define a “Shopping Cart” that is stored in a “cart” table,
+or a “Customer” that’s stored in a “customer” table. And
+in the beginning, this might work fine. But as the system
+evolves, the assumptions about what a “Customer” is can
+change dramatically. At that point, you’re stuck with the rigid
+“Customer” view you started with, which no longer fits the needs
+of the system.
+The bigger the application grows, the more you need to invest to
+keep it flexible and maintainable. I’m not saying it’s not possible.
+Of course, it is. But in CRUD systems, complexity tends to grow
+unless you invest more and more time and money to fix it.
+Our systems need to be flexible and adaptable. How does Event
+Sourcing help? Event Sourcing has this flexibility built in. We
+don´t design table schemas upfront.
+Instead of thinking about how to store the different person types
+in the system, we think about how these different person types
+are used in the system in the first place. Maybe legal persons
+are only necessary in a very specific area of the system? Using
+the same datastructure for persistence might create accidental
+coupling between all person types which does not exist in the
+real world.
+You might have different types of events like “Person Added,”
+“Organization Added,” and “Legal Person Added.” All of these
+28
+
+EVENT SOURCING - WHAT IS IT?
+
+events can have different schemas, contain different information and describe what actually really happens in the system.
+
+Fig 2.9 - Event Types
+
+We gain much more flexibility in how we structure information
+because we’re no longer confined to a static view of the system.
+Instead of being bound by fixed structures, our events describe
+the system’s behavior. When that behavior evolves, we can
+simply introduce new events to capture and accommodate these
+changes, without needing to overhaul the existing data model.
+Could we make the same mistake by just having one event type
+like “Person Added” again with our nullable fields? For sure. But
+in Event Sourcing, it’s easier to do it right. Adding an additional
+event type for every person type added is simple. And the best
+part - we do not have to adjust any previously defined person
+type events when doing this.
+In the CRUD approach, every time we add fields to the globally
+used table, we need to make sure all use cases still work and
+proper null checks are in place.
+
+29
+
+UNDERSTANDING EVENTSOURCING
+
+Don’t get me wrong, there are of course better designs than the
+global person table even in the CRUD approach; that is not the
+point. The point is, it’s easier to get it wrong if you do not have
+all the information.
+
+Misconception #2: Event Sourcing is not performant
+
+There is a lot of fear about the performance of event-sourced
+applications, especially when there are millions of events in
+the Event Store. First of all, I can assure you, performance
+is not really something that differs between event-sourced
+systems and CRUD-based systems. If it’s slow in CRUD, it’s
+most probably also slow in the event-sourced variant.
+The performance problems typically have nothing to do with
+the number of events stored in the database or the Event Store.
+Why is that?
+I get this question, or at least a similar one, all the time: “Does
+it really make sense to work with Event Sourcing here? Does it
+make sense to play back thousands of events to get the customer
+projection?”
+I bet you have either heard this question already or you may
+even have it in mind yourself.
+There are some misconceptions and misalignments in this
+phrase that we should discuss.
+
+30
+
+EVENT SOURCING - WHAT IS IT?
+
+If you need to play back thousands of events to get to the state of
+a customer, there is something weird, maybe even wrong. You
+should not have to go through thousands or millions of events
+to build the current state of your system.
+Against the common assumption, when working with Event
+Sourcing, you do not have one long continuous stream of events
+that you play back time and time again. In reality, it’s more
+like you have many smaller streams, and you play back only the
+portions you need to build up your state.
+Exactly as you would design your tables in a relational model,
+you design your streams in an event-based model. By designing
+streams, you typically also design your business capabilities.
+Therefore, for the customer, it could make sense to have a
+“customers” stream containing all the events that belong to
+one customer. It does not have to be a stream containing all
+customers. You also could define a stream per customer.
+Getting all the events from the stream (in pseudo-code) then
+would be like:
+var streamId = "stream-" + customer.getId()
+eventstore.getEventsByStreamId(streamId)
+
+Fig 2.10 - Pseudo Code to get all events for a customer
+To build this customer from the stream of events, you would
+have to read 30, maybe 100 events, not thousands. Do you think
+
+31
+
+UNDERSTANDING EVENTSOURCING
+
+a modern IT system could handle loading 30 events and applying
+them in order? Oftentimes, this is even much faster than CRUD
+because the events will be stored close to each other and loading
+them could then require less IO than the necessary JOINs in a
+relational model. In the end, for most applications it simply
+won´t matter.
+So yes, if you store all events in one global stream, Event
+Sourcing will be slow. But if you invest a bit in designing
+streams in a meaningful way, the whole performance argument
+disappears. And we go even further, because oftentimes, we
+do not even read directly from the stream but from a projected
+database table.
+So technically, if the client just reads from a projected
+table, from a client perspective, there is no real difference
+performance-wise between an event-sourced application and
+a CRUD application. We’ll talk much more about this when we
+discuss database projections in chapter 25.
+
+32
+
+EVENT SOURCING - WHAT IS IT?
+
+Misconception #3: Event-Sourced Applications are tightly
+coupled and become extremely painful to develop after the
+initial phase
+
+How come this misconception is so broadly accepted?
+Very often, I hear as a Pro-Argument for Event Sourcing that
+it’s possible to simply read the events from other services as you
+like and build the data structures you want. Honestly, if you hear
+this argument from a consultant trying to sell Event Sourcing
+to you, I’d suggest you run. It’s almost certain this consultant
+does not have any prior experience developing event-sourced
+systems.
+Why do I make this claim?
+If you have two microservices, would you allow one service
+to read directly from the internal tables of the other service?
+Hopefully not. This is one of the worst forms of coupling you
+can get. It results in long discussions when you need to make
+adjustments in the codebase. The service reading data from the
+database is tightly coupled to the schema of the other service.
+Every change requires the service to adapt. It’s easy to break
+something.
+Wouldn’t it make much more sense to have an API that contains
+exactly the data the consumer needs to do its job? No matter
+how we refactor our internal database, maybe even switch over
+to a new database, we can keep the API stable and the consumer
+will never know.
+33
+
+UNDERSTANDING EVENTSOURCING
+
+So why would we make it any different using Event Sourcing? If
+you read the internal events of a service, technically there is no
+difference if you just read the internal database directly. Well,
+technically there is because Events are immutable. They won´t
+change, databases do. Still, if there are 10 or more clients who
+depend on the structure of your internal event, you will likely be
+very cautious to finally rename this field although you wanted
+to do this for years.
+Since persisted Events are immutable, a change in structure will
+not affect consumers in the same way it would affect systems
+using a shared database. Changing the structure of a shared
+database has an immediate effect on all systems. Changing the
+structure of an event only has an effect on future events.
+It’s not Event Sourcing itself that causes the coupling. It’s your
+architecture and the fact that you allow one service to read
+internal data from another service. That’s a bad idea in Event
+Sourcing, but it’s an equally bad idea in CRUD.
+So why not make a clear distinction between internal events and
+external events? Internal events strictly belong to one service
+and one context. External events (some name them integration
+events) exist to distribute data from one service or context to
+another. These events are much more stable than the internal
+events of a service and are not refactored that often. And again,
+we will see how that works when we talk about integrations in
+chapter 24.
+
+34
+
+EVENT SOURCING - WHAT IS IT?
+
+Misconception #4 - Event streaming and Event Sourcing is the
+same thing
+Let’s clarify this right from the start. They are not the same.
+Not even close. This distinction is so important that we will talk
+about it in detail in chapter 7.
+Event streaming and Event Sourcing are very different things
+that basically have nothing in common besides the same terminology. Nevertheless, they get confused all the time.
+If you care about storing information using Event Sourcing,
+you store all changes in your system as they happen. In Event
+Streaming, you typically process data in near-real-time as it
+comes in. However, it is absolutely not required to store the
+incoming events from a stream as events in an Event Store.
+Often, it is even a really bad idea. Imagine you are processing
+IoT data. Some IoT use cases are known for the vast amount of
+data they send over the wire. We are talking about millions of
+events per second.
+You typically do not store these events to build state out of
+them long term. Either you process the data live via a stream
+processing library like Kafka Connect or KSQL, or you aggregate
+the data on the fly by updating counters and sums as data flows
+in.
+Events in Event Sourcing carry business meaning. Call them
+domain events if you will. They are carefully crafted and model
+business processes when combined. Event streaming is often
+much more technical, and the events are typically much more
+35
+
+UNDERSTANDING EVENTSOURCING
+
+fine-grained than in Event Sourcing. Agreed, it´s not black and
+white. There are always exceptions to this, but most exceptions
+prove the rule.
+Event Sourcing allows you to replay events to rebuild state from
+event streams anytime. In Event Streaming this is not practical,
+as typically the number of events is simply too high to do this
+efficiently.
+I’m tempted to not even use the term “Event” in Event Streaming. Most often, they are just notifications to carry information
+from A to B. The term often used here is “event-carried state
+transfer” defined by Martin Fowler11 . You use the stream records
+to transport information between systems in a reliable way.
+One tool very often used and discussed when talking about Event
+Streaming is, of course, Apache Kafka. Kafka is an amazing
+platform with a vast ecosystem of tools and frameworks to
+support near-real-time Event Streaming for any platform.
+Very often, I get the question, “We have Apache Kafka in place.
+Can I simply use Kafka as our Event Store?” At first glance, this
+might look like a good idea. Kafka guarantees the ordering of
+events to a certain extent, has strong support for serialization
+using Avro, JSON, or any other format, automatically scales
+horizontally, and generally operates lightning-fast. And it can
+work with Events.
+So, should we use Apache Kafka as an Event Store?
+11
+
+https://martinfowler.com/articles/201701-event-driven.html
+
+36
+
+EVENT SOURCING - WHAT IS IT?
+
+The answer is a clear No. Kafka is not built for this.
+You can only read all records from one topic. There is no way to
+only read records for a certain “stream.” Filtering millions of
+records is not a problem for Kafka, but it simply will not scale to
+do it in real time.
+You would need to configure a new topic per stream or aggregate
+you want to use. While this could work technically, it comes with
+a huge organizational overhead to manage the whole process
+and schemas per topic.
+There are event-sourced projects that rely on Kafka and most
+of the time Kafka Streams, but they are the exception, not the
+rule, according to my experience.
+
+Misconception #5 - Event Sourcing needs special tools
+
+This is the last of the most common misconceptions and myths
+we’ll try to debunk in this chapter. And this one is really common.
+It’s generally assumed that Event Sourcing requires a lot of
+special tools to work with:
+• Event Store
+• Event Sourcing framework
+• Strong CPU and high memory
+And again, this is not true. Event Sourcing is very simple and
+basically just asserts that we do not store state but state changes
+37
+
+UNDERSTANDING EVENTSOURCING
+
+in the database. Event Sourcing works basically with any kind
+of database, be it PostgreSQL, MongoDB, or DynamoDB. Some
+databases are better suited, some are less suited, but basically,
+as long as you are capable of storing events in an events table
+and keeping them in order, you are good to go.
+Right now, I’m working on a project where we do not use any
+special Event Store but only have a PostgreSQL database in the
+background for both our events and our projections. It’s a simple
+relational database with just a handful of tables.
+How we store events is a matter of the serialization format.
+Oftentimes, events are just serialized as plain JSON, oftentimes
+backed by a JSON schema. Other options include XML or Avro
+(which is a special purpose binary-format). And as we defined
+earlier in this chapter already, you only need a handful of
+columns to store events.
+Since in Event Sourcing you neither modify existing events
+nor delete any typically, relational databases can be extremely
+performant in storing and processing these events.
+Does it make sense to use a framework? As always, it depends.
+If you work with a bigger team (> 3-5 people) on a commercial
+project, I would typically recommend at least evaluating if using
+a framework like Axon makes sense. It simply has validated
+solutions to known problems and recipes for known obstacles.
+You just don’t have to reinvent the wheel time and time again.
+Greg Young has stated on several occasions that building Event
+
+38
+
+EVENT SOURCING - WHAT IS IT?
+
+Sourcing frameworks is doomed to fail12 . If your company has
+bet on the wrong horse, you are trapped with an unmaintained
+Event Sourcing framework as the backbone of your business.
+Of course, that can also happen with the bigger ones like Axon,
+but it’s just much more unlikely. In the end, it’s a project-byproject decision, and I would recommend making an informed
+decision after a thorough analysis. The good thing, though, is
+that switching frameworks is not free, but also not impossible.
+Using some migrations for existing events takes you pretty far.
+
+Conclusion
+We did not talk much about technology in this chapter because
+Event Sourcing is not really a technical topic. There are many
+ways to implement Event Sourcing, but the important aspect is
+not the technology itself but the mindset for how to handle data.
+One of the most difficult things when adopting Event Sourcing
+is not the underlying technology but unlearning what you have
+learned over years of “CRUD-based” software development.
+It requires a significant mindset shift.
+If you start with your existing data model and just want to
+“event-source” it, you are very likely to fail. Event Sourcing is
+about recording data as it flows through the system. Just because
+
+12
+
+https://codeopinion.com/greg-young-answers-your-event-sourcing-que
+stions/
+
+39
+
+UNDERSTANDING EVENTSOURCING
+
+you assume you know what a customer looks like in your system
+does not mean you are correct. Instead of storing a customer
+using typical attributes like name, surname, contact data, and a
+list of addresses, you use events like “Delivery Address Added,”
+“Contact Address Added,” and “Contact Data Updated.” You
+focus much more on the data and how and where it is used.
+This gives you freedom and flexibility in handling the data for
+other use cases as well. You do not limit yourself to the customer
+object but see the customer as a natural stream of events (which
+has nothing to do with streaming) that records what happened
+to this exact customer in the past.
+Whatever happens in the system, you need to record it as
+an event. If there is no event, it didn´t happen. All events
+in sequence make up the story of your system. It should be
+readable by both developers and your business team, event by
+event, and it should tell a compelling narrative of your system’s
+capabilities.
+With that being said, there is a great tool that allows you to write
+this narrative in a highly visible way. It’s called Event Modeling,
+and we will talk about this in detail right in the next chapter.
+
+40
+
+3
+
+Planning Systems using Event Modeling
+
+How do you reason about systems? What is the best way to
+discuss what a system does and how a system works? Most
+developers will have a hard time providing a proper answer to
+this question because many have had bad experiences in the past
+with the tools available.
+
+What is a System?
+What is a system, anyway? All information systems essentially
+work the same way: they implement one or more processes,
+each consisting of multiple steps executed in a specific order.
+What’s fascinating is that even the most complex process can
+be broken down into simple steps. The more complicated the
+process, the more steps are typically involved. Each step has
+a trigger, which can come from various sources. It might be a
+direct user action (“User clicked a button”), an event within the
+system (“Account was logged in”), or even just the passage of
+41
+
+UNDERSTANDING EVENTSOURCING
+
+time (“Process timed out”).
+At its core, any process can be described using atomic building
+blocks. These building blocks either modify the information
+in the system or somehow use the information already present.
+Some steps require human interaction via a user interface, while
+others happen automatically in the background. Additionally,
+some steps may notify external systems, which in turn again
+trigger other processes.
+Viewing processes as a continuous flow of actions and reactions
+reveals a “wave”-like structure, as illustrated in Figure 3.1.
+Each action triggers a reaction, creating a rhythmic pattern of
+interactions that drive the system forward.
+
+Fig. 3.1 - Typical “Wave Structure” of a Process
+
+Describing processes and how a system works with words is
+difficult. It’s difficult because words require interpretation, and
+
+42
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+interpretation is always subjective. It is very easy for two people
+to have different understandings of how a system is meant to
+work based on the same words, and they will never know.
+The best example I can remember happened in an Event Modeling Session in spring 2024 in Vienna conducted by Adam
+Dymitruk, where 2 people were in a heated debate about how
+to model a certain aspect of the system. The real problem was,
+they were discussing completely different things without knowing. We could resolve that very quickly by drawing the screen
+mockups. Suddenly everybody realized, that the discussion was
+pointless and we moved on.
+In my opinion, this is the biggest reason why so many IT projects
+fail.
+Let me give you another example that happened just recently in
+a customer project I am supporting. We had several meetings
+where we discussed how data can be retrieved from a complex
+database schema using a technology capable of translating
+databases to Kafka Records (using Debezium and Change Data
+Capture, but that is not really important).
+In these discussions, the business side mentioned several times
+that they were working on something they called a “default set.”
+The developers never really understood what a default set was
+and how it should work. So they tried to describe that they only
+needed a “clear defined dataset based on record IDs.”
+The business side again did not understand what that meant,
+so they all agreed that a default set was probably exactly the
+43
+
+UNDERSTANDING EVENTSOURCING
+
+record set the developers needed. Of course, it turned out
+several meetings later that this was absolutely not the case, and
+for several meetings, people were eagerly discussing how to
+implement it without ever realizing that they were talking about
+two completely different things.
+Miscommunication, misunderstandings and wrong assumptions make projects fail. And it´s almost never intentional.
+Most people desperately want to see projects succeed. It’s a
+fundamental problem in human communication we are facing.
+One of the oldest approaches which tries to solve the communication gap is UML - the unified modeling language defined by
+Grady Booch (et. al) around 1990. It’s a great tool even today,
+but unfortunately it was never really translated to the business
+side.
+Maybe you have also heard about Domain Driven Design (DDD)
+by Eric Evans. We will talk about DDD in detail in chapter 8. At
+its core, DDD is all about defining a common language between
+Business and IT. Eric Evans famously called it the “Ubiquitous
+Language”.
+The idea is simple. Try to find a language understood by all
+people involved in the project, that allows us to talk about the
+requirements in an unambiguous way. A language which does
+not contain technical jargon and only business terms clearly
+understood and well documented.
+As simple as it sounds, it is actually very hard to define this
+language.
+44
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+Alberto Brandolini famously said, “It’s developers’ understanding, not your business knowledge, that becomes software”13 .
+And of course, he is absolutely right about it.
+So what can we do?
+Should we dedicate additional time to precisely clarifying the
+meaning of our requirements? Would hiring more requirements
+engineers help bridge the gap between technical and business
+perspectives? Requirements engineers face the same challenges
+as we all do; both written and spoken language often fall
+short when it comes to accurately describing complex technical
+systems, regardless of one’s job title. We need a more effective
+solution. Fortunately, there are tools available that can assist
+us in this endeavor.
+If you wanted to explain to a colleague how a system works, the
+best way is to sit down together and directly show on the screen
+how it works by going through the real system step by step.
+What if we could use a visual language that works similar
+to “sitting down quickly together at a screen”. A language
+understood by everyone immediately and detailed enough to
+not allow any subjective interpretation, but instead discuss only
+facts?
+But what if this even works when the system does not exist yet?
+
+13
+
+https://x.com/ziobrando/status/1347126001340358656
+
+45
+
+UNDERSTANDING EVENTSOURCING
+
+Event Modeling
+
+Event Modeling is a visual approach designed to facilitate
+discussions about data flow within an information system. You
+can think of it as a collaborative process where you and a
+colleague sit down and illustrate the system’s operations from
+left to right using real examples. It resembles the experience of
+reviewing an existing system together on a screen to clarify its
+functionality.
+
+Fig 3.2 - a complete Event Model
+
+Event Modeling was invented by Adam Dymitruk14 and combines
+the best elements from Alberto Brandolini’s Event Storming15 ,
+Domain-Driven Design, UML, Figma for UX and many other
+accepted best practices in the industry in a unique tool to plan
+14
+
+eventmodeling.org
+
+15
+
+https://www.eventstorming.com/
+
+46
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+information systems.
+Event Modeling works on a single timeline, and we model the
+steps a system provides from left to right. You can read “what
+happens in this system” like a story. It’s a perfect tool to
+describe requirements, but also very suitable as documentation
+to support onboarding new colleagues.
+The only real tools you need for Event Modeling are a whiteboard
+and plenty of sticky notes. We use sticky notes in different
+colors - blue, orange, green, and yellow - to visually capture
+and organize information on the whiteboard, making it easy to
+model and communicate the system’s behavior.
+
+Elements of Event Modeling
+
+Event Modeling defines a few key elements we use to describe
+how systems work. First, we have Events, the foundational
+building block of all information systems.
+
+Events
+
+47
+
+UNDERSTANDING EVENTSOURCING
+
+Fig 3.3 - Events in orange
+
+Events essentially represent occurrences within the system,
+such as “Customer Registered.” By examining these events, you
+gain a clear understanding of the system’s capabilities. Events
+reflect what remains of the system when it is powered off and
+then on again. They document the data that has been stored and
+the actions that have taken place in the past.
+A common objection I often encounter is, “We can’t use Event
+Modeling because we don’t have an Event-Driven Architecture.”
+However, any system can be modeled using Event Modeling;
+it doesn’t need to be event-driven or event-sourced. In this
+context, an “event” signifies that data has been persisted within
+the system. It does not make any assumptions about the method
+of persistence. It’s perfectly acceptable to use an event to
+indicate that data was saved in a “Customer Table” within our
+relational database.
+
+48
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+Commands
+
+Fig 3.4 - Commands in blue
+
+Commands define the input parameters of the system.
+
+A
+
+command is basically an instruction to the system to carry out a
+certain action, like “Register Customer.” We could imagine
+there is a button to register a new customer for an online
+shop, and as soon as the user clicks that button, the system
+is instructed to execute the registration step.
+How the system does this is a complete black box. We do not
+really care for the moment. We only want to know that the
+system has this action “Register Customer”. The result of a
+successful command execution always is an event that records
+in the system, that the customer has been registered.
+Commands describe what should happen, events describe what
+
+49
+
+UNDERSTANDING EVENTSOURCING
+
+actually happened.
+
+Screens
+In Event Modeling, we want to describe how systems work as
+clearly as possible. To be absolutely sure everybody knows
+what is being discussed, we additionally work with rough screen
+mockups to visualize the system behavior. This is the UX part.
+Screens or wireframes basically show how a UI for the system
+might look like and how a User can interact with the system.
+This is a point of confusion for many: should we really invest
+time in designing screens at such an early stage of the process?
+The answer is yes, but the level of detail should be minimal. The
+focus isn’t on how the screens appear or creating the perfect user
+experience; it’s primarily about the data. The extent to which
+you delve into UX details largely depends on who is involved
+in the discussion. If UX professionals are present, they will
+undoubtedly focus on the finer points of user experience. What
+you want is a highly visual representation that illustrates the
+data we collect in the system and how that data triggers specific
+actions through commands.
+My screens typically look like this, and it’s clear that they aren’t
+something you’d want your customers to see in a real system.
+
+50
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+Fig 3.5 - Screen Mockups
+
+And they never will. But it’s perfectly fine to use a screen like
+this to discuss how the system basically works.
+And it’s important to make sure everybody understands exactly
+what is being discussed. Highly visual people sometimes get
+confused if there is nothing visual, but everybody, including
+business, basically understands a simple screen mockup.
+
+State Change Pattern
+So what happens if we combine our screen with the command
+and the resulting event?
+
+51
+
+UNDERSTANDING EVENTSOURCING
+
+Fig 3.6 - State Change slice with Command and Event
+
+We receive one of the four main patterns in Event Modeling. This
+is called a “State Change” and is the only way to trigger change
+in a system.
+A command gets triggered by a click on a button or any other
+user interaction. The command triggers a business action in the
+system, and the result is an event, because we need to record
+that something has happened.
+Now we know how to get data into the system. But how do we
+pull data from the system? Where do we get the data to fill the
+screens we draw with the necessary information?
+That is what a Read Model is used for.
+52
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+Read Model
+A Read Model (often also referred to as a Query) is displayed as
+a green sticky note and represents a query against the already
+stored events in the system.
+
+Fig 3.7 - Read Model
+A Read Model can technically be as simple as a SQL query against
+a relational database. It’s just a way to represent structured data
+that gets pulled out of the system.
+Read Models can be used to feed screens, but also to feed
+background processes in a system, as they also rely on data.
+The only data you can query is data from previously stored
+events. That’s crucial, as you cannot query things that are
+simply not present in the system. We will talk about that later in
+more detail when we discuss the information completeness check.
+
+53
+
+UNDERSTANDING EVENTSOURCING
+
+State View Pattern
+
+What happens when we combine events with Read Models? We
+get a “State View”, the second Event Modeling Pattern. With
+State Views, we allow a screen or a background process to query
+information from the system ( without describing how ).
+
+Fig 3.8 - State View slice with Event and Read Model
+
+54
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+Automation
+
+Not all actions in a system are a direct result of a user interaction.
+Some processes get triggered automatically and then run silently
+in the background.
+
+Fig 3.9 - Automation Pattern
+
+In Event Modeling, this is called automation and is represented
+in the model by a gear symbol. Automation is any kind of
+background process that gets triggered automatically by an
+Event, a Timer or a User Interaction. One example is an email
+that gets sent as soon as a user is registered in the system. This
+
+55
+
+UNDERSTANDING EVENTSOURCING
+
+process typically runs in the background and is triggered by the
+fact that a user was registered and the presence of the “User
+Registered” event.
+An automation is basically just the combination of a State View,
+a State Change and a gear symbol for the process.
+So far, we have learned how to store data in the system via state
+changes, how to pull data out of the system via state views, and
+how to model background processes via automations.
+Only one pattern is left: the answer to the question of how we
+communicate with external systems.
+
+Translations
+
+56
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+Fig 3.10 - Translation Pattern
+
+Software systems are rarely built in isolation. Typically, we
+need to communicate with external systems, whether they are
+third-party or other services in our stack. In the simplest case,
+for example, just sending emails via AWS SES (which is the EMail Service of the Amazon Cloud) is a communication with an
+external system. For this to work, we need a way to model the
+communication independently of the underlying technology.
+It turns out we already have everything we need to model this.
+We just have to introduce one more component: the External
+Event.
+
+57
+
+UNDERSTANDING EVENTSOURCING
+
+External Event
+
+Fig 3.11 - External Event
+
+The external event represents data that comes from an external
+system. This can be an API call, an incoming Kafka record, or
+even a simple CSV file that we load from a network storage. The
+details do not matter.
+We typically need to translate the data from the external event
+to a format suitable to our needs. The pattern used for this is
+called “Translation”.
+This is the only pattern where there is some variance in how it
+is modeled in the system. We can either represent the external
+events directly as a Read Model and do the translation under the
+cover (Fig. 3.12, right side), or we can model it basically as a State
+Change where the external event is explicitly translated and
+stored as a new internal event in our system via a simple State
+Change (Fig. 3.12, left side). I typically tend to do the latter, but
+if the external data completely matches the data necessary and
+is only displayed, sometimes the former is the simpler choice.
+
+58
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+Fig. 3.12 - Translation Pattern Variations
+
+Information Completeness Check
+What Event Modeling provides is a clear and concise language
+consisting of only four patterns to describe the single steps in a
+software system in an easy-to-read manner. Not only that, it
+also automatically provides one crucial tool to verify and validate assumptions immediately: the information completeness
+check.
+We learned earlier that Read Models must only ever read data
+that is already stored in the system in the form of events. This
+ensures that we never assume data to be available without
+verifying that this is truly the case. One crucial aspect of why
+software projects get delayed is false assumptions about data.
+
+59
+
+UNDERSTANDING EVENTSOURCING
+
+We assume data is available and only realize it’s not when we
+start with the implementation of the system. This is where
+projects get delayed. It’s too easy to rely on wrong assumptions.
+The information completeness check forces you to look at every
+single attribute in a Read Model and verify the source event
+of the data of this attribute. Which event delivers this exact
+data? If you have an “email” attribute in a Read Model that
+has no corresponding data equivalent in an existing event or a
+command, you can’t proceed until you clarify this assumption.
+The information completeness check not only works for state
+views but also for state changes using commands. Whenever you
+model an attribute in an event, you automatically need to make
+sure that the data is provided by the command that triggers the
+event. Commands generally have to provide all data necessary
+to persist an event.
+
+Given / When / Thens
+
+In addition to the four patterns we already learned (State
+Change, State View, Automation, Translation), we also define
+business rules in the form of “Given / When / Then” (GWT).
+This comes from behavior-driven development16 and basically
+mimics simple business rules in the form of “GIVEN something
+has already happened, WHEN this new thing happens, THEN we
+expect the system to be in this new state.”
+
+16
+
+https://en.wikipedia.org/wiki/Behavior-driven_development
+
+60
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+This is a perfect match with Event Modeling, as it allows us to
+describe State Change- and State View Patterns in much more
+detail than any text ever could.
+We typically put the GWT vertically under each of the patterns
+so you can still read the whole model from left to right. If you
+want to know more about a certain pattern, you can stop and go
+down vertically to learn about the business rules of this small
+part of the system.
+Let’s look at an example of a simple state change. Assuming
+we have a Person, this Person can have up to three addresses at
+most. Defining the State Change to add an address to a user is
+simple.
+
+Fig 3.13 - “Add Address” State Change
+
+Now, how would we describe the business rule that a user can
+
+61
+
+UNDERSTANDING EVENTSOURCING
+
+have three addresses at most?
+Define a GWT with the name “users can have 3 addresses at
+most” directly below the State Change. We only put it here to the
+right for better readability. This immediately captures this rule
+in a way that is understandable for everyone and also directly
+provides a real example that can be translated into a unit test in
+the running system.
+
+GIVEN three addresses were already added, WHEN the
+user tries to add another address, THEN the system should
+raise an error.
+
+Fig 3.14 - Given / When / Then
+
+62
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+For some more complicated parts of the system, we could define
+up to 10 or more GWTs for a single State Change to describe all
+business rules that apply. Don’t save on GWTs; they are a perfect
+opportunity to describe business rules in detail.
+If you want to describe how a Read Model projects data to a
+view, you typically do not use GWTs but GTs (Given - Then).
+Read Models only rely on previously stored events, so there is
+no “When” part necessary.
+The GT for the Read Model used to retrieve the users’ addresses
+would look like this.
+
+GIVEN an address was added, THEN I expect the Read
+Model to show the same data as from the event.
+
+Fig 3.15 - Given / Then for Read Models
+63
+
+UNDERSTANDING EVENTSOURCING
+
+The combination of GWT and GT allows you to completely
+describe any part of any software system visually using Business
+Rules you would normally try to describe in a JIRA Ticket.
+The big difference is that written text allows interpretation,
+while GWTs provide facts.
+It requires discipline and some exercise to always provide
+meaningful GWTs. I would really recommend defining them
+together with the business side. Then you get the best of both
+worlds. You have the real business rules in a form directly
+translatable to software.
+I personally use code generation in combination with Event
+Modeling to generate running specifications from the GWTs.
+
+When to use Event Modeling?
+
+We will dive much deeper into how to apply Event Modeling
+to a real world problem in Part II of the book. Now, having
+learned the basics of Event Modeling, the big question not really
+answered is when to use it and more importantly when not to
+use it.
+In general, I cannot imagine any software system where it
+wouldn’t be hugely beneficial to model the system upfront as a
+base for discussion.
+
+64
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+Documenting an existing system
+
+Event Modeling is a perfect opportunity to document an existing system in a way so that everybody understands the inner
+workings of the system without ever talking about technology.
+This also allows for faster onboarding, as new people in the
+project do not have to read tons of documentation, often without
+knowing what the relevant parts and what the outdated parts
+are. You can be sure that the event model shows the current
+state of the software, if it is actively used in development. This
+is automatically the case when you force yourself to work modelfirst. Whenever you change something in the system, you always
+start with the model, adjust the model, and then you go to code.
+This works even better if you use the model to generate parts of
+the code (or all of it) because then you simply force yourself to
+start with the model.
+You can document any system using Event Modeling. The
+system does not have to be event-driven or event-sourced in
+any way. You are basically documenting how data flows through
+the system. Data flows in any kind of system.
+
+Planning a New System
+
+Sometimes you do not have an existing system, but you are
+thinking about developing a completely new system to solve
+a problem that may have been bothering your company for
+65
+
+UNDERSTANDING EVENTSOURCING
+
+months, maybe even years.
+The big question in the room is: what should this system do?
+Instead of endless discussions without ever knowing if the thing
+being discussed is completely understood, it’s much easier to
+talk about the facts in the system using Event Modeling.
+This allows you to learn about the new capabilities step by step
+long before writing the first lines of code. It’s even possible to
+create prototypes directly from the event model to get a feeling
+of how the new system will behave and simply how it feels.
+Planning a system is absolutely crucial and should account for
+about 60% to 70% of the overall effort of the initial creation of
+the system and even long-term considering feature development and maintenance.
+Having plans allows your company to be flexible and adjust the
+plan if necessary. Ideally, you plan out the whole flow without
+writing a single line of code. This does not mean that the initially
+modeled flow will be the one that will be implemented in the
+end; it won’t. But you start discussing concrete problems early
+and focus on the things at hand from the very first day of the
+project. Do not underestimate the power of focus.
+Do not postpone the details to the end of the project. Getting
+into the details as early as possible literally pays off every single
+time.
+
+66
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+Preparing Refinements
+
+Event Modeling is not only suitable for planning complete
+projects. It’s also a very good tool to plan smaller increments,
+even if the overall project is not using Event Modeling yet.
+You can quickly model out single user stories together with
+the stakeholders and make sure you have all the information
+necessary to start with the story and plan it for the next sprint.
+
+Discussing Complex Problems
+
+And it does not even have to be a user story. Every time you
+face a complex problem, I tend to quickly open a Miro Board
+and sketch out an Event Model for the problem to make sure
+everybody has the same understanding. And people love it. They
+love to work on concrete business problems and are typically
+very receptive to the graphical input they get from using Event
+Modeling.
+
+Conclusion
+Remember the earlier example in the chapter where we ran into
+confusion over “default sets”? How could Event Modeling have
+helped in that situation? Instead of focusing on the things in
+the system and their attributes, assuming everyone shared the
+same understanding, we would have modeled the data flow and
+broken down the process into its atomic steps. By doing this,
+67
+
+UNDERSTANDING EVENTSOURCING
+
+we would have initiated discussions at each step, allowing us
+to clarify what “default set” actually meant in the context of
+the process. When you discuss behavior and processes step by
+step using a visual language, it becomes much harder to make
+incorrect assumptions.
+Remember the “wave”-structure we used to think about processes at the beginning of the chapter? Using Event Modeling
+we uncover the atomic building blocks of each process and can
+visualize the “wave”-structure in any system.
+
+Fig. 3.16 - Uncovered Wave Structure using Event Modeling
+
+It’s easy to get lost in incomplete or, even worse, missing requirements. It’s hard to keep track of every data flow in a system
+when the knowledge is spread across numerous Confluence
+pages and JIRA tickets. It’s hard to really understand the data
+flow in a system when all you have is outdated documentation
+
+68
+
+PLANNING SYSTEMS USING EVENT MODELING
+
+and legacy source code to study.
+Nevertheless, this is the reality we are facing in most projects
+still in 2024 and beyond. It’s not necessarily Event Modeling that
+will solve all these problems; we have numerous tools at hand,
+which all have the same goal: increasing the understanding
+of system processes and improving communication between
+all parties involved in a project. Be it Event Storming, Event
+Modeling, or Domain Storytelling, they all have a common core
+goal: to improve the status quo in the IT industry. We can do
+better.
+For this book, I chose Event Modeling because, in my opinion,
+this concept is closest to the actual real implementation of the
+system. This chapter gave you a brief overview of how Event
+Modeling works and what the core patterns in it are. This is
+not enough to make you an Event Modeler. You need some
+experience, and you need to model some systems and we´ll do
+exactly that in Part II of the book.
+We will model a system from scratch and step by step. Here is my
+recommendation - use a free Miro Account and try to model the
+system yourself chapter by chapter along with me, based on the
+requirements you´ll learn in Part II and compare it constantly
+with how I modeled it. Its completely fine if you model things
+differently than I do. This is normal and expected, just try to
+find your way to model things.
+Get yourself familiar with the patterns and how to apply them
+in different situations. Event Modeling is simple, but you need
+to practice it.
+69
+
+UNDERSTANDING EVENTSOURCING
+
+If you want to dive deeper right now, I would recommend you
+visit https://www.eventmodeling.org or, if your prefer German,
+https://www.eventmodelers.de. Here you will find plenty of
+information about the topic and also practical guidance on how
+to apply the patterns.
+If you want to take a quick look at the Event Model we will create
+in Part II, you´ll find it here:
+https://miro.com/app/board/uXjVKvTN_NQ=/
+In Part II of the book, you’ll learn how to apply all the concepts
+we’ve briefly touched on in this chapter. I hope this introduction has sparked your interest and left you eager to dive into
+modeling systems right now. But before we get there, we need
+to explore a few more topics to deepen our understanding of
+event-sourced systems. One particularly interesting area is
+concurrency, consistency, and how these concepts relate to
+something called CQRS. That’s what we’ll be discussing in the
+next chapter.
+
+70
+
+4
+
+CQRS, Concurrency, (eventual)
+Consistency
+
+The one thing that makes reasoning about event-sourced systems more difficult for many developers is not how state gets
+processed from events, but the combination with CQRS - the
+Command / Query Responsibility Segregation.
+
+CQS / CQRS
+
+Command-Query Separation (CQS) is a fundamental design
+principle for object oriented systems introduced by Bertrand
+Meyer, aimed at improving the clarity and reliability of software
+systems. CQS revolves around the idea that every method in a
+system should be classified as either a command or a query, but
+never both.
+A command represents an operation that alters the state of the
+system. Examples of commands include actions like updating
+71
+
+UNDERSTANDING EVENTSOURCING
+
+a user profile, processing an order, or adding an item to a
+shopping cart. Commands are responsible for changing the
+internal state of the system but do typically not return data
+in response to the caller. The focus is purely on side effects making sure something changes in the system as a result of the
+command.
+A query, on the other hand, is an operation that retrieves and
+returns data without modifying the system’s state. Examples
+of queries include fetching a user’s information, retrieving
+an order history, or displaying a product catalog. Queries are
+concerned only with data retrieval and have no side effects.
+CQS is primarily focused on code elements like classes, interfaces and objects.
+What is CQRS? Isn´t that the same? CQRS takes the concepts
+defined by CQS and moves them from the code level to the
+architectural level. CQRS stands for Command-Query Responsibility Segregation, and it defines a pattern that separates how
+data is written to the system (commands) from how data is
+read from the system (queries). By using CQRS, these two
+operations are handled by distinct models, often even using
+different technologies, though this is not a strict requirement.
+This separation makes a lot of sense when you consider how
+data is typically managed in most systems. Writing data (e.g.,
+updating an order, creating a customer profile) involves different challenges than reading data (e.g., fetching order history or
+displaying a product catalog). In fact, for many systems, reading
+happens far more frequently than writing, so oftentimes it’s
+72
+
+CQRS, CONCURRENCY, (EVENTUAL) CONSISTENCY
+
+crucial to optimize the read side for performance.
+A few years ago, I encountered a real-world example where
+CQS (Command Query Separation) wasn’t implemented. The
+system had no distinction between the read and write sides, both
+relying on the same normalized relational database schema.
+Writing data required saving information across numerous
+tables, while reading involved joining all those tables back
+together. This led to thousands of queries just to generate a
+simple page view whenever a customer refreshed the browser.
+Rather than addressing this inefficiency, many discussions
+focused on purchasing more powerful hardware. Unfortunately,
+optimizing only the read side wasn’t an option; we had to
+refactor the entire system.
+Imagine our example we will use later in the book. An ecommerce platform where customers frequently browse products, but actual transactions (adding to cart, placing orders)
+happen far less often. On the read side, we could pre-calculate
+product availability, pricing, and customer reviews, and store
+this data in a fast, read-optimized database tables or completeley different systems like Redis. Instead of executing complex
+joins across multiple tables in a relational database, the system
+can directly fetch the pre-calculated data, providing lightningfast access to product pages and search results.
+On the write side, when an order is placed, it might go through
+a more complex process involving multiple validations and
+updates across several tables (e.g., inventory, customer data,
+and order status). This process doesn’t need to be optimized for
+instant access since writes happen less frequently than reads.
+73
+
+UNDERSTANDING EVENTSOURCING
+
+Thus, the write model can be more comprehensive, ensuring
+the integrity of the data being persisted.
+One of the biggest challenges with CQRS is ensuring that the
+two models - the write model, which records data, and the read
+model, which presents data - stay in sync. Since these models
+are separate, there must be a reliable mechanism to propagate
+changes from the write model to the read model. One common
+approach (but by far not the only one) is to rely on event-driven
+architecture, where the write model emits events whenever data
+is modified. These events are then consumed to update the
+read model. For example, when a new order is placed, an event
+like “Order Submitted” would be triggered, and the read model
+would update its records to reflect this new order.
+In summary, CQRS optimizes both read and write operations by
+using distinct models for each, allowing systems to fine-tune
+performance where it’s most needed. This separation of concerns enables systems to scale efficiently, particularly in highread, low-write environments. However, it also introduces the
+challenge of maintaining consistency between the two models.
+In Part III of the book, we will implement a few real-world
+examples using CQRS, using a strict separation between write
+side ( storing Events ) and the read side ( projecting data ).
+
+74
+
+CQRS, CONCURRENCY, (EVENTUAL) CONSISTENCY
+
+Consistency
+
+Consistency, as defined by Merriam-Webster, is “agreement or
+harmony of parts or features to one another or a whole”17
+According to this definition, our system is consistent, if all parts
+operate in harmony and, in our case, show the same data.
+For many projects, the simplest solution to update all parts of
+the system at once is to just use one datastore for write- and
+read-operations, which is neither forbidden, nor a bad practice.
+If you’re utilizing a PostgreSQL database to store your events
+as well as your projections, it’s often sufficient to update everything within the same transaction. This approach guarantees
+consistency and simplifies the system a lot, making it easier
+to understand and reason about it. Don’t underestimate the
+advantages of simplicity. I would only deviate from it if you
+have very good reasons.
+
+17
+
+https://www.merriam-webster.com/dictionary/consistency
+
+75
+
+UNDERSTANDING EVENTSOURCING
+
+Fig. 4.1 - Updating Projections in the same transaction
+
+Keeping everything in sync becomes more complicated when
+you have different systems that need to be updated simultaneously.
+If we write our data to a relational data store but read our data
+from Redis for faster access, to keep our system in a consistent
+state, we need to make sure that every write to the relational
+tables updates our pre-calculated views in Redis simultaneously.
+
+76
+
+CQRS, CONCURRENCY, (EVENTUAL) CONSISTENCY
+
+Fig 4.2 - Writing to both datastores
+Of course, this is possible, but what happens if Redis is not
+reachable for a second exactly at the moment the write takes
+place? Or even worse, what happens if Redis is reachable but
+very slow because of a short network latency?
+What if the write request to Redis times out and we simply do
+not know if the request was processed successfully? We could
+retry, as a write to Redis is typically infinitely repeatable for
+the same key; it would not harm. But what happens to the
+running transaction for the write to our primary relational
+system? Should we keep it open? What if we need to retry not
+once but for some minutes?
+Even worse, what if we keep the database transaction open for
+too long and it times out? This would result in a rollback of the
+original data, but what if Redis, in the meantime, received the
+data as the network is reachable again?
+These are all typical scenarios that you need to consider if you
+
+77
+
+UNDERSTANDING EVENTSOURCING
+
+want to build a consistent system. It’s hard. Many things can
+go wrong, and the worst thing you can have in a system is
+inconsistent data.
+And we are not done, it´s even worse. What if we do not have only
+Redis as an “optimized system for reads” but also Elasticsearch
+for reporting, a CSV for the SAP system export, and another
+relational table to be easily read by the Kafka cluster? Would
+we try to keep all of them in sync? The more systems we try to
+keep in sync, the more likely we will run into one of the problem
+previously described.
+
+Fig 4.2 - Keeping multiple data sources in sync
+Once the data is out of sync, it’s typically pretty hard to get it
+back in sync.
+It´s almost impossible to keep a system like this in sync without
+a “single source of truth”. If in doubt, you need something that
+
+78
+
+CQRS, CONCURRENCY, (EVENTUAL) CONSISTENCY
+
+gives you the latest and correct data. If your system gets out of
+sync, you need a safety net to rely on, that you can use to bring
+the system back into a consistent state.
+In our case, it is the Event Store.
+If one of our views gets out of sync, we can just replay the events
+from the Event Store and hopefully, we are back in a consistent
+state after that. We will talk about Event-Replays in detail in
+chapter 28.
+
+Eventual Consistency
+
+The problem is not easy to solve if we try to keep all systems up
+to date at the same time and writes to one part of the system
+are immediately propagated to all other parts of the system in
+real-time. If you try to do that, you have to find solutions to all
+previously described problems in your system.
+The concept of eventual consistency simplifies the problem as
+we define that the system and all views will reach a consistent
+state, just not immediately. It relaxes the requirement for all
+views of the data to be updated at the same time. Instead,
+updates propagate over time, and the system ensures that all
+views will eventually reflect the correct state at some point
+in the future. This trade-off allows for greater scalability
+and performance in distributed systems, where immediate
+consistency might be too costly or unnecessary for certain use
+cases.
+
+79
+
+UNDERSTANDING EVENTSOURCING
+
+For most systems, cost and effort to achieve immediate consistency do not justify the result. Most systems actually do not
+even have the requirement to be immediately consistent, it just
+feels better. In reality, most of the time it does not really matter
+if the Redis Cluster receives the data a few milliseconds after the
+data has been written to the relational tables.
+How does this solve the initial issues?
+By accepting a delay between the write and read sides, most
+of the original problems vanish. Instead of coupling them
+tightly, we can asynchronously sync a view (like Redis) with
+the relational tables in the background.
+Here’s a concrete example of how this might work:
+Let’s say we store customer registrations in a “customer_regis
+trations” table. We can leverage a Change Data Capture (CDC)
+system, which is an excellent tool for these situations. A CDC
+system is triggered whenever there’s a change in the source
+(like a table), and it propagates the update to one or more target
+systems that are interested in it.
+For instance, using CDC, changes in the PostgreSQL “customer_
+registrations” table can be propagated to an Elasticsearch index.
+This index would then automatically synchronize with the newly
+received data, enabling fast, efficient querying on the read side
+without burdening the original relational database.
+
+80
+
+CQRS, CONCURRENCY, (EVENTUAL) CONSISTENCY
+
+Fig 4.3 - Using a CDC to propagate changes in the system
+
+This will happen automatically and the process will ensure that
+all records are correctly stored in all connected data sources.
+But it will not happen in real-time. There will always be a small
+delay.
+Why is that important? Most developers are not used to think
+in eventual consistencies. We are trained for years to think in
+consistent systems and state. You write something and you can
+immediately read it again, often using the same transaction.
+Think of a simple UI where the user can add items to a shopping
+cart. If a user clicked the button, you would naturally assume
+that the data for the shopping cart is immediately available. So
+it feels natural to just give the complete updated shopping cart
+back in the same request/response cycle. But in this case, even
+a delay of a few milliseconds might result in stale data. The
+user does not see the shopping cart with the updated items, but
+
+81
+
+UNDERSTANDING EVENTSOURCING
+
+the shopping cart as it was before. Only after a reload does the
+customer see the real data.
+The next time you buy an ebook on Amazon, you can see this
+in action if you go to your “digital contents” page immediately
+after the buy. The book will only be visible after about thirty
+seconds. Your digital contents are eventually consistent.
+
+Event Sourcing and CQRS
+How do Event Sourcing and CQRS correlate? In most tutorials
+and articles, CQRS and Event Sourcing are combined and seem
+like a union, which is misleading. You can implement CQRS
+perfectly fine without using Event Sourcing. On the other side,
+when you use Event Sourcing it is almost certain that you will
+be using CQRS.
+A perfect example is our “customer_registrations” table mentioned earlier, which propagates changes to Elasticsearch using
+Change Data Capture (CDC). No Event Sourcing here, yet it’s still
+CQRS.
+If you are using Event Sourcing, a big portion of your work
+building systems is defining use case specific models or projections from the underlying event stream. Imagine we filled
+the Customer-Registration projection in Elasticsearch directly
+from the underlying event stream.
+The Write-Side handles the Event storage in the system via a
+clearly defined data path. The Read-Side asynchronously fills
+82
+
+CQRS, CONCURRENCY, (EVENTUAL) CONSISTENCY
+
+the Customer-Registration Projection in Elasticsearch in the
+background.
+The key thing to understand is that we can create any representation of our data from the events stored in the system. We’re
+not limited to static views or predefined tables. Instead, we have
+the flexibility to define optimized data views tailored to each
+specific use case, all based on the events within the system.
+Another thing we haven´t touched so far that becomes important
+in distributed systems is concurrency.
+
+Concurrency
+So whenever we deal with multi-user systems or parallel systems, we need to also think about concurrency.
+Concurrency: operating or occurring at the same time. 18
+If two users want to change the product description of an article
+in an e-commerce application at the same time without any
+concurrency control in place, the last write will win. This
+can have severe consequences and lead to problems that are
+extremely hard to find.
+Most systems have to deal with some kind of concurrency. If
+you use Git as a version-control system, you are dealing with
+concurrency daily. If two developers work on the same branch
+and make changes at the same time, only the first developer is
+18
+
+https://www.merriam-webster.com/dictionary/concurrent
+
+83
+
+UNDERSTANDING EVENTSOURCING
+
+able to push the changes. All other developers get errors like
+“non-fast-forward, fetch first.” Developers can´t push if their
+data is not up to date. The only way to solve this is to update to
+the latest data and retry.
+One simple way to deal with concurrency is optimistic locking.
+Optimistic locking prevents write operations if any other write
+operation (or push in git) has happened in the background
+without you knowing.
+Every developer needs to update to the latest state, or “git-pull”
+first to be able to push again.
+Optimistic locking is also well-known strategy if you work with
+relational databases. Here you typically define a “version”column which gets updated with every write to the table in the
+same transaction.
+Whenever you want to write to a table, you compare the version
+you received when you initially fetched the data with the version
+that is currently stored in the system. Only if these versions
+match do you execute your write operation and commit the
+transaction. This prevents you from having to lock the table
+completely and still makes sure, that no data gets accidentally
+overridden.
+Why is this optimistic? Because by default we assume that the
+table has not changed; we do not technically lock the table and
+force everybody else to wait. I guess we all heard the horror
+stories of locked tables by people now on vacation for 6 weeks
+(or even worse retired).
+84
+
+CQRS, CONCURRENCY, (EVENTUAL) CONSISTENCY
+
+Fig 4.4 - Optimistic Locking preventing accidental overrides (
+“Andreas” was not stored )
+
+In event sourcing, we typically use optimistic locking to handle
+concurrency. You can write new events to the Event Store, but
+only if no other events have been written to the same stream in
+the meantime.
+But how does this work when multiple developers are writing to
+the same Event Store? Wouldn’t this create constant conflicts?
+This is why we apply optimistic locking not on the entire Event
+Store, but on individual event streams (we introduced event
+streams in chapter 2). It’s the same principle as avoiding
+optimistic locking on the entire database and instead applying
+it to specific tables.
+For example, in our customer_registrations scenario, a list
+of customer registrations could be represented as a stream of
+events in the Event Store, identified by a specific stream Id like
+“customer_registrations_1234.”
+Each time we store an event in the Event Store
