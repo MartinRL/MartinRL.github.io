@@ -82,7 +82,9 @@ p { font-size: 0.6em; }
 7. 🍕 **Identify Slice Patterns**: Recognize State Change, State View, Automation, Translation
 8. 📝 **Define BDD Examples**: For each slice, define GWT/GT acceptance criteria
 
-✶ Avoid grouping by noun (a very common mistake), make sure to group by autonomy and have as little dependencies between the components as possible.
+<br>
+
+✶ Avoid grouping by noun (a very common mistake); group by autonomy and have as little dependencies between the components as possible.
 
 ---
 # What is Event Modeling NOT?
