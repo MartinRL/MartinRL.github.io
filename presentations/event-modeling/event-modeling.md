@@ -68,13 +68,13 @@ There are three dimensions of time; future (command), present (read model), past
 ---
 # The Workshop Format of Event Modeling
 
-1. 🧠 **Brain Storm**: Envision the system; identify all state-changing events
-2. 📖 **The Plot**: Arrange events chronologically on a timeline
-3. 🖼️ **Story Board**: Add wireframes; trace every field's origin and destination
-4. 🟦 **Identify Inputs**: Attach commands showing user intent to change state
-5. 🟩 **Identify Outputs**: Add views showing how event data flows back to UI
-6. 🏢 **Conway's Law**: Organize into swimlanes by team/domain ownership
-7. 📝 **Elaborate Scenarios**: Write GWT/GT specifications per slice
+1. 🟧 **Identify Events** — Find all businesswise meaningful state changes
+2. 📖 **Create Timeline** — Arrange events chronologically into a story
+3. 🖼️ **Storyboarding** — Actor swimlanes at top with wireframes
+4. 🟦 **Identify Commands** — Map inputs/buttons to system commands
+5. 🟩 **Identify State** — Define what users need to make decisions
+6. 🏢 **Group Components** — Organize events into autonomous swimlanes
+7. ⚙️ **Identify Patterns** — Recognize Aggregate, Projection, Automation, Translation
 
 ---
 # What is Event Modeling NOT?
@@ -116,6 +116,7 @@ There are three dimensions of time; future (command), present (read model), past
 # Learning
 
 - [Event Modeling: What is it? (the OG) by Adam Dymitruk](https://eventmodeling.org/posts/what-is-event-modeling/)
+- [What is Event Modeling? (with example) by Yves Goeleven](https://www.goeleven.com/blog/event-modeling/)
 - [The Big Book by Martin Dilger](https://leanpub.com/eventmodeling-and-eventsourcing)
 - [The Small (free) Book by Martin Dilger]()
 - [Event Sourcing & Event Modeling @ Udemy](https://www.udemy.com/course/event-sourcing-event-modeling-getting-started/)
