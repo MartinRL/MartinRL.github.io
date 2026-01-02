@@ -66,6 +66,10 @@ There are three dimensions of time; future (command), present (read model), past
 ✅ **Information Completeness Check** - all data has a command source, is persisted, otherwise it can't be viewed
 
 ---
+<style scoped>
+ol, p { font-size: 0.75em; }
+</style>
+
 # The Workshop/Process of Event Modeling
 
 1. 🟧 **Identify Events**: Find businesswise meaningful state changes, i.e. events
