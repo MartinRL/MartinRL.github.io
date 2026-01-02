@@ -125,7 +125,7 @@ p { font-size: 0.6em; }
  - https://bmsdd.com/ -->
 
 ---
-# Learning
+# Learning 📚
 
 - [Event Modeling: What is it? (the OG) by Adam Dymitruk](https://eventmodeling.org/posts/what-is-event-modeling/)
 - [What is Event Modeling? (with example) by Yves Goeleven](https://www.goeleven.com/blog/event-modeling/)
@@ -152,7 +152,7 @@ p { font-size: 0.6em; }
 # Extras
 
 ---
-# VSA (Vertical Slice Architecture)
+# Vertical Slice Architecture (VSA) 🍕 
 
 The term “Vertical Slice Architecture” was mainly coined by Jimmy Bogard in a series of articles around 2019. The main statement is: 
 > Minimize coupling between slices, and maximize coupling within a slice.
@@ -174,3 +174,8 @@ When we extend the system, we typically do not modify existing code if possible.
 
 ---
 # Functional Core, Imperative Shell
+
+---
+# Dynamic Consistency Boundary (DCB)
+
+<!-- https://dcb.events/ -->
