@@ -99,6 +99,8 @@ There are three dimensions of time; future (command), present (read model), past
 
 — Martin Dilger
 
+<br>
+
 - **Minimal Context**: Each slice fits the LLM context window
 - **Formulaic Patterns**: Command→Event→View scaffolding is repeatable
 - **Built-in Verification**: GWT/GT scenarios are executable specs AI can test against
