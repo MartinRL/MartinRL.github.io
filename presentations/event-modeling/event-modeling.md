@@ -71,7 +71,7 @@ There are three dimensions of time; future (command), present (read model), past
 ---
 # What is Event Modeling NOT?
 - An Architecure
-  - … the the community is heavily biased towards VSA (Vertical Slice Architecture)
+  - … but the community is heavily biased towards VSA (Vertical Slice Architecture)
 - Event Sourcing
   - … but the two goes hand in hand, and the community is ES heavy
 - Event Streaming
