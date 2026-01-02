@@ -10,16 +10,35 @@ paginate: false
 
 <!-- todo: bg img -->
 ---
-# Why?
+# Why Event Modeling?
+
+## 📐 The Missing Blueprint in Enterprise Software
+
+**🤯 The Problem:** Most organizations lack a shared understanding. Each team develops its own vocabulary and scattered documentation, leading to siloed contexts and "lossy handovers".
+
+**🧘 The Solution:** Adopt a ubiquitous language grounded in the business domain (not implementation technology). Create event model blueprints in workshops, capturing the business processes visually on a timeline that all stakeholders can understand.
+
+**🎯 Key Takeaway:** Without solving the language and shared understanding problem first, no amount of new tools or technology will fix information system value creation.
 
 ---
-# What?
+# What is Event Modeling?
+
+---
+# What is Event Modeling NOT?
+- Event Sourcing
+  - … but the two goes hand in hand, and the community is ES heavy
+- Functional Programming
+  - … but the community is moving away from DDD «Aggregate» to «Decider»
+- A Tool or Framework
+  - … but tools and frameworks exist
 
 ---
 # How?
 
 ---
-# AI? 🤖 ❤️  🟦 🟧 🟩 🪟 ⚙️ 
+# AI? 
+
+🤖 ❤️  🟦 🟧 🟩 🪟 ⚙️ 
 
 ---
 # Learning
@@ -42,3 +61,15 @@ paginate: false
 - [Qlerify](https://www.qlerify.com/)
 - [On Auto](https://on.auto/) w/ the consultancy [xolvio](https://xolv.io/)
 - [BMSDD (Business Modelling Spec Driven Development) Framework](https://bmsdd.com/)
+
+---
+# Extras
+
+---
+# «Decider»
+
+---
+# Event Modeling Traditional Systems
+
+---
+# Functional Core, Imperative Shell
