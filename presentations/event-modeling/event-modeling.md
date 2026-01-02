@@ -44,7 +44,7 @@ paginate: false
 - 🟦 **Command** (blue sticky notes) - instructions to update the state of the system
 - 🟧 **Event** (orange sticky notes) - fact about a state change in the system
 - 🟩 **Read Model** (green sticky notes) - query/projection of stored facts (i.e. events)
-- 🪟 **Screen** (yellow sticky notes) - GUI
+- 🪟 **Screen** (e.g. wireframe) - GUI
 - ⚙️ **Processor** (gear symbol) - unattended automation or translation
 
 There are three dimensions of time; future (command), present (read model), past (event).
@@ -54,7 +54,7 @@ There are three dimensions of time; future (command), present (read model), past
 
 - 🟧 **State Change** - commands being accepted yielding events
 - 🪟 **State View** - query information from stored events
-- ⚙️ **Automation** - processe triggered automatically, e.g. by event or schedule
+- ⚙️ **Automation** - process triggered automatically, e.g. by event or schedule
 - ⚙️ **Translation** - ingesting and translating external events
 
 ---
