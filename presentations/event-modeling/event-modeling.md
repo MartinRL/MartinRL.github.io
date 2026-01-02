@@ -68,13 +68,14 @@ There are three dimensions of time; future (command), present (read model), past
 ---
 # The Workshop Format of Event Modeling
 
-1. 🟧 **Identify Events** — Find all businesswise meaningful state changes
-2. 📖 **Create Timeline** — Arrange events chronologically into a story
-3. 🖼️ **Storyboarding** — Actor swimlanes at top with wireframes
-4. 🟦 **Identify Commands** — Map inputs/buttons to system commands
-5. 🟩 **Identify State** — Define what users need to make decisions
-6. 🏢 **Group Components** — Organize events into autonomous swimlanes
-7. ⚙️ **Identify Patterns** — Recognize Aggregate, Projection, Automation, Translation
+1. 🟧 **Identify Events**: Find businesswise meaningful state changes, i.e. events
+2. 📖 **Create Timeline**: Arrange events chronologically into a story
+3. 🖼️ **Storyboarding**: Add user swimlanes at top with wireframes
+4. 🟦 **Identify Commands**: Map inputs/buttons to system commands
+5. 🟩 **Identify State** — Define what users/automations need to make decisions
+6. 🏢 **Group Components** — Organize events into component swimlanes
+   <small>✶ Avoid grouping by noun (a common mistake); group by autonomy with minimal dependencies</small>
+7. ⚙️ **Identify Patterns** — Recognize Aggregate/Decider, Projection, Automation, Translation
 
 ---
 # What is Event Modeling NOT?
