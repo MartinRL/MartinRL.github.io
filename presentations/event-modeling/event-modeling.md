@@ -28,6 +28,15 @@ paginate: false
 - A workshop format
 
 ---
+# The Five Elements of Event Modeling
+
+- 🟦 **Commands** (blue sticky notes) - Instructions to the system
+- 🟧 **Events** (orange sticky notes) - What happened in the system
+- 🟩 **Read Models** (green sticky notes) - Queries for stored data
+- 🪟 **Screens/Wireframes** (yellow sticky notes) - UI mockups
+- ⚙️ **Automation** (gear symbol) - Background processes
+
+---
 # What is Event Modeling NOT?
 - An Architecure
   - … the the community is heavily biased towards VSA (Vertical Slice Architecture)
