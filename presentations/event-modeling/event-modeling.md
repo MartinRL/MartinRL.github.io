@@ -58,6 +58,17 @@ There are three dimensions of time; future (command), present (read model), past
 ✅ **Information Completeness Check** - all data has a command source, is persisted, otherwise it can't be viewed
 
 ---
+# The Workshop Format of Event Modeling
+
+1. 🧠 **Brain Storm** — Envision the system; identify all state-changing events
+2. 📖 **The Plot** — Arrange events chronologically on a timeline
+3. 🖼️ **Story Board** — Add wireframes; trace every field's origin and destination
+4. 🟦 **Identify Inputs** — Attach commands showing user intent to change state
+5. 🟩 **Identify Outputs** — Add views showing how event data flows back to UI
+6. 🏢 **Conway's Law** — Organize into swimlanes by team/domain ownership
+7. 📝 **Elaborate Scenarios** — Write GWT/GT specifications per slice
+
+---
 # What is Event Modeling NOT?
 - An Architecure
   - … the the community is heavily biased towards VSA (Vertical Slice Architecture)
