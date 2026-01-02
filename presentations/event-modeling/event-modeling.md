@@ -26,7 +26,7 @@ paginate: false
 
 <br><br><br><br><br><br><br><br><br>
 
-## Keeping the Veocity as Features are Added
+## Keeping the Velocity as Features are Added
 
 ---
 # What is Event Modeling?
