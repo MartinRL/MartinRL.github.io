@@ -70,7 +70,6 @@ There are three dimensions of time; future (command), present (read model), past
 - A Tool or Framework
   - … but tools and frameworks exist
 
-
 ---
 # AI? 🤖
 
@@ -78,9 +77,9 @@ There are three dimensions of time; future (command), present (read model), past
 
 — Martin Dilger
 
-- **Minimal Context**: Each slice fits the LLM context window; no framework cruft to confuse
-- **Formulaic Patterns**: Command→Event→View scaffolding is copy-paste-rename repeatable
-- **Built-in Verification**: GWT scenarios are executable specs AI can test against
+- **Minimal Context**: Each slice fits the LLM context window
+- **Formulaic Patterns**: Command→Event→View scaffolding is repeatable
+- **Built-in Verification**: GWT/GT scenarios are executable specs AI can test against
 - **Traceable Completeness**: "Information complete" ensures nothing is missing
 
 <!--  Sources
@@ -115,6 +114,7 @@ There are three dimensions of time; future (command), present (read model), past
 - [Qlerify](https://www.qlerify.com/)
 - [On Auto](https://on.auto/) w/ the consultancy [xolvio](https://xolv.io/)
 - [BMSDD (Business Modelling Spec Driven Development) Framework](https://bmsdd.com/)
+- …
 
 ---
 # Extras
