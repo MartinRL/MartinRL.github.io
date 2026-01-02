@@ -77,6 +77,11 @@ There are three dimensions of time; future (command), present (read model), past
 > Event Models are candy for the AI.
 — Martin Dilger
 
+- **Minimal Context** — Each slice fits the LLM context window; no framework cruft to confuse
+- **Formulaic Patterns** — Command→Event→View scaffolding is copy-paste-rename repeatable
+- **Built-in Verification** — GWT scenarios are executable specs AI can test against
+- **Traceable Completeness** — "Information complete" ensures nothing is missing
+
 ---
 # Learning
 

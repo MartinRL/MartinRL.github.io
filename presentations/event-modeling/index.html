@@ -45,9 +45,9 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" lang="en-US">
 <h1 id="the-four-patterns-of-event-modeling">The Four Patterns of Event Modeling</h1>
 <ul>
-<li><img class="emoji" draggable="false" alt="🟧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e7.svg" data-marp-twemoji=""/> <strong>State Change</strong> - The only way to trigger change in a system</li>
-<li><img class="emoji" draggable="false" alt="🪟" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1fa9f.svg" data-marp-twemoji=""/> <strong>State View</strong> - Query information from stored events</li>
-<li><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/> <strong>Automation</strong> - background processes triggered automatically</li>
+<li><img class="emoji" draggable="false" alt="🟧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e7.svg" data-marp-twemoji=""/> <strong>State Change</strong> - commands being accepted yielding events</li>
+<li><img class="emoji" draggable="false" alt="🪟" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1fa9f.svg" data-marp-twemoji=""/> <strong>State View</strong> - query information from stored events</li>
+<li><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/> <strong>Automation</strong> - processe triggered automatically, e.g. by event or schedule</li>
 <li><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/> <strong>Translation</strong> - ingesting and translating external events</li>
 </ul>
 </section>
@@ -55,9 +55,10 @@
 <h1 id="the-two-tests-of-event-modeling">The Two Tests of Event Modeling</h1>
 <ul>
 <li><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4dd.svg" data-marp-twemoji=""/> <strong>Given/When/Then (GWT)</strong> - Business rules for State Changes</li>
-<li><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4cb.svg" data-marp-twemoji=""/> <strong>Given/Then (GT)</strong> - Projection rules for State Views</li>
+<li><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4cb.svg" data-marp-twemoji=""/> <strong>Given/Then (GT)</strong> - Projection rules for State Views<br />
+<br /><br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Information Completeness Check</strong> - all data has a command source, is persisted, otherwise it can't be viewed</li>
 </ul>
-<p><strong>Information Completeness Check</strong> - Verify all data has a source</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" lang="en-US">
 <h1 id="what-is-event-modeling-not">What is Event Modeling NOT?</h1>
@@ -95,6 +96,12 @@
 <p>Event Models are candy for the AI.<br />
 — Martin Dilger</p>
 </blockquote>
+<ul>
+<li><strong>Minimal Context</strong> — Each slice fits the LLM context window; no framework cruft to confuse</li>
+<li><strong>Formulaic Patterns</strong> — Command→Event→View scaffolding is copy-paste-rename repeatable</li>
+<li><strong>Built-in Verification</strong> — GWT scenarios are executable specs AI can test against</li>
+<li><strong>Traceable Completeness</strong> — &quot;Information complete&quot; ensures nothing is missing</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" lang="en-US">
 <h1 id="learning">Learning</h1>
