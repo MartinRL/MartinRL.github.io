@@ -75,12 +75,24 @@ There are three dimensions of time; future (command), present (read model), past
 # AI? 🤖
 
 > Event Models are candy for the AI.
+
 — Martin Dilger
 
-- **Minimal Context** — Each slice fits the LLM context window; no framework cruft to confuse
-- **Formulaic Patterns** — Command→Event→View scaffolding is copy-paste-rename repeatable
-- **Built-in Verification** — GWT scenarios are executable specs AI can test against
-- **Traceable Completeness** — "Information complete" ensures nothing is missing
+- **Minimal Context**: Each slice fits the LLM context window; no framework cruft to confuse
+- **Formulaic Patterns**: Command→Event→View scaffolding is copy-paste-rename repeatable
+- **Built-in Verification**: GWT scenarios are executable specs AI can test against
+- **Traceable Completeness**: "Information complete" ensures nothing is missing
+
+<!--  Sources
+
+ - https://www.linkedin.com/posts/eventmodeling_ai-eventmodeling-mvp-activi 
+ ty-7098705726755282944-O7Lt
+ - https://www.infoq.com/news/2020/09/adameventmodeling/
+ - https://semaphore.io/blog/adam-dymitruk-event-modeling
+ - https://www.qlerify.com/ai-generated-code
+ - https://www.thoughtworks.com/en-us/insights/blog/agile-engineering-pract 
+ ices/spec-driven-development-unpacking-2025-new-engineering-practices      
+ - https://bmsdd.com/ -->
 
 ---
 # Learning
