@@ -87,7 +87,7 @@ p { font-size: 0.6em; }
 ✶ Avoid grouping by noun (a very common mistake); group by autonomy and have as little dependencies between the components as possible.
 
 ---
-# What is Event Modeling NOT?
+# What is Event Modeling NOT? ❌
 - An Architecure
   - … but the community is heavily biased towards VSA (Vertical Slice Architecture)
 - Event Sourcing
