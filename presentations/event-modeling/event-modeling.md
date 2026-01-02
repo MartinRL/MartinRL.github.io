@@ -72,11 +72,12 @@ There are three dimensions of time; future (command), present (read model), past
 2. 📖 **Create Timeline**: Arrange events chronologically into a story
 3. 🖼️ **Storyboarding**: Add user swimlanes at top with wireframes
 4. 🟦 **Identify Commands**: Map inputs/buttons to system commands
-5. 🟩 **Identify State**: Define what users/automations need to make decisions
-6. 🏢 **Group Components**: Organize events into component swimlanes (✶)
-7. ⚙️ **Identify Slice Patterns**: Recognize State Change, State View, Automation, Translation
+5. 🟩 **Identify Read-models/State**: Define what users/automations need to make decisions
+6. 📦 **Group Components**: Organize events into component swimlanes (✶)
+7. 🍕 **Identify Slice Patterns**: Recognize State Change, State View, Automation, Translation
+8. 📝 **Define BDD Examples**: For each slice, define GWT/GT acceptance criteria
 
-<span style="font-size: 0.6em">✶ Avoid grouping by noun (a very common mistake), make sure to group by autonomy and have as little dependencies between the components as possible.</span>
+✶ Avoid grouping by noun (a very common mistake), make sure to group by autonomy and have as little dependencies between the components as possible.
 
 ---
 # What is Event Modeling NOT?
