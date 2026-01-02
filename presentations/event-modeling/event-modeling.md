@@ -67,7 +67,8 @@ There are three dimensions of time; future (command), present (read model), past
 
 ---
 <style scoped>
-ol, p { font-size: 0.75em; }
+ol { font-size: 0.85em; }
+p { font-size: 0.6em; }
 </style>
 
 # The Workshop/Process of Event Modeling
