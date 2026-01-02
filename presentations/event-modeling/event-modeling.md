@@ -36,7 +36,7 @@ paginate: false
 
 👆🏻 … that can model ANY information system!
 
-- A workshop format
+- A workshop/process
 
 ---
 # The Five Elements of Event Modeling
@@ -66,7 +66,7 @@ There are three dimensions of time; future (command), present (read model), past
 ✅ **Information Completeness Check** - all data has a command source, is persisted, otherwise it can't be viewed
 
 ---
-# The Workshop Format of Event Modeling
+# The Workshop/Process of Event Modeling
 
 1. 🟧 **Identify Events**: Find businesswise meaningful state changes, i.e. events
 2. 📖 **Create Timeline**: Arrange events chronologically into a story
