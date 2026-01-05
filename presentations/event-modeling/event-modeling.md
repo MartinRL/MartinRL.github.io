@@ -167,6 +167,14 @@ Avoid grouping by noun (a very common mistake); group by autonomy and have as li
 # Step 7: Identify Slice Patterns
 ## Recognize State Change, State View, Automation, Translation
 
+<table style="width: 100%; margin-top: 1rem;">
+<tr>
+  <td style="text-align: center; width: 25%;"><img src="Files/state-change-pattern.png" width="130"></td>
+  <td style="text-align: center; width: 25%;"><img src="Files/state-view-pattern.png" width="130"></td>
+  <td style="text-align: center; width: 25%;"><img src="Files/automation-pattern.png" width="130"></td>
+  <td style="text-align: center; width: 25%;"><img src="Files/translation-pattern.png" width="130"></td>
+</tr>
+</table>
 
 ---
 # Step 8: Define BDD Examples
