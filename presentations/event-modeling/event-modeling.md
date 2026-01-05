@@ -114,7 +114,14 @@ h2 { font-size: 1em; }
 ![bg fit](Files/event-modeling-step-2.jpg)
 
 ---
-# Step 3: Storyboarding
+<style scoped>
+h1 { text-align: right; }
+</style>
+
+# Step 3:         Storyboarding
+
+<br><br><br><br><br><br><br><br><br><br>
+
 ## Add user swimlanes at top with wireframes
 ![bg fit](Files/event-modeling-step-3.jpg)
 
