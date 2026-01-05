@@ -310,3 +310,6 @@ When we extend the system, we typically do not modify existing code if possible.
 # Dynamic Consistency Boundary (DCB)
 
 <!-- https://dcb.events/ -->
+
+---
+# TODO List Pattern (Saga)
