@@ -89,13 +89,46 @@ p { font-size: 0.6em; }
 3. 🖼️ **Storyboarding**: Add user swimlanes at top with wireframes
 4. 🟦 **Identify Commands**: Map inputs/buttons to system commands
 5. 🟩 **Identify Read-models/State**: Define what users/automations need to make decisions
-6. 📦 **Group Components**: Organize events into component swimlanes (✶)
+6. 📦 **Group Components**: Organize events into component swimlanes
 7. 🍕 **Identify Slice Patterns**: Recognize State Change, State View, Automation, Translation
 8. 📝 **Define BDD Examples**: For each slice, define GWT/GT acceptance criteria
 
 <br>
 
-✶ Avoid grouping by noun (a very common mistake); group by autonomy and have as little dependencies between the components as possible.
+---
+# Step 1: Identify Events
+## Find businesswise meaningful state changes, i.e. events
+
+---
+# Step 2: Create Timeline
+## Arrange events chronologically into a story
+
+---
+# Step 3: Storyboarding
+## Add user swimlanes at top with wireframes
+
+---
+# Step 4: Identify Commands
+## Map inputs/buttons to system commands
+
+---
+# Step 5: Identify Read-models/State
+## Define what users/automations need to make decisions
+
+---
+# Step 6: Group Components
+## Organize events into component swimlanes
+
+Avoid grouping by noun (a very common mistake); group by autonomy and have as little dependencies between the components as possible.
+
+---
+# Step 7: Identify Slice Patterns
+## Recognize State Change, State View, Automation, Translation
+
+---
+# Step 8: Define BDD Examples
+## For each slice, define GWT/GT acceptance criteria
+
 
 ---
 # What is Event Modeling NOT? ❌
