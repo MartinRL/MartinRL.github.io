@@ -98,36 +98,44 @@ p { font-size: 0.6em; }
 ---
 # Step 1: Identify Events
 ## Find businesswise meaningful state changes, i.e. events
+![bg fit](Files/event-modeling-step-1.jpg)
 
 ---
 # Step 2: Create Timeline
 ## Arrange events chronologically into a story
+![bg fit](Files/event-modeling-step-2.jpg)
 
 ---
 # Step 3: Storyboarding
 ## Add user swimlanes at top with wireframes
+![bg fit](Files/event-modeling-step-3.jpg)
 
 ---
 # Step 4: Identify Commands
 ## Map inputs/buttons to system commands
+![bg fit](Files/event-modeling-step-4.jpg)
 
 ---
 # Step 5: Identify Read-models/State
 ## Define what users/automations need to make decisions
+![bg fit](Files/event-modeling-step-5.jpg)
 
 ---
 # Step 6: Group Components
 ## Organize events into component swimlanes
+![bg fit](Files/event-modeling-step-6.jpg)
 
 Avoid grouping by noun (a very common mistake); group by autonomy and have as little dependencies between the components as possible.
 
 ---
 # Step 7: Identify Slice Patterns
 ## Recognize State Change, State View, Automation, Translation
+![bg fit](Files/event-modeling-step-7.jpg)
 
 ---
 # Step 8: Define BDD Examples
 ## For each slice, define GWT/GT acceptance criteria
+![bg fit](Files/dilger-gwt-gt.png)
 
 
 ---
