@@ -165,9 +165,14 @@ Avoid grouping by noun (a very common mistake); group by autonomy and have as li
 
 ---
 # Step 7: Identify Slice Patterns
-## Recognize State Change, State View, Automation, Translation
 
 <table style="width: 100%; margin-top: 1rem;">
+<tr>
+  <th style="text-align: center; width: 25%;">State Change</th>
+  <th style="text-align: center; width: 25%;">State View</th>
+  <th style="text-align: center; width: 25%;">Automation</th>
+  <th style="text-align: center; width: 25%;">Translation</th>
+</tr>
 <tr>
   <td style="text-align: center; width: 25%;"><img src="Files/state-change-pattern.png" width="110"></td>
   <td style="text-align: center; width: 25%;"><img src="Files/state-view-pattern.png" width="110"></td>
