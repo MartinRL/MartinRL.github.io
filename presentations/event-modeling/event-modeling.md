@@ -23,9 +23,13 @@ paginate: false
 <!-- "the translation tax" cf. https://bmsdd.com/ -->
 
 ---
-# Why Event Modeling?
+# Why 
+# Event 
+# Modeling?
+## The 
+## Translation
+## Tax
 ![bg fit](Files/bmsdd-translation-tax.png)
-
 
 ---
 # Why Event Modeling?
