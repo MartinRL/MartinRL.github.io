@@ -96,9 +96,14 @@ p { font-size: 0.6em; }
 <br>
 
 ---
+<style scoped>
+h1 { font-size: 1.8em; }
+h2 { font-size: 1em; }
+</style>
+
 # Step 1: Identify Events
 ## Find businesswise meaningful state changes, i.e. events
-![bg fit](Files/event-modeling-step-1.jpg)
+![bg right:60%](Files/event-modeling-step-1.jpg)
 
 ---
 # Step 2: Create Timeline
