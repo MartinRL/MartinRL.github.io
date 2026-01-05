@@ -24,6 +24,11 @@ paginate: false
 
 ---
 # Why Event Modeling?
+![bg fit](Files/bmsdd-translation-tax.png)
+
+
+---
+# Why Event Modeling?
 ![bg fit](Files/flat-cost-curve-event-modeling.png)
 
 <br><br><br><br><br><br><br><br><br>
