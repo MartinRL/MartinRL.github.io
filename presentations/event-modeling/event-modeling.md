@@ -167,7 +167,7 @@ Avoid grouping by noun (a very common mistake); group by autonomy and have as li
 # Step 7: Identify Slice Patterns
 ## Recognize State Change, State View, Automation, Translation
 
-<table style="width: 100%; margin-top: 1rem;">
+<table style="width: 100%; margin-top: 1rem; border-spacing: 2rem 0;">
 <tr>
   <td style="text-align: center; width: 25%;"><img src="Files/state-change-pattern.png" width="130"></td>
   <td style="text-align: center; width: 25%;"><img src="Files/state-view-pattern.png" width="130"></td>
@@ -177,9 +177,17 @@ Avoid grouping by noun (a very common mistake); group by autonomy and have as li
 </table>
 
 ---
+<style scoped>
+h1 { text-align: right; }
+h2 { text-align: right; }
+</style>
+
+![bg fit](Files/dilger-gwt-gt.png)
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
 # Step 8: Define BDD Examples
 ## For each slice, define GWT/GT acceptance criteria
-![bg fit](Files/dilger-gwt-gt.png)
 
 
 ---
