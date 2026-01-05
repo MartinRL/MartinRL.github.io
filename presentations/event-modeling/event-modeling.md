@@ -165,6 +165,13 @@ p { font-size: 0.6em; }
 ---
 ![bg fit](Files/event-modeling_blueprint_large.jpg)
 
+<!-- Adam's OG -->
+
+---
+![bg fit](Files/yves-event-modeling-step-6.jpg)
+
+<!-- Yves' -->
+
 ---
 # Extras
 
