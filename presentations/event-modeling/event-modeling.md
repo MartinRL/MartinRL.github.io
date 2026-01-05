@@ -107,6 +107,9 @@ h2 { font-size: 1em; }
 
 ---
 # Step 2: Create Timeline
+
+<br><br><br><br><br><br><br>
+
 ## Arrange events chronologically into a story
 ![bg fit](Files/event-modeling-step-2.jpg)
 
