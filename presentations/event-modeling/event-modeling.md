@@ -118,7 +118,7 @@ h2 { font-size: 1em; }
 h1 { text-align: right; }
 </style>
 
-# Step 3:         Storyboarding
+# Step 3: Storyboarding
 
 <br><br><br><br><br><br><br><br><br><br>
 
@@ -126,17 +126,38 @@ h1 { text-align: right; }
 ![bg fit](Files/event-modeling-step-3.jpg)
 
 ---
+<style scoped>
+h1 { text-align: right; }
+</style>
+
 # Step 4: Identify Commands
+
+<br><br><br><br><br><br><br><br><br><br>
+
 ## Map inputs/buttons to system commands
 ![bg fit](Files/event-modeling-step-4.jpg)
 
 ---
+<style scoped>
+h1 { text-align: right; }
+</style>
+
 # Step 5: Identify Read-models/State
+
+<br><br><br><br><br><br><br><br><br><br>
+
 ## Define what users/automations need to make decisions
 ![bg fit](Files/event-modeling-step-5.jpg)
 
 ---
+<style scoped>
+h1 { text-align: right; }
+</style>
+
 # Step 6: Group Components
+
+<br><br><br><br><br><br><br><br>
+
 ## Organize events into component swimlanes
 ![bg fit](Files/event-modeling-step-6.jpg)
 
@@ -145,7 +166,7 @@ Avoid grouping by noun (a very common mistake); group by autonomy and have as li
 ---
 # Step 7: Identify Slice Patterns
 ## Recognize State Change, State View, Automation, Translation
-![bg fit](Files/event-modeling-step-7.jpg)
+
 
 ---
 # Step 8: Define BDD Examples
