@@ -151,6 +151,12 @@ p { font-size: 0.6em; }
 - …
 
 ---
+# Examples
+
+---
+![bg fit](Files/event-modeling_blueprint_large.jpg)
+
+---
 # Extras
 
 ---
