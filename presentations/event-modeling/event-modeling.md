@@ -173,7 +173,14 @@ p { font-size: 0.6em; }
 <!-- Yves' -->
 
 ---
+![bg fit](Files/event-modeling_restaurant.jpg)
+
+---
 # Extras
+
+---
+# Anti-Patterns
+<!-- https://www.linkedin.com/posts/martindilger_eventmodeling-activity-7400049747954122753-e-k1/ -->
 
 ---
 # Vertical Slice Architecture (VSA) 🍕 
