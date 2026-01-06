@@ -73,7 +73,7 @@ There are three dimensions of time; future (command), present (read model), past
 
 - 📝 **Given/When/Then (GWT)** - Business rules for State Changes
 - 📋 **Given/Then (GT)** - Projection rules for State Views
-<br>
+## ➕ a Huge Bonus
 ✅ **Information Completeness Check** - all data has a command source, is persisted, otherwise it can't be viewed
 
 ---
