@@ -1,0 +1,13 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# Interactive C# Examples
+
+Welcome to this polyglot notebook! This notebook is designed for exploring C# interactively.
+
+#!csharp
+
+// Start coding here...
