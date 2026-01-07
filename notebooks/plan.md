@@ -35,6 +35,27 @@ Participants will:
 - Architecture overview: Agent Loop + Runtime + MCP + Skills
 - Key insight from Anthropic: "Stop building agents, start building skills"
 
+**"It's that simple" - Architecture Diagram:**
+
+```mermaid
+flowchart LR
+    User["fa:fa-user User"]
+
+    subgraph Agents[" "]
+        direction TB
+        ClaudeCode["fa:fa-terminal Claude Code"]
+        Cursor["fa:fa-cube Cursor"]
+        Copilot["fa:fa-github GitHub Copilot"]
+    end
+
+    Tools["fa:fa-wrench Tools (MCP)"]
+    LLM["fa:fa-brain LLM"]
+
+    User <--> Agents
+    Agents <--> LLM
+    Agents <--> Tools
+```
+
 ---
 
 ### Module 1: MCP Servers (50 min)
