@@ -112,22 +112,13 @@ Alle LLM-værktøjer bevæger sig mod samme mønster:
 - **Cursor** - Composer med multi-file edits
 - **Claude Code** - CLI-baseret agent med fuld autonomi der pt. bærer førertrøjen
 - **Windsurf** - Cascade flows
+- **Codex, Antigravity, Gemini, Grok, Amp, ...**
 
 #!markdown
 
 ## Arkitektur: "It's that simple"
 
 ![Agent Pattern](agent-pattern.png)
-
-## Nøgleindsigt fra Anthropic
-
-> **"Stop building agents, start building skills"**
-
-Hvorfor?
-- Agents er komplekse at bygge og vedligeholde
-- Skills er genanvendelige på tværs af alle agents
-- MCP standardiserer tool-connectivity
-- Fokuser på **domæneviden**, ikke infrastruktur
 
 ---
 
@@ -374,6 +365,16 @@ Korrekt! Exception: Unknown charger: UNKNOWN
 *45 minutter (10 min teori + 35 min øvelse)*
 
 ## Teori: Agent Skills
+
+### Nøgleindsigt fra Anthropic
+
+> **"Stop building agents, start building skills"**
+
+Hvorfor?
+- Agents er komplekse at bygge og vedligeholde
+- Skills er genanvendelige på tværs af alle agents
+- MCP standardiserer tool-connectivity
+- Fokuser på **domæneviden**, ikke infrastruktur
 
 ### Hvad er en Skill?
 
