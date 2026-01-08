@@ -4,13 +4,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is the `notebooks` subdirectory of a GitHub Pages personal site (MartinRL.github.io). It contains Polyglot Notebooks (`.dib` files) for interactive C# experimentation and learning.
+This is the `notebooks` subdirectory of a GitHub Pages personal site (MartinRL.github.io). It contains Polyglot Notebooks (`.dib` files) for interactive C# experimentation and workshops.
 
 Parent repository structure:
 - `/` - Main GitHub Pages site (Jekyll-based)
 - `/presentations/` - Marp presentation materials (see `/presentations/CLAUDE.md`)
 - `/notebooks/` - This directory: Polyglot Notebooks for C# experimentation
 - Various content directories: `/en/`, `/sv/`, `/ContextAnd/`, etc.
+
+## Directory Structure
+
+```
+notebooks/
+├── CLAUDE.md
+├── playground.dib                    # General-purpose C# playground
+└── agents-mcp-skills/               # Workshop: Agents, MCP & Skills
+    ├── agents-mcp-skills.dib        # Main workshop notebook (3.5 hours)
+    ├── agenda.md                    # Calendar invite agenda (Danish)
+    ├── agent-pattern.png            # Architecture diagram
+    ├── github-copilot-icon.png      # Icon asset
+    └── research/                    # Background research materials
+```
 
 ## Technology Stack
 
@@ -20,76 +34,31 @@ Parent repository structure:
 - **Editor**: VS Code with Polyglot Notebooks extension
 - **Version Control**: Git with main branch `master`
 
-## Notebook Files
+## Workshop: Agents, MCP & Skills
 
-Polyglot Notebooks use the `.dib` format (previously `.dotnet-interactive`):
-- **agents-skills-mcp.dib**: Template for exploring agents, skills, and MCP concepts
-- **playground.dib**: General-purpose C# interactive playground
+The main workshop (`agents-mcp-skills/agents-mcp-skills.dib`) covers:
+- **Intro til Polyglot Notebooks** (5 min)
+- **Det agentiske landskab** (15 min) - The 2024-2026 evolution
+- **MCP-servere** (50 min) - Model Context Protocol theory + hands-on
+- **Skills** (45 min) - Agent skills for GitHub Copilot/Claude Code
+- **Byg en Agent** (55 min) - Implementing the agentic loop
+- **Integration** (25 min) - Wiring MCP + Skills + Agent together
 
-Each `.dib` file contains:
-1. Metadata (kernel configuration in `#!meta` blocks)
-2. Markdown cells for documentation (prefixed with `#!markdown`)
-3. Code cells for C# execution (prefixed with `#!csharp`)
+Domain: Fictional EV charging network (ChargeSmart) in Copenhagen.
 
-## Working with Polyglot Notebooks
+## Polyglot Notebook Format
 
-### Opening and Running Notebooks
+Each `.dib` file contains cell types:
+- `#!meta` - Kernel configuration (JSON)
+- `#!markdown` - Documentation cells
+- `#!csharp` - C# code cells (executed in shared kernel session)
 
-```bash
-# Open in VS Code with Polyglot Notebooks extension
-code agents-skills-mcp.dib
+Variables persist across cells within a session.
 
-# The extension handles kernel startup automatically
-```
-
-### Notebook Structure
-
-```
-#!meta
-{"kernelInfo":{"defaultKernelName":"csharp","items":[]}}
-
-#!markdown
-# Notebook Title
-Documentation and explanations
-
-#!csharp
-// C# code cells - execute interactively
-Console.WriteLine("Hello from polyglot notebook");
-```
-
-### Cell Types
-
-- `#!markdown` - Documentation cells (rendered as formatted text)
-- `#!csharp` - C# code cells (executed in .NET Interactive kernel)
-- `#!meta` - Metadata cells (kernel configuration)
-
-## Development Workflow
-
-1. **Edit notebook files**: Modify `.dib` files directly or through VS Code
-2. **Run cells**: Execute individual code cells to test C# snippets
-3. **Add content**: Insert new markdown or code cells as needed
-4. **Commit changes**: Standard git workflow applies
-
-### Git Workflow
+## Git Workflow
 
 ```bash
-# Stage notebook changes
-git add notebooks/*.dib
-
-# Commit (Swedish or English messages are both used)
-git commit -m "feat: add C# LINQ examples to playground notebook"
-
 # Note: git push is handled by user (production deployment decision)
+git add notebooks/**/*.dib
+git commit -m "feat: description"
 ```
-
-## File Patterns
-
-- **Notebook files**: `**/*.dib` (Polyglot Notebook format)
-- **Templates**: Files with "empty" or "playground" in name serve as starting points
-
-## Important Notes
-
-- Polyglot Notebooks support multiple languages but this repository focuses on C#
-- The `.dib` format is text-based and git-friendly (unlike `.ipynb` which can have merge conflicts)
-- Code cells execute in a shared kernel session - variables persist across cells
-- Each notebook maintains its own kernel session when opened
