@@ -55,6 +55,10 @@ Each `.dib` file contains cell types:
 
 Variables persist across cells within a session.
 
+## Important Rules
+
+- **Never delete source files**: When generating images from source files (e.g., `.mmd` → `.png`), always keep the source files. They are crucial for future edits and regeneration.
+
 ## Git Workflow
 
 ```bash
