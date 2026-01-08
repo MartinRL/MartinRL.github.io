@@ -1,0 +1,8 @@
+flowchart LR
+    Claude:::llm --> CC1[Custom connector]:::red --> DB1[(Database)]:::db
+    GPT:::llm --> CC2[Custom connector]:::red --> DB2[(Database)]:::db
+    Gemini:::llm --> CC3[Custom connector]:::red --> DB3[(Database)]:::db
+
+    classDef llm fill:#e1f5fe
+    classDef red fill:#ffcdd2,stroke:#c62828
+    classDef db fill:#fff3e0

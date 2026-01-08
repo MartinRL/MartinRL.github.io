@@ -23,6 +23,9 @@ notebooks/
     ├── agenda.md                    # Calendar invite agenda (Danish)
     ├── agent-pattern.png            # Architecture diagram
     ├── github-copilot-icon.png      # Icon asset
+    ├── images/                      # Mermaid diagrams
+    │   ├── *.mmd                    # Source files
+    │   └── *.svg                    # Rendered (regenerate with npx mermaid-cli)
     └── research/                    # Background research materials
 ```
 
@@ -54,6 +57,15 @@ Each `.dib` file contains cell types:
 - `#!csharp` - C# code cells (executed in shared kernel session)
 
 Variables persist across cells within a session.
+
+## Mermaid Diagrams
+
+Source files (`.mmd`) in `images/` folders are rendered to SVG for display in notebooks.
+
+To regenerate after editing a `.mmd` file:
+```bash
+npx -y @mermaid-js/mermaid-cli -i file.mmd -o file.svg
+```
 
 ## Git Workflow
 
