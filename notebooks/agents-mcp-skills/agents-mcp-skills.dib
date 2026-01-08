@@ -133,11 +133,34 @@ Alle LLM-værktøjer bevæger sig mod samme mønster:
 
 **Problemet:** Hver LLM-integration kræver custom connectors
 
-![MCP Problem - N×M integrations](mcp-problem.png)
+#!mermaid
+
+flowchart LR
+    Claude:::llm --> CC1[Custom connector]:::red --> DB1[(Database)]:::db
+    GPT:::llm --> CC2[Custom connector]:::red --> DB2[(Database)]:::db
+    Gemini:::llm --> CC3[Custom connector]:::red --> DB3[(Database)]:::db
+
+    classDef llm fill:#e1f5fe
+    classDef red fill:#ffcdd2,stroke:#c62828
+    classDef db fill:#fff3e0
+
+#!markdown
 
 **Løsningen:** Én standard protokol
 
-![MCP Solution - standardized protocol](mcp-solution.png)
+#!mermaid
+
+flowchart LR
+    Claude:::llm --> MCP:::green
+    GPT:::llm --> MCP
+    Gemini:::llm --> MCP
+    MCP --> DB[(Database)]:::db
+
+    classDef llm fill:#e1f5fe
+    classDef green fill:#c8e6c9,stroke:#2e7d32
+    classDef db fill:#fff3e0
+
+#!markdown
 
 ### Protokol Basics
 
