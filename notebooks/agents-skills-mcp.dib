@@ -104,21 +104,7 @@ Alle LLM-værktøjer bevæger sig mod samme mønster:
 
 ## Arkitektur: "It's that simple"
 
-```
-┌─────────┐     ┌─────────────────────────┐     ┌─────────┐
-│         │     │        AGENTS           │     │         │
-│  USER   │◄───►│  ┌──────────────────┐  │◄───►│   LLM   │
-│         │     │  │ Claude Code      │  │     │         │
-└─────────┘     │  │ Cursor           │  │     └─────────┘
-                │  │ GitHub Copilot   │  │
-                │  └──────────────────┘  │
-                └───────────┬────────────┘
-                            │
-                            ▼
-                     ┌─────────────┐
-                     │ TOOLS (MCP) │
-                     └─────────────┘
-```
+![Agent Pattern](agent-pattern.png)
 
 ## Nøgleindsigt fra Anthropic
 
