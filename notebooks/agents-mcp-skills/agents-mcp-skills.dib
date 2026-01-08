@@ -133,7 +133,8 @@ Alle LLM-værktøjer bevæger sig mod samme mønster:
 
 **Problemet:** Hver LLM-integration kræver custom connectors
 
-```mermaid
+#!mermaid
+
 flowchart LR
     Claude:::llm --> CC1[Custom connector]:::red --> DB1[(Database)]:::db
     GPT:::llm --> CC2[Custom connector]:::red --> DB2[(Database)]:::db
@@ -142,11 +143,13 @@ flowchart LR
     classDef llm fill:#e1f5fe
     classDef red fill:#ffcdd2,stroke:#c62828
     classDef db fill:#fff3e0
-```
+
+#!markdown
 
 **Løsningen:** Én standard protokol
 
-```mermaid
+#!mermaid
+
 flowchart LR
     Claude:::llm --> MCP:::green
     GPT:::llm --> MCP
@@ -156,7 +159,6 @@ flowchart LR
     classDef llm fill:#e1f5fe
     classDef green fill:#c8e6c9,stroke:#2e7d32
     classDef db fill:#fff3e0
-```
 
 #!markdown
 
