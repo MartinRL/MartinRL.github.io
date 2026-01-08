@@ -44,11 +44,12 @@ En praktisk workshop hvor vi udforsker den nye verden af **agentic software engi
 
 - `.dib` format (tidligere `.dotnet-interactive`)
 - Kører på .NET Interactive kernel
-- Understøtter flere sprog: C#, F#, PowerShell, JavaScript, SQL
+- Understøtter flere sprog: C#, F#, HTML, Mermaid, PowerShell, JavaScript, SQL, KQL
 - Celle-typer:
   - `#!markdown` - Dokumentation (som denne celle)
   - `#!csharp` - C# kode
   - `#!meta` - Kernel konfiguration
+  - …
 
 ## Sådan kører du en celle
 
