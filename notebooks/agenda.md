@@ -8,13 +8,14 @@ En konsulent fra Context& guider jer igennem arkitekturen bag agents, Model Cont
 
 | Tid | Emne |
 |-----|------|
-| 10 min | Intro til Polyglot Notebooks |
+| 5 min | Opsummering fra sidste gang |
+| 5 min | Intro til Polyglot Notebooks |
 | 15 min | Det agentiske landskab – overblik |
-| 50 min | MCP Servers – teori + øvelse |
+| 50 min | MCP-servere – teori + øvelse |
 | 45 min | Skills – teori + øvelse |
 | 15 min | *Pause* |
 | 55 min | Byg en Agent – teori + øvelse |
-| 25 min | Integration – sæt det hele sammen |
+| 25 min | Integration – sæt det hele sammen – teori + øvelse |
 | 5 min | Afrunding |
 
 ## Forberedelse
@@ -22,8 +23,9 @@ En konsulent fra Context& guider jer igennem arkitekturen bag agents, Model Cont
 Installer venligst inden workshoppen:
 
 - VS Code
-- Polyglot Notebooks extension (søg "Polyglot Notebooks" i Extensions)
+- Polyglot Notebooks extension (men .NET Extension Pack er nemmest)
 - .NET 8 SDK eller nyere
+- GitHub Copiliot (NB. Ikke påkrævet.)
 
 ## Domæne
 
