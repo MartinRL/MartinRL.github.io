@@ -28,7 +28,16 @@ En praktisk workshop hvor vi udforsker den nye verden af **agentic software engi
 
 #!markdown
 
-# Warm-up: Polyglot Notebooks 101
+# Opsummering fra sidste gang
+*5 minutter*
+
+<!-- TODO: Martin udfylder dette afsnit med recap fra forrige session -->
+
+---
+
+#!markdown
+
+# Intro til Polyglot Notebooks
 *5 minutter*
 
 ## Hvad er en Polyglot Notebook?
@@ -82,7 +91,7 @@ Console.WriteLine($"{chargerName} leverer {powerOutput} kW");
 
 #!markdown
 
-# Opening: Det Agentiske Landskab
+# Det agentiske landskab – overblik
 *15 minutter*
 
 ## Fra Autocomplete til Agents: 2024-2026
@@ -121,7 +130,7 @@ Hvorfor?
 
 #!markdown
 
-# Module 1: MCP Servers
+# MCP-servere – teori + øvelse
 *50 minutter (15 min teori + 35 min øvelse)*
 
 ## Teori: Model Context Protocol
@@ -358,7 +367,7 @@ Korrekt! Exception: Unknown charger: UNKNOWN
 
 #!markdown
 
-# Module 2: Skills
+# Skills – teori + øvelse
 *45 minutter (10 min teori + 35 min øvelse)*
 
 ## Teori: Agent Skills
@@ -642,7 +651,7 @@ Du har nu:
 
 #!markdown
 
-# Module 3: Byg en Agent
+# Byg en Agent – teori + øvelse
 *55 minutter (15 min teori + 40 min øvelse)*
 
 ## Teori: The Agentic Loop
@@ -1041,7 +1050,7 @@ Du skulle se agenten:
 
 #!markdown
 
-# Module 4: Integration
+# Integration – sæt det hele sammen – teori + øvelse
 *25 minutter (5 min teori + 20 min øvelse)*
 
 ## Teori: Connecting the Pieces
@@ -1233,7 +1242,7 @@ Den enhanced agent skulle nu:
 
 #!markdown
 
-# Closing
+# Afrunding
 *5 minutter*
 
 ## Recap
