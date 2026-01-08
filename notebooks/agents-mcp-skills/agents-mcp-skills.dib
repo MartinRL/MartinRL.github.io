@@ -112,7 +112,7 @@ Alle LLM-værktøjer bevæger sig mod samme mønster:
 - **Cursor** - Composer med multi-file edits
 - **Claude Code** - CLI-baseret agent med fuld autonomi der pt. bærer førertrøjen
 - **Windsurf** - Cascade flows
-- **Codex, Antigravity, Gemini, Grok, Amp, ...**
+- **Codex, Antigravity, Kiro, Gemini, Grok, Amp, ...**
 
 #!markdown
 
@@ -132,17 +132,30 @@ Alle LLM-værktøjer bevæger sig mod samme mønster:
 ### Hvad løser MCP?
 
 **Problemet:** Hver LLM-integration kræver custom connectors
-```
-Claude ──► Custom connector ──► Database
-GPT ──► Custom connector ──► Database
-Gemini ──► Custom connector ──► Database
+
+```mermaid
+flowchart LR
+    Claude:::llm --> CC1[Custom connector]:::red --> DB1[(Database)]:::db
+    GPT:::llm --> CC2[Custom connector]:::red --> DB2[(Database)]:::db
+    Gemini:::llm --> CC3[Custom connector]:::red --> DB3[(Database)]:::db
+
+    classDef llm fill:#e1f5fe
+    classDef red fill:#ffcdd2,stroke:#c62828
+    classDef db fill:#fff3e0
 ```
 
 **Løsningen:** Én standard protokol
-```
-Claude ─┐
-GPT ────┼──► MCP ──► Database
-Gemini ─┘
+
+```mermaid
+flowchart LR
+    Claude:::llm --> MCP:::green
+    GPT:::llm --> MCP
+    Gemini:::llm --> MCP
+    MCP --> DB[(Database)]:::db
+
+    classDef llm fill:#e1f5fe
+    classDef green fill:#c8e6c9,stroke:#2e7d32
+    classDef db fill:#fff3e0
 ```
 
 #!markdown
