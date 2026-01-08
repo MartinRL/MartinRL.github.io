@@ -97,18 +97,20 @@ Console.WriteLine($"{chargerName} leverer {powerOutput} kW");
 
 ## Fra Autocomplete til Agents: 2024-2026
 
-```
-2024: Copilot autocomplete    →  "Her er næste linje"
-2025: Chat + inline edit      →  "Lad mig rette denne funktion"
-2026: Agentic SWE             →  "Jeg implementerer hele featuren"
-```
+
+**2024**: Copilot autocomplete    →  "Her er næste linje"
+
+**2025**: Chat + inline edit      →  "Lad mig rette denne funktion"
+
+**2026**: Agentic SWE             →  "Jeg implementerer hele featuren"
+
 
 ## Konvergensen: Kode som Universelt Interface
 
 Alle LLM-værktøjer bevæger sig mod samme mønster:
-- **GitHub Copilot** - Tilføjer MCP support, agent mode
+- **GitHub Copilot** - Tilføjer MCP support, agent mode, skills
 - **Cursor** - Composer med multi-file edits
-- **Claude Code** - CLI-baseret agent med fuld autonomi
+- **Claude Code** - CLI-baseret agent med fuld autonomi der pt. bærer førertrøjen
 - **Windsurf** - Cascade flows
 
 #!markdown
