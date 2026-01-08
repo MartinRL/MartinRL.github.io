@@ -1,6 +1,6 @@
 #!meta
 
-{"kernelInfo":{"defaultKernelName":"csharp","items":[]}}
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","cs"]},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
 
 #!markdown
 
@@ -14,21 +14,22 @@ En praktisk workshop hvor vi udforsker den nye verden af **agentic software engi
 
 | Tid | Emne |
 |-----|------|
-| 10 min | Warm-up: Polyglot Notebooks 101 |
-| 15 min | Opening: Det agentiske landskab |
-| 50 min | Module 1: MCP Servers |
-| 45 min | Module 2: Skills |
+| 5 min | Opsummering fra sidste gang |
+| 5 min | Intro til Polyglot Notebooks |
+| 15 min | Det agentiske landskab – overblik |
+| 50 min | MCP-servere – teori + øvelse |
+| 45 min | Skills – teori + øvelse |
 | 15 min | *Pause* |
-| 55 min | Module 3: Byg en Agent |
-| 25 min | Module 4: Integration |
-| 5 min | Closing |
+| 55 min | Byg en Agent – teori + øvelse |
+| 25 min | Integration – sæt det hele sammen – teori + øvelse |
+| 5 min | Afrunding |
 
 ---
 
 #!markdown
 
 # Warm-up: Polyglot Notebooks 101
-*10 minutter*
+*5 minutter*
 
 ## Hvad er en Polyglot Notebook?
 
