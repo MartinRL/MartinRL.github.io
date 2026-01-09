@@ -95,28 +95,81 @@ Console.WriteLine($"{chargerName} leverer {powerOutput} kW");
 # Det agentiske landskab – overblik
 *15 minutter*
 
-## Fra Autocomplete til Agents: 2024-2026
+## Hvor vi er nu (januar 2026)
 
+| Metrik | Tal |
+|--------|-----|
+| AI-genereret/assisteret kode | **41%** af al kode |
+| Udviklere der bruger AI ugentligt | **65%** |
+| Udviklere med 3+ AI-værktøjer | **59%** |
+| AI-kode med sikkerhedssårbarheder | **48%** |
 
-**2024**: Copilot autocomplete    →  "Her er næste linje"
+> *"Vi er forbi kodegenerering som flaskehalsen. Udfordringen nu er klarhed og tillid."*
+> — Tariq Shaukat, Sonar CEO ([McKinsey Interview](https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/how-ai-is-shaking-up-coding-interview-with-sonar-ceo-tariq-shaukat))
 
-**2025**: Chat + inline edit      →  "Lad mig rette denne funktion"
+**Startups** bevæger sig hurtigst. Store virksomheder tester stadig med PoC-projekter.
 
-**2026**: Agentic SWE             →  "Jeg implementerer hele featuren"
+## Konvergensen: Alle værktøjer går samme vej
 
-
-## Konvergensen: Kode som Universelt Interface
-
-Alle LLM-værktøjer bevæger sig mod samme mønster:
-- **GitHub Copilot** - Tilføjer MCP support, agent mode, skills
+- **GitHub Copilot** - MCP support, agent mode, skills
 - **Cursor** - Composer med multi-file edits
-- **Claude Code** - CLI-baseret agent med fuld autonomi der pt. bærer førertrøjen
+- **Claude Code** - CLI-baseret agent med fuld autonomi
 - **Windsurf** - Cascade flows
 - **Codex, Antigravity, Kiro, Gemini, Grok, Amp, ...**
 
 #!markdown
 
-## Arkitektur: "It's that simple"
+## Hvorfor kan LLM'er kode nu?
+
+**Kode har indbygget feedback.** Til forskel fra "god tekst" kan vi objektivt måle om kode virker:
+- Kompilerer det? ✓/✗
+- Består tests? ✓/✗
+- Løser det opgaven? ✓/✗
+
+Dette muliggør **RLVR** (Reinforcement Learning with Verifiable Rewards):
+
+![AI Træningsloop](images/ai-training-loop.svg)
+
+**Resultat:** "Extended thinking" — modeller der tænker før de svarer (o1, o3, Claude thinking mode)
+
+#!markdown
+
+## Hvordan måler vi? (SWE-bench, METR)
+
+### SWE-bench: Rigtige GitHub issues
+| Benchmark | Hvad det måler | Bedste resultat (jan 2026) |
+|-----------|----------------|----------------------------|
+| SWE-bench Verified | Løs rigtige GitHub issues | Claude Opus 4.5: **80.9%** |
+| SWE-bench Pro | Sværere, usete repositories | **~17-23%** |
+
+### METR: Hvor lang tid kan AI arbejde selvstændigt?
+
+![METR Tidslinje](images/metr-timeline.svg)
+
+Tid-horisonten **fordobles hver 7. måned**. Hvis trenden fortsætter: ugelange opgaver inden 2028.
+
+### Men pas på: Benchmark ≠ virkelighed
+
+METR-studie (juli 2025):
+- Erfarne udviklere *troede* de var **20% hurtigere** med AI
+- Objektive tests viste de var **19% langsommere**
+
+#!markdown
+
+## Den virkelige udfordring: Mindset-skiftet
+
+> *"Productivity afhænger lige så meget af mindset og samarbejde som af værktøjer og teknologi."*
+> — McKinsey
+
+**"Code trust bottleneck"**: AI genererer kode hurtigt, men mennesker skal stadig verificere alt.
+
+**48%** af AI-genereret kode har sikkerhedssårbarheder. *"AI er bogstavelig, ikke kreativ — arkitektur og design betyder mere end nogensinde."*
+
+**Stanford-studie**: 20% fald i ansættelser af junior-udviklere (22-25 år) siden 2022.
+
+Succesfulde teams: *"Behandler hver sprint som en chance for at eksperimentere og lære."*
+
+## Arkitekturen: "It's that simple"
 
 ![Agent Pattern](agent-pattern.png)
 

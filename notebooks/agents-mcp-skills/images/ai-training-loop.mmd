@@ -1,0 +1,15 @@
+flowchart LR
+    subgraph Traditionel["Traditionel LLM-træning"]
+        A1[Tekst] --> B1[Model] --> C1[Output]
+        C1 -.-> D1[Menneske bedømmer]
+        D1 -.-> B1
+    end
+
+    subgraph RLVR["RLVR: Kode-træning"]
+        A2[Kode] --> B2[Model] --> C2[Output]
+        C2 --> D2{Compiler/Tests}
+        D2 -->|Fejl/Succes| B2
+    end
+
+    style D2 fill:#c8e6c9,stroke:#2e7d32
+    style D1 fill:#fff3e0,stroke:#f57c00
