@@ -295,6 +295,18 @@ When we extend the system, we typically do not modify existing code if possible.
 ---
 # «Decider»
 
+A minimal **functional pattern** by Jérémie Chassaing that replaces the mutable DDD Aggregate with three pure functions:
+
+> **decide**(command, state) → events
+> **evolve**(state, event) → state'
+> **initialState** → state
+
+![bg right:45% fit](Files/decider-pattern.svg)
+
+Maps directly to Event Modeling's **State Change** pattern and to **Given/When/Then** testing (state = given, command = when, events = then).
+
+<!-- https://thinkbeforecoding.com/post/2021/12/17/functional-event-sourcing-decider -->
+
 ---
 # Event Modeling Traditional Systems
 

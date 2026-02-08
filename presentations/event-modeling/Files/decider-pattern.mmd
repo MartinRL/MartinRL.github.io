@@ -1,0 +1,18 @@
+flowchart LR
+    C[Command] --> D{decide}
+    S[State] --> D
+    D --> E[Event *]
+    E --> EV{evolve}
+    S2[State] --> EV
+    EV --> S3[State']
+    S3 -.->|becomes current| S
+
+    classDef cmd fill:#FFD6A5,stroke:#E8871E
+    classDef evt fill:#FFEAA7,stroke:#FDCB6E
+    classDef state fill:#DFE6E9,stroke:#636E72
+    classDef fn fill:#A29BFE,stroke:#6C5CE7,color:#fff
+
+    class C cmd
+    class E evt
+    class S,S2,S3 state
+    class D,EV fn
