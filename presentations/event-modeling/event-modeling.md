@@ -309,6 +309,16 @@ When we extend the system, we typically do not modify existing code if possible.
 ---
 # Dynamic Consistency Boundary (DCB)
 
+Aggregates enforce **fixed** transactional boundaries — cross-aggregate invariants (e.g., "a student can't join more than 10 courses") require sagas or eventual consistency. DCB flips this:
+
+> The consistency boundary should be **dynamic**, determined by the operation's query at runtime — not hardwired into stream structure.
+
+**How it works:** Events are **tagged** (e.g., `student:s1`, `course:c1`). A **Decision Model** composes projections filtered by those tags. Writing uses **conditional append** — optimistic locking on the query result, not on a stream revision.
+
+**Key benefit:** One event can enforce constraints across multiple entities atomically — no sagas, no duplicate events.
+
+*Sara Pellegrini ("Killing the Aggregate") & Bastian Waidelich*
+
 <!-- https://dcb.events/ -->
 
 ---
