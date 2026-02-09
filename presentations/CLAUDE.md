@@ -170,3 +170,4 @@ This directory is part of a larger GitHub Pages site:
 - Images should be optimized before committing (presentations can become large)
 - Test presentations in both presenter and standard view modes
 - After each change to a marp presentation, regenerate the html version of the presentation, but DO NOT open the browser. Rather, assume that the user has it open in the browser (with the pertinent slide # in addition)
+- **Auto-regenerate HTML**: Whenever changes are made to a Marp `.md` source file, always regenerate the corresponding `index.html` before finishing. Use: `export PATH="/c/Program Files/nodejs:$PATH" && npx --yes @marp-team/marp-cli <source.md> -o <index.html>`
