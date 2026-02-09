@@ -278,47 +278,6 @@ h2 { text-align: right; }
 # Extras
 
 ---
-# Anti-Patterns
-
-> "Engineers are doomed to abstract. We love abstraction. It's in our DNA. Event modeling requires the ONE thing we hate: **NO abstraction**."
-
-Four recurring visual shapes Martin Dilger sees in broken models:
-**Left Chair** · **Right Chair** · **Bed** · **Book Shelve**
-
-All stem from baking branching, assumptions, or implementation decisions into the model — instead of documenting what actually happens, step by step.
-
-<!-- https://www.linkedin.com/posts/martindilger_eventmodeling-activity-7400049747954122753-e-k1/
-     https://www.linkedin.com/pulse/four-shapes-reveal-youre-overcomplicating-event-modeling-dilger-hlcff/ -->
-
----
-## Left Chair
-
-![bg right fit](Files/anti-pattern-left-chair.jpg)
-
-One screen, one command branching into many events — baking **if/else logic** into the model.
-
----
-## Right Chair
-
-![bg right fit](Files/anti-pattern-right-chair.jpg)
-
-Many events funnelling into a single read model and screen — cramming **all state** into one view.
-
----
-## The Bed
-
-![bg right fit](Files/anti-pattern-bed.jpg)
-
-One screen branching into many commands, each with its own event — modelling **every possible action** instead of the actual flow.
-
----
-## The Book Shelve
-
-![bg right fit](Files/anti-pattern-book-shelve.jpg)
-
-A single narrow vertical column — a **CRUD-style** sequence with no horizontal flow across time.
-
----
 # Vertical Slice Architecture (VSA) 🍕 
 
 The term “Vertical Slice Architecture” was mainly coined by Jimmy Bogard in a series of articles around 2019. The main statement is: 
@@ -380,3 +339,44 @@ Aggregates enforce **fixed** transactional boundaries — cross-aggregate invari
 
 ---
 # TODO List Pattern (Saga)
+
+---
+# Anti-Patterns
+
+> "Engineers are doomed to abstract. We love abstraction. It's in our DNA. Event modeling requires the ONE thing we hate: **NO abstraction**."
+
+Four recurring visual shapes Martin Dilger sees in broken models:
+**Left Chair** · **Right Chair** · **Bed** · **Book Shelve**
+
+All stem from baking branching, assumptions, or implementation decisions into the model — instead of documenting what actually happens, step by step.
+
+<!-- https://www.linkedin.com/posts/martindilger_eventmodeling-activity-7400049747954122753-e-k1/
+     https://www.linkedin.com/pulse/four-shapes-reveal-youre-overcomplicating-event-modeling-dilger-hlcff/ -->
+
+---
+## Left Chair
+
+![bg right fit](Files/anti-pattern-left-chair.jpg)
+
+One screen, one command branching into many events — baking **if/else logic** into the model.
+
+---
+## Right Chair
+
+![bg right fit](Files/anti-pattern-right-chair.jpg)
+
+Many events funnelling into a single read model and screen — cramming **all state** into one view.
+
+---
+## The Bed
+
+![bg right fit](Files/anti-pattern-bed.jpg)
+
+One screen branching into many commands, each with its own event — modelling **every possible action** instead of the actual flow.
+
+---
+## The Book Shelve
+
+![bg right fit](Files/anti-pattern-book-shelve.jpg)
+
+A single narrow vertical column — a **CRUD-style** sequence with no horizontal flow across time.
