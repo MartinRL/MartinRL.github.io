@@ -301,7 +301,7 @@ A minimal **functional pattern** by Jérémie Chassaing that replaces the mutabl
 > **evolve**(state, event) → state'
 > **initialState** → state
 
-![bg right:45% fit](Files/decider-pattern.svg)
+![bg right:45% fit](Files/decider-miro.png)
 
 Maps directly to Event Modeling's **State Change** pattern and to **Given/When/Then** testing (state = given, command = when, events = then).
 
