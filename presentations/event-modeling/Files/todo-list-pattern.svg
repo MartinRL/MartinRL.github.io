@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 500" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5a6a7a"/>
+    </marker>
+  </defs>
+
+  <!-- 1. Event -->
+  <rect x="180" y="20" rx="4" ry="4" width="160" height="44" fill="#fed7aa" stroke="#dd6b20" stroke-width="2"/>
+  <text x="260" y="47" text-anchor="middle" font-size="14" font-weight="bold" fill="#7b341e">Event</text>
+
+  <!-- Arrow down -->
+  <line x1="260" y1="64" x2="260" y2="88" stroke="#5a6a7a" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 2. TODO List read model -->
+  <rect x="150" y="92" rx="8" ry="8" width="220" height="56" fill="#c6f6d5" stroke="#38a169" stroke-width="2"/>
+  <text x="260" y="116" text-anchor="middle" font-size="14" font-weight="bold" fill="#276749">TODO List</text>
+  <text x="260" y="136" text-anchor="middle" font-size="11" fill="#276749">read model (inline projection)</text>
+
+  <!-- Arrow down -->
+  <line x1="260" y1="148" x2="260" y2="172" stroke="#5a6a7a" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 3. Processor -->
+  <rect x="160" y="176" rx="20" ry="20" width="200" height="50" fill="#bee3f8" stroke="#3182ce" stroke-width="2"/>
+  <text x="260" y="206" text-anchor="middle" font-size="14" font-weight="bold" fill="#2a4365">Processor</text>
+
+  <!-- polling label -->
+  <text x="372" y="196" font-size="11" fill="#5a6a7a" font-style="italic">polls periodically</text>
+  <!-- curved arrow from processor back to TODO list -->
+  <path d="M360,190 Q400,190 400,140 Q400,110 370,110" fill="none" stroke="#5a6a7a" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+
+  <!-- Arrow down -->
+  <line x1="260" y1="226" x2="260" y2="250" stroke="#5a6a7a" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 4. Command -->
+  <rect x="180" y="254" rx="4" ry="4" width="160" height="44" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="260" y="281" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e3a5f">Command</text>
+
+  <!-- Arrow down -->
+  <line x1="260" y1="298" x2="260" y2="322" stroke="#5a6a7a" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 5. Decision Model -->
+  <rect x="150" y="326" rx="8" ry="8" width="220" height="50" fill="#e9d8fd" stroke="#805ad5" stroke-width="2"/>
+  <text x="260" y="347" text-anchor="middle" font-size="14" font-weight="bold" fill="#44337a">Decision Model</text>
+  <text x="260" y="366" text-anchor="middle" font-size="11" fill="#44337a">business rules &amp; invariants</text>
+
+  <!-- Arrow down -->
+  <line x1="260" y1="376" x2="260" y2="400" stroke="#5a6a7a" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 6. Result Event -->
+  <rect x="180" y="404" rx="4" ry="4" width="160" height="44" fill="#fed7aa" stroke="#dd6b20" stroke-width="2"/>
+  <text x="260" y="431" text-anchor="middle" font-size="14" font-weight="bold" fill="#7b341e">Result Event</text>
+
+  <!-- Loop-back arrow: Result Event → TODO List (checked off) -->
+  <path d="M180,426 L50,426 Q30,426 30,406 L30,120 Q30,100 50,100 L146,100"
+        fill="none" stroke="#5a6a7a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <text x="22" y="275" text-anchor="middle" font-size="11" fill="#5a6a7a" font-style="italic" transform="rotate(-90 22 275)">checked off</text>
+
+  <!-- Legend -->
+  <text x="260" y="480" text-anchor="middle" font-size="11" fill="#718096">orange = events · blue = commands · green = read model · purple = decision</text>
+</svg>

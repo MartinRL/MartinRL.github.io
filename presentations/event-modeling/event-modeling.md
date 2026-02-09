@@ -363,6 +363,16 @@ Aggregates enforce **fixed** transactional boundaries — cross-aggregate invari
 ---
 # TODO List Pattern (Saga)
 
+![bg right:40% fit](Files/todo-list-pattern.svg)
+
+An event updates an **inline-projected read model** — a TODO list of pending work. A **processor** polls the list, translates each item into a command, and sends it through the decision model. The result event checks the item off.
+
+State is **explicit and queryable** — connect a dashboard to the TODO list and you see every pending process. No hidden saga state machines.
+
+> "Ever since I use this pattern I don't have to bother with Sagas anymore."
+
+<!-- https://www.linkedin.com/pulse/learning-event-modeling-processor-todo-list-pattern-martin-major-8b26c/ -->
+
 ---
 # Anti-Patterns
 
