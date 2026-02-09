@@ -315,9 +315,22 @@ Replace insert/read/update operations on tables where event-sourced systems use 
 <!-- https://eventmodeling.org/posts/event-modeling-traditional-systems/ -->
 
 ---
-# The BMSDD Process from Spec. to Impl.
+## BFMSDD
 
-<!-- https://bmsdd.com/#about -->
+![bg right:42% fit](Files/bfmsdd-process.svg)
+
+**Business Flows Modelling Spec-Driven Development** — iterative loop from event model to running code:
+
+1. **Model** flows (facts, decisions, rules, actions, screens, actors)
+2. **Derive** specs (OpenAPI, AsyncAPI, JSON Schema)
+3. **Validate** specs against the model
+4. **Generate** boilerplate — focus on business logic
+5. **Decouple** via vertical slices & DRA
+6. **Implement** in functional core / imperative shell
+
+Extends Event Modeling by **explicitly modelling business rules and decisions** inside each slice — success and failure paths in the same flow.
+
+<!-- https://bfmsdd.com/ -->
 
 ---
 # Functional Core, Imperative Shell
@@ -326,9 +339,9 @@ Replace insert/read/update operations on tables where event-sourced systems use 
 
 Architecture pattern coined by Gary Bernhardt (2012): push **all decisions** into pure functions at the centre; push **all side effects** to a thin outer shell.
 
-The core is easy to test (values in → values out), the shell is easy to verify (thin wiring, few branches).
+**decide** and **evolve** live in the functional core — pure functions that map directly to **Given/When/Then**: given a state, when a command arrives, then these events are produced. No mocks, no I/O — just values in, values out.
 
-Maps naturally to Event Modeling: **decide** and **evolve** live in the core; HTTP, persistence, and messaging belong to the shell.
+HTTP, persistence, and messaging belong to the imperative shell — thin wiring that is easy to verify.
 
 <!-- https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell -->
 
