@@ -299,7 +299,6 @@ A minimal **functional pattern** by Jérémie Chassaing that replaces the mutabl
 
 > **decide**(command, state) → events
 > **evolve**(state, event) → state'
-> **initialState** → state
 
 ![bg right:45% fit](Files/decider-miro.png)
 
@@ -309,6 +308,14 @@ Maps directly to Event Modeling's **State Change** pattern and to **Given/When/T
 
 ---
 # Event Modeling Traditional Systems
+
+Events don't need to be **stored** to be useful — they remain the most effective way to describe what a system does through **example workflows**.
+
+![bg right:55% fit](Files/event-modeling-traditional-system.jpg)
+
+Replace insert/read/update operations on tables where event-sourced systems use an event store. Same blueprint, same flat cost curve — applied to **CRUD** and legacy systems.
+
+<!-- https://eventmodeling.org/posts/event-modeling-traditional-systems/ -->
 
 ---
 # The BMSDD Process from Spec. to Impl.
