@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Imperative Shell (outer) -->
+  <rect x="40" y="40" rx="24" ry="24" width="440" height="400" fill="#e8edf3" stroke="#7b8da0" stroke-width="2.5"/>
+  <text x="260" y="80" text-anchor="middle" font-size="20" font-weight="bold" fill="#4a5568">Imperative Shell</text>
+
+  <!-- Functional Core (inner) -->
+  <ellipse cx="260" cy="260" rx="150" ry="130" fill="#d4edda" stroke="#38a169" stroke-width="2.5"/>
+  <text x="260" y="240" text-anchor="middle" font-size="20" font-weight="bold" fill="#276749">Functional Core</text>
+  <text x="260" y="268" text-anchor="middle" font-size="14" fill="#276749">pure functions</text>
+  <text x="260" y="288" text-anchor="middle" font-size="14" fill="#276749">no side effects</text>
+  <text x="260" y="308" text-anchor="middle" font-size="14" fill="#276749">immutable data</text>
+
+  <!-- Side-effect labels around the shell -->
+  <!-- Top -->
+  <text x="260" y="118" text-anchor="middle" font-size="13" fill="#4a5568">HTTP · API calls</text>
+
+  <!-- Left -->
+  <text x="80" y="200" text-anchor="middle" font-size="13" fill="#4a5568" transform="rotate(-90 80 200)">Database · I/O</text>
+
+  <!-- Right -->
+  <text x="440" y="260" text-anchor="middle" font-size="13" fill="#4a5568" transform="rotate(90 440 260)">File system · Clock</text>
+
+  <!-- Bottom -->
+  <text x="260" y="420" text-anchor="middle" font-size="13" fill="#4a5568">Messaging · Logging</text>
+
+  <!-- Arrows: shell → core -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7b8da0"/>
+    </marker>
+  </defs>
+
+  <!-- Top arrow -->
+  <line x1="260" y1="126" x2="260" y2="135" stroke="#7b8da0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Bottom arrow -->
+  <line x1="260" y1="395" x2="260" y2="386" stroke="#7b8da0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Left arrow -->
+  <line x1="105" y1="260" x2="115" y2="260" stroke="#7b8da0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Right arrow -->
+  <line x1="415" y1="260" x2="405" y2="260" stroke="#7b8da0" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

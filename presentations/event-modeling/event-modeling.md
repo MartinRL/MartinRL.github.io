@@ -322,6 +322,16 @@ Replace insert/read/update operations on tables where event-sourced systems use 
 ---
 # Functional Core, Imperative Shell
 
+![bg right:45% fit](Files/functional-core-imperative-shell.svg)
+
+Architecture pattern coined by Gary Bernhardt (2012): push **all decisions** into pure functions at the centre; push **all side effects** to a thin outer shell.
+
+The core is easy to test (values in → values out), the shell is easy to verify (thin wiring, few branches).
+
+Maps naturally to Event Modeling: **decide** and **evolve** live in the core; HTTP, persistence, and messaging belong to the shell.
+
+<!-- https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell -->
+
 ---
 # Dynamic Consistency Boundary (DCB)
 
