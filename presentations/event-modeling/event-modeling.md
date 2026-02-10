@@ -392,6 +392,27 @@ State is **explicit and queryable** — connect a dashboard to the TODO list and
 <!-- https://www.linkedin.com/pulse/learning-event-modeling-processor-todo-list-pattern-martin-major-8b26c/ -->
 
 ---
+# Spec as Code (emlang)
+
+![bg right:42% fit](Files/spec-as-code-emlang.svg)
+
+**IaC moved infra from manual servers to declarative YAML** (Terraform, K8s) — version-controlled, diffable, the single source of truth.
+
+**emlang does the same for the software itself.** A YAML DSL where slices carry triggers, commands, events, views, exceptions — and **embedded Given/When/Then tests** that make the spec self-verifying.
+
+From one spec, everything radiates:
+
+- **UX/Design** — screens and views defined in-line
+- **Architecture** — slices map to vertical-slice code
+- **Forecasting** — slices are countable, uniform units of work
+- **Collaboration** — text-based, diffable, PR-reviewable
+- **AI-native** — structured YAML is ideal LLM context
+
+`lint` catches structural issues; `diagram` renders HTML; `repl` gives a live preview.
+
+<!-- https://emlang-project.github.io/ -->
+
+---
 # Anti-Patterns
 
 > "Engineers are doomed to abstract. We love abstraction. It's in our DNA. Event modeling requires the ONE thing we hate: **NO abstraction**."
