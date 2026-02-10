@@ -278,7 +278,25 @@ h2 { text-align: right; }
 # Extras
 
 ---
-# Vertical Slice Architecture (VSA) 🍕 
+# Continuous Forecasting 📊
+
+![bg right:45% fit](Files/continuous-forecasting.svg)
+
+Event Model slices follow the same **4 structural patterns** — producing naturally **right-sized work items** (Daniel Vacanti's key concept for flow-based predictability).
+
+Right-sized items yield **stable throughput** — the ideal input for **Monte Carlo simulations** (Troy Magennis): sample historical throughput, simulate 500+ futures, report confidence levels.
+
+> "When will we be done?" → 85% by date Y
+> "When do we need to start to finish by X?" → Start by date Z at 85%
+
+No story points. No planning poker. **Count slices, run Monte Carlo simulation.** A huge organizational maturity level — unlocked by the Event Model itself.
+
+<!-- Vacanti: "Actionable Agile Metrics for Predictability" (2015), "When Will It Be Done?" (2020)
+     Magennis: "Forecasting and Simulating Software Development Projects", Focused Objective Throughput Forecaster
+     Right-sizing outperforms CD3/WSJF by 182% as prioritization strategy (ProKanban research) -->
+
+---
+# Vertical Slice Architecture (VSA) 🍕
 
 The term “Vertical Slice Architecture” was mainly coined by Jimmy Bogard in a series of articles around 2019. The main statement is: 
 > Minimize coupling between slices, and maximize coupling within a slice.
