@@ -398,7 +398,7 @@ State is **explicit and queryable** — connect a dashboard to the TODO list and
 
 **IaC moved infra from manual servers to declarative YAML** (Terraform, K8s) — version-controlled, diffable, the single source of truth.
 
-**emlang does the same for the software itself.** A YAML DSL where slices carry triggers, commands, events, views, exceptions — and **embedded Given/When/Then tests** that make the spec self-verifying.
+**emlang does the same for the software itself.** A YAML DSL where slices carry triggers, commands, events, views, exceptions — and **embedded Given/When/Then tests** that make the spec self-verifying. SDD (specification-driven development on steroids) 🤖🚀
 
 From one spec, everything radiates:
 
