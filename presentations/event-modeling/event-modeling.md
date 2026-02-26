@@ -328,7 +328,7 @@ Events don't need to be **stored** to be useful — they remain the most effecti
 
 ![bg right:55% fit](Files/event-modeling-traditional-system.jpg)
 
-Replace insert/read/update operations on tables where event-sourced systems use an event store. Same blueprint, same flat cost curve — applied to **CRUD** and legacy systems.
+Replace insert/read/update operations on tables where event-sourced systems use an event store. Same blueprint, but not the same slice coherence/autonomy, thus not the same flat cost curve — applied to **CRUD** and legacy systems.
 
 <!-- https://eventmodeling.org/posts/event-modeling-traditional-systems/ -->
 
