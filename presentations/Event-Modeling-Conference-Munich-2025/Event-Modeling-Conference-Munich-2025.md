@@ -498,6 +498,6 @@ p { font-size: 0.85em; margin: 0.3em 0; }
 
 <style scoped>
 section {
-  background-color: #f6e4c2;
+  background-color: #ebe2c8;
 }
 </style>
