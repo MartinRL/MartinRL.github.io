@@ -494,7 +494,7 @@ p { font-size: 0.85em; margin: 0.3em 0; }
 
 <!-- provocations, food for thought, idea generators, … -->
 ---
-![bg fit](../Files/chatgpt-event-model-sun.png)
+![bg fit](Files/chatgpt-event-model-sun.png)
 
 <style scoped>
 section {
