@@ -4,6 +4,10 @@
 
 ---
 
+![Software Civil Engineering: From Craft to Discipline](civil-software-engineerin-transformation.png)
+
+---
+
 > **Thesis:** The transition to agentic software engineering is structurally impossible without first transforming software development from a craft tradition into a formal engineering discipline. This transformation mirrors the historical professionalization of civil engineering and requires the same foundational elements: formal specification, material science, simulation, verification, and institutional accountability. Event Modeling, extended with operational and policy constraints and operationalized through a Terraform-analogous lifecycle, provides the viable path.
 
 ---
