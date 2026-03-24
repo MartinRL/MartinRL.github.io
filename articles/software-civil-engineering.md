@@ -42,7 +42,7 @@ Agentic software engineering — the delegation of implementation tasks to auton
 
 The implication: **the difference between modest and transformational productivity gains from agentic engineering is not better AI — it is better engineering** — formalized practices, specifications, and verification mechanisms that characterize mature engineering disciplines.
 
-This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster — but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Faster bricklaying yields 10%. Formal engineering yields 10×. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
+This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster — but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
 
 This is not merely a tooling problem. It is a disciplinary transformation analogous to the one that civil engineering underwent in the 19th century — and examining that parallel reveals both the path forward and the institutional gaps that remain.
 
@@ -276,7 +276,7 @@ A critical extension of the eval system: rather than a single agent that builds 
 
 This mirrors civil engineering practice where the structural engineer who verifies a design is independent of the architect who created it. Trust is placed in the verification system, not in the implementer's self-assessment.
 
-## 7. The Dissolution of the Business-Technical Divide
+## 7. Narrowing the Business-Technical Divide
 
 ### 7.1 Specification as strategy
 
@@ -314,11 +314,11 @@ In a Software Civil Engineering organization, the most valuable human capabiliti
 
 ### 8.2 What becomes less valuable
 
-- **Individual coding virtuosity** — the ability to write elegant, performant code is subsumed by AI agents operating against formal specifications. This is a *feature*, not a loss: the quality that matters shifts from implementation craft to specification precision.
+- **Individual coding virtuosity** — as agents improve, the ability to write elegant, performant code becomes less differentiating. The quality that matters shifts from implementation craft to specification precision.
 
 > "Coding via agents requires more rigor, more structure, more code quality, not less." — Adam Tornhill [15]
 
-- **Implicit technical knowledge** — the senior developer who "just knows" that a certain pattern will cause problems is replaced by externalized constraint libraries and adversarial verification agents. The knowledge is preserved; the medium changes from human memory to formal artifact.
+- **Implicit technical knowledge** — the senior developer who "just knows" that a certain pattern will cause problems is increasingly supplemented by externalized constraint libraries and adversarial verification agents. The knowledge is preserved; the medium shifts progressively from human memory to formal artifact — though Section 10.4 acknowledges that some emergent judgment may resist full formalization.
 
 ### 8.3 New role archetypes
 
@@ -335,13 +335,9 @@ The traditional developer/architect/tech lead taxonomy gives way to roles organi
 
 Civil engineering professionalized *reactively* — bridges collapsed, buildings failed, people died, regulations followed [10]. It took decades and required political will.
 
-Software Civil Engineering has a different forcing function: **economic opportunity, not catastrophe.** Agentic AI makes professionalization inevitable because the productivity gap between formalized and unformalized organizations is too large to ignore.
-
-Every organization using AI-assisted development today is already seeing gains — but the gap between 10% faster and 10× faster is the gap between craft-with-copilots and engineering-with-agents. Organizations that formalize their specifications sufficiently for agents to operate autonomously will cross that threshold. This pressure is operating *now*.
+Software Civil Engineering has a different forcing function: **economic opportunity, not catastrophe.** The productivity gap between formalized and unformalized organizations is already visible, and it will only widen as agent capabilities improve. Organizations that formalize their specifications sufficiently for agents to operate autonomously will pull ahead. This pressure is operating *now*.
 
 > "The implementation itself can be replaced module by module in a few hours, keeping the design ideas and tests that define its behaviours. [...] We've just moved up a level." — Adrian Cockcroft [16]
-
-Professionalization is driven not by regulatory mandate or public disaster, but by the forcing function of agentic AI: the productivity differential it creates between organizations that can leverage engineering-grade specification and those that cannot.
 
 ### 9.2 The individual organization path
 
@@ -357,7 +353,7 @@ Intellectual honesty requires acknowledging what this model does *not* address. 
 
 Civil engineering assigns personal legal liability to named engineers. Software has no equivalent. When an AI agent produces code that causes harm — data loss, security breach, financial damage — who bears responsibility? The specification author? The AI provider? The organization?
 
-This absence of accountability is not merely an institutional oversight — it reflects a deeper cultural assumption that software production does not warrant the same professional rigor as other engineering disciplines. Consider the contrast: search "can I be a software developer" and the top results assure you that anyone can, with minimal barriers to entry. Search "can I be a veterinarian" and you encounter years of formal education, licensing requirements, and professional accountability — for a field whose scientific demands arguably exceed those of human medicine. If a firm contracted to build a bridge delivers a structure that collapses, legal liability follows. No such accountability exists for the firms building the digital infrastructure on which society increasingly depends. As Geoffrey Huntley puts it:
+This absence of accountability is not merely an institutional oversight — it reflects a deeper cultural assumption that software production does not warrant the same professional rigor as other engineering disciplines. Consider the contrast: search "can I be a software developer" and the top results assure you that anyone can, with minimal barriers to entry. Search "can I be a veterinarian" and you encounter years of formal education, licensing requirements, and professional accountability. If a firm contracted to build a bridge delivers a structure that collapses, legal liability follows. No such accountability exists for the firms building the digital infrastructure on which society increasingly depends. As Geoffrey Huntley puts it:
 
 > "I fully believe that software engineering should be a licensed profession. [...] If you work at a company that's contracted to build a bridge, if that bridge collapses, then that company should get liability." — Geoffrey Huntley [11]
 
