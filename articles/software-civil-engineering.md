@@ -298,7 +298,13 @@ Intellectual honesty requires acknowledging what this model does *not* address. 
 
 ### 10.1 Professional licensure and liability
 
-Civil engineering assigns personal legal liability to named engineers. Software has no equivalent. When an AI agent produces code that causes harm — data loss, security breach, financial damage — who bears responsibility? The specification author? The AI provider? The organization? Without a liability framework, Software Civil Engineering lacks the accountability mechanism that forces rigor in other engineering disciplines.
+Civil engineering assigns personal legal liability to named engineers. Software has no equivalent. When an AI agent produces code that causes harm — data loss, security breach, financial damage — who bears responsibility? The specification author? The AI provider? The organization?
+
+This absence of accountability is not merely an institutional oversight — it reflects a deeper cultural assumption that software production does not warrant the same professional rigor as other engineering disciplines. Consider the contrast: search "can I be a software developer" and the top results assure you that anyone can, with minimal barriers to entry. Search "can I be a veterinarian" and you encounter years of formal education, licensing requirements, and professional accountability — for a field whose scientific demands arguably exceed those of human medicine. If a firm contracted to build a bridge delivers a structure that collapses, legal liability follows. No such accountability exists for the firms building the digital infrastructure on which society increasingly depends. As Geoffrey Huntley puts it:
+
+> "I fully believe that software engineering should be a licensed profession. [...] If you work at a company that's contracted to build a bridge, if that bridge collapses, then that company should get liability." — Geoffrey Huntley [11]
+
+Without a liability framework, Software Civil Engineering lacks the accountability mechanism that forces rigor in other engineering disciplines.
 
 **Consequence if unresolved:** Organizations may adopt formal specification practices for productivity reasons but lack the external forcing function that prevents corners from being cut. Quality becomes optional rather than legally mandated.
 
@@ -355,3 +361,5 @@ The bridges will not fall because they were designed not to.
 [9] HashiCorp, "Terraform: Infrastructure as Code," terraform.io. Declarative infrastructure provisioning using the Specify → Plan → Apply → Observe lifecycle.
 
 [10] H. Petroski, *Design Paradigms: Case Histories of Error and Judgment in Engineering*, Cambridge University Press, 1994. Documents how engineering failures have driven professionalization and the development of formal standards.
+
+[11] G. Huntley, interview in "AI Giants" podcast, Season 2, Episode 1, 2026. https://www.youtube.com/watch?v=ZBkRBs4O1VM&t=2227s. Discusses software engineering licensure, the ralph-loop pattern, and the distinction between software development and software engineering.
