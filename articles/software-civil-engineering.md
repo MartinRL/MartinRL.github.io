@@ -20,6 +20,8 @@ This model has produced remarkable results. Much of the world's best software em
 
 But it is incompatible with agentic engineering.
 
+> "AI does not remove the need for careful engineering. On the contrary, it punishes the absence of it." — Juliette van der Laarse [12]
+
 Agentic software engineering — the delegation of implementation tasks to autonomous AI agents [3] — requires a substrate that agents can operate on: specifications that are formal enough to be unambiguous, verification criteria that are objective enough to be machine-evaluable, and architectural constraints that are explicit enough to be enforceable without human judgment. When each developer works as an artisan — with personal conventions, implicit design decisions, and craft knowledge stored in their heads rather than in artifacts — there is nothing stable for an agent to build upon.
 
 The implication is stark: **to unlock the productivity gains of agentic engineering, organizations must first become genuinely good at software engineering** — not in the sense of writing better code, but in the sense of establishing the formalized practices, specifications, and verification mechanisms that characterize mature engineering disciplines.
@@ -59,11 +61,15 @@ Mapped against these pillars, software development's disciplinary immaturity bec
 
 This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate reliably within it. The craft model works for human practitioners because humans can navigate ambiguity, apply tacit knowledge, and exercise judgment in real time. AI agents cannot — they require the formalized substrate that engineering disciplines provide.
 
+> "The architectural sins that a human team could tolerate — the hidden coupling, the undocumented side effects, the modules that only make sense if you know the history — are fatal to AI-assisted development." — Ian Bull [13]
+
 ## 3. Spec-Driven Development and Event Modeling
 
 ### 3.1 The specification problem
 
 The historical failure of formal methods in software — Z-notation, B-method, TLA+ — was not a failure of the concept but of the interface [6]. These approaches required mathematical sophistication that most practitioners lacked and produced specifications that domain experts could not read. The specification language was divorced from both the problem domain and the implementation domain.
+
+> "The craft has always been figuring out *what* code to write. Any given software problem has dozens of potential solutions, each with their own tradeoffs." — Simon Willison [14]
 
 Spec-Driven Development (SDD) addresses this by making the specification the primary artifact from which implementation flows. The specification is not documentation *about* the system; it *is* the system definition [7].
 
@@ -265,6 +271,9 @@ In a Software Civil Engineering organization, the most valuable human capabiliti
 ### 8.2 What becomes less valuable
 
 - **Individual coding virtuosity** — the ability to write elegant, performant code is subsumed by AI agents operating against formal specifications. This is a *feature*, not a loss: the quality that matters shifts from implementation craft to specification precision.
+
+> "Coding via agents requires more rigor, more structure, more code quality, not less." — Adam Tornhill [15]
+
 - **Implicit technical knowledge** — the senior developer who "just knows" that a certain pattern will cause problems is replaced by externalized constraint libraries and adversarial verification agents. The knowledge is preserved; the medium changes from human memory to formal artifact.
 
 ### 8.3 New role archetypes
@@ -284,7 +293,11 @@ Civil engineering professionalized *reactively* — bridges collapsed, buildings
 
 Software Civil Engineering has a different catalyst: **economic opportunity, not catastrophe.**
 
-Organizations that can formalize their specifications sufficiently for AI agents to operate on them will produce software at a rate that is an order of magnitude greater than those that cannot. This competitive pressure is operating *now*. Professionalization is driven not by regulatory mandate or public disaster, but by the productivity differential between organizations that can leverage agentic engineering and those that cannot.
+Organizations that can formalize their specifications sufficiently for AI agents to operate on them will produce software at a rate that is an order of magnitude greater than those that cannot. This competitive pressure is operating *now*.
+
+> "The implementation itself can be replaced module by module in a few hours, keeping the design ideas and tests that define its behaviours. [...] We've just moved up a level." — Adrian Cockcroft [16]
+
+Professionalization is driven not by regulatory mandate or public disaster, but by the productivity differential between organizations that can leverage agentic engineering and those that cannot.
 
 ### 9.2 The individual organization path
 
@@ -363,3 +376,13 @@ The bridges will not fall because they were designed not to.
 [10] H. Petroski, *Design Paradigms: Case Histories of Error and Judgment in Engineering*, Cambridge University Press, 1994. Documents how engineering failures have driven professionalization and the development of formal standards.
 
 [11] G. Huntley, interview in "AI Giants" podcast, Season 2, Episode 1, 2026. https://www.youtube.com/watch?v=ZBkRBs4O1VM&t=2227s. Discusses software engineering licensure, the ralph-loop pattern, and the distinction between software development and software engineering.
+
+[12] J. van der Laarse, "Capability Architecture for AI-Native Engineering," O'Reilly Radar, 2025. https://www.oreilly.com/radar/capability-architecture-for-ai-native-engineering/. Argues that AI punishes the absence of engineering discipline and that scaling requires shared norms.
+
+[13] I. Bull, "Sinks, Not Pipes: Software Architecture in the Age of AI," ianbull.com, 2025. https://ianbull.com/posts/software-architecture/. Examines how architectural honesty becomes a prerequisite for effective AI-assisted development.
+
+[14] S. Willison, "Agentic Engineering Patterns," simonwillison.net, 2026. https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/. Catalogs emerging patterns for specification, verification, and iteration in agentic engineering workflows.
+
+[15] A. Tornhill, "Agentic AI Coding: Best Practice Patterns for Speed with Quality," CodeScene Blog, 2025. https://codescene.com/blog/agentic-ai-coding-best-practice-patterns-for-speed-with-quality. Demonstrates that agentic coding demands more structural rigor and code health, not less.
+
+[16] A. Cockcroft, "Directing AI Native Development," Medium, 2025. https://adrianco.medium.com/directing-ai-native-development-0914ac271744. Describes the shift from building-from-source to building-from-spec as a level change in software production.
