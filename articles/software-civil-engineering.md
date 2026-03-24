@@ -12,6 +12,19 @@
 
 ---
 
+### Executive Summary
+
+- Software development operates as a **craft tradition**; agentic AI requires a **formal engineering discipline** — specification, verification, and accountability.
+- Civil engineering's six pillars (formal specification, material standards, codes, simulation, licensure, education) define the gap software must close.
+- This transformation has precedent: **infrastructure provisioning** already moved from craft to engineering via Terraform's declarative lifecycle.
+- **Event Modeling** provides a specification language for product-level behavior that is both human-readable and machine-verifiable.
+- The **Decider pattern** makes Event Modeling specifications executable as pure functions — enabling simulation before implementation, just as structural analysis proves a design before construction.
+- A unified specification model (behavioral + operational + policy layers), operationalized through a **Specify → Plan → Verify → Apply → Observe** lifecycle, extends the infrastructure paradigm to products.
+- This dissolves the business-technical divide: the specification *becomes* the product strategy.
+- Open gaps remain in professional licensure, formal education, and industry standards — institutional debt the profession has yet to repay.
+
+---
+
 ## 1. The Problem: Software as Craft in the Age of Agents
 
 Software development today operates predominantly as a craft tradition. Individual developers carry implicit knowledge, develop personal styles, solve problems through intuition honed by experience, and transfer expertise through apprenticeship models [1]. The Software Craftsmanship movement formalized this identity explicitly — positioning software production as a practice closer to artisanship than engineering, emphasizing mastery, mentorship, and the irreducibility of human judgment [2].
@@ -67,13 +80,9 @@ This is not an argument that software development is *inferior* to civil enginee
 
 ### 2.3 The infrastructure precedent
 
-Yet this transformation from craft to engineering is not without precedent in the software domain. Infrastructure provisioning has already undergone exactly this journey — and the path it took is instructive.
+Yet this transformation from craft to engineering is not without precedent in the software domain. Infrastructure provisioning has already undergone exactly this journey.
 
-A decade ago, provisioning a server was craft work. An engineer would SSH into a machine, install packages by hand, edit configuration files, and hope to remember what they had done. Each server was a snowflake — unique, unreproducible, and understood only by the person who built it. When that person left the organization, their knowledge left with them. Scaling meant repeating the craft, server by server, with all the variance and risk that entails.
-
-Then came configuration management tools — Ansible, Chef, Puppet — which codified the *steps* imperatively: "install this package, then copy this file, then restart this service." An improvement, but still a sequence of instructions rather than an engineering specification.
-
-The decisive shift came with Terraform and the Infrastructure as Code (IaC) paradigm [9]. Instead of describing *how* to provision infrastructure, engineers began declaring *what* the infrastructure should be — the desired end state. The tool itself determined the path from current state to desired state. This shift introduced the elements of a genuine engineering discipline:
+A decade ago, provisioning a server was craft work — manual, unreproducible, and dependent on individual knowledge. Configuration management tools (Ansible, Chef, Puppet) codified the steps imperatively, but remained sequences of instructions rather than engineering specifications. The decisive shift came with Terraform and the Infrastructure as Code (IaC) paradigm [9], where engineers began declaring *what* the infrastructure should be rather than *how* to provision it. This introduced the elements of a genuine engineering discipline:
 
 - **Declarative specification** — `.tf` files describe the desired state, not the steps to achieve it. This is the blueprint.
 - **State management** — a state file records what actually exists right now. This is the as-built documentation that enables diffing.
@@ -82,11 +91,11 @@ The decisive shift came with Terraform and the Infrastructure as Code (IaC) para
 - **Providers** — plugins that encode the properties, constraints, and behaviors of specific technical substrates (AWS, Azure, GCP). This is the material datasheet: known properties of the materials you build with.
 - **Drift detection** — continuous comparison of actual state against declared specification. This is the building inspection.
 
-The parallel to the six civil engineering pillars from Section 2.1 is not accidental. And neither is the fact that this transformation was *enabled* by civil engineering itself. The hyperscale datacenters that Amazon, Microsoft, and Google operate — the physical foundation on which cloud computing rests — are civil engineering projects in the most literal sense. They are designed with formal structural specifications, built with certified materials, verified against building codes, and subject to ongoing inspection. Civil engineering principles did not merely inspire the IaC transformation; they made it physically possible by providing the reliable substrate on which declarative infrastructure could be built.
+*[Illustration placeholder: Timeline showing the craft-to-engineering progression — Manual ops (craft) → Ansible/Chef/Puppet (codified craft) → Terraform/IaC (engineering discipline) — with the six civil engineering pillars from Section 2.1 mapped to show which ones each stage satisfies]*
 
-The question this precedent raises is direct: **if infrastructure provisioning could be transformed from craft to engineering — with formal specification, verification before change, material abstraction, and drift detection — can digital product development undergo the same transformation?**
+The parallel to the six civil engineering pillars is not accidental — and this transformation was *enabled* by civil engineering itself. The hyperscale datacenters on which cloud computing rests are civil engineering projects in the most literal sense: formally specified, built with certified materials, verified against building codes. Civil engineering principles did not merely inspire the IaC transformation; they made it physically possible by providing the reliable substrate on which declarative infrastructure could be built.
 
-The remainder of this article argues that it can, and that Event Modeling provides the specification language to make it happen.
+**If infrastructure provisioning could be transformed from craft to engineering — can digital product development undergo the same transformation?** The remainder of this article argues that it can, and that Event Modeling provides the specification language to make it happen.
 
 ## 3. Spec-Driven Development and Event Modeling
 
@@ -133,15 +142,11 @@ These gaps must be filled for the engineering analogy to hold.
 
 ### 4.1 Lifting the abstraction level
 
-Section 2.3 established that Terraform brought engineering discipline to infrastructure provisioning. But Terraform operates at the *infrastructure* level: "I want 3 VMs with these network rules." This is declarative but still *technical* — it specifies resources, not behavior.
-
-Lifting the abstraction to the product level produces something fundamentally different:
+Terraform operates at the *infrastructure* level — it specifies resources, not behavior. Lifting the abstraction to the product level produces something fundamentally different:
 
 > "I want a system where a publisher can submit an article, a compliance check verifies funder mandates automatically, and a dashboard shows status in real time — with max 200ms latency, SOC2-compliant, scalable to 50,000 active publications."
 
-This single declaration spans behavior, constraints, and operational requirements. The "engine" — whether AI agents, human developers, or a hybrid — takes this declaration and *realizes* it.
-
-This is not Terraform for infrastructure. It is not Terraform for applications. It is **Terraform for software products.** The specification lives at the product level, not the technical level.
+This declaration spans behavior, constraints, and operational requirements simultaneously. The specification lives at the product level, and the "engine" — AI agents, human developers, or a hybrid — realizes it.
 
 ### 4.2 Where the analogy diverges: simulation before production
 
@@ -171,7 +176,7 @@ This means an Event Model is not merely a specification document — it is a *si
 
 ### 4.4 The six elements: a structural isomorphism
 
-With both the Terraform lifecycle and the Decider pattern in hand, we can now map the full structural correspondence between infrastructure engineering, civil engineering, and the proposed product engineering model. This is not a loose analogy — it is a structural isomorphism across six elements:
+With both the Terraform lifecycle and the Decider pattern in hand, the full structural correspondence becomes visible:
 
 | Element | Terraform (Infrastructure) | Civil Engineering | Product Level (This Article) |
 |---|---|---|---|
@@ -182,7 +187,7 @@ With both the Terraform lifecycle and the Decider pattern in hand, we can now ma
 | **Apply** | `terraform apply` — controlled execution | Construction by licensed contractors | AI agents implement verified plan |
 | **Drift detection** | Actual vs. desired state comparison | Building inspection, structural monitoring | Production event stream validation against specification |
 
-The critical difference at the product level is in the **Plan** element. Terraform's plan is a state diff — necessary but insufficient for products. The product-level plan is *richer*: it includes both the state diff (what needs to change structurally) and behavioral simulation via Deciders (whether the changed system will behave correctly under scenarios). This divergence from the Terraform model is not a weakness — it is where Software Civil Engineering *extends* the infrastructure paradigm to meet the demands of behavioral systems.
+The critical difference is in the **Plan** element. Terraform's plan is a state diff — necessary but insufficient for products. The product-level plan adds behavioral simulation via Deciders: not just *what needs to change*, but *whether the changed system will behave correctly*. This is where Software Civil Engineering extends the infrastructure paradigm.
 
 ### 4.5 The unified specification model
 
@@ -202,15 +207,9 @@ Apply    = agents.implement(Plan)
 Observe  = drift_detection(Production, Specification)
 ```
 
-This lifecycle — **Specify → Plan → Verify → Apply → Observe** — is the operational core of Software Civil Engineering. Each phase has a clear analog in both civil engineering and the infrastructure precedent:
+This lifecycle — **Specify → Plan → Verify → Apply → Observe** — is the operational core of Software Civil Engineering.
 
-| Phase | Software Civil Engineering | Terraform Analog | Civil Engineering Analog |
-|---|---|---|---|
-| Specify | Event Model + Deciders + Providers + Constraints | `.tf` configuration files | Architectural blueprints + structural calculations + building codes |
-| Plan | State diff + behavioral simulation | `terraform plan` | Bill of materials, construction schedule, structural analysis |
-| Verify | Evaluate plan against constraints | Sentinel/OPA policy checks | Code compliance review |
-| Apply | AI agents implement verified plan | `terraform apply` | Construction by licensed contractors |
-| Observe | Drift detection in production | State refresh + drift alerts | Building inspection, ongoing structural monitoring |
+*[Illustration placeholder: The Specify → Plan → Verify → Apply → Observe lifecycle as a circular flow diagram. Each phase is labeled with its civil engineering analog (blueprints → structural analysis → code compliance review → construction → building inspection). An arrow from Observe back to Specify represents drift detection feeding back into specification refinement, closing the loop.]*
 
 ## 5. The Three Specification Layers
 
