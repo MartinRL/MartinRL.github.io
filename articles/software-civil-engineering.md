@@ -1,6 +1,6 @@
 # Software Civil Engineering
 
-## From Craft to Discipline — Why Agentic AI Demands the Professionalization of Software Production
+## From Craft to Discipline: Why Agentic AI Demands the Professionalization of Software Production
 
 ---
 
@@ -8,43 +8,43 @@
 
 ---
 
-> **Thesis:** Agentic software engineering already works in craft environments — but it yields incremental gains, not transformational ones. The difference between a 10% productivity improvement and a 10× one lies in the same foundational elements that professionalized civil engineering: formal specification, material science, simulation, verification, and institutional accountability. Agentic AI is the forcing function that makes this professionalization economically inevitable, not merely desirable. Event Modeling, extended with operational and policy constraints, made executable through the Decider pattern, and grounded in Event Sourcing — which provides the immutable, append-only record that makes verification, audit, and drift detection possible not just at design time but in production — and operationalized through a Terraform-analogous lifecycle (Specify → Plan → Verify → Apply → Observe), provides the viable path to industrial-grade outcomes. Crucially, this is not unprecedented — infrastructure provisioning has already undergone exactly this transformation, enabled by civil engineering itself.
+> **Thesis:** Agentic software engineering already works in craft environments, but it yields incremental gains, not transformational ones. The difference between a 10% productivity improvement and a 10× one lies in the same foundational elements that professionalized civil engineering: formal specification, material science, simulation, verification, and institutional accountability. Agentic AI is the forcing function that makes this professionalization economically inevitable, not merely desirable. Event Modeling, extended with operational and policy constraints, made executable through the Decider pattern, and grounded in Event Sourcing (which provides the immutable, append-only record that makes verification, audit, and drift detection possible not just at design time but in production), operationalized through a Terraform-analogous lifecycle (Specify → Plan → Verify → Apply → Observe), provides the viable path to industrial-grade outcomes. Crucially, this is not unprecedented: infrastructure provisioning has already undergone exactly this transformation, enabled by civil engineering itself.
 
 ---
 
 ### Executive Summary
 
-- Agentic AI already works in **craft environments** — but yields incremental (10%) gains. Reaching **10× productivity** requires a formal engineering discipline: specification, verification, and accountability.
+- Agentic AI already works in **craft environments**, but yields incremental (10%) gains. Reaching **10× productivity** requires a formal engineering discipline: specification, verification, and accountability.
 - **Agentic AI is the forcing function** for this professionalization: the competitive pressure it creates makes the transformation economically inevitable, not merely desirable.
 - Civil engineering's six pillars (formal specification, material standards, codes, simulation, licensure, education) define the gap software must close.
 - This transformation has precedent: **infrastructure provisioning** already moved from craft to engineering via Terraform's declarative lifecycle.
 - **Event Modeling** provides a specification language for product-level behavior that is both human-readable and machine-verifiable.
-- The **Decider pattern** makes Event Modeling specifications executable as pure functions — enabling simulation before implementation, just as structural analysis proves a design before construction.
+- The **Decider pattern** makes Event Modeling specifications executable as pure functions, enabling simulation before implementation, just as structural analysis proves a design before construction.
 - A unified specification model (behavioral + operational + policy layers), operationalized through a **Specify → Plan → Verify → Apply → Observe** lifecycle, extends the infrastructure paradigm to products.
 - This narrows the business-technical divide: the specification *becomes* the product strategy.
-- Open gaps remain in professional licensure, formal education, and industry standards — institutional debt the profession has yet to repay.
+- Open gaps remain in professional licensure, formal education, and industry standards: institutional debt the profession has yet to repay.
 
 ---
 
 ## 1. The Problem: Software as Craft in the Age of Agents
 
-Software development today operates predominantly as a craft tradition. Individual developers carry implicit knowledge, develop personal styles, solve problems through intuition honed by experience, and transfer expertise through apprenticeship models [1]. The Software Craftsmanship movement formalized this identity explicitly — positioning software production as a practice closer to artisanship than engineering, emphasizing mastery, mentorship, and the irreducibility of human judgment [2].
+Software development today operates predominantly as a craft tradition. Individual developers carry implicit knowledge, develop personal styles, solve problems through intuition honed by experience, and transfer expertise through apprenticeship models [1]. The Software Craftsmanship movement formalized this identity explicitly, positioning software production as a practice closer to artisanship than engineering, emphasizing mastery, mentorship, and the irreducibility of human judgment [2].
 
 This model has produced remarkable results. Much of the world's best software emerged from the deep intuition of skilled practitioners who understood their domains, their tools, and their users in ways that resist formalization.
 
-But it caps the gains of agentic engineering at incremental improvement — the difference between 10% faster and 10× faster.
+But it caps the gains of agentic engineering at incremental improvement: the difference between 10% faster and 10× faster.
 
-This article addresses industrialized software production — systems where reliability, auditability, and long-term maintainability are non-negotiable. Exploratory prototypes, R&D spikes, and one-off scripts have different economics and different constraints.
+This article addresses industrialized software production: systems where reliability, auditability, and long-term maintainability are non-negotiable. Exploratory prototypes, R&D spikes, and one-off scripts have different economics and different constraints.
 
 > "AI does not remove the need for careful engineering. On the contrary, it punishes the absence of it." — Juliette van der Laarse [12]
 
-Agentic software engineering — the delegation of implementation tasks to autonomous AI agents [3] — already works in craft environments. Developers use LLM-based tools to generate code, refactor modules, and accelerate routine tasks. But agents operating on informal specifications, implicit conventions, and craft knowledge hit a ceiling quickly: they can assist artisans, but they cannot reliably replace the artisanship. Scaling from copilot-level assistance to autonomous, end-to-end product delivery requires a substrate that agents can operate on — specifications formal enough to be unambiguous, verification criteria objective enough to be machine-evaluable, and architectural constraints explicit enough to be enforceable without human judgment.
+Agentic software engineering (the delegation of implementation tasks to autonomous AI agents [3]) already works in craft environments. Developers use LLM-based tools to generate code, refactor modules, and accelerate routine tasks. But agents operating on informal specifications, implicit conventions, and craft knowledge hit a ceiling quickly: they can assist artisans, but they cannot reliably replace the artisanship. Scaling from copilot-level assistance to autonomous, end-to-end product delivery requires a substrate that agents can operate on: specifications formal enough to be unambiguous, verification criteria objective enough to be machine-evaluable, and architectural constraints explicit enough to be enforceable without human judgment.
 
-The implication: **the difference between modest and transformational productivity gains from agentic engineering is not better AI — it is better engineering** — formalized practices, specifications, and verification mechanisms that characterize mature engineering disciplines.
+The implication: **the difference between modest and transformational productivity gains from agentic engineering is not better AI; it is better engineering.** Formalized practices, specifications, and verification mechanisms that characterize mature engineering disciplines.
 
-This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster — but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
+This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster, but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
 
-This is not merely a tooling problem. It is a disciplinary transformation analogous to the one that civil engineering underwent in the 19th century — and examining that parallel reveals both the path forward and the institutional gaps that remain.
+This is not merely a tooling problem. It is a disciplinary transformation analogous to the one that civil engineering underwent in the 19th century, and examining that parallel reveals both the path forward and the institutional gaps that remain.
 
 ## 2. The Civil Engineering Parallel
 
@@ -56,7 +56,7 @@ Civil engineering rests on six foundational pillars that collectively distinguis
 
 2. **Standardized material datasheets.** Steel has a known tensile strength. Concrete behaves predictably under compression. Engineers do not test every beam; they rely on certified material specifications with known properties.
 
-3. **Building codes and norms.** EuroCode, the International Building Code, national regulations. These represent accumulated collective knowledge formalized as enforceable standards — the profession's institutional memory.
+3. **Building codes and norms.** EuroCode, the International Building Code, national regulations. These represent accumulated collective knowledge formalized as enforceable standards, the profession's institutional memory.
 
 4. **Simulation and modeling.** Tools like Simulink, finite element analysis, and computational fluid dynamics allow engineers to verify designs against physical laws before a single component is manufactured. The design is proven before realization.
 
@@ -72,12 +72,12 @@ Mapped against these pillars, software development's disciplinary immaturity bec
 |---|---|---|
 | Formal specification | Blueprints, structural calculations | Informal user stories, ad-hoc documentation |
 | Material datasheets | Certified steel grades, concrete specs | No standardized performance profiles for frameworks, patterns, or infrastructure components |
-| Codes and norms | EuroCode, building regulations | Fragmentary — OWASP, SOC2, but no unified engineering standard |
+| Codes and norms | EuroCode, building regulations | Fragmentary (OWASP, SOC2), but no unified engineering standard |
 | Simulation | FEA, Simulink, CFD | Almost nonexistent for application logic; limited to infrastructure (load testing) |
-| Professional licensure | PE license, personal liability | None — no individual accountability for engineering decisions |
+| Professional licensure | PE license, personal liability | None; no individual accountability for engineering decisions |
 | Formal education | Accredited, standardized, examined | Highly variable; no required competency demonstration |
 
-This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate at industrial scale. AI agents can already assist craft practitioners — but scaling from copilot to autonomous production requires the formalized substrate that engineering disciplines provide.
+This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate at industrial scale. AI agents can already assist craft practitioners, but scaling from copilot to autonomous production requires the formalized substrate that engineering disciplines provide.
 
 > "The architectural sins that a human team could tolerate — the hidden coupling, the undocumented side effects, the modules that only make sense if you know the history — are fatal to AI-assisted development." — Ian Bull [13]
 
@@ -85,7 +85,7 @@ This is not an argument that software development is *inferior* to civil enginee
 
 Yet this transformation from craft to engineering is not without precedent in the software domain. Infrastructure provisioning has already undergone exactly this journey.
 
-A decade ago, provisioning a server was craft work — manual, unreproducible, and dependent on individual knowledge. Configuration management tools (Ansible, Chef, Puppet) codified the steps imperatively, but remained sequences of instructions rather than engineering specifications. The decisive shift came with Terraform and the Infrastructure as Code (IaC) paradigm [9], where engineers began declaring *what* the infrastructure should be rather than *how* to provision it. This introduced the elements of a genuine engineering discipline:
+A decade ago, provisioning a server was craft work: manual, unreproducible, and dependent on individual knowledge. Configuration management tools (Ansible, Chef, Puppet) codified the steps imperatively, but remained sequences of instructions rather than engineering specifications. The decisive shift came with Terraform and the Infrastructure as Code (IaC) paradigm [9], where engineers began declaring *what* the infrastructure should be rather than *how* to provision it. This introduced the elements of a genuine engineering discipline:
 
 - **Declarative specification** — `.tf` files describe the desired state, not the steps to achieve it. This is the blueprint.
 - **State management** — a state file records what actually exists right now. This is the as-built documentation that enables diffing.
@@ -96,15 +96,15 @@ A decade ago, provisioning a server was craft work — manual, unreproducible, a
 
 *[Illustration placeholder: Timeline showing the craft-to-engineering progression — Manual ops (craft) → Ansible/Chef/Puppet (codified craft) → Terraform/IaC (engineering discipline) — with the six civil engineering pillars from Section 2.1 mapped to show which ones each stage satisfies]*
 
-The parallel to the six civil engineering pillars is not accidental — and this transformation was *enabled* by civil engineering itself. The hyperscale datacenters on which cloud computing rests are civil engineering projects in the most literal sense: formally specified, built with certified materials, verified against building codes. Civil engineering principles did not merely inspire the IaC transformation; they made it physically possible by providing the reliable substrate on which declarative infrastructure could be built.
+The parallel to the six civil engineering pillars is not accidental. This transformation was *enabled* by civil engineering itself. The hyperscale datacenters on which cloud computing rests are civil engineering projects in the most literal sense: formally specified, built with certified materials, verified against building codes. Civil engineering principles did not merely inspire the IaC transformation; they made it physically possible by providing the reliable substrate on which declarative infrastructure could be built.
 
-**If infrastructure provisioning could be transformed from craft to engineering — can digital product development undergo the same transformation?** The remainder of this article argues that it can, and that Event Modeling provides the specification language to make it happen.
+**If infrastructure provisioning could be transformed from craft to engineering, can digital product development undergo the same transformation?** The remainder of this article argues that it can, and that Event Modeling provides the specification language to make it happen.
 
 ## 3. Spec-Driven Development and Event Modeling
 
 ### 3.1 The specification problem
 
-Formal methods in software — Z-notation, B-method, TLA+ — succeeded in safety-critical domains but failed to reach mainstream adoption, not because the concept was wrong but because the interface was [6]. These approaches required mathematical sophistication that most practitioners lacked and produced specifications that domain experts could not read. The specification language was divorced from both the problem domain and the implementation domain.
+Formal methods in software (Z-notation, B-method, TLA+) succeeded in safety-critical domains but failed to reach mainstream adoption, not because the concept was wrong but because the interface was [6]. These approaches required mathematical sophistication that most practitioners lacked and produced specifications that domain experts could not read. The specification language was divorced from both the problem domain and the implementation domain.
 
 > "The craft has always been figuring out *what* code to write. Any given software problem has dozens of potential solutions, each with their own tradeoffs." — Simon Willison [14]
 
@@ -126,11 +126,11 @@ Each vertical "slice" through the model constitutes a Given-When-Then specificat
 - **When** a command is issued
 - **Then** specific events are produced and views are updated
 
-This is the critical property: **each slice is an independently verifiable, deterministic specification of behavior.** An AI agent implementing a slice does not need to "understand" the business logic — it needs to produce code that satisfies the Given-When-Then contract. Just as a construction worker does not need to understand why a load-bearing wall is positioned where it is — only that the blueprint says it must be there.
+This is the critical property: **each slice is an independently verifiable, deterministic specification of behavior.** An AI agent implementing a slice does not need to "understand" the business logic; it needs to produce code that satisfies the Given-When-Then contract. Just as a construction worker does not need to understand why a load-bearing wall is positioned where it is, only that the blueprint says it must be there.
 
-### 3.3 What Event Modeling provides — and what it lacks
+### 3.3 What Event Modeling provides, and what it lacks
 
-Event Modeling solves the *behavioral specification* problem. It provides the software equivalent of an architectural blueprint — a complete, readable, verifiable description of what the system does.
+Event Modeling solves the *behavioral specification* problem. It provides the software equivalent of an architectural blueprint: a complete, readable, verifiable description of what the system does.
 
 But civil engineering blueprints are not the only specification artifact. They are supplemented by structural calculations, material specifications, and building code compliance documentation. Event Modeling, in isolation, specifies behavior but says nothing about:
 
@@ -141,29 +141,29 @@ But civil engineering blueprints are not the only specification artifact. They a
 
 These gaps must be filled for the engineering analogy to hold.
 
-## 4. From Infrastructure to Products — and Beyond Terraform
+## 4. From Infrastructure to Products, and Beyond Terraform
 
 ### 4.1 Lifting the abstraction level
 
-Terraform operates at the *infrastructure* level — it specifies resources, not behavior. Lifting the abstraction to the product level produces something fundamentally different:
+Terraform operates at the *infrastructure* level: it specifies resources, not behavior. Lifting the abstraction to the product level produces something fundamentally different:
 
 > "I want a system where a publisher can submit an article, a compliance check verifies funder mandates automatically, and a dashboard shows status in real time — with max 200ms latency, SOC2-compliant, scalable to 50,000 active publications."
 
-This declaration spans behavior, constraints, and operational requirements simultaneously. The specification lives at the product level, and the "engine" — AI agents, human developers, or a hybrid — realizes it.
+This declaration spans behavior, constraints, and operational requirements simultaneously. The specification lives at the product level, and the "engine" (AI agents, human developers, or a hybrid) realizes it.
 
 ### 4.2 Where the analogy diverges: simulation before production
 
-Terraform's lifecycle handles state transitions — but software products *behave.* A publishing system processes thousands of concurrent submissions, enforces compliance rules that change mid-workflow, and must respond gracefully when a funder alters its open-access mandate during an active publication cycle. A state-transition diff cannot answer these behavioral questions.
+Terraform's lifecycle handles state transitions, but software products *behave.* A publishing system processes thousands of concurrent submissions, enforces compliance rules that change mid-workflow, and must respond gracefully when a funder alters its open-access mandate during an active publication cycle. A state-transition diff cannot answer these behavioral questions.
 
-What we need is the declarative lifecycle *plus* the ability to simulate behavior before production — to prove the design before realization. The question is: what gives us that simulation capability at the product level?
+What we need is the declarative lifecycle *plus* the ability to simulate behavior before production, to prove the design before realization. The question is: what gives us that simulation capability at the product level?
 
 ### 4.3 The Decider pattern: Plan for domain logic
 
 The answer lies in a pattern that connects Event Modeling directly to verifiable execution: the Decider pattern, formalized by Jérémie Chassaing [17].
 
-A Decider is a pure, deterministic function: given the current state (derived from prior events) and a command, it produces the resulting events. No side effects, no infrastructure dependencies, no network calls — just input, logic, output.
+A Decider is a pure, deterministic function: given the current state (derived from prior events) and a command, it produces the resulting events. No side effects, no infrastructure dependencies, no network calls. Just input, logic, output.
 
-This is `terraform plan` for domain logic — a pure preview of what *would* happen, runnable against a thousand scenarios without touching a database.
+This is `terraform plan` for domain logic: a pure preview of what *would* happen, runnable against a thousand scenarios without touching a database.
 
 The mapping to Event Modeling is direct. Each Given-When-Then slice in an Event Model *is* a Decider invocation:
 
@@ -171,7 +171,7 @@ The mapping to Event Modeling is direct. Each Given-When-Then slice in an Event 
 - **When** a command is issued → the Decider's input
 - **Then** specific events are produced → the Decider's output
 
-This means an Event Model is not merely a specification document — it is a *simulation suite.* Each slice defines a scenario that can be executed as a pure function, verified deterministically, and repeated indefinitely at near-zero cost. The blueprint is also the structural analysis.
+This means an Event Model is not merely a specification document; it is a *simulation suite.* Each slice defines a scenario that can be executed as a pure function, verified deterministically, and repeated indefinitely at near-zero cost. The blueprint is also the structural analysis.
 
 *[Illustration placeholder: The Decider pattern — showing the pure function from (State, Command) → Events, and its mapping to Event Modeling's Given-When-Then slices]*
 
@@ -188,7 +188,7 @@ With both the Terraform lifecycle and the Decider pattern in hand, the full stru
 | **Apply** | `terraform apply` — controlled execution | Construction by licensed contractors | AI agents implement verified plan |
 | **Drift detection** | Actual vs. desired state comparison | Building inspection, structural monitoring | Production event stream validation against specification |
 
-The critical difference is in the **Plan** element. Terraform's plan is a state diff — necessary but insufficient for products. The product-level plan adds behavioral simulation via Deciders: not just *what needs to change*, but *whether the changed system will behave correctly*. This is where Software Civil Engineering extends the infrastructure paradigm.
+The critical difference is in the **Plan** element. Terraform's plan is a state diff, necessary but insufficient for products. The product-level plan adds behavioral simulation via Deciders: not just *what needs to change*, but *whether the changed system will behave correctly*. This is where Software Civil Engineering extends the infrastructure paradigm.
 
 ### 4.5 The unified specification model
 
@@ -216,15 +216,15 @@ This lifecycle — **Specify → Plan → Verify → Apply → Observe** — is 
 
 The unified specification requires three distinct but integrated layers, each addressing a different class of engineering concern.
 
-### 5.1 The Event Model — behavioral specification
+### 5.1 The Event Model: behavioral specification
 
 This is the core: what the system *does*. Commands it accepts, events it records, views it presents. Each slice is a Given-When-Then contract that is independently implementable and verifiable.
 
 **Verification method:** Scenario simulation at design time; automated acceptance tests derived from Given-When-Then specifications at implementation time; event stream validation against the model at runtime.
 
-**Civil engineering analog:** Architectural blueprints — the functional design of the structure.
+**Civil engineering analog:** Architectural blueprints, the functional design of the structure.
 
-### 5.2 The Operational Model — substrate specification
+### 5.2 The Operational Model: substrate specification
 
 This layer describes the system's operational characteristics and the known properties of its technical substrate. It includes:
 
@@ -235,9 +235,9 @@ This layer describes the system's operational characteristics and the known prop
 
 **Verification method:** Load simulation before implementation; performance testing against budgets during implementation; anomaly detection against load profiles at runtime.
 
-**Civil engineering analog:** Structural calculations and material datasheets — the physical properties that determine whether the design is feasible.
+**Civil engineering analog:** Structural calculations and material datasheets, the physical properties that determine whether the design is feasible.
 
-### 5.3 The Policy Model — invariant specification
+### 5.3 The Policy Model: invariant specification
 
 This layer captures constraints that must hold everywhere, always, regardless of specific behavior or operational context:
 
@@ -247,28 +247,28 @@ This layer captures constraints that must hold everywhere, always, regardless of
 
 **Verification method:** Static analysis and automated policy enforcement at implementation time; adversarial testing (security scanning, penetration testing) at verification time; continuous compliance monitoring at runtime.
 
-**Civil engineering analog:** Building codes and regulations — the non-negotiable constraints that override design preferences.
+**Civil engineering analog:** Building codes and regulations, the non-negotiable constraints that override design preferences.
 
 ## 6. The Eval System: Software's Simulation Engine
 
 ### 6.1 Three verification loops
 
-The simulation capability for software is not a single tool but a system of three eval loops that operate at different phases — each leveraging the Decider pattern's property of pure, side-effect-free execution:
+The simulation capability for software is not a single tool but a system of three eval loops that operate at different phases, each leveraging the Decider pattern's property of pure, side-effect-free execution:
 
 **Loop 1 — Design-time simulation.**
-Before any code is written (by human or agent), the Event Model's Deciders are executed against scenarios. "What happens if a publisher submits 10,000 articles simultaneously? What happens if a funder changes its open-access mandate mid-publication?" Because Deciders are pure functions, these simulations run at near-zero cost — no databases, no infrastructure, no deployment. The flow is simulated through the event timeline to find logical errors, missing events, and inconsistent states. This is the structural analysis step: proving the design before realization.
+Before any code is written (by human or agent), the Event Model's Deciders are executed against scenarios. "What happens if a publisher submits 10,000 articles simultaneously? What happens if a funder changes its open-access mandate mid-publication?" Because Deciders are pure functions, these simulations run at near-zero cost: no databases, no infrastructure, no deployment. The flow is simulated through the event timeline to find logical errors, missing events, and inconsistent states. This is the structural analysis step: proving the design before realization.
 
 **Loop 2 — Implementation-time evals.**
-When an AI agent implements a slice, the generated code is executed against an eval set *derived automatically from the Event Model.* Each Given-When-Then scenario — each Decider contract — becomes an automated acceptance test. The agent "passes" only if the code satisfies the specification — not vaguely, but deterministically. Operational Model constraints add quantitative verification: the implementation must also meet latency budgets, resource limits, and resilience requirements. Policy Model constraints add invariant checks: security scanning, compliance verification, architectural conformance.
+When an AI agent implements a slice, the generated code is executed against an eval set *derived automatically from the Event Model.* Each Given-When-Then scenario (each Decider contract) becomes an automated acceptance test. The agent "passes" only if the code satisfies the specification, not vaguely but deterministically. Operational Model constraints add quantitative verification: the implementation must also meet latency budgets, resource limits, and resilience requirements. Policy Model constraints add invariant checks: security scanning, compliance verification, architectural conformance.
 
 **Loop 3 — Runtime verification.**
-In production, actual events are validated against the expected model. Anomaly detection identifies patterns that should never occur according to the specification. Event sourcing provides a significant advantage here — the complete, immutable event log is a natural audit trail and verification corpus. Drift detection — the `terraform plan` equivalent — continuously compares production behavior against the specification and flags divergence.
+In production, actual events are validated against the expected model. Anomaly detection identifies patterns that should never occur according to the specification. Event sourcing provides a significant advantage here: the complete, immutable event log is a natural audit trail and verification corpus. Drift detection (the `terraform plan` equivalent) continuously compares production behavior against the specification and flags divergence.
 
-**A pioneer in practice.** Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable [18]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical — it is an emerging engineering practice whose principles are ready to be lifted to the product level.
+**A pioneer in practice.** Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable [18]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical. It is an emerging engineering practice whose principles are ready to be lifted to the product level.
 
 ### 6.2 Adversarial verification
 
-A critical extension of the eval system: rather than a single agent that builds and self-verifies, the model calls for *adversarial* AI verification — separate agents that attempt to break implementations:
+A critical extension of the eval system: rather than a single agent that builds and self-verifies, the model calls for *adversarial* AI verification, with separate agents that attempt to break implementations:
 
 - A **security agent** that probes for vulnerabilities against the Policy Model
 - A **load agent** that stress-tests against the Operational Model
@@ -280,11 +280,11 @@ This mirrors civil engineering practice where the structural engineer who verifi
 
 ### 7.1 Specification as strategy
 
-If the specification encompasses behavior, operational characteristics, and policy constraints, then **the specification is the product strategy** — and the historical separation between "the business side" and "the tech side" narrows sharply. A product leader who defines "publishers need real-time compliance checking with sub-second response times" is simultaneously writing behavioral specification (Event Model), performance requirements (Operational Model), and compliance constraints (Policy Model). No translation step. No alignment ceremony. One model.
+If the specification encompasses behavior, operational characteristics, and policy constraints, then **the specification is the product strategy**, and the historical separation between "the business side" and "the tech side" narrows sharply. A product leader who defines "publishers need real-time compliance checking with sub-second response times" is simultaneously writing behavioral specification (Event Model), performance requirements (Operational Model), and compliance constraints (Policy Model). No translation step. No alignment ceremony. One model.
 
 ### 7.2 Specification ownership as leadership function
 
-This has organizational implications. If specification ownership determines product direction, technical feasibility, and operational characteristics simultaneously, then it is not an architecture function — it is a **leadership function.**
+This has organizational implications. If specification ownership determines product direction, technical feasibility, and operational characteristics simultaneously, then it is not an architecture function. It is a **leadership function.**
 
 An architect operates within given constraints: they receive a problem and design the optimal technical solution. A leader defines the constraints: they determine which problems to solve, with what properties, and in what order.
 
@@ -299,7 +299,7 @@ The person or team that controls the specification controls the product. This is
 
 If specification ownership is a leadership function, it does not scale by hiring more architects. It scales by formalizing the specification format sufficiently that leadership can delegate *parts* of the specification work without losing coherence.
 
-This requires a governance mechanism analogous to infrastructure-as-code change management: pull requests on the specification, not on the code. Domain teams may propose new slices in the Event Model, but constraint definitions and provider selections may require leadership validation. The specification becomes a governed artifact with access controls, review processes, and audit trails — just as building permits require review and approval before construction begins.
+This requires a governance mechanism analogous to infrastructure-as-code change management: pull requests on the specification, not on the code. Domain teams may propose new slices in the Event Model, but constraint definitions and provider selections may require leadership validation. The specification becomes a governed artifact with access controls, review processes, and audit trails, just as building permits require review and approval before construction begins.
 
 ## 8. Implications for Roles and Organizations
 
@@ -318,7 +318,7 @@ In a Software Civil Engineering organization, the most valuable human capabiliti
 
 > "Coding via agents requires more rigor, more structure, more code quality, not less." — Adam Tornhill [15]
 
-- **Implicit technical knowledge** — the senior developer who "just knows" that a certain pattern will cause problems is increasingly supplemented by externalized constraint libraries and adversarial verification agents. The knowledge is preserved; the medium shifts progressively from human memory to formal artifact — though Section 10.4 acknowledges that some emergent judgment may resist full formalization.
+- **Implicit technical knowledge** — the senior developer who "just knows" that a certain pattern will cause problems is increasingly supplemented by externalized constraint libraries and adversarial verification agents. The knowledge is preserved; the medium shifts progressively from human memory to formal artifact, though Section 10.4 acknowledges that some emergent judgment may resist full formalization.
 
 ### 8.3 New role archetypes
 
@@ -333,7 +333,7 @@ The traditional developer/architect/tech lead taxonomy gives way to roles organi
 
 ### 9.1 The positive professionalization thesis
 
-Civil engineering professionalized *reactively* — bridges collapsed, buildings failed, people died, regulations followed [10]. It took decades and required political will.
+Civil engineering professionalized *reactively*: bridges collapsed, buildings failed, people died, regulations followed [10]. It took decades and required political will.
 
 Software Civil Engineering has a different forcing function: **economic opportunity, not catastrophe.** The productivity gap between formalized and unformalized organizations is already visible, and it will only widen as agent capabilities improve. Organizations that formalize their specifications sufficiently for agents to operate autonomously will pull ahead. This pressure is operating *now*.
 
@@ -351,9 +351,9 @@ Intellectual honesty requires acknowledging what this model does *not* address. 
 
 ### 10.1 Professional licensure and liability
 
-Civil engineering assigns personal legal liability to named engineers. Software has no equivalent. When an AI agent produces code that causes harm — data loss, security breach, financial damage — who bears responsibility? The specification author? The AI provider? The organization?
+Civil engineering assigns personal legal liability to named engineers. Software has no equivalent. When an AI agent produces code that causes harm (data loss, security breach, financial damage), who bears responsibility? The specification author? The AI provider? The organization?
 
-This absence of accountability is not merely an institutional oversight — it reflects a deeper cultural assumption that software production does not warrant the same professional rigor as other engineering disciplines. Consider the contrast: search "can I be a software developer" and the top results assure you that anyone can, with minimal barriers to entry. Search "can I be a veterinarian" and you encounter years of formal education, licensing requirements, and professional accountability. If a firm contracted to build a bridge delivers a structure that collapses, legal liability follows. No such accountability exists for the firms building the digital infrastructure on which society increasingly depends. As Geoffrey Huntley puts it:
+This absence of accountability is not merely an institutional oversight; it reflects a deeper cultural assumption that software production does not warrant the same professional rigor as other engineering disciplines. Consider the contrast: search "can I be a software developer" and the top results assure you that anyone can, with minimal barriers to entry. Search "can I be a veterinarian" and you encounter years of formal education, licensing requirements, and professional accountability. If a firm contracted to build a bridge delivers a structure that collapses, legal liability follows. No such accountability exists for the firms building the digital infrastructure on which society increasingly depends. As Geoffrey Huntley puts it:
 
 > "I fully believe that software engineering should be a licensed profession. [...] If you work at a company that's contracted to build a bridge, if that bridge collapses, then that company should get liability." — Geoffrey Huntley [11]
 
@@ -375,17 +375,17 @@ Building codes are maintained by institutions (ISO, national standards bodies, p
 
 ### 10.4 The emergent complexity boundary
 
-There exists a class of technical decisions that are genuinely emergent — they arise from the interaction between domain behavior, technical substrate, and specific operational context in ways that resist formalization. "This event stream structure will create a hot partition given *our specific* usage pattern" requires understanding of all three layers simultaneously in a context-dependent way. Whether this can be fully formalized or whether it represents a permanent boundary for the model remains an open question.
+There exists a class of technical decisions that are genuinely emergent. They arise from the interaction between domain behavior, technical substrate, and specific operational context in ways that resist formalization. "This event stream structure will create a hot partition given *our specific* usage pattern" requires understanding of all three layers simultaneously in a context-dependent way. Whether this can be fully formalized or whether it represents a permanent boundary for the model remains an open question.
 
-**Consequence if unresolved:** Some engineering decisions may permanently require human judgment, limiting the degree of agent autonomy achievable. This is not necessarily a failure — civil engineering also requires experienced engineers for novel structures — but it bounds the model's applicability.
+**Consequence if unresolved:** Some engineering decisions may permanently require human judgment, limiting the degree of agent autonomy achievable. This is not necessarily a failure (civil engineering also requires experienced engineers for novel structures), but it bounds the model's applicability.
 
 ## 11. Conclusion: The Disciplinary Moment
 
 The infrastructure precedent proved that craft-to-engineering transformation is achievable within the software domain. The task now is to lift it from the infrastructure level to the product level.
 
-Event Modeling, made executable through the Decider pattern and extended with Operational and Policy constraint layers, provides the specification language for this lift. Each Given-When-Then slice is simultaneously a specification, a test, and a simulation scenario — executable as a pure function without infrastructure. Operationalized through the Specify → Plan → Verify → Apply → Observe lifecycle, the result is a viable foundation for Software Civil Engineering.
+Event Modeling, made executable through the Decider pattern and extended with Operational and Policy constraint layers, provides the specification language for this lift. Each Given-When-Then slice is simultaneously a specification, a test, and a simulation scenario, executable as a pure function without infrastructure. Operationalized through the Specify → Plan → Verify → Apply → Observe lifecycle, the result is a viable foundation for Software Civil Engineering.
 
-What follows from this is a paradigm where specification precision replaces implementation skill as the primary value driver, where technical leadership becomes specification governance, and where AI agents serve as the execution engine of a properly specified engineering process. The specification does not describe the product — it *is* the product, and the organizations that grasp this will not merely be more productive. They will be operating in a fundamentally different mode: quality determined upstream, at the specification level, not downstream at the implementation level.
+What follows from this is a paradigm where specification precision replaces implementation skill as the primary value driver, where technical leadership becomes specification governance, and where AI agents serve as the execution engine of a properly specified engineering process. The specification does not describe the product; it *is* the product, and the organizations that grasp this will not merely be more productive. They will be operating in a fundamentally different mode: quality determined upstream, at the specification level, not downstream at the implementation level.
 
 The bridges will not fall because they were designed not to.
 
