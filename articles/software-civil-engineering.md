@@ -8,13 +8,14 @@
 
 ---
 
-> **Thesis:** Agentic software engineering already works in craft environments — but it yields incremental gains, not transformational ones. The difference between a 10% productivity improvement and a 10× one lies in the same foundational elements that professionalized civil engineering: formal specification, material science, simulation, verification, and institutional accountability. Event Modeling, extended with operational and policy constraints, made executable through the Decider pattern, and grounded in Event Sourcing — which provides the immutable, append-only record that makes verification, audit, and drift detection possible not just at design time but in production — and operationalized through a Terraform-analogous lifecycle (Specify → Plan → Verify → Apply → Observe), provides the viable path to industrial-grade outcomes. Crucially, this is not unprecedented — infrastructure provisioning has already undergone exactly this transformation, enabled by civil engineering itself.
+> **Thesis:** Agentic software engineering already works in craft environments — but it yields incremental gains, not transformational ones. The difference between a 10% productivity improvement and a 10× one lies in the same foundational elements that professionalized civil engineering: formal specification, material science, simulation, verification, and institutional accountability. Agentic AI is the forcing function that makes this professionalization economically inevitable, not merely desirable. Event Modeling, extended with operational and policy constraints, made executable through the Decider pattern, and grounded in Event Sourcing — which provides the immutable, append-only record that makes verification, audit, and drift detection possible not just at design time but in production — and operationalized through a Terraform-analogous lifecycle (Specify → Plan → Verify → Apply → Observe), provides the viable path to industrial-grade outcomes. Crucially, this is not unprecedented — infrastructure provisioning has already undergone exactly this transformation, enabled by civil engineering itself.
 
 ---
 
 ### Executive Summary
 
 - Agentic AI already works in **craft environments** — but yields incremental (10%) gains. Reaching **10× productivity** requires a formal engineering discipline: specification, verification, and accountability.
+- **Agentic AI is the forcing function** for this professionalization: the competitive pressure it creates makes the transformation economically inevitable, not merely desirable.
 - Civil engineering's six pillars (formal specification, material standards, codes, simulation, licensure, education) define the gap software must close.
 - This transformation has precedent: **infrastructure provisioning** already moved from craft to engineering via Terraform's declarative lifecycle.
 - **Event Modeling** provides a specification language for product-level behavior that is both human-readable and machine-verifiable.
@@ -32,6 +33,8 @@ Software development today operates predominantly as a craft tradition. Individu
 This model has produced remarkable results. Much of the world's best software emerged from the deep intuition of skilled practitioners who understood their domains, their tools, and their users in ways that resist formalization.
 
 But it caps the gains of agentic engineering at incremental improvement — the difference between 10% faster and 10× faster.
+
+This article addresses industrialized software production — systems where reliability, auditability, and long-term maintainability are non-negotiable. Exploratory prototypes, R&D spikes, and one-off scripts have different economics and different constraints.
 
 > "AI does not remove the need for careful engineering. On the contrary, it punishes the absence of it." — Juliette van der Laarse [12]
 
@@ -326,19 +329,19 @@ The traditional developer/architect/tech lead taxonomy gives way to roles organi
 - **Verification Engineers** — build and maintain the eval system, design adversarial testing strategies, monitor production drift. Evolution of QA + SRE + compliance.
 - **Specification Leads** — own the unified specification for a product area, govern changes, ensure coherence across behavioral, operational, and policy layers. A leadership function, not an architecture role.
 
-## 9. Why AI Is the Catalyst, Not Catastrophe
+## 9. Why AI Is the Forcing Function, Not Catastrophe
 
 ### 9.1 The positive professionalization thesis
 
 Civil engineering professionalized *reactively* — bridges collapsed, buildings failed, people died, regulations followed [10]. It took decades and required political will.
 
-Software Civil Engineering has a different catalyst: **economic opportunity, not catastrophe.**
+Software Civil Engineering has a different forcing function: **economic opportunity, not catastrophe.** Agentic AI makes professionalization inevitable because the productivity gap between formalized and unformalized organizations is too large to ignore.
 
-Every organization using AI-assisted development today is already seeing gains — but the gap between 10% faster and 10× faster is the gap between craft-with-copilots and engineering-with-agents. Organizations that formalize their specifications sufficiently for agents to operate autonomously will cross that threshold. This competitive pressure is operating *now*.
+Every organization using AI-assisted development today is already seeing gains — but the gap between 10% faster and 10× faster is the gap between craft-with-copilots and engineering-with-agents. Organizations that formalize their specifications sufficiently for agents to operate autonomously will cross that threshold. This pressure is operating *now*.
 
 > "The implementation itself can be replaced module by module in a few hours, keeping the design ideas and tests that define its behaviours. [...] We've just moved up a level." — Adrian Cockcroft [16]
 
-Professionalization is driven not by regulatory mandate or public disaster, but by the productivity differential between organizations that can leverage agentic engineering and those that cannot.
+Professionalization is driven not by regulatory mandate or public disaster, but by the forcing function of agentic AI: the productivity differential it creates between organizations that can leverage engineering-grade specification and those that cannot.
 
 ### 9.2 The individual organization path
 
