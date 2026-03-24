@@ -8,7 +8,7 @@
 
 ---
 
-> **Thesis:** The transition to agentic software engineering is structurally impossible without first transforming software development from a craft tradition into a formal engineering discipline. This transformation mirrors the historical professionalization of civil engineering and requires the same foundational elements: formal specification, material science, simulation, verification, and institutional accountability. Event Modeling, extended with operational and policy constraints and operationalized through a Terraform-analogous lifecycle, provides the viable path.
+> **Thesis:** The transition to agentic software engineering is structurally impossible without first transforming software development from a craft tradition into a formal engineering discipline. This transformation mirrors the historical professionalization of civil engineering and requires the same foundational elements: formal specification, material science, simulation, verification, and institutional accountability. Event Modeling, extended with operational and policy constraints, made executable through the Decider pattern, and grounded in Event Sourcing — which provides the immutable, append-only record that makes verification, audit, and drift detection possible not just at design time but in production — and operationalized through a Terraform-analogous lifecycle (Specify → Plan → Verify → Apply → Observe), provides the viable path. Crucially, this is not unprecedented — infrastructure provisioning has already undergone exactly this transformation, enabled by civil engineering itself.
 
 ---
 
@@ -25,6 +25,8 @@ But it is incompatible with agentic engineering.
 Agentic software engineering — the delegation of implementation tasks to autonomous AI agents [3] — requires a substrate that agents can operate on: specifications that are formal enough to be unambiguous, verification criteria that are objective enough to be machine-evaluable, and architectural constraints that are explicit enough to be enforceable without human judgment. When each developer works as an artisan — with personal conventions, implicit design decisions, and craft knowledge stored in their heads rather than in artifacts — there is nothing stable for an agent to build upon.
 
 The implication is stark: **to unlock the productivity gains of agentic engineering, organizations must first become genuinely good at software engineering** — not in the sense of writing better code, but in the sense of establishing the formalized practices, specifications, and verification mechanisms that characterize mature engineering disciplines.
+
+The current excitement around LLM-based code generation obscures this. Generative AI has made the construction workers faster — but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
 
 This is not merely a tooling problem. It is a disciplinary transformation analogous to the one that civil engineering underwent in the 19th century — and examining that parallel reveals both the path forward and the institutional gaps that remain.
 
@@ -62,6 +64,29 @@ Mapped against these pillars, software development's disciplinary immaturity bec
 This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate reliably within it. The craft model works for human practitioners because humans can navigate ambiguity, apply tacit knowledge, and exercise judgment in real time. AI agents cannot — they require the formalized substrate that engineering disciplines provide.
 
 > "The architectural sins that a human team could tolerate — the hidden coupling, the undocumented side effects, the modules that only make sense if you know the history — are fatal to AI-assisted development." — Ian Bull [13]
+
+### 2.3 The infrastructure precedent
+
+Yet this transformation from craft to engineering is not without precedent in the software domain. Infrastructure provisioning has already undergone exactly this journey — and the path it took is instructive.
+
+A decade ago, provisioning a server was craft work. An engineer would SSH into a machine, install packages by hand, edit configuration files, and hope to remember what they had done. Each server was a snowflake — unique, unreproducible, and understood only by the person who built it. When that person left the organization, their knowledge left with them. Scaling meant repeating the craft, server by server, with all the variance and risk that entails.
+
+Then came configuration management tools — Ansible, Chef, Puppet — which codified the *steps* imperatively: "install this package, then copy this file, then restart this service." An improvement, but still a sequence of instructions rather than an engineering specification.
+
+The decisive shift came with Terraform and the Infrastructure as Code (IaC) paradigm [9]. Instead of describing *how* to provision infrastructure, engineers began declaring *what* the infrastructure should be — the desired end state. The tool itself determined the path from current state to desired state. This shift introduced the elements of a genuine engineering discipline:
+
+- **Declarative specification** — `.tf` files describe the desired state, not the steps to achieve it. This is the blueprint.
+- **State management** — a state file records what actually exists right now. This is the as-built documentation that enables diffing.
+- **Plan before apply** — `terraform plan` shows exactly what will change before any mutation occurs. This is the structural analysis step: verify before you build.
+- **Controlled execution** — `terraform apply` realizes the verified plan in a reproducible, auditable manner.
+- **Providers** — plugins that encode the properties, constraints, and behaviors of specific technical substrates (AWS, Azure, GCP). This is the material datasheet: known properties of the materials you build with.
+- **Drift detection** — continuous comparison of actual state against declared specification. This is the building inspection.
+
+The parallel to the six civil engineering pillars from Section 2.1 is not accidental. And neither is the fact that this transformation was *enabled* by civil engineering itself. The hyperscale datacenters that Amazon, Microsoft, and Google operate — the physical foundation on which cloud computing rests — are civil engineering projects in the most literal sense. They are designed with formal structural specifications, built with certified materials, verified against building codes, and subject to ongoing inspection. Civil engineering principles did not merely inspire the IaC transformation; they made it physically possible by providing the reliable substrate on which declarative infrastructure could be built.
+
+The question this precedent raises is direct: **if infrastructure provisioning could be transformed from craft to engineering — with formal specification, verification before change, material abstraction, and drift detection — can digital product development undergo the same transformation?**
+
+The remainder of this article argues that it can, and that Event Modeling provides the specification language to make it happen.
 
 ## 3. Spec-Driven Development and Event Modeling
 
@@ -104,19 +129,11 @@ But civil engineering blueprints are not the only specification artifact. They a
 
 These gaps must be filled for the engineering analogy to hold.
 
-## 4. The Terraform Paradigm: Declarative Product Engineering
+## 4. From Infrastructure to Products — and Beyond Terraform
 
-### 4.1 Why Terraform, not Simulink
+### 4.1 Lifting the abstraction level
 
-The initial instinct is to look for software's equivalent of Simulink — a simulation engine for application behavior. But the better analogy is Terraform [9], because what we actually need is not physics-based simulation of dynamic systems but rather:
-
-**Declarative specification → Plan → Verification → Apply → Drift Detection**
-
-Terraform does not say "execute these 47 API calls in this order." It says: "this is the desired state; the engine determines the path." And critically, `terraform plan` shows exactly what will change before it happens — a state transition preview, not a physics simulation.
-
-### 4.2 Lifting the abstraction level
-
-Terraform operates at the infrastructure level: "I want 3 VMs with these network rules." This is declarative but still *technical* — it specifies resources, not behavior.
+Section 2.3 established that Terraform brought engineering discipline to infrastructure provisioning. But Terraform operates at the *infrastructure* level: "I want 3 VMs with these network rules." This is declarative but still *technical* — it specifies resources, not behavior.
 
 Lifting the abstraction to the product level produces something fundamentally different:
 
@@ -126,45 +143,74 @@ This single declaration spans behavior, constraints, and operational requirement
 
 This is not Terraform for infrastructure. It is not Terraform for applications. It is **Terraform for software products.** The specification lives at the product level, not the technical level.
 
-### 4.3 The three components Terraform has that we lack
+### 4.2 Where the analogy diverges: simulation before production
 
-Terraform works because it possesses three capabilities that application-level software production currently lacks:
+Terraform's lifecycle is powerful, but it was designed for a domain where the primary operation is a *single state transition* — from what exists now to what should exist. `terraform plan` shows the diff; `terraform apply` executes it. This is sufficient for infrastructure, where resources are provisioned and configured but do not exhibit complex dynamic behavior over time.
 
-**1. A complete state representation.**
-Terraform knows exactly what exists right now (the state file). Event Modeling describes desired behavior but has no formalized representation of *current system state* to diff against. You cannot run `event-model plan` and see: "to go from the current system to this specification, we need to add 3 command handlers, modify 2 projections, and migrate events in stream X."
+Software products are fundamentally different. They *behave.* A publishing system does not merely exist in a desired state — it processes thousands of concurrent submissions, enforces compliance rules that change mid-workflow, and must respond gracefully when a funder alters its open-access mandate during an active publication cycle. These are behavioral questions that a state-transition diff cannot answer.
 
-**2. A provider model — the abstraction of the technical substrate.**
-Terraform knows that an AWS EC2 instance has specific properties, costs, constraints, and lead times. This is the *material datasheet.* In software terms: the agent implementing a slice needs to know that "a projection against PostgreSQL with this data volume has approximately this latency characteristic" or that "a Marten event store with this stream granularity has these throughput properties."
+What we need, therefore, is Terraform's declarative lifecycle *plus* the ability to simulate behavior before production — to prove the design before realization, just as a structural engineer runs finite element analysis before construction begins. The question is: what gives us that simulation capability at the product level?
 
-**3. Constraints as first-class objects.**
-In Terraform, you can write `prevent_destroy = true` or enforce policies via Sentinel/OPA. Constraints live *within* the specification, not alongside it.
+### 4.3 The Decider pattern: Plan for domain logic
 
-### 4.4 The unified specification model
+The answer lies in a pattern that connects Event Modeling directly to verifiable execution: the Decider pattern, formalized by Jérémie Chassaing [17].
+
+A Decider is a pure, deterministic function: given the current state (derived from prior events) and a command, it produces the resulting events. No side effects, no infrastructure dependencies, no network calls — just input, logic, output.
+
+This is `terraform plan` for domain logic. Just as `terraform plan` takes current infrastructure state and a desired-state specification and produces a changeset preview, a Decider takes current domain state and a command and produces the events that *would* result. And just as you can run `terraform plan` a thousand times without provisioning a single server, you can run a Decider against a thousand scenarios without touching a database.
+
+The mapping to Event Modeling is direct. Each Given-When-Then slice in an Event Model *is* a Decider invocation:
+
+- **Given** prior events → the Decider's current state (via its `evolve` function)
+- **When** a command is issued → the Decider's input
+- **Then** specific events are produced → the Decider's output
+
+This means an Event Model is not merely a specification document — it is a *simulation suite.* Each slice defines a scenario that can be executed as a pure function, verified deterministically, and repeated indefinitely at near-zero cost. The blueprint is also the structural analysis.
+
+*[Illustration placeholder: The Decider pattern — showing the pure function from (State, Command) → Events, and its mapping to Event Modeling's Given-When-Then slices]*
+
+### 4.4 The six elements: a structural isomorphism
+
+With both the Terraform lifecycle and the Decider pattern in hand, we can now map the full structural correspondence between infrastructure engineering, civil engineering, and the proposed product engineering model. This is not a loose analogy — it is a structural isomorphism across six elements:
+
+| Element | Terraform (Infrastructure) | Civil Engineering | Product Level (This Article) |
+|---|---|---|---|
+| **Specification** | `.tf` files — declarative desired state | Blueprints + structural calculations | Event Model + Operational/Policy Constraints |
+| **Providers** | Plugins encoding substrate properties (AWS, Azure, GCP) | Material datasheets (steel grades, concrete specs) | Technical substrate profiles (DB latency, broker throughput, framework characteristics) |
+| **State** | `.tfstate` — what actually exists now | As-built documentation | Current system state representation for diffing |
+| **Plan** | `terraform plan` — diff + changeset preview | Structural analysis, bill of materials | State diff + Decider-based behavioral simulation |
+| **Apply** | `terraform apply` — controlled execution | Construction by licensed contractors | AI agents implement verified plan |
+| **Drift detection** | Actual vs. desired state comparison | Building inspection, structural monitoring | Production event stream validation against specification |
+
+The critical difference at the product level is in the **Plan** element. Terraform's plan is a state diff — necessary but insufficient for products. The product-level plan is *richer*: it includes both the state diff (what needs to change structurally) and behavioral simulation via Deciders (whether the changed system will behave correctly under scenarios). This divergence from the Terraform model is not a weakness — it is where Software Civil Engineering *extends* the infrastructure paradigm to meet the demands of behavioral systems.
+
+### 4.5 The unified specification model
 
 Combining these elements produces a unified model:
 
 ```
 Specification {
     EventModel      → behavior (commands, events, views)
+    Deciders        → executable behavioral contracts (pure functions)
     Providers       → technical substrate with known properties
     Constraints     → NFRs, policies, budgets
 }
 
-Plan     = diff(CurrentState, Specification)
+Plan     = diff(CurrentState, Specification) + simulate(Deciders, Scenarios)
 Verify   = evaluate(Plan, against: Constraints)
 Apply    = agents.implement(Plan)
 Observe  = drift_detection(Production, Specification)
 ```
 
-This lifecycle — **Specify → Plan → Verify → Apply → Observe** — is the operational core of Software Civil Engineering. Each phase has a clear analog in civil engineering:
+This lifecycle — **Specify → Plan → Verify → Apply → Observe** — is the operational core of Software Civil Engineering. Each phase has a clear analog in both civil engineering and the infrastructure precedent:
 
-| Phase | Software Civil Engineering | Civil Engineering Analog |
-|---|---|---|
-| Specify | Event Model + Providers + Constraints | Architectural blueprints + structural calculations + building codes |
-| Plan | Diff current state against specification | Bill of materials, construction schedule |
-| Verify | Evaluate plan against constraints (simulation) | Structural analysis, code compliance review |
-| Apply | AI agents implement verified plan | Construction by licensed contractors |
-| Observe | Drift detection in production | Building inspection, ongoing structural monitoring |
+| Phase | Software Civil Engineering | Terraform Analog | Civil Engineering Analog |
+|---|---|---|---|
+| Specify | Event Model + Deciders + Providers + Constraints | `.tf` configuration files | Architectural blueprints + structural calculations + building codes |
+| Plan | State diff + behavioral simulation | `terraform plan` | Bill of materials, construction schedule, structural analysis |
+| Verify | Evaluate plan against constraints | Sentinel/OPA policy checks | Code compliance review |
+| Apply | AI agents implement verified plan | `terraform apply` | Construction by licensed contractors |
+| Observe | Drift detection in production | State refresh + drift alerts | Building inspection, ongoing structural monitoring |
 
 ## 5. The Three Specification Layers
 
@@ -207,16 +253,18 @@ This layer captures constraints that must hold everywhere, always, regardless of
 
 ### 6.1 Three verification loops
 
-The Simulink analog for software is not a single tool but a system of three eval loops that operate at different phases:
+The simulation capability for software is not a single tool but a system of three eval loops that operate at different phases — each leveraging the Decider pattern's property of pure, side-effect-free execution:
 
 **Loop 1 — Design-time simulation.**
-Before any code is written (by human or agent), the Event Model is run through scenarios. "What happens if a publisher submits 10,000 articles simultaneously? What happens if a funder changes its open-access mandate mid-publication?" The flow is simulated through the event timeline to find logical errors, missing events, and inconsistent states. This is the Simulink equivalent — proving the design before realization.
+Before any code is written (by human or agent), the Event Model's Deciders are executed against scenarios. "What happens if a publisher submits 10,000 articles simultaneously? What happens if a funder changes its open-access mandate mid-publication?" Because Deciders are pure functions, these simulations run at near-zero cost — no databases, no infrastructure, no deployment. The flow is simulated through the event timeline to find logical errors, missing events, and inconsistent states. This is the structural analysis step: proving the design before realization.
 
 **Loop 2 — Implementation-time evals.**
-When an AI agent implements a slice, the generated code is executed against an eval set *derived automatically from the Event Model.* Each Given-When-Then scenario becomes an automated acceptance test. The agent "passes" only if the code satisfies the specification — not vaguely, but deterministically. Operational Model constraints add quantitative verification: the implementation must also meet latency budgets, resource limits, and resilience requirements. Policy Model constraints add invariant checks: security scanning, compliance verification, architectural conformance.
+When an AI agent implements a slice, the generated code is executed against an eval set *derived automatically from the Event Model.* Each Given-When-Then scenario — each Decider contract — becomes an automated acceptance test. The agent "passes" only if the code satisfies the specification — not vaguely, but deterministically. Operational Model constraints add quantitative verification: the implementation must also meet latency budgets, resource limits, and resilience requirements. Policy Model constraints add invariant checks: security scanning, compliance verification, architectural conformance.
 
 **Loop 3 — Runtime verification.**
 In production, actual events are validated against the expected model. Anomaly detection identifies patterns that should never occur according to the specification. Event sourcing provides a massive advantage here — the complete, immutable event log is the ultimate audit trail and verification corpus. Drift detection — the `terraform plan` equivalent — continuously compares production behavior against the specification and flags divergence.
+
+**A pioneer in practice.** Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable [18]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical — it is an emerging engineering practice whose principles are ready to be lifted to the product level.
 
 ### 6.2 Adversarial verification
 
@@ -343,7 +391,11 @@ There exists a class of technical decisions that are genuinely emergent — they
 
 Software development stands at a disciplinary inflection point comparable to civil engineering's professionalization in the 19th century. The catalyst is different — economic opportunity through AI rather than public safety through regulation — but the structural requirements are identical: formal specification, verifiable design, standardized material knowledge, simulation capability, and accountable governance.
 
-Event Modeling, extended with Operational and Policy constraint layers and operationalized through a Terraform-analogous lifecycle (Specify → Plan → Verify → Apply → Observe), provides a viable architectural foundation for this transformation. The specification becomes the product — not documentation about the product, but the formal, verifiable, machine-executable definition of what the product is, how it must perform, and what rules it must obey.
+This transformation is not without precedent. Civil engineering principles already penetrated the software domain once — through the physical datacenters that enabled cloud computing, and through Terraform's introduction of declarative specification, plan-before-apply verification, and drift detection to infrastructure provisioning. That precedent demonstrated that craft-to-engineering transformation is achievable within our domain. The task now is to lift it from the infrastructure level to the product level.
+
+Event Modeling, made executable through the Decider pattern and extended with Operational and Policy constraint layers, provides the specification language for this lift. The Decider pattern bridges the gap between static specification and dynamic simulation — each Given-When-Then slice is simultaneously a specification, a test, and a simulation scenario, executable as a pure function without infrastructure. Operationalized through a lifecycle that extends Terraform's model (Specify → Plan → Verify → Apply → Observe) with behavioral simulation, the result is a viable architectural foundation for Software Civil Engineering.
+
+The specification becomes the product — not documentation about the product, but the formal, verifiable, machine-executable definition of what the product is, how it must perform, and what rules it must obey.
 
 The implications are sweeping. Individual implementation skill yields to specification precision as the primary value driver. The historical separation between business strategy and technical specification dissolves into a unified formal model. Technical leadership transforms from architecture oversight into specification governance. And AI agents become not replacements for developers but the *execution engine* of a properly specified engineering process — analogous to the construction crew that builds from verified blueprints, not the artisan who works from intuition.
 
@@ -386,3 +438,7 @@ The bridges will not fall because they were designed not to.
 [15] A. Tornhill, "Agentic AI Coding: Best Practice Patterns for Speed with Quality," CodeScene Blog, 2025. https://codescene.com/blog/agentic-ai-coding-best-practice-patterns-for-speed-with-quality. Demonstrates that agentic coding demands more structural rigor and code health, not less.
 
 [16] A. Cockcroft, "Directing AI Native Development," Medium, 2025. https://adrianco.medium.com/directing-ai-native-development-0914ac271744. Describes the shift from building-from-source to building-from-spec as a level change in software production.
+
+[17] J. Chassaing, "Functional Event Sourcing Decider," thinkbeforecoding.com, 2021. https://thinkbeforecoding.com/post/2021/12/17/functional-event-sourcing-decider. Formalizes the Decider pattern as a pure function from (State, Command) → Events, providing the executable bridge between Event Modeling specifications and verifiable implementation.
+
+[18] Datadog Engineering, "Closing the Verification Loop: Harness-First Agents," Datadog Blog, 2026. https://www.datadoghq.com/blog/ai/harness-first-agents/. Demonstrates layered verification from formal specifications (TLA+) through deterministic simulation testing to production telemetry, establishing the practical feasibility of specification-to-production verification pipelines.
