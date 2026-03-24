@@ -21,7 +21,7 @@
 - **Event Modeling** provides a specification language for product-level behavior that is both human-readable and machine-verifiable.
 - The **Decider pattern** makes Event Modeling specifications executable as pure functions — enabling simulation before implementation, just as structural analysis proves a design before construction.
 - A unified specification model (behavioral + operational + policy layers), operationalized through a **Specify → Plan → Verify → Apply → Observe** lifecycle, extends the infrastructure paradigm to products.
-- This dissolves the business-technical divide: the specification *becomes* the product strategy.
+- This narrows the business-technical divide: the specification *becomes* the product strategy.
 - Open gaps remain in professional licensure, formal education, and industry standards — institutional debt the profession has yet to repay.
 
 ---
@@ -104,7 +104,7 @@ The parallel to the six civil engineering pillars is not accidental — and this
 
 ### 3.1 The specification problem
 
-The historical failure of formal methods in software — Z-notation, B-method, TLA+ — was not a failure of the concept but of the interface [6]. These approaches required mathematical sophistication that most practitioners lacked and produced specifications that domain experts could not read. The specification language was divorced from both the problem domain and the implementation domain.
+Formal methods in software — Z-notation, B-method, TLA+ — succeeded in safety-critical domains but failed to reach mainstream adoption, not because the concept was wrong but because the interface was [6]. These approaches required mathematical sophistication that most practitioners lacked and produced specifications that domain experts could not read. The specification language was divorced from both the problem domain and the implementation domain.
 
 > "The craft has always been figuring out *what* code to write. Any given software problem has dozens of potential solutions, each with their own tradeoffs." — Simon Willison [14]
 
@@ -262,7 +262,7 @@ Before any code is written (by human or agent), the Event Model's Deciders are e
 When an AI agent implements a slice, the generated code is executed against an eval set *derived automatically from the Event Model.* Each Given-When-Then scenario — each Decider contract — becomes an automated acceptance test. The agent "passes" only if the code satisfies the specification — not vaguely, but deterministically. Operational Model constraints add quantitative verification: the implementation must also meet latency budgets, resource limits, and resilience requirements. Policy Model constraints add invariant checks: security scanning, compliance verification, architectural conformance.
 
 **Loop 3 — Runtime verification.**
-In production, actual events are validated against the expected model. Anomaly detection identifies patterns that should never occur according to the specification. Event sourcing provides a massive advantage here — the complete, immutable event log is the ultimate audit trail and verification corpus. Drift detection — the `terraform plan` equivalent — continuously compares production behavior against the specification and flags divergence.
+In production, actual events are validated against the expected model. Anomaly detection identifies patterns that should never occur according to the specification. Event sourcing provides a significant advantage here — the complete, immutable event log is a natural audit trail and verification corpus. Drift detection — the `terraform plan` equivalent — continuously compares production behavior against the specification and flags divergence.
 
 **A pioneer in practice.** Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable [18]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical — it is an emerging engineering practice whose principles are ready to be lifted to the product level.
 
@@ -280,7 +280,7 @@ This mirrors civil engineering practice where the structural engineer who verifi
 
 ### 7.1 Specification as strategy
 
-If the specification encompasses behavior, operational characteristics, and policy constraints, then **the specification is the product strategy** — and the historical separation between "the business side" and "the tech side" dissolves. A product leader who defines "publishers need real-time compliance checking with sub-second response times" is simultaneously writing behavioral specification (Event Model), performance requirements (Operational Model), and compliance constraints (Policy Model). No translation step. No alignment ceremony. One model.
+If the specification encompasses behavior, operational characteristics, and policy constraints, then **the specification is the product strategy** — and the historical separation between "the business side" and "the tech side" narrows sharply. A product leader who defines "publishers need real-time compliance checking with sub-second response times" is simultaneously writing behavioral specification (Event Model), performance requirements (Operational Model), and compliance constraints (Policy Model). No translation step. No alignment ceremony. One model.
 
 ### 7.2 Specification ownership as leadership function
 
