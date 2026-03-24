@@ -150,11 +150,9 @@ This declaration spans behavior, constraints, and operational requirements simul
 
 ### 4.2 Where the analogy diverges: simulation before production
 
-Terraform's lifecycle is powerful, but it was designed for a domain where the primary operation is a *single state transition* — from what exists now to what should exist. `terraform plan` shows the diff; `terraform apply` executes it. This is sufficient for infrastructure, where resources are provisioned and configured but do not exhibit complex dynamic behavior over time.
+Terraform's lifecycle handles state transitions — but software products *behave.* A publishing system processes thousands of concurrent submissions, enforces compliance rules that change mid-workflow, and must respond gracefully when a funder alters its open-access mandate during an active publication cycle. A state-transition diff cannot answer these behavioral questions.
 
-Software products are fundamentally different. They *behave.* A publishing system does not merely exist in a desired state — it processes thousands of concurrent submissions, enforces compliance rules that change mid-workflow, and must respond gracefully when a funder alters its open-access mandate during an active publication cycle. These are behavioral questions that a state-transition diff cannot answer.
-
-What we need, therefore, is Terraform's declarative lifecycle *plus* the ability to simulate behavior before production — to prove the design before realization, just as a structural engineer runs finite element analysis before construction begins. The question is: what gives us that simulation capability at the product level?
+What we need is the declarative lifecycle *plus* the ability to simulate behavior before production — to prove the design before realization. The question is: what gives us that simulation capability at the product level?
 
 ### 4.3 The Decider pattern: Plan for domain logic
 
@@ -162,7 +160,7 @@ The answer lies in a pattern that connects Event Modeling directly to verifiable
 
 A Decider is a pure, deterministic function: given the current state (derived from prior events) and a command, it produces the resulting events. No side effects, no infrastructure dependencies, no network calls — just input, logic, output.
 
-This is `terraform plan` for domain logic. Just as `terraform plan` takes current infrastructure state and a desired-state specification and produces a changeset preview, a Decider takes current domain state and a command and produces the events that *would* result. And just as you can run `terraform plan` a thousand times without provisioning a single server, you can run a Decider against a thousand scenarios without touching a database.
+This is `terraform plan` for domain logic — a pure preview of what *would* happen, runnable against a thousand scenarios without touching a database.
 
 The mapping to Event Modeling is direct. Each Given-When-Then slice in an Event Model *is* a Decider invocation:
 
@@ -279,11 +277,7 @@ This mirrors civil engineering practice where the structural engineer who verifi
 
 ### 7.1 Specification as strategy
 
-A profound implication of this model: if the specification encompasses behavior (what the product does), operational characteristics (how it performs), and policy constraints (what rules it obeys), then **the specification is the product strategy expressed in formal terms.**
-
-The historical separation between "the business side" and "the tech side" — which has generated decades of alignment problems, translation losses, and organizational friction — is not solved by better communication practices or agile ceremonies. It is dissolved by creating a **shared formal language** where product strategy and technical specification are expressed in the same model.
-
-The product leader who defines "publishers need real-time compliance checking with sub-second response times" is simultaneously writing behavioral specification (Event Model), performance requirements (Operational Model), and compliance constraints (Policy Model). There is no translation step. The specification *is* the strategy.
+If the specification encompasses behavior, operational characteristics, and policy constraints, then **the specification is the product strategy** — and the historical separation between "the business side" and "the tech side" dissolves. A product leader who defines "publishers need real-time compliance checking with sub-second response times" is simultaneously writing behavioral specification (Event Model), performance requirements (Operational Model), and compliance constraints (Policy Model). No translation step. No alignment ceremony. One model.
 
 ### 7.2 Specification ownership as leadership function
 
@@ -388,17 +382,11 @@ There exists a class of technical decisions that are genuinely emergent — they
 
 ## 11. Conclusion: The Disciplinary Moment
 
-Software development stands at a disciplinary inflection point comparable to civil engineering's professionalization in the 19th century. The catalyst is different — economic opportunity through AI rather than public safety through regulation — but the structural requirements are identical: formal specification, verifiable design, standardized material knowledge, simulation capability, and accountable governance.
+The infrastructure precedent proved that craft-to-engineering transformation is achievable within the software domain. The task now is to lift it from the infrastructure level to the product level.
 
-This transformation is not without precedent. Civil engineering principles already penetrated the software domain once — through the physical datacenters that enabled cloud computing, and through Terraform's introduction of declarative specification, plan-before-apply verification, and drift detection to infrastructure provisioning. That precedent demonstrated that craft-to-engineering transformation is achievable within our domain. The task now is to lift it from the infrastructure level to the product level.
+Event Modeling, made executable through the Decider pattern and extended with Operational and Policy constraint layers, provides the specification language for this lift. Each Given-When-Then slice is simultaneously a specification, a test, and a simulation scenario — executable as a pure function without infrastructure. Operationalized through the Specify → Plan → Verify → Apply → Observe lifecycle, the result is a viable foundation for Software Civil Engineering.
 
-Event Modeling, made executable through the Decider pattern and extended with Operational and Policy constraint layers, provides the specification language for this lift. The Decider pattern bridges the gap between static specification and dynamic simulation — each Given-When-Then slice is simultaneously a specification, a test, and a simulation scenario, executable as a pure function without infrastructure. Operationalized through a lifecycle that extends Terraform's model (Specify → Plan → Verify → Apply → Observe) with behavioral simulation, the result is a viable architectural foundation for Software Civil Engineering.
-
-The specification becomes the product — not documentation about the product, but the formal, verifiable, machine-executable definition of what the product is, how it must perform, and what rules it must obey.
-
-The implications are sweeping. Individual implementation skill yields to specification precision as the primary value driver. The historical separation between business strategy and technical specification dissolves into a unified formal model. Technical leadership transforms from architecture oversight into specification governance. And AI agents become not replacements for developers but the *execution engine* of a properly specified engineering process — analogous to the construction crew that builds from verified blueprints, not the artisan who works from intuition.
-
-The organizations that make this transition will not merely be more productive. They will be operating in a fundamentally different paradigm — one where software quality is determined upstream, at the specification level, rather than downstream, at the implementation level. Like civil engineering before it, the discipline will be defined not by the skill of its builders but by the rigor of its specifications.
+What follows from this is a paradigm where specification precision replaces implementation skill as the primary value driver, where technical leadership becomes specification governance, and where AI agents serve as the execution engine of a properly specified engineering process. The specification does not describe the product — it *is* the product, and the organizations that grasp this will not merely be more productive. They will be operating in a fundamentally different mode: quality determined upstream, at the specification level, not downstream at the implementation level.
 
 The bridges will not fall because they were designed not to.
 
