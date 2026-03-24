@@ -8,13 +8,13 @@
 
 ---
 
-> **Thesis:** The transition to agentic software engineering is structurally impossible without first transforming software development from a craft tradition into a formal engineering discipline. This transformation mirrors the historical professionalization of civil engineering and requires the same foundational elements: formal specification, material science, simulation, verification, and institutional accountability. Event Modeling, extended with operational and policy constraints, made executable through the Decider pattern, and grounded in Event Sourcing — which provides the immutable, append-only record that makes verification, audit, and drift detection possible not just at design time but in production — and operationalized through a Terraform-analogous lifecycle (Specify → Plan → Verify → Apply → Observe), provides the viable path. Crucially, this is not unprecedented — infrastructure provisioning has already undergone exactly this transformation, enabled by civil engineering itself.
+> **Thesis:** Agentic software engineering already works in craft environments — but it yields incremental gains, not transformational ones. The difference between a 10% productivity improvement and a 10× one lies in the same foundational elements that professionalized civil engineering: formal specification, material science, simulation, verification, and institutional accountability. Event Modeling, extended with operational and policy constraints, made executable through the Decider pattern, and grounded in Event Sourcing — which provides the immutable, append-only record that makes verification, audit, and drift detection possible not just at design time but in production — and operationalized through a Terraform-analogous lifecycle (Specify → Plan → Verify → Apply → Observe), provides the viable path to industrial-grade outcomes. Crucially, this is not unprecedented — infrastructure provisioning has already undergone exactly this transformation, enabled by civil engineering itself.
 
 ---
 
 ### Executive Summary
 
-- Software development operates as a **craft tradition**; agentic AI requires a **formal engineering discipline** — specification, verification, and accountability.
+- Agentic AI already works in **craft environments** — but yields incremental (10%) gains. Reaching **10× productivity** requires a formal engineering discipline: specification, verification, and accountability.
 - Civil engineering's six pillars (formal specification, material standards, codes, simulation, licensure, education) define the gap software must close.
 - This transformation has precedent: **infrastructure provisioning** already moved from craft to engineering via Terraform's declarative lifecycle.
 - **Event Modeling** provides a specification language for product-level behavior that is both human-readable and machine-verifiable.
@@ -31,15 +31,15 @@ Software development today operates predominantly as a craft tradition. Individu
 
 This model has produced remarkable results. Much of the world's best software emerged from the deep intuition of skilled practitioners who understood their domains, their tools, and their users in ways that resist formalization.
 
-But it is incompatible with agentic engineering.
+But it caps the gains of agentic engineering at incremental improvement — the difference between 10% faster and 10× faster.
 
 > "AI does not remove the need for careful engineering. On the contrary, it punishes the absence of it." — Juliette van der Laarse [12]
 
-Agentic software engineering — the delegation of implementation tasks to autonomous AI agents [3] — requires a substrate that agents can operate on: specifications that are formal enough to be unambiguous, verification criteria that are objective enough to be machine-evaluable, and architectural constraints that are explicit enough to be enforceable without human judgment. When each developer works as an artisan — with personal conventions, implicit design decisions, and craft knowledge stored in their heads rather than in artifacts — there is nothing stable for an agent to build upon.
+Agentic software engineering — the delegation of implementation tasks to autonomous AI agents [3] — already works in craft environments. Developers use LLM-based tools to generate code, refactor modules, and accelerate routine tasks. But agents operating on informal specifications, implicit conventions, and craft knowledge hit a ceiling quickly: they can assist artisans, but they cannot reliably replace the artisanship. Scaling from copilot-level assistance to autonomous, end-to-end product delivery requires a substrate that agents can operate on — specifications formal enough to be unambiguous, verification criteria objective enough to be machine-evaluable, and architectural constraints explicit enough to be enforceable without human judgment.
 
-The implication is stark: **to unlock the productivity gains of agentic engineering, organizations must first become genuinely good at software engineering** — not in the sense of writing better code, but in the sense of establishing the formalized practices, specifications, and verification mechanisms that characterize mature engineering disciplines.
+The implication: **the difference between modest and transformational productivity gains from agentic engineering is not better AI — it is better engineering** — formalized practices, specifications, and verification mechanisms that characterize mature engineering disciplines.
 
-The current excitement around LLM-based code generation obscures this. Generative AI has made the construction workers faster — but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
+This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster — but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Faster bricklaying yields 10%. Formal engineering yields 10×. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
 
 This is not merely a tooling problem. It is a disciplinary transformation analogous to the one that civil engineering underwent in the 19th century — and examining that parallel reveals both the path forward and the institutional gaps that remain.
 
@@ -74,7 +74,7 @@ Mapped against these pillars, software development's disciplinary immaturity bec
 | Professional licensure | PE license, personal liability | None — no individual accountability for engineering decisions |
 | Formal education | Accredited, standardized, examined | Highly variable; no required competency demonstration |
 
-This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate reliably within it. The craft model works for human practitioners because humans can navigate ambiguity, apply tacit knowledge, and exercise judgment in real time. AI agents cannot — they require the formalized substrate that engineering disciplines provide.
+This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate at industrial scale. AI agents can already assist craft practitioners — but scaling from copilot to autonomous production requires the formalized substrate that engineering disciplines provide.
 
 > "The architectural sins that a human team could tolerate — the hidden coupling, the undocumented side effects, the modules that only make sense if you know the history — are fatal to AI-assisted development." — Ian Bull [13]
 
@@ -340,7 +340,7 @@ Civil engineering professionalized *reactively* — bridges collapsed, buildings
 
 Software Civil Engineering has a different catalyst: **economic opportunity, not catastrophe.**
 
-Organizations that can formalize their specifications sufficiently for AI agents to operate on them will produce software at a rate that is an order of magnitude greater than those that cannot. This competitive pressure is operating *now*.
+Every organization using AI-assisted development today is already seeing gains — but the gap between 10% faster and 10× faster is the gap between craft-with-copilots and engineering-with-agents. Organizations that formalize their specifications sufficiently for agents to operate autonomously will cross that threshold. This competitive pressure is operating *now*.
 
 > "The implementation itself can be replaced module by module in a few hours, keeping the design ideas and tests that define its behaviours. [...] We've just moved up a level." — Adrian Cockcroft [16]
 
