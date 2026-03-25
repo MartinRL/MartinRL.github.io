@@ -4,7 +4,7 @@
 
 ---
 
-![Software Civil Engineering: From Craft to Discipline](Gemini_civil-software-engineering-2.png.png)
+![Software Civil Engineering: From Craft to Discipline](Gemini_civil-software-engineering-2.png)
 
 ---
 
