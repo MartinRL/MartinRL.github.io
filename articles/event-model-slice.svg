@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 960 440" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arr-down" markerWidth="6" markerHeight="5" refX="3" refY="5" orient="auto">
+      <path d="M0,0 L3,5 L6,0" fill="#7f8c8d"/>
+    </marker>
+    <marker id="arr-right" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <path d="M0,0 L6,2.5 L0,5" fill="#e67e22"/>
+    </marker>
+    <marker id="arr-given" markerWidth="6" markerHeight="5" refX="0" refY="2.5" orient="auto">
+      <path d="M6,0 L0,2.5 L6,5" fill="#2c3e50"/>
+    </marker>
+  </defs>
+
+  <!-- ===== LANE BACKGROUNDS ===== -->
+  <rect x="90" y="40" width="860" height="70" rx="4" fill="#3498db" opacity="0.05"/>
+  <rect x="90" y="130" width="860" height="70" rx="4" fill="#e67e22" opacity="0.05"/>
+  <rect x="90" y="220" width="860" height="70" rx="4" fill="#27ae60" opacity="0.05"/>
+
+  <!-- ===== LANE LABELS ===== -->
+  <text x="80" y="72" text-anchor="end" font-size="11" font-weight="600" fill="#3498db">Commands</text>
+  <text x="80" y="162" text-anchor="end" font-size="11" font-weight="600" fill="#e67e22">Events</text>
+  <text x="80" y="248" text-anchor="end" font-size="11" font-weight="600" fill="#27ae60">Read</text>
+  <text x="80" y="262" text-anchor="end" font-size="11" font-weight="600" fill="#27ae60">Models</text>
+
+  <!-- ===== SLICE 1: Submit Article ===== -->
+  <!-- Command -->
+  <rect x="115" y="52" width="130" height="36" rx="5" fill="#3498db"/>
+  <text x="180" y="75" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Submit Article</text>
+  <!-- Flow arrow down -->
+  <line x1="180" y1="88" x2="180" y2="140" stroke="#7f8c8d" stroke-width="1.2" marker-end="url(#arr-down)"/>
+  <!-- Event -->
+  <rect x="110" y="142" width="140" height="36" rx="5" fill="#e67e22"/>
+  <text x="180" y="165" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Article Submitted</text>
+  <!-- Flow arrow down -->
+  <line x1="180" y1="178" x2="180" y2="230" stroke="#7f8c8d" stroke-width="1.2" marker-end="url(#arr-down)"/>
+  <!-- View -->
+  <rect x="120" y="232" width="120" height="36" rx="5" fill="#27ae60"/>
+  <text x="180" y="255" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Article List</text>
+
+  <!-- Horizontal event flow 1→2 -->
+  <line x1="250" y1="160" x2="300" y2="160" stroke="#e67e22" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr-right)"/>
+
+  <!-- ===== SLICE 2: Request Review ===== -->
+  <!-- Command -->
+  <rect x="310" y="52" width="130" height="36" rx="5" fill="#3498db"/>
+  <text x="375" y="75" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Request Review</text>
+  <!-- Flow arrow down -->
+  <line x1="375" y1="88" x2="375" y2="140" stroke="#7f8c8d" stroke-width="1.2" marker-end="url(#arr-down)"/>
+  <!-- Event -->
+  <rect x="305" y="142" width="140" height="36" rx="5" fill="#e67e22"/>
+  <text x="375" y="165" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Review Requested</text>
+  <!-- Flow arrow down -->
+  <line x1="375" y1="178" x2="375" y2="230" stroke="#7f8c8d" stroke-width="1.2" marker-end="url(#arr-down)"/>
+  <!-- View -->
+  <rect x="310" y="232" width="130" height="36" rx="5" fill="#27ae60"/>
+  <text x="375" y="255" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Reviewer Queue</text>
+
+  <!-- Horizontal event flow 2→3 -->
+  <line x1="445" y1="160" x2="495" y2="160" stroke="#e67e22" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr-right)"/>
+
+  <!-- ===== HIGHLIGHTED SLICE 3: Submit Review ===== -->
+  <!-- Dashed highlight box -->
+  <rect x="490" y="28" width="150" height="276" rx="6"
+        fill="none" stroke="#2c3e50" stroke-width="2" stroke-dasharray="8,4"/>
+
+  <!-- "When" label -->
+  <text x="565" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50">When</text>
+
+  <!-- Command -->
+  <rect x="505" y="52" width="120" height="36" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="565" y="75" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Submit Review</text>
+  <!-- Flow arrow down -->
+  <line x1="565" y1="88" x2="565" y2="140" stroke="#7f8c8d" stroke-width="1.2" marker-end="url(#arr-down)"/>
+  <!-- Event -->
+  <rect x="495" y="142" width="140" height="36" rx="5" fill="#e67e22" stroke="#d35400" stroke-width="1"/>
+  <text x="565" y="165" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Review Completed</text>
+  <!-- Flow arrow down -->
+  <line x1="565" y1="178" x2="565" y2="230" stroke="#7f8c8d" stroke-width="1.2" marker-end="url(#arr-down)"/>
+  <!-- View -->
+  <rect x="505" y="232" width="120" height="36" rx="5" fill="#27ae60" stroke="#1e8449" stroke-width="1"/>
+  <text x="565" y="255" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Article Status</text>
+
+  <!-- "Then" label -->
+  <text x="565" y="290" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50">Then</text>
+  <!-- Then bracket -->
+  <path d="M510,178 L510,186 L500,186" fill="none" stroke="#2c3e50" stroke-width="1.2"/>
+  <path d="M510,268 L510,276 L500,276" fill="none" stroke="#2c3e50" stroke-width="1.2"/>
+  <line x1="500" y1="186" x2="500" y2="276" stroke="#2c3e50" stroke-width="1.2"/>
+  <path d="M500,231 L492,231" fill="none" stroke="#2c3e50" stroke-width="1.2"/>
+
+  <!-- "Given" label and arrows pointing left to prior events -->
+  <text x="415" y="340" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50">Given</text>
+  <!-- Arrow from "Given" to Article Submitted -->
+  <path d="M400,335 C360,335 300,200 250,168" fill="none" stroke="#2c3e50" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#arr-given)"/>
+  <!-- Arrow from "Given" to Review Requested -->
+  <path d="M430,335 C440,300 440,220 445,168" fill="none" stroke="#2c3e50" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#arr-given)"/>
+  <!-- Explanatory note under Given -->
+  <text x="415" y="356" text-anchor="middle" font-size="9" fill="#7f8c8d" font-style="italic">(prior events establish state)</text>
+
+  <!-- Horizontal event flow 3→4 -->
+  <line x1="635" y1="160" x2="685" y2="160" stroke="#e67e22" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr-right)"/>
+
+  <!-- ===== SLICE 4: Approve Article ===== -->
+  <!-- Command -->
+  <rect x="695" y="52" width="140" height="36" rx="5" fill="#3498db"/>
+  <text x="765" y="75" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Approve Article</text>
+  <!-- Flow arrow down -->
+  <line x1="765" y1="88" x2="765" y2="140" stroke="#7f8c8d" stroke-width="1.2" marker-end="url(#arr-down)"/>
+  <!-- Event -->
+  <rect x="695" y="142" width="140" height="36" rx="5" fill="#e67e22"/>
+  <text x="765" y="165" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Article Approved</text>
+  <!-- Flow arrow down -->
+  <line x1="765" y1="178" x2="765" y2="230" stroke="#7f8c8d" stroke-width="1.2" marker-end="url(#arr-down)"/>
+  <!-- View -->
+  <rect x="710" y="232" width="110" height="36" rx="5" fill="#27ae60"/>
+  <text x="765" y="255" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Dashboard</text>
+
+  <!-- ===== TIMELINE ===== -->
+  <line x1="110" y1="400" x2="870" y2="400" stroke="#bdc3c7" stroke-width="1.2"/>
+  <polygon points="870,397 880,400 870,403" fill="#bdc3c7"/>
+  <text x="890" y="404" font-size="10" fill="#95a5a6" font-style="italic">time</text>
+
+</svg>

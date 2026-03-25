@@ -44,7 +44,8 @@ The implication: **the difference between modest and transformational productivi
 
 This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster, but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
 
-![The Six Pillars Asymmetry](six-pillars-asymmetry.svg)
+<img src="six-pillars-asymmetry.svg" alt="The Six Pillars Asymmetry" width="100%">
+
 *Current AI investment accelerates construction. The six disciplinary foundations remain scaffolding.*
 
 This is not merely a tooling problem. It is a disciplinary transformation analogous to the one that civil engineering underwent in the 19th century, and examining that parallel reveals both the path forward and the institutional gaps that remain.
@@ -97,7 +98,8 @@ A decade ago, provisioning a server was craft work: manual, unreproducible, and 
 - **Providers** — plugins that encode the properties, constraints, and behaviors of specific technical substrates (AWS, Azure, GCP). This is the material datasheet: known properties of the materials you build with.
 - **Drift detection** — continuous comparison of actual state against declared specification. This is the building inspection.
 
-![Craft-to-Engineering Timeline](craft-to-engineering-timeline.svg)
+<img src="craft-to-engineering-timeline.svg" alt="Craft-to-Engineering Timeline" width="100%">
+
 *Each evolutionary stage lights up more pillars. Three remain dark, foreshadowing Section 10.*
 
 The parallel to the six civil engineering pillars is not accidental. This transformation was *enabled* by civil engineering itself. The hyperscale datacenters on which cloud computing rests are civil engineering projects in the most literal sense: formally specified, built with certified materials, verified against building codes. Civil engineering principles did not merely inspire the IaC transformation; they made it physically possible by providing the reliable substrate on which declarative infrastructure could be built.
@@ -132,7 +134,8 @@ Each vertical "slice" through the model constitutes a Given-When-Then specificat
 
 This is the critical property: **each slice is an independently verifiable, deterministic specification of behavior.** An AI agent implementing a slice does not need to "understand" the business logic; it needs to produce code that satisfies the Given-When-Then contract. Just as a construction worker does not need to understand why a load-bearing wall is positioned where it is, only that the blueprint says it must be there.
 
-*[TODO: Illustration — **An Event Model Slice.** Horizontal timeline with three swim lanes: Commands (top row, blue boxes), Events (middle row, orange boxes), and Read Models/Views (bottom row, green boxes). Show 4-5 slices across the timeline representing different system behaviors. Highlight one slice with a dashed vertical box and label its components: "Given" pointing to the prior events on the left, "When" pointing to the command at the top, "Then" pointing to the resulting event(s) and updated view. Caption: "Each vertical slice is an independently verifiable Given-When-Then contract." Use a concrete example like "Publisher submits article → ArticleSubmitted event → Dashboard view updated."]*
+![An Event Model Slice](event-model-slice.svg)
+*Each vertical slice is an independently verifiable Given-When-Then contract.*
 
 ### 3.3 What Event Modeling provides, and what it lacks
 
@@ -344,7 +347,8 @@ The traditional developer/architect/tech lead taxonomy gives way to roles organi
 - **Quality Engineers**: build and maintain the eval system, design adversarial testing strategies, monitor production drift. Evolution of QA + SRE + compliance.
 - **Specification Leads**: own the unified specification for a product area, govern changes, ensure coherence across behavioral, operational, and policy layers. A leadership function, not an architecture role.
 
-![Role Evolution Map](role-evolution-map.svg)
+<img src="role-evolution-map.svg" alt="Role Evolution Map" width="100%">
+
 *Roles reorganize around the specification lifecycle, not the implementation lifecycle.*
 
 ## 9. Why AI Is the Forcing Function, Not Catastrophe
@@ -357,7 +361,8 @@ Software Civil Engineering has a different forcing function: **economic opportun
 
 That said, "not catastrophe" does not mean "without severe consequences." Large-scale software failures have already caused billions in public waste. Sweden's Millennium healthcare IT system consumed 5.5 billion SEK before being scrapped after just three days of operation \[20\]. Denmark's property valuation system (ejendomsvurdering) ballooned from 200 million to over 4 billion DKK across a decade of delays, delivering a system of what internal reviewers called "astonishing low quality" \[21\]. Finland's Apotti patient data system exceeded €600 million, prompting over 600 doctors to file formal complaints over patient safety risks \[22\]. Nobody died, but citizens were harmed, public trust eroded, and billions were lost. The forcing function for Software Civil Engineering may be opportunity rather than tragedy, but the cost of the status quo is already severe.
 
-![Two Paths to Professionalization](two-paths-to-professionalization.svg)
+<img src="two-paths-to-professionalization.svg" alt="Two Paths to Professionalization" width="100%">
+
 *Different triggers, different timescales, same outcome.*
 
 > "The implementation itself can be replaced module by module in a few hours, keeping the design ideas and tests that define its behaviours. \[…\] We've just moved up a level." — Adrian Cockcroft \[16\]
@@ -372,7 +377,8 @@ The transformation is self-reinforcing: formalization enables agents, agents val
 
 Intellectual honesty requires acknowledging what this model does *not* address. These gaps represent significant institutional debt that the software industry has not yet begun to repay:
 
-![Wardley Map: Institutional Maturity of Software Civil Engineering](wardley-map-institutional-maturity.svg)
+<img src="wardley-map-institutional-maturity.svg" alt="Wardley Map: Institutional Maturity of Software Civil Engineering" width="100%">
+
 *Specification and verification are evolving; institutional foundations remain stuck in Genesis.*
 
 ### 10.1 Professional licensure and liability
