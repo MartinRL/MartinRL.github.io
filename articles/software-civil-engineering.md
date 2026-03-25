@@ -327,7 +327,7 @@ In a Software Civil Engineering organization, the most valuable human capabiliti
 
 ### 8.2 What becomes less valuable
 
-- **Individual coding virtuosity**as agents improve, the ability to write elegant, performant code becomes less differentiating. The quality that matters shifts from implementation craft to specification precision.
+- **Individual coding virtuosity**: as agents improve, the ability to write elegant, performant code becomes less differentiating. The quality that matters shifts from implementation craft to specification precision.
 
 > "Coding via agents requires more rigor, more structure, more code quality, not less." — Adam Tornhill [15]
 
