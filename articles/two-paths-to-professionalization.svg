@@ -86,8 +86,8 @@
   <line x1="660" y1="224" x2="700" y2="224" stroke="#2471a3" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
 
   <!-- Timeline (bottom) -->
-  <text x="864" y="220" text-anchor="end" font-size="10" fill="#1a5276" font-style="italic">timeline:</text>
-  <text x="864" y="236" text-anchor="end" font-size="13" font-weight="700" fill="#1a5276">years</text>
+  <text x="880" y="220" font-size="10" fill="#1a5276" font-style="italic">timeline:</text>
+  <text x="880" y="236" font-size="13" font-weight="700" fill="#1a5276">years</text>
 
   <!-- Convergence annotation -->
   <path d="M778,128 L778,140 L784,140 L784,200" stroke="#7f8c8d" stroke-width="1.2" stroke-dasharray="3,3" fill="none"/>
