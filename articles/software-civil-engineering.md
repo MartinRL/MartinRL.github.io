@@ -44,6 +44,8 @@ The implication: **the difference between modest and transformational productivi
 
 This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster, but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
 
+*[TODO: Illustration — **The Six Pillars Asymmetry.** Six columns or pillars representing the engineering discipline foundations from Section 2.1: (1) Formal specification, (2) Material datasheets, (3) Building codes, (4) Simulation, (5) Professional licensure, (6) Formal education. Only one pillar is lit/highlighted (representing "code production/construction" — what current AI addresses). The other five are grayed out or shown as scaffolding. Caption: "Current AI investment accelerates one pillar. Five remain untouched." This is the visual punchline for the article's central asymmetry argument.]*
+
 This is not merely a tooling problem. It is a disciplinary transformation analogous to the one that civil engineering underwent in the 19th century, and examining that parallel reveals both the path forward and the institutional gaps that remain.
 
 ## 2. The Civil Engineering Parallel
@@ -94,7 +96,7 @@ A decade ago, provisioning a server was craft work: manual, unreproducible, and 
 - **Providers** — plugins that encode the properties, constraints, and behaviors of specific technical substrates (AWS, Azure, GCP). This is the material datasheet: known properties of the materials you build with.
 - **Drift detection** — continuous comparison of actual state against declared specification. This is the building inspection.
 
-*[Illustration placeholder: Timeline showing the craft-to-engineering progression — Manual ops (craft) → Ansible/Chef/Puppet (codified craft) → Terraform/IaC (engineering discipline) — with the six civil engineering pillars from Section 2.1 mapped to show which ones each stage satisfies]*
+*[TODO: Illustration — **Craft-to-Engineering Timeline.** Horizontal timeline with three stages: Manual ops/SSH (craft) → Ansible/Chef/Puppet (codified craft) → Terraform/IaC (engineering discipline). Below each stage, show which of the six civil engineering pillars from Section 2.1 it satisfies: manual ops satisfies none, config management partially satisfies specification, Terraform satisfies specification + state management + plan-before-apply + providers + drift detection. Use pillar icons or a checklist grid. The visual argument: each stage lights up more pillars, with Terraform achieving near-complete coverage.]*
 
 The parallel to the six civil engineering pillars is not accidental. This transformation was *enabled* by civil engineering itself. The hyperscale datacenters on which cloud computing rests are civil engineering projects in the most literal sense: formally specified, built with certified materials, verified against building codes. Civil engineering principles did not merely inspire the IaC transformation; they made it physically possible by providing the reliable substrate on which declarative infrastructure could be built.
 
@@ -127,6 +129,8 @@ Each vertical "slice" through the model constitutes a Given-When-Then specificat
 - **Then** specific events are produced and views are updated
 
 This is the critical property: **each slice is an independently verifiable, deterministic specification of behavior.** An AI agent implementing a slice does not need to "understand" the business logic; it needs to produce code that satisfies the Given-When-Then contract. Just as a construction worker does not need to understand why a load-bearing wall is positioned where it is, only that the blueprint says it must be there.
+
+*[TODO: Illustration — **An Event Model Slice.** Horizontal timeline with three swim lanes: Commands (top row, blue boxes), Events (middle row, orange boxes), and Read Models/Views (bottom row, green boxes). Show 4-5 slices across the timeline representing different system behaviors. Highlight one slice with a dashed vertical box and label its components: "Given" pointing to the prior events on the left, "When" pointing to the command at the top, "Then" pointing to the resulting event(s) and updated view. Caption: "Each vertical slice is an independently verifiable Given-When-Then contract." Use a concrete example like "Publisher submits article → ArticleSubmitted event → Dashboard view updated."]*
 
 ### 3.3 What Event Modeling provides, and what it lacks
 
@@ -173,7 +177,7 @@ The mapping to Event Modeling is direct. Each Given-When-Then slice in an Event 
 
 This means an Event Model is not merely a specification document; it is a *simulation suite.* Each slice defines a scenario that can be executed as a pure function, verified deterministically, and repeated indefinitely at near-zero cost. The blueprint is also the structural analysis.
 
-*[Illustration placeholder: The Decider pattern — showing the pure function from (State, Command) → Events, and its mapping to Event Modeling's Given-When-Then slices]*
+*[TODO: Illustration — **The Decider Pattern.** A function box labeled "Decider" with two inputs on the left (State, derived from prior events via an `evolve` function; and Command) and one output on the right (Events). Inside the box: "Pure function — no side effects." Below the function box, show the mapping to Event Modeling: Given (prior events) maps to State input, When (command) maps to Command input, Then (resulting events) maps to Events output. Emphasize purity: no database, no network, no infrastructure icons crossed out.]*
 
 ### 4.4 The six elements: a structural isomorphism
 
@@ -210,11 +214,13 @@ Observe  = drift_detection(Production, Specification)
 
 This lifecycle — **Specify → Plan → Verify → Apply → Observe** — is the operational core of Software Civil Engineering.
 
-*[Illustration placeholder: The Specify → Plan → Verify → Apply → Observe lifecycle as a circular flow diagram. Each phase is labeled with its civil engineering analog (blueprints → structural analysis → code compliance review → construction → building inspection). An arrow from Observe back to Specify represents drift detection feeding back into specification refinement, closing the loop.]*
+*[TODO: Illustration — **The Software Civil Engineering Lifecycle.** Circular flow diagram with five phases arranged clockwise: Specify (blueprints + structural calculations + building codes) → Plan (structural analysis + behavioral simulation) → Verify (code compliance review) → Apply (construction by agents) → Observe (building inspection + drift detection). An arrow from Observe back to Specify closes the loop, labeled "Drift detected → specification refinement." Center of the circle: "Specification is the product." Each phase annotated with its civil engineering analog in smaller text.]*
 
 ## 5. The Three Specification Layers
 
 The unified specification requires three distinct but integrated layers, each addressing a different class of engineering concern.
+
+*[TODO: Illustration — **The Three Specification Layers.** Concentric rings or stacked layers diagram. Innermost/bottom layer: Event Model (behavioral) labeled "What the system does" with civil engineering analog "Architectural blueprints." Middle layer: Operational Model (substrate) labeled "How it must perform" with analog "Structural calculations + material datasheets." Outer/top layer: Policy Model (invariants) labeled "What rules it must obey" with analog "Building codes + regulations." Use distinct colors for each layer (e.g., blue/orange/red). Show that all three layers together constitute the unified specification. The layers are complementary and interlocking, not hierarchical.]*
 
 ### 5.1 The Event Model: behavioral specification
 
@@ -265,6 +271,8 @@ When an AI agent implements a slice, the generated code is executed against an e
 In production, actual events are validated against the expected model. Anomaly detection identifies patterns that should never occur according to the specification. Event sourcing provides a significant advantage here: the complete, immutable event log is a natural audit trail and verification corpus. Drift detection (the `terraform plan` equivalent) continuously compares production behavior against the specification and flags divergence.
 
 **A pioneer in practice.** Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable [18]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical. It is an emerging engineering practice whose principles are ready to be lifted to the product level.
+
+*[TODO: Illustration — **Three Verification Loops.** Horizontal timeline with three phases: Design-time (left), Implementation-time (center), Runtime (right). At each phase, show a verification loop: **Loop 1** (Design-time): Decider simulation against scenarios, checking for logical errors and missing events. Input: Event Model + scenarios. Output: verified design. **Loop 2** (Implementation-time): AI agent code executed against eval set derived from Event Model + Operational constraints + Policy checks. Input: generated code. Output: pass/fail. **Loop 3** (Runtime): Production event stream validated against specification, anomaly detection, drift detection. Input: live events. Output: divergence alerts. At the bottom-right, show Datadog's approach as a real-world example validating this pattern. Arrows show that Loop 3 feeds back into Loop 1 (production observations refine scenarios).]*
 
 ### 6.2 Adversarial verification
 
@@ -329,6 +337,8 @@ The traditional developer/architect/tech lead taxonomy gives way to roles organi
 - **Verification Engineers** — build and maintain the eval system, design adversarial testing strategies, monitor production drift. Evolution of QA + SRE + compliance.
 - **Specification Leads** — own the unified specification for a product area, govern changes, ensure coherence across behavioral, operational, and policy layers. A leadership function, not an architecture role.
 
+*[TODO: Illustration — **Role Evolution Map.** Two columns connected by arrows. Left column (current roles): Developer, Business Analyst, Software Architect, QA Engineer, SRE/Platform Engineer, Security Engineer. Right column (new archetypes): Domain Engineer, Constraints Engineer, Verification Engineer, Specification Lead. Arrows show convergence: Business Analyst + Domain Architect → Domain Engineer. Performance Engineer + Security Engineer + Platform Architect → Constraints Engineer. QA + SRE + Compliance → Verification Engineer. Tech Lead + Product Architect → Specification Lead. Some current roles feed into multiple new roles. Caption: "Roles reorganize around the specification lifecycle, not the implementation lifecycle."]*
+
 ## 9. Why AI Is the Forcing Function, Not Catastrophe
 
 ### 9.1 The positive professionalization thesis
@@ -336,6 +346,8 @@ The traditional developer/architect/tech lead taxonomy gives way to roles organi
 Civil engineering professionalized *reactively*: bridges collapsed, buildings failed, people died, regulations followed [10]. It took decades and required political will.
 
 Software Civil Engineering has a different forcing function: **economic opportunity, not catastrophe.** The productivity gap between formalized and unformalized organizations is already visible, and it will only widen as agent capabilities improve. Organizations that formalize their specifications sufficiently for agents to operate autonomously will pull ahead. This pressure is operating *now*.
+
+*[TODO: Illustration — **Two Paths to Professionalization.** Two parallel horizontal paths. Top path (Civil Engineering, labeled "reactive"): Failure → Catastrophe → Public pressure → Regulation → Professionalization. Timeline: decades. Color: red/cautionary. Bottom path (Software Engineering, labeled "proactive"): AI capability → Productivity gap → Economic pressure → Formalization → Professionalization. Timeline: years. Color: blue/opportunity. The key visual contrast: same destination (professionalization), different forcing functions (catastrophe vs. opportunity), different timescales. This is the article's most distinctive claim made visual.]*
 
 > "The implementation itself can be replaced module by module in a few hours, keeping the design ideas and tests that define its behaviours. [...] We've just moved up a level." — Adrian Cockcroft [16]
 
@@ -348,6 +360,8 @@ The transformation is self-reinforcing: formalization enables agents, agents val
 ## 10. Open Gaps and Institutional Debt
 
 Intellectual honesty requires acknowledging what this model does *not* address. These gaps represent significant institutional debt that the software industry has not yet begun to repay:
+
+*[TODO: Illustration — **Wardley Map: Institutional Maturity of Software Civil Engineering.** Standard Wardley Map axes. Y-axis: Visibility/Value Chain (user need at top → invisible infrastructure at bottom). X-axis: Evolution (Genesis → Custom-built → Product → Commodity/Utility). Components plotted: **Specification practices** (Custom-built, arrow toward Product), **Verification systems** (Custom-built), **Provider/substrate profiles** (Genesis→Custom boundary), **Education & credentialing** (Genesis, no movement arrow), **Professional licensure** (Genesis, no movement arrow), **Industry standards** (Genesis, no movement arrow). The visual argument: specification and verification are evolving (organizations are building these), but the institutional foundations (education, licensure, standards) are stuck in Genesis. The cluster of components in the bottom-left makes "institutional debt" immediately visible. Dependencies shown: licensure depends on education; standards depend on specification practices maturing first.]*
 
 ### 10.1 Professional licensure and liability
 
