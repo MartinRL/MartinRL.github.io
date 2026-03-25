@@ -321,7 +321,7 @@ This requires a governance mechanism analogous to infrastructure-as-code change 
 In a Software Civil Engineering organization, the most valuable human capabilities shift dramatically:
 
 - **Specification skills**: the ability to extract, formalize, and verify behavioral requirements through Event Modeling (or other context-aware specification-driven development technique) becomes the core professional competency
-- **Constraint engineering**: defining non-functional requirements with sufficient formality for machine verification becomes a specialized discipline
+- **Harness engineering**: defining non-functional requirements, provider profiles, and eval criteria with sufficient formality for machine verification becomes a specialized discipline
 - **Provider knowledge**: understanding the properties and limitations of technical substrates (databases, frameworks, infrastructure) becomes a form of materials science
 - **Verification design**: constructing eval systems that reliably catch specification violations becomes the quality function
 
@@ -338,11 +338,11 @@ In a Software Civil Engineering organization, the most valuable human capabiliti
 The traditional developer/architect/tech lead taxonomy gives way to roles organized around the specification lifecycle:
 
 - **Domain Engineers**: facilitate Event Modeling, extract behavioral specifications from stakeholders, maintain the Event Model. Evolution of business analyst + domain architect.
-- **Constraints Engineers**: define operational and policy constraints, maintain provider profiles, design eval criteria. Evolution of performance engineer + security engineer + platform architect.
-- **Verification Engineers**: build and maintain the eval system, design adversarial testing strategies, monitor production drift. Evolution of QA + SRE + compliance.
+- **Harness Engineers**: define operational and policy constraints, maintain provider profiles, design eval criteria — the integrated harness that makes agent autonomy safe. Evolution of performance engineer + security engineer + platform architect.
+- **Quality Engineers**: build and maintain the eval system, design adversarial testing strategies, monitor production drift. Evolution of QA + SRE + compliance.
 - **Specification Leads**: own the unified specification for a product area, govern changes, ensure coherence across behavioral, operational, and policy layers. A leadership function, not an architecture role.
 
-*[TODO: Illustration — **Role Evolution Map.** Two columns connected by arrows. Left column (current roles): Developer, Business Analyst, Software Architect, QA Engineer, SRE/Platform Engineer, Security Engineer. Right column (new archetypes): Domain Engineer, Constraints Engineer, Verification Engineer, Specification Lead. Arrows show convergence: Business Analyst + Domain Architect → Domain Engineer. Performance Engineer + Security Engineer + Platform Architect → Constraints Engineer. QA + SRE + Compliance → Verification Engineer. Tech Lead + Product Architect → Specification Lead. Some current roles feed into multiple new roles. Caption: "Roles reorganize around the specification lifecycle, not the implementation lifecycle."]*
+*[TODO: Illustration — **Role Evolution Map.** Two columns connected by arrows. Left column (current roles): Developer, Business Analyst, Software Architect, QA Engineer, SRE/Platform Engineer, Security Engineer. Right column (new archetypes): Domain Engineer, Harness Engineer, Quality Engineer, Specification Lead. Arrows show convergence: Business Analyst + Domain Architect → Domain Engineer. Performance Engineer + Security Engineer + Platform Architect → Harness Engineer. QA + SRE + Compliance → Quality Engineer. Tech Lead + Product Architect → Specification Lead. Some current roles feed into multiple new roles. Caption: "Roles reorganize around the specification lifecycle, not the implementation lifecycle."]*
 
 ## 9. Why AI Is the Forcing Function, Not Catastrophe
 
