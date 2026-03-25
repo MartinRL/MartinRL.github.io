@@ -3,6 +3,8 @@
 ## Writing style
 
 - Minimize use of em dashes (—) in all writing, especially articles, LinkedIn posts, and other external artifacts. Favor commas, semicolons, colons, and parentheses instead.
+- **Escape square brackets** in article prose: use `\[` and `\]` for citation references (e.g. `\[1\]`) and editorial marks (e.g. `\[…\]`) so Markdown renderers do not misinterpret them as links.
+- **Use the Unicode ellipsis character** (`…`, U+2026) instead of three dots (`...`).
 
 ## Images and figures
 
