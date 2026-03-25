@@ -70,14 +70,14 @@ Civil engineering rests on six foundational pillars that collectively distinguis
 
 Mapped against these pillars, software development's disciplinary immaturity becomes visible:
 
-| Pillar | Civil Engineering | Software Development |
-|---|---|---|
-| Formal specification | Blueprints, structural calculations | Informal user stories, ad-hoc documentation |
-| Material datasheets | Certified steel grades, concrete specs | No standardized performance profiles for frameworks, patterns, or infrastructure components |
-| Codes and norms | EuroCode, building regulations | Fragmentary (OWASP, SOC2), but no unified engineering standard |
-| Simulation | FEA, Simulink, CFD | Almost nonexistent for application logic; limited to infrastructure (load testing) |
-| Professional licensure | PE license, personal liability | None; no individual accountability for engineering decisions |
-| Formal education | Accredited, standardized, examined | Highly variable; no required competency demonstration |
+| Pillar                 | Civil Engineering                      | Software Development                                                                        |
+| ---------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Formal specification   | Blueprints, structural calculations    | Informal user stories, ad-hoc documentation                                                 |
+| Material datasheets    | Certified steel grades, concrete specs | No standardized performance profiles for frameworks, patterns, or infrastructure components |
+| Codes and norms        | EuroCode, building regulations         | Fragmentary (OWASP, SOC2, AWS/Azure WAF), but no unified engineering standard               |
+| Simulation             | FEA, Simulink, CFD                     | Almost nonexistent for application logic; limited to infrastructure (load testing)          |
+| Professional licensure | PE license, personal liability         | None; no individual accountability for engineering decisions                                |
+| Formal education       | Accredited, standardized, examined     | Highly variable; no required competency demonstration                                       |
 
 This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate at industrial scale. AI agents can already assist craft practitioners, but scaling from copilot to autonomous production requires the formalized substrate that engineering disciplines provide.
 
@@ -151,13 +151,13 @@ These gaps must be filled for the engineering analogy to hold.
 
 Terraform operates at the *infrastructure* level: it specifies resources, not behavior. Lifting the abstraction to the product level produces something fundamentally different:
 
-> "I want a system where a publisher can submit an article, a compliance check verifies funder mandates automatically, and a dashboard shows status in real time — with max 200ms latency, SOC2-compliant, scalable to 50,000 active publications."
+> "I want a scholar publishing system where a publisher can submit an article, a compliance check verifies funder mandates automatically, and a dashboard shows status in real time — with max 200ms latency, SOC2-compliant, scalable to 50,000 active publications."
 
 This declaration spans behavior, constraints, and operational requirements simultaneously. The specification lives at the product level, and the "engine" (AI agents, human developers, or a hybrid) realizes it.
 
 ### 4.2 Where the analogy diverges: simulation before production
 
-Terraform's lifecycle handles state transitions, but software products *behave.* A publishing system processes thousands of concurrent submissions, enforces compliance rules that change mid-workflow, and must respond gracefully when a funder alters its open-access mandate during an active publication cycle. A state-transition diff cannot answer these behavioral questions.
+Terraform's lifecycle handles state transitions, but software products *behave.* A scholar publishing system processes thousands of concurrent submissions, enforces compliance rules that change mid-workflow, and must respond gracefully when a funder alters its open-access mandate during an active publication cycle. A state-transition diff cannot answer these behavioral questions.
 
 What we need is the declarative lifecycle *plus* the ability to simulate behavior before production, to prove the design before realization. The question is: what gives us that simulation capability at the product level?
 
@@ -169,13 +169,13 @@ A Decider is a pure, deterministic function: given the current state (derived fr
 
 This is `terraform plan` for domain logic: a pure preview of what *would* happen, runnable against a thousand scenarios without touching a database.
 
-The mapping to Event Modeling is direct. Each Given-When-Then slice in an Event Model *is* a Decider invocation:
+The mapping to Event Modeling is direct. Each Given-When-Then slice in an Event Model maps naturally to a Decider invocation:
 
 - **Given** prior events → the Decider's current state (via its `evolve` function)
 - **When** a command is issued → the Decider's input
 - **Then** specific events are produced → the Decider's output
 
-This means an Event Model is not merely a specification document; it is a *simulation suite.* Each slice defines a scenario that can be executed as a pure function, verified deterministically, and repeated indefinitely at near-zero cost. The blueprint is also the structural analysis.
+Paired with Deciders, an Event Model becomes more than a specification document; it becomes a *simulation suite.* Each slice defines a scenario that can be executed as a pure function, verified deterministically, and repeated indefinitely at near-zero cost. The blueprint is also the structural analysis. (Event Modeling does not prescribe the Decider pattern — many practitioners use DDD aggregates or other approaches to implement slices. But the Decider's purity makes it a natural fit, just as Event Sourcing is a natural fit for the persistence model: separate patterns that complement each other precisely.)
 
 *[TODO: Illustration — **The Decider Pattern.** A function box labeled "Decider" with two inputs on the left (State, derived from prior events via an `evolve` function; and Command) and one output on the right (Events). Inside the box: "Pure function — no side effects." Below the function box, show the mapping to Event Modeling: Given (prior events) maps to State input, When (command) maps to Command input, Then (resulting events) maps to Events output. Emphasize purity: no database, no network, no infrastructure icons crossed out.]*
 
@@ -234,10 +234,10 @@ This is the core: what the system *does*. Commands it accepts, events it records
 
 This layer describes the system's operational characteristics and the known properties of its technical substrate. It includes:
 
-- **Load profiles** — normal and peak usage scenarios with quantified expectations
-- **Failure modes** — what happens when components degrade or fail
-- **Resource budgets** — memory, CPU, network, and storage constraints per component
-- **Provider characteristics** — known performance profiles of the specific technology stack (database latency characteristics, message broker throughput, framework overhead)
+- **Load profiles**: normal and peak usage scenarios with quantified expectations
+- **Failure modes**: what happens when components degrade or fail
+- **Resource budgets**: memory, CPU, network, and storage constraints per component
+- **Provider characteristics**: known performance profiles of the specific technology stack (database latency characteristics, message broker throughput, framework overhead)
 
 **Verification method:** Load simulation before implementation; performance testing against budgets during implementation; anomaly detection against load profiles at runtime.
 
@@ -262,7 +262,7 @@ This layer captures constraints that must hold everywhere, always, regardless of
 The simulation capability for software is not a single tool but a system of three eval loops that operate at different phases, each leveraging the Decider pattern's property of pure, side-effect-free execution:
 
 **Loop 1 — Design-time simulation.**
-Before any code is written (by human or agent), the Event Model's Deciders are executed against scenarios. "What happens if a publisher submits 10,000 articles simultaneously? What happens if a funder changes its open-access mandate mid-publication?" Because Deciders are pure functions, these simulations run at near-zero cost: no databases, no infrastructure, no deployment. The flow is simulated through the event timeline to find logical errors, missing events, and inconsistent states. This is the structural analysis step: proving the design before realization.
+Before any code is written (by human or agent), the Deciders derived from the Event Model are executed against scenarios. "What happens if a publisher submits 10,000 articles simultaneously? What happens if a funder changes its open-access mandate mid-publication?" Because Deciders are pure functions, these simulations run at near-zero cost: no databases, no infrastructure, no deployment. The flow is simulated through the event timeline to find logical errors, missing events, and inconsistent states. This is the structural analysis step: proving the design before realization.
 
 **Loop 2 — Implementation-time evals.**
 When an AI agent implements a slice, the generated code is executed against an eval set *derived automatically from the Event Model.* Each Given-When-Then scenario (each Decider contract) becomes an automated acceptance test. The agent "passes" only if the code satisfies the specification, not vaguely but deterministically. Operational Model constraints add quantitative verification: the implementation must also meet latency budgets, resource limits, and resilience requirements. Policy Model constraints add invariant checks: security scanning, compliance verification, architectural conformance.
