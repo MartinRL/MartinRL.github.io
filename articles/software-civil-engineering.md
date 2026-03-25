@@ -370,7 +370,8 @@ The transformation is self-reinforcing: formalization enables agents, agents val
 
 Intellectual honesty requires acknowledging what this model does *not* address. These gaps represent significant institutional debt that the software industry has not yet begun to repay:
 
-*[TODO: Illustration — **Wardley Map: Institutional Maturity of Software Civil Engineering.** Standard Wardley Map axes. Y-axis: Visibility/Value Chain (user need at top → invisible infrastructure at bottom). X-axis: Evolution (Genesis → Custom-built → Product → Commodity/Utility). Components plotted: **Specification practices** (Custom-built, arrow toward Product), **Verification systems** (Custom-built), **Provider/substrate profiles** (Genesis→Custom boundary), **Education & credentialing** (Genesis, no movement arrow), **Professional licensure** (Genesis, no movement arrow), **Industry standards** (Genesis, no movement arrow). The visual argument: specification and verification are evolving (organizations are building these), but the institutional foundations (education, licensure, standards) are stuck in Genesis. The cluster of components in the bottom-left makes "institutional debt" immediately visible. Dependencies shown: licensure depends on education; standards depend on specification practices maturing first.]*
+![Wardley Map: Institutional Maturity of Software Civil Engineering](wardley-map-institutional-maturity.svg)
+*Specification and verification are evolving; institutional foundations remain stuck in Genesis.*
 
 ### 10.1 Professional licensure and liability
 
