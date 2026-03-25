@@ -44,7 +44,8 @@ The implication: **the difference between modest and transformational productivi
 
 This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster, but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
 
-*[TODO: Illustration — **The Six Pillars Asymmetry.** Six columns or pillars representing the engineering discipline foundations from Section 2.1: (1) Formal specification, (2) Material datasheets, (3) Building codes, (4) Simulation, (5) Professional licensure, (6) Formal education. Only one pillar is lit/highlighted (representing "code production/construction" — what current AI addresses). The other five are grayed out or shown as scaffolding. Caption: "Current AI investment accelerates one pillar. Five remain untouched." This is the visual punchline for the article's central asymmetry argument.]*
+![The Six Pillars Asymmetry](six-pillars-asymmetry.svg)
+*Current AI investment accelerates construction. The six disciplinary foundations remain scaffolding.*
 
 This is not merely a tooling problem. It is a disciplinary transformation analogous to the one that civil engineering underwent in the 19th century, and examining that parallel reveals both the path forward and the institutional gaps that remain.
 
@@ -377,7 +378,7 @@ Intellectual honesty requires acknowledging what this model does *not* address. 
 
 Civil engineering assigns personal legal liability to named engineers. Software has no equivalent. When an AI agent produces code that causes harm (data loss, security breach, financial damage), who bears responsibility? The specification author? The AI provider? The organization?
 
-This absence of accountability is not merely an institutional oversight; it reflects a deeper cultural assumption that software production does not warrant the same professional rigor as other engineering disciplines. Consider the contrast: search "can I be a software developer" and the top results assure you that anyone can, with minimal barriers to entry. Search "can I be a veterinarian" and you encounter years of formal education, licensing requirements, and professional accountability. If a firm contracted to build a bridge delivers a structure that collapses, legal liability follows. No such accountability exists for the firms building the digital infrastructure on which society increasingly depends. As Geoffrey Huntley puts it:
+This absence of accountability is not merely an institutional oversight; it reflects a deeper cultural assumption that software production does not warrant the same professional rigor as other engineering disciplines. Consider the contrast: search "can I be a software developer" and the top results assure you that anyone can, with minimal barriers to entry. Search "can I be a civil engineer" and you encounter years of formal education, licensing requirements, and professional accountability. If a firm contracted to build a bridge delivers a structure that collapses, legal liability follows. No such accountability exists for the firms building the digital infrastructure on which society increasingly depends. As Geoffrey Huntley puts it:
 
 > "I fully believe that software engineering should be a licensed profession. \[…\] If you work at a company that's contracted to build a bridge, if that bridge collapses, then that company should get liability." — Geoffrey Huntley \[11\]
 
@@ -393,7 +394,7 @@ Civil engineers undergo standardized, accredited education with examined compete
 
 ### 10.3 Industry-wide standards and norm-setting bodies
 
-Building codes are maintained by institutions (ISO, national standards bodies, professional associations) that aggregate knowledge across the entire profession. Software has OWASP, NIST, and various compliance frameworks, but nothing approaching a unified engineering standard for specification, verification, or professional practice.
+Building codes are maintained by institutions (ISO, national standards bodies, professional associations) that aggregate knowledge across the entire profession. Software has OWASP, NIST, Well-Architected Framework, and various compliance frameworks, but nothing approaching a unified engineering standard for specification, verification, or professional practice.
 
 **Consequence if unresolved:** Each organization reinvents the specification format, the constraint taxonomy, and the verification criteria. Knowledge does not accumulate at the industry level, and best practices remain siloed.
 
