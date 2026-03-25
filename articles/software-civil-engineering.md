@@ -320,14 +320,14 @@ This requires a governance mechanism analogous to infrastructure-as-code change 
 
 In a Software Civil Engineering organization, the most valuable human capabilities shift dramatically:
 
-- **Specification skills** — the ability to extract, formalize, and verify behavioral requirements through Event Modeling becomes the core professional competency
-- **Constraint engineering** — defining non-functional requirements with sufficient formality for machine verification becomes a specialized discipline
-- **Provider knowledge** — understanding the properties and limitations of technical substrates (databases, frameworks, infrastructure) becomes a form of materials science
-- **Verification design** — constructing eval systems that reliably catch specification violations becomes the quality function
+- **Specification skills**: the ability to extract, formalize, and verify behavioral requirements through Event Modeling (or other context-aware specification-driven development technique) becomes the core professional competency
+- **Constraint engineering**: defining non-functional requirements with sufficient formality for machine verification becomes a specialized discipline
+- **Provider knowledge**: understanding the properties and limitations of technical substrates (databases, frameworks, infrastructure) becomes a form of materials science
+- **Verification design**: constructing eval systems that reliably catch specification violations becomes the quality function
 
 ### 8.2 What becomes less valuable
 
-- **Individual coding virtuosity** — as agents improve, the ability to write elegant, performant code becomes less differentiating. The quality that matters shifts from implementation craft to specification precision.
+- **Individual coding virtuosity**as agents improve, the ability to write elegant, performant code becomes less differentiating. The quality that matters shifts from implementation craft to specification precision.
 
 > "Coding via agents requires more rigor, more structure, more code quality, not less." — Adam Tornhill [15]
 
