@@ -97,7 +97,8 @@ A decade ago, provisioning a server was craft work: manual, unreproducible, and 
 - **Providers** — plugins that encode the properties, constraints, and behaviors of specific technical substrates (AWS, Azure, GCP). This is the material datasheet: known properties of the materials you build with.
 - **Drift detection** — continuous comparison of actual state against declared specification. This is the building inspection.
 
-*[TODO: Illustration — **Craft-to-Engineering Timeline.** Horizontal timeline with three stages: Manual ops/SSH (craft) → Ansible/Chef/Puppet (codified craft) → Terraform/IaC (engineering discipline). Below each stage, show which of the six civil engineering pillars from Section 2.1 it satisfies: manual ops satisfies none, config management partially satisfies specification, Terraform satisfies specification + state management + plan-before-apply + providers + drift detection. Use pillar icons or a checklist grid. The visual argument: each stage lights up more pillars, with Terraform achieving near-complete coverage.]*
+![Craft-to-Engineering Timeline](craft-to-engineering-timeline.svg)
+*Each evolutionary stage lights up more pillars. Three remain dark, foreshadowing Section 10.*
 
 The parallel to the six civil engineering pillars is not accidental. This transformation was *enabled* by civil engineering itself. The hyperscale datacenters on which cloud computing rests are civil engineering projects in the most literal sense: formally specified, built with certified materials, verified against building codes. Civil engineering principles did not merely inspire the IaC transformation; they made it physically possible by providing the reliable substrate on which declarative infrastructure could be built.
 
