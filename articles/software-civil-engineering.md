@@ -354,7 +354,8 @@ Software Civil Engineering has a different forcing function: **economic opportun
 
 That said, "not catastrophe" does not mean "without severe consequences." Large-scale software failures have already caused billions in public waste. Sweden's Millennium healthcare IT system consumed 5.5 billion SEK before being scrapped after just three days of operation [20]. Denmark's property valuation system (ejendomsvurdering) ballooned from 200 million to over 4 billion DKK across a decade of delays, delivering a system of what internal reviewers called "astonishing low quality" [21]. Finland's Apotti patient data system exceeded €600 million, prompting over 600 doctors to file formal complaints over patient safety risks [22]. Nobody died, but citizens were harmed, public trust eroded, and billions were lost. The forcing function for Software Civil Engineering may be opportunity rather than tragedy, but the cost of the status quo is already severe.
 
-*[TODO: Illustration — **Two Paths to Professionalization.** Two parallel horizontal paths. Top path (Civil Engineering, labeled "reactive"): Failure → Catastrophe → Public pressure → Regulation → Professionalization. Timeline: decades. Color: red/cautionary. Bottom path (Software Engineering, labeled "proactive"): AI capability → Productivity gap → Economic pressure → Formalization → Professionalization. Timeline: years. Color: blue/opportunity. The key visual contrast: same destination (professionalization), different forcing functions (catastrophe vs. opportunity), different timescales. This is the article's most distinctive claim made visual.]*
+![Two Paths to Professionalization](two-paths-to-professionalization.svg)
+*Different triggers, different timescales, same outcome.*
 
 > "The implementation itself can be replaced module by module in a few hours, keeping the design ideas and tests that define its behaviours. [...] We've just moved up a level." — Adrian Cockcroft [16]
 
