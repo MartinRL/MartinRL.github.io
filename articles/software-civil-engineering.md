@@ -179,7 +179,7 @@ The mapping to Event Modeling is direct. Each Given-When-Then slice in an Event 
 - **When** a command is issued → the Decider's input
 - **Then** specific events are produced → the Decider's output
 
-Paired with Deciders, an Event Model becomes more than a specification document; it becomes a *simulation suite.* Each slice defines a scenario that can be executed as a pure function, verified deterministically, and repeated indefinitely at near-zero cost. The blueprint is also the structural analysis. (Event Modeling does not prescribe the Decider pattern — many practitioners use DDD aggregates or other approaches to implement slices. But the Decider's purity makes it a natural fit, just as Event Sourcing is a natural fit for the persistence model: separate patterns that complement each other precisely.)
+Paired with Deciders, an Event Model becomes more than a specification document; it becomes a *simulation suite.* Each slice defines a scenario that can be executed as a pure function, verified deterministically, and repeated indefinitely at near-zero cost. The blueprint is also the structural analysis. (Event Modeling does not prescribe the Decider pattern; many practitioners use DDD aggregates or other approaches to implement slices. But the Decider's purity makes it a natural fit, just as Event Sourcing is a natural fit for the persistence model: separate patterns that complement each other precisely.)
 
 *[TODO: Illustration — **The Decider Pattern.** A function box labeled "Decider" with two inputs on the left (State, derived from prior events via an `evolve` function; and Command) and one output on the right (Events). Inside the box: "Pure function — no side effects." Below the function box, show the mapping to Event Modeling: Given (prior events) maps to State input, When (command) maps to Command input, Then (resulting events) maps to Events output. Emphasize purity: no database, no network, no infrastructure icons crossed out.]*
 
@@ -187,14 +187,14 @@ Paired with Deciders, an Event Model becomes more than a specification document;
 
 With both the Terraform lifecycle and the Decider pattern in hand, the full structural correspondence becomes visible:
 
-| Element | Terraform (Infrastructure) | Civil Engineering | Product Level (This Article) |
-|---|---|---|---|
-| **Specification** | `.tf` files — declarative desired state | Blueprints + structural calculations | Event Model + Operational/Policy Constraints |
-| **Providers** | Plugins encoding substrate properties (AWS, Azure, GCP) | Material datasheets (steel grades, concrete specs) | Technical substrate profiles (DB latency, broker throughput, framework characteristics) |
-| **State** | `.tfstate` — what actually exists now | As-built documentation | Current system state representation for diffing |
-| **Plan** | `terraform plan` — diff + changeset preview | Structural analysis, bill of materials | State diff + Decider-based behavioral simulation |
-| **Apply** | `terraform apply` — controlled execution | Construction by licensed contractors | AI agents implement verified plan |
-| **Drift detection** | Actual vs. desired state comparison | Building inspection, structural monitoring | Production event stream validation against specification |
+| Element             | Terraform (Infrastructure)                              | Civil Engineering                                  | Product Level                                                                           |
+| ------------------- | ------------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| **Specification**   | `.tf` files — declarative desired state                 | Blueprints + structural calculations               | Event Model + Operational/Policy Constraints                                            |
+| **Providers**       | Plugins encoding substrate properties (AWS, Azure, GCP) | Material datasheets (steel grades, concrete specs) | Technical substrate profiles (DB latency, broker throughput, framework characteristics) |
+| **State**           | `.tfstate` — what actually exists now                   | As-built documentation                             | Current system state representation for diffing                                         |
+| **Plan**            | `terraform plan` — diff + changeset preview             | Structural analysis, bill of materials             | State diff + Decider-based behavioral simulation                                        |
+| **Apply**           | `terraform apply` — controlled execution                | Construction by licensed contractors               | AI agents implement verified plan                                                       |
+| **Drift detection** | Actual vs. desired state comparison                     | Building inspection, structural monitoring         | Production event stream validation against specification                                |
 
 The critical difference is in the **Plan** element. Terraform's plan is a state diff, necessary but insufficient for products. The product-level plan adds behavioral simulation via Deciders: not just *what needs to change*, but *whether the changed system will behave correctly*. This is where Software Civil Engineering extends the infrastructure paradigm.
 
@@ -274,7 +274,8 @@ When an AI agent implements a slice, the generated code is executed against an e
 **Loop 3 — Runtime verification.**
 In production, actual events are validated against the expected model. Anomaly detection identifies patterns that should never occur according to the specification. Event sourcing provides a significant advantage here: the complete, immutable event log is a natural audit trail and verification corpus. Drift detection (the `terraform plan` equivalent) continuously compares production behavior against the specification and flags divergence.
 
-**A pioneer in practice.** Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable [18]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical. It is an emerging engineering practice whose principles are ready to be lifted to the product level.
+> [!info] A pioneer in practice.
+> Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable [18]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical. It is an emerging engineering practice whose principles are ready to be lifted to the product level.
 
 *[TODO: Illustration — **Three Verification Loops.** Horizontal timeline with three phases: Design-time (left), Implementation-time (center), Runtime (right). At each phase, show a verification loop: **Loop 1** (Design-time): Decider simulation against scenarios, checking for logical errors and missing events. Input: Event Model + scenarios. Output: verified design. **Loop 2** (Implementation-time): AI agent code executed against eval set derived from Event Model + Operational constraints + Policy checks. Input: generated code. Output: pass/fail. **Loop 3** (Runtime): Production event stream validated against specification, anomaly detection, drift detection. Input: live events. Output: divergence alerts. At the bottom-right, show Datadog's approach as a real-world example validating this pattern. Arrows show that Loop 3 feeds back into Loop 1 (production observations refine scenarios).]*
 
