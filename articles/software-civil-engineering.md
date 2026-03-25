@@ -331,16 +331,16 @@ In a Software Civil Engineering organization, the most valuable human capabiliti
 
 > "Coding via agents requires more rigor, more structure, more code quality, not less." — Adam Tornhill [15]
 
-- **Implicit technical knowledge** — the senior developer who "just knows" that a certain pattern will cause problems is increasingly supplemented by externalized constraint libraries and adversarial verification agents. The knowledge is preserved; the medium shifts progressively from human memory to formal artifact, though Section 10.4 acknowledges that some emergent judgment may resist full formalization.
+- **Implicit technical knowledge**: the senior developer who "just knows" that a certain pattern will cause problems is increasingly supplemented by externalized constraint libraries and adversarial verification agents. The knowledge is preserved; the medium shifts progressively from human memory to formal artifact, though Section 10.4 acknowledges that some emergent judgment may resist full formalization.
 
 ### 8.3 New role archetypes
 
 The traditional developer/architect/tech lead taxonomy gives way to roles organized around the specification lifecycle:
 
-- **Domain Engineers** — facilitate Event Modeling, extract behavioral specifications from stakeholders, maintain the Event Model. Evolution of business analyst + domain architect.
-- **Constraints Engineers** — define operational and policy constraints, maintain provider profiles, design eval criteria. Evolution of performance engineer + security engineer + platform architect.
-- **Verification Engineers** — build and maintain the eval system, design adversarial testing strategies, monitor production drift. Evolution of QA + SRE + compliance.
-- **Specification Leads** — own the unified specification for a product area, govern changes, ensure coherence across behavioral, operational, and policy layers. A leadership function, not an architecture role.
+- **Domain Engineers**: facilitate Event Modeling, extract behavioral specifications from stakeholders, maintain the Event Model. Evolution of business analyst + domain architect.
+- **Constraints Engineers**: define operational and policy constraints, maintain provider profiles, design eval criteria. Evolution of performance engineer + security engineer + platform architect.
+- **Verification Engineers**: build and maintain the eval system, design adversarial testing strategies, monitor production drift. Evolution of QA + SRE + compliance.
+- **Specification Leads**: own the unified specification for a product area, govern changes, ensure coherence across behavioral, operational, and policy layers. A leadership function, not an architecture role.
 
 *[TODO: Illustration — **Role Evolution Map.** Two columns connected by arrows. Left column (current roles): Developer, Business Analyst, Software Architect, QA Engineer, SRE/Platform Engineer, Security Engineer. Right column (new archetypes): Domain Engineer, Constraints Engineer, Verification Engineer, Specification Lead. Arrows show convergence: Business Analyst + Domain Architect → Domain Engineer. Performance Engineer + Security Engineer + Platform Architect → Constraints Engineer. QA + SRE + Compliance → Verification Engineer. Tech Lead + Product Architect → Specification Lead. Some current roles feed into multiple new roles. Caption: "Roles reorganize around the specification lifecycle, not the implementation lifecycle."]*
 
