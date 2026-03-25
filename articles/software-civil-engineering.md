@@ -134,7 +134,8 @@ Each vertical "slice" through the model constitutes a Given-When-Then specificat
 
 This is the critical property: **each slice is an independently verifiable, deterministic specification of behavior.** An AI agent implementing a slice does not need to "understand" the business logic; it needs to produce code that satisfies the Given-When-Then contract. Just as a construction worker does not need to understand why a load-bearing wall is positioned where it is, only that the blueprint says it must be there.
 
-![An Event Model Slice](event-model-slice.svg)
+<img src="event-model-slice.svg" alt="An Event Model Slice" width="100%">
+
 *Each vertical slice is an independently verifiable Given-When-Then contract.*
 
 ### 3.3 What Event Modeling provides, and what it lacks
