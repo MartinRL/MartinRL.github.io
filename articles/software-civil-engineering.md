@@ -28,7 +28,7 @@
 
 ## 1. The Problem: Software as Craft in the Age of Agents
 
-Software development today operates predominantly as a craft tradition. Individual developers carry implicit knowledge, develop personal styles, solve problems through intuition honed by experience, and transfer expertise through apprenticeship models [1]. The Software Craftsmanship movement formalized this identity explicitly, positioning software production as a practice closer to artisanship than engineering, emphasizing mastery, mentorship, and the irreducibility of human judgment [2].
+Software development today operates predominantly as a craft tradition. Individual developers carry implicit knowledge, develop personal styles, solve problems through intuition honed by experience, and transfer expertise through apprenticeship models \[1\]. The Software Craftsmanship movement formalized this identity explicitly, positioning software production as a practice closer to artisanship than engineering, emphasizing mastery, mentorship, and the irreducibility of human judgment \[2\].
 
 This model has produced remarkable results. Much of the world's best software emerged from the deep intuition of skilled practitioners who understood their domains, their tools, and their users in ways that resist formalization.
 
@@ -36,9 +36,9 @@ But it caps the gains of agentic engineering at incremental improvement: the dif
 
 This article addresses industrialized software production: systems where reliability, auditability, and long-term maintainability are non-negotiable. Exploratory prototypes, R&D spikes, and one-off scripts have different economics and different constraints.
 
-> "AI does not remove the need for careful engineering. On the contrary, it punishes the absence of it." — Juliette van der Laarse [12]
+> "AI does not remove the need for careful engineering. On the contrary, it punishes the absence of it." — Juliette van der Laarse \[12\]
 
-Agentic software engineering (the delegation of implementation tasks to autonomous AI agents [3]) already works in craft environments. Developers use LLM-based tools to generate code, refactor modules, and accelerate routine tasks. But agents operating on informal specifications, implicit conventions, and craft knowledge hit a ceiling quickly: they can assist artisans, but they cannot reliably replace the artisanship. Scaling from copilot-level assistance to autonomous, end-to-end product delivery requires a substrate that agents can operate on: specifications formal enough to be unambiguous, verification criteria objective enough to be machine-evaluable, and architectural constraints explicit enough to be enforceable without human judgment.
+Agentic software engineering (the delegation of implementation tasks to autonomous AI agents \[3\]) already works in craft environments. Developers use LLM-based tools to generate code, refactor modules, and accelerate routine tasks. But agents operating on informal specifications, implicit conventions, and craft knowledge hit a ceiling quickly: they can assist artisans, but they cannot reliably replace the artisanship. Scaling from copilot-level assistance to autonomous, end-to-end product delivery requires a substrate that agents can operate on: specifications formal enough to be unambiguous, verification criteria objective enough to be machine-evaluable, and architectural constraints explicit enough to be enforceable without human judgment.
 
 The implication: **the difference between modest and transformational productivity gains from agentic engineering is not better AI; it is better engineering.** Formalized practices, specifications, and verification mechanisms that characterize mature engineering disciplines.
 
@@ -81,13 +81,13 @@ Mapped against these pillars, software development's disciplinary immaturity bec
 
 This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate at industrial scale. AI agents can already assist craft practitioners, but scaling from copilot to autonomous production requires the formalized substrate that engineering disciplines provide.
 
-> "The architectural sins that a human team could tolerate — the hidden coupling, the undocumented side effects, the modules that only make sense if you know the history — are fatal to AI-assisted development." — Ian Bull [13]
+> "The architectural sins that a human team could tolerate — the hidden coupling, the undocumented side effects, the modules that only make sense if you know the history — are fatal to AI-assisted development." — Ian Bull \[13\]
 
 ### 2.3 The infrastructure precedent
 
 Yet this transformation from craft to engineering is not without precedent in the software domain. Infrastructure provisioning has already undergone exactly this journey.
 
-A decade ago, provisioning a server was craft work: manual, unreproducible, and dependent on individual knowledge. Configuration management tools (Ansible, Chef, Puppet) codified the steps imperatively, but remained sequences of instructions rather than engineering specifications. The decisive shift came with Terraform and the Infrastructure as Code (IaC) paradigm [9], where engineers began declaring *what* the infrastructure should be rather than *how* to provision it. This introduced the elements of a genuine engineering discipline:
+A decade ago, provisioning a server was craft work: manual, unreproducible, and dependent on individual knowledge. Configuration management tools (Ansible, Chef, Puppet) codified the steps imperatively, but remained sequences of instructions rather than engineering specifications. The decisive shift came with Terraform and the Infrastructure as Code (IaC) paradigm \[9\], where engineers began declaring *what* the infrastructure should be rather than *how* to provision it. This introduced the elements of a genuine engineering discipline:
 
 - **Declarative specification** — `.tf` files describe the desired state, not the steps to achieve it. This is the blueprint.
 - **State management** — a state file records what actually exists right now. This is the as-built documentation that enables diffing.
@@ -106,15 +106,15 @@ The parallel to the six civil engineering pillars is not accidental. This transf
 
 ### 3.1 The specification problem
 
-Formal methods in software (Z-notation, B-method, TLA+) succeeded in safety-critical domains but failed to reach mainstream adoption, not because the concept was wrong but because the interface was [6]. These approaches required mathematical sophistication that most practitioners lacked and produced specifications that domain experts could not read. The specification language was divorced from both the problem domain and the implementation domain.
+Formal methods in software (Z-notation, B-method, TLA+) succeeded in safety-critical domains but failed to reach mainstream adoption, not because the concept was wrong but because the interface was \[6\]. These approaches required mathematical sophistication that most practitioners lacked and produced specifications that domain experts could not read. The specification language was divorced from both the problem domain and the implementation domain.
 
-> "The craft has always been figuring out *what* code to write. Any given software problem has dozens of potential solutions, each with their own tradeoffs." — Simon Willison [14]
+> "The craft has always been figuring out *what* code to write. Any given software problem has dozens of potential solutions, each with their own tradeoffs." — Simon Willison \[14\]
 
-Spec-Driven Development (SDD) addresses this by making the specification the primary artifact from which implementation flows. The specification is not documentation *about* the system; it *is* the system definition [7].
+Spec-Driven Development (SDD) addresses this by making the specification the primary artifact from which implementation flows. The specification is not documentation *about* the system; it *is* the system definition \[7\].
 
 ### 3.2 Event Modeling as SDD done right
 
-Event Modeling, as developed by Adam Dymitruk, resolves the interface problem that plagued earlier formal methods [8]. It expresses system behavior in a language that domain experts, product owners, and engineers can all read: commands, events, and views arranged on a timeline. Yet it is sufficiently formal to be deterministic and verifiable.
+Event Modeling, as developed by Adam Dymitruk, resolves the interface problem that plagued earlier formal methods \[8\]. It expresses system behavior in a language that domain experts, product owners, and engineers can all read: commands, events, and views arranged on a timeline. Yet it is sufficiently formal to be deterministic and verifiable.
 
 An Event Model specifies:
 
@@ -163,11 +163,11 @@ What we need is the declarative lifecycle *plus* the ability to simulate behavio
 
 ### 4.3 The Decider pattern: Plan for domain logic
 
-The answer lies in a pattern that connects Event Modeling directly to verifiable execution: the Decider pattern, formalized by Jérémie Chassaing [17].
+The answer lies in a pattern that connects Event Modeling directly to verifiable execution: the Decider pattern, formalized by Jérémie Chassaing \[17\].
 
 A Decider is a pure, deterministic function: given the current state (derived from prior events) and a command, it produces the resulting events. No side effects, no infrastructure dependencies, no network calls. Just input, logic, output.
 
-This purity is not accidental; it is an architectural choice. The Functional Core / Imperative Shell pattern (Gary Bernhardt, 2012 [19]) structures software so that all decision logic lives in pure functions at the center — the functional core — while all side effects (database I/O, HTTP, messaging) are pushed to a thin outer layer — the imperative shell. The Decider's `decide` and `evolve` functions ARE the functional core: values in, values out, no I/O. Event store persistence, endpoint handling, and event publishing are the imperative shell: thin wiring that orchestrates the core but contains no business logic.
+This purity is not accidental; it is an architectural choice. The Functional Core / Imperative Shell pattern (Gary Bernhardt, 2012 \[19\]) structures software so that all decision logic lives in pure functions at the center — the functional core — while all side effects (database I/O, HTTP, messaging) are pushed to a thin outer layer — the imperative shell. The Decider's `decide` and `evolve` functions ARE the functional core: values in, values out, no I/O. Event store persistence, endpoint handling, and event publishing are the imperative shell: thin wiring that orchestrates the core but contains no business logic.
 
 This separation is what makes simulation possible. Just as structural engineers analyze forces using mathematical models — pure abstractions that operate on numbers, not on physical materials — the functional core allows a design to be proven before realization. Without this architectural discipline, business logic is entangled with I/O, and "structural analysis" requires standing up databases, configuring infrastructure, and deploying services. The near-zero-cost simulation that Deciders enable is a property of the architecture that makes the pattern's purity achievable, not of the pattern alone.
 
@@ -275,7 +275,7 @@ When an AI agent implements a slice, the generated code is executed against an e
 In production, actual events are validated against the expected model. Anomaly detection identifies patterns that should never occur according to the specification. Event sourcing provides a significant advantage here: the complete, immutable event log is a natural audit trail and verification corpus. Drift detection (the `terraform plan` equivalent) continuously compares production behavior against the specification and flags divergence.
 
 > [!info] A pioneer in practice.
-> Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable [18]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical. It is an emerging engineering practice whose principles are ready to be lifted to the product level.
+> Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable \[18\]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical. It is an emerging engineering practice whose principles are ready to be lifted to the product level.
 
 *[TODO: Illustration — **Three Verification Loops.** Horizontal timeline with three phases: Design-time (left), Implementation-time (center), Runtime (right). At each phase, show a verification loop: **Loop 1** (Design-time): Decider simulation against scenarios, checking for logical errors and missing events. Input: Event Model + scenarios. Output: verified design. **Loop 2** (Implementation-time): AI agent code executed against eval set derived from Event Model + Operational constraints + Policy checks. Input: generated code. Output: pass/fail. **Loop 3** (Runtime): Production event stream validated against specification, anomaly detection, drift detection. Input: live events. Output: divergence alerts. At the bottom-right, show Datadog's approach as a real-world example validating this pattern. Arrows show that Loop 3 feeds back into Loop 1 (production observations refine scenarios).]*
 
@@ -329,7 +329,7 @@ In a Software Civil Engineering organization, the most valuable human capabiliti
 
 - **Individual coding virtuosity**: as agents improve, the ability to write elegant, performant code becomes less differentiating. The quality that matters shifts from implementation craft to specification precision.
 
-> "Coding via agents requires more rigor, more structure, more code quality, not less." — Adam Tornhill [15]
+> "Coding via agents requires more rigor, more structure, more code quality, not less." — Adam Tornhill \[15\]
 
 - **Implicit technical knowledge**: the senior developer who "just knows" that a certain pattern will cause problems is increasingly supplemented by externalized constraint libraries and adversarial verification agents. The knowledge is preserved; the medium shifts progressively from human memory to formal artifact, though Section 10.4 acknowledges that some emergent judgment may resist full formalization.
 
@@ -342,22 +342,23 @@ The traditional developer/architect/tech lead taxonomy gives way to roles organi
 - **Quality Engineers**: build and maintain the eval system, design adversarial testing strategies, monitor production drift. Evolution of QA + SRE + compliance.
 - **Specification Leads**: own the unified specification for a product area, govern changes, ensure coherence across behavioral, operational, and policy layers. A leadership function, not an architecture role.
 
-*[TODO: Illustration — **Role Evolution Map.** Two columns connected by arrows. Left column (current roles): Developer, Business Analyst, Software Architect, QA Engineer, SRE/Platform Engineer, Security Engineer. Right column (new archetypes): Domain Engineer, Harness Engineer, Quality Engineer, Specification Lead. Arrows show convergence: Business Analyst + Domain Architect → Domain Engineer. Performance Engineer + Security Engineer + Platform Architect → Harness Engineer. QA + SRE + Compliance → Quality Engineer. Tech Lead + Product Architect → Specification Lead. Some current roles feed into multiple new roles. Caption: "Roles reorganize around the specification lifecycle, not the implementation lifecycle."]*
+![Role Evolution Map](role-evolution-map.svg)
+*Roles reorganize around the specification lifecycle, not the implementation lifecycle.*
 
 ## 9. Why AI Is the Forcing Function, Not Catastrophe
 
 ### 9.1 The positive professionalization thesis
 
-Civil engineering professionalized *reactively*: bridges collapsed, buildings failed, people died, regulations followed [10]. It took decades and required political will.
+Civil engineering professionalized *reactively*: bridges collapsed, buildings failed, people died, regulations followed \[10\]. It took decades and required political will.
 
 Software Civil Engineering has a different forcing function: **economic opportunity, not catastrophe.** The productivity gap between formalized and unformalized organizations is already visible, and it will only widen as agent capabilities improve. Organizations that formalize their specifications sufficiently for agents to operate autonomously will pull ahead. This pressure is operating *now*.
 
-That said, "not catastrophe" does not mean "without severe consequences." Large-scale software failures have already caused billions in public waste. Sweden's Millennium healthcare IT system consumed 5.5 billion SEK before being scrapped after just three days of operation [20]. Denmark's property valuation system (ejendomsvurdering) ballooned from 200 million to over 4 billion DKK across a decade of delays, delivering a system of what internal reviewers called "astonishing low quality" [21]. Finland's Apotti patient data system exceeded €600 million, prompting over 600 doctors to file formal complaints over patient safety risks [22]. Nobody died, but citizens were harmed, public trust eroded, and billions were lost. The forcing function for Software Civil Engineering may be opportunity rather than tragedy, but the cost of the status quo is already severe.
+That said, "not catastrophe" does not mean "without severe consequences." Large-scale software failures have already caused billions in public waste. Sweden's Millennium healthcare IT system consumed 5.5 billion SEK before being scrapped after just three days of operation \[20\]. Denmark's property valuation system (ejendomsvurdering) ballooned from 200 million to over 4 billion DKK across a decade of delays, delivering a system of what internal reviewers called "astonishing low quality" \[21\]. Finland's Apotti patient data system exceeded €600 million, prompting over 600 doctors to file formal complaints over patient safety risks \[22\]. Nobody died, but citizens were harmed, public trust eroded, and billions were lost. The forcing function for Software Civil Engineering may be opportunity rather than tragedy, but the cost of the status quo is already severe.
 
 ![Two Paths to Professionalization](two-paths-to-professionalization.svg)
 *Different triggers, different timescales, same outcome.*
 
-> "The implementation itself can be replaced module by module in a few hours, keeping the design ideas and tests that define its behaviours. [...] We've just moved up a level." — Adrian Cockcroft [16]
+> "The implementation itself can be replaced module by module in a few hours, keeping the design ideas and tests that define its behaviours. \[…\] We've just moved up a level." — Adrian Cockcroft \[16\]
 
 ### 9.2 The individual organization path
 
@@ -377,7 +378,7 @@ Civil engineering assigns personal legal liability to named engineers. Software 
 
 This absence of accountability is not merely an institutional oversight; it reflects a deeper cultural assumption that software production does not warrant the same professional rigor as other engineering disciplines. Consider the contrast: search "can I be a software developer" and the top results assure you that anyone can, with minimal barriers to entry. Search "can I be a veterinarian" and you encounter years of formal education, licensing requirements, and professional accountability. If a firm contracted to build a bridge delivers a structure that collapses, legal liability follows. No such accountability exists for the firms building the digital infrastructure on which society increasingly depends. As Geoffrey Huntley puts it:
 
-> "I fully believe that software engineering should be a licensed profession. [...] If you work at a company that's contracted to build a bridge, if that bridge collapses, then that company should get liability." — Geoffrey Huntley [11]
+> "I fully believe that software engineering should be a licensed profession. \[…\] If you work at a company that's contracted to build a bridge, if that bridge collapses, then that company should get liability." — Geoffrey Huntley \[11\]
 
 Without a liability framework, Software Civil Engineering lacks the accountability mechanism that forces rigor in other engineering disciplines.
 
@@ -415,46 +416,46 @@ The bridges will not fall because they were designed not to.
 
 ## References
 
-[1] S. Mancuso, *The Software Craftsman: Professionalism, Pragmatism, Pride*, Prentice Hall, 2014. Articulates the craft model as a deliberate professional identity for software development.
+\[1\] S. Mancuso, *The Software Craftsman: Professionalism, Pragmatism, Pride*, Prentice Hall, 2014. Articulates the craft model as a deliberate professional identity for software development.
 
-[2] R.C. Martin, "Manifesto for Software Craftsmanship," 2009. Formalizes the craft values of the software development community as a complement to the Agile Manifesto.
+\[2\] R.C. Martin, "Manifesto for Software Craftsmanship," 2009. Formalizes the craft values of the software development community as a complement to the Agile Manifesto.
 
-[3] A. Karpathy, "Software in the era of AI," 2025. Describes the shift toward agentic software engineering where AI agents perform implementation tasks autonomously.
+\[3\] A. Karpathy, "Software in the era of AI," 2025. Describes the shift toward agentic software engineering where AI agents perform implementation tasks autonomously.
 
-[4] H. Petroski, *To Engineer Is Human: The Role of Failure in Successful Design*, Vintage, 1992. Traces the evolution of engineering disciplines through their responses to failure.
+\[4\] H. Petroski, *To Engineer Is Human: The Role of Failure in Successful Design*, Vintage, 1992. Traces the evolution of engineering disciplines through their responses to failure.
 
-[5] E.T. Layton Jr., *The Revolt of the Engineers: Social Responsibility and the American Engineering Profession*, Johns Hopkins University Press, 1986. Examines the professionalization of engineering as a social and institutional process.
+\[5\] E.T. Layton Jr., *The Revolt of the Engineers: Social Responsibility and the American Engineering Profession*, Johns Hopkins University Press, 1986. Examines the professionalization of engineering as a social and institutional process.
 
-[6] J. Woodcock, P.G. Larsen, J. Bicarregui, J. Fitzgerald, "Formal methods: Practice and experience," *ACM Computing Surveys*, vol. 41, no. 4, 2009. Reviews the adoption challenges of formal methods in industrial software development.
+\[6\] J. Woodcock, P.G. Larsen, J. Bicarregui, J. Fitzgerald, "Formal methods: Practice and experience," *ACM Computing Surveys*, vol. 41, no. 4, 2009. Reviews the adoption challenges of formal methods in industrial software development.
 
-[7] Spec-Driven Development as a methodology emphasizes specification as the primary development artifact from which implementation derives. Various formulations exist across API-first development, contract-first design, and formal specification approaches.
+\[7\] Spec-Driven Development as a methodology emphasizes specification as the primary development artifact from which implementation derives. Various formulations exist across API-first development, contract-first design, and formal specification approaches.
 
-[8] A. Dymitruk, "Event Modeling," eventmodeling.org, 2019-present. Defines the Event Modeling methodology for specifying information systems through commands, events, and views on a timeline.
+\[8\] A. Dymitruk, "Event Modeling," eventmodeling.org, 2019-present. Defines the Event Modeling methodology for specifying information systems through commands, events, and views on a timeline.
 
-[9] HashiCorp, "Terraform: Infrastructure as Code," terraform.io. Declarative infrastructure provisioning using the Specify → Plan → Apply → Observe lifecycle.
+\[9\] HashiCorp, "Terraform: Infrastructure as Code," terraform.io. Declarative infrastructure provisioning using the Specify → Plan → Apply → Observe lifecycle.
 
-[10] H. Petroski, *Design Paradigms: Case Histories of Error and Judgment in Engineering*, Cambridge University Press, 1994. Documents how engineering failures have driven professionalization and the development of formal standards.
+\[10\] H. Petroski, *Design Paradigms: Case Histories of Error and Judgment in Engineering*, Cambridge University Press, 1994. Documents how engineering failures have driven professionalization and the development of formal standards.
 
-[11] G. Huntley, interview in "AI Giants" podcast, Season 2, Episode 1, 2026. https://www.youtube.com/watch?v=ZBkRBs4O1VM&t=2227s. Discusses software engineering licensure, the ralph-loop pattern, and the distinction between software development and software engineering.
+\[11\] G. Huntley, interview in "AI Giants" podcast, Season 2, Episode 1, 2026. https://www.youtube.com/watch?v=ZBkRBs4O1VM&t=2227s. Discusses software engineering licensure, the ralph-loop pattern, and the distinction between software development and software engineering.
 
-[12] J. van der Laarse, "Capability Architecture for AI-Native Engineering," O'Reilly Radar, 2025. https://www.oreilly.com/radar/capability-architecture-for-ai-native-engineering/. Argues that AI punishes the absence of engineering discipline and that scaling requires shared norms.
+\[12\] J. van der Laarse, "Capability Architecture for AI-Native Engineering," O'Reilly Radar, 2025. https://www.oreilly.com/radar/capability-architecture-for-ai-native-engineering/. Argues that AI punishes the absence of engineering discipline and that scaling requires shared norms.
 
-[13] I. Bull, "Sinks, Not Pipes: Software Architecture in the Age of AI," ianbull.com, 2025. https://ianbull.com/posts/software-architecture/. Examines how architectural honesty becomes a prerequisite for effective AI-assisted development.
+\[13\] I. Bull, "Sinks, Not Pipes: Software Architecture in the Age of AI," ianbull.com, 2025. https://ianbull.com/posts/software-architecture/. Examines how architectural honesty becomes a prerequisite for effective AI-assisted development.
 
-[14] S. Willison, "Agentic Engineering Patterns," simonwillison.net, 2026. https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/. Catalogs emerging patterns for specification, verification, and iteration in agentic engineering workflows.
+\[14\] S. Willison, "Agentic Engineering Patterns," simonwillison.net, 2026. https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/. Catalogs emerging patterns for specification, verification, and iteration in agentic engineering workflows.
 
-[15] A. Tornhill, "Agentic AI Coding: Best Practice Patterns for Speed with Quality," CodeScene Blog, 2025. https://codescene.com/blog/agentic-ai-coding-best-practice-patterns-for-speed-with-quality. Demonstrates that agentic coding demands more structural rigor and code health, not less.
+\[15\] A. Tornhill, "Agentic AI Coding: Best Practice Patterns for Speed with Quality," CodeScene Blog, 2025. https://codescene.com/blog/agentic-ai-coding-best-practice-patterns-for-speed-with-quality. Demonstrates that agentic coding demands more structural rigor and code health, not less.
 
-[16] A. Cockcroft, "Directing AI Native Development," Medium, 2025. https://adrianco.medium.com/directing-ai-native-development-0914ac271744. Describes the shift from building-from-source to building-from-spec as a level change in software production.
+\[16\] A. Cockcroft, "Directing AI Native Development," Medium, 2025. https://adrianco.medium.com/directing-ai-native-development-0914ac271744. Describes the shift from building-from-source to building-from-spec as a level change in software production.
 
-[17] J. Chassaing, "Functional Event Sourcing Decider," thinkbeforecoding.com, 2021. https://thinkbeforecoding.com/post/2021/12/17/functional-event-sourcing-decider. Formalizes the Decider pattern as a pure function from (State, Command) → Events, providing the executable bridge between Event Modeling specifications and verifiable implementation.
+\[17\] J. Chassaing, "Functional Event Sourcing Decider," thinkbeforecoding.com, 2021. https://thinkbeforecoding.com/post/2021/12/17/functional-event-sourcing-decider. Formalizes the Decider pattern as a pure function from (State, Command) → Events, providing the executable bridge between Event Modeling specifications and verifiable implementation.
 
-[18] Datadog Engineering, "Closing the Verification Loop: Harness-First Agents," Datadog Blog, 2026. https://www.datadoghq.com/blog/ai/harness-first-agents/. Demonstrates layered verification from formal specifications (TLA+) through deterministic simulation testing to production telemetry, establishing the practical feasibility of specification-to-production verification pipelines.
+\[18\] Datadog Engineering, "Closing the Verification Loop: Harness-First Agents," Datadog Blog, 2026. https://www.datadoghq.com/blog/ai/harness-first-agents/. Demonstrates layered verification from formal specifications (TLA+) through deterministic simulation testing to production telemetry, establishing the practical feasibility of specification-to-production verification pipelines.
 
-[19] G. Bernhardt, "Boundaries," talk at SCNA, 2012. https://www.destroyallsoftware.com/talks/boundaries. Introduces the Functional Core / Imperative Shell architecture: push all decisions into pure functions; push all side effects to a thin outer layer. The architectural prerequisite that makes Decider-based simulation possible.
+\[19\] G. Bernhardt, "Boundaries," talk at SCNA, 2012. https://www.destroyallsoftware.com/talks/boundaries. Introduces the Functional Core / Imperative Shell architecture: push all decisions into pure functions; push all side effects to a thin outer layer. The architectural prerequisite that makes Decider-based simulation possible.
 
-[20] Sweden Herald, "Now Millennium can be scrapped: 'Huge relief,'" 2025. https://swedenherald.com/article/proposal-scrap-the-millennium. Västra Götaland Region's 5.5 billion SEK healthcare IT system, built on Oracle/Cerner's Millennium platform, was paused after three days of operation and proposed for scrapping.
+\[20\] Sweden Herald, "Now Millennium can be scrapped: 'Huge relief,'" 2025. https://swedenherald.com/article/proposal-scrap-the-millennium. Västra Götaland Region's 5.5 billion SEK healthcare IT system, built on Oracle/Cerner's Millennium platform, was paused after three days of operation and proposed for scrapping.
 
-[21] DR, "Har kostet milliarder af kroner — nu viser interne papirer et system af 'forbløffende' lav kvalitet," 2024. https://www.dr.dk/nyheder/penge/har-kostet-milliarder-af-kroner-nu-viser-interne-papirer-et-system-af-forbloeffende. Denmark's property valuation IT system grew from 200 million to over 4 billion DKK across a decade of delays, with internal reviews revealing critical quality failures.
+\[21\] DR, "Har kostet milliarder af kroner — nu viser interne papirer et system af 'forbløffende' lav kvalitet," 2024. https://www.dr.dk/nyheder/penge/har-kostet-milliarder-af-kroner-nu-viser-interne-papirer-et-system-af-forbloeffende. Denmark's property valuation IT system grew from 200 million to over 4 billion DKK across a decade of delays, with internal reviews revealing critical quality failures.
 
-[22] Yle, "Doctors file complaint with health watchdog over Apotti data system," 2021. https://yle.fi/a/3-12609291. Over 600 Finnish doctors filed a formal complaint citing patient safety risks in the €600M+ Apotti system built on Epic's platform.
+\[22\] Yle, "Doctors file complaint with health watchdog over Apotti data system," 2021. https://yle.fi/a/3-12609291. Over 600 Finnish doctors filed a formal complaint citing patient safety risks in the €600M+ Apotti system built on Epic's platform.
