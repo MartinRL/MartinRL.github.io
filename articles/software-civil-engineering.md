@@ -298,7 +298,8 @@ In production, actual events are validated against the expected model. Anomaly d
 > [!info] A pioneer in practice.
 > Datadog's engineering organization has demonstrated that layered verification from formal specification to production telemetry is practically achievable \[18\]. Their approach layers formal specifications (TLA+) → deterministic simulation testing → model checking → formal verification → production telemetry, creating a closed loop where production observations refine the verification harness. While applied to infrastructure-level systems rather than product-level specification, their work shows that the verification pyramid this article proposes is not theoretical. It is an emerging engineering practice whose principles are ready to be lifted to the product level.
 
-*[TODO: Illustration — **Three Verification Loops.** Horizontal timeline with three phases: Design-time (left), Implementation-time (center), Runtime (right). At each phase, show a verification loop: **Loop 1** (Design-time): Decider simulation against scenarios, checking for logical errors and missing events. Input: Event Model + scenarios. Output: verified design. **Loop 2** (Implementation-time): AI agent code executed against eval set derived from Event Model + Operational constraints + Policy checks. Input: generated code. Output: pass/fail. **Loop 3** (Runtime): Production event stream validated against specification, anomaly detection, drift detection. Input: live events. Output: divergence alerts. At the bottom-right, show Datadog's approach as a real-world example validating this pattern. Arrows show that Loop 3 feeds back into Loop 1 (production observations refine scenarios).]*
+![Three Verification Loops](three-verification-loops.svg)
+*Design-time simulation, implementation-time evaluation, runtime drift detection, with production feeding back into design.*
 
 ### 6.2 Adversarial verification
 
