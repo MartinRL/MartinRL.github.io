@@ -6,7 +6,9 @@
       "Bash(git push)",
       "WebSearch",
       "Bash(xargs grep:*)",
-      "Bash(npx quartz:*)"
+      "Bash(npx quartz:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --repo MartinRL/chronograph --limit 1)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" run list --repo MartinRL/chronograph --limit 5 --workflow deploy.yml)"
     ],
     "deny": [],
     "ask": []
