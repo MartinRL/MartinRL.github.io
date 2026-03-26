@@ -244,7 +244,8 @@ This lifecycle — **Specify → Plan → Verify → Apply → Observe** — is 
 
 The unified specification requires three distinct but integrated layers, each addressing a different class of engineering concern.
 
-*[TODO: Illustration — **The Three Specification Layers.** Concentric rings or stacked layers diagram. Innermost/bottom layer: Event Model (behavioral) labeled "What the system does" with civil engineering analog "Architectural blueprints." Middle layer: Operational Model (substrate) labeled "How it must perform" with analog "Structural calculations + material datasheets." Outer/top layer: Policy Model (invariants) labeled "What rules it must obey" with analog "Building codes + regulations." Use distinct colors for each layer (e.g., blue/orange/red). Show that all three layers together constitute the unified specification. The layers are complementary and interlocking, not hierarchical.]*
+![The Three Specification Layers](three-spec-layers.svg)
+*Three complementary layers constitute the unified specification.*
 
 ### 5.1 The Event Model: behavioral specification
 
