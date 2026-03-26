@@ -12,10 +12,15 @@ software by doing it and helping others do it.
 Through this work I have come to value:
 
 **Verifiable specifications** over descriptive documentation
+
 **Known substrate properties** over assumed framework behavior
+
 **Codified engineering standards** over adopted best practices
+
 **Design-time verification** over post-implementation testing
+
 **Professional accountability** over collective ownership
+
 **Demonstrated competence** over self-directed learning
 
 That is, while there is value in the items on
