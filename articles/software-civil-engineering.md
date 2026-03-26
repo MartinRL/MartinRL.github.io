@@ -362,6 +362,10 @@ Software Civil Engineering has a different forcing function: **economic opportun
 
 That said, "not catastrophe" does not mean "without severe consequences." Large-scale software failures have already caused billions in public waste. Sweden's Millennium healthcare IT system consumed 5.5 billion SEK before being scrapped after just three days of operation \[20\]. Denmark's property valuation system (ejendomsvurdering) ballooned from 200 million to over 4 billion DKK across a decade of delays, delivering a system of what internal reviewers called "astonishing low quality" \[21\]. Finland's Apotti patient data system exceeded €600 million, prompting over 600 doctors to file formal complaints over patient safety risks \[22\]. Nobody died, but citizens were harmed, public trust eroded, and billions were lost. The forcing function for Software Civil Engineering may be opportunity rather than tragedy, but the cost of the status quo is already severe.
 
+These failures are not isolated. Bent Flyvbjerg's study of over 16,000 projects across 136 countries reveals that IT projects carry the worst cost-overrun distribution of any project type, with an average overrun of 447% \[23\]. Only 0.5% of megaprojects hit all three targets: budget, schedule, and benefits. Flyvbjerg's prescription is "Think slow, act fast" \[23\]: invest heavily in planning, where iteration is cheap, then execute rapidly to minimize exposure to disruption during what he calls the "window of doom." This is, in essence, the Specify → Plan → Verify lifecycle applied at the project level. His companion insight, that modular projects (composed of small, repeatable units) dramatically outperform monolithic ones, maps directly to Event Modeling's independently verifiable slices: big things made from small things.
+
+> "Think slow, act fast. That's the secret of success." — Bent Flyvbjerg \[23\]
+
 <img src="two-paths-to-professionalization.svg" alt="Two Paths to Professionalization" width="100%">
 
 *Different triggers, different timescales, same outcome.*
@@ -469,3 +473,5 @@ The bridges will not fall because they were designed not to.
 \[21\] DR, "Har kostet milliarder af kroner — nu viser interne papirer et system af 'forbløffende' lav kvalitet," 2024. https://www.dr.dk/nyheder/penge/har-kostet-milliarder-af-kroner-nu-viser-interne-papirer-et-system-af-forbloeffende. Denmark's property valuation IT system grew from 200 million to over 4 billion DKK across a decade of delays, with internal reviews revealing critical quality failures.
 
 \[22\] Yle, "Doctors file complaint with health watchdog over Apotti data system," 2021. https://yle.fi/a/3-12609291. Over 600 Finnish doctors filed a formal complaint citing patient safety risks in the €600M+ Apotti system built on Epic's platform.
+
+\[23\] B. Flyvbjerg and D. Gardner, *How Big Things Get Done: The Surprising Factors That Determine the Fate of Every Project, from Home Renovations to Space Exploration*, Currency, 2023. Empirical study of 16,000+ projects showing that IT projects carry the worst cost-overrun fat tails and that modularity and rigorous upfront planning ("think slow, act fast") are the strongest predictors of success.
