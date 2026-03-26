@@ -78,9 +78,9 @@ Civil engineering rests on six foundational pillars that collectively distinguis
 
 ### 2.2 Software development's current position
 
-Mapped against these pillars, software development's disciplinary immaturity becomes visible:
+Mapped against these pillars, software development's disciplinary immaturity becomes visible. The six pillars expose six gaps, each of which demands a corresponding mechanism:
 
-| Pillar                 | Civil Engineering                      | Software Development                                                                        |
+| Pillar                 | Civil Engineering                      | Software Development Today                                                                  |
 | ---------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------- |
 | Formal specification   | Blueprints, structural calculations    | Informal user stories, ad-hoc documentation                                                 |
 | Material datasheets    | Certified steel grades, concrete specs | No standardized performance profiles for frameworks, patterns, or infrastructure components |
@@ -204,7 +204,7 @@ Paired with Deciders, an Event Model becomes more than a specification document;
 
 ### 4.4 The six elements: a structural isomorphism
 
-With both the Terraform lifecycle and the Decider pattern in hand, the full structural correspondence becomes visible:
+The gap analysis in Section 2 posed six questions; the Terraform lifecycle and the Decider pattern now provide answers:
 
 | Element             | Terraform (Infrastructure)                              | Civil Engineering                                  | Product Level                                                                           |
 | ------------------- | ------------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------- |
