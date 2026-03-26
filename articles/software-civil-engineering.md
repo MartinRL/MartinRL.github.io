@@ -191,7 +191,8 @@ The mapping to Event Modeling is direct. Each Given-When-Then slice in an Event 
 
 Paired with Deciders, an Event Model becomes more than a specification document; it becomes a *simulation suite.* Each slice defines a scenario that can be executed as a pure function, verified deterministically, and repeated indefinitely at near-zero cost. The blueprint is also the structural analysis. (Event Modeling does not prescribe the Decider pattern; many practitioners use DDD aggregates or other approaches to implement slices. But the Decider's purity makes it a natural fit, just as Event Sourcing is a natural fit for the persistence model: separate patterns that complement each other precisely.)
 
-*[TODO: Illustration — **The Decider Pattern.** A function box labeled "Decider" with two inputs on the left (State, derived from prior events via an `evolve` function; and Command) and one output on the right (Events). Inside the box: "Pure function — no side effects." Below the function box, show the mapping to Event Modeling: Given (prior events) maps to State input, When (command) maps to Command input, Then (resulting events) maps to Events output. Emphasize purity: no database, no network, no infrastructure icons crossed out.]*
+![The Decider Pattern](decider-pattern.svg)
+*The Decider cycle: decide(state, command) → events; evolve(state, event) → state.*
 
 ### 4.4 The six elements: a structural isomorphism
 
