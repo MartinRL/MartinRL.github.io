@@ -138,6 +138,10 @@ This is the critical property: **each slice is an independently verifiable, dete
 
 *Each vertical slice is an independently verifiable Given-When-Then contract.*
 
+Event Modeling provides a second critical property: **information completeness**. For every field displayed in a view, the model requires a traceable path backward through events to the command where that data originally entered the system. If a view shows data that no event carries, and no command ever captured, the specification has a gap: a "made-up fact," in Adam Dymitruk's framing. This is verifiable at design time by following information flow across the blueprint; tooling can automate it through field-by-field mapping, flagging missing connections before a single line of code is written. As the Event Modeling specification puts it: "All information has to have an origin and a destination. Events must facilitate this transition and hold the necessary fields to do so."
+
+This is the blueprint completeness check that civil engineering demands. In structural engineering, a blueprint is reviewed for completeness before construction begins; no load path may be left unresolved. Information completeness performs the same function for behavioral specifications. For agent-driven development, the implication is direct: an AI agent implementing a slice will never discover mid-implementation that a view requires data no event captures. The specification gap surfaces at design time, not during coding, eliminating an entire category of rework that plagues informal specifications, where the question "where does this data come from?" typically surfaces only during implementation.
+
 ### 3.3 What Event Modeling provides, and what it lacks
 
 Event Modeling solves the *behavioral specification* problem. It provides the software equivalent of an architectural blueprint: a complete, readable, verifiable description of what the system does.
