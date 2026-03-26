@@ -89,7 +89,7 @@ Mapped against these pillars, software development's disciplinary immaturity bec
 | Professional licensure | PE license, personal liability         | None; no individual accountability for engineering decisions                                |
 | Formal education       | Accredited, standardized, examined     | Highly variable; no required competency demonstration                                       |
 
-This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate at industrial scale. AI agents can already assist craft practitioners, but scaling from copilot to autonomous production requires the formalized substrate that engineering disciplines provide.
+This is not an argument that software development is *inferior* to civil engineering. It is an observation that software development lacks the institutional and methodological infrastructure that would allow autonomous agents to operate at industrial scale. Software's freedom from physical constraints is precisely what makes formal specification essential: there are no material properties to catch design errors; only the specification stands between intent and defect. AI agents can already assist craft practitioners, but scaling from copilot to autonomous production requires the formalized substrate that engineering disciplines provide.
 
 > "The architectural sins that a human team could tolerate — the hidden coupling, the undocumented side effects, the modules that only make sense if you know the history — are fatal to AI-assisted development." — Ian Bull \[13\]
 
@@ -99,12 +99,12 @@ Yet this transformation from craft to engineering is not without precedent in th
 
 A decade ago, provisioning a server was craft work: manual, unreproducible, and dependent on individual knowledge. Configuration management tools (Ansible, Chef, Puppet) codified the steps imperatively, but remained sequences of instructions rather than engineering specifications. The decisive shift came with Terraform and the Infrastructure as Code (IaC) paradigm \[9\], where engineers began declaring *what* the infrastructure should be rather than *how* to provision it. This introduced the elements of a genuine engineering discipline:
 
-- **Declarative specification** — `.tf` files describe the desired state, not the steps to achieve it. This is the blueprint.
-- **State management** — a state file records what actually exists right now. This is the as-built documentation that enables diffing.
-- **Plan before apply** — `terraform plan` shows exactly what will change before any mutation occurs. This is the structural analysis step: verify before you build.
+- **Declarative specification** — `.tf` files describe the desired state, not the steps to achieve it.
+- **State management** — a state file records what actually exists right now, enabling diffing against the declared specification.
+- **Plan before apply** — `terraform plan` shows exactly what will change before any mutation occurs.
 - **Controlled execution** — `terraform apply` realizes the verified plan in a reproducible, auditable manner.
-- **Providers** — plugins that encode the properties, constraints, and behaviors of specific technical substrates (AWS, Azure, GCP). This is the material datasheet: known properties of the materials you build with.
-- **Drift detection** — continuous comparison of actual state against declared specification. This is the building inspection.
+- **Providers** — plugins that encode the properties, constraints, and behaviors of specific technical substrates (AWS, Azure, GCP).
+- **Drift detection** — continuous comparison of actual state against declared specification.
 
 ![Craft-to-Engineering Timeline](craft-to-engineering-timeline.svg)
 
