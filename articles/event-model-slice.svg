@@ -1,153 +1,207 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 960 580" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 960 540" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
   <defs>
-    <marker id="arr-down" markerWidth="6" markerHeight="5" refX="3" refY="5" orient="auto">
-      <path d="M0,0 L3,5 L6,0" fill="#7f8c8d"/>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#3498db"/>
     </marker>
-    <marker id="arr-right" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
-      <path d="M0,0 L6,2.5 L0,5" fill="#e67e22"/>
+    <marker id="arr-orange" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#e67e22"/>
+    </marker>
+    <marker id="arr-gray" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#7f8c8d"/>
+    </marker>
+    <marker id="arr-gray-down" markerWidth="5" markerHeight="7" refX="2.5" refY="7" orient="auto">
+      <path d="M0,0 L2.5,7 L5,0" fill="#7f8c8d"/>
+    </marker>
+    <marker id="arr-blue-down" markerWidth="5" markerHeight="7" refX="2.5" refY="7" orient="auto">
+      <path d="M0,0 L2.5,7 L5,0" fill="#3498db"/>
     </marker>
   </defs>
 
   <!-- ════════════════════════════════════════════════════════ -->
-  <!-- EVENT MODEL (top section)                                -->
+  <!-- ROW LANE BACKGROUNDS                                     -->
   <!-- ════════════════════════════════════════════════════════ -->
-
-  <!-- Lane backgrounds -->
-  <rect x="90" y="30" width="860" height="60" rx="4" fill="#3498db" opacity="0.05"/>
-  <rect x="90" y="106" width="860" height="60" rx="4" fill="#e67e22" opacity="0.05"/>
-  <rect x="90" y="182" width="860" height="60" rx="4" fill="#27ae60" opacity="0.05"/>
-
-  <!-- Lane labels -->
-  <text x="80" y="64" text-anchor="end" font-size="11" font-weight="600" fill="#3498db">Commands</text>
-  <text x="80" y="140" text-anchor="end" font-size="11" font-weight="600" fill="#e67e22">Events</text>
-  <text x="80" y="206" text-anchor="end" font-size="11" font-weight="600" fill="#27ae60">Read</text>
-  <text x="80" y="220" text-anchor="end" font-size="11" font-weight="600" fill="#27ae60">Models</text>
-
-  <!-- ===== SLICE 1: Submit Article ===== -->
-  <rect x="115" y="40" width="130" height="34" rx="5" fill="#3498db"/>
-  <text x="180" y="62" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Submit Article</text>
-  <line x1="180" y1="74" x2="180" y2="114" stroke="#7f8c8d" stroke-width="1" marker-end="url(#arr-down)"/>
-  <rect x="110" y="116" width="140" height="34" rx="5" fill="#e67e22"/>
-  <text x="180" y="138" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Article Submitted</text>
-  <line x1="180" y1="150" x2="180" y2="190" stroke="#7f8c8d" stroke-width="1" marker-end="url(#arr-down)"/>
-  <rect x="125" y="192" width="110" height="34" rx="5" fill="#27ae60"/>
-  <text x="180" y="214" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Article List</text>
-
-  <!-- Event flow 1→2 -->
-  <line x1="250" y1="133" x2="300" y2="133" stroke="#e67e22" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr-right)"/>
-
-  <!-- ===== SLICE 2: Request Review ===== -->
-  <rect x="310" y="40" width="130" height="34" rx="5" fill="#3498db"/>
-  <text x="375" y="62" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Request Review</text>
-  <line x1="375" y1="74" x2="375" y2="114" stroke="#7f8c8d" stroke-width="1" marker-end="url(#arr-down)"/>
-  <rect x="305" y="116" width="140" height="34" rx="5" fill="#e67e22"/>
-  <text x="375" y="138" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Review Requested</text>
-  <line x1="375" y1="150" x2="375" y2="190" stroke="#7f8c8d" stroke-width="1" marker-end="url(#arr-down)"/>
-  <rect x="310" y="192" width="130" height="34" rx="5" fill="#27ae60"/>
-  <text x="375" y="214" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Reviewer Queue</text>
-
-  <!-- Event flow 2→3 -->
-  <line x1="445" y1="133" x2="500" y2="133" stroke="#e67e22" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr-right)"/>
-
-  <!-- ===== SLICE 3: Submit Review (highlighted) ===== -->
-  <!-- Highlight box spanning model + GWT -->
-  <rect x="498" y="20" width="150" height="540" rx="6"
-        fill="#2c3e50" fill-opacity="0.03" stroke="#2c3e50" stroke-width="2" stroke-dasharray="8,4"/>
-
-  <rect x="510" y="40" width="126" height="34" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
-  <text x="573" y="62" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Submit Review</text>
-  <line x1="573" y1="74" x2="573" y2="114" stroke="#7f8c8d" stroke-width="1" marker-end="url(#arr-down)"/>
-  <rect x="503" y="116" width="140" height="34" rx="5" fill="#e67e22" stroke="#d35400" stroke-width="1"/>
-  <text x="573" y="138" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Review Completed</text>
-  <line x1="573" y1="150" x2="573" y2="190" stroke="#7f8c8d" stroke-width="1" marker-end="url(#arr-down)"/>
-  <rect x="513" y="192" width="120" height="34" rx="5" fill="#27ae60" stroke="#1e8449" stroke-width="1"/>
-  <text x="573" y="214" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Article Status</text>
-
-  <!-- Event flow 3→4 -->
-  <line x1="643" y1="133" x2="693" y2="133" stroke="#e67e22" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr-right)"/>
-
-  <!-- ===== SLICE 4: Approve Article ===== -->
-  <rect x="700" y="40" width="140" height="34" rx="5" fill="#3498db"/>
-  <text x="770" y="62" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Approve Article</text>
-  <line x1="770" y1="74" x2="770" y2="114" stroke="#7f8c8d" stroke-width="1" marker-end="url(#arr-down)"/>
-  <rect x="700" y="116" width="140" height="34" rx="5" fill="#e67e22"/>
-  <text x="770" y="138" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Article Approved</text>
-  <line x1="770" y1="150" x2="770" y2="190" stroke="#7f8c8d" stroke-width="1" marker-end="url(#arr-down)"/>
-  <rect x="715" y="192" width="110" height="34" rx="5" fill="#27ae60"/>
-  <text x="770" y="214" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Dashboard</text>
+  <rect x="88" y="36" width="790" height="76" rx="3" fill="#f4f6f7" opacity="0.6"/>
+  <rect x="88" y="116" width="790" height="76" rx="3" fill="#f8f9fa" opacity="0.6"/>
+  <rect x="88" y="196" width="790" height="74" rx="3" fill="#f4f6f7" opacity="0.6"/>
+  <rect x="88" y="274" width="790" height="68" rx="3" fill="#f8f9fa" opacity="0.6"/>
 
   <!-- ════════════════════════════════════════════════════════ -->
-  <!-- TIMELINE                                                 -->
+  <!-- ROW LABELS (left side)                                   -->
   <!-- ════════════════════════════════════════════════════════ -->
-  <line x1="100" y1="260" x2="880" y2="260" stroke="#bdc3c7" stroke-width="1.5"/>
-  <polygon points="878,257 888,260 878,263" fill="#bdc3c7"/>
-  <text x="900" y="264" font-size="10" fill="#95a5a6" font-style="italic">time</text>
+  <text x="80" y="78" text-anchor="end" font-size="10" font-weight="600" fill="#566573">Publisher</text>
+  <text x="80" y="158" text-anchor="end" font-size="10" font-weight="600" fill="#566573">Reviewer</text>
+  <text x="80" y="230" text-anchor="end" font-size="10" font-weight="600" fill="#566573">Information</text>
+  <text x="80" y="242" text-anchor="end" font-size="10" font-weight="600" fill="#566573">Flow</text>
+  <text x="80" y="312" text-anchor="end" font-size="10" font-weight="600" fill="#566573">Events</text>
 
   <!-- ════════════════════════════════════════════════════════ -->
-  <!-- SPECIFICATION / VERIFICATION (GWT blocks below timeline) -->
+  <!-- COLUMN HEADERS                                           -->
+  <!-- ════════════════════════════════════════════════════════ -->
+  <text x="188" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#2c3e50">Submit Article</text>
+  <text x="385" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#2c3e50">Article List</text>
+  <text x="582" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#2c3e50">Submit Review</text>
+  <text x="779" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#2c3e50">Article Status</text>
+  <!-- Slice type labels -->
+  <text x="188" y="32" text-anchor="middle" font-size="9" fill="#95a5a6" font-style="italic">state change</text>
+  <text x="385" y="32" text-anchor="middle" font-size="9" fill="#95a5a6" font-style="italic">state view</text>
+  <text x="582" y="32" text-anchor="middle" font-size="9" fill="#95a5a6" font-style="italic">state change</text>
+  <text x="779" y="32" text-anchor="middle" font-size="9" fill="#95a5a6" font-style="italic">state view</text>
+
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- HIGHLIGHT: Col 3 dashed border                           -->
+  <!-- ════════════════════════════════════════════════════════ -->
+  <rect x="487" y="6" width="192" height="510" rx="6"
+        fill="#2c3e50" fill-opacity="0.02" stroke="#2c3e50" stroke-width="1.8" stroke-dasharray="8,4"/>
+
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- COL 1: Submit Article (State Change)                     -->
+  <!-- ════════════════════════════════════════════════════════ -->
+
+  <!-- Publisher row: Submit form wireframe -->
+  <rect x="138" y="48" width="100" height="54" rx="4" fill="#fff" stroke="#95a5a6" stroke-width="1"/>
+  <rect x="148" y="56" width="50" height="6" rx="1" fill="#d5dbdb"/>
+  <rect x="148" y="68" width="80" height="6" rx="1" fill="#eaecee"/>
+  <rect x="148" y="80" width="80" height="6" rx="1" fill="#eaecee"/>
+  <rect x="148" y="90" width="36" height="8" rx="2" fill="#3498db" opacity="0.4"/>
+  <text x="166" y="97" font-size="5" fill="#fff">Submit</text>
+
+  <!-- Arrow: Publisher UI → Command (down, gray dashed) -->
+  <line x1="188" y1="102" x2="188" y2="204" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-gray-down)"/>
+
+  <!-- Info Flow row: Command (blue) -->
+  <rect x="128" y="206" width="120" height="38" rx="5" fill="#3498db"/>
+  <text x="188" y="230" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Submit Article</text>
+
+  <!-- Arrow: Command → Event (down, blue) -->
+  <line x1="188" y1="244" x2="188" y2="286" stroke="#3498db" stroke-width="1.5" marker-end="url(#arr-blue-down)"/>
+
+  <!-- Events row: ArticleSubmitted (orange) -->
+  <rect x="118" y="288" width="140" height="36" rx="5" fill="#e67e22"/>
+  <text x="188" y="311" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">ArticleSubmitted</text>
+
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- COL 2: Article List (State View)                         -->
+  <!-- ════════════════════════════════════════════════════════ -->
+
+  <!-- Publisher row: Article list wireframe -->
+  <rect x="335" y="48" width="100" height="54" rx="4" fill="#fff" stroke="#95a5a6" stroke-width="1"/>
+  <rect x="345" y="56" width="60" height="6" rx="1" fill="#d5dbdb"/>
+  <line x1="345" y1="68" x2="425" y2="68" stroke="#eaecee" stroke-width="1"/>
+  <rect x="345" y="72" width="80" height="6" rx="1" fill="#eaecee"/>
+  <line x1="345" y1="82" x2="425" y2="82" stroke="#eaecee" stroke-width="1"/>
+  <rect x="345" y="86" width="80" height="6" rx="1" fill="#eaecee"/>
+
+  <!-- Arrow: View → Publisher UI (up, gray dashed) -->
+  <line x1="385" y1="204" x2="385" y2="106" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-gray)"/>
+
+  <!-- Info Flow row: View (green) -->
+  <rect x="325" y="206" width="120" height="38" rx="5" fill="#27ae60"/>
+  <text x="385" y="230" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Article List</text>
+
+  <!-- Arrow: Event (col 1) → View (col 2) (diagonal up-right, orange) -->
+  <path d="M258,300 C310,300 330,240 325,228" fill="none" stroke="#e67e22" stroke-width="1.5" marker-end="url(#arr-orange)"/>
+
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- COL 3: Submit Review (State Change) — HIGHLIGHTED        -->
+  <!-- ════════════════════════════════════════════════════════ -->
+
+  <!-- Reviewer row: Review form wireframe -->
+  <rect x="532" y="128" width="100" height="54" rx="4" fill="#fff" stroke="#95a5a6" stroke-width="1"/>
+  <rect x="542" y="136" width="50" height="6" rx="1" fill="#d5dbdb"/>
+  <rect x="542" y="148" width="80" height="6" rx="1" fill="#eaecee"/>
+  <rect x="542" y="160" width="80" height="6" rx="1" fill="#eaecee"/>
+  <rect x="542" y="170" width="36" height="8" rx="2" fill="#3498db" opacity="0.4"/>
+  <text x="560" y="177" font-size="5" fill="#fff">Submit</text>
+
+  <!-- Arrow: Reviewer UI → Command (down, gray dashed) -->
+  <line x1="582" y1="182" x2="582" y2="204" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-gray-down)"/>
+
+  <!-- Info Flow row: Command (blue) -->
+  <rect x="522" y="206" width="120" height="38" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="582" y="230" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Submit Review</text>
+
+  <!-- Arrow: Command → Event (down, blue) -->
+  <line x1="582" y1="244" x2="582" y2="286" stroke="#3498db" stroke-width="1.5" marker-end="url(#arr-blue-down)"/>
+
+  <!-- Events row: ReviewCompleted (orange) -->
+  <rect x="512" y="288" width="140" height="36" rx="5" fill="#e67e22" stroke="#d35400" stroke-width="1"/>
+  <text x="582" y="311" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">ReviewCompleted</text>
+
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- COL 4: Article Status (State View)                       -->
+  <!-- ════════════════════════════════════════════════════════ -->
+
+  <!-- Reviewer row: Status dashboard wireframe -->
+  <rect x="729" y="128" width="100" height="54" rx="4" fill="#fff" stroke="#95a5a6" stroke-width="1"/>
+  <rect x="739" y="136" width="60" height="6" rx="1" fill="#d5dbdb"/>
+  <line x1="739" y1="148" x2="819" y2="148" stroke="#eaecee" stroke-width="1"/>
+  <rect x="739" y="152" width="30" height="6" rx="1" fill="#27ae60" opacity="0.4"/>
+  <rect x="775" y="152" width="40" height="6" rx="1" fill="#eaecee"/>
+  <line x1="739" y1="162" x2="819" y2="162" stroke="#eaecee" stroke-width="1"/>
+  <rect x="739" y="166" width="30" height="6" rx="1" fill="#e67e22" opacity="0.4"/>
+  <rect x="775" y="166" width="40" height="6" rx="1" fill="#eaecee"/>
+
+  <!-- Arrow: View → Reviewer UI (up, gray dashed) -->
+  <line x1="779" y1="204" x2="779" y2="186" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-gray)"/>
+
+  <!-- Info Flow row: View (green) -->
+  <rect x="719" y="206" width="120" height="38" rx="5" fill="#27ae60"/>
+  <text x="779" y="230" text-anchor="middle" font-size="11" font-weight="500" fill="#fff">Article Status</text>
+
+  <!-- Arrow: Event (col 3) → View (col 4) (diagonal up-right, orange) -->
+  <path d="M652,300 C710,300 720,240 719,228" fill="none" stroke="#e67e22" stroke-width="1.5" marker-end="url(#arr-orange)"/>
+
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- TIMELINE SEPARATOR                                       -->
+  <!-- ════════════════════════════════════════════════════════ -->
+  <line x1="90" y1="352" x2="870" y2="352" stroke="#bdc3c7" stroke-width="1.2"/>
+  <polygon points="868,349 878,352 868,355" fill="#bdc3c7"/>
+  <text x="888" y="356" font-size="9" fill="#95a5a6" font-style="italic">time</text>
+
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- GWT SPECIFICATION CARDS (below timeline)                 -->
   <!-- ════════════════════════════════════════════════════════ -->
 
   <!-- Section label -->
-  <text x="80" y="296" text-anchor="end" font-size="10" font-weight="600" fill="#2c3e50">Specification</text>
-  <text x="80" y="310" text-anchor="end" font-size="10" fill="#7f8c8d" font-style="italic">(verification)</text>
+  <text x="80" y="388" text-anchor="end" font-size="9" font-weight="600" fill="#2c3e50">Specification</text>
+  <text x="80" y="400" text-anchor="end" font-size="9" fill="#7f8c8d" font-style="italic">(verification)</text>
 
-  <!-- ===== GWT 1: Submit Article ===== -->
-  <rect x="108" y="280" width="144" height="108" rx="5" fill="#f8f9fa" stroke="#d5dbdb" stroke-width="1"/>
-  <!-- Given -->
-  <text x="118" y="300" font-size="10" font-weight="700" fill="#7f8c8d">Given</text>
-  <text x="126" y="314" font-size="10" fill="#566573" font-style="italic">∅ (initial state)</text>
-  <!-- When -->
-  <text x="118" y="336" font-size="10" font-weight="700" fill="#3498db">When</text>
-  <text x="126" y="350" font-size="10" fill="#2c3e50">Submit Article</text>
-  <!-- Then -->
-  <text x="118" y="372" font-size="10" font-weight="700" fill="#e67e22">Then</text>
-  <text x="126" y="386" font-size="10" fill="#2c3e50">Article Submitted</text>
+  <!-- GWT 1: Submit Article (State Change) -->
+  <rect x="113" y="370" width="150" height="96" rx="5" fill="#f8f9fa" stroke="#d5dbdb" stroke-width="1"/>
+  <text x="123" y="388" font-size="9" font-weight="700" fill="#7f8c8d">Given</text>
+  <text x="131" y="400" font-size="9" fill="#566573" font-style="italic">∅ (initial state)</text>
+  <text x="123" y="418" font-size="9" font-weight="700" fill="#3498db">When</text>
+  <text x="131" y="430" font-size="9" fill="#2c3e50">Submit Article</text>
+  <text x="123" y="448" font-size="9" font-weight="700" fill="#e67e22">Then</text>
+  <text x="131" y="460" font-size="9" fill="#2c3e50">ArticleSubmitted</text>
 
-  <!-- ===== GWT 2: Request Review ===== -->
-  <rect x="303" y="280" width="144" height="108" rx="5" fill="#f8f9fa" stroke="#d5dbdb" stroke-width="1"/>
-  <!-- Given -->
-  <text x="313" y="300" font-size="10" font-weight="700" fill="#7f8c8d">Given</text>
-  <text x="321" y="314" font-size="10" fill="#566573" font-style="italic">{article submitted}</text>
-  <!-- When -->
-  <text x="313" y="336" font-size="10" font-weight="700" fill="#3498db">When</text>
-  <text x="321" y="350" font-size="10" fill="#2c3e50">Request Review</text>
-  <!-- Then -->
-  <text x="313" y="372" font-size="10" font-weight="700" fill="#e67e22">Then</text>
-  <text x="321" y="386" font-size="10" fill="#2c3e50">Review Requested</text>
+  <!-- GWT 2: Article List (State View) -->
+  <rect x="310" y="370" width="150" height="76" rx="5" fill="#f8f9fa" stroke="#d5dbdb" stroke-width="1"/>
+  <text x="320" y="388" font-size="9" font-weight="700" fill="#7f8c8d">Given</text>
+  <text x="328" y="400" font-size="9" fill="#566573" font-style="italic">ArticleSubmitted</text>
+  <text x="320" y="428" font-size="9" font-weight="700" fill="#27ae60">Then</text>
+  <text x="328" y="440" font-size="9" fill="#2c3e50">Article List (view)</text>
 
-  <!-- ===== GWT 3: Submit Review (highlighted) ===== -->
-  <rect x="503" y="280" width="140" height="108" rx="5" fill="#f0f4f7" stroke="#2c3e50" stroke-width="1.5"/>
-  <!-- Given -->
-  <text x="513" y="300" font-size="10" font-weight="700" fill="#7f8c8d">Given</text>
-  <text x="521" y="314" font-size="10" fill="#566573" font-style="italic">{article submitted,</text>
-  <text x="525" y="326" font-size="10" fill="#566573" font-style="italic">review requested}</text>
-  <!-- When -->
-  <text x="513" y="346" font-size="10" font-weight="700" fill="#3498db">When</text>
-  <text x="521" y="360" font-size="10" fill="#2c3e50">Submit Review</text>
-  <!-- Then -->
-  <text x="513" y="378" font-size="10" font-weight="700" fill="#e67e22">Then</text>
-  <text x="521" y="392" font-size="10" fill="#2c3e50">Review Completed</text>
+  <!-- GWT 3: Submit Review (State Change) — highlighted -->
+  <rect x="507" y="370" width="150" height="96" rx="5" fill="#f0f4f7" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="517" y="388" font-size="9" font-weight="700" fill="#7f8c8d">Given</text>
+  <text x="525" y="400" font-size="9" fill="#566573" font-style="italic">{article submitted}</text>
+  <text x="517" y="418" font-size="9" font-weight="700" fill="#3498db">When</text>
+  <text x="525" y="430" font-size="9" fill="#2c3e50">Submit Review</text>
+  <text x="517" y="448" font-size="9" font-weight="700" fill="#e67e22">Then</text>
+  <text x="525" y="460" font-size="9" fill="#2c3e50">ReviewCompleted</text>
 
-  <!-- ===== GWT 4: Approve Article ===== -->
-  <rect x="698" y="280" width="144" height="108" rx="5" fill="#f8f9fa" stroke="#d5dbdb" stroke-width="1"/>
-  <!-- Given -->
-  <text x="708" y="300" font-size="10" font-weight="700" fill="#7f8c8d">Given</text>
-  <text x="716" y="314" font-size="10" fill="#566573" font-style="italic">{article submitted,</text>
-  <text x="720" y="326" font-size="10" fill="#566573" font-style="italic">review completed}</text>
-  <!-- When -->
-  <text x="708" y="346" font-size="10" font-weight="700" fill="#3498db">When</text>
-  <text x="716" y="360" font-size="10" fill="#2c3e50">Approve Article</text>
-  <!-- Then -->
-  <text x="708" y="378" font-size="10" font-weight="700" fill="#e67e22">Then</text>
-  <text x="716" y="392" font-size="10" fill="#2c3e50">Article Approved</text>
+  <!-- GWT 4: Article Status (State View) -->
+  <rect x="704" y="370" width="150" height="96" rx="5" fill="#f8f9fa" stroke="#d5dbdb" stroke-width="1"/>
+  <text x="714" y="388" font-size="9" font-weight="700" fill="#7f8c8d">Given</text>
+  <text x="722" y="400" font-size="9" fill="#566573" font-style="italic">ArticleSubmitted,</text>
+  <text x="722" y="412" font-size="9" fill="#566573" font-style="italic">ReviewCompleted</text>
+  <text x="714" y="438" font-size="9" font-weight="700" fill="#27ae60">Then</text>
+  <text x="722" y="450" font-size="9" fill="#2c3e50">Article Status (view)</text>
 
   <!-- ════════════════════════════════════════════════════════ -->
-  <!-- DECIDER MAPPING ANNOTATION                               -->
+  <!-- DECIDER ANNOTATION                                       -->
   <!-- ════════════════════════════════════════════════════════ -->
-  <text x="480" y="430" text-anchor="middle" font-size="10" fill="#7f8c8d" font-style="italic">decide(state, command) → events</text>
-  <!-- Small connecting lines from GWT labels to Decider terms -->
-  <text x="340" y="448" text-anchor="middle" font-size="9" fill="#95a5a6">Given → evolve(prior events) = state</text>
-  <text x="573" y="448" text-anchor="middle" font-size="9" fill="#95a5a6">When → command input</text>
-  <text x="770" y="448" text-anchor="middle" font-size="9" fill="#95a5a6">Then → events output</text>
+  <text x="480" y="530" text-anchor="middle" font-size="9" fill="#95a5a6" font-style="italic">State Change: decide(state, command) → events · State View: project(events) → view</text>
 
 </svg>
