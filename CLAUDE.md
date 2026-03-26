@@ -16,3 +16,7 @@
 
   *Caption text.*
   ```
+
+## Working principles
+
+- Maximize the amount of work Claude does autonomously; minimize the user's part. Use available tools (gh CLI, MCP servers, etc.) to handle GitHub operations, repo setup, deployments, and other tasks end-to-end without requiring user intervention.
