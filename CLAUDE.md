@@ -10,9 +10,9 @@
 
 - Never embed captions or figure labels (e.g. "Fig. 1 ...") inside image files (SVG, PNG, etc.). Instead, place captions as text in the surrounding Markdown, directly below the image reference (e.g. `*Caption text.*`).
 - Never set explicit `width` or `height` attributes on SVG files. SVGs should only use `viewBox` for their dimensions, leaving sizing to the consumer (the Markdown file or other embedding context).
-- When embedding SVG images in Markdown, use an HTML `<img>` tag with `width="100%"` so they render at full width in Obsidian. Place the caption on the next line. Example:
+- When embedding images in Markdown, use standard syntax, no HTML `<img>` tags. Place the caption on the next line. Example:
   ```
-  <img src="diagram.svg" alt="Diagram title" width="100%">
+  ![Diagram title](diagram.svg)
 
   *Caption text.*
   ```

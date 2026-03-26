@@ -52,7 +52,7 @@ The vocabulary for this shift already exists, borrowed from autonomous systems d
 
 This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster, but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
 
-<img src="six-pillars-asymmetry.svg" alt="The Six Pillars Asymmetry" width="100%">
+![The Six Pillars Asymmetry](six-pillars-asymmetry.svg)
 
 *Current AI investment accelerates construction. The six disciplinary foundations remain scaffolding.*
 
@@ -106,7 +106,7 @@ A decade ago, provisioning a server was craft work: manual, unreproducible, and 
 - **Providers** — plugins that encode the properties, constraints, and behaviors of specific technical substrates (AWS, Azure, GCP). This is the material datasheet: known properties of the materials you build with.
 - **Drift detection** — continuous comparison of actual state against declared specification. This is the building inspection.
 
-<img src="craft-to-engineering-timeline.svg" alt="Craft-to-Engineering Timeline" width="100%">
+![Craft-to-Engineering Timeline](craft-to-engineering-timeline.svg)
 
 *Each evolutionary stage lights up more pillars. Three remain dark, foreshadowing Section 10.*
 
@@ -142,7 +142,7 @@ Each vertical "slice" through the model constitutes a Given-When-Then specificat
 
 This is the critical property: **each slice is an independently verifiable, deterministic specification of behavior.** An AI agent implementing a slice does not need to "understand" the business logic; it needs to produce code that satisfies the Given-When-Then contract. Just as a construction worker does not need to understand why a load-bearing wall is positioned where it is, only that the blueprint says it must be there.
 
-<img src="event-model-slice.svg" alt="An Event Model Slice" width="100%">
+![An Event Model Slice](event-model-slice.svg)
 
 *Each vertical slice is an independently verifiable Given-When-Then contract.*
 
@@ -364,7 +364,7 @@ The traditional developer/architect/tech lead taxonomy gives way to roles organi
 - **Quality Engineers**: build and maintain the eval system, design adversarial testing strategies, monitor production drift. Evolution of QA + SRE + compliance.
 - **Specification Leads**: own the unified specification for a product area, govern changes, ensure coherence across behavioral, operational, and policy layers. A leadership function, not an architecture role.
 
-<img src="role-evolution-map.svg" alt="Role Evolution Map" width="100%">
+![Role Evolution Map](role-evolution-map.svg)
 
 *Roles reorganize around the specification lifecycle, not the implementation lifecycle.*
 
@@ -382,7 +382,7 @@ These failures are not isolated. Bent Flyvbjerg's study of over 16,000 projects 
 
 > "Think slow, act fast. That's the secret of success." — Bent Flyvbjerg \[23\]
 
-<img src="two-paths-to-professionalization.svg" alt="Two Paths to Professionalization" width="100%">
+![Two Paths to Professionalization](two-paths-to-professionalization.svg)
 
 *Different triggers, different timescales, same outcome.*
 
@@ -398,7 +398,7 @@ The transformation is self-reinforcing: formalization enables agents, agents val
 
 Intellectual honesty requires acknowledging what this model does *not* address. These gaps represent significant institutional debt that the software industry has not yet begun to repay:
 
-<img src="wardley-map-institutional-maturity.svg" alt="Wardley Map: Institutional Maturity of Software Civil Engineering" width="100%">
+![Wardley Map: Institutional Maturity of Software Civil Engineering](wardley-map-institutional-maturity.svg)
 
 *Specification and verification are evolving; institutional foundations remain stuck in Genesis.*
 
