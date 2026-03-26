@@ -47,7 +47,8 @@ The vocabulary for this shift already exists, borrowed from autonomous systems d
 
 > "The 'in the loop' way is to fix the artefact… The 'on the loop' way is to change the harness that produced it." — Kief Morris \[24\]
 
-*\[TODO: Illustration — **Human in the Loop vs. Human on the Loop.** Two-panel diagram. Left panel ("In the Loop"): A human figure inline with a single AI agent, arrows showing each action flowing through the human for approval before proceeding. Label: "Copilot mode. Each artifact reviewed. 10% gains." Right panel ("On the Loop"): A human figure positioned above a swarm of AI agents. The human connects downward to three elements: Specifications (blueprint icon), Constraints (building code icon), and Verification (inspection icon). The agents connect to these same elements and work in parallel. The human monitors dashboards showing agent output and intervenes on exceptions. Label: "Engineering mode. Harness-driven. 10× gains." Below both panels, a bridge graphic labeled: "The bridge: formal specification + verification + accountability = Software Civil Engineering."]*
+![Human in the Loop vs. Human on the Loop](human-in-on-loop.svg)
+*From micro-managing agents to managing the engineering process.*
 
 This is why the current excitement around LLM-based code generation, while justified, understates the real opportunity. Generative AI has made the construction workers faster, but the bottleneck in civil engineering was never the bricklaying. It was the blueprints, the structural calculations, the material specifications, the building codes, and the accountability framework. Software faces the same asymmetry: faster code production addresses one of the six pillars outlined below and leaves the other five untouched.
 
