@@ -237,7 +237,8 @@ Observe  = drift_detection(Production, Specification)
 
 This lifecycle — **Specify → Plan → Verify → Apply → Observe** — is the operational core of Software Civil Engineering.
 
-*[TODO: Illustration — **The Software Civil Engineering Lifecycle.** Circular flow diagram with five phases arranged clockwise: Specify (blueprints + structural calculations + building codes) → Plan (structural analysis + behavioral simulation) → Verify (code compliance review) → Apply (construction by agents) → Observe (building inspection + drift detection). An arrow from Observe back to Specify closes the loop, labeled "Drift detected → specification refinement." Center of the circle: "Specification is the product." Each phase annotated with its civil engineering analog in smaller text.]*
+![The Software Civil Engineering Lifecycle](sce-lifecycle.svg)
+*Specify → Plan → Verify → Apply → Observe, with drift feeding back into specification refinement.*
 
 ## 5. The Three Specification Layers
 
