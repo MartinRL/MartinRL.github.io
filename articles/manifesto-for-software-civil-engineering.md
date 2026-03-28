@@ -29,3 +29,5 @@ the right, I value the items on the left more.
 ---
 
 *Inspired by the [Manifesto for Agile Software Development](https://agilemanifesto.org/).*
+
+*Outlined in [Software Civil Engineering](https://martinrl.github.io/chronograph/software-civil-engineering).*
