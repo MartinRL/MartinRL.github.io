@@ -1,6 +1,6 @@
 ---
 title: "Manifesto for Software Civil Engineering"
-description: "Six value pairs for the professionalization of software production, inspired by the Manifesto for Agile Software Development"
+description: "Seven value pairs for the professionalization of software production, inspired by the Manifesto for Agile Software Development"
 ---
 
 # Manifesto for Software Civil Engineering
@@ -20,6 +20,8 @@ Through this work I have come to value:
 **Design-time verification** over post-implementation testing
 
 **Professional accountability** over collective ownership
+
+**Verified habitability** over assumed usability
 
 **Demonstrated competence** over self-directed learning
 
