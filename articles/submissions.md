@@ -124,15 +124,46 @@ The agentic AI + engineering discipline topic is active in CACM, but the civil e
 
 ### Recommended action
 
-1. **Email Terence Kelly** to pitch the idea before formal submission (he encourages this)
+1. **Email Terence Kelly** (tpkelly@eecs.umich.edu) to pitch the idea before formal submission (he encourages this)
 2. Format article to acmsmall template
 3. Ensure practical depth is prominent (concrete methods, not just argument)
 4. Submit via ScholarOne
 
-Draft pitch to Terence Kelly: TBD
+### [x] Email sent to Terence Kelly
 
+**To:** tpkelly@eecs.umich.edu
+**Subject:** Practice submission inquiry: Software Civil Engineering and the agentic AI professionalization thesis
 ---
+Dear Professor Kelly,
 
+I'm writing to discuss a potential submission to the CACM Practice section, following your encouragement for authors to reach out before submitting.
+
+The article, "Software Civil Engineering: From Craft to Discipline," argues that agentic AI is the forcing function that makes the professionalization of software production economically inevitable. The core thesis: the difference between 10% and 10x productivity gains from AI agents is not better AI, it is better engineering. Specifically, the same foundational elements that professionalized civil engineering in the 19th century: formal specification, material science, simulation, verification, and institutional accountability.
+
+The article makes three contributions I believe are novel and of lasting practitioner interest:
+
+1. A six-pillar gap analysis mapping civil engineering's disciplinary foundations to software's specific gaps, moving beyond loose analogy to structural comparison.
+
+2. A concrete specification infrastructure for product-level software: Event Modeling as the specification language (readable by domain experts, verifiable by machines), the Decider pattern as the executable bridge from specification to verifiable implementation (pure functions enabling near-zero-cost simulation), and Event Sourcing as the immutable record extending verification into production.
+
+3. A Terraform-analogous lifecycle for products (Specify, Plan, Verify, Apply, Observe), extending the infrastructure-as-code paradigm that already transformed provisioning from craft to engineering. The article identifies what this lifecycle needs beyond state diffing: behavioral simulation via the Decider's functional core, and a four-layer specification model (behavioral, experience, operational, policy).
+
+The article also addresses organizational implications (role evolution, functional convergence of product/design/engineering) and acknowledges open institutional gaps (licensure, education, standards) as debt the profession has yet to repay.
+
+It is approximately 6,000 words with 30 references, 10 diagrams, and multiple tables. A pre-print is available at:
+https://martinrl.github.io/chronograph/software-civil-engineering
+
+The thesis emerged from direct experience. I'm the VP of Product & Engineering at ChronosHub, where we build publication workflow infrastructure for scholarly publishers. Specification-driven development with Event Modeling is not theoretical for us; it is how we build production systems in a domain where auditability and formal process are non-negotiable. But it's also early days, which is why the article lacks empirical evidence. I'm however also in contact with other practitioners to collect data. 
+
+I'm aware of the recent CACM coverage on related themes ("Agentic AI Software Engineers: Programming with Trust," "Redefining the Software Engineering Profession for AI," and the formal methods work from AWS). I believe this article complements that discourse by proposing a specific, implementable path from diagnosis to solution.
+
+I would welcome your feedback on whether this fits the Practice section's scope and, if so, any guidance on framing or emphasis that would strengthen the submission.
+
+Best regards,
+Martin Rosén-Lidholm
+
+martin.rosenlidholm@gmail.com, mrl@chronoshub.io
+---
 ## 4. The Pragmatic Engineer (Gergely Orosz)
 
 **Status:** To draft
