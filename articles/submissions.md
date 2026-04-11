@@ -87,7 +87,7 @@ If the special issue is closed, submit as a regular article. Same constraints ap
 
 ## 3. CACM Practice
 
-**Status:** Best natural fit. Ready to prepare submission.
+**Status:** Rejected (April 10, 2026).
 **Submit to:** ScholarOne — https://mc.manuscriptcentral.com/cacm
 **Section editor:** Terence Kelly (University of Michigan EECS)
 **Pre-submission contact encouraged** (but not required)
@@ -176,10 +176,48 @@ martin.rosenlidholm@gmail.com, mrl@chronoshub.io
 
 ## 5. InfoQ
 
-**Status:** To draft
-**Submit to:** editors@infoq.com or Google Form
+**Status:** Pitch email drafted. Ready to send.
+**Submit to:** editors@infoq.com
 **Constraints:** 1,500-4,000 words, 5 key takeaways, AI-tool-usage disclosure, 4-week exclusive
-**Note:** Would need condensation to ~3,500 words or a 2-part series
+**Format:** Single condensed article (~3,000-3,200 words) with 4-5 diagrams. Condense only after editorial interest.
+**Strategic note:** Author retains copyright; 4-week exclusive only. Does not block IEEE Software or other venues.
+
+### Pitch email
+
+**To:** editors@infoq.com
+**Subject:** Pitch: Software Civil Engineering: Why AI Agents Need Blueprints, Not Better Hammers
+
+---
+
+Dear InfoQ editors,
+
+In the 19th century, civil engineering professionalized: bridges stopped collapsing because the profession adopted formal specification, material science, simulation, verification, and accountability. Software faces the same disciplinary moment, and agentic AI is the forcing function making it economically inevitable, not merely desirable.
+
+I'd like to pitch an article arguing that the difference between 10% and 10x productivity gains from AI agents is not better AI; it is better engineering. The article draws a structural parallel with civil engineering's six foundational pillars, maps them to software's current gaps, and proposes a concrete path forward: Event Modeling as the specification language, the Decider pattern as the executable bridge to verifiable implementation, and a Terraform-analogous lifecycle (Specify, Plan, Verify, Apply, Observe) extended from infrastructure to products.
+
+**Five key takeaways:**
+
+1. The productivity ceiling for AI coding assistants is not better AI; it is better engineering. Moving from "human in the loop" (reviewing every line) to "human on the loop" (governing specifications) separates 10% gains from 10x.
+2. Infrastructure provisioning already completed the craft-to-engineering transition via Terraform's declarative lifecycle; product development is next, using the same Specify, Plan, Verify, Apply, Observe pattern.
+3. Event Modeling provides the "blueprint language" for product-level specification: readable by domain experts, deterministic enough for machine verification, independently verifiable per slice.
+4. The Decider pattern makes those specifications executable as pure functions, enabling design-time simulation at near-zero cost; this is `terraform plan` for domain logic.
+5. Organizations that formalize specifications now gain compounding advantages: each formalized spec makes the next easier, each verification loop makes agent output more reliable, and the productivity gap with unformalized competitors widens with every AI capability improvement.
+
+The thesis is not just mine. Christopher Meiklejohn (distributed systems researcher, author of Partisan/Lasp) independently published the same civil engineering analogy in April 2026, focusing on the workforce implications. When multiple practitioners converge on the same structural metaphor independently, it suggests an emerging industry consensus that your readers should know about.
+
+The full article (~6,000 words, 30 references, 10 diagrams) is published at:
+https://martinrl.github.io/chronograph/software-civil-engineering
+
+I would be happy to condense this to a ~3,000-word InfoQ article with 4-5 key diagrams, adapted for a conversational tone. The article also contains natural follow-up material (a layered verification system and organizational implications) that could work as a second piece if readers respond well.
+
+I'm the VP of Product & Engineering at ChronosHub, where we build publication workflow infrastructure for scholarly publishers including IEEE. Event Modeling and specification-driven development are not theoretical for us; they are how we specify and build production systems in a domain where auditability and formal process are non-negotiable.
+
+Practical details: I accept the 4-week exclusive, will include AI tool disclosure, and can deliver within a week of acceptance.
+
+Best regards,
+Martin Rosén-Lidholm
+VP of Product & Engineering, ChronosHub
+martin.rosenlidholm@gmail.com
 
 ---
 
