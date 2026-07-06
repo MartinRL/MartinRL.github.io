@@ -4,7 +4,6 @@ description: "Spec as source of truth, code as build artifact: from ORM codegen 
 created: 2026-07-05
 tags: [research, sce, sdd, event-modeling, codegen]
 ---
-
 # How Far Does the LLBLGen Model Go?
 
 ## Spec as source of truth, code as build artifact: from ORM codegen to Event-Model-driven application generation
