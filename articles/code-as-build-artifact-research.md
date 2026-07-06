@@ -64,7 +64,7 @@ The landscape survey yields a taxonomy (generate vs interpret × checked-in vs b
 
 Terraform itself supplies the fourth datum: it generates nothing. HCL is interpreted by providers at plan/apply time; the only determinism artifacts are the state file and a lockfile pinning provider versions by hash. The generate-vs-interpret fork from 2004 (LLBLGen vs NHibernate) is alive at every layer of the stack, and interpretation is the only known *complete* solution to the round-trip problem, at the price of owning a runtime. Mendix says this explicitly; the industry's favored compromise is **generate the types, interpret the behavior**.
 
-And the Event Modeling corner of the map is conspicuously empty. emlang's YAML already carries typed props and Given-When-Then slices (everything needed to emit Deciders, projections, and executable tests), yet its CLI stops at diagrams. oNote stopped at Avro/gRPC contract export. Emmett and fmodel are hand-written-code libraries; Dugalic even documented the model→code mapping as mechanical ("From Model to Code") without shipping the machine. Diagramming from event-model text is commoditizing fast (emlang, evml, Mermaid's native eventmodeling type, Dilger's eventmodelers.ai); the semantic back half, spec → Decider + projection + GWT tests, is genuinely unoccupied open source. The one commercial occupant is Martin Dilger's eventmodelers.ai (§6).
+And the Event Modeling corner of the map is conspicuously empty. emlang's YAML already carries typed props and Given-When-Then slices (everything needed to emit Deciders, projections, and executable tests), yet its CLI stops at diagrams. oNote stopped at Avro/gRPC contract export. Emmett and fmodel are hand-written-code libraries; Dugalic even documented the model→code mapping as mechanical ("From Model to Code") without shipping the machine. Diagramming from event-model text is commoditizing fast (emlang, evml, Mermaid's native eventmodeling type, Dilger's eventmodelers.ai); the semantic back half, spec → Decider + projection + GWT tests, is genuinely unoccupied open source. Commercially it is already contested: Martin Dilger's eventmodelers.ai (§6), OnAuto's Auto (vertical slices delivered from the event model to production, every generated component starting from its tests, looping test-first until the code satisfies the model), and Qlerify (AI-generated event models from workflow descriptions, code skeletons from the model) all occupy it.
 
 ## 5. The mechanism: what a .NET pipeline actually looks like
 
@@ -168,6 +168,8 @@ How far can one get? **All the way, on the stratum where the spec determines the
 - OutSystems architecture of generated apps (detach): https://www.outsystems.com/evaluation-guide/architecture-of-generated-apps/
 - emlang project: https://emlang-project.github.io/ and https://github.com/emlang-project/emlang
 - oNote Avro/gRPC generation: https://docs.onote.com/onote-docs/Latest/code/generate-avro.html
+- Auto (OnAuto), model automation for event models: https://on.auto/event-modeling
+- Qlerify event modeling tool: https://www.qlerify.com/event-modeling-tool
 - Emmett (Dudycz): https://github.com/event-driven-io/emmett
 - Dugalic, "From Model to Code": https://medium.com/axoniq/from-model-to-code-translating-the-event-model-into-code-5fc30a363114
 - EventCatalog: https://www.eventcatalog.dev/
