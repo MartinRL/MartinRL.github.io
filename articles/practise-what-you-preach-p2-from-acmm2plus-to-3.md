@@ -14,23 +14,23 @@ tags: [linkedin, acmm, codehealth, codescene, evalops, kvissig]
 
 ---
 
-In my last piece I claimed quality isn't asserted; it's enforced. Fair challenge: prove it. So I turned the claim on itself.
+In my last piece I claimed quality isn't asserted; it's enforced. Fair challenge: prove it.
 
-I graded my own repo against the AI Codebase Maturity Model (ACMM v2, Anderson, IBM Research): six levels, graded by feedback-loop topology, not by how much autonomy the AI has. The honest verdict on June 18: **Level 2+**. Solid "Instructed" (spec as source of truth, ADRs, a constitution the agent loads every session), reaching into Level 3 because deterministic functional-core tests made the AI *trustworthy*. But nothing *measured* output quality. The loops were one-way, human-interpreted. Not closed.
+I graded my own repo against the AI Codebase Maturity Model (ACMM, Anderson, IBM Research): six levels, graded by feedback-loop topology and codebase maturity, not by how much autonomy the AI has. The honest verdict: **Level 2+**. Solid "Instructed" (spec as source of truth, ADRs, a constitution the agent loads every session), reaching into Level 3 because deterministic functional-core tests made the AI *trustworthy*. But nothing *measured* output quality. The loops were one-way, human-interpreted. Not closed.
 
-Two weeks later: **full Level 3**. Here's what changed.
+Two hours later: **full Level 3**. Here's what changed.
 
 I wired a CodeScene CodeHealth gate: every production C# file must score **≥ 9.4 / 10**. A Stop hook runs it locally on changed files; CI runs it on everything. Below threshold → hard reject → the agent self-corrects → the fix pattern is written to persistent memory as a permanent lesson. That's EvalOps: a quantitative signal the system *enforces*, not just reports, and the repo's first genuinely closed loop.
 
-The baseline was humbling: 23 files, 7 below the bar, worst at 7.92. Then the loop did its job:
+The baseline was humbling: 23 files, 7 below the bar, worst at 7.92. Then the Ralph loop did its job:
 
-→ Endpoint registration at 7.92: my first "fix" made it *worse* (7.45!), because extracting lambdas to methods exploded the argument counts. The real fix: bundle dependencies into a record. 7.92 → passing.
+→ Endpoint registration at 7.92: the first "fix" made it *worse* (7.45!), because extracting lambdas to methods exploded the argument counts. The real fix: bundle dependencies into a record. 7.92 → passing.
 → A 15-branch selection algorithm: 8.58 → 9.68, by giving a stateful accumulator its own small class.
 → A CSV tokenizer: 8.09 → 8.79 by flattening nesting, and the residual complexity declared *intentional* in a scoped rules config.
 
 And the honest part: two files still sit at **9.38**. They're exhaustive pattern-matching switches (one arm per screen) mandated by the project's own constitution. Splitting them would scatter the complexity, not remove it. So they're documented exemptions, visible in every report. The global 9.4 bar was never lowered to make the dashboard green.
 
-That's the difference between claiming a level and measuring one. Mean today: 9.91.
+That's the difference between claiming a level and measuring one. Mean today: 9.9.
 
 The game the gate guards: kvissig.se, play it, more or less.
 
