@@ -6,7 +6,7 @@ tags: [spec, xmlang, emlang, experience-modeling, event-modeling, ux]
 ---
 # xmlang Specification v0.1.0 (draft)
 
-xmlang is a YAML-based DSL for describing the Experience Model of an event-modeled system. An Experience Model records the UX judgments an Event Model deliberately omits (personas, screen composition, salience, journeys, labels, tokens) and depends on the Event Model strictly one-way. It is the sibling dialect to [emlang](https://github.com/emlang-project/spec); the rationale is in [How Far Does a Machine-Readable UX Spec Go?](machine-readable-ux-specs-research.md).
+xmlang is a YAML-based DSL for describing the Experience Model of an event-modeled system. An Experience Model records the UX judgments an Event Model deliberately omits (personas, surface composition, salience, journeys, labels, tokens) and depends on the Event Model strictly one-way. It is the sibling dialect to [emlang](https://github.com/emlang-project/spec); the rationale is in [How Far Does a Machine-Readable UX Spec Go?](machine-readable-ux-specs-research.md).
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 
@@ -14,7 +14,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 - An xmlang file MUST be a valid YAML file
 - The RECOMMENDED file naming convention is `*.xm.yaml`, alongside the Event Model's `*.emlang.yaml`
-- The root object MAY contain the keys `model`, `personas`, `screens`, `journeys`, `labels`, and `tokens`
+- The root object MAY contain the keys `model`, `personas`, `surfaces`, `journeys`, `labels`, and `tokens`
 - The root object MUST NOT contain other keys
 - Every root key is OPTIONAL: an Experience Model is adopted judgment by judgment, and an empty document is a valid (vacuous) Experience Model
 - A file MAY contain multiple YAML documents separated by `---`; each MUST independently conform to this specification
@@ -27,10 +27,11 @@ personas:
   Accountant:
     role: Accountant
 
-screens:
+surfaces:
   Dashboard:
     compose:
       - v: OutstandingInvoices
+      - v: RecentPayments
       - c: PayInvoice
 ```
 
@@ -85,13 +86,16 @@ personas:
     role: Accountant   # two personas MAY share one swimlane role
 ```
 
-## Screens
+## Surfaces
 
-- `screens` MUST be an object mapping screen names to screen definitions
-- A screen definition MUST contain a `compose` key and MAY contain `for` and `props` keys, and MUST NOT contain other keys
-- `for` MUST be a list of persona names declared under `personas`; if absent, the screen applies to all personas
+A surface is what the user has in front of her (a screen, modal, drawer, card, or chat pane); the noun is deliberately modality-neutral.
+
+- `surfaces` MUST be an object mapping surface names to surface definitions
+- A surface definition MUST contain a `compose` key and MAY contain `for` and `props` keys, and MUST NOT contain other keys
+- `for` MUST be a list of persona names declared under `personas`; if absent, the surface applies to all personas
 - `compose` MUST be a list of composition items
 - A composition item MUST contain exactly one of `v:` (a view) or `c:` (a command), referencing an Event Model element
+- `compose` MUST contain at least one view item and MAY contain command items; a surface composing no view MUST be reported as an error (a bare command form is not a composable surface; it is served by the generator's defaults)
 - Item order within `compose` expresses descending importance, not position
 
 ### View items and field salience
@@ -108,7 +112,7 @@ personas:
 - If absent, `prominence` defaults to `primary`
 
 ```yaml
-screens:
+surfaces:
   Dashboard:
     for: [Accountant]
     compose:
@@ -117,13 +121,17 @@ screens:
           primary: [amount, dueDate]
           secondary: [invoiceNumber]
           on-demand: [auditTrail]
+      - v: CashPosition
+      - v: RecentPayments
+        fields:
+          secondary: [payer, method]
       - c: PayInvoice
         prominence: primary
       - c: ExportCsv
         prominence: overflow
 ```
 
-- A view or command not composed onto any screen remains reachable through the generator's defaults (see Defaults); composition restricts nothing, it only aggregates
+- A view or command not composed onto any surface remains reachable through the generator's defaults (see Defaults); composition restricts nothing, it only aggregates
 
 ## Journeys
 
@@ -148,7 +156,7 @@ journeys:
 - `labels` MUST be an object mapping locale tags ([BCP 47](https://www.rfc-editor.org/rfc/rfc5646)) to label maps
 - A label map MUST be an object mapping reference paths to human-facing strings
 - A reference path MUST be one of:
-  - a command, view, screen, journey, or persona name (e.g. `PayInvoice`)
+  - a command, view, surface, journey, or persona name (e.g. `PayInvoice`)
   - a dotted field path on a view or command (e.g. `OutstandingInvoices.amount`)
 - A reference path that resolves to nothing MUST be reported as an error
 - A label map MAY contain a `register` key with a free-form value describing the copy register (e.g. formal, informal)
@@ -189,7 +197,7 @@ An Experience Model refines a default experience; it never creates the experienc
 | Absent | Default |
 |---|---|
 | `personas` | One implicit persona per Event Model swimlane |
-| `screens` | One screen per slice surface; every field `primary`; every action `primary` |
+| `surfaces` | One surface per slice; every field `primary`; every action `primary` |
 | `journeys` | No cross-slice walks; per-slice scenarios only |
 | `labels` | Event Model names as labels and accessible names |
 | `tokens` | No token file; token lint inert |
@@ -206,10 +214,11 @@ Conforming tools SHOULD implement at least:
 | `xm-unknown-persona` | error | A `for` list names an undeclared persona |
 | `xm-orphan-label` | error | A label path resolves to no Event Model or Experience Model element |
 | `xm-unknown-role` | warning | A persona `role` matches no swimlane in the Event Model |
-| `xm-empty-compose` | warning | A screen composes nothing |
+| `xm-surface-without-view` | error | A surface composes no view (bare command forms fall back to defaults) |
+| `xm-surface-shadows-view` | warning | A surface name equals an Event Model view name; the Event Model likely modeled a surface instead of data |
 
 ## Document structure
 
 - A file MAY contain one or more YAML documents separated by `---`
 - Each document MUST independently conform to this specification
-- Tools MAY merge documents; a name collision within `personas`, `screens`, or `journeys` across merged documents MUST be reported as an error
+- Tools MAY merge documents; a name collision within `personas`, `surfaces`, or `journeys` across merged documents MUST be reported as an error
