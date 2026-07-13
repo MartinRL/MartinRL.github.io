@@ -185,6 +185,78 @@ point.
 One honest line, though: nobody has published the benchmark. This is an argument, not a
 measurement.
 
+## The mechanism, in one slice
+
+Concretely, the spec dialect here is [emlang](https://github.com/emlang-project/emlang):
+a small YAML DSL for [Event Modeling](https://eventmodeling.org/), Adam Dymitruk's
+notation. A model is a list of vertical slices; each slice is a short sequence of
+commands (`c:`), events (`e:`), business errors (`x:`), and views (`v:`), with
+Given–When–Then tests alongside. It is not the only textual dialect; the notation is
+growing several, most notably [Martin Dilger's Event Modeling
+JSON Schema](https://github.com/dilgerma/event-modeling-spec), the machine-readable
+contract behind his [Event Modelers platform](https://www.eventmodelers.ai/) and his
+book [*Understanding Eventsourcing*](https://github.com/dilgerma/eventsourcing-book). The
+argument in this article is indifferent to which dialect you pick; it only requires that
+the spec is formal and the transformation is a function.
+
+Here is one slice, from a scholarly-publishing domain:
+
+```yaml
+slices:
+  - name: Submit manuscript
+    steps:
+      - c: Author / Submit manuscript
+        props: { manuscriptId: Guid, journalId: Guid, title: string }
+      - e: Manuscript / Manuscript submitted
+        props: { manuscriptId: Guid, journalId: Guid, title: string, submittedAt: DateTimeOffset }
+      - x: Submission window closed
+```
+
+The Roslyn source generator reads that YAML as an `AdditionalFile` inside the compiler
+and emits the record layer; the essential shape is a few lines:
+
+```csharp
+[Generator]
+public sealed class VocabularyGenerator : IIncrementalGenerator
+{
+    public void Initialize(IncrementalGeneratorInitializationContext context)
+    {
+        var models = context.AdditionalTextsProvider
+            .Where(f => f.Path.EndsWith(".emlang.yaml"))
+            .Select((f, ct) => EmlangParser.Parse(f.GetText(ct)!.ToString()));
+
+        context.RegisterSourceOutput(models, static (ctx, model) =>
+        {
+            var sb = new StringBuilder("namespace Journal.Submissions;\n\n");
+            foreach (var c in model.Commands)   // "Submit manuscript" → SubmitManuscript
+                sb.AppendLine($"public sealed record {c.PascalName}({c.ParameterList}) : ICommand;");
+            foreach (var e in model.Events)
+                sb.AppendLine($"public sealed record {e.PascalName}({e.ParameterList}) : IEvent;");
+            foreach (var x in model.Errors)
+                sb.AppendLine($"public sealed record {x.PascalName}() : IBusinessError;");
+            ctx.AddSource("Vocabulary.g.cs", sb.ToString());
+        });
+    }
+}
+```
+
+And this is what the compilation sees (note where it lives):
+
+```csharp
+// Vocabulary.g.cs: exists only inside the compilation. There is no file
+// on disk to open, edit, review, or commit.
+namespace Journal.Submissions;
+
+public sealed record SubmitManuscript(Guid ManuscriptId, Guid JournalId, string Title) : ICommand;
+public sealed record ManuscriptSubmitted(Guid ManuscriptId, Guid JournalId, string Title, DateTimeOffset SubmittedAt) : IEvent;
+public sealed record SubmissionWindowClosed() : IBusinessError;
+```
+
+Everything downstream (deciders, projections, the Given–When–Then tests) compiles
+against these records. Add an event to the YAML and every switch that fails to handle it
+is a compile error on the next build. That is the whole trick: one representation that
+decides, one function that restates.
+
 ## Where I might be wrong
 
 **The ghost of MDA is patient.** Acts one and two did not fail on day one; they failed
