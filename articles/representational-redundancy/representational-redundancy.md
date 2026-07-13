@@ -190,8 +190,8 @@ measurement.
 Concretely, the spec dialect here is [emlang](https://github.com/emlang-project/emlang):
 a small YAML DSL for [Event Modeling](https://eventmodeling.org/), Adam Dymitruk's
 notation. A model is a list of vertical slices; each slice is a short sequence of
-commands (`c:`), events (`e:`), business errors (`x:`), and views (`v:`), with
-Given–When–Then tests alongside. It is not the only textual dialect; the notation is
+commands (`c:`), events (`e:`), business errors (`x:`), and views (`v:`). It is not the
+only textual dialect; the notation is
 growing several, most notably [Martin Dilger's Event Modeling
 JSON Schema](https://github.com/dilgerma/event-modeling-spec), the machine-readable
 contract behind his [Event Modelers platform](https://www.eventmodelers.ai/) and his
@@ -199,17 +199,49 @@ book [*Understanding Eventsourcing*](https://github.com/dilgerma/eventsourcing-b
 argument in this article is indifferent to which dialect you pick; it only requires that
 the spec is formal and the transformation is a function.
 
-Here is one slice, from a scholarly-publishing domain:
+One thing must be said plainly, because it is the load-bearing detail: a slice is not
+only structure, it is *specified*. A state-change slice carries Given–When–Then
+scenarios: given these prior events, when this command, then these events, or this
+business error. A state-view slice carries Given–Then scenarios: given these events,
+the view must read thus (no *when*, because a projection decides nothing; it only
+accumulates). This is not an emlang embellishment; slice-level scenarios are Event
+Modeling's own completion criterion, and Dilger's schema carries them as first-class
+*specifications*. If you have sat through an [Example
+Mapping](https://cucumber.io/blog/bdd/example-mapping-introduction/) session, you will
+recognize the furniture: the test names are the blue cards (rules, stated as
+requirements), the test bodies the green ones (examples, with concrete data), filed as
+keys in the model instead of index cards on a table. Verification is not an artifact
+downstream of the spec. It is a section of it.
+
+Here is one slice from a scholarly-publishing domain, scenarios included:
 
 ```yaml
 slices:
-  - name: Submit manuscript
+  Submit manuscript:
     steps:
       - c: Author / Submit manuscript
         props: { manuscriptId: Guid, journalId: Guid, title: string }
       - e: Manuscript / Manuscript submitted
         props: { manuscriptId: Guid, journalId: Guid, title: string, submittedAt: DateTimeOffset }
-      - x: Submission window closed
+      - x: Submissions closed
+    tests:
+      Submitting into an open window is accepted:
+        given:
+          - e: Submission window opened   # owned by another slice
+        when:
+          - c: Submit manuscript
+            props: { title: Attention Is All You Need }
+        then:
+          - e: Manuscript submitted
+            props: { title: Attention Is All You Need }
+      Submitting after the window closes is rejected:
+        given:
+          - e: Submission window opened
+          - e: Submission window closed
+        when:
+          - c: Submit manuscript
+        then:
+          - x: Submissions closed
 ```
 
 The Roslyn source generator reads that YAML as an `AdditionalFile` inside the compiler
@@ -249,13 +281,20 @@ namespace Journal.Submissions;
 
 public sealed record SubmitManuscript(Guid ManuscriptId, Guid JournalId, string Title) : ICommand;
 public sealed record ManuscriptSubmitted(Guid ManuscriptId, Guid JournalId, string Title, DateTimeOffset SubmittedAt) : IEvent;
-public sealed record SubmissionWindowClosed() : IBusinessError;
+public sealed record SubmissionsClosed() : IBusinessError;
 ```
 
 Everything downstream (deciders, projections, the Given–When–Then tests) compiles
 against these records. Add an event to the YAML and every switch that fails to handle it
-is a compile error on the next build. That is the whole trick: one representation that
-decides, one function that restates.
+is a compile error on the next build. And notice that the scenarios are already the
+shape of a test over the
+[decider](https://thinkbeforecoding.com/post/2021/12/17/functional-event-sourcing-decider),
+the functional core's one pure function (state and
+command in, events or a business error out): fold the `given` events into state, apply
+the `when` command, compare the outcome to the `then`. Turning a scenario into a running
+test is the same kind of mechanical translation as the records above, not an authoring
+step. That is the whole trick: one representation that decides and checks, one function
+that restates.
 
 ## Where I might be wrong
 
