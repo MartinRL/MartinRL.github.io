@@ -262,13 +262,17 @@ public sealed class VocabularyGenerator : IIncrementalGenerator
         context.RegisterSourceOutput(models, static (ctx, model) =>
         {
             var sb = new StringBuilder("namespace Journal.Submissions;\n\n");
+            sb.AppendLine($"public abstract record {model.Name}Command;");
+            sb.AppendLine($"public abstract record {model.Name}Event;");
+            sb.AppendLine($"public abstract record {model.Name}Error;");
             foreach (var c in model.Commands)   // "Submit manuscript" → SubmitManuscript
-                sb.AppendLine($"public sealed record {c.PascalName}({c.ParameterList}) : ICommand;");
+                sb.AppendLine($"public sealed record {c.PascalName}({c.ParameterList}) : {model.Name}Command;");
             foreach (var e in model.Events)
-                sb.AppendLine($"public sealed record {e.PascalName}({e.ParameterList}) : IEvent;");
+                sb.AppendLine($"public sealed record {e.PascalName}({e.ParameterList}) : {model.Name}Event;");
             foreach (var x in model.Errors)
-                sb.AppendLine($"public sealed record {x.PascalName}() : IBusinessError;");
+                sb.AppendLine($"public sealed record {x.PascalName}() : {model.Name}Error;");
             ctx.AddSource("Vocabulary.g.cs", sb.ToString());
+            ctx.AddSource("Specs.g.cs", SpecEmitter.Emit(model)); // scenarios → xUnit facts, same walk
         });
     }
 }
@@ -281,9 +285,13 @@ And this is what the compilation sees (note where it lives):
 // on disk to open, edit, review, or commit.
 namespace Journal.Submissions;
 
-public sealed record SubmitManuscript(Guid ManuscriptId, Guid JournalId, string Title) : ICommand;
-public sealed record ManuscriptSubmitted(Guid ManuscriptId, Guid JournalId, string Title, DateTimeOffset SubmittedAt) : IEvent;
-public sealed record SubmissionsClosed() : IBusinessError;
+public abstract record JournalCommand;
+public abstract record JournalEvent;
+public abstract record JournalError;
+
+public sealed record SubmitManuscript(Guid ManuscriptId, Guid JournalId, string Title) : JournalCommand;
+public sealed record ManuscriptSubmitted(Guid ManuscriptId, Guid JournalId, string Title, DateTimeOffset SubmittedAt) : JournalEvent;
+public sealed record SubmissionsClosed() : JournalError;
 ```
 
 Everything downstream (deciders, projections, the Given–When–Then tests) compiles
@@ -326,10 +334,43 @@ when command, compare the outcome to the then, success track or failure track. N
 no containers, no interpretation gap, and each scenario asserts only the props its
 function actually reads. (Classic Event Modeling writes GWT givens as prior events; the
 state-as-given style is the same thing with the fold hoisted into the decision-model
-slice and verified once, by its own Given–Then.) Turning a scenario into a running test
-is the same kind of mechanical translation as the records above, not an authoring step.
-That is the whole trick: one representation that decides and checks, one function that
-restates.
+slice and verified once, by its own Given–Then.) And the scenarios do not stop at prose.
+The same generator, in the same pass, emits them as xUnit facts; generated code takes
+part in test discovery like anything hand-written:
+
+```csharp
+// Specs.g.cs: the second output of the same generator run. No file on disk,
+// yet every scenario shows up in the test runner by its requirement name.
+namespace Journal.Submissions;
+
+public class JournalDecisionModelSpecs
+{
+    [Fact] // Opened then closed folds to a closed window
+    public void OpenedThenClosedFoldsToAClosedWindow()
+    {
+        var state = new JournalEvent[] { new SubmissionWindowOpened(), new SubmissionWindowClosed() }
+            .Aggregate(JournalState.Initial, Decider.Evolve);
+        Assert.False(state.WindowOpen);
+    }
+}
+
+public class SubmitManuscriptSpecs
+{
+    [Fact] // Submitting after the window closes is rejected
+    public void SubmittingAfterTheWindowClosesIsRejected()
+    {
+        var result = Decider.Decide(
+            JournalState.Initial with { WindowOpen = false },
+            new SubmitManuscript(Any.Guid(), Any.Guid(), Any.String()),
+            Any.Context());
+        Assert.IsType<SubmissionsClosed>(Assert.IsType<Err>(result).Error);
+    }
+}
+```
+
+Each fact asserts only what its scenario pins; props the YAML leaves out get arbitrary
+values, because the requirement does not read them. That is the whole trick: one
+representation that decides and checks, one function that restates.
 
 ![The decider pattern with its Given–When–Then mapping](assets/decider-pattern-v2.svg)
 
