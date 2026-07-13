@@ -36,8 +36,9 @@ The migration that created the column. The FluentValidation rule. The OpenAPI sc
 TypeScript interface. The test fixture. Ten representations of **one** domain fact — and
 every behavioral change is a coherent edit across ten sites at once.
 
-<!-- TODO asset: fan-out diagram — one fact, ten representations -->
-![[assets/one-fact-nine-places.svg|700]]
+![One domain fact fanned out into ten hand-maintained representations](assets/one-fact-ten-places.svg)
+
+*One domain fact, ten restatements. No compiler error fires when any two of them disagree.*
 
 This deserves its own name: **representational redundancy**. Not "layers", not
 "boilerplate" — *restatement*. The same truth hand-transcribed between representations
@@ -70,8 +71,9 @@ transformation from intent to code, and what verifies the result*.
    the rest against compiler and test oracles.**
 4. Full formal synthesis. (Nobody serious is claiming it.)
 
-<!-- TODO asset: the ladder, four rungs, transformer + verifier per rung -->
-![[assets/transformer-ladder.svg|700]]
+![The ladder: four rungs, each defined by its transformer and its verifier](assets/transformer-ladder.svg)
+
+*The ladder. Every rung answers the same two questions: who transforms, what verifies. Rung 3 is where regeneration stops being a review event.*
 
 Every rung up buys *review-once* semantics for a larger stratum. On rung 2 you review the
 generated code every time, because you must — the transformer is a distribution, not a
@@ -295,6 +297,10 @@ the `when` command, compare the outcome to the `then`. Turning a scenario into a
 test is the same kind of mechanical translation as the records above, not an authoring
 step. That is the whole trick: one representation that decides and checks, one function
 that restates.
+
+![The decider pattern with its Given–When–Then mapping](assets/decider-pattern-v2.svg)
+
+*The decider, and why the scenarios are executable: Given is prior events folded into state, When is the command, Then is the events produced or the business error.*
 
 ## Where I might be wrong
 
