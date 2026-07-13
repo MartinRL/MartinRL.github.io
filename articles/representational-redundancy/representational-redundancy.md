@@ -167,9 +167,7 @@ mainstream layered CRUD — so a project-local spec dialect starves the agent ex
 this architecture needs it to read and write specs.
 
 The objection assumes the spec's *semantics* are as exotic as its file extension. They
-are not. A spec for an event-sourced core is made of commands, events, business errors,
-and Given–When–Then scenarios — which is to say: VSA, CQRS, and BDD, some of the most
-heavily represented software concepts in any training corpus. Event modeling is a thin
+are not. An event model spec for an event-sourced core is made of commands, events, business errors, and Given–When–Then scenarios — which is to say: VSA, CQRS, and BDD, heavily represented software concepts in any training corpus. An event model is a thin
 arrangement notation over primitives every agent already knows cold. The surface syntax
 is local; the semantics are high-resource.
 
@@ -190,35 +188,36 @@ measurement.
 ## The mechanism, in one slice
 
 Concretely, the spec dialect here is [emlang](https://github.com/emlang-project/emlang):
-a small YAML DSL for [Event Modeling](https://eventmodeling.org/), Adam Dymitruk's
-notation. A model is a list of vertical slices; each slice is a short sequence of
-commands (`c:`), events (`e:`), business errors (`x:`), and views (`v:`). It is not the
-only textual dialect; the notation is
-growing several, most notably [Martin Dilger's Event Modeling
-JSON Schema](https://github.com/dilgerma/event-modeling-spec), the machine-readable
-contract behind his [Event Modelers platform](https://www.eventmodelers.ai/) and his
-book [*Understanding Eventsourcing*](https://github.com/dilgerma/eventsourcing-book). The
-argument in this article is indifferent to which dialect you pick; it only requires that
-the spec is formal and the transformation is a function.
+a small YAML DSL for [Event Modeling](https://eventmodeling.org/), Adam Dymitruk's notation. A model is a list of vertical slices; each slice is a short sequence of commands (`c:`), events (`e:`), business errors (`x:`), and views (`v:`). It is not the only textual dialect; the notation is growing several, most notably [Martin Dilger's Event Modeling JSON Schema](https://github.com/dilgerma/event-modeling-spec), the machine-readable contract behind his [Event Modelers platform](https://www.eventmodelers.ai/) and his book [*Understanding Eventsourcing*](https://github.com/dilgerma/eventsourcing-book). The argument in this article is indifferent to which dialect you pick; it only requires that the spec is formal and the transformation is a function.
 
 One thing must be said plainly, because it is the load-bearing detail: a slice is not
 only structure, it is *specified*. A state-change slice carries Given–When–Then
-scenarios: given these prior events, when this command, then these events, or this
+scenarios: given this decision state, when this command, then these events, or this
 business error. A state-view slice carries Given–Then scenarios: given these events,
 the view must read thus (no *when*, because a projection decides nothing; it only
 accumulates). This is not an emlang embellishment; slice-level scenarios are Event
 Modeling's own completion criterion, and Dilger's schema carries them as first-class
-*specifications*. If you have sat through an [Example
-Mapping](https://cucumber.io/blog/bdd/example-mapping-introduction/) session, you will
-recognize the furniture: the test names are the blue cards (rules, stated as
-requirements), the test bodies the green ones (examples, with concrete data), filed as
-keys in the model instead of index cards on a table. Verification is not an artifact
-downstream of the spec. It is a section of it.
+*specifications*. If you have sat through an [Example Mapping](https://cucumber.io/blog/bdd/example-mapping-introduction/) session, you will recognize the furniture: the test names are the blue cards (rules, stated as requirements), the test bodies the green ones (examples, with concrete data), filed as keys in the model instead of index cards on a table. Verification is not an artifact downstream of the spec. It is a section of it.
 
-Here is one slice from a scholarly-publishing domain, scenarios included:
+Here are two slices from a scholarly-publishing domain, scenarios included: first the
+state-view slice that folds events into the decision model the decider reads, then the
+state-change slice that decides on it.
 
 ```yaml
 slices:
+  Journal decision model:
+    steps:
+      - v: State / Journal   # the decider's decision model: what decide reads
+        props: { journalId: Guid, windowOpen: bool, submitted: Guid[] }
+    tests:
+      Opened then closed folds to a closed window:
+        given:
+          - e: Submission window opened   # events owned by other slices
+          - e: Submission window closed
+        then:
+          - v: State / Journal
+            props: { windowOpen: false }
+
   Submit manuscript:
     steps:
       - c: Author / Submit manuscript
@@ -229,7 +228,8 @@ slices:
     tests:
       Submitting into an open window is accepted:
         given:
-          - e: Submission window opened   # owned by another slice
+          - v: State / Journal
+            props: { windowOpen: true }
         when:
           - c: Submit manuscript
             props: { title: Attention Is All You Need }
@@ -238,8 +238,8 @@ slices:
             props: { title: Attention Is All You Need }
       Submitting after the window closes is rejected:
         given:
-          - e: Submission window opened
-          - e: Submission window closed
+          - v: State / Journal
+            props: { windowOpen: false }
         when:
           - c: Submit manuscript
         then:
@@ -288,19 +288,52 @@ public sealed record SubmissionsClosed() : IBusinessError;
 
 Everything downstream (deciders, projections, the Given–When–Then tests) compiles
 against these records. Add an event to the YAML and every switch that fails to handle it
-is a compile error on the next build. And notice that the scenarios are already the
-shape of a test over the
-[decider](https://thinkbeforecoding.com/post/2021/12/17/functional-event-sourcing-decider),
-the functional core's one pure function (state and
-command in, events or a business error out): fold the `given` events into state, apply
-the `when` command, compare the outcome to the `then`. Turning a scenario into a running
-test is the same kind of mechanical translation as the records above, not an authoring
-step. That is the whole trick: one representation that decides and checks, one function
-that restates.
+is a compile error on the next build.
+
+The deciders deserve to be shown, because they are what the scenarios execute against.
+The
+[decider](https://thinkbeforecoding.com/post/2021/12/17/functional-event-sourcing-decider)
+is the functional core's pair of pure functions, here in the same domain:
+
+```csharp
+public static class Decider
+{
+    // evolve: (state, event) -> state. The fold the Given–Then scenarios check.
+    public static JournalState Evolve(JournalState state, JournalEvent @event) =>
+        @event switch
+        {
+            SubmissionWindowOpened => state with { WindowOpen = true },
+            SubmissionWindowClosed => state with { WindowOpen = false },
+            ManuscriptSubmitted e  => state with { Submitted = [.. state.Submitted, e.ManuscriptId] }
+        };
+
+    // decide: (state, command) -> events or a business error. What the
+    // Given–When–Then scenarios check. Never throws; failures are values.
+    public static Result<JournalEvent[]> Decide(JournalState state, JournalCommand command, JournalContext context) =>
+        command switch
+        {
+            SubmitManuscript c => state.WindowOpen
+                ? new Ok<JournalEvent[]>([new ManuscriptSubmitted(c.ManuscriptId, c.JournalId, c.Title, context.Now())])
+                : new Err(new SubmissionsClosed())
+        };
+}
+```
+
+Now read the YAML against the signatures. The Given–Then scenario is a direct call to
+`Evolve`: fold the given events, compare the resulting `State / Journal`. The
+Given–When–Then scenarios are direct calls to `Decide`: pass the given state and the
+when command, compare the outcome to the then, success track or failure track. No mocks,
+no containers, no interpretation gap, and each scenario asserts only the props its
+function actually reads. (Classic Event Modeling writes GWT givens as prior events; the
+state-as-given style is the same thing with the fold hoisted into the decision-model
+slice and verified once, by its own Given–Then.) Turning a scenario into a running test
+is the same kind of mechanical translation as the records above, not an authoring step.
+That is the whole trick: one representation that decides and checks, one function that
+restates.
 
 ![The decider pattern with its Given–When–Then mapping](assets/decider-pattern-v2.svg)
 
-*The decider, and why the scenarios are executable: Given is prior events folded into state, When is the command, Then is the events produced or the business error.*
+*The decider, and why the scenarios are executable: Given–Then exercises `evolve` (events fold to state), Given–When–Then exercises `decide` (state and command in; events out, or a business error).*
 
 ## Where I might be wrong
 
