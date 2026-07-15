@@ -17,7 +17,7 @@ code, *should* be the durable artifact.
 
 But look at who performs the transformation in every one of those setups: **an LLM**.
 Markdown in, probabilistic code out. Every regeneration is a fresh stochastic outcome;
-diffs don't compose; every run is a new review event. You declared the spec the product —
+diffs don't compose; every run is a new review event. You declared "the spec is the product" —
 and then wired the world's least deterministic compiler between the product and the thing
 that ships. The verification bottleneck you set out to relieve is now *load-bearing* on
 every regeneration.
