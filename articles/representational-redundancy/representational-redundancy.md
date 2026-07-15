@@ -67,13 +67,16 @@ transformation from intent to code, and what verifies the result*.
    coined it scoped it to throwaway projects.)
 2. Markdown spec → LLM → code + tests. Intent captured; transformation still stochastic;
    every regeneration still a review event.
+   - **Rung 2½, the AI plaster:** markdown spec → LLM → code, and a second LLM reviews
+     the output. The industry's actual current answer, and a half-rung, not a rung; the
+     next section explains why it cannot hold weight.
 3. **Formal spec → deterministic generator for the provable stratum + an agent writing
    the rest against compiler and test oracles.**
 4. Full formal synthesis. (Nobody serious is claiming it.)
 
-![The ladder: four rungs, each defined by its transformer and its verifier](assets/transformer-ladder.svg)
+![The ladder: four rungs and one half-rung, each defined by its transformer and its verifier](assets/transformer-ladder.svg)
 
-*The ladder. Every rung answers the same two questions: who transforms, what verifies. Rung 3 is where regeneration stops being a review event.*
+*The ladder. Every rung answers the same two questions: who transforms, what verifies. Rung 3 is where regeneration stops being a review event. Rung 2½ hangs off the side, because half-rungs hold no weight.*
 
 Every rung up buys *review-once* semantics for a larger stratum. On rung 2 you review the
 generated code every time, because you must — the transformer is a distribution, not a
@@ -81,10 +84,50 @@ function. On rung 3 you review the generator once, prove it against the spec, an
 then on regeneration is a build step. Same spec in, byte-identical code out. CI can
 assert `artifact == f(spec, generator)` as an invariant, not as a hope.
 
+## Rung 2½: the AI plaster
+
+Rung 2½ deserves its own section, because it is where most of the industry's effort is
+actually going. Nobody serious still claims a human can review every regeneration; the
+proposed fix is to make the reviewer an LLM too. Self-correction loops. Generator–critic
+pairs. Multi-agent debate. An entire product category of AI code reviewers, now routinely
+reviewing agent-written pull requests: AI reviewing AI. If the review event is the
+bottleneck, automate the review event.
+
+The research on this is unusually unanimous, and it is not kind. LLMs
+[cannot self-correct their own reasoning](https://proceedings.iclr.cc/paper_files/paper/2024/file/8b4add8b0aa8749d80a34ca5d941c355-Paper-Conference.pdf)
+without an external signal; when the checker is the generator, verification accuracy
+collapses toward generation accuracy. Adding more models does not add independence:
+critics that share training data and architecture with the generator share its blind
+spots, debate performs about as well as sampling the same model repeatedly, and
+[judges measurably favor their own generations](https://arxiv.org/html/2508.02994v1).
+And on exactly the task rung 2 needs performed, judging whether code matches a
+natural-language spec, LLMs
+[fail systematically](https://arxiv.org/abs/2508.12358): they misclassify correct code,
+they hallucinate defects, and the effect gets *worse* as review prompts get more
+detailed, a failure mode with its own name in the literature,
+[systematic overcorrection](https://arxiv.org/abs/2603.00539). Production numbers agree
+with the lab: a
+[three-week parallel trial of four commercial AI reviewers](https://dev.to/_vjk/best-ai-code-reviewer-in-2026-we-ran-4-in-parallel-for-3-weeks-146-prs-679-findings-1c0f)
+found catch rates ranging from 44% to 82% depending on the tool, with false-positive
+rates that make every finding itself a small review event.
+
+None of this means the tools are useless; as amplifiers of human review they clearly pay
+rent. It means they cannot change the rung. A stochastic judge of a stochastic
+transformer is still a distribution, not a function. Stack as many correlated judges as
+you like: you lower the *variance* of the review event, you never delete it.
+`artifact == f(spec, generator)` is not a statement any ensemble of opinions can make.
+That is why 2½ is a half-rung. It changes *who reviews*, which improves the economics,
+without changing *what verifies*, which sets the semantics. The plaster makes the
+illness cheaper to live with; the illness is that between the representations no oracle
+lives, and another opinion is not an oracle. The ladder is climbed on a different axis
+entirely: the verifier's *determinism*, not the verifier's species. Replace the human
+reviewer with an agent and you are standing exactly where you were. Replace opinion with
+oracle and you are on rung 3.
+
 Dijkstra said it in 1978, about the idea of programming in natural language: formal texts
 are effective precisely because their legitimacy can be checked by a few simple rules —
 while natural language excels at making nonsense non-obvious. Forty-eight years later,
-that is the entire difference between rung 2 and rung 3.
+that is the entire difference between rung 2, however thickly plastered, and rung 3.
 
 But rung 3 has a trap door, and everyone who has been in .NET long enough has fallen
 through it.
