@@ -41,7 +41,7 @@ every behavioral change is a coherent edit across ten sites at once.
 *One domain fact, ten restatements. No compiler error fires when any two of them disagree.*
 
 This deserves its own name: **representational redundancy**. Not "layers", not
-"boilerplate" — *restatement*. The same truth hand-transcribed between representations
+"boilerplate" — *restatement*. The same truth transcribed between representations
 that no compiler holds together.
 
 Humans have always drifted on this — it is why "the documentation lies" became folklore.
@@ -413,7 +413,64 @@ infrastructure in — net **+7 lines**, with the third game's flip landing on th
 prediction to the digit. The build stayed green. All 181 pure Given–When–Then tests
 stayed green, running in under eight seconds. The web layer never noticed.
 
-Plus seven lines, and the repository is smaller in the way that matters: there are 557
-fewer lines it is possible to be wrong in. The specs are no longer documentation that
-compiles second. They are the only place the record layer exists at all — which is what
-"the spec is the product" was supposed to mean before it was a slogan.
+That was the vocabulary — the noun layer. In the days since, the same rule ate two more
+strata, and each taught something the records had not.
+
+**The scenarios went next.** The Given–When–Then sections of the specs were already the
+requirements; the xUnit files restating them were textbook representational redundancy —
+the same truths hand-transcribed, one possible drift per scenario. The generator now
+compiles all 115 scenarios across the three games into xUnit facts on every build, and
+2,197 lines of hand-written test code left git. The instructive part is the seam for test
+data. A scenario's given says things like `hostMartin` or `q0Scored` — bare names for
+concrete values the spec has no business spelling out. The generated facts resolve those
+names against one small, human-owned `Fixtures` class per game, so a scenario that names
+a fixture nobody wrote fails to *compile* (CS0117), not to run. Test data got its own
+typed seam.
+
+**Then the dispatch.** Look back at the `Evolve` and `Decide` switches earlier in this
+article and notice how little of them is a decision: one arm per event or command, spec
+order, exhaustive, no default. The only source in the whole construct is what happens
+*inside* each arm. The switches were also the last place a new spec element could land
+silently — records and tests would generate, and no arm would exist until someone
+remembered to write one. So the switches are generated now too, and the hand-written file
+shrank to the arm bodies, as partial-method implementations:
+
+```csharp
+// Decider.g.cs — generated, in-compilation only. Dispatch is structure.
+public static JournalState Evolve(JournalState state, JournalEvent @event) =>
+    @event switch
+    {
+        SubmissionWindowOpened e => EvolveSubmissionWindowOpened(state, e),
+        SubmissionWindowClosed e => EvolveSubmissionWindowClosed(state, e),
+        ManuscriptSubmitted e    => EvolveManuscriptSubmitted(state, e)
+    };
+
+private static partial JournalState EvolveManuscriptSubmitted(JournalState state, ManuscriptSubmitted e);
+
+// Decider.Impl.cs — human-owned. Only the decision is source.
+private static partial JournalState EvolveManuscriptSubmitted(JournalState state, ManuscriptSubmitted e) =>
+    state with { Submitted = [.. state.Submitted, e.ManuscriptId] };
+```
+
+And the seam holds in both directions, tested for real: add a fake event to a spec and
+the next build fails with CS8795 — *"partial method must have an implementation part"* —
+naming the exact method a human now owes the compiler. Remove an element whose body still
+exists and the orphaned implementation fails to compile too. This is act three's answer
+to the protected region: the seam does not rot quietly. It screams, with a file name and
+a signature.
+
+One honest correction, because the counting deserves the same rigor as the claims. I
+predicted about 410 lines would leave git in that last step; roughly 150 did — the arm
+bodies were already one-line delegations that survive as partial implementations, so the
+flip netted about minus six lines per game. The win was never the count. It was the seam.
+And an early reading on the MDA ghost: after the flip, the seams contain exactly the
+residue they were designed for — scoring, selection, folding — and the temporary build
+flag that staged the migration game by game was deleted in the final commit. No
+hand-maintained metadata has started to accumulate at the boundary. Yet.
+
+Three strata now exist only as functions of the specs: the vocabulary, the scenarios, the
+dispatch. The suite stands at 272 green tests, 115 of which have no file anywhere on
+disk. The repository is smaller in the way that matters — the places it is possible to be
+wrong in keep disappearing — and the specs are not documentation that compiles second.
+They are the only place those strata exist at all, which is what "the spec is the
+product" was supposed to mean before it was a slogan.
