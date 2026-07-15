@@ -137,19 +137,32 @@ through it.
 **Act one, 2002.** Windows Forms v1 generated `InitializeComponent` straight into *your*
 file, fenced off with a comment: `#region Windows Form Designer generated code` and a
 stern "do not modify the contents of this method". Everyone modified the contents of this
-method. The designer overwrote their edits, or worse, half-parsed them back. The
-boundary between generated and human code was a *comment* — that is, a promise.
+method. The designer overwrote their edits, or worse, half-parsed them back. And the
+frontend was the small stage. The same year, on the backend, `XSD.exe` spat out typed
+DataSets, thousands of lines of generated C# per schema under the same do-not-edit
+header, and the first wave of DAL generators went industrial: the original LLBLGen
+(a free download that every .NET shop of the era seemed to have), CodeSmith running
+its templates against the database at build-your-own-architecture scale. Entire
+data-access layers, generated straight into the project, edited by hand the moment the
+generator's output was 95% right, flattened at the next regeneration. The boundary
+between generated and human code was a *comment* — that is, a promise.
 
 **Act two, 2005.** .NET 2.0 shipped partial classes, and the generated half moved into
-`Form1.Designer.cs`. Entity Framework did the same dance with EDMX and T4:
+`Form1.Designer.cs`. The DAL world industrialized the same move. LLBLGen Pro regenerated
+its designer-driven entities around [*user code regions*](https://www.llblgen.com/Documentation/5.6/LLBLGen%20Pro%20RTF/Using%20the%20generated%20code/gencode_addingusercode.htm),
+marked blocks where your hand-written code was supposed to survive regeneration.
+CodeSmith's .netTiers templates split output into generated and custom halves; SubSonic
+leaned on partial classes. Entity Framework did the same dance with EDMX and T4:
 `Model.Designer.cs`, thousands of lines of generated C#, sitting in your repo, in your
 diffs, in your merge conflicts. The boundary was now a *file* — better. But the file was
 still in git, so it was still editable, still reviewable, still mergeable, and under
 deadline pressure somebody always did edit it, because the model was regenerated "later"
-and later never came. MDA-era tooling called its version "protected regions" — marked
-blocks where hand-written code was supposed to survive regeneration. They rotted
-quietly, everywhere, and took the whole Model-Driven Architecture movement down with
-them.
+and later never came. MDA-era tooling made the grandest version of the promise —
+"protected regions", the pattern's proper name — and the regions rotted quietly,
+everywhere, and took the whole Model-Driven Architecture movement down with them. The
+.NET epilogue says it plainest: LLBLGen's own vendor eventually deprecated user code
+regions and removed their documentation, advising customers to migrate their code out.
+The mechanism's inventors stopped believing the promise.
 
 Both acts share one root cause: **the generated code was in the repository.** Anything in
 the repo is, by the social contract of version control, source — reviewable, editable,
