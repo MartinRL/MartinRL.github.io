@@ -266,7 +266,7 @@ public class SubmitManuscriptSpecs
 
 Each fact asserts only what its scenario pins; props the YAML leaves out get arbitrary values, because the requirement does not read them. That is the whole trick: one representation that decides and checks, one function that restates.
 
-![The decider pattern with its Given–When–Then mapping](assets/decider-pattern-v2.svg)
+![The decider pattern with its Given–When–Then mapping](assets/decider-pattern.svg)
 
 *The decider, and why the scenarios are executable: Given–Then exercises `evolve` (events fold to state), Given–When–Then exercises `decide` (state and command in; events out, or a business error).*
 
