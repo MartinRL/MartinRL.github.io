@@ -25,7 +25,7 @@ The entity. The DTO. The AutoMapper profile. The EF Core configuration. The SQL 
 
 This deserves its own name: **representational redundancy**. Not "layers", not "boilerplate" — *restatement*. The same truth transcribed between representations that no compiler holds together.
 
-Humans have always drifted on this — it is why "the documentation lies" became folklore. But notice exactly what LLM agents are *worst* at: coherent editing across many sites. An agent produces plausible code at every individual site; it is *between* the sites that things break, and between the sites is precisely where no oracle lives. No compiler error fires when the validator disagrees with the DTO. No test fails when the OpenAPI schema drifts from the entity — until an integration test, minutes and containers away, maybe.
+Humans have always drifted on this — it is why "the documentation lies" became folklore. But notice exactly what LLM agents are *worst* at: coherent editing across many sites. The benchmarks are blunt about it: agents [solve 22% of multi-file refactorings that human developers solve 87% of](https://arxiv.org/abs/2503.07832), and on natural-language feature addition the best models [succeed on under a tenth of the instances that require multi-file edits](https://arxiv.org/abs/2507.18130). An agent produces plausible code at every individual site; it is *between* the sites that things break, and between the sites is precisely where no oracle lives (an oracle: any mechanical judge of correctness, a compiler error, a failing test). No compiler error fires when the validator disagrees with the DTO. No test fails when the OpenAPI schema drifts from the entity — until an integration test, minutes and containers away, maybe.
 
 So representational redundancy is not merely expensive the way it always was. It is expensive precisely where the new workforce is weakest, and cheap verification is precisely what the new workforce needs most. Every restatement you delete is a class of agent error that can no longer occur.
 
@@ -35,16 +35,11 @@ Deterministic derivation does not *manage* that redundancy. It **deletes** it.
 
 There is a ladder, and the rungs differ in exactly two properties: *who performs the transformation from intent to code, and what verifies the result*.
 
-1. English → LLM → code, a human reviews everything. (Vibe coding — even the man who
-   coined it scoped it to throwaway projects.)
-2. Markdown spec → LLM → code + tests. Intent captured; transformation still stochastic;
-   every regeneration still a review event.
-   - **Rung 2½, the AI plaster:** markdown spec → LLM → code, and a second LLM reviews
-     the output. The industry's actual current answer, and a half-rung, not a rung; the
-     next section explains why it cannot hold weight.
-3. **Formal spec → deterministic generator for the provable stratum + an agent writing
-   the rest against compiler and test oracles.**
-4. Full formal synthesis. (Nobody serious is claiming it.)
+1. **Vibe coding.** Transformer: an LLM, from English. Verifier: a human, reviewing everything. (Even the man who coined the term scoped it to throwaway projects.)
+2. **Spec-first.** Transformer: an LLM, from a markdown spec. Verifier: still a human; intent is captured, but the transformation is stochastic, so every regeneration is a review event.
+   - **Rung 2½, the AI plaster:** Transformer: an LLM. Verifier: another LLM, reviewing the output. The industry's actual current answer, and a half-rung, not a rung; the next section explains why it cannot hold weight.
+3. **Deterministic derivation.** **Transformer: a deterministic generator, from a formal spec, for the provable stratum (the layer of the system that is pure structure: records, unions, serialization surfaces). Verifier: the compiler, plus tests derived from the same spec; an agent writes the rest against those oracles.**
+4. **Full formal synthesis.** Transformer: a prover pipeline deriving the program from the spec. Verifier: the proof, machine-checked. (Nobody serious is claiming it.)
 
 ![The ladder: four rungs and one half-rung, each defined by its transformer and its verifier](assets/transformer-ladder.svg)
 
