@@ -50,7 +50,7 @@ There is a ladder, and the rungs differ in exactly two properties: *who performs
 
 *The ladder. Every rung answers the same two questions: who transforms, what verifies. Rung 3 is where regeneration stops being a review event. Rung 2½ hangs off the side, because half-rungs hold no weight.*
 
-Every rung up buys *review-once* semantics for a larger stratum. On rung 2 you review the generated code every time, because you must — the transformer is a distribution, not a function. On rung 3 you review the generator once, prove it against the spec, and from then on regeneration is a build step. Same spec in, byte-identical code out. CI can assert `artifact == f(spec, generator)` as an invariant, not as a hope.
+Each rung up extends *review-once* correctness to a larger share of the code: instead of re-reviewing every regeneration of every file, you review the transformer once and trust its output. On rung 2 you review the generated code every time, because you must — the transformer is a distribution, not a function. On rung 3 you review the generator once, prove it against the spec, and from then on regeneration is a build step. Same spec in, byte-identical code out. CI can assert `artifact == f(spec, generator)` as an invariant, not as a hope.
 
 ## Rung 2½: the AI plaster
 
