@@ -19,7 +19,7 @@ Start with a question you can answer about your own codebase right now: how many
 
 The entity. The DTO. The AutoMapper profile. The EF Core configuration. The SQL column. The migration that created the column. The FluentValidation rule. The OpenAPI schema. The TypeScript interface. The test fixture. Ten representations of **one** domain fact — and every behavioral change is a coherent edit across ten sites at once.
 
-![One domain fact fanned out into ten hand-maintained representations](assets/one-fact-ten-places.svg)
+![One domain fact fanned out into ten hand-maintained representations](one-fact-ten-places.svg)
 
 *One domain fact, ten restatements. No compiler error fires when any two of them disagree.*
 
@@ -43,7 +43,7 @@ There is a ladder, and the rungs differ in exactly two properties: *who performs
 3. **Deterministic derivation.** **Transformer: a deterministic generator, from a formal spec, for the provable stratum (the layer of the system that is pure structure: records, unions, serialization surfaces). Verifier: the compiler, plus tests derived from the same spec; an agent writes the rest against those oracles.**
 4. **Full formal synthesis.** Transformer: a prover pipeline deriving the program from the spec. Verifier: the proof, machine-checked. (Nobody serious is claiming it.)
 
-![The ladder: four rungs and one half-rung, each defined by its transformer and its verifier](assets/transformer-ladder.svg)
+![The ladder: four rungs and one half-rung, each defined by its transformer and its verifier](transformer-ladder.svg)
 
 *The ladder. Every rung answers the same two questions: who transforms, what verifies. Rung 3 is where regeneration stops being a review event. Rung 2½ hangs off the side, because half-rungs hold no weight.*
 
@@ -263,7 +263,7 @@ public class SubmitManuscriptSpecs
 
 Each fact asserts only what its scenario pins; props the YAML leaves out get arbitrary values, because the requirement does not read them. That is the whole trick: one representation that decides and checks, one function that restates.
 
-![The decider pattern with its Given–When–Then mapping](assets/decider-pattern.svg)
+![The decider pattern with its Given–When–Then mapping](decider-pattern.svg)
 
 *The decider, and why the scenarios are executable: Given–Then exercises `evolve` (events fold to state), Given–When–Then exercises `decide` (state and command in; events out, or a business error).*
 
