@@ -19,6 +19,7 @@ Product and Engineering leader who scales SaaS platforms in regulated, document-
 ## Selected impact
 
 - Rebuilding ChronosHub's 30-person Product & Engineering organization from the ground up around agentic engineering and AI-native products; executive sponsor of FrontierHub, the company-wide AI frontier-firm transformation. [Add 1-2 quantified results as they land.]
+- Led the transformation of team-as-a-service and custom solutions to agentic engineering at Context& as Fellow, the highest-ranking title and most senior technical leader, with HR responsibility for ~25 engineers: rethinking strategy and business models, up- and reskilling people, and adopting LLM-based technology first for software development, then for the products being built.
 - Reduced cycle times across ~80 engineers in five European locations at Templafy by coaching Engineering Managers in lean/kanban flow efficiency. [Add %.]
 - Designed and drove a career ladder at a 60-engineer SaaS scale-up: two Staff promotions and two senior EM promotions within three months of launch.
 - Co-designed a Wardley-mapped "minimum viable telco" model showing ~90% operational cost reduction; contributed to Telenor DK's BSS landscape and application strategy.
