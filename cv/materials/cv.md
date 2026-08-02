@@ -8,7 +8,7 @@ status: draft, placeholders open
 
 # Martin Rosén-Lidholm
 
-+45 31 76 37 01 | martin@rosenlidholm.se | [linkedin.com/in/martin-rosen-lidholm](https://www.linkedin.com/in/martin-rosen-lidholm/) | Malmö/Lund, working across Öresund
++45 31 76 37 01 | martin@rosenlidholm.se | [linkedin.com/in/martin-rosen-lidholm](https://www.linkedin.com/in/martin-rosen-lidholm/) | Copenhagen
 
 **VP Product & Engineering | Scaling AI-native SaaS in regulated, document-heavy domains | Agentic engineering + product operating models**
 
@@ -23,6 +23,7 @@ Product and Engineering leader who scales SaaS platforms in regulated, document-
 - Designed and drove a career ladder at a 60-engineer SaaS scale-up: two Staff promotions and two senior EM promotions within three months of launch.
 - Co-designed a Wardley-mapped "minimum viable telco" model showing ~90% operational cost reduction; contributed to Telenor DK's BSS landscape and application strategy.
 - Defined and validated a new event-driven and event-sourced architecture for Portchain's core real-time vessel ETA product as VP of Engineering and management team member.
+- Drove the project-to-product transformation at Keylane Advice as the technology executive on the management team: restructured ~30 developers into outcome-accountable product teams with a CEO-led Flow Office, during consecutive gazelle-growth years.
 
 ## Experience
 
