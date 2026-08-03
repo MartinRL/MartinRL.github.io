@@ -33,9 +33,9 @@ This document is a portfolio of selected cases that evidence the claims in my CV
 
 **Complication:** Boards and ceremonies optimized for feature delivery turned against the teams once substantial upstream discovery was added; Scrum's time constraints conflicted with discovery work managed on the same delivery boards.
 
-**Resolution:** Coached all Engineering Managers (including outside my direct reports) on kanban and lean principles: flow efficiency, work visualization, fast feedback loops. Separated discovery and delivery into distinct boards with columns reflecting real process steps, and managed work-item aging rather than WIP limits, enabling real-time feedback between discovery and delivery. [Add %: cycle time or lead time before/after.]
+**Resolution:** Coached all Engineering Managers (including outside my direct reports) on kanban and lean principles: flow efficiency, work visualization, fast feedback loops. Separated discovery and delivery into distinct boards with columns reflecting real process steps, and managed work-item aging rather than arbitrary time-boxes, enabling real-time feedback between discovery and delivery.
 
-**Transferable pattern:** When the operating model changes, change the work system with it; aging work items are a more tangible lever than WIP limits.
+**Transferable pattern:** When the operating model changes, change the work system with it; aging work items are a more tangible lever than time-boxes. Outcomes (changed user behaviors and problems solved) matters more than output (features/product increments).
 
 ### From Project to Product Organization (bank/pension software, ~30 developers, gazelle growth)
 
@@ -65,7 +65,7 @@ This document is a portfolio of selected cases that evidence the claims in my CV
 
 **Resolution:** The Engineering management team collaboratively built a well-defined ladder with clear promotion and feedback processes. Within three months: two Engineers promoted to Staff, two Engineering Managers to senior roles, plus transparent communication of "why not" decisions.
 
-**Transferable pattern:** A ladder is as much about creating force-multiplier roles that own cross-team problems as it is about fairness.
+**Transferable pattern:** A career ladder is as much about creating force-multiplier roles that own cross-team problems as it is about fairness.
 
 ## Business / Strategy
 
@@ -85,7 +85,7 @@ This document is a portfolio of selected cases that evidence the claims in my CV
 
 **Complication:** Declining revenue against high operational costs: a race to the bottom where price cuts were not matched by cost efficiencies.
 
-**Resolution:** A team of four seniors (myself as Software Architect, a former CEO, a Business Analyst, a Solution Architect) used Wardley Mapping to design a model reducing operational costs by ~90%: Internet-only, a single offering, commodity components, effectively applying Musk's algorithm to achieve extreme cost reduction.
+**Resolution:** A team of four seniors (myself as Chief Software Architect, a former CEO, a Business Analyst, a Solution Architect) used Wardley Mapping to design a model reducing operational costs by ~90%: Internet-only, a single offering, commodity components, effectively applying Musk's algorithm to achieve extreme cost reduction.
 
 **Transferable pattern:** Map-driven simplification can find order-of-magnitude cost structures that incremental optimization never will.
 
@@ -123,7 +123,7 @@ This document is a portfolio of selected cases that evidence the claims in my CV
 
 ## Cycling
 
-### Race Around Poland — 3,600 km Unsupported
+### Race Around Poland — 3,600 km / 33,000 hm Unsupported
 
 **Situation:** After brevets and ultra-races of 1,600-2,000 km, I targeted one of the truly long races. The pandemic cancelled my North Cape 4000 plans, so I entered RAP 2022 to avoid border crossings.
 
