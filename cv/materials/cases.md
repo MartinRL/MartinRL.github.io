@@ -11,7 +11,7 @@ note: Reorder before sharing so the lead case matches the receiver's problem.
 
 +45 31 76 37 01 | martin@rosenlidholm.se | [linkedin.com/in/martin-rosen-lidholm](https://www.linkedin.com/in/martin-rosen-lidholm/)
 
-This document is a portfolio of selected cases that evidence the claims in my CV: making organizations AI-native, installing product operating models, and aligning strategy, architecture, and org design. Each case follows Situation / Complication / Resolution and closes with the transferable pattern.
+This document is a portfolio of selected cases that evidence the claims in [my CV](https://martinrl.github.io/cv): making organizations AI-native, installing product operating models, and aligning strategy, architecture, and org design. Each case follows Situation / Complication / Resolution and closes with the transferable pattern.
 
 ## Agentic / AI-native
 

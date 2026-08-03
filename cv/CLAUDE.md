@@ -1,6 +1,6 @@
 # Job Search Materials
 
-Working repo for Martin Rosén-Lidholm's job search materials. Sources of truth are the md files here; Google Docs (Martin_RL-CV-v2, Martin_RL-Cases-v2) are exports, regenerate them from md when sharing externally.
+Working repo for Martin Rosén-Lidholm's job search materials. Sources of truth are the md files here. Published home: the chronograph Quartz site behind deep links (https://martinrl.github.io/chronograph/cv and /cases, short links martinrl.github.io/cv and /cases via this repo's 404.html router). Publish flow: edit materials/*.md → copy body to chronograph `content/cv.md` / `content/cases.md` (swap front matter to title/description/created, strip internal keys and bracketed notes) → push `v4`. The old Google Docs are retired (Martin points them at the new pages himself).
 
 ## Positioning decision (made 2026-08-02)
 
@@ -29,8 +29,10 @@ Three target lanes, kept broad:
 - [ ] Confirm whether HBK/Portchain were formally fixed-term (tenure-optics framing)
 - [ ] LinkedIn About + headline rewrite (see materials/linkedin.md)
 - [ ] LinkedIn postings + article strategy review
-- [ ] Recruiter message from Friday: draft response (deadline: tonight, 2026-08-02)
-- [ ] Styling pass on Google Docs exports
+- [x] Recruiter message from Friday: holding reply drafted 2026-08-03; opportunity researched and tracked privately (not in this repo)
+- [x] Styling pass on Google Docs exports — obsolete, docs retired; published home is chronograph (2026-08-03)
+- [ ] Visuals for the published cv/cases pages (candidates: D4 lens diagram, three-modes figure, triple diamond); assets go in chronograph `content/cv/assets/` / `content/cases/assets/`
+- [ ] Resolve the two bracketed notes in cv.md (HBK "fixed engagement", Portchain "fixed-term"); they are stripped from the published copy until resolved
 - [ ] Tailored front-page variants of cases.md: publishing, insurtech/regtech, investor
 
 ## Key references
