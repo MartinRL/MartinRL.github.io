@@ -13,8 +13,9 @@
             "rap23fb": "https://www.facebook.com/martin.rosenlidholm/posts/pfbid0ARbC7XAKqFNsCw5iDQ7xaubTtmZAquRMtHhfSFzgSraXy3zAqcZgrW4M5Rb5APJ4l",
         };
 
-        // Get the current URL path and convert it to lowercase
-        const path = window.location.pathname.substring(1).toLowerCase();
+        // Get the current URL path, lowercase, without trailing slashes
+        // (GitHub Pages 301s /cv to /cv/ because a cv/ directory exists)
+        const path = window.location.pathname.substring(1).toLowerCase().replace(/\/+$/, "");
 
         // Check if the lowercase path matches any key in the mapping
         if (urlMappings[path]) {
