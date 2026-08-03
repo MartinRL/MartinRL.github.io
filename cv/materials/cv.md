@@ -18,7 +18,7 @@ Product and Engineering leader who scales SaaS platforms in regulated, document-
 
 ## Selected impact
 
-- Rebuilding ChronosHub's 30-person Product & Engineering organization from the ground up around agentic engineering and AI-native products; executive sponsor of FrontierHub, the company-wide AI frontier-firm transformation. [Add 1-2 quantified results as they land.]
+- Rebuilding ChronosHub's 30-person Product & Engineering organization from the ground up around agentic engineering and AI-native products; executive sponsor of FrontierHub, the company-wide AI frontier-firm transformation. Inherited a platform where no marketable feature had shipped in 15 months; six months in, a two-week release cadence holds (defect share 63% to 25%), incident detection dropped from weeks to minutes, and the Prototype Factory turns event-model specs into working prototypes, with the Product Factory underway.
 - Led the transformation of team-as-a-service and custom solutions to agentic engineering at Context& as Fellow, the highest-ranking title and most senior technical leader, with HR responsibility for ~25 engineers: rethinking strategy and business models, up- and reskilling people, and adopting LLM-based technology first for software development, then for the products being built.
 - Reduced cycle times across ~80 engineers in five European locations at Templafy by coaching Engineering Managers in lean/kanban flow efficiency. [Add %.]
 - Designed and drove a career ladder at a 60-engineer SaaS scale-up: two Staff promotions and two senior EM promotions within three months of launch.
@@ -31,12 +31,12 @@ Product and Engineering leader who scales SaaS platforms in regulated, document-
 ### ChronosHub — VP of Product & Engineering
 *February 2026 - present, Copenhagen*
 
-Scholarly publishing SaaS owned by the American Chemical Society; largest customer IEEE. Rebuilding the 30-person Product & Engineering organization (Engineers, Product Managers, Designers; full HR responsibility) from the ground up with laser focus on agentic engineering and AI-native products for humans and agents alike, grounded in the D4 strategy lens: D1 Agentic Engineering (how we build), D2 AI in the Product (what we build), D3 Build for Agents (who consumes), D4 Performance & Cost (how we sustain). Executive sponsor of FrontierHub, the initiative moving the whole company to an AI frontier firm.
+Scholarly publishing SaaS owned by the American Chemical Society; largest customer IEEE. Rebuilding the 30-person Product & Engineering organization (Engineers, Product Managers, Designers; full HR responsibility) from the ground up with laser focus on agentic engineering and AI-native products for humans and agents alike, grounded in my D4 strategy lens: D1 Agentic Engineering (how we build), D2 AI in the Product (what we build), D3 Build for Agents (who consumes), D4 Performance & Cost (how we sustain). Executive sponsor of FrontierHub, the initiative moving the whole company to an AI frontier firm. A daily brief, analyzed through the D4 and my Software Civil Engineering lenses, is published at [martinrl.github.io/chronograph](https://martinrl.github.io/chronograph).
 
 ### Delegate — Fellow
 *January 2025 - January 2026, Greater Copenhagen*
 
-First Fellow (highest level of the career ladder), combining technical leadership and people management of 22 .NET consultants. Helped evolve the business model toward team-as-a-service for mature customers, per the DevOps philosophy "we build it, we run it": teams and capabilities rather than individuals and hours.
+First Fellow (highest level of the career ladder), combining technical leadership and people management of almost 30 .NET consultants. Helped evolve the business model toward team-as-a-service for mature customers, per the DevOps philosophy "we build it, we run it": teams and capabilities rather than individuals and hours.
 
 ### HBK — Software Architect
 *October 2024 - December 2024, Greater Copenhagen* [consider adding "fixed engagement" if accurate]
@@ -51,7 +51,7 @@ Responsible for Engineering at a fast-paced shipping SaaS startup. Ran a deep te
 ### Templafy — Director of Engineering
 *February 2022 - February 2024, Copenhagen*
 
-Led Engineering Managers and Staff Engineers covering a substantial part of an ~80-engineer organization across five European locations, structured by Team Topologies on a self-contained systems architecture. Reported to the CTO; acting CTO during a period of uncertainty. Drove the shift to empowered product teams with fast discovery loops in tight collaboration with Product. Biggest personal impact: increased team flow efficiency and reduced cycle times by coaching Engineering Managers in lean and kanban principles [add %], and brought strategy-to-operation visibility through flight levels, cost of delay, and a digital Obeya.
+Led Engineering Managers and Staff Engineers covering a substantial part of an ~80-engineer organization across five European locations, structured by Team Topologies on a self-contained systems architecture. Reported to the CTO; acting CTO during a period of uncertainty. Drove the shift to empowered product teams with fast discovery loops in tight collaboration with Product. Biggest personal impact: increased team flow efficiency and reduced cycle times by coaching Engineering Managers in lean and kanban principles, and brought strategy-to-operation visibility through flight levels, cost of delay, and a digital Obeya.
 
 ### CBB (Telenor) — Chief Software Architect
 *April 2018 - January 2022, Copenhagen*
@@ -82,7 +82,7 @@ From Tetra Pak R&D (where I wrote my master's thesis) through a hyper-growing st
 
 - **Øredev**, Program Committee Member, 2014 - current, Malmö. Lead the leadership track and contribute to the architecture and .NET tracks of the region's leading software development conference (1,300 attendees yearly).
 - **Global Agile Summit**, Tallinn, Program Committee Member, curating the Developer track.
-- Long-time active member: Copenhagen and Skåne .NET user groups, #AgilityLab Copenhagen, Domain-Driven Design Copenhagen (recent expert panel member).
+- Long-time active member: Copenhagen and Skåne .NET user groups, #AgilityLab Copenhagen, Domain-Driven Design Copenhagen (e.g. expert panel member).
 
 ## Education
 
@@ -91,7 +91,7 @@ From Tetra Pak R&D (where I wrote my master's thesis) through a hyper-growing st
 
 ## Languages
 
-Swedish (native) | English (full professional) | Danish (full professional; working language 15+ years)
+Swedish (native) | English (full professional) | Danish (full professional; working language 18 years)
 
 ## Recommendations (snippets from LinkedIn)
 

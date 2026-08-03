@@ -24,7 +24,8 @@ Three target lanes, kept broad:
 ## Open items
 
 - [ ] Templafy cycle-time number (cv.md + cases.md placeholders)
-- [ ] Early ChronosHub metrics (delivery frequency, agent-driven share of changes, cost per release)
+- [x] Early ChronosHub metrics: release cadence, defect share, incident detection (sourced from ChronosHubVault 2026-08-03; applied in cv.md and cases.md)
+- [ ] Later ChronosHub metrics, still unmeasured per vault: agent-driven share of changes, cost per release, prototype counts/cycle time, post-April release cadence
 - [ ] Confirm whether HBK/Portchain were formally fixed-term (tenure-optics framing)
 - [ ] LinkedIn About + headline rewrite (see materials/linkedin.md)
 - [ ] LinkedIn postings + article strategy review
