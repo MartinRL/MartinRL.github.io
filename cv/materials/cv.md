@@ -8,13 +8,13 @@ status: draft, placeholders open
 
 # Martin Rosén-Lidholm
 
-+45 31 76 37 01 | martin@rosenlidholm.se | [linkedin.com/in/martin-rosen-lidholm](https://www.linkedin.com/in/martin-rosen-lidholm/) | Copenhagen
++45 31 76 37 01 | martin@rosenlidholm.se | [linkedin.com/in/martin-rosen-lidholm](https://www.linkedin.com/in/martin-rosen-lidholm/) | Malmö/Copenhagen
 
 **VP Product & Engineering | Scaling AI-native SaaS in regulated, document-heavy domains | Agentic engineering + product operating models**
 
 ## About
 
-Product and Engineering leader who scales SaaS platforms in regulated, document-heavy domains. Currently VP of Product & Engineering at ChronosHub (an ACS company; IEEE is the largest customer), rebuilding a 30-person product and engineering organization around agentic engineering and AI-native products, for humans and agents alike. I install product operating models, raise delivery predictability, and make engineering organizations AI-native without losing governance. Underneath the org design I am a systems thinker: I map company and product strategy down to architecture and implementation using Wardley Mapping, Team Topologies, and event modeling. I never hesitate to roll up my sleeves, be it code, automation, or workshops, where the most impact is produced.
+Product and Engineering leader who scales SaaS platforms in regulated, document-heavy domains. Currently VP of Product & Engineering at ChronosHub (an ACS company; IEEE is the largest customer), rebuilding a 30-person product and engineering organization around agentic engineering and AI-native products, for humans and agents alike. I install product operating models, raise delivery velocity, and make engineering organizations AI-native without losing governance. Underneath the org design I am a systems thinker: I map company and product strategy down to architecture and implementation using Wardley Mapping, Rumelt's kernel and tests, and event modeling. I never hesitate to roll up my sleeves, be it code, automation, or workshops, where the most impact is produced.
 
 ## Selected impact
 
@@ -83,6 +83,7 @@ From Tetra Pak R&D (where I wrote my master's thesis) through a hyper-growing st
 - **Øredev**, Program Committee Member, 2014 - current, Malmö. Lead the leadership track and contribute to the architecture and .NET tracks of the region's leading software development conference (1,300 attendees yearly).
 - **Global Agile Summit**, Tallinn, Program Committee Member, curating the Developer track.
 - Long-time active member: Copenhagen and Skåne .NET user groups, #AgilityLab Copenhagen, Domain-Driven Design Copenhagen (e.g. expert panel member).
+- Active voice in the industry: short and punchy on [LinkedIn](https://www.linkedin.com/in/martin-rosen-lidholm/), longer form at [Chronograph](https://martinrl.github.io/chronograph). Alex Bunardzic: ["This is the second time I've heard a fresh, breakthrough idea from Martin."](https://www.linkedin.com/feed/update/urn:li:activity:7485706695508156416/)
 
 ## Education
 
