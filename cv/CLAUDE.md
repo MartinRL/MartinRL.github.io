@@ -1,6 +1,6 @@
 # Job Search Materials
 
-Working repo for Martin Rosén-Lidholm's job search materials. Sources of truth are the md files here. Published home: the chronograph Quartz site behind deep links (https://martinrl.github.io/chronograph/cv and /cases, short links martinrl.github.io/cv and /cases via this repo's 404.html router). Publish flow: edit materials/*.md → copy body to chronograph `content/cv.md` / `content/cases.md` (swap front matter to title/description/created, strip internal keys and bracketed notes) → push `v4`. The old Google Docs are retired (Martin points them at the new pages himself).
+Working repo for Martin Rosén-Lidholm's job search materials. Sources of truth are the md files here. Published home: the chronograph Quartz site behind deep links (https://martinrl.github.io/chronograph/cv and /cases, short links martinrl.github.io/cv and /cases via this repo's 404.html router). Publish flow: edit materials/*.md → copy body to chronograph `content/cv.md` / `content/cases.md` (swap front matter to title/description/created plus `tags: [cv]` / `tags: [cases]`, strip internal keys and bracketed notes) → push `v4`. The old Google Docs are retired (Martin points them at the new pages himself).
 
 ## Positioning decision (made 2026-08-02)
 
