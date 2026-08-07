@@ -27,7 +27,7 @@ Three target lanes, kept broad:
 - [x] Early ChronosHub metrics: release cadence, defect share, incident detection (sourced from ChronosHubVault 2026-08-03; applied in cv.md and cases.md)
 - [ ] Later ChronosHub metrics, still unmeasured per vault: agent-driven share of changes, cost per release, prototype counts/cycle time, post-April release cadence
 - [ ] Confirm whether HBK/Portchain were formally fixed-term (tenure-optics framing)
-- [ ] LinkedIn About + headline rewrite (see materials/linkedin.md)
+- [x] LinkedIn About + headline rewrite: drafted 2026-08-07 in materials/linkedin.md (headline, About, Featured plan); awaiting Martin's paste into LinkedIn
 - [ ] LinkedIn postings + article strategy review
 - [x] Recruiter message from Friday: holding reply drafted 2026-08-03; opportunity researched and tracked privately (not in this repo)
 - [x] Styling pass on Google Docs exports — obsolete, docs retired; published home is chronograph (2026-08-03)
