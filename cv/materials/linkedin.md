@@ -14,14 +14,21 @@ VP Product & Engineering | Scaling AI-native SaaS in regulated, document-heavy d
 187 characters (limit 220). The first three segments mirror the CV target-title line verbatim so one recruiter search surfaces both; the domain tail is flexible and can be swapped per lane (e.g. "Regulated document workflows" for the insurtech/regtech lane).
 
 ## Proposed About
-
 I'm a Product & Engineering leader scaling AI-native SaaS in regulated, document-heavy domains. Currently VP of Product & Engineering at ChronosHub (scholarly publishing SaaS, an ACS company; IEEE is our largest customer), rebuilding a 30-person product and engineering organization around agentic engineering and AI-native products, for humans and agents alike. At heart I'm a sociotechnical systems designer: I jointly optimize strategy, people, agentic AI, and software, mapping company and product strategy all the way down to architecture and implementation with Wardley Mapping, Rumelt's kernel, and event modeling.
 
-The results so far at ChronosHub: a platform that hadn't shipped a new commercial feature in 15 months has moved to continuous product delivery: a two-week release cadence holds, defect share is down from 63% to 25%, and incident detection dropped from weeks to minutes. Underneath sits a product operating model and my D4 strategy lens: how we build (agentic engineering), what we build (AI in the product), who consumes it (build for agents), and how we sustain it (performance and cost). Beyond Product & Engineering, I'm the executive sponsor of FrontierHub, the initiative moving the whole company to an AI frontier firm.
+
+
+The results so far at ChronosHub: a platform that hadn't shipped a marketable feature in 15 months now holds a two-week release cadence, defect share is down from 63% to 25%, and incident detection dropped from weeks to minutes. Underneath sits a product operating model and my D4 strategy lens: how we build (agentic engineering), what we build (AI in the product), who consumes it (build for agents), and how we sustain it (operations, performance and cost). Beyond Product & Engineering, I'm the executive sponsor of FrontierHub, my initiative moving the whole company to an AI frontier firm.
+
+
 
 I come from a strong software engineering background across domains and company sizes, and I've been coaching and mentoring both leaders and individual contributors of all levels for almost two decades. I never hesitate to roll up my sleeves, be it code, automation, process, or workshops, wherever the most value and impact are produced.
 
-Selected cases with numbers: martinrl.github.io/cases. Longer-form thinking: martinrl.github.io/chronograph.
+
+
+Selected cases: martinrl.github.io/cases. Longer-form thinking: martinrl.github.io/chronograph.
+
+
 
 (About 1,700 characters; limit 2,600. First sentence carries the recruiter search terms; "sociotechnical systems designer" holds second position per the positioning decision; every number matches cv.md.)
 
