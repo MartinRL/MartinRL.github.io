@@ -18,7 +18,7 @@ I'm a Product & Engineering leader scaling AI-native SaaS in regulated, document
 
 
 
-The results so far at ChronosHub: a platform that hadn't shipped a marketable feature in 15 months now holds a two-week release cadence, defect share is down from 63% to 25%, and incident detection dropped from weeks to minutes. Underneath sits a product operating model and my D4 strategy lens: how we build (agentic engineering), what we build (AI in the product), who consumes it (build for agents), and how we sustain it (operations, performance and cost). Beyond Product & Engineering, I'm the executive sponsor of FrontierHub, my initiative moving the whole company to an AI frontier firm.
+The results so far at ChronosHub: the ChronosHub Factory now produces code 100% agentically, compiled from event-model and experience-model specs, every line passing an independent, spec-derived verification gate at a code health above the published agentic-AI threshold (CodeHealth 9.4+ of 10, a stricter bar than what counts as excellent for humans). A two-week release cadence holds, defect share is down from 63% to 25%, and incident detection dropped from weeks to minutes. Underneath sits a product operating model and my D4 strategy lens: how we build (agentic engineering), what we build (AI in the product), who consumes it (build for agents), and how we sustain it (operations, performance and cost). Beyond Product & Engineering, I'm the executive sponsor of FrontierHub, my initiative moving the whole company to an AI frontier firm.
 
 
 
@@ -30,7 +30,7 @@ Selected cases: martinrl.github.io/cases. Longer-form thinking: martinrl.github.
 
 
 
-(About 1,700 characters; limit 2,600. First sentence carries the recruiter search terms; "sociotechnical systems designer" holds second position per the positioning decision; every number matches cv.md.)
+(About 1,900 characters; limit 2,600. First sentence carries the recruiter search terms; "sociotechnical systems designer" holds second position per the positioning decision. Factory claims sourced from ChronosHubVault: 100% agentic production from Event/Experience Model specs, independent spec-derived verification gate, CodeHealth agent gate ≥ 9.4/10 vs 9.0 human-excellent. No negative pre-2026 baseline anywhere, per positioning decision 2026-08-07.)
 
 ## Featured section plan
 

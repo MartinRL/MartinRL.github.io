@@ -20,7 +20,7 @@ Three target lanes, kept broad:
 - Every case: Situation / Complication / Resolution + one-line transferable pattern
 - Every result needs a number; use [bracketed placeholders] where the number is not yet known, never invent
 - Nordic CV norms: 2 pages, summary 250-400 words max, single-column ATS-safe, reverse-chronological
-- ChronosHub turnaround claim, canonical framing (Martin 2026-08-07): "no new commercial feature had shipped in 15 months" → "continuous product delivery", with the two-week release cadence and defect share as evidence. Not "no marketable feature", and not the cadence as the headline result on its own.
+- ChronosHub results, canonical framing (Martin 2026-08-07, supersedes earlier same-day decision): never describe ChronosHub's pre-2026 performance negatively (no "15 months without a shipped feature" or similar); positive claims only. Lead with the ChronosHub Factory producing code 100% agentically from Event/Experience Model specs through an independent spec-derived verification gate, at CodeHealth above the published 9.4/10 agentic-AI threshold (9.0 counts as excellent for humans). Two-week release cadence, defect share 63% to 25%, and incident detection weeks to minutes remain as supporting numbers. Source: ChronosHubVault (chronosfactory.md, chronosfactory-first-principles.md, code-health-ai-friendliness.md).
 
 ## Open items
 
