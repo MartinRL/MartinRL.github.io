@@ -20,6 +20,7 @@ Three target lanes, kept broad:
 - Every case: Situation / Complication / Resolution + one-line transferable pattern
 - Every result needs a number; use [bracketed placeholders] where the number is not yet known, never invent
 - Nordic CV norms: 2 pages, summary 250-400 words max, single-column ATS-safe, reverse-chronological
+- ChronosHub turnaround claim, canonical framing (Martin 2026-08-07): "no new commercial feature had shipped in 15 months" → "continuous product delivery", with the two-week release cadence and defect share as evidence. Not "no marketable feature", and not the cadence as the headline result on its own.
 
 ## Open items
 
