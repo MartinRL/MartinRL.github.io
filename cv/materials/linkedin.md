@@ -14,7 +14,7 @@ VP Product & Engineering | Scaling AI-native SaaS in regulated, document-heavy d
 187 characters (limit 220). The first three segments mirror the CV target-title line verbatim so one recruiter search surfaces both; the domain tail is flexible and can be swapped per lane (e.g. "Regulated document workflows" for the insurtech/regtech lane).
 
 ## Proposed About
-I'm a Product & Engineering leader scaling AI-native SaaS in regulated, document-heavy domains. Currently VP of Product & Engineering at ChronosHub (scholarly publishing SaaS, an ACS company; IEEE is our largest customer), rebuilding a 30-person product and engineering organization around agentic engineering and AI-native products, for humans and agents alike. At heart I'm a sociotechnical systems designer: I jointly optimize strategy, people, agentic AI, and software, mapping company and product strategy all the way down to architecture and implementation with Wardley Mapping, Rumelt's kernel, and event modeling.
+I'm a Product & Engineering leader scaling AI-native SaaS in regulated, document-heavy domains. Currently VP of Product & Engineering at ChronosHub (scholarly publishing SaaS, an ACS company; IEEE is our largest customer), rebuilding a 30-person product and engineering organization around agentic engineering and AI-native products, for humans and agents alike. At heart I'm a sociotechnical systems designer: I jointly optimize strategy, people, agentic AI, and software, mapping company and product strategy all the way down to architecture and implementation with Wardley Mapping, Rumelt's kernel, and event modeling. That spans both zero-to-one and one-to-n: finding what earns through fast build-measure-learn discovery, then keeping it earning as durable, operated product.
 
 
 
@@ -30,7 +30,7 @@ Selected cases: martinrl.github.io/cases. Longer-form thinking: martinrl.github.
 
 
 
-(About 1,900 characters; limit 2,600. First sentence carries the recruiter search terms; "sociotechnical systems designer" holds second position per the positioning decision. Factory claims sourced from ChronosHubVault: 100% agentic production from Event/Experience Model specs, independent spec-derived verification gate, CodeHealth agent gate ≥ 9.4/10 vs 9.0 human-excellent. No negative pre-2026 baseline anywhere, per positioning decision 2026-08-07.)
+(About 2,050 characters; limit 2,600. First sentence carries the recruiter search terms; "sociotechnical systems designer" holds second position per the positioning decision. Factory claims sourced from ChronosHubVault: 100% agentic production from Event/Experience Model specs, independent spec-derived verification gate, CodeHealth agent gate ≥ 9.4/10 vs 9.0 human-excellent. No negative pre-2026 baseline anywhere, per positioning decision 2026-08-07.)
 
 ## Featured section plan
 
