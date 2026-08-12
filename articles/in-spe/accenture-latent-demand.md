@@ -20,9 +20,7 @@ Tudor Girba's moldable development makes the general case: don't brute-force und
 
 The playbook: instrument your AI usage, read the telemetry like Cherny reads it, mold the tool like Girba would.
 
-Your token bill isn't a cost problem. It's the cheapest product research you'll ever get.
-
-Hat tips: Simon Willison, Tudor Girba, Boris Cherny.
+Your token bill might be the cheapest product research you'll ever get, if you treat it as telemetry.
 
 ---
 
