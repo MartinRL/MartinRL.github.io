@@ -1,6 +1,9 @@
-# Accenture's token bill is a product roadmap
+---
+status: published
+published: https://www.linkedin.com/feed/update/urn:li:activity:7493327003966656512/
+---
 
-*LinkedIn post draft*
+# Accenture's token bill is a product roadmap
 
 ---
 
