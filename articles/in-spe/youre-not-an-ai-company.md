@@ -2,6 +2,7 @@
 title: "You're Not an AI Company. Your P&L Would Know."
 description: "Output is easy. Outcome is hard. Impact is tremendously hard, and AI changes nothing about that hierarchy."
 created: 2026-07-24
+status: draft
 ---
 
 # You're Not an AI Company. Your P&L Would Know.
