@@ -7,6 +7,8 @@ venue: linkedin
 ---
 # Did technical debt just get repriced massively downward?
 
+*Time to buy neglected vertical SaaS, agent-refactor, expand margins?*
+
 An AI coding agent dismantled a core architectural invariant across 189 files in a 717k-line production codebase. No human code review. No test oracle. Three days, USD 2,430.
 
 The kind of change the old playbook would scope as "rewrite the system", senior-team quarters at high six figures loaded, priced as a sprint task.
@@ -29,7 +31,7 @@ Caveats, most stated by the author: n=1, self-reported, and he sells the agent u
 
 If it replicates on genuinely ossified code, the investment logic writes itself. Codebases with strong domain logic and weak code are undervalued assets. The "competitors cannot rebuild this" moat weakens; the domain-knowledge moat strengthens. In diligence the checklist flips: stop discounting for code quality, start pricing whether the invariants are recoverable.
 
-So: time to buy neglected vertical SaaS, agent-refactor, expand margins? I think the market has not noticed yet.
+I think the market has not noticed yet.
 
 🔗 in the comments.
 ___
