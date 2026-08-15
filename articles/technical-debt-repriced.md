@@ -9,7 +9,7 @@ venue: linkedin
 
 *Time to buy neglected vertical SaaS, agent-refactor, expand margins?*
 
-An AI coding agent dismantled a core architectural invariant across 189 files in a 717k-line production codebase. No human code review. No test oracle. Three days, USD 2,430.
+TL;DR: An AI coding agent dismantled a core architectural invariant across 189 files in a 717k-line production codebase. No human code review. No test oracle. Three days, USD 2,430.
 
 The kind of change the old playbook would scope as "rewrite the system", senior-team quarters at high six figures loaded, priced as a sprint task.
 
