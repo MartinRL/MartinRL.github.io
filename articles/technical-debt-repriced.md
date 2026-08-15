@@ -9,9 +9,7 @@ venue: linkedin
 
 *Time to buy neglected vertical SaaS, agent-refactor, expand margins?*
 
-TL;DR: A new case study [1] shows an AI coding agent dismantling a core architectural invariant across 189 files in a 717k-line production codebase. No human code review. No test oracle. Three days, USD 2,430. The kind of change that used to be priced as "rewrite the system" just got priced as a sprint task. If that holds, every neglected codebase with valuable domain logic just appreciated, and every business model built on selling person-months of modernization just depreciated.
-
-CTA: If you own, operate, or invest in software with real technical debt, I want to compare notes. Comment or DM.
+TL;DR: A new case study (🔗 as comment) shows an AI coding agent dismantling a core architectural invariant across 189 files in a 717k-line production codebase. No human code review. No test oracle. Three days, USD 2,430. The kind of change that used to be priced as "rewrite the system" just got priced as a sprint task. If that holds, every neglected codebase with valuable domain logic just appreciated, and every business model built on selling person-months of modernization just depreciated.
 
 Here is what happened. A production TypeScript application, 717,725 lines, needed a change the author judged infeasible by incremental refactoring: removing the guarantee that a UI panel stays open for the duration of an AI request, so a streaming generation survives closing the panel and reattaches cleanly on reopen. In 2016 the playbook was Feathers and Fowler: build a test harness first, strangler fig, feature flags, a small senior team grinding for months. Or, more honestly, you declared the feature impossible and the roadmap routed around it forever.
 
@@ -24,7 +22,9 @@ Now the part I care most about: this was not autonomy, it was engineering. The s
 Caveats, because they matter: n=1, self-reported, thirty clean sessions is weak evidence for a change this size, and we never see the failed attempts. Treat it as an existence proof and a protocol worth replicating.
 
 But if it replicates, the investment logic writes itself. Ossified codebases with strong domain logic are undervalued assets. The moat of "our competitors cannot rebuild this" weakens, while the moat of accumulated domain knowledge strengthens. And the losers are the businesses whose unit of sale is the person-month of migration work.
+___
+🔗 as comment
 
-Did technical debt just get repriced? I think the market has not noticed yet.
+Abenhaim, J. (2026). Specification-first convergence with an AI coding agent. arXiv:2608.12440. https://arxiv.org/abs/2608.12440, surfaced via my Daily D4 Digest https://martinrl.github.io/chronograph/digest/2026-08/2026-08-15
 
-[1] Abenhaim, J. (2026). Specification-first convergence with an AI coding agent. arXiv:2608.12440. https://arxiv.org/abs/2608.12440
+
