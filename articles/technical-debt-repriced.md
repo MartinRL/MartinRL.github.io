@@ -1,7 +1,10 @@
 ---
+title: "Did technical debt just get repriced massively downward?"
+description: "A spec-first AI refactoring case study inverts review economics: neglected codebases appreciate, person-month modernization depreciates."
+created: 2026-08-15
 status: draft
+venue: linkedin
 ---
-
 # Did technical debt just get repriced massively downward?
 
 *Time to buy neglected vertical SaaS, agent-refactor, expand margins?*
