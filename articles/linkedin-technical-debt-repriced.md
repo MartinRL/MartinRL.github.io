@@ -1,3 +1,7 @@
+---
+status: draft
+---
+
 # Did technical debt just get repriced massively downward?
 
 *Time to buy neglected vertical SaaS, agent-refactor, expand margins?*
