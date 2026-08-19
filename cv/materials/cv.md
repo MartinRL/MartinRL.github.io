@@ -2,7 +2,7 @@
 title: CV
 owner: Martin Rosén-Lidholm
 version: 2
-updated: 2026-08-02
+updated: 2026-08-19
 status: draft, placeholders open
 ---
 
@@ -11,6 +11,9 @@ status: draft, placeholders open
 +45 31 76 37 01 | martin@rosenlidholm.se | [linkedin.com/in/martin-rosen-lidholm](https://www.linkedin.com/in/martin-rosen-lidholm/) | Malmö/Copenhagen
 
 **VP Product & Engineering | Scaling AI-native SaaS in regulated, document-heavy domains | Agentic engineering + product operating models**
+
+> "I'm glad to see this map, the experience… I got that view after a few of my experiments in that direction."
+> — Alistair Cockburn, Agile Manifesto co-author, [reposting my Wardley-mapped agentic engineering strategy](https://www.linkedin.com/feed/update/urn:li:activity:7492155597677744128/)
 
 ## About
 

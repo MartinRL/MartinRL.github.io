@@ -32,7 +32,7 @@ Three target lanes, kept broad:
 - [ ] LinkedIn postings + article strategy review
 - [x] Recruiter message from Friday: holding reply drafted 2026-08-03; opportunity researched and tracked privately (not in this repo)
 - [x] Styling pass on Google Docs exports — obsolete, docs retired; published home is chronograph (2026-08-03)
-- [ ] Visuals for the published cv/cases pages (candidates: D4 lens diagram, three-modes figure, triple diamond); assets go in chronograph `content/cv/assets/` / `content/cases/assets/`
+- [ ] Visuals for the published cv/cases pages (candidates: D4 lens diagram, three-modes figure, triple diamond); assets go in chronograph `content/cv/assets/` / `content/cases/assets/`. Done 2026-08-19: Wardley agentic-engineering map on the published cv page (with Cockburn epigraph, also in source cv.md)
 - [ ] Resolve the two bracketed notes in cv.md (HBK "fixed engagement", Portchain "fixed-term"); they are stripped from the published copy until resolved
 - [ ] Tailored front-page variants of cases.md: publishing, insurtech/regtech, investor
 
