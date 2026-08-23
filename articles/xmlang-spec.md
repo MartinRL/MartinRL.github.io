@@ -1,10 +1,10 @@
 ---
-title: "xmlang Specification v0.2.0 (draft)"
+title: "xmlang Specification v0.3.0-experimental (draft)"
 description: "A YAML-based DSL for Experience Models: the sibling dialect to emlang, recording UX judgment as data, never as geometry"
 created: 2026-07-11
 tags: [spec, xmlang, emlang, experience-modeling, event-modeling, ux]
 ---
-# xmlang Specification v0.2.0 (draft)
+# xmlang Specification v0.3.0-experimental (draft)
 
 xmlang is a YAML-based DSL for describing the Experience Model of an event-modeled system. An Experience Model records the UX judgments an Event Model deliberately omits (personas, surface composition, salience, journeys, labels, tokens) and depends on the Event Model strictly one-way. It is the sibling dialect to [emlang](https://github.com/emlang-project/spec); the rationale is in [How Far Does a Machine-Readable UX Spec Go?](machine-readable-ux-specs-research.md).
 
@@ -65,8 +65,9 @@ model:
 The single rule that separates xmlang from every failed Model-Based UI dialect: **an Experience Model records judgment as data, never as geometry.**
 
 - Memberships, orderings, tiers, names, and tokens are expressible
-- Coordinates, dimensions, grids, containers, and breakpoints are NOT expressible; this specification defines no geometric vocabulary and future versions MUST NOT add one
-- List order in this specification expresses precedence of importance, never spatial position
+- Coordinates, dimensions, grids, containers, and breakpoints are NOT expressible; this specification defines no geometric vocabulary for them and future versions MUST NOT add one
+- **Experimental (v0.3)**: ONE closed set of named regions is admitted on probation — the per-composition-item `slot` key with values `header | body | footer` (see Surfaces). It names a region, never a position, dimension, or container; it is under [pre-registered evaluation](xmlang-geometry-experiment.md) and will be either promoted to v0.3.0 stable or reverted in v0.4.0 by that experiment's decision rule. No further geometric vocabulary is admitted: no coordinates, no per-field regions, no additional region names
+- List order in this specification expresses precedence of importance, never spatial position; `slot` MUST NOT be achieved by reordering a `compose` list
 - Conforming tools MUST NOT interpret any `props` content as geometry
 - Arrangement of composed elements on a rendered surface is out of scope by design: it belongs to the concrete-UI stratum (agents and humans), pinned by generated verification, not to the model
 
@@ -152,6 +153,15 @@ surfaces:
 - A command item MAY contain a `prominence` key
 - `prominence` MUST be one of `primary`, `secondary`, or `overflow`
 - If absent, `prominence` defaults to `primary`
+
+### Composition items and regions with `slot` (experimental, v0.3)
+
+- A composition item (view or command) MAY contain a `slot` key naming the surface region it renders in
+- `slot` MUST be one of `header`, `body`, or `footer`; any other value MUST be reported as an error (`xm-unknown-slot`)
+- If absent, region placement is transformer judgment per the Defaults section
+- A `slot` that restates the item's default region SHOULD be reported as info (`xm-slot-restates-default`) — dead-weight annotations are a measured failure mode of this key
+- `slot` places the whole item; a view's fields cannot be split across regions by the model (that split, where wanted, remains transformer judgment)
+- This key is on probation under a [pre-registered experiment](xmlang-geometry-experiment.md); treat it as unstable until the v0.3.0/v0.4.0 verdict lands
 
 ```yaml
 surfaces:
@@ -255,6 +265,8 @@ An Experience Model refines a default experience; it never creates the experienc
 | `journeys` | No cross-slice walks; per-slice scenarios only |
 | `labels` | Event Model names as labels and accessible names |
 | `tokens` | No sanctioned vocabulary; token lint inert |
+| `slot` on a command item | The footer region: commands render below all view content |
+| `slot` on a view item | Transformer judgment; a view's fields MAY be split across regions (e.g. secondary scalars as header chrome) — a per-item `slot` deliberately cannot express that split |
 
 Bare command forms (commands composed on no surface, including commands that legitimately have no backing view, like a create or join form) MUST remain reachable; the concrete form is transformer-defined (a generated page, an interpreter's default form, a hand-written route).
 
@@ -282,11 +294,13 @@ Conforming tools SHOULD implement at least:
 | `xm-surface-without-view` | error | A surface composes no view (bare command forms fall back to defaults) |
 | `xm-self-field-missing` | error | A `self` path's first segment resolves to no field on the referenced view |
 | `xm-unknown-phase` | error | A `during` value is not among the phase values declared on the Event Model's `State` lane view |
+| `xm-unknown-slot` | error | A `slot` value is not `header`, `body`, or `footer` |
 | `xm-unknown-role` | warning | A persona `role` matches no swimlane in the Event Model |
 | `xm-surface-shadows-view` | warning | A surface name equals an Event Model view name; the Event Model likely modeled a surface instead of data |
 | `xm-phase-uncovered` | warning | A declared phase value that no surface claims |
 | `xm-version-missing` | warning | The document carries no `xmlang` version key |
 | `xm-screen-lane-view` | info | An Event Model view sits in a screen-shaped lane (e.g. `Screen /`), i.e. the Event Model names surfaces rather than data; suppressible — xmlang observes Event Model naming, it never legislates it |
+| `xm-slot-restates-default` | info | A `slot` value equals the item's default region; the annotation is dead weight |
 
 ## Document structure
 
@@ -295,6 +309,15 @@ Conforming tools SHOULD implement at least:
 - Tools MAY merge documents; a name collision within `personas`, `surfaces`, or `journeys` across merged documents MUST be reported as an error
 
 ## Changelog
+
+### v0.3.0-experimental (2026-08-23)
+
+The geometry prohibition, deliberately challenged on pre-registered terms ([experiment](xmlang-geometry-experiment.md)). Baseline probes (C1) showed the v0.2 pair leaves two region-placement decisions transformer-variable (commands-vs-on-demand order; secondary-scalar placement); this version tests whether one closed region key closes them.
+
+- **Added `slot:`** (composition-item key, experimental): closed enum `header | body | footer`, optional, absent = transformer judgment. Names a region, never a position; per-field regions explicitly rejected
+- **Lint**: `xm-unknown-slot` (error), `xm-slot-restates-default` (info — the dead-weight metric)
+- **Defaults**: command items default to the footer region; a view's fields MAY be split across regions by transformer judgment
+- **Two exits, both pre-registered**: promote to v0.3.0 stable (C1-variable rubric items converge 3/3 in C2, ≥1 genuine non-default annotation, zero slope tripwires) or revert in v0.4.0 with a "prohibition re-affirmed" entry (dead weight, delta ≈ 0, or any tripwire fires)
 
 ### v0.2.0 (2026-08-23)
 
