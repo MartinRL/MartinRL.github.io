@@ -149,15 +149,17 @@ Honesty about the second property, though, because it genuinely changed: **what 
 2. **Characterization tests.** Forty-seven endpoint tests pin semantic markers — the overbid strike-through, the shared-win line, the descending final table — against the rendered output. They were written against the hand-written screens *first*, then the interpreter was required to pass them unchanged: the old UI's behavior became the oracle for its own replacement, and only when parity was green did the screens leave git.
 3. **A closed vocabulary.** The interpreter renders exactly six field kinds — text, roster, table, magnitude bars, QR, steps — as a sealed union. A new kind is a plan-level decision, never a per-feature accretion. Closure is what keeps the interpreter reviewable the way part one's generator was reviewable: once.
 
-> [!todo] Visual: where the seam screams, a lifecycle timeline
-> Two rows over the stations plan → build/CI → boot → request. Part one's row: the compiler at build (CS8795), nothing needed later. Part two's row: closed vocabulary at plan level, characterization suite at CI, lint at boot, nothing at request. Shade the unguarded rightmost station; the figure should show honestly what moved right, which is exactly what the next paragraph prices.
+![Two-row lifecycle timeline over the stations plan, build/CI, boot, and request, showing part one's single compiler oracle at build and part two's three oracles at plan, CI, and boot, with the request station shaded as unguarded](seam-timeline.svg)
+
+*Where the seam screams. Part one's single oracle fires at build time and its failures cannot leave the build machine; part two's three oracles fire at plan, CI, and boot, and the request station stands unguarded, which is exactly the trade the next paragraph prices.*
 
 Weaker than a compile error? At the margin, yes, and it should be said plainly: a generator's failures cannot leave the build machine, an interpreter's failures are runtime failures held back by a boot-time gate. That is the price of one living copy of the design judgment, and I think the trade is right for exactly the reason the guarantee is weaker — the judgment keeps executing, so it can keep improving.
 
 There is a symmetry here worth naming. Part one cited Gîrba and Wardley's [Rewilding Software Engineering](https://medium.com/feenk/rewilding-software-engineering-900ca95ebc8c), whose cure for stale developer-facing views is derivation at *read time*: regenerate every view from the system on demand, so it cannot lie. Part one was the build-time answer on the write side — derive the system from the spec. The interpreter closes the square: derivation at read time, on the *shipped* side. Every screen a player sees is a contextual view over live game state and the spec, computed at the moment of asking. It cannot be stale, cannot drift from the spec, cannot disagree with the event model — for the same reason in every case: it has no independent existence to disagree *from*.
 
-> [!todo] Visual: the rewilding square
-> The prose says "closes the square", so draw it: a 2×2 of write side vs read side against build time vs read time. Part one at write/build (derive the system from the spec), Rewilding at read time for developer-facing views, this interpreter at read time on the shipped side. Decide what the fourth cell is (or mark it deliberately empty); the figure should make "same reason in every case: no independent existence" legible at a glance.
+![A 2×2 square: write side vs shipped side against build time vs read time, with part one at write/build, Rewilding at write/read, the interpreter at shipped/read, and screens-as-artifacts as the greyed-out shipped/build corner](rewilding-square.svg)
+
+*The square, closed. Part one derives the system from the spec at build time; Rewilding derives developer views from the system at read time; the interpreter derives shipped screens at read time. The fourth corner, presentation materialized ahead of time, is the stratum this article deleted; the three occupied corners cannot go stale for the same reason: no independent existence.*
 
 ## The ledger, honestly
 
@@ -165,8 +167,9 @@ Three cut-over commits, one per game, each landing only after the parity suite w
 
 What came in: the 369-line shared interpreter, a 43-line startup catalog that loads and lints the specs, and — this is the number that keeps the ledger honest — 914 lines of per-game *residue*, one `Surfaces` file per game. Net, the repository shrank by only about 400 lines, and if that were the claim it would be a poor trade for a new dialect. The claim is about what kind of line survived. The deleted stratum was markup with judgment smeared through it: placement, ordering, phrasing, and plumbing, restated per screen, reviewable only by rendering. The residue is judgment *only*, as pure functions — `(state, viewer) → surface name`, `(state, labels) → field bag` — unit-testable without a browser, and the 800 lines of YAML became the readable surface where the ordering and phrasing actually live. The same accounting lesson as part one, which predicted 410 lines and got 150: the win was never the count. It was what each remaining line is *for*.
 
-> [!todo] Visual: the ledger as a flow
-> Sankey-style flow (SVG; mermaid sankey is beta) from "19 screens, 1,734 lines" into where the lines went: shared interpreter 369 (constant in games), startup catalog 43, per-game residue 914, with the ~800 lines of xm YAML entering as the new readable surface. Color by kind: restatement (deleted) vs judgment (kept). The figure carries the section's point that the win is what each surviving line is for, not the count.
+![Proportional stacked bars: 1,734 lines of screens out of git flowing into 914 lines of residue, 369 of shared interpreter, and 43 of startup catalog, with roughly 800 lines of xm YAML standing beside them as the spec itself](ledger-flow.svg)
+
+*The ledger, to scale. Grey is deleted restatement; blue is surviving judgment, of which the interpreter is constant in the number of games; amber is the spec itself, not a restatement of anything. Net −408 lines, and the count was never the claim.*
 
 And the interpreter is constant in the number of games. Game four ships its in-game UI as roughly 250 lines of xm YAML and a materializer file — zero screens.
 
@@ -191,8 +194,9 @@ var fields = new Dictionary<string, Field>
 
 And where judgment is genuinely concrete — the numeric keypad for secret bids, the quiz game's two-stage direction-then-difference input with its live magnitude bars, the arithmetic game's counting-tape puzzle surface, the host's round-count slider — the design opts *out*. Whole surfaces, handed back to hand-written Razor, selected by name in one pure function. This is act three's answer to the last 20%, relocated: not a protected region rotting *inside* generated output, but a named boundary *beside* the derivation. Three games in, the opt-out list is short, stable, and every entry on it is a place where the product is genuinely, deliberately unlike a default — which is exactly what a residue should contain.
 
-> [!todo] Visual: the ownership map of the second ring
-> One diagram of who owns what across the boundary the three contracts draw: the xm spec (composition, tiers, order, names, copy, tokens), the materializers (presence, hoisting, state-composed phrasing, surface selection), the interpreter (geometry, disclosure, the six-kind vocabulary), the named opt-outs (keypad, magnitude bars, counting tape, slider). Territory map or layered boxes; this is the densest section in the article and the map is its summary.
+![Four territories side by side: the xm spec owning judgment as data, the materializers owning judgment as pure functions, the interpreter owning the one living copy of rendering, and the named opt-out Razor surfaces, with the three contracts marked on the spec–residue boundary](second-ring-ownership.svg)
+
+*The ownership map of the second ring. Judgment as data in the spec, judgment as pure functions in the residue, one living copy of rendering in the interpreter, and a short named list of genuinely concrete exceptions. The three contracts hold the leftmost boundary.*
 
 ## The dialect left the repo too
 
