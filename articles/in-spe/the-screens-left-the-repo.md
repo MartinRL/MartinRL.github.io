@@ -218,7 +218,7 @@ The metric from part one stands: lines in git that restate a spec, driven toward
 
 **The transformer is the design authority, and that is a choice.** This whole trade closes only if you accept the interpreter's rendering judgment as *the* design and reserve hand-written surfaces for genuine exceptions. A brand-first product whose designers own every screen would invert the ratio — all opt-out, no default — and the economics collapse. The claim is scoped: where a house style should be uniform, uniform-by-construction beats uniform-by-review.
 
-**Concentration cuts both ways.** The interpreter is trusted the way a compiler is trusted, but it is not a compiler: it is 369 lines reviewed by one team, and a bug in it is a bug on every screen of every game simultaneously. The parity suite guards the screens it characterized; game four's screens are guarded by transitivity and hope until they get characterization tests of their own. The honest phrasing: I traded many small chances of drift for one small chance of systemic error, and I believe the arithmetic favors the trade without having proven it.
+**Concentration cuts both ways.** The interpreter is trusted the way a compiler is trusted, but it is not a compiler: it is 369 lines reviewed by one person (as of now), and a bug in it is a bug on every screen of every game simultaneously. The parity suite guards the screens it characterized; game four's screens are guarded by transitivity and hope until they get characterization tests of their own. The honest phrasing: I traded many small chances of drift for one small chance of systemic error, and I believe the arithmetic favors the trade without having proven it.
 
 ## Two verbs
 
