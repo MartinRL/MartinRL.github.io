@@ -1,11 +1,11 @@
 ---
-title: "Mapping Product Sense"
-description: "Cagan's PM skill inventory is a scored list, and a scored list can be domain-free; a map cannot. Drawn as a Wardley map, the same inventory becomes a coaching instrument that shows dependencies, ownership, inertia, and the development plan as movement."
+title: "Product Manager Coaching with Wardley Mapping"
+description: "Cagan's PM skill inventory is a scored list, and a scored list can be domain-free; a map cannot. Drawn as a Wardley map, the same inventory becomes a coaching instrument that shows dependencies, ownership, inertia, and the development plan as movement. The method is role-agnostic; the PM is the worked instance."
 created: 2026-08-29
 status: draft
 ---
 
-# Mapping Product Sense
+# Product Manager Coaching with Wardley Mapping
 
 > Cagan's coaching assessment rates every PM skill twice on a 1 to 10 scale: how important it is, and where the person stands. Useful, and structurally blind. It cannot show that one skill depends on another, that some gaps belong to the org rather than the person, or that a development plan is movement through a landscape. A Wardley map shows all three, and the price of admission (giving up domain-freeness) turns out to be the point.
 
@@ -28,6 +28,8 @@ It cannot say who owns a gap. The Assessment scores the individual against the r
 And it cannot show movement. Two numbers per skill give you a static delta; they do not give you a direction of travel, the friction along the way, or what is drifting on its own.
 
 Dependencies, situation, ownership, movement. There is a mapping tradition built on exactly those four, so let us use it.
+
+One more thing before we start: nothing in the method is PM-specific. It takes any role whose skill inventory you can write down; the PM is the worked instance because Cagan and Baxley handed us the inventory. The coda queues up the other roles.
 
 ## The move
 
@@ -61,7 +63,7 @@ One discipline follows: map what is, never aspiration. The ideal is an overlay, 
 
 ## The base map
 
-![Cagan's PM inventory drawn as a Wardley map: the discovery need at top, judgment components high, knowledge components mid, org capabilities low](mapping-product-sense-base-map.svg)
+![Cagan's PM inventory drawn as a Wardley map: the discovery need at top, judgment components high, knowledge components mid, org capabilities low](product-manager-coaching-base-map.svg)
 
 *The base map: Cagan and Baxley's product-sense inventory as a value chain anchored at the discovery need, positioned on the practice-evolution axis.*
 
@@ -79,7 +81,7 @@ So far this is Cagan's list with dependency edges and honest x-positions. Domain
 
 Rich Allen's User Needs Mapping overlays Team Topologies team shapes on a value chain to find team boundaries. Susanne Kaiser's *Adaptive Systems with Wardley Mapping, DDD, and Team Topologies* made that combination canonical for architecture. Repurpose the same move for people development: overlay **ownership boundaries** instead of team shapes.
 
-![The base map with three ownership boundaries: leadership, the PM, and org capabilities, plus a missing insights repository shown as a dashed gap](mapping-product-sense-ownership-overlay.svg)
+![The base map with three ownership boundaries: leadership, the PM, and org capabilities, plus a missing insights repository shown as a dashed gap](product-manager-coaching-ownership-overlay.svg)
 
 *Ownership overlay: who owns which part of the value chain. The dashed node is a capability the org never built; the gap sits below the PM's boundary, so it is the company's coaching action, not the PM's.*
 
@@ -89,11 +91,19 @@ Make it concrete and deliberately mundane: a PM at a B2B expense-management SaaS
 
 On the Assessment, that surfaces (if it surfaces at all) as her low score on customer knowledge. On the map, it is a dashed node below her boundary with a dangling dependency edge: a capability the org never built, sitting outside everything she owns. The map assigns the gap to the party that can close it. That reassignment is, in my experience, the single most valuable thing this exercise produces, and it is precisely the thing Cagan's tool does not distinguish.
 
+### The map travels up
+
+The ownership overlay is only honest if someone acts on it. A dashed node below the PM's boundary is, by construction, a gap the PM cannot close; if it dies in the coaching session's notes, the overlay just produced a well-documented excuse.
+
+So the same artifact becomes the coach's instrument one level higher. The head of product carries the map into the leadership conversation, points at the dashed node, and traces the edges upward to the judgment it caps: you are asking why her kill or ship calls are slow; this missing node is why. Capability asks are usually abstract budget lines; a gap visibly capping a judgment the CEO already cares about is not.
+
+That is as far as this article takes it. How a CPO coaches a CEO on org capabilities is its own discipline with its own skill inventory, which means, by everything above, its own map. Separate doc.
+
 ## Overlay two: the coaching conversation
 
 Now the instrument earns its name. Coach and coachee map *together*: same base map, and for each component they negotiate two positions, where the practice is performed today and where the localized target sits.
 
-![The coaching overlay: filled actual positions, hollow localized targets, movement arrows, and two inertia bars](mapping-product-sense-coaching-overlay.svg)
+![The coaching overlay: filled actual positions, hollow localized targets, movement arrows, and two inertia bars](product-manager-coaching-development-plan.svg)
 
 *The coaching overlay: filled circles are practice as performed today, hollow circles the localized target, arrows the development plan, black bars the inertia, each named after its owner.*
 
@@ -109,7 +119,7 @@ Which is where inertia comes in, Wardley's bar across the path of movement. Her 
 
 Cagan and Baxley call this a golden era of product discovery: GenAI tools that produce [live-data prototypes](https://www.svpg.com/product-discovery-with-live-data-prototypes/) in minutes, discovery faster than ever. The map has a construct for exactly this claim, the pipeline: a family of components at different evolutionary stages, sliding right together.
 
-![Two pipelines, prototyping and user insight, with GenAI movement arrows, and the kill or ship call sitting above them, unmoved](mapping-product-sense-pipelines.svg)
+![Two pipelines, prototyping and user insight, with GenAI movement arrows, and the kill or ship call sitting above them, unmoved](product-manager-coaching-pipelines.svg)
 
 *Two pipelines on the practice axis. GenAI moves components rightward inside both; the judgment that consumes them does not move.*
 
@@ -127,6 +137,12 @@ What I have not found claimed anywhere is the specific combination: a named auth
 
 And the honest caveat: a map costs more than a list. The Assessment takes a manager an hour alone; the map takes a working session for two, plus evidence anchors written in advance. That cost is the feature. The list you can fill in about someone; the map you can only draw with them.
 
-## Coda
+## Coda: every role gets a map
 
-Cagan and Baxley's article has a second half. Design sense (service design, information architecture, interaction design, visual design, industrial design) is a different inventory with a very different evolution profile; visual design systems have commoditized in a way service design has not even started to, and the GenAI arrows land in different places. The product designer's map is part two.
+The recipe is four steps and none of them mention product management: write down the role's skill inventory, anchor at the need the role serves, position each component as practice-as-performed, then overlay ownership and draw the arrows. Any role that can name its need can be coached this way.
+
+Next is the product designer, because Cagan and Baxley's article has a second half. Design sense (service design, information architecture, interaction design, visual design, industrial design) is a different inventory with a very different evolution profile; visual design systems have commoditized in a way service design has not even started to, and the GenAI arrows land in different places.
+
+After that, the rest of the org: the engineering manager, the feature steward (the lead engineer, renamed by what the job is becoming), the factory engineer who owns the software factory the agents run in, the agentic SRE, the agentic QE. Each anchors at a different need, so each gets a different map, not a recolored copy of this one.
+
+And the newer the role, the more the map matters. For the agentic roles there is no Cagan; nobody has thirty years of codified inventory to score against. Practice-as-performed with a localized target may be the only honest development instrument such a role can have, because it only requires you to describe what is actually done today, and everyone can see that.
