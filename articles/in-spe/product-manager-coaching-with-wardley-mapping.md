@@ -143,6 +143,6 @@ The recipe is four steps and none of them mention product management: write down
 
 Next is the product designer, because Cagan and Baxley's article has a second half. Design sense (service design, information architecture, interaction design, visual design, industrial design) is a different inventory with a very different evolution profile; visual design systems have commoditized in a way service design has not even started to, and the GenAI arrows land in different places.
 
-After that, the rest of the org: the engineering manager, the feature steward (the lead engineer, renamed by what the job is becoming), the factory engineer who owns the software factory the agents run in, the agentic SRE, the agentic QE. Each anchors at a different need, so each gets a different map, not a recolored copy of this one.
+After that, the rest of the org: the engineering manager, the feature steward (the lead engineer, renamed by what the job is becoming), the harness engineer, the agentic SRE, the agentic QE. Each anchors at a different need, so each gets a different map.
 
 And the newer the role, the more the map matters. For the agentic roles there is no Cagan; nobody has thirty years of codified inventory to score against. Practice-as-performed with a localized target may be the only honest development instrument such a role can have, because it only requires you to describe what is actually done today, and everyone can see that.
