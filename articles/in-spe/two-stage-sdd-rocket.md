@@ -14,7 +14,7 @@ venue: chronograph, linkedin
 
 Three episodes I listened to recently each put a finger on something real about building software with agents.
 
-**Jason Gorman**, on Software Engineering Radio \[1\], explained the mechanics of why output gets unreliable. Every token an LLM emits is a probabilistic step. The more tokens it produces, the more those steps compound. And because attention is spread over every token in the context, a bigger context window is more fuel for the same fire, not a fix: the effective limit at which reliability falls off a cliff is orders of magnitude below the advertised window.
+**Jason Gorman**, on Software Engineering Radio \[1\], explained the mechanics of why output gets unreliable. Every token an LLM emits is a probabilistic step. And because attention is spread across every token in the context, the effective limit at which reliability falls off a cliff is orders of magnitude below the advertised window. Put those two together, and the conclusion I draw is that more tokens make it worse: the steps compound, and a bigger context window is more fuel for the same fire, not a fix.
 
 **Birgitta Böckeler**, also on Software Engineering Radio \[2\], said out loud what many of us have felt: "I just don't see the future as being like 50 markdown files in our codebase. I mean that can't be it, right? … Can we still call ourselves engineers if that's how we're doing stuff?" Her distinction is between *guides* (prose the model interprets) and *sensors* (checks that fire deterministically), and her instinct is that sensors are underused.
 
