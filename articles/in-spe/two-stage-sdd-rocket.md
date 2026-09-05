@@ -60,8 +60,6 @@ The harness rules in stage two are still markdown. Her complaint stands for that
 
 ## What it costs
 
-Two things, and they are real.
-
 The spec is a small DSL, and people have to learn it. OpenSpec's "no special syntax to learn" is the exact inverse of this trade, and I understand its appeal. The counter is that the dialect is an arrangement notation over concepts every engineer, and every model, already knows: commands, events, views, scenarios. The syntax is local; the semantics are mainstream.
 
 And the approach suits AI-native architecture, which mostly means greenfield. The one-to-one mapping between DSL and architecture is the whole reason a function can do the lifting, and it only holds when the architecture was shaped for it: a functional core, vertical slices, deciders. A ten-year-old layered monolith has no such shape to map onto, and retrofitting one is a different article.
