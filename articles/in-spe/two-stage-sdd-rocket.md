@@ -70,7 +70,7 @@ Nobody has published the benchmark. What we have is a small public workbench whe
 
 Gorman told us why more tokens hurt. Böckeler told us markdown cannot be the whole answer and named the rung where the spec becomes the source. DHH told us where the PR ceiling sits for non-engineers. Put the three together and the conclusion is that the LLM should not be the transformer for the parts of the system that a function can derive, and that those parts should never be in the repository. Everything else follows: the token budget, the sensors, the roles.
 
-The spec is the product. The compiler is the first reviewer. The agent writes what is left.
+The spec is the product. The generator writes the structure. The agent writes what is left.
 
 ---
 
