@@ -50,7 +50,7 @@ The rocket metaphor is deliberate. The first stage carries the mass and burns ou
 
 ## Why the rocket answers all three
 
-**Gorman.** If every token is a probabilistic step and the steps compound, the lever is not a smarter prompt or a bigger window. It is fewer tokens. Stage one emits zero LLM tokens for the lion's share of the code. Stage two emits tokens only for the residual, into a context that holds a small spec and a compiler's opinion rather than a sea of markdown. Eberhardt's four-to-one contract is the compounding problem made visible in a file listing; the rocket does not ask the LLM to write the contract at all.
+**Gorman.** If every token is a probabilistic step and the steps compound, the lever is not a smarter prompt or a bigger window. It is fewer tokens. Stage one emits zero LLM tokens for the lion's share of the code. Stage two emits tokens only for the residual, into a context that holds a small spec and a compiler's opinion rather than a sea of markdown. Eberhardt's four-to-one contract is four times more LLM output for a human to verify, and the rocket never asks for it to be written at all.
 
 **Böckeler.** Her two unsolved problems for spec-as-source are non-determinism and the ghost of MDD. Stage one is deterministic by construction, and the ghost is kept out by the repo boundary: the failure of MDD was protected regions rotting inside committed generated code, and there is no committed generated code here. And the harness described above is her sensors-over-guides instinct applied as a design rule: hard signals from tools, not opinions from agents.
 
