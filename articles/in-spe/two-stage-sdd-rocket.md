@@ -1,5 +1,5 @@
 ---
-title: "Three Thought-Leaders Described the Same Hole. The Two-Stage Rocket Fills It."
+title: "Three Thought-Leaders Described the Same Hole. The Two-Stage SDD Rocket Fills It."
 description: "Gorman, Böckeler and DHH each named a different problem with agentic development. They share a root cause, and the fix has been running in production for a while."
 created: 2026-09-05
 status: draft
@@ -20,7 +20,7 @@ Three episodes I listened to recently each put a finger on something real about 
 
 **DHH**, with Lex Fridman \[3\], was blunt about roles: designers cannot produce pull requests of the same quality as engineers, however good the tools get. A PR is an engineering artifact and it takes an engineer to hold it to an engineering standard.
 
-Each of the three is right. And each is describing a symptom of the same arrangement: in mainstream agentic development, an LLM performs the transformation from intent to code, for all of the code, and the resulting code is the product. Gorman's compounding tokens, Böckeler's markdown sprawl and DHH's PR ceiling are three views of that one design decision. This article is about the conclusion none of the three drew, and about what happened when we built on it.
+Each of the three is right. And each is describing a symptom of the same arrangement: in mainstream agentic development and spec-driven development, an LLM performs the transformation from intent to code, for all of the code, and the resulting code is both version-controlled and the product. Gorman's compounding tokens, Böckeler's markdown sprawl and DHH's PR ceiling are three views of that one design decision. This article is about the conclusion none of the three drew, and about what happened when we built on it.
 
 ## What mainstream spec-driven development actually ships
 
@@ -38,11 +38,11 @@ Böckeler's verdict on the one tool that attempts spec-as-source, Tessl, is the 
 
 Put gently: this is AI bolted onto the existing way of working. The workflow is the one humans followed, the architecture is the one humans built, the artifacts are the ones humans reviewed, and an LLM has been substituted for the human at each step. The sociotechnical system was not rethought; its operators were replaced.
 
-## The two-stage rocket
+## The two-stage SDD rocket
 
 The alternative I have been writing about, and that is now part of the software factory at my day job, splits the transformation in two.
 
-**Stage one is deterministic.** A formal spec (an event model in a small YAML dialect, and an experience model beside it) is transformed by a *function*, not by a model. In ["The Spec Is the Product" Is a Slogan Until the Code Leaves Your Repo](the-spec-is-the-product.md) that function was a Roslyn source generator emitting the domain vocabulary, the Given–When–Then scenarios as tests and the decider dispatch, inside the compiler, on every build. In [The Screens Left the Repo, and Nothing Replaced Them](the-screens-left-the-repo.md) it was an interpreter evaluating the screens from the experience model per request, with no generated code at all. The mechanism differs; the property is the same. The output is never in the repository. Same spec in, same system out, and drift between spec and code is not discouraged but unrepresentable, because the derived representation has no independent existence to drift in.
+**Stage one is deterministic.** A formal spec (a small DSL, event model in our case) is transformed by a *function*, not by a model. In ["The Spec Is the Product" Is a Slogan Until the Code Leaves Your Repo](the-spec-is-the-product.md) that function was a Roslyn source generator emitting the domain vocabulary, the Given–When–Then scenarios as tests and the decider dispatch, inside the compiler, on every build. The output is never in the repository. Same spec in, same system out, and drift between spec and code is not discouraged but unrepresentable, because the derived representation has no independent existence to drift in.
 
 **Stage two is agentic.** What stage one cannot derive, the actual decisions (what a command does to state, how a score is computed, the imperative shell), is written by an agent inside a harness, against the oracles stage one produced. A new event in the spec is a compile error at every site that fails to handle it. A scenario in the spec is a test the agent's code must pass. The agent writes the residual, and the residual is small.
 
@@ -56,7 +56,7 @@ The rocket metaphor is deliberate. The first stage carries the mass and burns ou
 
 And an honest line she would demand: the harness rules in stage two are still markdown. Her complaint stands for that layer. The rocket shrinks the layer the complaint applies to; it does not yet abolish it.
 
-**DHH.** He is right that a designer cannot produce an engineer-grade PR. The rocket's answer is that the PR is not the unit of contribution. If the spec is the product, a designer who changes which fields are primary on a surface, or a product manager who adds a business rule as a Given–When–Then scenario, has changed the product, and the compiler and the generated tests hold that change to an engineering standard without an engineer in the loop. That is the claim. Honesty requires the qualifier: at work, no one outside engineering has shipped this way yet. The mechanism permits it; the organisation has not exercised it. I expect that to change, and I will report when it does.
+**DHH.** He is right that a designer cannot produce an engineer-grade PR. The rocket's answer is that the PR is not the unit of contribution. If the spec is the product, a product manager who adds a business rule to the event model as a Given–When–Then scenario has changed the product, and the compiler and the generated tests hold that change to an engineering standard without an engineer in the loop. That is the claim. Honesty requires the qualifier: at work, no one outside engineering has shipped this way yet. The mechanism permits it; the organisation has not exercised it. I expect that to change, and I will report when it does.
 
 ## What it costs
 
