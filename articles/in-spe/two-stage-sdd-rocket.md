@@ -46,7 +46,7 @@ The alternative I have been writing about, and that is now part of the software 
 
 **Stage two is agentic.** What stage one cannot derive, the actual decisions (what a command does to state, how a score is computed, the imperative shell), is written by an agent inside a harness, against the oracles stage one produced. A new event in the spec is a compile error at every site that fails to handle it. A scenario in the spec is a test the agent's code must pass. The agent writes the residual, and the residual is small.
 
-The rocket metaphor is deliberate. The first stage carries the mass and burns out early; the second stage is light and does the precise work. Most of what a layered application consists of, the restatements of the same domain facts across entity, DTO, mapper, schema, validator and test fixture, is structure, and structure is what a function of the spec can emit. The LLM never sees it.
+The rocket metaphor is deliberate. The first stage carries the mass and burns out early; the second stage is light and does the precise work. What the first stage carries is everything in the system that is pure structure: the commands, events and business errors as closed unions, the decider's dispatch over them, and every Given–When–Then scenario as an executable test. In a functional core with vertical slices there is no entity, DTO, mapper or schema for those facts to be restated in; the vocabulary exists once, in the spec, and the compiler sees it on every build. The LLM never writes it, and the code-health gate never has to read it. What remains for the second stage is the part that is actually a decision: what this command does to that state.
 
 ## Why the rocket answers all three
 
@@ -56,7 +56,7 @@ The rocket metaphor is deliberate. The first stage carries the mass and burns ou
 
 And an honest line she would demand: the harness rules in stage two are still markdown. Her complaint stands for that layer. The rocket shrinks the layer the complaint applies to; it does not yet abolish it.
 
-**DHH.** He is right that a designer cannot produce an engineer-grade PR. The rocket's answer is that the PR is not the unit of contribution. If the spec is the product, a product manager who adds a business rule to the event model as a Given–When–Then scenario has changed the product, and the compiler and the generated tests hold that change to an engineering standard without an engineer in the loop. That is the claim. Honesty requires the qualifier: at work, no one outside engineering has shipped this way yet. The mechanism permits it; the organisation has not exercised it. I expect that to change, and I will report when it does.
+**DHH.** He is right that a designer cannot produce an engineer-grade PR. The rocket's answer is that the PR is not the unit of contribution. If the spec is the product, a designer or product manager who changes the spec, written in a small DSL rather than in code, has changed the product, and the compiler and the generated tests hold that change to an engineering standard without an engineer in the loop. That is the claim. Honesty requires the qualifier: at work, no one outside engineering has shipped this way yet. The mechanism permits it; the organisation has not exercised it. I expect that to change, and I will report when it does.
 
 ## What it costs
 
