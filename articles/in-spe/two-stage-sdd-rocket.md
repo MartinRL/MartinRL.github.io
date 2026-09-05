@@ -8,7 +8,7 @@ venue: chronograph, linkedin
 
 # Three Thought-Leaders Described the Same Hole. The Two-Stage SDD Rocket Fills It.
 
-> Three recent podcast episodes, three sharp diagnoses, one undrawn conclusion: the LLM is doing the lion's share of the transformation, and it should not be.
+> Three recent podcast episodes, three sharp diagnoses, one undrawn conclusion: the LLM is doing the lion's share of writing the code, and it should not be.
 
 ## Three episodes, one hole
 
