@@ -1,0 +1,83 @@
+---
+title: "Three Thought-Leaders Described the Same Hole. The Two-Stage Rocket Fills It."
+description: "Gorman, Böckeler and DHH each named a different problem with agentic development. They share a root cause, and the fix has been running in production for a while."
+created: 2026-09-05
+status: draft
+venue: chronograph, linkedin
+---
+
+# Three Thought-Leaders Described the Same Hole. The Two-Stage SDD Rocket Fills It.
+
+> Three recent podcast episodes, three sharp diagnoses, one undrawn conclusion: the LLM is doing the lion's share of the transformation, and it should not be.
+
+## Three episodes, one hole
+
+Three episodes I listened to recently each put a finger on something real about building software with agents.
+
+**Jason Gorman**, on Software Engineering Radio \[1\], explained the mechanics of why output gets unreliable. Every token an LLM emits is a probabilistic step. The more tokens it produces, the more those steps compound. And because attention is spread over every token in the context, a bigger context window is more fuel for the same fire, not a fix: the effective limit at which reliability falls off a cliff is orders of magnitude below the advertised window.
+
+**Birgitta Böckeler**, also on Software Engineering Radio \[2\], said out loud what many of us have felt: "I just don't see the future as being like 50 markdown files in our codebase. I mean that can't be it, right? … Can we still call ourselves engineers if that's how we're doing stuff?" Her distinction is between *guides* (prose the model interprets) and *sensors* (checks that fire deterministically), and her instinct is that sensors are underused.
+
+**DHH**, with Lex Fridman \[3\], was blunt about roles: designers cannot produce pull requests of the same quality as engineers, however good the tools get. A PR is an engineering artifact and it takes an engineer to hold it to an engineering standard.
+
+Each of the three is right. And each is describing a symptom of the same arrangement: in mainstream agentic development, an LLM performs the transformation from intent to code, for all of the code, and the resulting code is the product. Gorman's compounding tokens, Böckeler's markdown sprawl and DHH's PR ceiling are three views of that one design decision. This article is about the conclusion none of the three drew, and about what happened when we built on it.
+
+## What mainstream spec-driven development actually ships
+
+Böckeler herself wrote the clearest map of the territory, in her comparison of Kiro, Spec Kit and Tessl on martinfowler.com \[4\]. She sorts spec-driven development into three levels: *spec-first* (write a spec, then code), *spec-anchored* (keep the spec alive alongside the code) and *spec-as-source* (the spec is the primary artifact and the code is generated, never hand-edited).
+
+Against that map, the tools most teams reach for today all sit on the first rung.
+
+**Kiro** produces three markdown files per feature: requirements in EARS notation ("WHEN … THE SYSTEM SHALL …"), a design document and a task list. An agent then implements the tasks. The docs advise storing specs "alongside the code they describe"; keeping the two in agreement is a matter of discipline, not mechanism.
+
+**GitHub Spec Kit** adds a constitution and a pipeline of slash commands: specify, plan, tasks, implement. Its README says specifications "become executable, directly generating working implementations". Executable here means an LLM reads them. It also ships a *converge* command that assesses the codebase against the spec and appends the drift as new tasks: drift repair, by another LLM pass. Colin Eberhardt at Scott Logic put Spec Kit through its paces and reported "a sea of markdown documents, long agent run-times and unexpected friction", including a module contract four times longer than the module it eventually described \[5\].
+
+**OpenSpec** keeps requirements as SHALL statements with WHEN/THEN scenarios and archives each change after it is applied. Its headline promise is "plain Markdown, no special syntax to learn". That is an honest description of the trade: nothing to learn, and nothing a machine can check.
+
+Böckeler's verdict on the one tool that attempts spec-as-source, Tessl, is the telling detail: it marks its output with `// GENERATED FROM SPEC - DO NOT EDIT`. Anyone who lived through Windows Forms v1 or the first data-access generators recognizes the comment fence. Her list of what remains unsolved is equally telling: non-determinism (identical specs, different code), agents ignoring their instructions, and the risk that spec-as-source repeats Model-Driven Development's collapse by combining "inflexibility *and* non-determinism".
+
+Put gently: this is AI bolted onto the existing way of working. The workflow is the one humans followed, the architecture is the one humans built, the artifacts are the ones humans reviewed, and an LLM has been substituted for the human at each step. The sociotechnical system was not rethought; its operators were replaced.
+
+## The two-stage rocket
+
+The alternative I have been writing about, and that is now part of the software factory at my day job, splits the transformation in two.
+
+**Stage one is deterministic.** A formal spec (an event model in a small YAML dialect, and an experience model beside it) is transformed by a *function*, not by a model. In ["The Spec Is the Product" Is a Slogan Until the Code Leaves Your Repo](the-spec-is-the-product.md) that function was a Roslyn source generator emitting the domain vocabulary, the Given–When–Then scenarios as tests and the decider dispatch, inside the compiler, on every build. In [The Screens Left the Repo, and Nothing Replaced Them](the-screens-left-the-repo.md) it was an interpreter evaluating the screens from the experience model per request, with no generated code at all. The mechanism differs; the property is the same. The output is never in the repository. Same spec in, same system out, and drift between spec and code is not discouraged but unrepresentable, because the derived representation has no independent existence to drift in.
+
+**Stage two is agentic.** What stage one cannot derive, the actual decisions (what a command does to state, how a score is computed, the imperative shell), is written by an agent inside a harness, against the oracles stage one produced. A new event in the spec is a compile error at every site that fails to handle it. A scenario in the spec is a test the agent's code must pass. The agent writes the residual, and the residual is small.
+
+The rocket metaphor is deliberate. The first stage carries the mass and burns out early; the second stage is light and does the precise work. Most of what a layered application consists of, the restatements of the same domain facts across entity, DTO, mapper, schema, validator and test fixture, is structure, and structure is what a function of the spec can emit. The LLM never sees it.
+
+## Why the rocket answers all three
+
+**Gorman.** If every token is a probabilistic step and the steps compound, the lever is not a smarter prompt or a bigger window. It is fewer tokens. Stage one emits zero LLM tokens for the lion's share of the code. Stage two emits tokens only for the residual, into a context that holds a small spec and a compiler's opinion rather than a sea of markdown. Eberhardt's four-to-one contract is the compounding problem made visible in a file listing; the rocket does not ask the LLM to write the contract at all.
+
+**Böckeler.** Her two unsolved problems for spec-as-source are non-determinism and the ghost of MDD. Stage one is deterministic by construction, and the ghost is kept out by the repo boundary: the failure of MDD was protected regions rotting inside committed generated code, and there is no committed generated code here. Her sensors-over-guides instinct is stage two's design rule. The harness prefers tools with hard signals over agents with opinions: MCP and CLI tools rather than a review agent imitating a human reviewer. One such tool is CodeScene's Code Health. When a residual pass lands below the health threshold, the eval loop records why and codifies the lesson, so the harness improves with use instead of with prompt archaeology.
+
+And an honest line she would demand: the harness rules in stage two are still markdown. Her complaint stands for that layer. The rocket shrinks the layer the complaint applies to; it does not yet abolish it.
+
+**DHH.** He is right that a designer cannot produce an engineer-grade PR. The rocket's answer is that the PR is not the unit of contribution. If the spec is the product, a designer who changes which fields are primary on a surface, or a product manager who adds a business rule as a Given–When–Then scenario, has changed the product, and the compiler and the generated tests hold that change to an engineering standard without an engineer in the loop. That is the claim. Honesty requires the qualifier: at work, no one outside engineering has shipped this way yet. The mechanism permits it; the organisation has not exercised it. I expect that to change, and I will report when it does.
+
+## What it costs
+
+Two things, and they are real.
+
+The spec is a small DSL, and people have to learn it. OpenSpec's "no special syntax to learn" is the exact inverse of this trade, and I understand its appeal. The counter is that the dialect is an arrangement notation over concepts every engineer, and every model, already knows: commands, events, views, scenarios. The syntax is local; the semantics are mainstream.
+
+And the approach suits AI-native architecture, which mostly means greenfield. A functional core with a formal event model lets a function emit the structure. A ten-year-old layered monolith does not, and retrofitting one is a different article.
+
+One more honest line, carried over from the first article: nobody has published the benchmark. What we have is a small public workbench where every line is agent-written and three strata exist only as functions of the spec, and a production factory at work that has adopted the same arrangement. That is an argument with a running example, not a measurement.
+
+## The undrawn conclusion
+
+Gorman told us why more tokens hurt. Böckeler told us markdown cannot be the whole answer and named the rung where the spec becomes the source. DHH told us where the PR ceiling sits for non-engineers. Put the three together and the conclusion is that the LLM should not be the transformer for the parts of the system that a function can derive, and that those parts should never be in the repository. Everything else follows: the token budget, the sensors, the roles.
+
+The spec is the product. The compiler is the first reviewer. The agent writes what is left.
+
+---
+
+\[1\] SE Radio 732: Jason Gorman on the Effective Use of AI for Software Development.
+\[2\] SE Radio 730: Birgitta Böckeler on Harness Engineering for AI Agents.
+\[3\] Lex Fridman Podcast #501: DHH on the Future of Programming, AI, Agentic Engineering, Vibe Coding and Linux.
+\[4\] Birgitta Böckeler, [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html), martinfowler.com, 2025-10-15.
+\[5\] Colin Eberhardt, [Putting Spec Kit Through Its Paces: Radical Idea or Reinvented Waterfall?](https://blog.scottlogic.com/2025/11/26/putting-spec-kit-through-its-paces-radical-idea-or-reinvented-waterfall.html), Scott Logic, 2025-11-26.
