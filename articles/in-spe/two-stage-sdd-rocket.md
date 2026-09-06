@@ -8,7 +8,7 @@ venue: chronograph, linkedin
 
 # Four Thought-Leaders Described the Same Hole. The Two-Stage SDD Rocket Fills It.
 
-> Four recent pieces, four sharp diagnoses, one undrawn conclusion: the LLM is doing the lion's share of writing the code, and it should not be.
+> Four recent interviews with industry thought-leaders, four sharp diagnoses, one undrawn conclusion: the LLM is doing the lion's share of writing the code, and it should not be.
 
 ## Four voices, one hole
 
