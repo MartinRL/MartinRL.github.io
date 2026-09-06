@@ -33,3 +33,10 @@ https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html
 - Böckeler named the rung (spec-as-source) and named the two failure modes (non-determinism, MDD ghost). The two-stage rocket answers both: deterministic transformer, output not in repo. She stated the problem; the conclusion is undrawn.
 - Gorman: EARS/markdown specs are long; Eberhardt's 4x contract is Gorman's token problem made visible.
 - DHH: none of the three lets a non-engineer ship without an engineer PR; the output is a PR.
+
+## Horthy (added 2026-09-06)
+- Dexter Horthy, "Why Software Factories Fail (or: harness engineering is not enough)", 2026-07-25, raw copy in this folder. Podcast: Heavybit High Leverage Ep. 12 "The Limits of Lights-Out Coding", host Joe Ruscio, 2026-08-05.
+- Quotes used: agentic factory "looks mostly like swapping someone builds the thing for an agent builds the thing"; models "can't maintain and improve codebase quality over time"; "maintainability has no fast oracle, so we can't reward for it during RL"; "there is no penalty for eroding codebase maintainability"; "the same edit in eleven places and hope nothing quietly breaks three files over"; "if a model could reliably tell good code from bad, it might have written the good version to begin with"; review agents raise the floor, don't move the ceiling; program design "criminally underemphasized"; "read the dang code".
+- His fix: humans at product review, system architecture, program design (types, signatures, file trees, call stacks as pseudocode), vertical slices (= tracer bullets, delivery order), read the code, 2-3x safely.
+- Divergence for the article: his program-design artifacts are what the generator emits; guide vs sensor; stage one is meta-programming, not harness engineering. Concessions: generator is code too; brownfield clock not run long enough; his fix works on brownfield.
+- Canonical blog URL (via HN 49023019): https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md
