@@ -40,9 +40,9 @@ Readers of the first article will recognise every piece of that. The eleven-plac
 
 Spec-driven development is the same swap with a spec bolted onto the front of the factory.
 
-Böckeler herself wrote the clearest map of the territory, in her comparison of Kiro, Spec Kit and Tessl on martinfowler.com \[5\]. She sorts spec-driven development into three levels: *spec-first* (write a spec, then code), *spec-anchored* (keep the spec alive alongside the code) and *spec-as-source* (the spec is the primary artifact and the code is generated, never hand-edited).
+Böckeler herself wrote the clearest map of the territory, in her comparison of Kiro, Spec Kit and Tessl on martinfowler.com \[5\]. She sorts spec-driven development into three levels: *spec-first* (write a spec, then code), *spec-anchored* (keep the spec alive alongside the code) and *spec-as-source* (the spec is the primary artifact and the code is generated, never hand-edited). Her spec-as-source is the first article's third rung, deterministic derivation, minus the word deterministic. That missing word is most of this article.
 
-Against that map, the tools most teams reach for today all sit on the first rung.
+Against that map, the tools most teams reach for today all sit on the first level.
 
 **Kiro** produces three markdown files per feature: requirements in EARS notation ("WHEN … THE SYSTEM SHALL …"), a design document and a task list. An agent then implements the tasks. The docs advise storing specs "alongside the code they describe"; keeping the two in agreement is a matter of discipline, not mechanism.
 
