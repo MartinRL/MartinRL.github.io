@@ -2,7 +2,7 @@
 title: "Four Thought-Leaders Described the Same Hole. The Two-Stage SDD Rocket Fills It."
 description: "Gorman, Böckeler, DHH and Horthy each named a different problem with agentic development. They share a root cause, and the fix has been running in production for a while."
 created: 2026-09-05
-status: draft
+status: published
 venue: chronograph, linkedin
 ---
 
