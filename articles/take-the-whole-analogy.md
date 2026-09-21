@@ -18,13 +18,13 @@ They did not lose. Norway beat Ivory Coast 2-1, then Brazil 2-1 with two goals f
 
 Two days before Solbakken spoke, Lars Fruergaard Jørgensen and Mads Nipper sat on stage at DI Topmødet and described the relief, their own and their families', of no longer being CEO. Reading Børsen on Saturday, I found Signe Ferslev drawing the conclusion every board should hear: if the recovery starts the day the access card is handed in, the board waited too long. Her line: we confuse the ability to endure with the ability to lead.
 
-Executives, me included, love sports metaphors. We are a team, not a family. A players. 10×. Winning. Keeping score. Benching whoever does not perform. Patty McCord, who put the team-not-family line at the heart of Netflix's culture deck, spoke on the same stage as Solbakken. We take the half of the analogy that fits the culture we already have.
+Executives, me included, love sports metaphors. We are a team, not a family. A players. 10×. Winning. Keeping score. Right team for the job. Patty McCord, who put the team-not-family line at the heart of Netflix's culture deck, spoke on the same stage as Solbakken. We take the half of the analogy that fits the culture we already have.
 
 We skip the other half. A season has peaks and a taper, not one long ultra marathon. Load is measured, and Solbakken's call came from physio data, not from a feeling. A bench that can win a game is the whole point of having one. And recovery is a coaching decision, not a perk the player requests. Haaland did not ask to sit. A players never do. That is why the coach decides. You have telemetry on your systems. What do you have on your team?
 
 Rest was not the soft option here. Playing Haaland was the easy call; the crowd wanted it, and nobody gets fired for exhausting a star. Resting him was the hard call, and it was the high-performance one.
 
-If you want the sports metaphor, take all of it. Including the part where someone other than the star decides when the star sits.
+If you want high performance, take the full sports metaphor. Including the part where recovery is part of the job.
 
 ---
 
