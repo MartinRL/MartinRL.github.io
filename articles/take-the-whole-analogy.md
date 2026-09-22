@@ -20,7 +20,7 @@ Two days before Solbakken spoke, Lars Fruergaard Jørgensen and Mads Nipper sat 
 
 Executives, me included, love sports metaphors. We are a team, not a family. A players. 10×. Winning. Keeping score. Right team for the job. Patty McCord, who put the team-not-family line at the heart of Netflix's culture deck, spoke on the same stage as Solbakken. We take the half of the analogy that fits the culture we already have.
 
-We skip the other half. A season has peaks and a taper, not one long ultra. As an ultra-cyclist I know what exhaustion does to judgment. Load is measured, and Solbakken's call came from physio data, not from a feeling. A bench that can win a game is the whole point of having one. And recovery is a coaching decision, not a perk the player requests. Haaland did not ask to sit. A players never do. That is why the coach decides. You have telemetry on your systems. What do you have on your team?
+We skip the other half. A season has peaks and a taper, not one long ultra. As an ultra-cyclist I know what exhaustion does to judgment. Load is measured, and Solbakken's call came from physio data, not from a feeling. A bench that can win a game is the whole point of having one. And recovery is a coaching decision, not a perk the player requests. Haaland did not ask to sit. A players never do. That is why the coach decides. You have telemetry on your IT systems. What do you have on your team?
 
 Rest was not the soft option here. Playing Haaland was the easy call; the crowd wanted it, and nobody gets fired for exhausting a star. Resting him was the hard call, and it was the high-performance one.
 
