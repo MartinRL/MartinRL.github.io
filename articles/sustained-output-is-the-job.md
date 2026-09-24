@@ -83,7 +83,7 @@ Put the two levers together and the arithmetic changes. If agents only write new
 
 ## A system that heals and improves
 
-There is a ladder for this, and it measures the right thing. The AI Codebase Maturity Model grades the codebase, not the agent \[11\]. Its levels are defined by feedback-loop topology: open loop, one-way instruction, measured, closed loop with automated response, system proposes and humans approve, and a fleet acting under policy. In the model's own words, the intelligence of an AI-driven development system resides not in the model itself but in the infrastructure of instructions, tests, metrics and feedback loops that surround it.
+There is a ladder for this, and it measures the right thing. Andy Anderson's AI Codebase Maturity Model grades the codebase, not the agent \[11\]. Its levels are defined by feedback-loop topology: open loop, one-way instruction, measured, closed loop with automated response, system proposes and humans approve, and a fleet acting under policy. In the model's own words, the intelligence of an AI-driven development system resides not in the model itself but in the infrastructure of instructions, tests, metrics and feedback loops that surround it.
 
 Read that against the bathtub. At level three you can read the drain: a metric exists and a human interprets it. At level four the drain manages itself: a threshold fires an automated response with no human in the path. The step from three to four is the step from a quality dashboard to a system that heals. It is also the step where a better frontier model does you no good. Nobody moves you up that ladder except you, one closed loop at a time.
 
@@ -93,7 +93,7 @@ Lisanne Bainbridge described the human side in 1983: the more a system is automa
 
 The principles above are the design of our software factory, so here are the tactics, from first principles.
 
-**The gate on the inflow.** The Event Model is the spec, and every slice carries its scenarios. Those scenarios become the tests each change must pass before it exists in the codebase, which is the left shift Spier describes. Inside the agent's harness sits a code-health threshold, the Borg and Tornhill bar, applied to what the agent writes. A failure blocks. The agent corrects itself. The reason it failed is written down as a rule the harness holds every later run to, so the gate gets stricter with use instead of with prompt archaeology. Where a design deliberately trips a rule, the exemption is documented, scoped to the file, and shown in every report. The global bar is never lowered to make a dashboard green.
+**The gate on the inflow.** The Event Model is the spec, and every slice carries its own verification (in the form of BDD scenarios). Those scenarios become the tests each change must pass before it exists in the codebase, which is the left shift Spier describes. Inside the agent's harness sits a code-health threshold, the Borg and Tornhill bar, applied to what the agent writes. A failure blocks. The agent corrects itself. The reason it failed is written down as a rule the harness holds every later run to, so the gate gets stricter with use instead of with prompt archaeology. Where a design deliberately trips a rule, the exemption is documented, scoped to the file, and shown in every report. The global bar is never lowered to make a dashboard green.
 
 **Agents on the drain.** Telemetry is emitted as a convention, so agents can read the running system back, and published service levels give them something to hold it to. Maintenance agents run on that data, reactive and standing. The maintenance queue is agent work: upgrades, triage against the spec, candidates for deletion. And the same scenarios that specified the build run as monitors of the running system, so production is checked continuously against the spec that built it.
 
@@ -135,6 +135,6 @@ Two rungs further up, what is left of m after the three discounts decides whethe
 \[8\] Markus Borg and Adam Tornhill, [Code for Machines, Not Just Humans: Quantifying AI-Friendliness with Code Health Metrics](https://arxiv.org/abs/2601.02200), arXiv:2601.02200, 2025.
 \[9\] Leigh Van Valen, "A New Evolutionary Law", *Evolutionary Theory* 1, 1973.
 \[10\] Martin Spier, [Keeping ChatGPT Fast as AI Development Accelerates](https://www.infoq.com/presentations/openai-performance-engineering-agentic-coding/), QCon AI 2026, via InfoQ, August 2026.
-\[11\] Anderson, *The AI Codebase Maturity Model: From Assisted Coding to Fully Autonomous Systems*, arXiv:2604.09388v2, 2026.
+\[11\] Andy Anderson, *The AI Codebase Maturity Model: From Assisted Coding to Fully Autonomous Systems*, arXiv:2604.09388v2, 2026.
 \[12\] Lisanne Bainbridge, "Ironies of Automation", *Automatica* 19(6), 1983.
 \[13\] Ron Kohavi, Diane Tang, Ya Xu, *Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing*, Cambridge University Press, 2020. The book reports that at Microsoft roughly one third of ideas improved their target metric, and at Bing and Google the success rate is closer to 10 to 20%.
