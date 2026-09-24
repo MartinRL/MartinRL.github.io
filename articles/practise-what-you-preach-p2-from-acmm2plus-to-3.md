@@ -2,7 +2,8 @@
 title: "Practise What You Preach, p2: From ACMM 2+ to 3"
 description: "Grading my own repo against the AI Codebase Maturity Model, then closing the first loop with a CodeScene CodeHealth gate"
 type: linkedin-post
-status: draft
+status: superseded
+superseded_by: sustained-output-is-the-job.md
 created: 2026-07-09
 series: practise-what-you-preach
 part: 2

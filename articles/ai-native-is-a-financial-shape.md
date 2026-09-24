@@ -47,6 +47,8 @@ Note what that condition does to the usual pitch. "The agent wrote 60% of our co
 
 Adam Bender said the same thing in one sentence: there is "a big difference between generating code 10× faster and engineering 10× faster" \[5\]. AI makes the first rung nearly free and taxes the second. It does not touch the last two.
 
+What an engineering leader does about that second rung, the drain and the two levers on it, is the subject of [Sustained Output Is the Job](sustained-output-is-the-job.md). This essay stays on the top two.
+
 ## Why the test has to be relative
 
 The bar moves. When every firm in your cohort rents the same models and coding harnesses, an N× gain in output is competed away within a season. Leigh Van Valen named the mechanism in evolutionary biology \[6\], borrowing Carroll's Red Queen: it takes all the running you can do to keep in the same place. Relative fitness is what survives. Absolute gains are competed away.
