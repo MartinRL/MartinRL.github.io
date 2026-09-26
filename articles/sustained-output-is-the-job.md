@@ -18,6 +18,12 @@ The first story: we rolled out coding agents, throughput went up, and nothing ha
 
 For years I have used Christophe Achouiantz's output, outcome, impact visual from the Crisp blog \[1\]. Output is what you ship. Output generates outcome when customers use it. Outcome generates impact, the bottom line. Three rungs, drawn before agents.
 
+![Output generates outcome when used by customers; outcome generates impact for the organization](output-outcome-impact.svg)
+
+*Achouiantz's ladder. Output is tasks and to-dos, outcome is what changes for customers, impact is the net result for the organization.*
+
+Here it is with the missing rung drawn in.
+
 ![Four rungs on one time axis: output, sustained output, outcome, impact](output-integral-ladder-v2.svg)
 
 *Each rung starts later and climbs slower than the one above. Agents move the first rung and tax the second. They do not touch the last two.*
