@@ -13,21 +13,21 @@ venue: linkedin, chronograph
 
 The first story: we rolled out coding agents, throughput went up, and nothing happened to the business. The second, worse one: throughput went up and quality went down. Incidents climbed, review queues filled, and the few people who understood the system spent their days reading code they had not written.
 
-**TL;DR.** Read it as a system. Output is a flow. The business responds to a stock. Between them sits a rung the output → outcome → impact ladder never had: sustained output, the software that still runs, is still understood and still changes safely. AI opened the tap. The drain, upkeep per unit of code, is the variable almost nobody instruments and the one an engineering leader controls. Managing it is what an organization that heals and improves itself looks like: verification ahead of the code, a code-health gate that blocks and self-corrects, agents on the maintenance queue. Output is the agents' rung now. Sustained output is yours.
+**TL;DR.** The two stories are one system. Output is a flow. The business responds to a stock. Between them sits a rung the output → outcome → impact ladder never had: sustained output, the software that still runs, is still understood and still changes safely. AI opened the tap. The drain, upkeep per unit of code, is the variable almost nobody instruments and the one an engineering leader controls. Managing it is what an organization that heals and improves itself looks like: verification ahead of the code, a code-health gate that blocks and self-corrects, agents on the maintenance queue. Output is the agents' rung now. Sustained output is yours.
 
 ## The lens
 
-Systems thinking is on every job spec for agentic product engineering now, and for once the fashion is right. Francisco Trindade's *Leading Effective Software Teams* carries it in the subtitle, and it is next up in the book club I run with my engineering managers \[2\]. Both feed stories are the failure it names: an organization measured a rate and expected a level to move.
+Systems thinking is on every job spec for agentic product engineering now, and for once the fashion is right. Francisco Trindade and Rachel Laycock's *Leading Effective Software Teams* carries it in the subtitle, and it is next up in the book club I run with my engineering managers \[2\]. Both feed stories are the failure systems thinking names: an organization measured a rate and expected a level to move.
 
 Donella Meadows separates three things everyday language blurs \[1\]. A *flow* is a rate. A *stock* is what accumulates when the flow runs and the drain does not empty it. A *response to the stock* is behavior that keys off the level, not off the rate. Her bathtub version: you get wet from the water level, not from how far the tap is open.
 
-Systems thinkers carry two drawings for this. A causal loop diagram shows which loops are running and whether each one reinforces or balances. A stock-and-flow diagram shows where the level sits, what fills it and what drains it. This article uses both: the loop diagram here, to diagnose, and the bathtub later, to place the levers.
+Systems thinkers carry two drawings for this. A causal loop diagram shows which loops are running and whether each one reinforces or balances. A stock-and-flow diagram shows where the level sits, what fills it and what drains it.
 
 ![Causal loop diagram: agent output fills code in production, which raises upkeep, which cuts capacity for new work; code health and defects per change form a reinforcing loop feeding upkeep](throughput-trap-cld.svg)
 
 *The throughput trap as loops. Agents push on the first arrow, and a velocity chart reads only that arrow. The balancing loop through upkeep takes the gain back. The reinforcing loop through code health decides how fast.*
 
-Meadows also ranked the places to intervene in a system \[1\]. A parameter, such as the multiple m, sits at the bottom of her list. The strength of the balancing loops and the structure of the information flows sit near the top. Keep that ranking in mind: every vendor sells you m, and almost nothing on offer touches a loop.
+Meadows also ranked the places to intervene in a system \[1\]. A parameter, such as the multiple m, sits at the bottom of her list. The strength of the balancing loops and the structure of the information flows sit several rungs above it. Keep that ranking in mind: every vendor sells you m, and almost nothing on offer touches a loop.
 
 ## The ladder and the rung it never had
 
@@ -42,8 +42,6 @@ Here it is with the missing rung drawn in.
 ![Four rungs on one time axis: output, sustained output, outcome, impact](output-integral-ladder-v2.svg)
 
 *Each rung starts later and climbs slower than the one above. Agents move the first rung and tax the second. They do not touch the last two.*
-
-Read the ladder through the lens.
 
 **Output is the flow.** Code and features shipped this week. Agents lift that rate, call the multiple m.
 
@@ -76,7 +74,7 @@ The two feed stories are the two failing rows.
 
 "Throughput went up and nothing happened" is the λ = 2 row. Upkeep per line stayed flat, the pile doubled, and within a year and a half the team spends the gain maintaining it. Outcome never moved because outcome follows the level, and the level never rose.
 
-That is one diagnosis, and I have to be honest that it is not the only one. The rung after sustained output asks a different question: was the extra output worth building? Ronny Kohavi's controlled-experiment data from Microsoft and Bing puts the share of shipped ideas that move their target metric somewhere between a tenth and a third \[14\]. An m× tap does not change that ratio. It ships m× more from the same backlog, deeper into the misses, and the marginal feature has a lower hit rate than the ones that were already queued. So a flat business behind a rising velocity chart has two possible causes: a drain that ate the stock, or a backlog whose next item was never going to move a customer. The first is engineering's to fix. The second is product's, and no amount of code health touches it.
+That is one diagnosis, and I have to be honest that it is not the only one. The rung after sustained output asks a second question: was the extra output worth building? Ron Kohavi's controlled-experiment data from Microsoft and Bing puts the share of shipped ideas that move their target metric somewhere between a tenth and a third \[14\]. An m× tap does not change that ratio. It ships m× more from the same backlog, deeper into the misses, and the marginal feature has a lower hit rate than the ones that were already queued. So a flat business behind a rising velocity chart has two possible causes: a drain that ate the stock, or a backlog whose next item was never going to move a customer. The first is engineering's to fix. The second is product's, and no amount of code health touches it.
 
 "Throughput went up and quality went down" is the λ = 4 row. Shore's word for what follows is *permanent indenture*: switch the agents off later and the boost leaves, but the maintenance debt stays.
 
@@ -96,7 +94,7 @@ Put the three together and the impact rung reads as arithmetic rather than aspir
 
 Shore names two levers, and most readers hear only the first: more maintainable code, and AI that makes maintenance itself more productive. Martin Spier, who runs performance engineering for ChatGPT, described what both look like at the far end of the velocity curve \[11\].
 
-His starting observation is the one that changes the job. At agentic velocity, no human comprehends every change any more. Engineers run seven to ten agent threads in parallel. Review by comprehension does not scale to that, and adding reviewers does not help; Faros found the same thing and put it bluntly: the code arriving for review was never ready. So verification has to move to before the code exists, into contracts, tests and benchmarks that judge each change mechanically. That is the first lever, drawn as a gate on the inflow. A defect caught at the gate never enters the stock, and never becomes maintenance.
+His starting observation is the one that changes the job. At agentic velocity, no human comprehends every change any more. Engineers run seven to ten agent threads in parallel. Review by comprehension does not scale to that, and adding reviewers does not help; Faros found the same thing: the code arriving for review was not ready. So verification has to move to before the code exists, into contracts, tests and benchmarks that judge each change mechanically. That is the first lever, drawn as a gate on the inflow. A defect caught at the gate never enters the stock, and never becomes maintenance.
 
 The second lever is on the drain itself. Spier's team did not hire more performance engineers. They made the maintenance workflow agentic: a reactive loop that profiles a regression and proposes a benchmarked fix, an active loop of specialist agents continuously hunting hot paths and allocations, and an always-on loop where senior-engineer skills are translated into standing agent skills. The preconditions are ops data and safety rails: clear telemetry, feedback in minutes, safe rollout.
 
@@ -114,7 +112,7 @@ Lisanne Bainbridge described the human side in 1983: the more a system is automa
 
 The principles above are the design of our software factory, so here are the tactics, from first principles.
 
-**The gate on the inflow.** The Event Model is the spec, and every slice carries its own verification (in the form of BDD scenarios). Those scenarios become the tests each change must pass before it exists in the codebase, which is the left shift Spier describes. Inside the agent's harness sits a code-health threshold, the Borg and Tornhill bar, applied to what the agent writes. A failure blocks. The agent corrects itself. The reason it failed is written down as a rule the harness holds every later run to, so the gate gets stricter with use instead of with prompt archaeology. Where a design deliberately trips a rule, the exemption is documented, scoped to the file, and shown in every report. The global bar is never lowered to make a dashboard green.
+**The gate on the inflow.** The Event Model is the spec, and every slice, one command or view of the system, carries its own verification (in the form of BDD scenarios). Those scenarios become the tests each change must pass before it exists in the codebase, which is the left shift Spier describes. Inside the agent's harness sits a code-health threshold, the Borg and Tornhill bar, applied to what the agent writes. A failure blocks. The agent corrects itself. The reason it failed is written down as a rule the harness holds every later run to, so the gate gets stricter with use instead of with prompt archaeology. Where a design deliberately trips a rule, the exemption is documented, scoped to the file, and shown in every report. The global bar is never lowered to make a dashboard green.
 
 **Agents on the drain.** Telemetry is emitted as a convention, so agents can read the running system back, and published service levels give them something to hold it to. Maintenance agents run on that data, reactive and standing. The maintenance queue is agent work: upgrades, triage against the spec, candidates for deletion. And the same scenarios that specified the build run as monitors of the running system, so production is checked continuously against the spec that built it.
 
