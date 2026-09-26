@@ -3,7 +3,8 @@ title: "Sustained Output Is the Job"
 description: "Throughput went up and nothing happened to the business. Or worse, quality went down. Both are the same systems failure: the velocity chart measures the tap, and the business responds to the water level."
 created: 2026-09-23
 updated: 2026-09-26
-status: draft
+status: published
+published: https://chronograph.rosenlidholm.se/sustained-output-is-the-job
 venue: linkedin, chronograph
 ---
 
