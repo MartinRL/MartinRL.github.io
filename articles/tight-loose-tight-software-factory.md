@@ -34,13 +34,13 @@ So most of what a company pays for in software is a chain of translation between
 
 Here is the whole argument as a budget: five cost lines, today and with the factory.
 
-| Cost line | Today | With the factory |
-|---|---|---|
-| Specification | Documents that go stale, interpreted in meetings, paid for in the time of the people who know the most | One workshop, one checked model, reused for every change |
-| Building | The visible line item, and the one AI tools have already compressed | Near zero. The machine builds from the model, and the tenth system costs what the first did |
-| Verification | Test cycles, acceptance demos, the overrun tail | Automatic. The workshop's examples are the tests, the one approved shape is the standard |
-| Coordination | Meetings, status reports, the translation layer between business and technology | Gone. The model is the shared language |
-| Maintenance | The same chain run again by people who were not in the room, which is why systems ossify | A change to the model, checked and regenerated |
+| Cost line     | Today                                                                                                  | With the factory                                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| Specification | Documents that go stale, interpreted in meetings, paid for in the time of the people who know the most | One workshop, one checked model, reused for every change                                    |
+| Building      | The visible line item, and the one AI tools have already compressed                                    | Near zero. The machine builds from the model, and the hundredth slice costs what the first did; the system does not get harder to add to as it grows |
+| Verification  | Test cycles, acceptance demos, the overrun tail                                                        | Automatic. The workshop's examples are the tests, the one approved shape is the standard    |
+| Coordination  | Meetings, status reports, the translation layer between business and technology                        | Gone. The model is the shared language                                                      |
+| Maintenance   | The same chain run again by people who were not in the room, which is why systems ossify               | A change to the model, checked and regenerated                                              |
 
 Two things to notice. Coordination is the line leaders underestimate most, because it never appears in the budget; it is spread across everyone's calendar. And after the change, the cost of a change is proportional to how much meaning changed, not to how large the system has grown.
 
