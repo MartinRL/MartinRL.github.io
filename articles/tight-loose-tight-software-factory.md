@@ -55,7 +55,7 @@ One caution on the last row. A loop that restarts an agent against the same inst
 
 ## The cautionary tale: $125 million of loose front
 
-Tessl is the company I would have founded if I believed prose could be a source of truth. Founded in London in 2024 by Guy Podjarny, who built Snyk, it raised about $125 million on the boldest version of spec-driven development: the specification is the only thing humans maintain, and code is a disposable artifact regenerated from it [15]. That is the two-stage rocket as a venture thesis. One word in it was wrong.
+Tessl is the company I would have founded if I believed a specification written in plain English could be the source of truth for a system. Founded in London in 2024 by Guy Podjarny, who built Snyk, it raised about $125 million on the boldest version of spec-driven development: the specification is the only thing humans maintain, and code is a disposable artifact regenerated from it [15]. That is the two-stage rocket as a venture thesis. One word in it was wrong.
 
 The specifications were prose. In September 2025 Tessl shipped a framework in closed beta and a registry of more than 10,000 specs telling agents how to use open-source libraries correctly [17]. The framework stayed in beta for most of a year, and its regeneration was not repeatable: ask it twice, get two programs. During 2025 the company paused the framework and removed it from its tooling, and on 29 January 2026 it reframed itself around a skills registry and the governance of agents: who may install what, did it run, audit trail [15].
 
