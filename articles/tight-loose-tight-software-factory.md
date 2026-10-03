@@ -32,7 +32,7 @@ So most of what a company pays for in software is a chain of translation between
 
 ## A leadership model that happens to describe the fix
 
-Tight, loose, tight is a leadership model from the Norwegian agile scene, inspired by scrum and used at companies like NAV and Telenor to explain how managers could change their style [4]. At Telenor Denmark it went far enough that the company's HR director won the Danish HR prize in 2021 for making it the shared language of leadership there [18]. It is easy to hold in your head. Be tight at the start: purpose, goal and boundaries are fixed and agreed. Be loose in the middle: the team is trusted to decide how, and left alone to do it. Be tight at the end: results are checked against what was agreed, and the organisation learns from the gap. The older academic form is Sagie's loose–tight model, which found that a leader can be loose in substance while tight on framework, and that the two reinforce rather than contradict each other [5].
+Tight, loose, tight is a leadership model from the Norwegian agile scene, inspired by scrum and used at companies like NAV and Telenor to explain how managers could change their style [4]. At Telenor Denmark it went far enough that the company's HR director won the Danish HR prize in 2021 for making it the shared language of leadership there [19]. It is easy to hold in your head. Be tight at the start: purpose, goal and boundaries are fixed and agreed. Be loose in the middle: the team is trusted to decide how, and left alone to do it. Be tight at the end: results are checked against what was agreed, and the organisation learns from the gap. The older academic form is Sagie's loose–tight model, which found that a leader can be loose in substance while tight on framework, and that the two reinforce rather than contradict each other [5].
 
 The insight most people miss is that the loose middle is only safe because both ends are tight. Loosen the start and the team drifts. Loosen the end and nothing is learned. Managers who get this wrong fall into one of three other shapes, and each has a software method that looks exactly like it.
 
@@ -75,7 +75,7 @@ Our factory is the same bet with the one word corrected. The spec is a small, pr
 
 ## Where our factory comes from
 
-One word on provenance, because a factory you cannot inspect is a slide, not a claim. Our factory is our own work. It runs on two small languages I write and maintain, one for the event model and one for the experience model [8], and on Adam Dymitruk's event modeling method for drawing a system as a timeline of what happens in the business [9]. How it works, stage by stage, is in an earlier piece for an engineering audience, the two-stage rocket [10]. This article is about what it does to the cost of software, and why.
+One word on provenance, because a factory you cannot inspect is a slide, not a claim. Our factory is our own work, and deliberately so. It runs on two small languages we built ourselves, one for the event model and one for the experience model, and on Adam Dymitruk's event modeling method for drawing a system as a timeline of what happens in the business [9]. The languages are not bought and not borrowed, because they are the harness around the model: they encode our verification contracts, our domain rules, our product experience. That is the one layer of agentic engineering that does not commoditize, and it only works bonded into the product it builds [8]. I also maintain a public pair of languages in the same family, which is where an outsider can inspect the idea [18]. How it works, stage by stage, is in an earlier piece for an engineering audience, the two-stage rocket [10]. This article is about what it does to the cost of software, and why.
 
 ## Our factory is tight, loose, tight
 
@@ -138,7 +138,7 @@ Software is expensive where meaning is loose and cheap where form is loose. Our 
 5. Schwartz, Sagie, Zaidman, Hamburger and Teeni, "An empirical assessment of the loose–tight leadership model": https://www.tau.ac.il/~teeni/publications/loose.pdf
 6. Lovable's $400M raise at $13.3B after $500M annualized revenue, and Replit near $525M ARR: https://appcoding.com/ai-app-builders-reviewed-lovable-base44-bolt-replit-and-v0-compared/ and https://tech-insider.org/replit-vs-lovable-vs-bolt-new-2026/
 7. Microsoft Learn, "Form styles and patterns" for Dynamics 365 finance and operations: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/user-interface/form-styles-patterns
-8. Rosén-Lidholm, xmlang repository (emlang and xmlang specs, linter, RFCs): https://github.com/MartinRL/xmlang
+8. Rosén-Lidholm, "Models commoditize. The layers sandwiching them do not," LinkedIn, 2026, on the harness as the bonded, non-transferable layer: https://www.linkedin.com/feed/update/urn:li:activity:7491552249555542016/
 9. Dymitruk, *Event Modeling*: https://eventmodeling.org
 10. Rosén-Lidholm, "The Two-Stage Rocket Fills the Hole the Thought-Leaders Identified": [[two-stage-sdd-rocket]], and "The Spec Is the Product": [[the-spec-is-the-product]].
 11. Stage-separation failure described in US patent 4,924,775, Integrated two stage rocket: https://patents.google.com/patent/US4924775
@@ -148,4 +148,5 @@ Software is expensive where meaning is loose and cheap where form is loose. Our 
 15. Tessl paused Framework development and removed it from its CLI in 2025, and on 29 January 2026 reframed itself as an Agent Enablement Platform around a skills registry: https://ai.engineer/orgs/tessl and https://codemyspec.com/blog/tessl-review
 16. MacManus, "AIEWF Daily Dispatch: Loops, Software Factories & Forward Deployed Engineers," Latent.Space, 2026-07-01, on Huntley's "everything is a ralph loop": https://www.latent.space/p/aiewf-daily-dispatch-loops
 17. Tessl, "Announcing Tessl's Products to Unlock the Power of Agents," September 2025 (Framework in closed beta, Spec Registry with 10,000+ usage specs): https://tessl.io/blog/announcing-tessls-products-to-unlock-the-power-of-agents/
-18. Telenor Danmark, "Telenors HR-direktør vinder HR-prisen 2021," press release, 23 September 2021 (DANSK HR's prize to Mette Eistrøm Krüger, citing tight-loose-tight): https://www.mynewsdesk.com/dk/telenor/pressreleases/telenors-hr-direktoer-vinder-hr-prisen-2021-3130577
+18. Rosén-Lidholm, public event and experience modeling languages (specs, linter, RFCs), related to but distinct from the ones used in the factory: https://github.com/MartinRL/xmlang
+19. Telenor Danmark, "Telenors HR-direktør vinder HR-prisen 2021," press release, 23 September 2021 (DANSK HR's prize to Mette Eistrøm Krüger, citing tight-loose-tight): https://www.mynewsdesk.com/dk/telenor/pressreleases/telenors-hr-direktoer-vinder-hr-prisen-2021-3130577
