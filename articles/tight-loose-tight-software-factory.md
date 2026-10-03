@@ -46,12 +46,12 @@ The same map, applied to what you are being sold this year, is the most useful t
 
 | Profile | The pitch | Examples | Where it breaks |
 |---|---|---|---|
-| Loose, loose, loose | "Describe it and it appears" | Vibe-coding builders (Lovable, Replit, Bolt); autonomous agents handed a ticket and left alone | Nothing fixed the meaning and nothing checks the result. Right for prototypes, lethal for systems of record |
+| Loose, loose, loose | "Describe it and it appears" | Vibe-coding builders (Lovable, Replit, Bolt); ralph loops [16] pointed at a Jira or Linear backlog and left to run, with the ticket as the only spec | Nothing fixed the meaning and nothing checks the result. Right for prototypes, lethal for systems of record |
 | Loose, tight, loose | "Discipline for agents": write a spec, then a plan, then a task list, then let it build | Spec-driven toolkits (GitHub Spec Kit, AWS Kiro), agile role-play frameworks that give agents job titles [14] | The spec is prose no machine can check, the ceremony is the product, and "done" is judged by tests the agent wrote for itself. Project management, re-created for robots. See the cautionary tale below |
 | Tight, tight, tight | "AI inside the platform you already own" | Copilots inside low-code and ERP builders (Power Platform, Dynamics, Mendix, OutSystems) | Tight on form, loose on meaning. The agent types faster inside a cage that still needs specialists to open it |
 | Tight, loose, tight | "Fix meaning, free the machine, verify the shape" | Palantir's AI FDE with ontology proposals [13]; test-first agent loops that restart until the suite passes [16]; our factory | Holds. The three differ in what they tighten: Palantir an ontology, test-first loops a test suite, the factory the business meaning and one approved shape. Only the last two ends are legible to a CEO |
 
-One caution on the last row. A loop that restarts an agent against the same instructions until something passes is tight, loose, tight only if what it passes was fixed before the agent started and can be checked without the agent's help. If the agent writes the test and judges the test, the loop is loose, loose, loose with persistence.
+One caution on the last row. A loop that restarts an agent against the same instructions until something passes is tight, loose, tight only if what it passes was fixed before the agent started and can be checked without the agent's help. If the agent writes the test and judges the test, the loop is loose, loose, loose with persistence, which is what a loop fed from a ticket queue usually amounts to: the ticket is prose, and the only judge of done is the thing that did the work.
 
 ## The cautionary tale: $125 million of loose front
 
