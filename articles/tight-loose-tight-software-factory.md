@@ -87,7 +87,7 @@ Three things, and they are where your attention and your budget should go.
 
 Deciding what the business wants is still hard, and the workshop makes that visible rather than easy. Companies that have never had to agree on their own rules discover, in a single day, that they disagree. That is a feature. It used to cost a year.
 
-Someone must own the meaning afterwards. When a rule changes, a named person is accountable for having said so, because the machine will build whatever the model says. This is a senior role, not an IT role. Palantir, the one company that has run this operating model at scale, embeds an engineer at the customer for the first model and then routes every later change through a proposal and approval, at every customer size [13]. The pattern is the same here: the business owns the rule, the factory's engineer is counsel.
+Someone must own the meaning afterwards. When a rule changes, a named person is accountable for having said so, because the machine will build whatever the model says. This is a senior role, not an IT role. Palantir, the best-known company to run this operating model at scale, embeds an engineer at the customer for the first model and then routes every later change through a proposal and approval, at every customer size [13]. The pattern is the same here: the business owns the rule, the factory's engineer is counsel.
 
 Integrations with other systems, legacy or external, remain real work. The factory makes your own system cheap. It does not make your neighbours' systems any less messy.
 
