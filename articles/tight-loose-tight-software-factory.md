@@ -1,6 +1,6 @@
 ---
-title: "Tight, Loose, Tight: Why My Software Factory Is Cheap"
-description: "A management explanation of the software factory I have built on emlang and xmlang. Writing code has been made cheaper three times and the bill barely moved, because nobody fixed what the system meant. Fix meaning first, let the machine build, verify against one approved shape."
+title: "Tight, Loose, Tight: Why Our Software Factory Is Cheap"
+description: "A management explanation of the software factory we have built on event models and experience models. Writing code has been made cheaper three times and the bill barely moved, because nobody fixed what the system meant. Fix meaning first, let the machine build, verify against one approved shape."
 created: 2026-10-03
 draft: true
 tags:
@@ -9,15 +9,15 @@ tags:
   - cost
   - ai
   - management
-  - emlang
-  - xmlang
+  - event-modeling
+  - experience-modeling
 aliases:
   - TLT and the factory
   - Tight loose tight
 ---
 
 > [!abstract] TL;DR
-> Fifty years of better tools have not made software cheap, because writing it was only the visible cost. Writing has been compressed repeatedly: offshoring, frameworks, now AI code generation. Each time the bill fell less than the hourly rate did, because the expensive part that survived every compression was deciding what the system should do, keeping that decision stable while people and code changed, and finding out, late, that the two had drifted apart. My factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written in two small languages, emlang and xmlang, precise enough that a machine checks them. Loose on how: the machine builds, and is free in how. Tight on outcome: there is one approved way the result may be shaped, so verification is automatic and code review is unnecessary. The cost of a system collapses toward the cost of deciding what it means. That is the only cost that was ever worth paying. The best-funded attempt to do this with prose specifications, Tessl, repositioned itself within a year of launch; the whole difference is whether the front is actually tight.
+> Fifty years of better tools have not made software cheap, because writing it was only the visible cost. Writing has been compressed repeatedly: offshoring, frameworks, now AI code generation. Each time the bill fell less than the hourly rate did, because the expensive part that survived every compression was deciding what the system should do, keeping that decision stable while people and code changed, and finding out, late, that the two had drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as an event model and an experience model, precise enough that a machine checks them. Loose on how: the machine builds, and is free in how. Tight on outcome: there is one approved way the result may be shaped, so verification is automatic and code review is unnecessary. The cost of a system collapses toward the cost of deciding what it means. That is the only cost that was ever worth paying. The best-funded attempt to do this with prose specifications, Tessl, repositioned itself within a year of launch; the whole difference is whether the front is actually tight.
 
 > [!tip] If you lead a company
 > Stop budgeting for building. Budget for meaning: the workshop that fixes what the system does, and the person who owns that decision afterwards. Everything else is becoming a utility.
@@ -49,7 +49,7 @@ The same map, applied to what you are being sold this year, is the most useful t
 | Loose, loose, loose | "Describe it and it appears" | Vibe-coding builders (Lovable, Replit, Bolt); autonomous agents handed a ticket and left alone | Nothing fixed the meaning and nothing checks the result. Right for prototypes, lethal for systems of record |
 | Loose, tight, loose | "Discipline for agents": write a spec, then a plan, then a task list, then let it build | Spec-driven toolkits (GitHub Spec Kit, AWS Kiro), agile role-play frameworks that give agents job titles [14] | The spec is prose no machine can check, the ceremony is the product, and "done" is judged by tests the agent wrote for itself. Project management, re-created for robots. See the cautionary tale below |
 | Tight, tight, tight | "AI inside the platform you already own" | Copilots inside low-code and ERP builders (Power Platform, Dynamics, Mendix, OutSystems) | Tight on form, loose on meaning. The agent types faster inside a cage that still needs specialists to open it |
-| Tight, loose, tight | "Fix meaning, free the machine, verify the shape" | Palantir's AI FDE with ontology proposals [13]; test-first agent loops that restart until the suite passes [16]; my factory | Holds. The three differ in what they tighten: Palantir an ontology, test-first loops a test suite, the factory the business meaning and one approved shape. Only the last two ends are legible to a CEO |
+| Tight, loose, tight | "Fix meaning, free the machine, verify the shape" | Palantir's AI FDE with ontology proposals [13]; test-first agent loops that restart until the suite passes [16]; our factory | Holds. The three differ in what they tighten: Palantir an ontology, test-first loops a test suite, the factory the business meaning and one approved shape. Only the last two ends are legible to a CEO |
 
 One caution on the last row. A loop that restarts an agent against the same instructions until something passes is tight, loose, tight only if what it passes was fixed before the agent started and can be checked without the agent's help. If the agent writes the test and judges the test, the loop is loose, loose, loose with persistence.
 
@@ -71,15 +71,15 @@ The checker must not share the builder's errors. Tests written by the agent from
 
 And the market lesson, for anyone deciding where to spend: what Tessl's customers actually bought was governed context, a registry with versioning, scanning and audit. Companies pay today for control over what their agents know. Nobody has yet paid for a prose compiler, because none works.
 
-My factory is the same bet with the one word corrected. The spec is a small, precise language, not prose: emlang and xmlang are strict enough that a checker refuses ambiguity, and small enough that the whole model of a system fits in a document a business owner can read. Regeneration is repeatable and locked against a reference, so the model is the record of truth and the code really is disposable. The examples are written by the business in the workshop and compiled into the tests, so the checker owes the agent nothing. Same ambition as Tessl's, same architecture in outline, and the three differences sit exactly where tight has to mean tight.
+Our factory is the same bet with the one word corrected. The spec is a small, precise language, not prose: the event model and the experience model are strict enough that a checker refuses ambiguity, and small enough that the whole model of a system fits in a document a business owner can read. Regeneration is repeatable and locked against a reference, so the model is the record of truth and the code really is disposable. The examples are written by the business in the workshop and compiled into the tests, so the checker owes the agent nothing. Same ambition as Tessl's, same architecture in outline, and the three differences sit exactly where tight has to mean tight.
 
-## Where my factory comes from
+## Where our factory comes from
 
-One word on provenance, because a factory you cannot inspect is a slide, not a claim. My factory is my own work. It runs on two small languages I write and maintain, emlang and xmlang [8], and on Adam Dymitruk's event modeling method for drawing a system as a timeline of what happens in the business [9]. How it works, stage by stage, is in an earlier piece for an engineering audience, the two-stage rocket [10]. This article is about what it does to the cost of software, and why.
+One word on provenance, because a factory you cannot inspect is a slide, not a claim. Our factory is our own work. It runs on two small languages I write and maintain, one for the event model and one for the experience model [8], and on Adam Dymitruk's event modeling method for drawing a system as a timeline of what happens in the business [9]. How it works, stage by stage, is in an earlier piece for an engineering audience, the two-stage rocket [10]. This article is about what it does to the cost of software, and why.
 
-## My factory is tight, loose, tight
+## Our factory is tight, loose, tight
 
-**Tight on meaning.** Before anything is built, the business and I spend a day drawing the timeline: who does what, what fact that creates, what the business then knows, what decisions follow. The timeline is written down in emlang, which records the facts, the actions and every decision rule with its named reasons for saying no, and in xmlang, which records what each screen shows and lets you do, never where the buttons sit. An automatic checker refuses anything ambiguous. This is where my specification and Tessl's part ways: theirs was prose that no checker could refuse, mine is a language that one does. This is the step that fixes meaning, once, in a form both the CEO and the machine can read. It is the only step that needs senior people in the room.
+**Tight on meaning.** Before anything is built, the business and I spend a day drawing the timeline: who does what, what fact that creates, what the business then knows, what decisions follow. The timeline is written down as an event model, which records the facts, the actions and every decision rule with its named reasons for saying no, and as an experience model, which records what each screen shows and lets you do, never where the buttons sit. An automatic checker refuses anything ambiguous. This is where our specification and Tessl's part ways: theirs was prose that no checker could refuse, mine is a language that one does. This is the step that fixes meaning, once, in a form both the CEO and the machine can read. It is the only step that needs senior people in the room.
 
 **Loose on how.** From that point the machine builds. It is free in how it implements each decision rule, free in how it renders each screen within the company's design standards, and free in how it proposes the next change when someone asks for one. Nobody writes a requirements document, nobody schedules a code review, nobody estimates. The loose period is minutes long and covers one slice of the system at a time.
 
@@ -125,7 +125,7 @@ Third, stop buying process. Status meetings, change boards, acceptance ceremonie
 
 ## The one-line version
 
-Software is expensive where meaning is loose and cheap where form is loose. My factory is tight on meaning, loose on form, and allows exactly one shape at the end, so the loose part can be a machine and the tight parts can be a checker and a test suite instead of a management layer.
+Software is expensive where meaning is loose and cheap where form is loose. Our factory is tight on meaning, loose on form, and allows exactly one shape at the end, so the loose part can be a machine and the tight parts can be a checker and a test suite instead of a management layer.
 
 ---
 
