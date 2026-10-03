@@ -1,6 +1,6 @@
 ---
 title: "Tight, Loose, Tight: Why Our Software Factory Is Cheap"
-description: "A management explanation of the software factory we have built on event models and experience models. Writing code has been made cheaper three times and the bill barely moved, because nobody fixed what the system meant. Fix meaning first, let the machine build, verify against one approved shape."
+description: "A management explanation of the software factory we have built on event models and experience models. Writing code has been made cheaper three times and the cost of a product barely moved, because nobody fixed what the system meant. Fix meaning first, let the machine build, verify against one approved shape."
 created: 2026-10-03
 draft: true
 tags:
@@ -17,18 +17,18 @@ aliases:
 ---
 
 > [!abstract] TL;DR
-> Fifty years of better tools have not made software cheap, because writing it was only the visible cost. Writing has been compressed repeatedly: offshoring, frameworks, now AI code generation. Each time the bill fell less than the hourly rate did, because the expensive part that survived every compression was deciding what the system should do, keeping that decision stable while people and code changed, and finding out, late, that the two had drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as an event model and an experience model, precise enough that a machine checks them. Loose on how: the machine builds, and is free in how. Tight on outcome: there is one approved way the result may be shaped, so verification is automatic and code review is unnecessary. The cost of a system collapses toward the cost of deciding what it means. That is the only cost that was ever worth paying. The best-funded attempt to do this with prose specifications, Tessl, repositioned itself within a year of launch; the whole difference is whether the front is actually tight.
+> Fifty years of better tools have not made software cheap, because writing it was only the visible cost. Writing has been compressed repeatedly: offshoring, frameworks, now AI code generation. Each time the cost of a product fell less than the cost of a line of code did, because the expensive part that survived every compression was deciding what the system should do, keeping that decision stable while people and code changed, and finding out, late, that the two had drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as an event model and an experience model, precise enough that a machine checks them. Loose on how: the machine builds, and is free in how. Tight on outcome: there is one approved way the result may be shaped, so verification is automatic and code review is unnecessary. The cost of a system collapses toward the cost of deciding what it means. That is the only cost that was ever worth paying. The best-funded attempt to do this with prose specifications, Tessl, repositioned itself within a year of launch; the whole difference is whether the front is actually tight.
 
 > [!tip] If you lead a company
 > Stop budgeting for building. Budget for meaning: the workshop that fixes what the system does, and the person who owns that decision afterwards. Everything else is becoming a utility.
 
-## The bill nobody can explain
+## The cost nobody can explain
 
 Ask a CFO what software costs and you get a number. Ask why, and you get a story about complexity. Bent Flyvbjerg's project database, the largest of its kind, says the story is wrong in a specific way: roughly one in five IT projects overruns its budget by more than half, and the ones that do overrun by 447 percent on average [1]. That is not complexity. That is a system that cannot tell you where it stands until it is too late to matter.
 
 Fred Brooks explained the structure of the problem in 1986 [2]. Software has two kinds of difficulty: the essential kind, deciding what the system should do and keeping that decision coherent, and the accidental kind, the tools and plumbing used to express it. He predicted no single tool would deliver a tenfold improvement, because tools only attack the accidental part. Forty years later, Moseley and Marks measured where the accidental part comes from and found most of it was self-inflicted: state and control flow the business never asked for [3]. Both were right. Every productivity tool since, including AI code generation, has made the accidental part cheaper. The essential part, meaning, has been left to documents, meetings and memory.
 
-So most of what a company pays for in software is a chain of translation between someone who knows what the business needs and something that runs: requirements documents, meetings to interpret them, estimates, reviews, test cycles, acceptance demos, rework when the interpretation turns out wrong, and then maintenance, which is the same chain run again, slower, by people who were not in the room the first time. Every link exists because nobody fixed the meaning of the system in a form that could be checked. So people check it, repeatedly, by hand, and bill for it.
+So most of what a company pays for in software is a chain of translation between someone who knows what the business needs and something that runs: requirements documents, meetings to interpret them, estimates, reviews, test cycles, acceptance demos, rework when the interpretation turns out wrong, and then maintenance, which is the same chain run again, slower, by people who were not in the room the first time. Every link exists because nobody fixed the meaning of the system in a form that could be checked. So people check it, repeatedly, by hand, and the product pays for it in headcount and in quarters of roadmap.
 
 ## A leadership model that happens to describe the fix
 
@@ -79,7 +79,7 @@ One word on provenance, because a factory you cannot inspect is a slide, not a c
 
 ## Our factory is tight, loose, tight
 
-**Tight on meaning.** Before anything is built, the business and I spend a day drawing the timeline: who does what, what fact that creates, what the business then knows, what decisions follow. The timeline is written down as an event model, which records the facts, the actions and every decision rule with its named reasons for saying no, and as an experience model, which records what each screen shows and lets you do, never where the buttons sit. An automatic checker refuses anything ambiguous. This is where our specification and Tessl's part ways: theirs was prose that no checker could refuse, mine is a language that one does. This is the step that fixes meaning, once, in a form both the CEO and the machine can read. It is the only step that needs senior people in the room.
+**Tight on meaning.** Before anything is built, the business and/or users and Engineering spend a day drawing the timeline: who does what, what fact that creates, what the business then knows, what decisions follow. The timeline is written down as an event model, which records the facts, the actions and every decision rule with its named reasons for saying no, and as an experience model, which records what each screen shows and lets you do, never where the buttons sit. An automatic checker refuses anything ambiguous. This is where our specification and Tessl's part ways: theirs was prose that no checker could refuse, ours is a language that one does. This is the step that fixes meaning, once, in a form both the CEO and the machine can read. It is the only step that needs senior people in the room.
 
 **Loose on how.** From that point the machine builds. It is free in how it implements each decision rule, free in how it renders each screen within the company's design standards, and free in how it proposes the next change when someone asks for one. Nobody writes a requirements document, nobody schedules a code review, nobody estimates. The loose period is minutes long and covers one slice of the system at a time.
 
@@ -93,13 +93,13 @@ Dymitruk's claim for the method is that it removed ninety percent of meetings in
 
 Put the two side by side and the cost structure inverts.
 
-**Specification.** Before: documents that go stale, interpreted in meetings, billed by the hour. After: one workshop, one checked model, reused for every change. Cost moves to the front and shrinks.
+**Specification.** Before: documents that go stale, interpreted in meetings, paid for in the time of the people who know the most. After: one workshop, one checked model, reused for every change. Cost moves to the front and shrinks.
 
 **Building.** Before: the visible line item, and the one AI tools have already compressed. After: near zero. The machine builds from the model, and the first system and the tenth cost about the same to produce.
 
 **Verification.** Before: test cycles, acceptance demos, the overrun tail. After: automatic. The examples given in the workshop are the tests; the one approved shape is the standard. Nothing deviant reaches production, and the checker was not written by the thing it checks.
 
-**Coordination.** Before: the meetings, the status reports, the translation layer between business and technology. After: the model is the shared language, so the translation layer is gone. This is the cost line leaders underestimate most, because it never appears on an invoice.
+**Coordination.** Before: the meetings, the status reports, the translation layer between business and technology. After: the model is the shared language, so the translation layer is gone. This is the cost line leaders underestimate most, because it never appears as a line in the budget. It is spread across everyone's calendar.
 
 **Maintenance.** Before: the same chain run again by people who were not there, which is why systems ossify. After: a change is a change to the model, checked and regenerated. The cost of a change is proportional to how much meaning changed, not to how large the system has grown.
 
