@@ -1,6 +1,6 @@
 ---
-title: "Tight, Loose, Tight: Why Our Software Factory Is Cheap"
-description: "A management explanation of the software factory we have built on event models and experience models. Writing code has been made cheaper three times and the cost of a product barely moved, because nobody fixed what the system meant. Fix meaning first, let the machine build, verify against one approved shape."
+title: "Hire Rocket Engineers, Not Rockstar Developers"
+description: "Tight, loose, tight: a management explanation of why our software factory is cheap, and what it changes about who to hire. Writing code has been made cheaper three times and the cost of a product barely moved, because nobody fixed what the system meant. Fix meaning first, let the machine build, verify against one approved shape."
 created: 2026-10-03
 draft: true
 tags:
@@ -17,7 +17,7 @@ aliases:
 ---
 
 > [!abstract] TL;DR
-> Writing software has been made cheaper three times: offshoring, the cloud, now AI code generation. Each time the cost of a product fell less than the cost of a line of code did, because the part that survived every compression was deciding what the system should do, keeping that decision stable while people and code changed, and finding out, late, that the two had drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as a model a machine can check. Loose on how: the machine builds. Tight on outcome: one approved shape, verified automatically. The cost of a system collapses toward the cost of deciding what it means.
+> Writing software has been made cheaper three times: offshoring, the cloud, now AI code generation. Each time the cost of a product fell less than the cost of a line of code did, because the part that survived every compression was deciding what the system should do, keeping that decision stable while people and code changed, and finding out, late, that the two had drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as a model a machine can check. Loose on how: the machine builds. Tight on outcome: one approved shape, verified automatically. The cost of a system collapses toward the cost of deciding what it means. The scarce hire is no longer the person who writes code fastest. It is the one who builds the rocket.
 
 > [!tip] If you lead a company
 > Budget for two things. Once: the factory, the languages and checker that hold your meaning, which you cannot buy because they are bonded to your product. Every system after that: meaning, the workshop that fixes what the system does and the person who owns that decision afterwards. Everything else is becoming a utility.
@@ -91,13 +91,15 @@ Someone must own the meaning afterwards. When a rule changes, a named person is 
 
 Integrations with other systems, legacy or external, remain real work. The factory makes your own system cheap. It does not make your neighbours' systems any less messy.
 
-## Three decisions for a leader
+## Four decisions for a leader
 
 First, move budget from building systems to building the factory, and then to meaning. The factory is paid for once. Fund the workshop properly and insist that senior people attend. A day of their time at the start replaces months of everyone else's time later.
 
 Second, staff the owner. Name the person accountable for each system's rules. If you cannot name one, the system should not be built yet.
 
 Third, stop buying process. Status meetings, change boards, acceptance ceremonies exist to compensate for a loose start. Once the start is tight, they are cost without function. Measure lead time from a decided change to a running change instead.
+
+Fourth, hire rocket engineers, not rockstar developers. The rockstar writes code faster and better than anyone, and that is the skill three compressions have already made cheap. The rocket engineer builds the first stage: the languages, the generator and the checker that hold your meaning and fix your architecture once, so nobody has to carry it in their head. That is the one piece of engineering that does not commoditize, and you buy it once.
 
 ## The one-line version
 
