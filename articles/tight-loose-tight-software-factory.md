@@ -1,5 +1,5 @@
 ---
-title: "Hire Rocket Engineers, Not Rockstar Developers"
+title: Hire Rocket Engineers, Not Rockstar Developers
 description: "Tight, loose, tight: a management explanation of why our software factory is cheap, and what it changes about who to hire. Writing code has been made cheaper three times and the cost of a product barely moved, because nobody fixed what the system meant. Fix meaning first, let the machine build, verify against one approved shape."
 created: 2026-10-03
 draft: true
@@ -11,13 +11,15 @@ tags:
   - management
   - event-modeling
   - experience-modeling
+  - rocket-engineering
+  - rockstar-developer
 aliases:
   - TLT and the factory
   - Tight loose tight
 ---
 
 > [!abstract] TL;DR
-> Writing software has been made cheaper three times: offshoring, the cloud, now AI code generation. Each time the cost of a product fell less than the cost of a line of code did, because the part that survived every compression was deciding what the system should do, keeping that decision stable while people and code changed, and finding out, late, that the two had drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as a model a machine can check. Loose on how: the machine builds. Tight on outcome: one approved shape, verified automatically. The cost of a system collapses toward the cost of deciding what it means. The scarce hire is no longer the person who writes code fastest. It is the one who builds the rocket.
+> Writing software has been made cheaper three times: offshoring, the cloud, now AI code generation. Each time the cost of a product fell much less than the cost of a line of code did, because the part that survived every compression was deciding what the system should do, keeping that decision stable while people and code changed, and finding out, late, that the two had drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as a model a machine can check. Loose on how: the machine decides how each rule meets the examples the business gave, and how each view is read from the facts. Tight on outcome: one approved shape, verified automatically. The cost of a system collapses toward the cost of deciding what it means. The scarce hire is no longer the person who writes code fastest. It is the one who builds the rocket.
 
 > [!tip] If you lead a company
 > Budget for two things. Once: the factory, the languages and checker that hold your meaning, which you cannot buy because they are bonded to your product. Every system after that: meaning, the workshop that fixes what the system does and the person who owns that decision afterwards. Everything else is becoming a utility.
