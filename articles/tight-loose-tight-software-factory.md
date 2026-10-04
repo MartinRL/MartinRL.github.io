@@ -2,6 +2,7 @@
 title: Hire Rocket Engineers, Not Rockstar Developers
 description: "Tight, loose, tight: a management explanation of why our software factory is cheap, and what it changes about who to hire. Writing code has been made cheaper three times and the cost of a product barely moved, because nobody fixed what the system meant. Fix meaning first, let the machine build, verify against one approved shape."
 created: 2026-10-03
+updated: 2026-10-04
 draft: true
 tags:
   - software-factory
