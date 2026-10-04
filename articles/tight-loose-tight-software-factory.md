@@ -20,7 +20,7 @@ aliases:
 > Writing software has been made cheaper three times: offshoring, the cloud, now AI code generation. Each time the cost of a product fell less than the cost of a line of code did, because the part that survived every compression was deciding what the system should do, keeping that decision stable while people and code changed, and finding out, late, that the two had drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as a model a machine can check. Loose on how: the machine builds. Tight on outcome: one approved shape, verified automatically. The cost of a system collapses toward the cost of deciding what it means.
 
 > [!tip] If you lead a company
-> Stop budgeting for building. Budget for meaning: the workshop that fixes what the system does, and the person who owns that decision afterwards. Everything else is becoming a utility.
+> Budget for two things. Once: the factory, the languages and checker that hold your meaning, which you cannot buy because they are bonded to your product. Every system after that: meaning, the workshop that fixes what the system does and the person who owns that decision afterwards. Everything else is becoming a utility.
 
 ## The cost nobody can explain
 
@@ -93,7 +93,7 @@ Integrations with other systems, legacy or external, remain real work. The facto
 
 ## Three decisions for a leader
 
-First, move budget from building to meaning. Fund the workshop properly and insist that senior people attend. A day of their time at the start replaces months of everyone else's time later.
+First, move budget from building systems to building the factory, and then to meaning. The factory is paid for once. Fund the workshop properly and insist that senior people attend. A day of their time at the start replaces months of everyone else's time later.
 
 Second, staff the owner. Name the person accountable for each system's rules. If you cannot name one, the system should not be built yet.
 
