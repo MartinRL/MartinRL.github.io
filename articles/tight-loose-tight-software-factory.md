@@ -27,7 +27,7 @@ aliases:
 
 ## The cost nobody can explain
 
-Ask a CFO what software costs and you get a number. Ask why, and you get a story about complexity. Bent Flyvbjerg's project database, the largest of its kind, says the story is wrong in a specific way: roughly one in five IT projects overruns its budget by more than half, and the ones that do overrun by 447 percent on average [1]. That is not complexity. That is a system that cannot tell you where it stands until it is too late to matter.
+Ask a CFO what software costs and you get a number: the R&D line, mostly salaries. Ask engineering why it is that big, and you get a story about complexity. Bent Flyvbjerg's project database, the largest of its kind, says the story is wrong in a specific way: roughly one in five IT projects overruns its budget by more than half, and the ones that do overrun by 447 percent on average [1]. That is not complexity. That is a system that cannot tell you where it stands until it is too late to matter.
 
 Fred Brooks explained the structure of the problem in 1986 [2]. Software has two kinds of difficulty: the essential kind, deciding what the system should do and keeping that decision coherent, and the accidental kind, the tools and plumbing used to express it. He predicted no single tool would deliver a tenfold improvement, because tools only attack the accidental part. Forty years later, Moseley and Marks [3] argued that most of the accidental part was self-inflicted: state and control flow the business never asked for. Both were right. Every productivity tool since, including AI code generation, has made the accidental part cheaper. The essential part, meaning, has been left to documents, meetings and memory.
 
