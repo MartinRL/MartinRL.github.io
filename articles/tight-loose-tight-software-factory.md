@@ -20,10 +20,10 @@ aliases:
 ---
 
 > [!abstract] TL;DR
-> Agents can now write code faster than any team can read it. That collapses the visible cost of software and leaves the real one untouched: deciding what the system should do, keeping that decision stable while people and code change, and finding out, late, that the two have drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as a model a machine can check. Loose on how: the machine decides how each rule meets the examples the business gave, and how each view is read from the facts. Tight on outcome: one approved shape, verified automatically. The cost of a system collapses toward the cost of deciding what it means. The scarce hire is no longer the person who writes code fastest. It is the one who builds the rocket.
+> Agents can now write code faster than any team can read it. That collapses the visible cost of software and leaves the real one untouched: deciding what the system should do, keeping that decision stable while people and code change, and finding out, late, that the two have drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as a model a machine can check. Loose on how: the machine decides how each rule meets the examples the business gave, and how each view is read from the facts. Tight on outcome: one approved shape, verified automatically. The cost of a system collapses toward the cost of deciding what it means. The scarce hire is no longer the rockstar developer. It is the the rocket engineer.
 
 > [!tip] If you lead a company
-> Budget for two things. Once: the factory, the domain-specific specification languages and the checkers that hold your meaning, which you cannot buy because they are bonded to your product. Every system after that: meaning, the workshop that fixes what the system does and the person who owns that decision afterwards. Everything else is becoming a utility.
+> Budget for two things. Once: the factory, the domain-specific specification languages and the checkers that hold your meaning (per system cohort), which you cannot buy because they are bonded to your product. Continuously: meaning, the workshops that fix what the product does and the people who own those decisions afterwards. Everything else is becoming a utility.
 
 ## The cost nobody can explain
 
@@ -98,7 +98,7 @@ Integrations with other systems, legacy or external, remain real work. The facto
 
 First, move budget from building systems to building the factory, and then to meaning. The factory is paid for once. Fund the workshop properly and insist that senior people attend. A day of their time at the start replaces months of everyone else's time later.
 
-Second, staff the owner. Name the person accountable for each system's rules. If you cannot name one, the system should not be built yet.
+Second, staff the owner. Name the person accountable for each part of the product's rules. If you cannot name one, it should not be built yet.
 
 Third, stop buying process. Status meetings, change boards, acceptance ceremonies exist to compensate for a loose start. Once the start is tight, they are cost without function. Measure lead time from a decided change to a running change instead.
 
