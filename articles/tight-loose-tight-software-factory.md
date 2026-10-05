@@ -23,7 +23,7 @@ aliases:
 > Agents can now write code faster than any team can read it. That collapses the visible cost of software and leaves the real one untouched: deciding what the system should do, keeping that decision stable while people and code change, and finding out, late, that the two have drifted apart. Our factory attacks exactly that cost, and the cleanest way to explain how is a leadership model from Norway: tight, loose, tight. Tight on meaning: what the system must do is written as a model a machine can check. Loose on how: the machine decides how each rule meets the examples the business gave, and how each view is read from the facts. Tight on outcome: one approved shape, verified automatically. The cost of a system collapses toward the cost of deciding what it means. The scarce hire is no longer the person who writes code fastest. It is the one who builds the rocket.
 
 > [!tip] If you lead a company
-> Budget for two things. Once: the factory, the languages and checker that hold your meaning, which you cannot buy because they are bonded to your product. Every system after that: meaning, the workshop that fixes what the system does and the person who owns that decision afterwards. Everything else is becoming a utility.
+> Budget for two things. Once: the factory, the domain-specific specification languages and the checkers that hold your meaning, which you cannot buy because they are bonded to your product. Every system after that: meaning, the workshop that fixes what the system does and the person who owns that decision afterwards. Everything else is becoming a utility.
 
 ## The cost nobody can explain
 
@@ -102,7 +102,7 @@ Second, staff the owner. Name the person accountable for each system's rules. If
 
 Third, stop buying process. Status meetings, change boards, acceptance ceremonies exist to compensate for a loose start. Once the start is tight, they are cost without function. Measure lead time from a decided change to a running change instead.
 
-Fourth, hire rocket engineers, not rockstar developers. The rockstar writes code faster and better than anyone, and that is the skill agents have already made cheap. The rocket engineer builds the first stage: the languages, the generator and the checker that hold your meaning and fix your architecture once, so nobody has to carry it in their head. That is the one piece of engineering that does not commoditize, and you buy it once.
+Fourth, hire rocket engineers, not rockstar developers. The rockstar writes code faster and better than anyone, and that is the skill agents have already made cheap. The rocket engineer builds the first stage: the domain-specific specification languages, the generator and the checkers that hold your meaning and fix your architecture once, so nobody has to carry it in their head. That is the one piece of engineering that does not commoditize, and you buy it once.
 
 ## The one-line version
 
