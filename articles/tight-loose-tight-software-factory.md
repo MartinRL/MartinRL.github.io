@@ -96,7 +96,7 @@ Integrations with other systems, legacy or external, remain real work. The facto
 
 ## Four decisions for a leader
 
-First, move budget from building systems to building the factory, and then to meaning. The factory is paid for once. Fund the workshop properly and insist that senior people attend. A day of their time at the start replaces months of everyone else's time later.
+First, move budget from building systems to two things at once: building the factory, and meaning. They run in parallel, since the first models are what the factory is built against, and the factory is paid for once. Fund the workshop properly and insist that senior people attend. A day of their time at the start replaces months of everyone else's time later.
 
 Second, staff the owner. Name the person accountable for each part of the product's rules. If you cannot name one, it should not be built yet.
 
